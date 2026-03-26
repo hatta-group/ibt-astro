@@ -1,0 +1,37 @@
+---
+title: "IBDP最終試験の結果が思うようにいかなかった場合の挽回方法"
+slug: "ibdp-exam-recovery"
+date: "2024-11-09"
+description: "IBの試験で失敗しても諦めない。リカバリー方法と巻き返し戦略をIB卒業生が具体的にアドバイス。"
+category: "dp-tips"
+ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+draft: false
+---
+
+**IBDP最終試験の結果が思うようにいかなかった場合、大学入試においてどのような挽回方法がある？**
+
+## IBTチューターからの解説
+
+IBDPの最終試験の結果が期待に達しなかった場合でも、大学入試において様々な挽回策があります！例えば、IBDPの成績が期待外れなら、成績の再評価をリクエストできます。特定の科目を選びお金を払うと再評価をしてくれます。成績が変わった場合には返金されるため試してみてください。
+
+また、特定の科目だけ試験料を払い半年後などに再試験を受けることも可能です。特にアメリカやカナダの大学を目指す場合は、SATやACTのような他の試験のスコアで成績を補強することもできます。英語力の証明は、TOEFLやIELTSのスコアを提出することが多いです。
+
+また、学校の担任や先生に推薦状を書いてもらうと、学業成績以外の個性や能力をアピールすることも可能です。個人陳述書や志望動機書でも、IBDPでの学びがどのように自己成長につながったかを具体的に書いたりEEやCAS, TOKの活動や経験もうまく活用し、試験成績以外の自分の能力もアピールしましょう！
+
+**IB卒業生からのちょこっとIBアドバイス**
+
+IBを受け入れる学校は、IBの成績は見るけどその教育を受けて来た中でその人が何を達成させたのかどう成長してどんな考え方になってこの大学に入ろうとしているのかを重視する大学が多いよ。EEとかTOK, CASを行きたい大学に関わることにしてアピールポイントをさらに広げることが重要です！
+
+[IBのサポートが必要な方はこちら](https://ib-tutors.net)
+
+**お問い合わせは、インスタグラム、ホームページ、メールからお気軽に♪**
+
+> **gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
+**instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
+**website** : [ib-tutors.net](https://ib-tutors.net/)
+
+### 📚 関連記事
+
+- [IBDP最終試験とは？](https://ib-tutors.net/ibdp-final-exam-guide/)
+- [IB-Mock勉強の優先順位の付け方](https://ib-tutors.net/ib-mock-exam-study-tips/)
+- [最終試験に向けてどのような勉強方法を行なっていましたか？](https://ib-tutors.net/ib-final-exam-study-methods/)

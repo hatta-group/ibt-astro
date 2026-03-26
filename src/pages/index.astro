@@ -1,0 +1,395 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { tutors } from '../data/tutors';
+import { faqItems } from '../data/faq';
+
+const previewTutors = tutors.slice(0, 3);
+const previewFaq = faqItems.slice(0, 5);
+
+const stats = [
+  { label: 'IB卒業生講師', value: '100%' },
+  { label: '対応科目数', value: '全科目' },
+  { label: '無料体験', value: '60分' },
+  { label: '入会金', value: '0円' },
+];
+
+const features = [
+  {
+    title: 'IB卒業生だけの講師陣',
+    description: 'IB経験者だから分かるコツ・勉強法を直接伝授。教科書には載っていない実践的なノウハウで、効率的にスコアアップを実現します。',
+    icon: '🎓',
+  },
+  {
+    title: '全科目マンツーマン対応',
+    description: 'PYP・MYP・DP、さらにTOK・EE・IAまで全てカバー。一人ひとりの弱点に合わせた完全個別指導で着実に成績を伸ばします。',
+    icon: '📚',
+  },
+  {
+    title: '入会金0円・都度払い',
+    description: '長期契約なし、違約金なし。60分の無料体験から気軽にスタートできます。必要な時に必要な分だけ受講可能です。',
+    icon: '💰',
+  },
+];
+
+const programs = [
+  {
+    name: 'PYP',
+    fullName: 'Primary Years Programme',
+    grades: '3〜12歳',
+    description: '探究心を育むIBの初等プログラム。英語での学習習慣づくりから教科サポートまで、楽しく学べる環境を提供します。',
+  },
+  {
+    name: 'MYP',
+    fullName: 'Middle Years Programme',
+    grades: '11〜16歳',
+    description: '教科横断的な学びを深めるIBの中等プログラム。各教科の評価基準に沿った指導で、DPへの準備を万全にします。',
+  },
+  {
+    name: 'DP',
+    fullName: 'Diploma Programme',
+    grades: '16〜19歳',
+    description: 'IB最終課程。6科目+TOK・EE・CASの完全対応。45点満点講師の指導で、高得点取得と志望大学合格を目指します。',
+  },
+];
+
+const trustPoints = [
+  '45点満点講師在籍',
+  '日英バイリンガル対応',
+  'オンライン・対面両対応',
+  '海外在住者も受講可能',
+];
+
+const blogPosts = [
+  {
+    title: 'IB DP数学 AA vs AI — どちらを選ぶべき？',
+    excerpt: 'IB DP数学のAnalysis and Approaches（AA）とApplications and Interpretation（AI）の違いを徹底解説。進路別の選び方もご紹介。',
+    date: '2026.03.20',
+  },
+  {
+    title: 'TOKエッセイで高得点を取るための5つのコツ',
+    excerpt: 'TOK（知の理論）エッセイは多くのIB生が苦戦するポイント。IB45点満点講師が教える具体的な攻略法をお伝えします。',
+    date: '2026.03.15',
+  },
+  {
+    title: 'IB生の保護者が知っておくべきこと',
+    excerpt: 'IBプログラムの仕組み、評価方法、家庭でのサポート方法まで。IB経験のない保護者の方向けに分かりやすく解説します。',
+    date: '2026.03.10',
+  },
+];
+---
+
+<BaseLayout
+  title="IB家庭教師IBT｜IB卒業生が全科目指導・60分無料体験"
+  description="IB専門家庭教師IBT。IB卒業生によるマンツーマン指導でPYP・MYP・DP全科目対応。TOK・EE・IA対策も万全。入会費無料・60分無料体験実施中。"
+>
+
+  <!-- ===== 1. Hero Section ===== -->
+  <section class="relative overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center">
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-cover bg-[center_25%]" style="background-image: url('/images/hero/hero-bg.png');"></div>
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/50"></div>
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 py-20 md:py-28 lg:py-36 w-full">
+      <div class="max-w-2xl">
+        <p class="text-white/80 text-sm md:text-base font-medium tracking-widest mb-4 hero-text-shadow">IB TUTORS — 国際バカロレア専門</p>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight hero-text-shadow">
+          IB卒業生が教える、<br />IB生のための家庭教師
+        </h1>
+        <div class="w-24 h-1 bg-ibt-red mt-6 mb-6"></div>
+        <p class="text-white/90 text-base md:text-lg leading-relaxed hero-text-shadow">
+          PYP・MYP・DP 全対応<br />
+          オンライン＆対面 ｜ バイリンガル指導
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center bg-ibt-red text-white font-[800] text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200 cta-pulse"
+          >
+            まずは無料で相談する
+          </a>
+          <a
+            href="/lessons-pricing/"
+            class="inline-flex items-center justify-center text-white font-medium text-base px-6 py-4 hover:text-white/80 transition-colors"
+          >
+            料金を見る →
+          </a>
+          <a
+            href="/iber-type-shindan/"
+            class="inline-flex items-center justify-center text-white font-medium text-base px-6 py-4 hover:text-white/80 transition-colors"
+          >
+            IBerタイプ診断 →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. Stats Bar ===== -->
+  <section class="bg-white border-b border-ibt-border">
+    <div class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <p class="text-2xl md:text-3xl lg:text-4xl font-black text-ibt-red">{stat.value}</p>
+            <p class="mt-1 text-sm md:text-base text-ibt-text-light font-medium">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. Features / Why IBT ===== -->
+  <section class="bg-ibt-bg py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="section-label mb-3">Why IBT</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text">IBTが選ばれる理由</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {features.map((feature) => (
+          <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-8">
+            <span class="text-4xl block mb-4">{feature.icon}</span>
+            <h3 class="text-xl font-bold text-ibt-text mb-3">{feature.title}</h3>
+            <p class="text-ibt-text-light leading-relaxed">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Programs ===== -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="section-label mb-3">Programs</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text">対応プログラム</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {programs.map((program) => (
+          <div class="relative bg-white border border-ibt-border rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-8 group">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end mb-5">
+              <span class="text-white font-black text-xl">{program.name}</span>
+            </div>
+            <p class="text-xs text-ibt-text-light font-medium mb-1">{program.fullName}</p>
+            <p class="text-sm text-ibt-red font-bold mb-3">{program.grades}</p>
+            <p class="text-ibt-text-light leading-relaxed">{program.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. Tutors Preview ===== -->
+  <section class="bg-ibt-bg py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="section-label mb-3">Tutors</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text">講師紹介</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {previewTutors.map((tutor) => (
+          <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-8">
+            {tutor.image ? (
+              <img src={tutor.image} alt={`${tutor.name}講師`} class="w-20 h-20 rounded-full object-cover mb-5" loading="lazy" />
+            ) : (
+              <div class="w-20 h-20 rounded-full bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end flex items-center justify-center mb-5">
+                <span class="text-white font-black text-xl">{tutor.name.charAt(0)}</span>
+              </div>
+            )}
+            <h3 class="text-xl font-bold text-ibt-text">{tutor.name}</h3>
+            <p class="text-sm text-ibt-text-light mt-1">{tutor.school} 卒</p>
+            <p class="text-sm text-ibt-text-light">{tutor.university}</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {tutor.subjects.map((subject) => (
+                <span class="inline-block text-xs font-medium bg-ibt-red-50 text-ibt-red px-3 py-1 rounded-full">
+                  {subject}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/tutors/"
+          class="inline-flex items-center text-ibt-red font-bold hover:text-ibt-red-dark transition-colors duration-200"
+        >
+          全ての講師を見る
+          <svg class="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. Trust / Features ===== -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="section-label mb-3">Features</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text mb-10 md:mb-14">IBTの特徴</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {trustPoints.map((point) => (
+            <div class="flex items-center gap-4 bg-ibt-bg rounded-xl p-5">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span class="text-lg font-bold text-ibt-text">{point}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. Blog Preview ===== -->
+  <section class="bg-ibt-bg py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="section-label mb-3">Blog</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text">ブログ</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {blogPosts.map((post) => (
+          <article class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden group">
+            <div class="h-48 bg-gradient-to-br from-ibt-red-light to-ibt-red-50 flex items-center justify-center">
+              <svg class="w-12 h-12 text-ibt-red/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+              </svg>
+            </div>
+            <div class="p-6">
+              <time class="text-xs text-ibt-text-light">{post.date}</time>
+              <h3 class="mt-2 text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors duration-200 line-clamp-2">
+                {post.title}
+              </h3>
+              <p class="mt-2 text-sm text-ibt-text-light leading-relaxed line-clamp-3">{post.excerpt}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/blog/"
+          class="inline-flex items-center text-ibt-red font-bold hover:text-ibt-red-dark transition-colors duration-200"
+        >
+          もっと読む
+          <svg class="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. IBer Type Diagnosis CTA ===== -->
+  <section class="relative overflow-hidden bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,255,255,0.1),transparent_60%)]"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-14 md:py-20">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div>
+          <p class="text-white/80 font-bold text-sm tracking-widest uppercase mb-2">Diagnosis</p>
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-white">あなたのIBerタイプは？</h2>
+          <p class="mt-3 text-white/85 text-base md:text-lg max-w-xl">
+            簡単な質問に答えるだけで、あなたのIB学習スタイルが分かります。タイプ別の勉強法もご紹介。
+          </p>
+        </div>
+        <a
+          href="/iber-type-shindan/"
+          class="inline-flex items-center justify-center bg-white text-ibt-red font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200 whitespace-nowrap"
+        >
+          診断をはじめる
+          <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. FAQ Preview ===== -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="section-label mb-3">FAQ</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text">よくある質問</h2>
+      </div>
+      <div class="max-w-3xl mx-auto space-y-4">
+        {previewFaq.map((item) => (
+          <details class="group bg-ibt-bg rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between cursor-pointer p-6 text-left font-bold text-ibt-text hover:text-ibt-red transition-colors duration-200">
+              <span class="pr-4">{item.question}</span>
+              <svg class="w-5 h-5 flex-shrink-0 text-ibt-text-light group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-ibt-text-light leading-relaxed">
+              {item.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/faq/"
+          class="inline-flex items-center text-ibt-red font-bold hover:text-ibt-red-dark transition-colors duration-200"
+        >
+          全てのFAQを見る
+          <svg class="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10. CTA Section ===== -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.12),transparent_50%)]"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-16 md:py-24 text-center">
+      <h2 class="text-3xl md:text-4xl font-black text-white">まずは60分無料体験から</h2>
+      <p class="mt-4 text-white/85 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        IB卒業生の講師が、お子さまの現状をヒアリングし最適な学習プランをご提案します。入会金0円、無理な勧誘は一切ありません。
+      </p>
+      <div class="mt-10">
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center bg-white text-ibt-red font-bold text-lg px-10 py-5 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200"
+        >
+          無料体験を申し込む
+          <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+      <p class="mt-4 text-white/60 text-sm">お電話・メールでもお気軽にお問い合わせください</p>
+    </div>
+  </section>
+
+  <!-- ===== 11. Parents CTA ===== -->
+  <section class="bg-ibt-bg py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-sm p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h2 class="text-xl md:text-2xl font-bold text-ibt-text">保護者の方へ</h2>
+          <p class="mt-2 text-ibt-text-light leading-relaxed">
+            IBプログラムの仕組みや家庭でのサポート方法など、保護者の方向けの情報をまとめています。
+          </p>
+        </div>
+        <a
+          href="/ib-parents/"
+          class="inline-flex items-center justify-center bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-md hover:scale-[1.02] transition-all duration-200 whitespace-nowrap"
+        >
+          詳しく見る
+          <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

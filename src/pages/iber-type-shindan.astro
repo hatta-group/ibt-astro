@@ -1,0 +1,363 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { iberTypes } from '../data/iber-types';
+---
+
+<BaseLayout
+  title="IBerタイプ診断｜あなたのIBerタイプは？｜IBT"
+  description="あなたのIBerタイプは？たった15問でIB Learner's Profileの10タイプを診断。試験・EE・CASなどIB生ならではの質問で強みと課題を発見。"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/70 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">IBerタイプ診断</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">あなたのIBerタイプは？</h1>
+      <p class="mt-4 text-white/85 text-lg md:text-xl">たった15問であなたのIB Learner Profileタイプを診断！</p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-3xl mx-auto px-4">
+      <!-- Start Screen -->
+      <div id="quiz-start" class="text-center">
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-10 md:p-14">
+          <div class="w-20 h-20 bg-ibt-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">IBerタイプ診断</h2>
+          <p class="text-ibt-text-light mb-2">IB Learner's Profileの10タイプから</p>
+          <p class="text-ibt-text-light mb-8">あなたに最も当てはまるタイプを診断します。</p>
+          <p class="text-sm text-ibt-text-light mb-8">所要時間：約3分 / 全15問</p>
+          <button
+            id="start-btn"
+            class="inline-block bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow text-lg cursor-pointer"
+          >
+            診断を始める
+          </button>
+        </div>
+      </div>
+
+      <!-- Quiz Container -->
+      <div id="quiz-container" class="hidden">
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-12">
+          <!-- Progress -->
+          <div class="mb-8">
+            <div class="flex justify-between items-center text-sm text-ibt-text-light mb-2">
+              <span>質問 <span id="current-q">1</span> / 15</span>
+              <span id="progress-pct">0%</span>
+            </div>
+            <div class="w-full bg-ibt-border rounded-full h-2">
+              <div id="progress-bar" class="bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <!-- Question -->
+          <h3 id="question-text" class="text-xl md:text-2xl font-bold mb-8 leading-relaxed"></h3>
+
+          <!-- Answer Choices -->
+          <div id="answers" class="space-y-3"></div>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div id="quiz-result" class="hidden">
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-12 text-center">
+          <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">YOUR RESULT</p>
+          <h2 class="text-2xl md:text-3xl font-bold mb-2">あなたのIBerタイプは...</h2>
+          <div id="result-badge" class="inline-block px-6 py-2 rounded-full text-white font-bold text-lg mt-4 mb-2"></div>
+          <p id="result-name-ja" class="text-xl font-bold mb-6"></p>
+          <p id="result-desc" class="text-ibt-text-light leading-relaxed mb-8 max-w-lg mx-auto"></p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <a id="result-link" href="#" class="inline-block bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow">
+              あなたのタイプの詳細を見る
+            </a>
+            <button
+              id="retry-btn"
+              class="inline-block bg-white text-ibt-text font-bold px-8 py-4 rounded-full border border-ibt-border hover:bg-ibt-bg transition-colors cursor-pointer"
+            >
+              もう一度診断する
+            </button>
+          </div>
+
+          <div class="pt-6 border-t border-ibt-border">
+            <p class="text-sm text-ibt-text-light mb-3">結果をシェアする</p>
+            <div class="flex gap-3 justify-center">
+              <button id="share-x" class="w-10 h-10 bg-ibt-bg rounded-full flex items-center justify-center hover:bg-ibt-border transition-colors cursor-pointer" aria-label="Xでシェア">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </button>
+              <button id="share-line" class="w-10 h-10 bg-ibt-bg rounded-full flex items-center justify-center hover:bg-ibt-border transition-colors cursor-pointer" aria-label="LINEでシェア">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end rounded-2xl p-10 md:p-16 text-center">
+        <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">自分の強みを活かして学ぼう</h2>
+        <p class="text-white/80 mb-8 text-lg max-w-xl mx-auto">
+          IBT講師があなたのタイプに合った学習法をご提案します。60分の無料体験で実感してください。
+        </p>
+        <a
+          href="/contact/"
+          class="inline-block bg-white text-ibt-red font-bold px-8 py-4 rounded-full hover:bg-ibt-red-light transition-colors text-lg shadow-lg"
+        >
+          無料体験を申し込む
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ iberTypes }}>
+    const questions = [
+      {
+        q: 'Q1. グループプロジェクトで、あなたの役割は？',
+        a: [
+          { text: 'リサーチ担当 - 情報を集めて深掘りする', types: ['inquirer'] },
+          { text: '発表担当 - みんなの前でプレゼンする', types: ['communicator'] },
+          { text: '計画担当 - スケジュールや構成を考える', types: ['thinker'] },
+          { text: '全体まとめ - チーム全体のバランスを取る', types: ['balanced'] },
+        ],
+      },
+      {
+        q: 'Q2. 新しい科目を始める時、まず何をする？',
+        a: [
+          { text: '教科書をじっくり読む', types: ['knowledgeable'] },
+          { text: '先生に質問しに行く', types: ['inquirer'] },
+          { text: '過去問を解いてみる', types: ['thinker'] },
+          { text: '友達に聞いてみる', types: ['communicator'] },
+        ],
+      },
+      {
+        q: 'Q3. EE（Extended Essay）のテーマ選びで重視することは？',
+        a: [
+          { text: '自分の興味・好奇心', types: ['inquirer'] },
+          { text: '社会的意義・誰かの役に立つか', types: ['caring'] },
+          { text: 'データの入手しやすさ・分析可能性', types: ['thinker'] },
+          { text: '誰もやっていない新しい挑戦', types: ['risk-taker'] },
+        ],
+      },
+      {
+        q: 'Q4. CAS活動で選びたいのは？',
+        a: [
+          { text: 'ボランティア活動', types: ['caring'] },
+          { text: 'スポーツ・フィットネス', types: ['balanced'] },
+          { text: '異文化交流・国際イベント', types: ['open-minded'] },
+          { text: '起業・ビジネスプロジェクト', types: ['risk-taker'] },
+        ],
+      },
+      {
+        q: 'Q5. TOK（知の理論）の授業で好きなのは？',
+        a: [
+          { text: '哲学的な議論', types: ['thinker'] },
+          { text: '異文化の視点を学ぶこと', types: ['open-minded'] },
+          { text: '倫理的な問題を考えること', types: ['principled'] },
+          { text: '知識の限界について考えること', types: ['reflective'] },
+        ],
+      },
+      {
+        q: 'Q6. 試験前日の過ごし方は？',
+        a: [
+          { text: '全範囲をもう一度復習する', types: ['knowledgeable'] },
+          { text: '苦手分野に集中して取り組む', types: ['reflective'] },
+          { text: '友達と教え合いながら勉強する', types: ['communicator'] },
+          { text: 'いつも通りのペースで過ごす', types: ['balanced'] },
+        ],
+      },
+      {
+        q: 'Q7. IBで一番大変だと思うことは？',
+        a: [
+          { text: '時間管理（やることが多すぎる）', types: ['balanced'] },
+          { text: '深い理解が求められること', types: ['thinker'] },
+          { text: 'プレゼンや口頭試問', types: ['communicator'] },
+          { text: '自分の意見をしっかり持つこと', types: ['principled'] },
+        ],
+      },
+      {
+        q: 'Q8. 困っている友達を見かけたら？',
+        a: [
+          { text: 'すぐに声をかけて話を聞く', types: ['caring'] },
+          { text: '具体的な解決策を考えて提案する', types: ['thinker'] },
+          { text: '先生やカウンセラーに相談する', types: ['principled'] },
+          { text: '自分の経験を話して参考にしてもらう', types: ['reflective'] },
+        ],
+      },
+      {
+        q: 'Q9. 海外の学校と交流する機会があったら？',
+        a: [
+          { text: '積極的に参加して楽しむ', types: ['open-minded'] },
+          { text: 'その国の文化や歴史を事前に調べる', types: ['knowledgeable'] },
+          { text: 'リーダーや代表を引き受ける', types: ['risk-taker'] },
+          { text: '通訳や橋渡し役を手伝う', types: ['communicator'] },
+        ],
+      },
+      {
+        q: 'Q10. IA（Internal Assessment）で最も気をつけることは？',
+        a: [
+          { text: 'データの正確性と信頼性', types: ['knowledgeable'] },
+          { text: 'テーマのオリジナリティ', types: ['inquirer'] },
+          { text: '倫理的な配慮', types: ['principled'] },
+          { text: '振り返り・考察の質', types: ['reflective'] },
+        ],
+      },
+      {
+        q: 'Q11. ストレスを感じた時の対処法は？',
+        a: [
+          { text: '運動やストレッチで体を動かす', types: ['balanced'] },
+          { text: '日記やノートに気持ちを書き出す', types: ['reflective'] },
+          { text: '友達や家族と話す', types: ['communicator'] },
+          { text: '新しいことを始めて気分転換する', types: ['risk-taker'] },
+        ],
+      },
+      {
+        q: 'Q12. 将来やりたいことは？',
+        a: [
+          { text: '研究者・学者として深く追求する', types: ['inquirer'] },
+          { text: '社会起業家として世の中を変える', types: ['caring'] },
+          { text: 'グローバル企業で世界を舞台に働く', types: ['open-minded'] },
+          { text: 'フリーランス・起業で自由に挑戦する', types: ['risk-taker'] },
+        ],
+      },
+      {
+        q: 'Q13. チームで意見が割れたら？',
+        a: [
+          { text: '全員の意見をまず聞いてみる', types: ['open-minded'] },
+          { text: 'データや根拠で説得する', types: ['thinker'] },
+          { text: '正しいと思うことを堂々と主張する', types: ['principled'] },
+          { text: '妥協点を探して合意を作る', types: ['balanced'] },
+        ],
+      },
+      {
+        q: 'Q14. 自分の一番の強みは？',
+        a: [
+          { text: '知識の幅広さ', types: ['knowledgeable'] },
+          { text: '行動力・チャレンジ精神', types: ['risk-taker'] },
+          { text: '共感力・思いやり', types: ['caring'] },
+          { text: '分析力・論理的思考', types: ['thinker'] },
+        ],
+      },
+      {
+        q: 'Q15. IBで学んだ最も大切なことは？',
+        a: [
+          { text: '批判的に考える力', types: ['thinker'] },
+          { text: '異文化を理解し尊重する姿勢', types: ['open-minded'] },
+          { text: '自己管理・バランス感覚', types: ['balanced'] },
+          { text: '自分を振り返り成長する力', types: ['reflective'] },
+        ],
+      },
+    ];
+
+    const types = iberTypes;
+    const scores = {};
+    types.forEach((t) => (scores[t.id] = 0));
+    let currentQuestion = 0;
+
+    const startScreen = document.getElementById('quiz-start');
+    const quizContainer = document.getElementById('quiz-container');
+    const resultContainer = document.getElementById('quiz-result');
+    const startBtn = document.getElementById('start-btn');
+    const retryBtn = document.getElementById('retry-btn');
+
+    function renderQuestion() {
+      const q = questions[currentQuestion];
+      document.getElementById('current-q').textContent = currentQuestion + 1;
+      const pct = Math.round((currentQuestion / questions.length) * 100);
+      document.getElementById('progress-pct').textContent = pct + '%';
+      document.getElementById('progress-bar').style.width = pct + '%';
+      document.getElementById('question-text').textContent = q.q;
+
+      const answersDiv = document.getElementById('answers');
+      answersDiv.innerHTML = '';
+      q.a.forEach((answer, i) => {
+        const btn = document.createElement('button');
+        btn.className =
+          'w-full text-left p-4 md:p-5 rounded-xl border border-ibt-border hover:border-ibt-red hover:bg-ibt-red-50 transition-all cursor-pointer group';
+        btn.innerHTML = `<span class="flex items-center gap-3"><span class="w-8 h-8 rounded-full border-2 border-ibt-border group-hover:border-ibt-red group-hover:bg-ibt-red group-hover:text-white flex items-center justify-center text-sm font-bold shrink-0 transition-all">${String.fromCharCode(65 + i)}</span><span class="leading-relaxed">${answer.text}</span></span>`;
+        btn.addEventListener('click', () => selectAnswer(answer.types));
+        answersDiv.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(typeIds) {
+      typeIds.forEach((id) => (scores[id] = (scores[id] || 0) + 1));
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      quizContainer.classList.add('hidden');
+      resultContainer.classList.remove('hidden');
+
+      let maxScore = 0;
+      let winnerId = 'inquirer';
+      for (const [id, score] of Object.entries(scores)) {
+        if (score > maxScore) {
+          maxScore = score;
+          winnerId = id;
+        }
+      }
+
+      const winner = types.find((t) => t.id === winnerId);
+      const badge = document.getElementById('result-badge');
+      badge.textContent = winner.name;
+      badge.style.backgroundColor = winner.color;
+
+      document.getElementById('result-name-ja').textContent = winner.nameJa;
+      document.getElementById('result-desc').textContent = winner.description;
+      document.getElementById('result-link').href = `/iber-type/${winner.id}/`;
+
+      // Share buttons
+      const shareText = `IBerタイプ診断の結果、私は「${winner.name}（${winner.nameJa}）」でした！あなたも診断してみよう！`;
+      const shareUrl = 'https://ib-tutors.net/iber-type-shindan/';
+
+      document.getElementById('share-x').onclick = () => {
+        window.open(
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
+          '_blank'
+        );
+      };
+      document.getElementById('share-line').onclick = () => {
+        window.open(
+          `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`,
+          '_blank'
+        );
+      };
+
+      resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function resetQuiz() {
+      currentQuestion = 0;
+      types.forEach((t) => (scores[t.id] = 0));
+      resultContainer.classList.add('hidden');
+      startScreen.classList.remove('hidden');
+      quizContainer.classList.add('hidden');
+      startScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    startBtn.addEventListener('click', () => {
+      startScreen.classList.add('hidden');
+      quizContainer.classList.remove('hidden');
+      renderQuestion();
+    });
+
+    retryBtn.addEventListener('click', resetQuiz);
+  </script>
+</BaseLayout>

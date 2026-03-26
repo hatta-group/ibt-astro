@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allSchools = await getCollection('schools', ({ data }) => !data.draft);
+const schools = allSchools.sort((a, b) => a.data.title.localeCompare(b.data.title, 'ja'));
+---
+
+<BaseLayout
+  title="IB認定校一覧｜日本と海外のIBスクール｜IBT"
+  description="日本国内・海外のIB（国際バカロレア）認定校を一覧で紹介。各校の特徴、プログラム、学費などの詳細情報をIB専門家庭教師が解説。"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/70 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">IB認定校一覧</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">IB認定校一覧</h1>
+      <p class="mt-4 text-white/85 text-lg md:text-xl">日本全国のIBスクールを探そう</p>
+    </div>
+  </section>
+
+  <!-- Search & Grid -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Search -->
+      <div class="mb-12">
+        <div class="max-w-xl mx-auto">
+          <div class="relative">
+            <input
+              type="text"
+              id="school-search"
+              placeholder="学校名で検索..."
+              class="w-full px-6 py-4 pl-12 bg-white rounded-2xl border border-ibt-border shadow-sm text-ibt-text placeholder-ibt-text-light/60 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-all"
+            />
+            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-ibt-text-light/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+        <p class="text-center text-ibt-text-light text-sm mt-3">
+          全 <span id="school-count">{schools.length}</span> 校
+        </p>
+      </div>
+
+      {schools.length === 0 ? (
+        <p class="text-center text-ibt-text-light text-lg">学校情報を準備中です。</p>
+      ) : (
+        <div id="school-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {schools.map((school) => (
+            <a
+              href={`/ib-schools/${school.data.slug}/`}
+              class="school-card group bg-white rounded-2xl shadow-sm border border-ibt-border p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              data-name={school.data.title.toLowerCase()}
+            >
+              <h2 class="text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-2 line-clamp-2">
+                {school.data.title}
+              </h2>
+              {school.data.description && (
+                <p class="text-ibt-text-light text-sm leading-relaxed line-clamp-3">
+                  {school.data.description}
+                </p>
+              )}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const searchInput = document.getElementById('school-search') as HTMLInputElement;
+  const cards = document.querySelectorAll('.school-card') as NodeListOf<HTMLElement>;
+  const countEl = document.getElementById('school-count');
+
+  searchInput?.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase().trim();
+    let visible = 0;
+    cards.forEach((card) => {
+      const name = card.dataset.name || '';
+      const match = !query || name.includes(query);
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    if (countEl) countEl.textContent = String(visible);
+  });
+</script>

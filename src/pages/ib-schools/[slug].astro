@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const schools = await getCollection('schools');
+  return schools.map((school) => ({
+    params: { slug: school.data.slug },
+    props: { school },
+  }));
+}
+
+const { school } = Astro.props;
+const { Content } = await render(school);
+---
+
+<BaseLayout
+  title={`${school.data.title}｜IB認定校｜IBT`}
+  description={school.data.description}
+  ogImage={school.data.ogImage}
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/70 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <a href="/ib-schools/" class="hover:text-white transition-colors">IB認定校一覧</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">{school.data.title}</span>
+      </nav>
+      <h1 class="text-2xl md:text-4xl font-bold text-white">{school.data.title}</h1>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <article class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 prose prose-lg prose-gray
+      prose-headings:font-black prose-headings:text-ibt-text
+      prose-a:text-ibt-red prose-a:no-underline hover:prose-a:underline
+      prose-strong:text-ibt-text
+      prose-img:rounded-xl
+      prose-table:border-collapse prose-td:border prose-td:border-ibt-border prose-td:px-4 prose-td:py-2
+      prose-th:border prose-th:border-ibt-border prose-th:px-4 prose-th:py-2 prose-th:bg-ibt-bg">
+      <Content />
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">この学校のIB対策をお探しですか？</h2>
+      <p class="text-ibt-text-light text-lg mb-8">
+        IB卒業生の専門家庭教師がマンツーマンでサポートします。まずは60分の無料体験をお試しください。
+      </p>
+      <a
+        href="/contact/"
+        class="inline-block px-8 py-4 bg-ibt-red text-white font-bold rounded-full shadow-lg hover:bg-ibt-red-dark transition-colors cta-pulse"
+      >
+        60分無料体験に申し込む
+      </a>
+    </div>
+  </section>
+</BaseLayout>

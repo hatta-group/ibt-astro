@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { faqItems } from '../data/faq';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer,
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title="よくある質問｜IB専門家庭教師IBT"
+  description="IB家庭教師IBTへのよくある質問。料金・授業内容・無料体験・オンライン対応・対応科目など、お問い合わせ前にご確認いただけます。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <!-- Page Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/70 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">よくある質問</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">よくある質問</h1>
+      <p class="mt-4 text-white/80 text-lg">お問い合わせ前にご確認ください</p>
+    </div>
+  </section>
+
+  <!-- FAQ List -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="space-y-4">
+        {faqItems.map((item) => (
+          <details class="group bg-white rounded-2xl shadow-sm border border-ibt-border">
+            <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
+              <span class="pr-4">{item.question}</span>
+              <span class="shrink-0 w-6 h-6 flex items-center justify-center text-ibt-red transition-transform group-open:rotate-45">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
+              {item.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-ibt-text mb-4">他にご質問がありましたら</h2>
+      <p class="text-ibt-text-light mb-8">お気軽にお問い合わせください。通常24時間以内にご返信いたします。</p>
+      <a
+        href="/contact/"
+        class="inline-block bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow"
+      >
+        お問い合わせはこちら
+      </a>
+    </div>
+  </section>
+</BaseLayout>

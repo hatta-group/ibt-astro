@@ -1,0 +1,42 @@
+---
+title: "IB専門家庭教師サービス – IBT"
+slug: "ib-tutor-service-ibt"
+date: "2024-04-16"
+description: "IB専門家庭教師IBTのサービス紹介。全講師IB卒業生・全科目対応・オンライン＆対面OK。入会金無料・60分無料体験。"
+category: "ib-basics"
+ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+draft: false
+---
+
+目次
+
+[Toggle](#)
+- [IBTチューターからの解説](https://ib-tutors.net/ib-tutor-service-ibt/#IBT%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E3%81%8B%E3%82%89%E3%81%AE%E8%A7%A3%E8%AA%AC)[【IB専門家庭教師サービスのIBT】](https://ib-tutors.net/ib-tutor-service-ibt/#%E3%80%90IB%E5%B0%82%E9%96%80%E5%AE%B6%E5%BA%AD%E6%95%99%E5%B8%AB%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AEIBT%E3%80%91)[あなたの学び、私たちのサポート](https://ib-tutors.net/ib-tutor-service-ibt/#%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E5%AD%A6%E3%81%B3%E3%80%81%E7%A7%81%E3%81%9F%E3%81%A1%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88)- [先輩チューターからのぴったりアドバイス](https://ib-tutors.net/ib-tutor-service-ibt/#%E5%85%88%E8%BC%A9%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E3%81%8B%E3%82%89%E3%81%AE%E3%81%B4%E3%81%A3%E3%81%9F%E3%82%8A%E3%82%A2%E3%83%89%E3%83%90%E3%82%A4%E3%82%B9)- [まずはお試しを！](https://ib-tutors.net/ib-tutor-service-ibt/#%E3%81%BE%E3%81%9A%E3%81%AF%E3%81%8A%E8%A9%A6%E3%81%97%E3%82%92%EF%BC%81)- [最後に](https://ib-tutors.net/ib-tutor-service-ibt/#%E6%9C%80%E5%BE%8C%E3%81%AB)
+
+## IBTチューターからの解説
+
+### 【IB専門家庭教師サービスのIBT】
+
+こんにちは、IB専門家庭教師サービスを提供するIBTです！国際バカロレア（IB）の教育を受ける生徒さんやそのご家族に朗報です。私たちIBT（International Baccalaureate Tutors）は、IB卒業生だけがチューターとして活躍する、特別な個別指導サービスを提供しています。
+
+#### あなたの学び、私たちのサポート
+
+IBの学びは奥深く、時にはちょっとした壁にぶつかることも。そんな時、IBの道を歩んだ先輩がそばで支えてくれたら、どんなに心強いでしょう！IBTでは、そんな心強いサポートを、一対一のマンツーマンレッスンで提供します。お子様一人ひとりの個性や学びのスタイルを大切にしながら、学校の授業だけではカバーしきれない部分をしっかりと補強します。
+
+#### 先輩チューターからのぴったりアドバイス
+
+IBプログラムを経験した先輩ならではの洞察で、TOK（知識論）、CAS（創造、活動、奉仕）のプロジェクト、さらにはIB試験の準備まで、幅広くサポート。わからないことがあれば、いつでも質問してください！Slackなどのツールを使って、気軽にチューターとコミュニケーションが取れます。
+
+#### まずはお試しを！
+
+「本当に自分に合うかな？」そんな心配も無用です。IBTでは、新しい生徒さんには最初にIBでのお悩みなどのご相談をしていただく30分のIBカウンセリングと、30分の無料体験レッスンをご用意！この機会にぜひ、私たちのレッスンを体験してみてください。きっと、IBの学びがもっと楽しく、もっと身近なものに感じられるはずです。
+
+### 最後に
+
+IBは、時には挑戦的ですが、IBTがそばにいれば、その道のりも一緒に楽しく歩めます。今も多くのIB生がIBTと共に成長してきています。次はあなたです！私たちと一緒に、IBの学びを最大限に活かしましょう！
+
+インスタグラム、ホームページ、メールからお気軽にご連絡ください♪
+
+**gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
+**instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
+**website** : [ib-tutors.net](https://ib-tutors.net)

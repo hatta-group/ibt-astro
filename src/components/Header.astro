@@ -1,0 +1,82 @@
+---
+const navItems = [
+  { label: 'IBTについて', href: '/about/' },
+  { label: 'IB校', href: '/ib-schools/' },
+  { label: '講師', href: '/tutors/' },
+  { label: 'IBer診断', href: '/iber-type-shindan/' },
+  { label: '授業内容・料金', href: '/lessons-pricing/' },
+  { label: 'ブログ', href: '/blog/' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-ibt-red/95 backdrop-blur-sm shadow-md">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16 md:h-20">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/images/logo.png" alt="IBT" class="h-10 md:h-12 w-auto" />
+      <span class="hidden sm:inline text-white/80 text-xs">IB専門家庭教師</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-1">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="text-white/90 hover:text-white text-sm px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
+        >
+          {item.label}
+        </a>
+      ))}
+      <a
+        href="/contact/"
+        class="ml-2 bg-white text-ibt-red font-bold text-sm px-5 py-2.5 rounded-full hover:bg-ibt-red-light transition-colors"
+      >
+        まずは無料で相談する
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="lg:hidden text-white p-2"
+      aria-label="メニューを開く"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <nav
+    id="mobile-menu"
+    class="lg:hidden hidden bg-ibt-red-dark border-t border-white/10"
+  >
+    <div class="px-4 py-4 space-y-1">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="block text-white/90 hover:text-white text-base px-4 py-3 rounded-lg hover:bg-white/10 transition-colors"
+        >
+          {item.label}
+        </a>
+      ))}
+      <a
+        href="/contact/"
+        class="block text-center bg-white text-ibt-red font-bold text-base px-4 py-3 rounded-full mt-3"
+      >
+        まずは無料で相談する
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu?.classList.toggle('hidden');
+  });
+</script>

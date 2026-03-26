@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="お問い合わせ・無料体験申込｜IB専門家庭教師IBT"
+  description="IB専門家庭教師IBTへのお問い合わせ・無料体験のお申し込みはこちら。60分の無料体験授業でIB卒業生講師の指導を体験できます。"
+>
+  <!-- Page Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/70 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">お問い合わせ・無料体験申込</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">お問い合わせ・無料体験申込</h1>
+      <p class="mt-4 text-white/80 text-lg">まずは60分の無料体験からお気軽にどうぞ</p>
+    </div>
+  </section>
+
+  <!-- Form + Info -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Left: Contact Form -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
+          <h2 class="text-xl font-bold text-ibt-text mb-6">お問い合わせフォーム</h2>
+          <form action="#" method="POST" class="space-y-5">
+            <!-- お名前 -->
+            <div>
+              <label for="name" class="block text-sm font-medium text-ibt-text mb-1">
+                お名前 <span class="text-ibt-red">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="例: 山田 太郎"
+                class="w-full border border-ibt-border rounded-lg px-4 py-3 text-ibt-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
+              />
+            </div>
+
+            <!-- メールアドレス -->
+            <div>
+              <label for="email" class="block text-sm font-medium text-ibt-text mb-1">
+                メールアドレス <span class="text-ibt-red">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="例: example@email.com"
+                class="w-full border border-ibt-border rounded-lg px-4 py-3 text-ibt-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
+              />
+            </div>
+
+            <!-- 電話番号 -->
+            <div>
+              <label for="tel" class="block text-sm font-medium text-ibt-text mb-1">
+                電話番号
+              </label>
+              <input
+                type="tel"
+                id="tel"
+                name="tel"
+                placeholder="例: 090-1234-5678"
+                class="w-full border border-ibt-border rounded-lg px-4 py-3 text-ibt-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
+              />
+            </div>
+
+            <!-- 学年・プログラム -->
+            <div>
+              <label for="program" class="block text-sm font-medium text-ibt-text mb-1">
+                お子様の学年・プログラム
+              </label>
+              <select
+                id="program"
+                name="program"
+                class="w-full border border-ibt-border rounded-lg px-4 py-3 text-ibt-text bg-white focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
+              >
+                <option value="">選択してください</option>
+                <option value="pyp">PYP</option>
+                <option value="myp">MYP</option>
+                <option value="dp1">DP Year 1</option>
+                <option value="dp2">DP Year 2</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+
+            <!-- お問い合わせ種別 -->
+            <div>
+              <label for="inquiry-type" class="block text-sm font-medium text-ibt-text mb-1">
+                お問い合わせ種別
+              </label>
+              <select
+                id="inquiry-type"
+                name="inquiry-type"
+                class="w-full border border-ibt-border rounded-lg px-4 py-3 text-ibt-text bg-white focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
+              >
+                <option value="">選択してください</option>
+                <option value="trial">無料体験申込</option>
+                <option value="lesson">授業について</option>
+                <option value="pricing">料金について</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+
+            <!-- メッセージ -->
+            <div>
+              <label for="message" class="block text-sm font-medium text-ibt-text mb-1">
+                メッセージ
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="ご質問やご要望がございましたらお書きください"
+                class="w-full border border-ibt-border rounded-lg px-4 py-3 text-ibt-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors resize-vertical"
+              ></textarea>
+            </div>
+
+            <p class="text-xs text-ibt-text-light">
+              ※ 現在フォームの送信機能は準備中です。お急ぎの方はメールにて直接お問い合わせください。
+            </p>
+
+            <!-- 送信ボタン -->
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow"
+            >
+              送信する
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Info Cards -->
+        <div class="space-y-6">
+          <!-- 60分無料体験 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
+            <div class="flex items-start gap-4">
+              <div class="shrink-0 w-12 h-12 bg-ibt-red-50 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-ibt-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-ibt-text mb-2">60分無料体験</h3>
+                <p class="text-ibt-text-light leading-relaxed">
+                  IB卒業生講師によるマンツーマン指導を60分間無料で体験できます。お子様の学習状況を把握し、最適な学習プランをご提案します。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 入会金0円 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
+            <div class="flex items-start gap-4">
+              <div class="shrink-0 w-12 h-12 bg-ibt-red-50 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-ibt-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-ibt-text mb-2">入会金0円</h3>
+                <p class="text-ibt-text-light leading-relaxed">
+                  入会金は一切かかりません。授業料のみの都度払い制で、長期契約や違約金もなく安心してスタートできます。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- レスポンス -->
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
+            <div class="flex items-start gap-4">
+              <div class="shrink-0 w-12 h-12 bg-ibt-red-50 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-ibt-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-ibt-text mb-2">スピード対応</h3>
+                <p class="text-ibt-text-light leading-relaxed">
+                  お問い合わせには通常24時間以内にご返信いたします。お急ぎの方もお気軽にご連絡ください。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
