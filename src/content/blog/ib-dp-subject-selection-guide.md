@@ -4,7 +4,7 @@ slug: "ib-dp-subject-selection-guide"
 date: "2026-03-20"
 description: "IB DPの科目選択で後悔しないための完全ガイド。HL/SLの選び方、大学の要件との照合方法、科目の組み合わせのコツをIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,7 +4,7 @@ slug: "ib-test-preparation"
 date: "2024-10-07"
 description: "IB試験の準備方法を完全ガイド。科目別の対策・過去問活用・時間配分をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

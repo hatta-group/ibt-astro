@@ -4,7 +4,7 @@ slug: "ib-ia-writing-5-points-guide"
 date: "2026-03-18"
 description: "IB IAの書き方で差がつく5つのポイント。評価基準に沿った構成・データ分析・考察の書き方をIB経験者が実践的に解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

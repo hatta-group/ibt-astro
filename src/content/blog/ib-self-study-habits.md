@@ -4,7 +4,7 @@ slug: "ib-self-study-habits"
 date: "2024-11-26"
 description: "IB生の効果的な自習習慣の作り方。毎日のルーティン・集中力維持・復習法をIB経験者がアドバイス。"
 category: "ib-stories"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

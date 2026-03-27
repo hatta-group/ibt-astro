@@ -4,7 +4,7 @@ slug: "ib-consultation"
 date: "2024-05-20"
 description: "IB専門のカウンセリング・相談サービス。科目選択・進路・学習の悩みをIB卒業生に気軽に相談できます。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

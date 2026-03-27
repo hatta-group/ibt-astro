@@ -4,7 +4,7 @@ slug: "ib-myp-to-dp-progression-rate"
 date: "2024-10-17"
 description: "MYPからDPへの進学率は？進学条件・準備すべきこと・MYP生のDP対策をIB家庭教師が解説。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

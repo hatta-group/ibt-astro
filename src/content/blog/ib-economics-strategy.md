@@ -4,7 +4,7 @@ slug: "ib-economics-strategy"
 date: "2024-05-05"
 description: "IB Economics（経済学）の勉強法と試験対策。HL/SLの違い、ペーパー別攻略法をIB卒業生が解説。高得点を狙う戦略。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,7 +4,7 @@ slug: "ib-individual-oral-preparation"
 date: "2026-03-20"
 description: "IB IO（Individual Oral）で高得点を取るための準備方法と本番テクニック。作品選び・グローバルイシュー・構成・時間配分をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,7 +4,7 @@ slug: "ib-cas-activity-ideas"
 date: "2026-03-20"
 description: "IB CAS（Creativity, Activity, Service）の活動アイデア50選。科目別・カテゴリ別に具体例を紹介。CASプロジェクトの進め方もIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

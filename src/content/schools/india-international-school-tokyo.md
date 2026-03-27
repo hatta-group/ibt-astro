@@ -2,7 +2,7 @@
 title: "インディア・インターナショナル・スクールのIB（DP）｜東京都のIB認定校"
 slug: "india-international-school-tokyo"
 description: "IB校一覧 &nbsp;›&nbsp;関東 インディア・インターナショナル・スクール India International School in Japan インター 東京都 DP 基本情報 学校名 インディア・インター [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

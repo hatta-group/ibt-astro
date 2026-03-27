@@ -2,7 +2,7 @@
 title: "インターナショナルスクール・オブ・アジア軽井沢のIB（DP）｜長野県のIB認定校"
 slug: "isak-japan"
 description: "IB校一覧 &nbsp;›&nbsp;中部 インターナショナルスクール・オブ・アジア軽井沢 UWC ISAK Japan 私立 長野県 北佐久郡 DP 基本情報 学校名 インターナショナルスクール・オブ・アジア軽井沢 英 [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

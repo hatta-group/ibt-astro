@@ -4,7 +4,7 @@ slug: "ib-history-ia-writing-guide"
 date: "2026-03-20"
 description: "IB History IAの書き方を完全ガイド。テーマの選び方、リサーチクエスチョンの立て方、構成、一次資料の使い方、評価基準をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

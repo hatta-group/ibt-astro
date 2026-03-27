@@ -6,6 +6,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="保護者の方へ｜お子様のIBを全力サポート｜IBT"
   description="国際バカロレア（IB）の仕組みがわからない保護者の方へ。PYP・MYP・DPの違い、費用、学習サポート方法をIB専門家庭教師が解説します。"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "保護者の方へ", "item": "https://ib-tutors.net/ib-parents/" }
+      ]
+    })} />
+  </Fragment>
+
   <!-- Hero -->
   <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-20 md:py-28">
     <div class="max-w-7xl mx-auto px-4">

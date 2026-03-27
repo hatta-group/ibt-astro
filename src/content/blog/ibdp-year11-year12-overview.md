@@ -4,7 +4,7 @@ slug: "ibdp-year11-year12-overview"
 date: "2024-10-20"
 description: "IBDP Year11・Year12の流れを完全解説。各学年でやるべきこと・スケジュール・注意点をIB家庭教師が紹介。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,7 +4,7 @@ slug: "ib-multiple-university-subjects"
 date: "2024-10-28"
 description: "IB生が複数の分野で大学受験する際の戦略。科目選択・PS・推薦状の両立テクニックを解説。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

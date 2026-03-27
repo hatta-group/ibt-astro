@@ -4,7 +4,7 @@ slug: "ib-mock-exam-study-tips"
 date: "2024-11-06"
 description: "IB Mock Exam（模擬試験）の効果的な勉強法。本番を見据えた準備法と弱点克服のコツをIB経験者が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

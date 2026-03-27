@@ -4,7 +4,7 @@ slug: "ib-english-japanese-practice"
 date: "2024-11-05"
 description: "IB生の英語と日本語の両立方法。バイリンガルならではの悩みと効果的な学習法をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

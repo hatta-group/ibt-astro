@@ -4,7 +4,7 @@ slug: "ib-architecture-subject-choice"
 date: "2024-11-07"
 description: "建築学部を目指すIB生の科目選択ガイド。必要なHL/SL科目とポートフォリオ準備のアドバイス。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

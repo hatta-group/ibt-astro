@@ -4,7 +4,7 @@ slug: "ib-for-stem-university"
 date: "2024-10-14"
 description: "STEM系大学を目指すIB生の科目選択ガイド。理系に必要なHL科目・推奨の組み合わせをIB経験者が解説。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

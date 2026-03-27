@@ -2,7 +2,7 @@
 title: "大阪YMCAインターナショナルスクールのIB（DP/MYP/PYP）｜大阪府のIB認定校"
 slug: "osaka-ymca"
 description: "IB校一覧 &nbsp;›&nbsp;関西 大阪YMCAインターナショナルスクール Osaka YMCA International School インター 大阪府 大阪市 DP MYP PYP 基本情報 学校名 大阪Y [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

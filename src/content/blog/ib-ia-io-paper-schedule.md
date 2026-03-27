@@ -4,7 +4,7 @@ slug: "ib-ia-io-paper-schedule"
 date: "2024-10-21"
 description: "IB DP生のIA・IO・Paperの提出スケジュール管理法。時期別のやるべきことリストとIB家庭教師の計画サポート。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

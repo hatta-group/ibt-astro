@@ -4,7 +4,7 @@ slug: "ib-subject-unavailable-options"
 date: "2024-10-16"
 description: "IBの科目が学校で開講されていない場合の選択肢。オンライン受講・自習・Pamoja等の代替手段を解説。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

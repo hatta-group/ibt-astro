@@ -6,6 +6,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="お問い合わせ・無料体験申込｜IB専門家庭教師IBT"
   description="IB専門家庭教師IBTへのお問い合わせ・無料体験のお申し込みはこちら。60分の無料体験授業でIB卒業生講師の指導を体験できます。"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "お問い合わせ・無料体験申込", "item": "https://ib-tutors.net/contact/" }
+      ]
+    })} />
+  </Fragment>
+
   <!-- Page Hero -->
   <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4">

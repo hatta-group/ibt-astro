@@ -2,7 +2,7 @@
 title: "鳥取県立倉吉農業高等学校のIB（DP）｜鳥取県のIB認定校"
 slug: "kurayoshi-agricultural"
 description: "IB校一覧 &nbsp;›&nbsp;中国・四国 鳥取県立倉吉農業高等学校 Tottori Prefectural Kurayoshi Agricultural High School 公立 鳥取県 倉吉市 DP 基本情 [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

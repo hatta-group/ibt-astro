@@ -4,7 +4,7 @@ slug: "ib-advantage-in-university"
 date: "2025-02-03"
 description: "IBは大学受験に有利？国内外の大学のIB入試制度とIBスコアの活かし方をIB卒業生が具体的に解説。"
 category: "ib-stories"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

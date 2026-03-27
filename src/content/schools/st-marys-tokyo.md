@@ -2,7 +2,7 @@
 title: "セント・メリーズ・インターナショナル・スクールのIB（DP）｜東京都のIB認定校"
 slug: "st-marys-tokyo"
 description: "IB校一覧 &nbsp;›&nbsp;関東 セント・メリーズ・インターナショナル・スクール St. Mary&#8217;s International School インター 東京都 世田谷区 DP 基本情報 学校名 [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

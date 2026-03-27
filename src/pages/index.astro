@@ -86,7 +86,9 @@ const blogPosts = [
   <!-- ===== 1. Hero Section ===== -->
   <section class="relative overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center">
     <!-- Background Image -->
-    <div class="absolute inset-0 bg-cover bg-[center_25%]" style="background-image: url('/images/hero/hero-bg.png');"></div>
+    <div class="absolute inset-0">
+      <img src="/images/hero/hero-bg.webp" alt="IB専門家庭教師IBTのヒーローイメージ" class="w-full h-full object-cover object-[center_25%]" loading="eager" fetchpriority="high" width="1920" height="1080" />
+    </div>
     <!-- Dark Overlay -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/50"></div>
     <!-- Content -->
@@ -191,7 +193,7 @@ const blogPosts = [
         {previewTutors.map((tutor) => (
           <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-8">
             {tutor.image ? (
-              <img src={tutor.image} alt={`${tutor.name}講師`} class="w-20 h-20 rounded-full object-cover mb-5" loading="lazy" />
+              <img src={tutor.image} alt={`${tutor.name}講師`} class="w-20 h-20 rounded-full object-cover mb-5" loading="lazy" width="80" height="80" />
             ) : (
               <div class="w-20 h-20 rounded-full bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end flex items-center justify-center mb-5">
                 <span class="text-white font-black text-xl">{tutor.name.charAt(0)}</span>

@@ -4,7 +4,7 @@ slug: "ib-tutor-interview-1-ibt"
 date: "2024-04-17"
 description: "IBT講師インタビュー。IB卒業生がなぜIB家庭教師になったのか、指導のこだわりと生徒への想いを語ります。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

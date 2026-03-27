@@ -2,7 +2,7 @@
 title: "Aiwin International SchoolのIB対策・家庭教師｜IBT"
 slug: "aiwin-international-school"
 description: "Aiwin International SchoolのIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 
@@ -272,16 +272,6 @@ draft: false
   .ibt-info-cell { padding: 14px 16px; }
 }
 /* WP Overrides */
-.entry-header, .entry-title, .wp-block-post-title, h1.wp-block-post-title, h1.has-text-align-center.wp-block-post-title, .post-title { display: none !important; }
-#ez-toc-container, div#ez-toc-container, .ez-toc-v2_0_81, .ez-toc-container { display: none !important; }
-.is-layout-constrained > .wp-block-html, .is-layout-constrained > .wp-block-group, .is-layout-constrained > *, .entry-content > *, .wp-block-post-content > * { max-width: 100% !important; width: 100% !important; }
-.wp-site-blocks, .wp-site-blocks .wp-block-post-content, .wp-site-blocks .entry-content, .is-layout-constrained, .entry-content { max-width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; }
-.entry-content, .wp-block-post-content, .post-content { padding-top: 0 !important; margin-top: 0 !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
-.entry-content > *:first-child { margin-top: 0 !important; padding-top: 0 !important; }
-.entry-content > *:last-child, .wp-block-post-content > *:last-child { margin-bottom: 0 !important; padding-bottom: 0 !important; }
-.entry-content > p:empty, .wp-block-post-content > p:empty { display: none !important; }
-.wp-block-post-content.has-global-padding { padding: 0 !important; }
-.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) { max-width: 100% !important; }
 
 [HOME](/) > [IB校一覧](/ib-schools/) > Aiwin
 IB School Guide

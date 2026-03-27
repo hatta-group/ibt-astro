@@ -4,7 +4,7 @@ slug: "ib-quit-reasons"
 date: "2024-11-27"
 description: "IBを辞めたいと思ったら読む記事。辞める前に考えるべきこと・続けるメリット・切り替えの選択肢をIB経験者が解説。"
 category: "ib-stories"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

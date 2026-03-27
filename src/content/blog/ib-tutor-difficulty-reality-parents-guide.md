@@ -4,7 +4,7 @@ slug: "ib-tutor-difficulty-reality-parents-guide"
 date: "2026-03-22"
 description: "IB家庭教師が語る、国際バカロレアの本当の難しさ。暗記より思考力が問われ、睡眠削減は誤解。保護者が知っておくべきIBの実態を徹底解説。"
 category: "ib-stories"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

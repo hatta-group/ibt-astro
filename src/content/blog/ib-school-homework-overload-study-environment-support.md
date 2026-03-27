@@ -4,7 +4,7 @@ slug: "ib-school-homework-overload-study-environment-support"
 date: "2026-03-21"
 description: "IB校の膨大な宿題に子どもが限界を感じている保護者へ。IBのハードさの理由と、家庭でできる学習環境づくり、効果的なサポート術を経験者が詳しく解説します。"
 category: "ib-stories"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

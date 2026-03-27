@@ -4,8 +4,8 @@ slug: "extended-essay-5-steps-high-score"
 date: "2026-03-13"
 description: "Extended Essayで高得点を取る5つのステップ。テーマ設定からリサーチ、執筆、推敲まで、IB卒業生が実践的に解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
-draft: false
+ogImage: ""
+draft: true
 ---
 
 「EEって、何から手をつければいいの？」

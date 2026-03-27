@@ -4,7 +4,7 @@ slug: "ib-worth-the-effort"
 date: "2024-10-09"
 description: "IBは大変だけど頑張る価値はある？IB卒業生が経験した苦労とその先にあった成長・成果をリアルに紹介。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

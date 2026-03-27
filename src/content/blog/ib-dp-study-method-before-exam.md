@@ -4,7 +4,7 @@ slug: "ib-dp-study-method-before-exam"
 date: "2026-03-20"
 description: "IB DP試験直前の効果的な勉強法を、IB卒業生が解説。過去問分析、やってはいけないことなど、試験2週間前からやるべきことを具体的にアドバイスします。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

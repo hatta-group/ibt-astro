@@ -4,7 +4,7 @@ slug: "ib-missing-subject-university"
 date: "2024-11-10"
 description: "IBで必要な科目が取れない場合の大学受験への影響と対策。代替証明・追加テストなどの選択肢を紹介。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

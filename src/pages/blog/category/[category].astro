@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))];
+  return categories.map(cat => ({
+    params: { category: cat },
+    props: {
+      posts: posts.filter(p => p.data.category === cat)
+        .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()),
+      category: cat
+    }
+  }));
+}
+
+const { posts, category } = Astro.props;
+const categoryNames: Record<string, string> = {
+  'dp-tips': 'DP対策・勉強法',
+  'ib-basics': 'IB基礎知識',
+  'ib-stories': 'IB生の体験談',
+  'ib-schools': 'IB認定校情報',
+};
+const catName = categoryNames[category] || category;
+---
+<BaseLayout
+  title={`${catName}の記事一覧｜IB専門家庭教師IBT`}
+  description={`${catName}に関するIBブログ記事一覧。IB卒業生講師が解説。`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://ib-tutors.net/blog/" },
+        { "@type": "ListItem", "position": 3, "name": catName, "item": `https://ib-tutors.net/blog/category/${category}/` }
+      ]
+    })} />
+  </Fragment>
+
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/70 text-sm mb-4">
+        <a href="/" class="hover:text-white">ホーム</a>
+        <span class="mx-2">&gt;</span>
+        <a href="/blog/" class="hover:text-white">ブログ</a>
+        <span class="mx-2">&gt;</span>
+        <span class="text-white">{catName}</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-black text-white">{catName}</h1>
+      <p class="text-white/80 mt-3">{posts.length}件の記事</p>
+    </div>
+  </section>
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <article class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div class="p-6">
+              <h2 class="text-lg font-bold text-ibt-text hover:text-ibt-red transition-colors mb-3 line-clamp-2">
+                <a href={`/blog/${post.data.slug}/`}>{post.data.title}</a>
+              </h2>
+              {post.data.description && (
+                <p class="text-ibt-text-light text-sm leading-relaxed mb-4 line-clamp-3">{post.data.description}</p>
+              )}
+              <time class="text-xs text-ibt-text-light">{post.data.date}</time>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

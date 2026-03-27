@@ -4,7 +4,7 @@ slug: "ib-note-taking-methods"
 date: "2026-03-20"
 description: "IB生のためのノートの取り方ガイド。科目別（理科・人文・数学・言語）の効果的なノート術をIB卒業生が解説。復習に使えるノートの作り方。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

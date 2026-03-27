@@ -4,7 +4,7 @@ slug: "ib-ee-explained"
 date: "2024-04-17"
 description: "IB Extended Essay（EE）とは？字数・構成・評価基準をIB卒業生がわかりやすく解説。EEで高得点を取るための基礎知識。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

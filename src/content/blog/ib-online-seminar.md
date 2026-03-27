@@ -4,7 +4,7 @@ slug: "ib-online-seminar"
 date: "2024-05-08"
 description: "IB生・保護者向けオンラインセミナー。TOK対策・大学受験・科目選択など、テーマ別に専門家が解説。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

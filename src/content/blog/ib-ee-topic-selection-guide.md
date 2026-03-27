@@ -4,8 +4,8 @@ slug: "ib-ee-topic-selection-guide"
 date: "2024-04-25"
 description: "EEのテーマが決まらないIB生へ。科目別おすすめテーマ・避けるべきテーマ・先生との相談方法をIB家庭教師が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
-draft: false
+ogImage: ""
+draft: true
 ---
 
 目次

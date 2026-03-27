@@ -2,7 +2,7 @@
 title: "英数学館中学校・高等学校のIB（DP）｜広島県のIB認定校"
 slug: "eisu-gakkan"
 description: "IB校一覧 &nbsp;›&nbsp;中国・四国 英数学館中学校・高等学校 Eisugakkan Junior &#038; Senior High School 私立 広島県 福山市 DP 基本情報 学校名 英数学館中 [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

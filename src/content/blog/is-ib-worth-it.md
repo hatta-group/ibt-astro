@@ -4,7 +4,7 @@ slug: "is-ib-worth-it"
 date: "2025-01-31"
 description: "IBは本当にやる価値がある？IB卒業生がメリット・デメリット・将来のキャリアへの影響を本音で語ります。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

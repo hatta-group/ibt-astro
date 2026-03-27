@@ -4,7 +4,7 @@ slug: "ib-tutoring-japanese-support-parental-guidance"
 date: "2026-03-23"
 description: "IBの成績が伸びない原因は一つではありません。言語の壁、学習方法の課題、メンタルの問題など。家庭教師や日本語サポートを活用した保護者ができる具体的なサポート方法をご紹介します。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

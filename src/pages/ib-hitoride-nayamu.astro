@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="IBの相談相手がいない方へ｜IB専門の家庭教師が寄り添います"
+  description="IBの悩みを一人で抱えていませんか？IB卒業生の専門家庭教師IBTが、学習の悩みから進路相談まで丁寧に寄り添います。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "IBの相談相手がいない方へ", "item": "https://ib-tutors.net/ib-hitoride-nayamu/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/70 text-sm mb-4">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">&gt;</span>
+        <span class="text-white">IBの相談相手がいない方へ</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
+        IBをわかっている先生や相談相手が身近におらず、<br class="hidden md:block" />ひとりで抱えてしまっている
+      </h1>
+      <p class="text-white/80 mt-4 text-lg md:text-xl max-w-2xl leading-relaxed">
+        IB生が日本で感じやすい「孤独感」。<br />でも、IBをわかっている仲間はちゃんといます。
+      </p>
+    </div>
+  </section>
+
+  <!-- 日本のIB生が感じる「孤独」の背景 -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">BACKGROUND</p>
+        <h2 class="text-2xl md:text-4xl font-black mb-6">日本のIB生が感じる「孤独」の背景</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-4">
+          日本でIBを学ぶ生徒数は世界的に見るとまだ少なく、同じ学校にIB生が数十人しかいないケースも珍しくありません。「IBの大変さをわかってもらえない」という孤独感を抱えている生徒は多くいます。
+        </p>
+        <p class="text-ibt-text-light leading-relaxed mb-8">
+          私自身もIBを学んでいた頃、学校の友人に「TOKって何？」と聞かれて説明できなかった経験があります。家族に話しても「とりあえず頑張れ」しか返ってこない。その孤独感はIBあるあるだと思っています。
+        </p>
+
+        <h3 class="text-xl font-bold mb-4">こんな状況に心当たりありませんか？</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-ibt-red rounded-full mt-2 shrink-0"></span>
+            <span class="text-ibt-text-light leading-relaxed">親や兄弟にIBの説明をしても「よくわからない」と言われる</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-ibt-red rounded-full mt-2 shrink-0"></span>
+            <span class="text-ibt-text-light leading-relaxed">学校の先生は忙しく、個別の悩みに対応してもらえない</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-ibt-red rounded-full mt-2 shrink-0"></span>
+            <span class="text-ibt-text-light leading-relaxed">同じIB校の友達も同じく余裕がなく、お互い相談できない</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-ibt-red rounded-full mt-2 shrink-0"></span>
+            <span class="text-ibt-text-light leading-relaxed">ネットで調べても日本語の情報が少ない</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-ibt-red rounded-full mt-2 shrink-0"></span>
+            <span class="text-ibt-text-light leading-relaxed">TOK・EE・IAについて具体的にアドバイスしてくれる大人がいない</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- IB卒業生だからこそ、「あの感覚」がわかる -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">WE UNDERSTAND</p>
+        <h2 class="text-2xl md:text-4xl font-black mb-6">IB卒業生だからこそ、「あの感覚」がわかる</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-8">
+          IBTの講師は全員がIBを卒業しています。かつて同じ場所に立っていたからこそ、「そのしんどさ」を言語化する前から理解できます。
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8">
+            <h3 class="text-lg font-bold mb-2">授業の大変さ</h3>
+            <p class="text-ibt-text-light leading-relaxed">6科目を同時にこなしながら、TOK・EE・CASもある。毎日が試験準備と課題の繰り返し。</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8">
+            <h3 class="text-lg font-bold mb-2">言語の壁</h3>
+            <p class="text-ibt-text-light leading-relaxed">英語で考え、英語で書く。日本語で理解してから英語に置き換える作業の消耗感。</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8">
+            <h3 class="text-lg font-bold mb-2">評価への不安</h3>
+            <p class="text-ibt-text-light leading-relaxed">試験の点数だけでなく、IAの評価基準・TOKのエッセイ構成・EEのリサーチ方法まで、すべてが初めてのこと。</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8">
+            <h3 class="text-lg font-bold mb-2">進路の悩み</h3>
+            <p class="text-ibt-text-light leading-relaxed">IBスコアを使った大学出願の仕方が日本では情報が少なく、誰に相談すべきかわからない。</p>
+          </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="bg-ibt-red-50 border-l-4 border-ibt-red rounded-r-2xl p-6 mt-8">
+          <p class="text-ibt-text-light leading-relaxed">
+            「学校でIBについて詳しい先生が少なくて、わからないことがあっても聞ける人がいませんでした。IBTの講師は自分がIBをやってきた人なので、私の気持ちをすぐわかってくれた感じがしました。」
+          </p>
+          <p class="text-sm text-ibt-text-light/70 font-bold mt-3">--- DP1年生・History HL受講生</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IBTが提供するつながりとサポート -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">CONNECTION & SUPPORT</p>
+        <h2 class="text-2xl md:text-4xl font-black mb-6">IBTが提供するつながりとサポート</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-8">
+          IBTでは単なる教科指導にとどまらず、IB生が孤独にならないための環境づくりを大切にしています。授業外でも気軽に質問できる体制を整え、「いつでも聞いていい」という安心感を提供しています。
+        </p>
+
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+            <div>
+              <strong class="text-ibt-text font-bold">マンツーマン指導</strong>
+              <p class="text-ibt-text-light leading-relaxed mt-1">あなたの状況・悩みに特化した完全個別対応。「こんなこと聞いていいのか」という遠慮は不要です。</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+            <div>
+              <strong class="text-ibt-text font-bold">Slackでの授業外サポート</strong>
+              <p class="text-ibt-text-light leading-relaxed mt-1">授業と授業の間も、気になったことをすぐに質問できる環境。返答は講師が直接行います。</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+            <div>
+              <strong class="text-ibt-text font-bold">日本語・英語どちらでも対応</strong>
+              <p class="text-ibt-text-light leading-relaxed mt-1">IB特有の英語表現も日本語で解説可能。「英語でわからない」を「日本語でわかる」に変換。</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+            <div>
+              <strong class="text-ibt-text font-bold">TOK・EE・IA相談</strong>
+              <p class="text-ibt-text-light leading-relaxed mt-1">テーマ選びから構成・草稿フィードバックまで、全プロセスをサポート。</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+            <div>
+              <strong class="text-ibt-text font-bold">進路相談</strong>
+              <p class="text-ibt-text-light leading-relaxed mt-1">IB後の大学選択・出願戦略についても相談可能。日本の大学・海外大学どちらも対応。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 関連記事 -->
+  <section class="py-12 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="bg-ibt-bg rounded-2xl p-8">
+        <h3 class="text-xl font-bold mb-4">あなたの悩みに応える記事</h3>
+        <ul class="space-y-3">
+          <li><a href="/blog/ib-quit-reasons/" class="text-ibt-red hover:underline">IBを辞めたいと思ったら</a></li>
+          <li><a href="/blog/ib-mental-health-stress-management/" class="text-ibt-red hover:underline">IB生のメンタルヘルス</a></li>
+          <li><a href="/blog/is-ib-worth-it/" class="text-ibt-red hover:underline">IBは本当にやる価値がある？</a></li>
+          <li><a href="/blog/ib-worth-the-effort/" class="text-ibt-red hover:underline">IBを頑張る価値</a></li>
+          <li><a href="/blog/ib-consultation/" class="text-ibt-red hover:underline">IB専門カウンセリング</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end rounded-2xl p-10 md:p-16 text-center">
+        <h2 class="text-2xl md:text-4xl font-black text-white mb-4">ひとりで抱え込まないでください</h2>
+        <p class="text-white/80 mb-8 text-lg max-w-xl mx-auto">
+          IB卒業生の講師が、あなたの話をしっかり聞きます。<br />どんな小さな悩みでも、まずは話してみてください。
+        </p>
+        <a
+          href="/contact/"
+          class="inline-block bg-white text-ibt-red font-bold px-8 py-4 rounded-full hover:bg-ibt-red-light transition-colors text-lg shadow-lg"
+        >
+          まずは無料で相談する
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

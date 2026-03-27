@@ -4,8 +4,8 @@ slug: "tok-high-score-tips"
 date: "2024-11-18"
 description: "TOKで高得点を取るためのコツと勉強法。IB卒業生が実践した具体的なテクニックを紹介。A評価を目指すIB生必見。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
-draft: false
+ogImage: ""
+draft: true
 ---
 
 **TOKで高得点をとるために日々すべきこと＆勉強、おすすめの本があれば教えていただきたいです**

@@ -4,7 +4,7 @@ slug: "studying-ib-abroad-from-japan"
 date: "2025-02-04"
 description: "日本からIBで海外留学する方法。準備・費用・学校選びのポイントをIB経験者がガイドします。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

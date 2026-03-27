@@ -7,6 +7,17 @@ import { iberTypes } from '../../data/iber-types';
   title="IBerタイプ一覧｜IB Learner's Profileの10タイプを徹底解説｜IBT"
   description="IB Learner's Profileの10タイプを徹底解説。Inquirer・Thinker・Caringなど、各タイプの特徴と強みの活かし方をIB専門家庭教師が紹介。"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "IBerタイプ一覧", "item": "https://ib-tutors.net/iber-type/" }
+      ]
+    })} />
+  </Fragment>
+
   <!-- Hero -->
   <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4">

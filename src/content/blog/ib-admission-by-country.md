@@ -4,7 +4,7 @@ slug: "ib-admission-by-country"
 date: "2024-11-11"
 description: "IB生の海外大学受験ガイド。アメリカ・イギリス・オーストラリア等の国別IB入試制度と必要スコアを詳しく解説。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

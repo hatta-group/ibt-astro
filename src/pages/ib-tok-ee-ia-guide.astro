@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="TOK・EE・IAの進め方がわからない方へ｜IB課題論文・内部評価の対策ガイド"
+  description="TOK・EE・IAの進め方がわからないIB生向け完全ガイド。課題論文・内部評価のコツをIB卒業生講師が解説。個別指導で完全サポート。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "TOK・EE・IAの進め方がわからない方へ", "item": "https://ib-tutors.net/ib-tok-ee-ia-guide/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/70 text-sm mb-4">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">&gt;</span>
+        <span class="text-white">TOK・EE・IAの進め方がわからない方へ</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
+        TOK・EE・IAの進め方がわからず、<br class="hidden md:block" />手が止まってしまう
+      </h1>
+      <p class="text-white/80 mt-4 text-lg md:text-xl max-w-2xl leading-relaxed">
+        IB独自の課題は、学校の授業だけでは十分な指導を受けられないことが多いです。<br />IB卒業生として、一緒に進めましょう。
+      </p>
+    </div>
+  </section>
+
+  <!-- TOK・EE・IAとは何か？ -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">CORE COMPONENTS</p>
+        <h2 class="text-2xl md:text-4xl font-black mb-6">TOK・EE・IAとは何か？</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-8">
+          IBディプロマプログラムには、6科目の試験に加えて3つの独自コアコンポーネントが必須です。これらはDPスコアのボーナス点にも関わる重要な要素です。
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 md:p-8">
+            <h3 class="text-lg font-bold mb-2">TOK（Theory of Knowledge：知の理論）</h3>
+            <p class="text-ibt-text-light leading-relaxed">「私たちはどのように知識を得るのか？」を問う哲学的な科目。エッセイ（1600語）と口頭発表（展示）の2つの評価があります。答えのない問いに取り組むため、日本の教育では馴染みのない思考法が求められます。</p>
+          </div>
+          <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 md:p-8">
+            <h3 class="text-lg font-bold mb-2">EE（Extended Essay：課題論文）</h3>
+            <p class="text-ibt-text-light leading-relaxed">自分で選んだテーマについて4000語の学術論文を執筆します。テーマ設定・リサーチクエスチョンの立て方・文献調査・論文構成と、大学レベルの学術スキルが問われます。</p>
+          </div>
+          <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 md:p-8">
+            <h3 class="text-lg font-bold mb-2">IA（Internal Assessment：内部評価）</h3>
+            <p class="text-ibt-text-light leading-relaxed">各科目ごとに実施される内部評価です。科目によって形式は異なりますが（実験レポート・分析レポート・口頭発表など）、評価基準が詳細に定められており、それに沿った作成が必要です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- なぜTOK・EE・IAで詰まるのか？ -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">COMMON CHALLENGES</p>
+        <h2 class="text-2xl md:text-4xl font-black mb-6">なぜTOK・EE・IAで詰まるのか？</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mb-8 rounded-full"></div>
+
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-ibt-red rounded-full mt-2 shrink-0"></span>
+            <span class="text-ibt-text-light leading-relaxed">テーマ・リサーチクエスチョンの設定が難しく、「何をすればいいか」からわからない</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-ibt-red rounded-full mt-2 shrink-0"></span>
+            <span class="text-ibt-text-light leading-relaxed">学校の先生は専門家だが、個別指導に割ける時間が限られている</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-ibt-red rounded-full mt-2 shrink-0"></span>
+            <span class="text-ibt-text-light leading-relaxed">英語での学術的ライティングのルールが日本の英語授業と大きく異なる</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-ibt-red rounded-full mt-2 shrink-0"></span>
+            <span class="text-ibt-text-light leading-relaxed">締め切りまで時間があると後回しにしてしまい、気づいたら間に合わない</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-ibt-red rounded-full mt-2 shrink-0"></span>
+            <span class="text-ibt-text-light leading-relaxed">友達も同じく詰まっていて、相談相手がいない</span>
+          </li>
+        </ul>
+
+        <!-- Testimonial -->
+        <div class="bg-ibt-red-50 border-l-4 border-ibt-red rounded-r-2xl p-6">
+          <p class="text-ibt-text-light leading-relaxed">
+            「EEのテーマを決めるだけで1ヶ月無駄にしてしまった。IBTに相談したら、1回の授業でリサーチクエスチョンが固まって、そこから一気に書けるようになった。」
+          </p>
+          <p class="text-sm text-ibt-text-light/70 font-bold mt-3">--- DP1年生・EE受講生</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IBTのTOK・EE・IAサポート -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">OUR SUPPORT</p>
+        <h2 class="text-2xl md:text-4xl font-black mb-6">IBTのTOK・EE・IAサポート</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-8">
+          IBTの講師は自身がTOK・EE・IAを経験しているため、「どこでつまずきやすいか」「評価者は何を求めているか」を具体的にアドバイスできます。
+        </p>
+
+        <!-- TOK Support -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8 mb-4">
+          <h3 class="text-lg font-bold mb-4">TOKサポート</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-ibt-text-light leading-relaxed">TOKエッセイのKnowledge Question（知識の問い）の立て方から指導</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-ibt-text-light leading-relaxed">Real Life SituationとKnowledge Claimの結びつけ方を解説</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-ibt-text-light leading-relaxed">エッセイの論理構造・反論の取り込み方をフィードバック</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- EE Support -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8 mb-4">
+          <h3 class="text-lg font-bold mb-4">EEサポート</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-ibt-text-light leading-relaxed">科目選び・テーマ設定・リサーチクエスチョン策定を一緒に行う</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-ibt-text-light leading-relaxed">論文の構成（Introduction→Body→Conclusion）を指導</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-ibt-text-light leading-relaxed">引用・参考文献のフォーマット（MLA/APA等）を指導</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-ibt-text-light leading-relaxed">草稿へのフィードバックを何度でも実施</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- IA Support -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8">
+          <h3 class="text-lg font-bold mb-4">IAサポート</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-ibt-text-light leading-relaxed">科目ごとの評価基準（クライテリア）を詳しく解説</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-ibt-text-light leading-relaxed">実験計画・データ分析・考察の書き方を指導</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-ibt-text-light leading-relaxed">提出前の最終チェックにも対応</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 関連記事 -->
+  <section class="py-12 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="bg-ibt-bg rounded-2xl p-8">
+        <h3 class="text-xl font-bold mb-4">もっと詳しく知る</h3>
+        <ul class="space-y-3">
+          <li><a href="/blog/ib-tok-explained/" class="text-ibt-red hover:underline">TOK完全ガイド</a></li>
+          <li><a href="/blog/tok-essay-high-score-techniques/" class="text-ibt-red hover:underline">TOKエッセイ高得点テクニック</a></li>
+          <li><a href="/blog/ib-ee-explained/" class="text-ibt-red hover:underline">EE完全ガイド</a></li>
+          <li><a href="/blog/extended-essay-ee-theme-selection-writing-guide/" class="text-ibt-red hover:underline">EEテーマ選び・書き方</a></li>
+          <li><a href="/blog/ib-ia-explained/" class="text-ibt-red hover:underline">IA完全ガイド</a></li>
+          <li><a href="/blog/ib-ia-success-guide/" class="text-ibt-red hover:underline">IA対策の進め方</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end rounded-2xl p-10 md:p-16 text-center">
+        <h2 class="text-2xl md:text-4xl font-black text-white mb-4">TOK・EE・IAの悩み、一緒に解決しましょう</h2>
+        <p class="text-white/80 mb-8 text-lg max-w-xl mx-auto">
+          締め切りが迫っている方も、まだ始めていない方も大丈夫です。<br />まずは無料体験で現状をお聞かせください。
+        </p>
+        <a
+          href="/contact/"
+          class="inline-block bg-white text-ibt-red font-bold px-8 py-4 rounded-full hover:bg-ibt-red-light transition-colors text-lg shadow-lg"
+        >
+          無料体験を申し込む
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

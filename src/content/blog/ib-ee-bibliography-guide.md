@@ -4,7 +4,7 @@ slug: "ib-ee-bibliography-guide"
 date: "2026-03-20"
 description: "IB EEの参考文献リスト（Bibliography）の正しい書き方。引用スタイル（MLA/APA/Chicago）の違い、よくあるミス、ツールの活用法をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

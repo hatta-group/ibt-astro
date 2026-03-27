@@ -4,7 +4,7 @@ slug: "ib-ia-success-guide"
 date: "2024-05-01"
 description: "IB IAで高得点を取るための完全ガイド。科目別の攻略法・時間管理・よくある失敗とその回避法をIB家庭教師が伝授。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

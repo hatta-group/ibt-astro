@@ -4,7 +4,7 @@ slug: "ib-university-admission-advantages"
 date: "2026-03-20"
 description: "IB生が大学受験で有利になる5つの具体的な理由。IBスコアの評価方法、海外大学の入試でのアドバンテージ、IB経験者の実体験を解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

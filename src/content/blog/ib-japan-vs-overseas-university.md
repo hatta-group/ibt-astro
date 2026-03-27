@@ -4,7 +4,7 @@ slug: "ib-japan-vs-overseas-university"
 date: "2024-10-18"
 description: "IB生は日本と海外どちらの大学がいい？両方のメリット・デメリットをIB卒業生がリアルな経験をもとに比較。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

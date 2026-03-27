@@ -4,7 +4,7 @@ slug: "ib-tok-explained"
 date: "2024-04-18"
 description: "TOK（Theory of Knowledge）とは何か、IB専門家庭教師IBTがわかりやすく解説。TOKの評価方法・エッセイ・プレゼンの対策まで網羅。高得点を狙うIB生必読。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

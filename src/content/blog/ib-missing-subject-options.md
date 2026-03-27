@@ -4,7 +4,7 @@ slug: "ib-missing-subject-options"
 date: "2024-10-23"
 description: "学校でIBの希望科目が開講されていない場合の対処法。代替手段・自習オプション・大学への影響を解説。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

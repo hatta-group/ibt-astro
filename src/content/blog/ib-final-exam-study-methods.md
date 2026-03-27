@@ -4,7 +4,7 @@ slug: "ib-final-exam-study-methods"
 date: "2024-10-13"
 description: "IB Final Examの効果的な勉強法。科目別の攻略法と本番で実力を発揮するためのテクニックを紹介。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

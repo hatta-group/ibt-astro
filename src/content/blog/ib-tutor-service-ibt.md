@@ -4,7 +4,7 @@ slug: "ib-tutor-service-ibt"
 date: "2024-04-16"
 description: "IB専門家庭教師IBTのサービス紹介。全講師IB卒業生・全科目対応・オンライン＆対面OK。入会金無料・60分無料体験。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

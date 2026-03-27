@@ -2,7 +2,7 @@
 title: "愛知国際学院のIB（DP/MYP/PYP）｜愛知県のIB認定校"
 slug: "enishi-nagoya"
 description: "IB校一覧 &nbsp;›&nbsp;中部 愛知国際学院 Enishi International School インター 愛知県 名古屋市 DP MYP PYP 基本情報 学校名 愛知国際学院 英語名 Enishi I [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,7 +4,7 @@ slug: "ib-subject-selection-guide-tutor-advice"
 date: "2026-03-26"
 description: "IB科目選択で後悔しないためのリアルなポイントを、IB卒業生の家庭教師が解説。進路への影響、学習負荷、コアコンポーネントとの相性を考慮した選び方のコツ。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

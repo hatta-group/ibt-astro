@@ -4,8 +4,8 @@ slug: "ib-tok-success-guide"
 date: "2024-04-30"
 description: "TOK対策の完全ガイド。エッセイ・プレゼンの高得点戦略、時間配分、よくある失敗パターンと回避法をIB家庭教師が伝授。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
-draft: false
+ogImage: ""
+draft: true
 ---
 
 目次

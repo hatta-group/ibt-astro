@@ -4,7 +4,7 @@ slug: "ib-how-to-get-7"
 date: "2026-03-20"
 description: "IBで7点（最高評価）を取るための科目別戦略。過去問の活用法、Mark Schemeの読み方、時間配分のコツをIB45点満点講師が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

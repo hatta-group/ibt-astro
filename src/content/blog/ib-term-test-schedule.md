@@ -4,7 +4,7 @@ slug: "ib-term-test-schedule"
 date: "2024-09-26"
 description: "IBの定期テストスケジュール管理と対策法。効率的な復習計画と高得点を狙う勉強法をIB家庭教師が紹介。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

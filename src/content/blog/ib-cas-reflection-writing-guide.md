@@ -4,7 +4,7 @@ slug: "ib-cas-reflection-writing-guide"
 date: "2026-03-20"
 description: "IB CAS Reflectionの書き方を具体例付きで解説。7つのLearning Outcomesに沿った振り返りの方法とテンプレートをIB卒業生が紹介。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

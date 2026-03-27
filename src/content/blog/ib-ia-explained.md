@@ -4,7 +4,7 @@ slug: "ib-ia-explained"
 date: "2024-04-19"
 description: "IB IA（Internal Assessment）とは？各科目の評価方法・配点・進め方をIB卒業生が解説。IA対策の第一歩に。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

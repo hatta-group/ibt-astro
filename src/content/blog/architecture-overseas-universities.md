@@ -4,7 +4,7 @@ slug: "architecture-overseas-universities"
 date: "2024-11-01"
 description: "IBから建築学部のある海外大学を目指す方法。必要な科目選択・ポートフォリオ・おすすめ大学をIB経験者が紹介。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

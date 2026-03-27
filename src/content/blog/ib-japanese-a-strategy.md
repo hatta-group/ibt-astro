@@ -4,7 +4,7 @@ slug: "ib-japanese-a-strategy"
 date: "2024-05-03"
 description: "IB Japanese A（日本語A）の勉強法と試験対策。文学分析・IO・ペーパーの書き方をIB卒業生講師が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

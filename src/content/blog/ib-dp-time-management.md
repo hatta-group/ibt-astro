@@ -4,7 +4,7 @@ slug: "ib-dp-time-management"
 date: "2026-03-20"
 description: "IB DP生のための時間管理術。授業・IA・EE・TOK・CAS・試験準備を両立するスケジュール管理の方法をIB卒業生が解説。テンプレート付き。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

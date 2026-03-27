@@ -2,7 +2,7 @@
 title: "札幌日本大学高等学校のIB対策・家庭教師｜IBT"
 slug: "sapporo-nihon-university-2"
 description: "札幌日本大学高等学校のIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

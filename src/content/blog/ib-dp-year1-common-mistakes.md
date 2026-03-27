@@ -4,7 +4,7 @@ slug: "ib-dp-year1-common-mistakes"
 date: "2026-03-22"
 description: "IB DP1年目で失敗しやすいパターンを家庭教師が解説。TOK・EE・CASの課題管理、科目数増加への対応など、つまずきやすいポイントと対策を経験者視点で紹介します。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

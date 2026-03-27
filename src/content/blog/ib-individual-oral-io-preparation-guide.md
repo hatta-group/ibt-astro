@@ -4,7 +4,7 @@ slug: "ib-individual-oral-io-preparation-guide"
 date: "2026-03-25"
 description: "IBの口頭試験（IO）で「話せない」を克服する方法を、IB卒業生講師が実体験から解説。本番攻略法や効果的な準備方法を紹介します。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

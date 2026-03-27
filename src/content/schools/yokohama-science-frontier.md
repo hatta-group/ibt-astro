@@ -2,7 +2,7 @@
 title: "横浜市立横浜サイエンスフロンティア高等学校のIB（DP）｜神奈川県のIB認定校"
 slug: "yokohama-science-frontier"
 description: "IB校一覧 &nbsp;›&nbsp;関東 横浜市立横浜サイエンスフロンティア高等学校 Yokohama Science Frontier High School 公立 神奈川県 横浜市 DP 基本情報 学校名 横浜市立 [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

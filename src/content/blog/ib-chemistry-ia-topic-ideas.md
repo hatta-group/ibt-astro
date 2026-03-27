@@ -4,7 +4,7 @@ slug: "ib-chemistry-ia-topic-ideas"
 date: "2026-03-20"
 description: "IB Chemistry IAのテーマ例30選。反応速度・酸塩基・有機化学など分野別に紹介。SL/HL対応。高得点を取りやすいテーマの選び方をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

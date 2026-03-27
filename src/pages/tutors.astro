@@ -7,6 +7,29 @@ import { tutors } from '../data/tutors';
   title="講師紹介｜IB専門家庭教師IBT"
   description="IBT講師は全員IB卒業生。TOK・EE・IA対策の経験を活かした専門指導。日英バイリンガル対応。まず無料体験でご確認ください。"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "講師紹介", "item": "https://ib-tutors.net/tutors/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify(
+      tutors.map(tutor => ({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": tutor.fullName || tutor.name,
+        ...(tutor.image ? { "image": `https://ib-tutors.net${tutor.image}` } : {}),
+        "jobTitle": "IB専門家庭教師",
+        "affiliation": {"@type": "Organization", "name": "IBT（IB Tutors）", "url": "https://ib-tutors.net"},
+        "knowsAbout": tutor.subjects,
+        "alumniOf": tutor.university
+      }))
+    )} />
+  </Fragment>
+
   <!-- Page Hero -->
   <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4">
@@ -34,7 +57,7 @@ import { tutors } from '../data/tutors';
             <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
               <div class="flex items-start gap-5">
                 {tutor.image ? (
-                  <img src={tutor.image} alt={`${tutor.name}講師`} class="w-16 h-16 rounded-full object-cover shrink-0" loading="lazy" />
+                  <img src={tutor.image} alt={`${tutor.name}講師`} class="w-16 h-16 rounded-full object-cover shrink-0" loading="lazy" width="64" height="64" />
                 ) : (
                   <div class="w-16 h-16 bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end rounded-full flex items-center justify-center shrink-0">
                     <span class="text-white font-bold text-lg">{initials}</span>

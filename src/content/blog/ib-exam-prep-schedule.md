@@ -4,7 +4,7 @@ slug: "ib-exam-prep-schedule"
 date: "2024-10-31"
 description: "IB試験直前の効率的な勉強スケジュール。残り時間を最大限活用する科目別対策をIB卒業生が伝授。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

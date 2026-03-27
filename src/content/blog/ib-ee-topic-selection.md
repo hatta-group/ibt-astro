@@ -4,8 +4,8 @@ slug: "ib-ee-topic-selection"
 date: "2024-10-08"
 description: "IB Extended Essayのテーマ選びで悩んでいませんか？科目別のテーマ例と選び方のコツをIB卒業生が具体的にアドバイス。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
-draft: false
+ogImage: ""
+draft: true
 ---
 
 **EEの具体的なトピックの決め方は？**

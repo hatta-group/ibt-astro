@@ -6,6 +6,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="授業内容・料金｜IB専門家庭教師IBT"
   description="IB専門家庭教師IBTの授業内容と料金。入会金0円・都度払い。IB全科目マンツーマン指導、オンライン＆対面対応。60分無料体験受付中。"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "授業内容・料金", "item": "https://ib-tutors.net/lessons-pricing/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "IB DP 個別指導コース",
+        "description": "IB DP全科目対応のマンツーマン個別指導。TOK・EE・IA対策も含む。",
+        "provider": {"@type": "Organization", "name": "IBT（IB Tutors）", "url": "https://ib-tutors.net"},
+        "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online"}
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "IB MYP 個別指導コース",
+        "description": "IB MYP全科目対応のマンツーマン個別指導。",
+        "provider": {"@type": "Organization", "name": "IBT（IB Tutors）", "url": "https://ib-tutors.net"},
+        "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online"}
+      }
+    ])} />
+  </Fragment>
+
   <!-- Page Hero -->
   <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4">

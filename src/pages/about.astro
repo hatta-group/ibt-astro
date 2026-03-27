@@ -6,6 +6,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="IBTについて｜IB卒業生だけのIB専門家庭教師サービス"
   description="IB卒業生のみで構成されたマンツーマン指導サービス。PYP・MYP・DP全科目のマンツーマン指導をオンライン＆対面で提供しています。"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "IBTについて", "item": "https://ib-tutors.net/about/" }
+      ]
+    })} />
+  </Fragment>
+
   <!-- Page Hero -->
   <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4">

@@ -2,7 +2,7 @@
 title: "静岡県立清水南高等学校のIB（DP）｜静岡県のIB認定校"
 slug: "shimizu-minami"
 description: "IB校一覧 &nbsp;›&nbsp;中部 静岡県立清水南高等学校 Shizuoka Prefectural Shimizu Minami High School 公立 静岡県 静岡市 DP 基本情報 学校名 静岡県立清 [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

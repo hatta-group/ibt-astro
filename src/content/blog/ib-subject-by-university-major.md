@@ -4,7 +4,7 @@ slug: "ib-subject-by-university-major"
 date: "2024-10-22"
 description: "大学の専攻別おすすめIB科目選択ガイド。医学・工学・経済・法学など志望分野に必要なIB科目をIB家庭教師が解説。"
 category: "ib-schools"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

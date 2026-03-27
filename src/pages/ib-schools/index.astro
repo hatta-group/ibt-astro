@@ -10,6 +10,17 @@ const schools = allSchools.sort((a, b) => a.data.title.localeCompare(b.data.titl
   title="IB認定校一覧｜日本と海外のIBスクール｜IBT"
   description="日本国内・海外のIB（国際バカロレア）認定校を一覧で紹介。各校の特徴、プログラム、学費などの詳細情報をIB専門家庭教師が解説。"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "IB認定校一覧", "item": "https://ib-tutors.net/ib-schools/" }
+      ]
+    })} />
+  </Fragment>
+
   <!-- Hero -->
   <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4">
@@ -51,20 +62,24 @@ const schools = allSchools.sort((a, b) => a.data.title.localeCompare(b.data.titl
       ) : (
         <div id="school-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {schools.map((school) => (
-            <a
-              href={`/ib-schools/${school.data.slug}/`}
-              class="school-card group bg-white rounded-2xl shadow-sm border border-ibt-border p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            <article
+              class="school-card bg-white rounded-2xl shadow-sm border border-ibt-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               data-name={school.data.title.toLowerCase()}
             >
-              <h2 class="text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-2 line-clamp-2">
-                {school.data.title}
-              </h2>
-              {school.data.description && (
-                <p class="text-ibt-text-light text-sm leading-relaxed line-clamp-3">
-                  {school.data.description}
-                </p>
-              )}
-            </a>
+              <a
+                href={`/ib-schools/${school.data.slug}/`}
+                class="group block p-6"
+              >
+                <h2 class="text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-2 line-clamp-2">
+                  {school.data.title}
+                </h2>
+                {school.data.description && (
+                  <p class="text-ibt-text-light text-sm leading-relaxed line-clamp-3">
+                    {school.data.description}
+                  </p>
+                )}
+              </a>
+            </article>
           ))}
         </div>
       )}

@@ -4,7 +4,7 @@ slug: "ib-past-papers-how-to-use"
 date: "2026-03-20"
 description: "IB DPの過去問（Past Papers）を最大限活用する方法。入手方法、解く順番、Mark Schemeの読み方、Examiner Reportの活用法をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,7 +4,7 @@ slug: "tok-presentation-structure-guide"
 date: "2026-03-21"
 description: "IBのTOKプレゼンテーションで点数が伸びない理由は内容ではなく構成にあります。採点基準を理解し、知識のプロセスを効果的に示す構成の作り方を、IB卒業生が解説します。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

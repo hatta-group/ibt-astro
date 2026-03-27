@@ -4,7 +4,7 @@ slug: "ibdp-exam-recovery"
 date: "2024-11-09"
 description: "IBの試験で失敗しても諦めない。リカバリー方法と巻き返し戦略をIB卒業生が具体的にアドバイス。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

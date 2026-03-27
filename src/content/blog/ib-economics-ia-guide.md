@@ -4,7 +4,7 @@ slug: "ib-economics-ia-guide"
 date: "2026-03-20"
 description: "IB Economics IAの書き方を完全ガイド。テーマ選び・記事の見つけ方・構成・図表の使い方・高得点のコツをIB卒業生が解説。800語で最大限の評価を。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

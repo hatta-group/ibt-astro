@@ -4,7 +4,7 @@ slug: "ib-tok-presentation-guide"
 date: "2026-03-20"
 description: "IB TOKプレゼンテーションの対策ガイド。テーマ選び、Knowledge Questionの立て方、構成、プレゼンのコツをIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

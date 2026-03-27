@@ -4,7 +4,7 @@ slug: "ib-tutor-sns-recruitment"
 date: "2024-10-14"
 description: "IB家庭教師IBTの講師採用情報。IB卒業生で、IBの経験を活かして後輩を支えたい方を募集しています。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,7 +4,7 @@ slug: "ib-dp-paper1-text-analysis"
 date: "2026-03-20"
 description: "IB DP Paper 1（初見テキスト分析）の対策法。テキストの読み方、分析の手順、エッセイの構成、Literary Devicesの使い方をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

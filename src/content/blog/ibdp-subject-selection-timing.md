@@ -4,7 +4,7 @@ slug: "ibdp-subject-selection-timing"
 date: "2024-10-25"
 description: "IBDPの科目選択はいつまでに？選択時期・変更の可否・後悔しない選び方をIB経験者がアドバイス。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

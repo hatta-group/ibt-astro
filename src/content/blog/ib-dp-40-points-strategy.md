@@ -4,7 +4,7 @@ slug: "ib-dp-40-points-strategy"
 date: "2026-03-20"
 description: "IB DPで40点以上を取るための戦略。科目別の目標点設定、TOK/EEのボーナス3点確保、IAでの得点最大化の方法をIB45点満点講師が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,7 +4,7 @@ slug: "ib-english-b-strategy"
 date: "2024-05-04"
 description: "IB English B（英語B）の勉強法と試験対策。リーディング・ライティング・リスニングの攻略法をIB家庭教師が伝授。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

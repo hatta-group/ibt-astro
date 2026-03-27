@@ -2,7 +2,7 @@
 title: "マリスト国際学校のIB（DP/MYP）｜兵庫県のIB認定校"
 slug: "marist-brothers"
 description: "IB校一覧 &nbsp;›&nbsp;関西 マリスト国際学校 Marist Brothers International School インター 兵庫県 神戸市 DP MYP 基本情報 学校名 マリスト国際学校 英語名 [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

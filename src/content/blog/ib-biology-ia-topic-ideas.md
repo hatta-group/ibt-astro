@@ -4,7 +4,7 @@ slug: "ib-biology-ia-topic-ideas"
 date: "2026-03-20"
 description: "IB Biology IAのテーマ例30選。高得点を取りやすいトピックの特徴と選び方のコツをIB卒業生が解説。酵素・植物・生態系など分野別に紹介。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,8 +4,8 @@ slug: "tok-essay-5-tips-ib-tutor"
 date: "2026-03-15"
 description: "TOKエッセイの書き方5つのポイント。IB家庭教師が教える構成・論証・引用のテクニック。高得点エッセイの実例付き。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
-draft: false
+ogImage: ""
+draft: true
 ---
 
 IBのTOK（Theory of Knowledge）エッセイ、正直「何を書けばいいのか全然わからない」という状態になっていませんか？

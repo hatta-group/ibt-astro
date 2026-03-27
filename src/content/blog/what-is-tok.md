@@ -4,8 +4,8 @@ slug: "what-is-tok"
 date: "2024-11-14"
 description: "IBのTOK（Theory of Knowledge）とは？仕組み・評価方法・学び方をIB卒業生が解説。TOKで高得点を取るための基礎知識。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
-draft: false
+ogImage: ""
+draft: true
 ---
 
 IBから出された複数のテーマから一つ選び、自分の使用したい科目を使って論理的に証明していきます。ib tok questions 2024と調べると質問が出てくるのでみてみてください！

@@ -4,7 +4,7 @@ slug: "ib-tutoring-necessity-timing-selection"
 date: "2026-03-26"
 description: "IB家庭教師は本当に必要？卒業生講師がリアルに解説。つけるべきタイミング、後悔しない選び方、自力で大丈夫なケースまで。正しい情報で判断しましょう。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

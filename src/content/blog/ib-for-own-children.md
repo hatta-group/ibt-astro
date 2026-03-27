@@ -4,7 +4,7 @@ slug: "ib-for-own-children"
 date: "2024-10-11"
 description: "自分の子供にIBを受けさせるべき？IB経験者が親の視点でメリット・デメリット・判断基準を本音で解説。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

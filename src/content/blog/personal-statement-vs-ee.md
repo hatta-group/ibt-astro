@@ -4,7 +4,7 @@ slug: "personal-statement-vs-ee"
 date: "2024-11-19"
 description: "Personal StatementとExtended Essayの違いと使い分け。UCAS出願を見据えたEE活用法をIB家庭教師が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

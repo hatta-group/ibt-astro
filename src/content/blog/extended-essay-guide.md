@@ -4,8 +4,8 @@ slug: "extended-essay-guide"
 date: "2024-11-15"
 description: "Extended Essayの書き方完全ガイド。テーマ選び・構成・リサーチ方法をIB家庭教師が解説。初めてのEEでも安心。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
-draft: false
+ogImage: ""
+draft: true
 ---
 
 **EEについても教えてください！**

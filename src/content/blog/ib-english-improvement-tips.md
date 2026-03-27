@@ -4,7 +4,7 @@ slug: "ib-english-improvement-tips"
 date: "2026-03-20"
 description: "IBの授業についていくための英語力強化法。リーディング速度の上げ方、アカデミックライティング、語彙力強化をIB卒業生が実践的に解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

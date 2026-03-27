@@ -4,7 +4,7 @@ slug: "cas-related-to-university-major"
 date: "2024-11-25"
 description: "CAS活動を大学の専攻に関連づける方法。志望分野に合わせたCAS計画の立て方をIB家庭教師がアドバイス。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,7 +4,7 @@ slug: "ib-data-booklet-guide"
 date: "2026-03-20"
 description: "IB DP理科・数学のData Booklet（公式集）の効果的な使い方。試験中に素早く公式を見つける方法、暗記すべき公式をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

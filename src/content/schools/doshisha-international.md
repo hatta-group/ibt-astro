@@ -2,7 +2,7 @@
 title: "同志社国際中学校・高等学校のIB（DP）｜京都府のIB認定校"
 slug: "doshisha-international"
 description: "IB校一覧 &nbsp;›&nbsp;関西 同志社国際中学校・高等学校 Doshisha International Junior &#038; Senior High School 私立 京都府 木津川市 DP 基本情 [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

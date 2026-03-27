@@ -4,7 +4,7 @@ slug: "when-to-start-cas"
 date: "2024-12-09"
 description: "IBのCAS（Creativity, Activity, Service）はいつから始めるべき？時期別のアクションプランをIB経験者が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

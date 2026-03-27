@@ -4,7 +4,7 @@ slug: "ib-english-a-literature-strategy"
 date: "2026-03-20"
 description: "IB English A Literatureの攻略法。Paper 1（テキスト分析）、Paper 2（比較エッセイ）、IO（Individual Oral）の対策をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

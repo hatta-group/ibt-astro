@@ -4,7 +4,7 @@ slug: "ib-physics-ia-topic-ideas"
 date: "2026-03-20"
 description: "IB Physics IAのテーマ例30選。力学・電磁気・熱・波動など分野別に紹介。自宅でもできる実験アイデアとテーマ選びのコツをIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

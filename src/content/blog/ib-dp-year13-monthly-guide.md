@@ -4,7 +4,7 @@ slug: "ib-dp-year13-monthly-guide"
 date: "2026-03-20"
 description: "IB DP Year 13の月別やるべきことリスト。EE提出、IA締め切り、大学出願、Mock、最終試験までの完全スケジュールをIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

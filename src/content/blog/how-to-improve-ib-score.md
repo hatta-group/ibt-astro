@@ -4,7 +4,7 @@ slug: "how-to-improve-ib-score"
 date: "2025-01-02"
 description: "IBスコアを効率的に上げる方法。科目別の得点アップ戦略と時間管理をIB卒業生が実践的に解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

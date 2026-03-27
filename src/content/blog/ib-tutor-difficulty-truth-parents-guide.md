@@ -4,8 +4,8 @@ slug: "ib-tutor-difficulty-truth-parents-guide"
 date: "2026-03-16"
 description: "IB家庭教師の選び方と注意点。普通の家庭教師とIB専門家庭教師の違い、保護者が知るべきポイントを解説。"
 category: "ib-stories"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
-draft: false
+ogImage: ""
+draft: true
 ---
 
 IBに入学が決まったとき、「おめでとう！」と言いながらも、心のどこかでこう思った保護者の方は多いのではないでしょうか。

@@ -4,7 +4,7 @@ slug: "ib-study-apps-tools"
 date: "2026-03-20"
 description: "IB生におすすめの勉強アプリ・ツール10選。過去問、フラッシュカード、ノート管理、タイマーなど、IB卒業生が実際に使って効果があったものを紹介。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -4,7 +4,7 @@ slug: "ib-parenting-tips"
 date: "2024-10-30"
 description: "IB生を持つ保護者のためのサポートガイド。家庭でできること・やってはいけないこと・親子関係の保ち方をアドバイス。"
 category: "ib-stories"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

@@ -2,7 +2,7 @@
 title: "大阪インターナショナルスクールのIB（DP/MYP/PYP）｜大阪府のIB認定校"
 slug: "osaka-international-school"
 description: "IB校一覧 &nbsp;›&nbsp;関西 大阪インターナショナルスクール Osaka International School インター 大阪府 箕面市 DP MYP PYP 基本情報 学校名 大阪インターナショナルス [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

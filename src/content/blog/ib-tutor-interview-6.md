@@ -4,7 +4,7 @@ slug: "ib-tutor-interview-6"
 date: "2024-04-22"
 description: "IBT講師インタビュー第6弾。IB卒業生講師のIB体験と、現在の指導で大切にしていることを紹介。"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

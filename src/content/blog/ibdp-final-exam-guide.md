@@ -4,7 +4,7 @@ slug: "ibdp-final-exam-guide"
 date: "2024-10-19"
 description: "IBDP最終試験（Final Exam）の完全対策ガイド。試験形式・時間配分・高得点のコツをIB家庭教師が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

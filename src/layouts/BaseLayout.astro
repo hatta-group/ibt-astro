@@ -47,6 +47,9 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullOgImage} />
 
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -62,10 +65,23 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
       "name": "IBT（IB Tutors）",
       "url": siteUrl,
       "description": "IB国際バカロレア専門の家庭教師サービス。IB卒業生によるマンツーマン指導。",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ib-tutors.net/images/logo.png",
+        "width": 512,
+        "height": 512
+      },
       "sameAs": [
         "https://x.com/ib_tutors_net",
         "https://www.instagram.com/ib_tutors/"
       ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "IBT（IB Tutors）",
+      "url": "https://ib-tutors.net",
+      "description": "IB（国際バカロレア）専門の家庭教師サービス"
     })} />
 
     <slot name="head" />

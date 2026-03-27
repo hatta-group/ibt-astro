@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="ページが見つかりません｜IBT" noindex={true}>
+  <section class="py-20 md:py-28">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <p class="text-6xl font-black text-ibt-red mb-4">404</p>
+      <h1 class="text-3xl md:text-4xl font-black text-ibt-text mb-6">ページが見つかりません</h1>
+      <p class="text-lg text-ibt-text-light mb-8">お探しのページは移動または削除された可能性があります。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="inline-block bg-ibt-red text-white font-bold px-8 py-4 rounded-full hover:bg-ibt-red-dark transition-colors">トップページへ戻る</a>
+        <a href="/blog/" class="inline-block border-2 border-ibt-red text-ibt-red font-bold px-8 py-4 rounded-full hover:bg-ibt-red hover:text-white transition-colors">ブログを見る</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

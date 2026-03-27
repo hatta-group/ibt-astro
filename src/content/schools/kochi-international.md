@@ -2,7 +2,7 @@
 title: "高知国際中学校・高等学校のIB（DP）｜高知県のIB認定校"
 slug: "kochi-international"
 description: "IB校一覧 &nbsp;›&nbsp;中国・四国 高知国際中学校・高等学校 Kochi International Junior &#038; Senior High School 公立 高知県 高知市 DP 基本情報 [&hellip;]"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

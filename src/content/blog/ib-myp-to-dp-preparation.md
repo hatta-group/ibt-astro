@@ -4,7 +4,7 @@ slug: "ib-myp-to-dp-preparation"
 date: "2026-03-20"
 description: "IB MYPからDPへの移行準備ガイド。DP開始前にやっておくべき5つのこと。科目選択、英語力、学習習慣、TOK/EE/CASの予備知識をIB卒業生が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

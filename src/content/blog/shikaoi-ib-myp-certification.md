@@ -4,7 +4,7 @@ slug: "shikaoi-ib-myp-certification"
 date: "2026-03-22"
 description: "北海道鹿追町の公立中学校2校がIB MYP認定 — 自治体内の全校認定は全国初 2026年3月22日 | IBニュース 2025年12月、北海道十勝地方の鹿追町（しかおいちょう）にある鹿追中学校と瓜幕中学校（うりまくちゅ [&hellip;]"
 category: "ib-basics"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 

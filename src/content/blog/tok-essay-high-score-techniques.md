@@ -4,7 +4,7 @@ slug: "tok-essay-high-score-techniques"
 date: "2026-03-16"
 description: "TOKエッセイで高得点を取る実践テクニック。IB経験者が教える論理構成、知識の問い、AOKの活用法を具体例とともに解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 
@@ -129,3 +129,13 @@ TOK・EE（Extended Essay）・IAなど、IB特有の課題にも経験者だか
 👉 [無料体験を申し込む](https://ib-tutors.net/contact/)
 
 📱 Xでも毎日IB情報を発信中 → [@IBTutors_ib](https://x.com/IBTutors_ib)
+
+---
+
+### 関連記事
+
+- [TOK（知の理論）とは？](/blog/ib-tok-explained/)
+- [IBで45点満点を取った講師の勉強法](/blog/ib-tok-extended-essay-study-method-45-points/)
+- [IA（Internal Assessment）とは？](/blog/ib-ia-explained/)
+- [IA対策の進め方](/blog/ib-ia-success-guide/)
+- [IBで7点を取る方法](/blog/ib-how-to-get-7/)

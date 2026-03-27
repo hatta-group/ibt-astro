@@ -4,7 +4,7 @@ slug: "ib-mathematics-hl-sl-study-strategy"
 date: "2026-03-19"
 description: "IB数学のHL・SLの違いと効果的な勉強法。単元別の攻略ポイント、過去問活用法、スコアアップの戦略をIB家庭教師が解説。"
 category: "dp-tips"
-ogImage: "https://ib-tutors.net/wp-content/uploads/2026/01/スクリーンショット-2026-01-06-17.02.32-1024x626.png"
+ogImage: ""
 draft: false
 ---
 
