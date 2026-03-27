@@ -39,12 +39,5 @@ export default defineConfig({
     '/ib-tutor-difficulty-truth-parents-guide/': '/ib-tutor-difficulty-reality-parents-guide/',
   },
 
-  integrations: [sitemap({
-    serialize(item) {
-      if (item.url.includes('/blog/')) {
-        item.lastmod = new Date().toISOString();
-      }
-      return item;
-    }
-  })],
+  integrations: [sitemap()],
 });

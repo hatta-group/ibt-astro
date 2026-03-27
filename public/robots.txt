@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /*?b=
 
 Sitemap: https://ib-tutors.net/sitemap-index.xml

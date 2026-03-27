@@ -9,6 +9,7 @@ interface Props {
   ogImage?: string;
   canonical?: string;
   noindex?: boolean;
+  ogType?: 'website' | 'article';
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   ogImage = '/images/og-default.jpg',
   canonical,
   noindex = false,
+  ogType = 'website',
 } = Astro.props;
 
 const siteUrl = 'https://ib-tutors.net';
@@ -39,7 +41,7 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
     <meta property="og:description" content={description} />
     <meta property="og:image" content={fullOgImage} />
     <meta property="og:url" content={fullCanonical} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="IBT｜IB専門家庭教師" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />

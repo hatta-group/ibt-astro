@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 import { tutors } from '../data/tutors';
 import { faqItems } from '../data/faq';
 
@@ -59,23 +60,10 @@ const trustPoints = [
   '海外在住者も受講可能',
 ];
 
-const blogPosts = [
-  {
-    title: 'IB DP数学 AA vs AI — どちらを選ぶべき？',
-    excerpt: 'IB DP数学のAnalysis and Approaches（AA）とApplications and Interpretation（AI）の違いを徹底解説。進路別の選び方もご紹介。',
-    date: '2026.03.20',
-  },
-  {
-    title: 'TOKエッセイで高得点を取るための5つのコツ',
-    excerpt: 'TOK（知の理論）エッセイは多くのIB生が苦戦するポイント。IB卒業生講師が教える具体的な攻略法をお伝えします。',
-    date: '2026.03.15',
-  },
-  {
-    title: 'IB生の保護者が知っておくべきこと',
-    excerpt: 'IBプログラムの仕組み、評価方法、家庭でのサポート方法まで。IB経験のない保護者の方向けに分かりやすく解説します。',
-    date: '2026.03.10',
-  },
-];
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const latestPosts = allPosts
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
 ---
 
 <BaseLayout
@@ -257,23 +245,27 @@ const blogPosts = [
         <h2 class="text-3xl md:text-4xl font-black text-ibt-text">ブログ</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        {blogPosts.map((post) => (
-          <article class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group hover:-translate-y-1 border border-ibt-border h-full flex flex-col">
-            <div class="h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div class="p-6 flex flex-col flex-1">
-              <time class="text-xs text-ibt-text-light">{post.date}</time>
-              <h3 class="mt-3 text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors duration-200 line-clamp-2">
-                {post.title}
-              </h3>
-              <p class="mt-3 text-sm text-ibt-text-light leading-relaxed line-clamp-3 flex-1">{post.excerpt}</p>
-              <span class="inline-flex items-center text-ibt-red font-medium text-sm mt-4 group-hover:gap-1.5 gap-1 transition-all duration-200">
-                続きを読む
-                <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </span>
-            </div>
-          </article>
+        {latestPosts.map((post) => (
+          <a href={`/blog/${post.data.slug}/`} class="block">
+            <article class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group hover:-translate-y-1 border border-ibt-border h-full flex flex-col">
+              <div class="h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="p-6 flex flex-col flex-1">
+                <time class="text-xs text-ibt-text-light">{post.data.date}</time>
+                <h3 class="mt-3 text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors duration-200 line-clamp-2">
+                  {post.data.title}
+                </h3>
+                {post.data.description && (
+                  <p class="mt-3 text-sm text-ibt-text-light leading-relaxed line-clamp-3 flex-1">{post.data.description}</p>
+                )}
+                <span class="inline-flex items-center text-ibt-red font-medium text-sm mt-4 group-hover:gap-1.5 gap-1 transition-all duration-200">
+                  続きを読む
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </article>
+          </a>
         ))}
       </div>
       <div class="text-center mt-10">
