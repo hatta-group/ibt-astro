@@ -37,7 +37,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Left: Contact Form -->
         <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
           <h2 class="text-xl font-bold text-ibt-text mb-6">お問い合わせフォーム</h2>
-          <form action="#" method="POST" class="space-y-5">
+          <form action="https://formsubmit.co/info@ib-tutors.net" method="POST" class="space-y-5">
+            <input type="hidden" name="_subject" value="【IBT】お問い合わせがありました" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="hidden" name="_next" value="https://ib-tutors.net/contact/?sent=true" />
+            <input type="text" name="_honey" style="display:none" />
             <!-- お名前 -->
             <div>
               <label for="name" class="block text-sm font-medium text-ibt-text mb-1">
@@ -132,10 +136,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 class="w-full border border-ibt-border rounded-lg px-4 py-3 text-ibt-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors resize-vertical"
               ></textarea>
             </div>
-
-            <p class="text-xs text-ibt-text-light">
-              ※ 現在フォームの送信機能は準備中です。お急ぎの方はメールにて直接お問い合わせください。
-            </p>
 
             <!-- 送信ボタン -->
             <button
