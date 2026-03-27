@@ -4,10 +4,12 @@ slug: "linden-hall"
 description: "IB校一覧 &nbsp;›&nbsp;九州・沖縄 リンデン・ホール・スクール Linden Hall School 私立 福岡県 那珂川市 DP 基本情報 学校名 リンデン・ホール・スクール 英語名 Linden Hal [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "福岡県"
+region: "九州・沖縄"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 九州・沖縄
     
 
     

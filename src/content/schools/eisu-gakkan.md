@@ -4,10 +4,12 @@ slug: "eisu-gakkan"
 description: "IB校一覧 &nbsp;›&nbsp;中国・四国 英数学館中学校・高等学校 Eisugakkan Junior &#038; Senior High School 私立 広島県 福山市 DP 基本情報 学校名 英数学館中 [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "岡山県"
+region: "中国・四国"
+programs: ["MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 中国・四国
     
 
     

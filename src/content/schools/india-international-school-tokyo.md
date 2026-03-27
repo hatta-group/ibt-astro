@@ -4,10 +4,12 @@ slug: "india-international-school-tokyo"
 description: "IB校一覧 &nbsp;›&nbsp;関東 インディア・インターナショナル・スクール India International School in Japan インター 東京都 DP 基本情報 学校名 インディア・インター [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "東京都"
+region: "関東"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関東
     
 
     

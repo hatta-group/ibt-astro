@@ -4,10 +4,12 @@ slug: "marist-brothers"
 description: "IB校一覧 &nbsp;›&nbsp;関西 マリスト国際学校 Marist Brothers International School インター 兵庫県 神戸市 DP MYP 基本情報 学校名 マリスト国際学校 英語名 [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "京都府"
+region: "関西"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関西
     
 
     

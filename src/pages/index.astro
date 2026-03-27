@@ -26,7 +26,7 @@ const features = [
   },
   {
     title: '入会金0円・都度払い',
-    description: '長期契約なし、違約金なし。60分の無料体験から気軽にスタートできます。必要な時に必要な分だけ受講可能です。',
+    description: '長期契約なし、違約金なし。無料体験から気軽にスタートできます。必要な時に必要な分だけ受講可能です。',
     icon: '💰',
   },
 ];
@@ -48,12 +48,12 @@ const programs = [
     name: 'DP',
     fullName: 'Diploma Programme',
     grades: '16〜19歳',
-    description: 'IB最終課程。6科目+TOK・EE・CASの完全対応。45点満点講師の指導で、高得点取得と志望大学合格を目指します。',
+    description: 'IB最終課程。6科目+TOK・EE・CASの完全対応。IB卒業生講師の指導で、高得点取得と志望大学合格を目指します。',
   },
 ];
 
 const trustPoints = [
-  '45点満点講師在籍',
+  'TOK・EE・IA完全対応',
   '日英バイリンガル対応',
   'オンライン・対面両対応',
   '海外在住者も受講可能',
@@ -67,7 +67,7 @@ const blogPosts = [
   },
   {
     title: 'TOKエッセイで高得点を取るための5つのコツ',
-    excerpt: 'TOK（知の理論）エッセイは多くのIB生が苦戦するポイント。IB45点満点講師が教える具体的な攻略法をお伝えします。',
+    excerpt: 'TOK（知の理論）エッセイは多くのIB生が苦戦するポイント。IB卒業生講師が教える具体的な攻略法をお伝えします。',
     date: '2026.03.15',
   },
   {
@@ -188,6 +188,7 @@ const blogPosts = [
       <div class="text-center mb-12 md:mb-16">
         <p class="section-label mb-3">Tutors</p>
         <h2 class="text-3xl md:text-4xl font-black text-ibt-text">講師紹介</h2>
+        <p class="mt-4 text-ibt-text-light text-lg">IBTの講師は全員、現役の大学生かつIB卒業生。IBを経験したからこそ分かるリアルなアドバイスができます。</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {previewTutors.map((tutor) => (
@@ -257,18 +258,20 @@ const blogPosts = [
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {blogPosts.map((post) => (
-          <article class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden group">
-            <div class="h-48 bg-gradient-to-br from-ibt-red-light to-ibt-red-50 flex items-center justify-center">
-              <svg class="w-12 h-12 text-ibt-red/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-              </svg>
-            </div>
-            <div class="p-6">
+          <article class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group hover:-translate-y-1 border border-ibt-border h-full flex flex-col">
+            <div class="h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="p-6 flex flex-col flex-1">
               <time class="text-xs text-ibt-text-light">{post.date}</time>
-              <h3 class="mt-2 text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors duration-200 line-clamp-2">
+              <h3 class="mt-3 text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors duration-200 line-clamp-2">
                 {post.title}
               </h3>
-              <p class="mt-2 text-sm text-ibt-text-light leading-relaxed line-clamp-3">{post.excerpt}</p>
+              <p class="mt-3 text-sm text-ibt-text-light leading-relaxed line-clamp-3 flex-1">{post.excerpt}</p>
+              <span class="inline-flex items-center text-ibt-red font-medium text-sm mt-4 group-hover:gap-1.5 gap-1 transition-all duration-200">
+                続きを読む
+                <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
             </div>
           </article>
         ))}

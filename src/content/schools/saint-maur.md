@@ -4,10 +4,12 @@ slug: "saint-maur"
 description: "IB校一覧 &nbsp;›&nbsp;関東 サンモール・インターナショナルスクール Saint Maur International School インター 神奈川県 横浜市 DP MYP PYP 基本情報 学校名 サン [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "神奈川県"
+region: "関東"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関東
     
 
     

@@ -4,10 +4,12 @@ slug: "doshisha-international"
 description: "IB校一覧 &nbsp;›&nbsp;関西 同志社国際中学校・高等学校 Doshisha International Junior &#038; Senior High School 私立 京都府 木津川市 DP 基本情 [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "大阪府"
+region: "関西"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関西
     
 
     

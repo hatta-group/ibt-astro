@@ -4,10 +4,12 @@ slug: "shimizu-minami"
 description: "IB校一覧 &nbsp;›&nbsp;中部 静岡県立清水南高等学校 Shizuoka Prefectural Shimizu Minami High School 公立 静岡県 静岡市 DP 基本情報 学校名 静岡県立清 [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "山梨県"
+region: "中部"
+programs: ["MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 中部
     
 
     

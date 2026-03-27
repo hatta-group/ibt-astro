@@ -79,34 +79,98 @@ import { iberTypes } from '../data/iber-types';
 
       <!-- Result -->
       <div id="quiz-result" class="hidden">
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-12 text-center">
-          <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">YOUR RESULT</p>
-          <h2 class="text-2xl md:text-3xl font-bold mb-2">あなたのIBerタイプは...</h2>
-          <div id="result-badge" class="inline-block px-6 py-2 rounded-full text-white font-bold text-lg mt-4 mb-2"></div>
-          <p id="result-name-ja" class="text-xl font-bold mb-6"></p>
-          <p id="result-desc" class="text-ibt-text-light leading-relaxed mb-8 max-w-lg mx-auto"></p>
-
-          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <a id="result-link" href="#" class="inline-block bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow">
-              あなたのタイプの詳細を見る
-            </a>
-            <button
-              id="retry-btn"
-              class="inline-block bg-white text-ibt-text font-bold px-8 py-4 rounded-full border border-ibt-border hover:bg-ibt-bg transition-colors cursor-pointer"
-            >
-              もう一度診断する
-            </button>
+        <!-- Main Result Card -->
+        <div class="bg-white rounded-2xl shadow-lg border border-ibt-border overflow-hidden">
+          <!-- Color accent header -->
+          <div id="result-header" class="py-8 px-8 md:px-12 text-center text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.3), transparent 60%);"></div>
+            <div class="relative z-10">
+              <p class="font-bold text-sm tracking-widest mb-3 text-white/80">YOUR RESULT</p>
+              <p class="text-lg mb-2 text-white/90">あなたのIBerタイプは...</p>
+            </div>
           </div>
 
-          <div class="pt-6 border-t border-ibt-border">
-            <p class="text-sm text-ibt-text-light mb-3">結果をシェアする</p>
-            <div class="flex gap-3 justify-center">
-              <button id="share-x" class="w-10 h-10 bg-ibt-bg rounded-full flex items-center justify-center hover:bg-ibt-border transition-colors cursor-pointer" aria-label="Xでシェア">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <div class="px-8 md:px-12 pb-10">
+            <!-- Type identity -->
+            <div class="flex flex-col items-center -mt-12 relative z-10 mb-8">
+              <div class="w-28 h-28 md:w-32 md:h-32 bg-white rounded-2xl shadow-lg p-3 mb-4">
+                <img id="result-image" src="" alt="" class="w-full h-full object-contain" />
+              </div>
+              <div id="result-badge" class="inline-block px-6 py-2 rounded-full text-white font-bold text-xl mb-1"></div>
+              <p id="result-name-ja" class="text-lg font-bold text-ibt-text-light"></p>
+            </div>
+
+            <!-- Description -->
+            <p id="result-desc" class="text-ibt-text-light leading-relaxed text-center max-w-lg mx-auto mb-10"></p>
+
+            <!-- Strengths & Challenges -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+              <!-- Strengths -->
+              <div class="rounded-xl border border-ibt-border p-6">
+                <div class="flex items-center gap-2 mb-4">
+                  <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  </div>
+                  <h3 class="font-bold text-lg">あなたの強み</h3>
+                </div>
+                <ul id="result-strengths" class="space-y-2 text-sm text-ibt-text-light"></ul>
+              </div>
+              <!-- Challenges -->
+              <div class="rounded-xl border border-ibt-border p-6">
+                <div class="flex items-center gap-2 mb-4">
+                  <div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+                  </div>
+                  <h3 class="font-bold text-lg">IBでの課題</h3>
+                </div>
+                <ul id="result-challenges" class="space-y-2 text-sm text-ibt-text-light"></ul>
+              </div>
+            </div>
+
+            <!-- Score Distribution -->
+            <div class="mb-10">
+              <h3 class="font-bold text-lg mb-4 text-center">スコア分布</h3>
+              <div id="result-scores" class="space-y-3"></div>
+            </div>
+
+            <!-- Detail analysis teaser -->
+            <div id="result-analysis" class="bg-ibt-bg rounded-xl p-6 mb-10">
+              <h3 class="font-bold text-lg mb-3">詳細分析</h3>
+              <p id="result-analysis-text" class="text-sm text-ibt-text-light leading-relaxed"></p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <a id="result-link" href="#" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow text-base">
+                あなたのタイプを詳しく見る
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+              </a>
+              <a href="/contact/" class="inline-flex items-center justify-center gap-2 bg-white text-ibt-red font-bold px-8 py-4 rounded-full border-2 border-ibt-red hover:bg-ibt-red-50 transition-colors text-base">
+                無料相談を予約する
+              </a>
+            </div>
+
+            <div class="text-center mb-8">
+              <button
+                id="retry-btn"
+                class="inline-flex items-center justify-center gap-2 text-ibt-text-light font-bold px-6 py-3 rounded-full border border-ibt-border hover:bg-ibt-bg transition-colors cursor-pointer text-sm"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/></svg>
+                もう一度診断する
               </button>
-              <button id="share-line" class="w-10 h-10 bg-ibt-bg rounded-full flex items-center justify-center hover:bg-ibt-border transition-colors cursor-pointer" aria-label="LINEでシェア">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-              </button>
+            </div>
+
+            <!-- Share -->
+            <div class="pt-6 border-t border-ibt-border text-center">
+              <p class="text-sm text-ibt-text-light mb-3">結果をシェアする</p>
+              <div class="flex gap-3 justify-center">
+                <button id="share-x" class="w-11 h-11 bg-ibt-bg rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer" aria-label="Xでシェア">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </button>
+                <button id="share-line" class="w-11 h-11 bg-[#06C755] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer" aria-label="LINEでシェア">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -314,13 +378,70 @@ import { iberTypes } from '../data/iber-types';
       }
     }
 
+    // Strengths & challenges data for each type
+    const typeDetails = {
+      inquirer: {
+        strengths: ['ToKのKnowledge Questionを自力で生み出せる', 'EEのリサーチクエスチョン設定で独自の切り口を見つけられる', '好きなテーマに対する集中力が異常に高い'],
+        challenges: ['好奇心が広がりすぎてEEのテーマが何度も変わりがち', '調べすぎて論点が散漫になることがある', '苦手科目が後回しになりやすい'],
+        analysis: 'Inquirerタイプのあなたは、「なぜ？」を問い続ける探究力がIBの学びに直結します。EEやToKで高い独自性を発揮できますが、テーマの絞り込みと時間管理が成功のカギ。「6週間RQを変えない」ルールを自分に課すと、深い探究が実現します。',
+      },
+      knowledgeable: {
+        strengths: ['幅広い知識で科目横断的な議論ができる', 'ToKで多角的な視点から議論を展開できる', '試験対策で全範囲を網羅する力がある'],
+        challenges: ['知識の暗記に偏り、分析や応用が弱くなりがち', '完璧な準備を求めすぎて時間が足りなくなる', '「知っている」と「理解している」の区別が曖昧になりやすい'],
+        analysis: 'Knowledgeableタイプのあなたは、知識の豊富さがIBの全科目で武器になります。ただしIBは暗記より分析・応用を重視するため、知識を「使う」練習が重要。ToKやEEで知識を批判的に活用する力を伸ばしましょう。',
+      },
+      thinker: {
+        strengths: ['ToK Essayで哲学的問いへの深い考察が自然にできる', 'IA・EEの分析セクションで考察の質が高い', '批判的思考でIB全体に求められる高次思考力が高い'],
+        challenges: ['考えすぎて試験時間内に書き終わらないことがある', '完璧主義でアウトプット量が下がりがち', 'グループワークでスピードについていけないことがある'],
+        analysis: 'Thinkerタイプのあなたは、論理的思考力がIBの核心的スキルと完全にマッチ。試験本番は「まず箇条書きで論点を出す→ベストを選んで書く」の2段階アプローチで、思考力を最大限スコアに変換しましょう。',
+      },
+      communicator: {
+        strengths: ['IOやプレゼンテーションで高い表現力を発揮', '自分の考えを効果的に伝え、他者の意見も引き出せる', 'グループプロジェクトでリーダーシップを取れる'],
+        challenges: ['書く作業（Essay・IA）よりも話す方が得意で、文章力に課題', '深い分析より表面的な議論で満足しがち', '一人での集中作業が苦手になりやすい'],
+        analysis: 'Communicatorタイプのあなたは、IBの対話的な学びで輝けます。IO・プレゼン・グループワークが得意分野。一方で、EEやIAなど長文の執筆タスクでは「話すように書く」テクニックを使うと、持ち前の表現力が活きます。',
+      },
+      principled: {
+        strengths: ['倫理的な議論（ToK・CAS）で深い考察ができる', '誠実な姿勢がCAS Reflectionの質を高める', '正しいと信じることを堂々と主張できる'],
+        challenges: ['他者の意見と対立した時に柔軟に折り合うのが難しい', '白黒つけたがる傾向がToKの多角的議論を制限することがある', '自分の基準が高すぎて自己批判的になりやすい'],
+        analysis: 'Principledタイプのあなたは、IBの倫理的側面と強く共鳴します。CAS活動やToKの倫理系トピックで本領を発揮。多角的な視点を取り入れる意識を持つと、エッセイの説得力がさらに上がります。',
+      },
+      'open-minded': {
+        strengths: ['異文化理解がToKやWL（World Languages）で大きな強み', '多様な視点を取り入れた柔軟な議論ができる', '国際的な環境で自然にコミュニケーションが取れる'],
+        challenges: ['自分の立場を明確にするのが苦手で、意見が曖昧になりがち', '全ての意見を受け入れすぎて批判的分析が弱くなることがある', '優柔不断になりやすい'],
+        analysis: 'Open-mindedタイプのあなたは、IBの国際的精神そのもの。異文化理解や多角的視点がToK・WL・Historyで威力を発揮します。「受け入れる」だけでなく「批判的に評価する」力を加えると、IB全体のスコアが伸びます。',
+      },
+      caring: {
+        strengths: ['CASプロジェクトで深いコミットメントができる', '共感力が高く、チームの雰囲気を良くする', '社会的テーマのEE・IAで情熱的な取り組みができる'],
+        challenges: ['他者のサポートに時間を使いすぎて自分の学習時間が減る', '感情に流されやすく、客観的な分析が弱くなることがある', '自分のニーズを後回しにしてバーンアウトしやすい'],
+        analysis: 'Caringタイプのあなたは、CAS活動や社会貢献テーマで圧倒的な熱量を発揮。EEで社会問題をテーマにすると、モチベーションが持続します。自分の時間も大切にするバランス感覚を意識しましょう。',
+      },
+      'risk-taker': {
+        strengths: ['難しい科目や課題にも果敢に挑戦できる', 'EEで独創的なテーマ設定ができる', '失敗を恐れず新しいアプローチを試せる'],
+        challenges: ['計画なしに走り出して途中で行き詰まることがある', 'リスクを過小評価して締め切りに追われがち', '一つのことに集中し続けるのが苦手'],
+        analysis: 'Risk-takerタイプのあなたは、IBの挑戦的な課題と好相性。他の生徒が避けるような難しいテーマや科目にも飛び込めます。「大胆な挑戦 + 綿密な計画」の組み合わせが、IBでの成功パターンです。',
+      },
+      balanced: {
+        strengths: ['学業・課外活動・健康のバランス管理が上手い', '6科目+コア要素を計画的にこなせる', 'チーム内で調整役として機能する'],
+        challenges: ['全てをバランスよくこなそうとして突出した強みが出にくい', '一つの科目を深掘りする集中力が不足しがち', '他者の要望を優先して自分の目標が曖昧になることがある'],
+        analysis: 'Balancedタイプのあなたは、IBの多忙なスケジュールを上手にこなす力があります。6科目+コア要素を同時並行で管理できるのは大きな強み。一方で、EEやIAなど「深さ」が求められる課題では、意図的に没頭する時間を作りましょう。',
+      },
+      reflective: {
+        strengths: ['CAS ReflectionやEEの改善プロセスで質の高い振り返りができる', '自分の学習スタイルを理解し最適化できる', '失敗から学び、次に活かす力が強い'],
+        challenges: ['振り返りに時間をかけすぎて前に進めないことがある', '自己批判が強くなりすぎてモチベーションが下がることがある', '行動より分析が先行して実行力が弱くなりがち'],
+        analysis: 'Reflectiveタイプのあなたは、IBの「学びの振り返り」重視の文化と完璧にフィット。CAS Reflectionの質は他のタイプを圧倒します。振り返りを「次のアクション」に繋げる習慣をつけると、成長速度が加速します。',
+      },
+    };
+
     function showResult() {
       quizContainer.classList.add('hidden');
       resultContainer.classList.remove('hidden');
 
+      // Calculate total and find winner
       let maxScore = 0;
       let winnerId = 'inquirer';
+      let totalScore = 0;
       for (const [id, score] of Object.entries(scores)) {
+        totalScore += score;
         if (score > maxScore) {
           maxScore = score;
           winnerId = id;
@@ -328,13 +449,72 @@ import { iberTypes } from '../data/iber-types';
       }
 
       const winner = types.find((t) => t.id === winnerId);
+      const details = typeDetails[winnerId];
+
+      // Header color
+      const header = document.getElementById('result-header');
+      header.style.backgroundColor = winner.color;
+
+      // Type image
+      const img = document.getElementById('result-image');
+      img.src = `/images/iber-types/${winner.id}.png`;
+      img.alt = `${winner.name} - ${winner.nameJa}`;
+
+      // Badge
       const badge = document.getElementById('result-badge');
       badge.textContent = winner.name;
       badge.style.backgroundColor = winner.color;
 
+      // Name & description
       document.getElementById('result-name-ja').textContent = winner.nameJa;
       document.getElementById('result-desc').textContent = winner.description;
       document.getElementById('result-link').href = `/iber-type/${winner.id}/`;
+
+      // Strengths
+      const strengthsList = document.getElementById('result-strengths');
+      strengthsList.innerHTML = '';
+      details.strengths.forEach((s) => {
+        const li = document.createElement('li');
+        li.className = 'flex items-start gap-2';
+        li.innerHTML = `<svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>${s}</span>`;
+        strengthsList.appendChild(li);
+      });
+
+      // Challenges
+      const challengesList = document.getElementById('result-challenges');
+      challengesList.innerHTML = '';
+      details.challenges.forEach((c) => {
+        const li = document.createElement('li');
+        li.className = 'flex items-start gap-2';
+        li.innerHTML = `<svg class="w-4 h-4 text-amber-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg><span>${c}</span>`;
+        challengesList.appendChild(li);
+      });
+
+      // Score distribution bars
+      const scoresContainer = document.getElementById('result-scores');
+      scoresContainer.innerHTML = '';
+      // Sort types by score descending
+      const sortedTypes = [...types].sort((a, b) => (scores[b.id] || 0) - (scores[a.id] || 0));
+      sortedTypes.forEach((t) => {
+        const score = scores[t.id] || 0;
+        const pct = totalScore > 0 ? Math.round((score / totalScore) * 100) : 0;
+        const isWinner = t.id === winnerId;
+        const row = document.createElement('div');
+        row.className = 'flex items-center gap-3';
+        row.innerHTML = `
+          <div class="w-28 md:w-36 text-right shrink-0">
+            <span class="text-xs font-bold ${isWinner ? 'text-ibt-text' : 'text-ibt-text-light'}">${t.name}</span>
+          </div>
+          <div class="flex-1 bg-ibt-border rounded-full h-5 overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-700 ease-out" style="width: ${pct}%; background-color: ${t.color}; ${isWinner ? 'box-shadow: 0 0 8px ' + t.color + '60;' : 'opacity: 0.6;'}"></div>
+          </div>
+          <span class="w-10 text-xs font-bold text-right ${isWinner ? 'text-ibt-text' : 'text-ibt-text-light'}">${pct}%</span>
+        `;
+        scoresContainer.appendChild(row);
+      });
+
+      // Analysis text
+      document.getElementById('result-analysis-text').textContent = details.analysis;
 
       // Share buttons
       const shareText = `IBerタイプ診断の結果、私は「${winner.name}（${winner.nameJa}）」でした！あなたも診断してみよう！`;

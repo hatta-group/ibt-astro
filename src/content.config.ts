@@ -23,6 +23,10 @@ const schools = defineCollection({
     description: z.string().optional(),
     ogImage: z.string().optional(),
     draft: z.boolean().default(false),
+    prefecture: z.string().optional(),
+    region: z.string().optional(),
+    programs: z.array(z.string()).optional(),
+    schoolType: z.string().optional(),
   }),
 });
 

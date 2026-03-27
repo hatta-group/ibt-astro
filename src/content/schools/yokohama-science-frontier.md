@@ -4,10 +4,12 @@ slug: "yokohama-science-frontier"
 description: "IB校一覧 &nbsp;›&nbsp;関東 横浜市立横浜サイエンスフロンティア高等学校 Yokohama Science Frontier High School 公立 神奈川県 横浜市 DP 基本情報 学校名 横浜市立 [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "神奈川県"
+region: "関東"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関東
     
 
     

@@ -8,13 +8,66 @@ export const getStaticPaths: GetStaticPaths = (async ({ paginate }) => {
   const sorted = allPosts.sort(
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
-  return paginate(sorted, { pageSize: 24 });
+  return paginate(sorted, { pageSize: 12 });
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
 const pageTitle = page.currentPage === 1
   ? "ブログ｜IB専門家庭教師IBT"
   : `ブログ（${page.currentPage}ページ目）｜IB専門家庭教師IBT`;
+
+// Extract all categories from current page + build category map
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const categoryMap: Record<string, { label: string; color: string; bgColor: string; count: number }> = {
+  'dp-tips': { label: 'DP対策', color: 'text-red-700', bgColor: 'bg-red-50 border-red-200', count: 0 },
+  'ib-basics': { label: 'IB基礎知識', color: 'text-blue-700', bgColor: 'bg-blue-50 border-blue-200', count: 0 },
+  'ib-schools': { label: 'IB校情報', color: 'text-emerald-700', bgColor: 'bg-emerald-50 border-emerald-200', count: 0 },
+  'ib-stories': { label: 'IB体験談', color: 'text-amber-700', bgColor: 'bg-amber-50 border-amber-200', count: 0 },
+};
+allPosts.forEach(post => {
+  const cat = post.data.category;
+  if (cat && categoryMap[cat]) categoryMap[cat].count++;
+});
+
+const featuredPost = page.currentPage === 1 ? page.data[0] : null;
+const regularPosts = page.currentPage === 1 ? page.data.slice(1) : page.data;
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}.${m}.${day}`;
+}
+
+function getCategoryStyle(cat: string | undefined) {
+  if (!cat || !categoryMap[cat]) return { label: cat || '', color: 'text-gray-700', bgColor: 'bg-gray-50 border-gray-200' };
+  return categoryMap[cat];
+}
+
+// Build pagination range
+function getPaginationRange(current: number, last: number): (number | '...')[] {
+  const range: (number | '...')[] = [];
+  if (last <= 7) {
+    for (let i = 1; i <= last; i++) range.push(i);
+  } else {
+    range.push(1);
+    if (current > 3) range.push('...');
+    const start = Math.max(2, current - 1);
+    const end = Math.min(last - 1, current + 1);
+    for (let i = start; i <= end; i++) range.push(i);
+    if (current < last - 2) range.push('...');
+    range.push(last);
+  }
+  return range;
+}
+
+function getPageUrl(pageNum: number): string {
+  if (pageNum === 1) return '/blog/';
+  return `/blog/${pageNum}/`;
+}
+
+const paginationRange = getPaginationRange(page.currentPage, page.lastPage);
 ---
 
 <BaseLayout
@@ -42,50 +95,209 @@ const pageTitle = page.currentPage === 1
       </nav>
       <h1 class="text-3xl md:text-5xl font-bold text-white">ブログ</h1>
       <p class="mt-4 text-white/85 text-lg md:text-xl">IB学習に役立つ情報をお届けします</p>
+
+      <!-- Article count -->
+      <p class="mt-3 text-white/60 text-sm">{allPosts.length} 記事</p>
     </div>
   </section>
 
-  <!-- Posts Grid -->
-  <section class="py-16 md:py-24 bg-ibt-bg">
+  <!-- Category Filters -->
+  <section class="bg-white border-b border-ibt-border sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs font-bold text-ibt-text-light uppercase tracking-wider mr-2">カテゴリ</span>
+        <a
+          href="/blog/"
+          class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 bg-ibt-red text-white border-ibt-red shadow-sm"
+        >
+          すべて
+          <span class="text-xs opacity-80">({allPosts.length})</span>
+        </a>
+        {Object.entries(categoryMap).map(([slug, cat]) => (
+          <a
+            href={`/blog/category/${slug}/`}
+            class={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 hover:shadow-sm ${cat.bgColor} ${cat.color}`}
+          >
+            {cat.label}
+            <span class="text-xs opacity-70">({cat.count})</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <section class="py-12 md:py-20 bg-ibt-bg">
     <div class="max-w-7xl mx-auto px-4">
       {page.data.length === 0 ? (
-        <p class="text-center text-ibt-text-light text-lg">記事を準備中です。</p>
+        <p class="text-center text-ibt-text-light text-lg py-20">記事を準備中です。</p>
       ) : (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {page.data.map((post) => (
-            <article class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <a
-                href={`/blog/${post.data.slug}/`}
-                class="group block p-6"
-              >
-                {post.data.category && (
-                  <span class="inline-block px-3 py-1 text-xs font-bold text-ibt-red bg-ibt-red-50 rounded-full mb-3">
-                    {post.data.category}
-                  </span>
-                )}
-                <h2 class="text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-3 line-clamp-2">
-                  {post.data.title}
-                </h2>
-                {post.data.description && (
-                  <p class="text-ibt-text-light text-sm leading-relaxed mb-4 line-clamp-3">
-                    {post.data.description}
-                  </p>
-                )}
-                <time class="text-xs text-ibt-text-light">{post.data.date}</time>
-              </a>
-            </article>
-          ))}
+        <div>
+          {/* Featured Post (first page only) */}
+          {featuredPost && (
+            <a
+              href={`/blog/${featuredPost.data.slug}/`}
+              class="group block mb-12"
+            >
+              <article class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="md:flex">
+                  {/* Left: Colored accent bar + content */}
+                  <div class="flex-1 p-8 md:p-10">
+                    <div class="flex items-center gap-3 mb-4">
+                      {featuredPost.data.category && (() => {
+                        const style = getCategoryStyle(featuredPost.data.category);
+                        return (
+                          <span class={`inline-block px-3 py-1 text-xs font-bold rounded-full border ${style.bgColor} ${style.color}`}>
+                            {style.label}
+                          </span>
+                        );
+                      })()}
+                      <time class="text-sm text-ibt-text-light">
+                        {formatDate(featuredPost.data.date)}
+                      </time>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-4 leading-snug">
+                      {featuredPost.data.title}
+                    </h2>
+                    {featuredPost.data.description && (
+                      <p class="text-ibt-text-light text-base leading-relaxed mb-6 line-clamp-3 max-w-2xl">
+                        {featuredPost.data.description}
+                      </p>
+                    )}
+                    <span class="inline-flex items-center text-ibt-red font-bold text-sm group-hover:gap-2 gap-1 transition-all duration-200">
+                      続きを読む
+                      <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                  {/* Right: Decorative gradient panel */}
+                  <div class="hidden md:flex md:w-64 lg:w-80 bg-gradient-to-br from-ibt-red-50 to-white items-center justify-center">
+                    <div class="text-center p-8">
+                      <div class="w-16 h-16 rounded-2xl bg-ibt-red/10 flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-8 h-8 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                      </div>
+                      <span class="text-xs font-bold text-ibt-red/60 uppercase tracking-wider">Latest</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </a>
+          )}
+
+          {/* Regular Posts Grid */}
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {regularPosts.map((post) => {
+              const style = getCategoryStyle(post.data.category);
+              return (
+                <a
+                  href={`/blog/${post.data.slug}/`}
+                  class="group block"
+                >
+                  <article class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+                    {/* Top accent line */}
+                    <div class="h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    <div class="p-6 flex flex-col flex-1">
+                      {/* Category + Date row */}
+                      <div class="flex items-center justify-between gap-2 mb-4">
+                        {post.data.category && (
+                          <span class={`inline-block px-2.5 py-0.5 text-xs font-bold rounded-full border ${style.bgColor} ${style.color}`}>
+                            {style.label}
+                          </span>
+                        )}
+                        <time class="text-xs text-ibt-text-light whitespace-nowrap">
+                          {formatDate(post.data.date)}
+                        </time>
+                      </div>
+
+                      {/* Title */}
+                      <h2 class="text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-3 leading-snug line-clamp-2">
+                        {post.data.title}
+                      </h2>
+
+                      {/* Description */}
+                      {post.data.description && (
+                        <p class="text-ibt-text-light text-sm leading-relaxed mb-4 line-clamp-3 flex-1">
+                          {post.data.description}
+                        </p>
+                      )}
+
+                      {/* Read more */}
+                      <span class="inline-flex items-center text-ibt-red font-medium text-sm mt-auto group-hover:gap-1.5 gap-1 transition-all duration-200">
+                        続きを読む
+                        <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </article>
+                </a>
+              );
+            })}
+          </div>
         </div>
       )}
 
+      {/* Pagination */}
       {page.lastPage > 1 && (
-        <nav class="flex justify-center items-center gap-3 mt-12" aria-label="ページネーション">
-          {page.url.prev && (
-            <a href={page.url.prev} class="px-4 py-2 border border-ibt-border rounded-lg hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-colors text-sm font-medium">前へ</a>
+        <nav class="flex justify-center items-center gap-1.5 mt-16" aria-label="ページネーション">
+          {/* Prev */}
+          {page.url.prev ? (
+            <a
+              href={page.url.prev}
+              class="flex items-center justify-center w-10 h-10 rounded-xl border border-ibt-border bg-white hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-all duration-200 text-ibt-text-light"
+              aria-label="前のページ"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </a>
+          ) : (
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl border border-ibt-border bg-ibt-bg text-ibt-border cursor-not-allowed">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </span>
           )}
-          <span class="text-ibt-text-light text-sm">{page.currentPage} / {page.lastPage}</span>
-          {page.url.next && (
-            <a href={page.url.next} class="px-4 py-2 border border-ibt-border rounded-lg hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-colors text-sm font-medium">次へ</a>
+
+          {/* Page numbers */}
+          {paginationRange.map((item) => (
+            item === '...' ? (
+              <span class="flex items-center justify-center w-10 h-10 text-ibt-text-light text-sm">...</span>
+            ) : item === page.currentPage ? (
+              <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-ibt-red text-white font-bold text-sm shadow-sm">
+                {item}
+              </span>
+            ) : (
+              <a
+                href={getPageUrl(item as number)}
+                class="flex items-center justify-center w-10 h-10 rounded-xl border border-ibt-border bg-white hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-all duration-200 text-sm font-medium text-ibt-text"
+              >
+                {item}
+              </a>
+            )
+          ))}
+
+          {/* Next */}
+          {page.url.next ? (
+            <a
+              href={page.url.next}
+              class="flex items-center justify-center w-10 h-10 rounded-xl border border-ibt-border bg-white hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-all duration-200 text-ibt-text-light"
+              aria-label="次のページ"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          ) : (
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl border border-ibt-border bg-ibt-bg text-ibt-border cursor-not-allowed">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
           )}
         </nav>
       )}

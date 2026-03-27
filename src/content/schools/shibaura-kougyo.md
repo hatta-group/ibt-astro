@@ -4,10 +4,12 @@ slug: "shibaura-kougyo"
 description: "IB校一覧 &nbsp;›&nbsp;関東 芝浦工業大学附属高等学校 Shibaura Institute of Technology High School 私立 茨城県 柏市 DP 基本情報 学校名 芝浦工業大学附属 [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "埼玉県"
+region: "関東"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関東
     
 
     

@@ -4,6 +4,10 @@ slug: "sunnyside-international-2"
 description: "サニーサイドインターナショナルスクールのIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""
 draft: false
+prefecture: "岐阜県"
+region: "中部"
+programs: ["PYP", "MYP"]
+schoolType: "一条校"
 ---
 
 IB専門家庭教師

@@ -4,10 +4,12 @@ slug: "osaka-ymca"
 description: "IB校一覧 &nbsp;›&nbsp;関西 大阪YMCAインターナショナルスクール Osaka YMCA International School インター 大阪府 大阪市 DP MYP PYP 基本情報 学校名 大阪Y [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "大阪府"
+region: "関西"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関西
     
 
     

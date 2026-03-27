@@ -4,10 +4,12 @@ slug: "osaka-international-school"
 description: "IB校一覧 &nbsp;›&nbsp;関西 大阪インターナショナルスクール Osaka International School インター 大阪府 箕面市 DP MYP PYP 基本情報 学校名 大阪インターナショナルス [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "大阪府"
+region: "関西"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関西
     
 
     

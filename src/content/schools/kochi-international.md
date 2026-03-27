@@ -4,10 +4,12 @@ slug: "kochi-international"
 description: "IB校一覧 &nbsp;›&nbsp;中国・四国 高知国際中学校・高等学校 Kochi International Junior &#038; Senior High School 公立 高知県 高知市 DP 基本情報 [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "岡山県"
+region: "中国・四国"
+programs: ["MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 中国・四国
     
 
     

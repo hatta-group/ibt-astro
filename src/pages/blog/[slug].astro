@@ -11,11 +11,46 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 
+// Category label map
+const categoryNames: Record<string, string> = {
+  'dp-tips': 'DP対策・勉強法',
+  'ib-basics': 'IB基礎知識',
+  'ib-stories': 'IB生の体験談',
+  'ib-schools': 'IB認定校情報',
+};
+const catName = post.data.category ? (categoryNames[post.data.category] || post.data.category) : '';
+
+// Estimated reading time (Japanese: ~500 chars/min)
+const rawContent = post.body || '';
+const charCount = rawContent.replace(/\s/g, '').length;
+const readingTime = Math.max(1, Math.ceil(charCount / 500));
+
+// Format date
+const dateObj = new Date(post.data.date);
+const formattedDate = `${dateObj.getFullYear()}年${dateObj.getMonth() + 1}月${dateObj.getDate()}日`;
+
+// OG image
 const ogImageRaw = post.data.ogImage || "/images/og-default.jpg";
 const blogImage = ogImageRaw.startsWith("http") ? ogImageRaw : `https://ib-tutors.net${ogImageRaw}`;
 
+// Related posts (same category, excluding current)
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const relatedPosts = allPosts
+  .filter(p => p.data.slug !== post.data.slug && p.data.category === post.data.category)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
+
+// Table of contents (h2 and h3 only)
+const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
+
+// Share URL
+const shareUrl = `https://ib-tutors.net/blog/${post.data.slug}/`;
+const shareText = encodeURIComponent(post.data.title);
+const shareUrlEncoded = encodeURIComponent(shareUrl);
+
+// Schema
 const blogPostingSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -37,7 +72,7 @@ const blogPostingSchema = {
       "url": "https://ib-tutors.net/images/logo.png"
     }
   },
-  "mainEntityOfPage": `https://ib-tutors.net/blog/${post.data.slug}/`
+  "mainEntityOfPage": shareUrl
 };
 
 const breadcrumbSchema = {
@@ -60,7 +95,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 3,
       "name": post.data.title,
-      "item": `https://ib-tutors.net/blog/${post.data.slug}/`
+      "item": shareUrl
     }
   ]
 };
@@ -71,43 +106,210 @@ const breadcrumbSchema = {
   description={post.data.description}
   ogImage={post.data.ogImage}
 >
-  <!-- Hero -->
-  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-12 md:py-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <nav class="text-white/70 text-sm mb-6">
-        <a href="/" class="hover:text-white transition-colors">ホーム</a>
-        <span class="mx-2">/</span>
-        <a href="/blog/" class="hover:text-white transition-colors">ブログ</a>
-        <span class="mx-2">/</span>
-        <span class="text-white">{post.data.title}</span>
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-ibt-border">
+    <div class="max-w-4xl mx-auto px-4 py-3">
+      <nav class="flex items-center gap-2 text-sm text-ibt-text-light overflow-x-auto whitespace-nowrap">
+        <a href="/" class="hover:text-ibt-red transition-colors shrink-0">ホーム</a>
+        <span class="text-ibt-border shrink-0">/</span>
+        <a href="/blog/" class="hover:text-ibt-red transition-colors shrink-0">ブログ</a>
+        {post.data.category && (
+          <>
+            <span class="text-ibt-border shrink-0">/</span>
+            <a href={`/blog/category/${post.data.category}/`} class="hover:text-ibt-red transition-colors shrink-0">{catName}</a>
+          </>
+        )}
+        <span class="text-ibt-border shrink-0">/</span>
+        <span class="text-ibt-text truncate">{post.data.title}</span>
       </nav>
-      {post.data.category && (
-        <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 rounded-full mb-4">
-          {post.data.category}
-        </span>
-      )}
-      <h1 class="text-2xl md:text-4xl font-bold text-white">{post.data.title}</h1>
-      <time class="block mt-4 text-white/70 text-sm">{post.data.date}</time>
     </div>
-  </section>
+  </div>
 
-  <!-- Content -->
-  <article class="py-16 md:py-24 bg-white">
-    <div class="max-w-3xl mx-auto px-4 prose prose-lg prose-gray
-      prose-headings:font-black prose-headings:text-ibt-text
-      prose-a:text-ibt-red prose-a:no-underline hover:prose-a:underline
-      prose-strong:text-ibt-text
-      prose-img:rounded-xl">
-      <Content />
+  <!-- Hero -->
+  <header class="bg-gradient-to-br from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-12 md:py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        {post.data.category && (
+          <a
+            href={`/blog/category/${post.data.category}/`}
+            class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 rounded-full hover:bg-white/30 transition-colors"
+          >
+            {catName}
+          </a>
+        )}
+        <span class="text-white/60 text-sm">{readingTime}分で読める</span>
+      </div>
+
+      <h1 class="text-2xl md:text-4xl lg:text-[2.5rem] font-black text-white leading-tight md:leading-snug hero-text-shadow">
+        {post.data.title}
+      </h1>
+
+      {post.data.description && (
+        <p class="mt-4 text-white/80 text-base md:text-lg leading-relaxed max-w-2xl">
+          {post.data.description}
+        </p>
+      )}
+
+      <div class="flex items-center gap-4 mt-6 text-white/70 text-sm">
+        <time datetime={post.data.date} class="flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>
+          {formattedDate}
+        </time>
+        {post.data.lastMod && post.data.lastMod !== post.data.date && (
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" /></svg>
+            更新: {new Date(post.data.lastMod).getFullYear()}年{new Date(post.data.lastMod).getMonth() + 1}月{new Date(post.data.lastMod).getDate()}日
+          </span>
+        )}
+      </div>
     </div>
-  </article>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-10 md:py-16">
+
+      <!-- Table of Contents -->
+      {tocHeadings.length >= 3 && (
+        <nav class="mb-10 md:mb-14 p-6 md:p-8 bg-ibt-bg rounded-2xl border border-ibt-border">
+          <h2 class="text-base font-bold text-ibt-text mb-4 flex items-center gap-2">
+            <svg class="w-5 h-5 text-ibt-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>
+            目次
+          </h2>
+          <ol class="space-y-2">
+            {tocHeadings.map((heading) => (
+              <li class={heading.depth === 3 ? 'ml-5' : ''}>
+                <a
+                  href={`#${heading.slug}`}
+                  class={`block text-sm leading-relaxed transition-colors hover:text-ibt-red ${heading.depth === 2 ? 'text-ibt-text font-medium' : 'text-ibt-text-light'}`}
+                >
+                  {heading.text}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
+
+      <!-- Article Body -->
+      <article class="article-body">
+        <Content />
+      </article>
+
+      <!-- Share Section -->
+      <div class="mt-12 md:mt-16 pt-8 border-t border-ibt-border">
+        <p class="text-sm font-bold text-ibt-text mb-4">この記事をシェア</p>
+        <div class="flex items-center gap-3">
+          <a
+            href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrlEncoded}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-ibt-bg text-ibt-text-light hover:bg-[#1DA1F2] hover:text-white transition-colors"
+            aria-label="Xでシェア"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a
+            href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrlEncoded}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-ibt-bg text-ibt-text-light hover:bg-[#1877F2] hover:text-white transition-colors"
+            aria-label="Facebookでシェア"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a
+            href={`https://social-plugins.line.me/lineit/share?url=${shareUrlEncoded}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-ibt-bg text-ibt-text-light hover:bg-[#06C755] hover:text-white transition-colors"
+            aria-label="LINEでシェア"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          </a>
+          <button
+            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.querySelector('span').textContent='Copied!';setTimeout(()=>{this.querySelector('span').textContent='URLコピー'},2000)})"
+            class="inline-flex items-center gap-1.5 px-4 h-10 rounded-full bg-ibt-bg text-ibt-text-light hover:bg-gray-200 transition-colors text-sm"
+            aria-label="URLをコピー"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m9.86-4.061a4.5 4.5 0 00-1.242-7.244l-4.5-4.5a4.5 4.5 0 00-6.364 6.364L5.25 9.503" /></svg>
+            <span>URLコピー</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Author / IBT Info Card -->
+      <div class="mt-10 p-6 md:p-8 bg-ibt-red-50 rounded-2xl border border-ibt-red-light">
+        <div class="flex items-start gap-4">
+          <div class="shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end flex items-center justify-center">
+            <span class="text-white text-xl font-black">IBT</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-bold text-ibt-text text-lg">IBT（IB Tutors）</p>
+            <p class="text-sm text-ibt-text-light mt-1 leading-relaxed">
+              IB（国際バカロレア）専門の個別指導サービス。講師は全員IB卒業生。PYP・MYP・DPの全科目に対応し、TOK・EE・IAもマンツーマンでサポートします。
+            </p>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <a href="/tutors/" class="text-sm text-ibt-red font-medium hover:underline">講師紹介</a>
+              <a href="/lessons-pricing/" class="text-sm text-ibt-red font-medium hover:underline">授業内容・料金</a>
+              <a href="/contact/" class="text-sm text-ibt-red font-medium hover:underline">お問い合わせ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to Blog -->
+      <div class="mt-8">
+        <a href="/blog/" class="inline-flex items-center gap-2 text-sm text-ibt-text-light hover:text-ibt-red transition-colors group">
+          <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+          ブログ一覧に戻る
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  {relatedPosts.length > 0 && (
+    <section class="py-14 md:py-20 bg-ibt-bg">
+      <div class="max-w-4xl mx-auto px-4">
+        <p class="section-label mb-2">RELATED</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-ibt-text mb-8">関連記事</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          {relatedPosts.map((rp) => {
+            const rpDate = new Date(rp.data.date);
+            return (
+              <a
+                href={`/blog/${rp.data.slug}/`}
+                class="group block bg-white rounded-2xl border border-ibt-border overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <div class="p-5">
+                  {rp.data.category && (
+                    <span class="inline-block px-2.5 py-0.5 text-[11px] font-bold text-ibt-red bg-ibt-red-50 rounded-full mb-3">
+                      {categoryNames[rp.data.category] || rp.data.category}
+                    </span>
+                  )}
+                  <h3 class="text-sm font-bold text-ibt-text leading-relaxed group-hover:text-ibt-red transition-colors line-clamp-3">
+                    {rp.data.title}
+                  </h3>
+                  <time class="block mt-3 text-xs text-ibt-text-light">
+                    {rpDate.getFullYear()}年{rpDate.getMonth() + 1}月{rpDate.getDate()}日
+                  </time>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- CTA -->
-  <section class="py-16 md:py-24 bg-ibt-bg">
+  <section class="py-14 md:py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4 text-center">
+      <p class="section-label mb-2">GET STARTED</p>
       <h2 class="text-2xl md:text-3xl font-bold mb-4">IBの学習でお困りですか？</h2>
-      <p class="text-ibt-text-light text-lg mb-8">
-        IB卒業生の専門家庭教師がマンツーマンでサポートします。まずは60分の無料体験をお試しください。
+      <p class="text-ibt-text-light text-lg mb-8 leading-relaxed">
+        IB卒業生の専門家庭教師がマンツーマンでサポートします。<br class="hidden md:inline" />まずは60分の無料体験をお試しください。
       </p>
       <a
         href="/contact/"
@@ -121,3 +323,234 @@ const breadcrumbSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </BaseLayout>
+
+<style is:global>
+  /* ============================================
+     Article Body Typography
+     Magazine-style, optimized for Japanese text
+     ============================================ */
+
+  .article-body {
+    font-size: 1.0625rem;
+    line-height: 1.95;
+    color: var(--color-ibt-text);
+    word-break: auto-phrase;
+    overflow-wrap: break-word;
+  }
+
+  /* --- Headings --- */
+  .article-body h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.4;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-ibt-red);
+    color: var(--color-ibt-text);
+  }
+
+  .article-body h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.45;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+    padding-left: 0.875rem;
+    border-left: 4px solid var(--color-ibt-red);
+    color: var(--color-ibt-text);
+  }
+
+  .article-body h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-ibt-text);
+  }
+
+  /* First heading should not have top margin */
+  .article-body > h2:first-child,
+  .article-body > h3:first-child {
+    margin-top: 0;
+  }
+
+  /* --- Paragraphs --- */
+  .article-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  /* --- Links --- */
+  .article-body a {
+    color: var(--color-ibt-red);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .article-body a:hover {
+    text-decoration: underline;
+  }
+
+  /* --- Strong / Bold --- */
+  .article-body strong {
+    font-weight: 700;
+    color: var(--color-ibt-text);
+  }
+
+  /* --- Blockquote --- */
+  .article-body blockquote {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--color-ibt-red-50);
+    border-left: 4px solid var(--color-ibt-red);
+    border-radius: 0 0.75rem 0.75rem 0;
+    color: var(--color-ibt-text);
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+  .article-body blockquote p {
+    margin-bottom: 0;
+  }
+  .article-body blockquote p + p {
+    margin-top: 0.75rem;
+  }
+
+  /* --- Lists --- */
+  .article-body ul,
+  .article-body ol {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+  .article-body ul {
+    list-style-type: disc;
+  }
+  .article-body ol {
+    list-style-type: decimal;
+  }
+  .article-body li {
+    margin-bottom: 0.5rem;
+    line-height: 1.85;
+  }
+  .article-body li > ul,
+  .article-body li > ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  /* --- Code --- */
+  .article-body code {
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, monospace;
+    font-size: 0.875em;
+    padding: 0.2em 0.45em;
+    background-color: var(--color-ibt-bg);
+    border: 1px solid var(--color-ibt-border);
+    border-radius: 0.375rem;
+    color: var(--color-ibt-red-dark);
+  }
+
+  .article-body pre {
+    margin: 1.75rem 0;
+    padding: 1.25rem 1.5rem;
+    background-color: #1e1e1e;
+    border-radius: 0.75rem;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+  .article-body pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #e4e4e7;
+    font-size: inherit;
+  }
+
+  /* --- Tables --- */
+  .article-body table {
+    width: 100%;
+    margin: 1.75rem 0;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid var(--color-ibt-border);
+  }
+  .article-body thead {
+    background-color: var(--color-ibt-bg);
+  }
+  .article-body th {
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    text-align: left;
+    color: var(--color-ibt-text);
+    border-bottom: 2px solid var(--color-ibt-border);
+  }
+  .article-body td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-ibt-border);
+  }
+  .article-body tbody tr:nth-child(even) {
+    background-color: var(--color-ibt-red-50);
+  }
+  .article-body tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* --- Images --- */
+  .article-body img {
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 0.75rem;
+    display: block;
+  }
+
+  /* Treat em after img as caption */
+  .article-body p:has(img) + p > em:only-child,
+  .article-body img + em {
+    display: block;
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--color-ibt-text-light);
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* --- Horizontal Rules --- */
+  .article-body hr {
+    margin: 2.5rem 0;
+    border: none;
+    border-top: 1px solid var(--color-ibt-border);
+  }
+
+  /* --- Responsive tweaks --- */
+  @media (min-width: 768px) {
+    .article-body {
+      font-size: 1.125rem;
+      line-height: 2;
+    }
+    .article-body h2 {
+      font-size: 1.75rem;
+    }
+    .article-body h3 {
+      font-size: 1.375rem;
+    }
+  }
+
+  /* --- Table responsive wrapper --- */
+  .article-body table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* line-clamp utility */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

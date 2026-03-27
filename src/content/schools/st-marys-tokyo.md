@@ -4,10 +4,12 @@ slug: "st-marys-tokyo"
 description: "IB校一覧 &nbsp;›&nbsp;関東 セント・メリーズ・インターナショナル・スクール St. Mary&#8217;s International School インター 東京都 世田谷区 DP 基本情報 学校名 [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "東京都"
+region: "関東"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関東
     
 
     

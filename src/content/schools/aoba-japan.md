@@ -4,10 +4,12 @@ slug: "aoba-japan"
 description: "IB校一覧 &nbsp;›&nbsp;関東 青葉日本インターナショナルスクール Aoba-Japan International School インター 東京都 杉並区 DP MYP PYP 基本情報 学校名 青葉日本イ [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "東京都"
+region: "関東"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関東
     
 
     

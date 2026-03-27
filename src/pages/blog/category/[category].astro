@@ -40,36 +40,63 @@ const catName = categoryNames[category] || category;
     })} />
   </Fragment>
 
-  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4">
-      <nav class="text-white/70 text-sm mb-4">
-        <a href="/" class="hover:text-white">ホーム</a>
-        <span class="mx-2">&gt;</span>
-        <a href="/blog/" class="hover:text-white">ブログ</a>
-        <span class="mx-2">&gt;</span>
+      <nav class="text-white/70 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">ブログ</a>
+        <span class="mx-2">/</span>
         <span class="text-white">{catName}</span>
       </nav>
-      <h1 class="text-3xl md:text-5xl font-black text-white">{catName}</h1>
-      <p class="text-white/80 mt-3">{posts.length}件の記事</p>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">{catName}</h1>
+      <p class="mt-4 text-white/85 text-lg md:text-xl">{posts.length}件の記事</p>
     </div>
   </section>
+
+  <!-- Posts Grid -->
   <section class="py-16 md:py-24 bg-ibt-bg">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <article class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-            <div class="p-6">
-              <h2 class="text-lg font-bold text-ibt-text hover:text-ibt-red transition-colors mb-3 line-clamp-2">
-                <a href={`/blog/${post.data.slug}/`}>{post.data.title}</a>
-              </h2>
-              {post.data.description && (
-                <p class="text-ibt-text-light text-sm leading-relaxed mb-4 line-clamp-3">{post.data.description}</p>
-              )}
-              <time class="text-xs text-ibt-text-light">{post.data.date}</time>
-            </div>
-          </article>
-        ))}
-      </div>
+      <a
+        href="/blog/"
+        class="inline-flex items-center text-sm font-medium text-ibt-red hover:text-ibt-red/80 transition-colors mb-8"
+      >
+        &larr; ブログ一覧に戻る
+      </a>
+
+      {posts.length === 0 ? (
+        <p class="text-center text-ibt-text-light text-lg">記事を準備中です。</p>
+      ) : (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <article class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <a
+                href={`/blog/${post.data.slug}/`}
+                class="group block p-6"
+              >
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="inline-block px-3 py-1 text-xs font-bold text-ibt-red bg-ibt-red-50 rounded-full">
+                    {catName}
+                  </span>
+                  <time class="text-xs text-ibt-text-light">{post.data.date}</time>
+                </div>
+                <h2 class="text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-3 line-clamp-2">
+                  {post.data.title}
+                </h2>
+                {post.data.description && (
+                  <p class="text-ibt-text-light text-sm leading-relaxed mb-4 line-clamp-3">
+                    {post.data.description}
+                  </p>
+                )}
+                <span class="text-sm font-medium text-ibt-red group-hover:translate-x-1 inline-block transition-transform duration-200">
+                  続きを読む &rarr;
+                </span>
+              </a>
+            </article>
+          ))}
+        </div>
+      )}
     </div>
   </section>
 </BaseLayout>

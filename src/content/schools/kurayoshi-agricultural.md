@@ -4,10 +4,12 @@ slug: "kurayoshi-agricultural"
 description: "IB校一覧 &nbsp;›&nbsp;中国・四国 鳥取県立倉吉農業高等学校 Tottori Prefectural Kurayoshi Agricultural High School 公立 鳥取県 倉吉市 DP 基本情 [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "鳥取県"
+region: "中国・四国"
+programs: ["MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 中国・四国
     
 
     

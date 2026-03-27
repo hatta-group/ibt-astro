@@ -39,7 +39,70 @@ import { tutors } from '../data/tutors';
         <span class="text-white">講師紹介</span>
       </nav>
       <h1 class="text-3xl md:text-5xl font-bold text-white">講師紹介</h1>
-      <p class="text-white/80 mt-3 text-lg">IBT講師は全員IB卒業生。45点満点講師も在籍。</p>
+      <p class="text-white/80 mt-3 text-lg">IBT講師は全員、現役大学生かつIB卒業生。</p>
+    </div>
+  </section>
+
+  <!-- Founder Section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">FOUNDER</p>
+        <h2 class="text-2xl md:text-4xl font-bold">IBT代表</h2>
+      </div>
+
+      <!-- Founder Card -->
+      <div class="bg-ibt-bg rounded-2xl border border-ibt-border shadow-sm overflow-hidden max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row">
+          <!-- Photo -->
+          <div class="md:w-2/5 shrink-0">
+            <img
+              src="/images/tutors/miri.jpg"
+              alt="Miri - IBT代表"
+              class="w-full h-72 md:h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <!-- Text -->
+          <div class="p-8 md:p-10 flex flex-col justify-center">
+            <p class="text-ibt-red font-bold text-xs tracking-widest uppercase mb-2">FOUNDER & DIRECTOR</p>
+            <h3 class="text-3xl md:text-4xl font-bold mb-1">Miri</h3>
+            <p class="text-ibt-text-light text-sm mb-6">IBT代表 / 玉川学園IB卒 &rarr; University of London</p>
+
+            <div class="space-y-4 text-ibt-text leading-relaxed text-sm md:text-base">
+              <p>はじめまして！IBTのMiriです。</p>
+              <p>私自身がIBを卒業し、世界に挑戦することの素晴らしさと難しさを身をもって経験しました。だからこそIBTを立ち上げました。</p>
+              <p>IB卒業生だからこそできるサポートを通して、IB生が自信を持って世界に飛び立てるように。「この先どう進めばいいんだろう」と迷う生徒たちが、一歩踏み出せる場所を作りたいと思っています。</p>
+            </div>
+
+            <a href="#" class="inline-flex items-center text-ibt-red font-bold text-sm mt-6 hover:text-ibt-red-dark transition-colors">
+              LinkedIn でつながる
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Fun Facts -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 p-6 md:px-10 md:pb-10">
+          <div class="bg-amber-50 rounded-xl p-4 text-center">
+            <span class="text-2xl mb-1 block">&#x1F363;</span>
+            <p class="text-xs text-ibt-text-light mb-1">好きな食べ物</p>
+            <p class="font-bold text-sm">めんたいこ</p>
+          </div>
+          <div class="bg-amber-50 rounded-xl p-4 text-center">
+            <span class="text-2xl mb-1 block">&#x2615;</span>
+            <p class="text-xs text-ibt-text-light mb-1">趣味</p>
+            <p class="font-bold text-sm">世界中のカフェと旅</p>
+          </div>
+          <div class="bg-emerald-50 rounded-xl p-4 text-center">
+            <span class="text-2xl mb-1 block">&#x1F4CD;</span>
+            <p class="text-xs text-ibt-text-light mb-1">好きな場所</p>
+            <p class="font-bold text-sm">まだ行ったことのない場所</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -49,6 +112,7 @@ import { tutors } from '../data/tutors';
       <div class="text-center mb-12 md:mb-16">
         <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">OUR TUTORS</p>
         <h2 class="text-2xl md:text-4xl font-bold">IBT講師一覧</h2>
+        <p class="text-ibt-text-light mt-4 max-w-2xl mx-auto">IBTの講師は全員、現役の大学生かつIB卒業生。IBを経験したからこそ分かるリアルなアドバイスができます。</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {tutors.map((tutor) => {
@@ -127,8 +191,8 @@ import { tutors } from '../data/tutors';
             </svg>
           </div>
           <div>
-            <h3 class="font-bold text-lg mb-2">45点満点取得者を含む優秀な講師陣</h3>
-            <p class="text-ibt-text-light leading-relaxed text-sm">IBディプロマで最高得点の45点を取得した講師も在籍。高得点を目指す生徒に実践的な学習戦略を伝えます。</p>
+            <h3 class="font-bold text-lg mb-2">現役大学生×IB卒業生の講師陣</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">講師は全員が現役の大学生。IB卒業直後の新鮮な経験と最新のIBカリキュラムの知識で、実践的な学習戦略を伝えます。</p>
           </div>
         </div>
 

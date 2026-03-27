@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { iberTypes } from '../../data/iber-types';
 
 export async function getStaticPaths() {
   const types = await getCollection('iber-types');
@@ -12,6 +13,10 @@ export async function getStaticPaths() {
 
 const { type } = Astro.props;
 const { Content } = await render(type);
+
+// Find matching type data for color/name info
+const typeData = iberTypes.find((t) => t.id === type.data.slug);
+const typeColor = type.data.color || typeData?.color || '#CC2210';
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -44,52 +49,75 @@ const breadcrumbSchema = {
   description={type.data.description}
 >
   <!-- Hero -->
-  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-12 md:py-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <nav class="text-white/70 text-sm mb-6">
+  <section class="relative overflow-hidden py-14 md:py-20" style={`background: linear-gradient(135deg, ${typeColor}ee, ${typeColor}bb)`}>
+    <div class="absolute inset-0 opacity-10" style="background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.4), transparent 60%);"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <nav class="text-white/70 text-sm mb-8">
         <a href="/" class="hover:text-white transition-colors">ホーム</a>
         <span class="mx-2">/</span>
         <a href="/iber-type/" class="hover:text-white transition-colors">IBerタイプ一覧</a>
         <span class="mx-2">/</span>
         <span class="text-white">{type.data.title}</span>
       </nav>
-      <div class="flex items-center gap-4">
-        <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl font-black" style={`background-color: ${type.data.color}`}>
-          {type.data.title.charAt(0)}
+      <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+        <div class="w-32 h-32 md:w-40 md:h-40 bg-white/20 backdrop-blur-sm rounded-2xl p-4 shrink-0 shadow-lg">
+          <img
+            src={`/images/iber-types/${type.data.slug}.png`}
+            alt={type.data.title}
+            class="w-full h-full object-contain drop-shadow-lg"
+          />
         </div>
-        <h1 class="text-2xl md:text-4xl font-bold text-white">{type.data.title}</h1>
+        <div class="text-center md:text-left">
+          <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">{typeData?.name || type.data.slug}</h1>
+          <p class="text-xl md:text-2xl text-white/90 font-bold">{typeData?.nameJa || ''}</p>
+          {typeData?.description && (
+            <p class="mt-4 text-white/80 text-base md:text-lg max-w-xl leading-relaxed">{typeData.description}</p>
+          )}
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Color Accent Bar -->
-  <div class="h-1.5" style={`background-color: ${type.data.color}`}></div>
+  <div class="h-1" style={`background: linear-gradient(to right, ${typeColor}, ${typeColor}80)`}></div>
+
+  <!-- Quick Navigation -->
+  <div class="bg-white border-b border-ibt-border sticky top-0 z-20">
+    <div class="max-w-3xl mx-auto px-4">
+      <nav class="flex gap-1 overflow-x-auto py-3 text-sm -mx-4 px-4 scrollbar-hide">
+        <a href="#personality" class="shrink-0 px-4 py-2 rounded-full hover:bg-ibt-bg transition-colors text-ibt-text-light hover:text-ibt-text font-medium">性格・特徴</a>
+        <a href="#strengths" class="shrink-0 px-4 py-2 rounded-full hover:bg-ibt-bg transition-colors text-ibt-text-light hover:text-ibt-text font-medium">強み</a>
+        <a href="#challenges" class="shrink-0 px-4 py-2 rounded-full hover:bg-ibt-bg transition-colors text-ibt-text-light hover:text-ibt-text font-medium">課題</a>
+        <a href="#subjects" class="shrink-0 px-4 py-2 rounded-full hover:bg-ibt-bg transition-colors text-ibt-text-light hover:text-ibt-text font-medium">得意科目</a>
+        <a href="#compatibility" class="shrink-0 px-4 py-2 rounded-full hover:bg-ibt-bg transition-colors text-ibt-text-light hover:text-ibt-text font-medium">相性タイプ</a>
+      </nav>
+    </div>
+  </div>
 
   <!-- Content -->
-  <article class="py-16 md:py-24 bg-white">
-    <div class="max-w-3xl mx-auto px-4 prose prose-lg prose-gray
-      prose-headings:font-black prose-headings:text-ibt-text
-      prose-a:text-ibt-red prose-a:no-underline hover:prose-a:underline
-      prose-strong:text-ibt-text
-      prose-img:rounded-xl
-      prose-table:border-collapse prose-td:border prose-td:border-ibt-border prose-td:px-4 prose-td:py-2
-      prose-th:border prose-th:border-ibt-border prose-th:px-4 prose-th:py-2 prose-th:bg-ibt-bg">
-      <Content />
+  <article class="py-12 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="iber-type-content" style={`--type-color: ${typeColor}`}>
+        <Content />
+      </div>
     </div>
   </article>
 
   <!-- Diagnosis Link -->
   <section class="py-12 bg-ibt-bg">
     <div class="max-w-3xl mx-auto px-4 text-center">
-      <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
-        <p class="text-ibt-red font-bold text-sm tracking-widest mb-3">IB LEARNER PROFILE</p>
+      <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10">
+        <p class="font-bold text-sm tracking-widest mb-3" style={`color: ${typeColor}`}>IB LEARNER PROFILE</p>
         <h2 class="text-xl md:text-2xl font-bold mb-4">あなたのIBerタイプは？</h2>
         <p class="text-ibt-text-light mb-6">
           IB Learner's Profileに基づく診断で、あなたの強みと伸ばすべきポイントを発見しましょう。
         </p>
         <a
           href="/iber-type-shindan/"
-          class="inline-block px-6 py-3 border-2 border-ibt-red text-ibt-red font-bold rounded-full hover:bg-ibt-red hover:text-white transition-colors"
+          class="inline-block px-6 py-3 border-2 font-bold rounded-full hover:text-white transition-colors"
+          style={`border-color: ${typeColor}; color: ${typeColor};`}
+          onmouseover={`this.style.backgroundColor='${typeColor}'`}
+          onmouseout={`this.style.backgroundColor='transparent'; this.style.color='${typeColor}'`}
         >
           IBerタイプ診断を受ける
         </a>
@@ -97,8 +125,34 @@ const breadcrumbSchema = {
     </div>
   </section>
 
+  <!-- Other Types -->
+  <section class="py-12 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-xl md:text-2xl font-bold text-center mb-8">他のIBerタイプも見る</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        {iberTypes.filter(t => t.id !== type.data.slug).map((t) => (
+          <a
+            href={`/iber-type/${t.id}/`}
+            class="group flex flex-col items-center p-4 rounded-xl hover:bg-ibt-bg transition-colors text-center"
+          >
+            <div class="w-14 h-14 mb-2">
+              <img
+                src={`/images/iber-types/${t.id}.png`}
+                alt={`${t.name} - ${t.nameJa}`}
+                class="w-full h-full object-contain"
+                loading="lazy"
+              />
+            </div>
+            <span class="text-sm font-bold group-hover:text-ibt-red transition-colors">{t.name}</span>
+            <span class="text-xs text-ibt-text-light">{t.nameJa}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-16 md:py-24 bg-ibt-bg">
     <div class="max-w-3xl mx-auto px-4 text-center">
       <h2 class="text-2xl md:text-3xl font-bold mb-4">IBの学習でお困りですか？</h2>
       <p class="text-ibt-text-light text-lg mb-8">
@@ -115,3 +169,252 @@ const breadcrumbSchema = {
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </BaseLayout>
+
+<style>
+  /* Scrollbar hide for nav */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<style is:global>
+  /* IBer Type Content Styling */
+  .iber-type-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  /* Section anchors for navigation */
+  .iber-type-content h2:has(~ *),
+  .iber-type-content > p:first-child {
+    scroll-margin-top: 80px;
+  }
+
+  /* Hide the raw emoji intro block (first few lines before first h2-like section) */
+  .iber-type-content > p:first-child {
+    display: none;
+  }
+  .iber-type-content > p:nth-child(2) {
+    display: none;
+  }
+  .iber-type-content > p:nth-child(3) {
+    display: none;
+  }
+  /* Hide standalone empty paragraph sometimes generated */
+  .iber-type-content > p:empty {
+    display: none;
+  }
+  /* Hide the TOC sections embedded in WP markdown */
+  .iber-type-content > p:has(a[href="#"]) {
+    display: none;
+  }
+  .iber-type-content > ul:has(a[href*="ib-tutors.net/iber-type"]) {
+    display: none;
+  }
+
+  /* Main section headings (the emoji + text ones) */
+  .iber-type-content > h2,
+  .iber-type-content > p:has(+ h4),
+  .iber-type-content > p:only-of-type {
+    scroll-margin-top: 80px;
+  }
+
+  /* Style paragraphs that act as section titles (starting with emoji) */
+  .iber-type-content > p:first-of-type {
+    scroll-margin-top: 80px;
+  }
+
+  /* H2 styling: colored left border */
+  .iber-type-content h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    padding: 0.75rem 0 0.75rem 1rem;
+    border-left: 4px solid var(--type-color);
+    background: linear-gradient(to right, color-mix(in srgb, var(--type-color) 8%, transparent), transparent);
+    border-radius: 0 8px 8px 0;
+    scroll-margin-top: 80px;
+  }
+
+  /* H3 styling */
+  .iber-type-content h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    scroll-margin-top: 80px;
+  }
+
+  /* H4 styling */
+  .iber-type-content h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+    scroll-margin-top: 80px;
+  }
+
+  /* Paragraphs */
+  .iber-type-content p {
+    margin-bottom: 1.25rem;
+    color: #555;
+    line-height: 1.9;
+  }
+
+  /* Lists - custom bullet styling */
+  .iber-type-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .iber-type-content ul li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .iber-type-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--type-color);
+    opacity: 0.7;
+  }
+
+  /* Bold text */
+  .iber-type-content strong {
+    color: #111;
+    font-weight: 700;
+  }
+
+  /* Links */
+  .iber-type-content a {
+    color: var(--type-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  .iber-type-content a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  /* Compatibility type cards - style bold text in compatibility sections */
+  .iber-type-content h4 + p {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Style the compatibility section cards */
+  .iber-type-content h4:has(+ p > strong) + p,
+  .iber-type-content h4 ~ p:has(strong:first-child) {
+    background: #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Footer links section - style as button cards */
+  .iber-type-content > p:last-child a,
+  .iber-type-content > p:nth-last-child(-n+4) a[href*="contact"],
+  .iber-type-content > p:nth-last-child(-n+4) a[href*="shindan"],
+  .iber-type-content > p:nth-last-child(-n+4) a[href*="iber-type/"] {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border: 2px solid var(--type-color);
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    margin: 0.25rem;
+  }
+
+  .iber-type-content > p:last-child a:hover,
+  .iber-type-content > p:nth-last-child(-n+4) a[href*="contact"]:hover,
+  .iber-type-content > p:nth-last-child(-n+4) a[href*="shindan"]:hover,
+  .iber-type-content > p:nth-last-child(-n+4) a[href*="iber-type/"]:hover {
+    background-color: var(--type-color);
+    color: white;
+  }
+
+  /* Tips/advice callout styling for paragraphs containing advice */
+  .iber-type-content > p:has(strong:first-child):not(:has(a)) {
+    background: linear-gradient(135deg, #fafafa, #f5f5f5);
+    border: 1px solid #e8e8e8;
+    border-left: 4px solid var(--type-color);
+    border-radius: 0 12px 12px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  /* Hide the embedded TOC "Toggle" links */
+  .iber-type-content a[href="#"] {
+    display: none;
+  }
+
+  /* Section IDs for anchor linking */
+  .iber-type-content > h2:nth-of-type(1),
+  .iber-type-content > p:has(> strong):nth-of-type(1) {
+    /* personality section */
+  }
+</style>
+
+<script>
+  // Add anchor IDs to sections for smooth scrolling
+  document.addEventListener('DOMContentLoaded', () => {
+    const content = document.querySelector('.iber-type-content');
+    if (!content) return;
+
+    const headings = content.querySelectorAll('h2, h3');
+    const sectionMap = {
+      'personality': ['性格', '特徴'],
+      'strengths': ['強み'],
+      'challenges': ['課題'],
+      'subjects': ['得意科目', 'おすすめ'],
+      'compatibility': ['相性'],
+    };
+
+    headings.forEach((h) => {
+      const text = h.textContent || '';
+      for (const [id, keywords] of Object.entries(sectionMap)) {
+        if (keywords.some(k => text.includes(k))) {
+          h.id = id;
+          break;
+        }
+      }
+    });
+
+    // Also check for section-like paragraphs (those starting with emoji)
+    const paras = content.querySelectorAll('p');
+    paras.forEach((p) => {
+      const text = p.textContent || '';
+      // Match emoji-prefixed section titles (check for non-ASCII start)
+      const firstChar = text.charCodeAt(0);
+      if (firstChar > 127) {
+        for (const [id, keywords] of Object.entries(sectionMap)) {
+          if (keywords.some(k => text.includes(k))) {
+            p.id = id;
+            break;
+          }
+        }
+      }
+    });
+  });
+</script>

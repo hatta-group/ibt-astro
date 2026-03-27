@@ -4,10 +4,12 @@ slug: "gunma-international-academy"
 description: "IB校一覧 &nbsp;›&nbsp;関東 群馬インターナショナルアカデミー Gunma International Academy 私立 群馬県 太田市 DP MYP PYP 基本情報 学校名 群馬インターナショナルア [&hellip;]"
 ogImage: ""
 draft: false
+prefecture: "埼玉県"
+region: "関東"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "インター"
 ---
 
-[IB校一覧](/ib-schools/)
-       › 関東
     
 
     

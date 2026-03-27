@@ -4,11 +4,82 @@ import { getCollection } from 'astro:content';
 
 const allSchools = await getCollection('schools', ({ data }) => !data.draft);
 const schools = allSchools.sort((a, b) => a.data.title.localeCompare(b.data.title, 'ja'));
+
+// Counts
+const totalCount = schools.length;
+const ichijoCount = schools.filter(s => s.data.schoolType === '一条校').length;
+const interCount = schools.filter(s => s.data.schoolType === 'インター').length;
+const sonotaCount = totalCount - ichijoCount - interCount;
+
+// Program counts
+const pypCount = schools.filter(s => s.data.programs?.includes('PYP')).length;
+const mypCount = schools.filter(s => s.data.programs?.includes('MYP')).length;
+const dpCount = schools.filter(s => s.data.programs?.includes('DP')).length;
+const cpCount = schools.filter(s => s.data.programs?.includes('CP')).length;
+
+// Region order
+const regionOrder = ['北海道・東北', '関東', '中部', '関西', '中国・四国', '九州・沖縄'];
+
+// Prefecture order within each region
+const prefectureOrder: Record<string, string[]> = {
+  '北海道・東北': ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県'],
+  '関東': ['東京都','神奈川県','千葉県','埼玉県','茨城県','栃木県','群馬県'],
+  '中部': ['新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県'],
+  '関西': ['大阪府','京都府','兵庫県','奈良県','滋賀県','和歌山県','三重県'],
+  '中国・四国': ['鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県'],
+  '九州・沖縄': ['福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'],
+};
+
+// Group schools by region and prefecture
+type SchoolEntry = typeof schools[number];
+const schoolsByRegion: Record<string, Record<string, SchoolEntry[]>> = {};
+
+for (const region of regionOrder) {
+  schoolsByRegion[region] = {};
+  for (const pref of prefectureOrder[region]) {
+    const prefSchools = schools.filter(s => s.data.prefecture === pref);
+    if (prefSchools.length > 0) {
+      schoolsByRegion[region][pref] = prefSchools;
+    }
+  }
+}
+
+// Schools with no region
+const noRegionSchools = schools.filter(s => !s.data.region);
+
+// Region counts
+const regionCounts: Record<string, number> = {};
+for (const region of regionOrder) {
+  regionCounts[region] = schools.filter(s => s.data.region === region).length;
+}
+
+// Color helpers for cards
+const colors = [
+  'from-red-500 to-red-600',
+  'from-blue-500 to-blue-600',
+  'from-emerald-500 to-emerald-600',
+  'from-purple-500 to-purple-600',
+  'from-amber-500 to-amber-600',
+  'from-pink-500 to-pink-600',
+];
+
+function getGradient(title: string) {
+  return colors[title.charCodeAt(0) % colors.length];
+}
+
+// Description excerpt from school description
+function getExcerpt(desc: string | undefined, maxLen = 60) {
+  if (!desc) return '';
+  // Remove "のIB対策・家庭教師｜IBT" suffix pattern
+  let clean = desc.replace(/のIB対策.*$/, '').replace(/のIBプログラム対策.*$/, '');
+  if (clean.length > maxLen) clean = clean.slice(0, maxLen) + '...';
+  return clean;
+}
 ---
 
 <BaseLayout
-  title="IB認定校一覧｜日本と海外のIBスクール｜IBT"
-  description="日本国内・海外のIB（国際バカロレア）認定校を一覧で紹介。各校の特徴、プログラム、学費などの詳細情報をIB専門家庭教師が解説。"
+  title="日本のIB認定校一覧【2026年最新版】全国162校｜IBT"
+  description="日本全国のIB（国際バカロレア）認定校を地域別・プログラム別に一覧で紹介。PYP・MYP・DP・CP対応校を検索できます。一条校・インターナショナルスクール別の情報も。"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -29,78 +100,493 @@ const schools = allSchools.sort((a, b) => a.data.title.localeCompare(b.data.titl
         <span class="mx-2">/</span>
         <span class="text-white">IB認定校一覧</span>
       </nav>
-      <h1 class="text-3xl md:text-5xl font-bold text-white">IB認定校一覧</h1>
-      <p class="mt-4 text-white/85 text-lg md:text-xl">日本全国のIBスクールを探そう</p>
+      <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight">
+        日本のIB認定校一覧<span class="block md:inline text-xl md:text-3xl font-normal text-white/80 md:ml-3">【2026年最新版】</span>
+      </h1>
+      <p class="mt-4 text-white/85 text-lg md:text-xl">
+        全国のIB認定校（PYP・MYP・DP・CP）を地域別にまとめました。
+      </p>
     </div>
   </section>
 
-  <!-- Search & Grid -->
-  <section class="py-16 md:py-24 bg-ibt-bg">
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Search -->
-      <div class="mb-12">
-        <div class="max-w-xl mx-auto">
-          <div class="relative">
-            <input
-              type="text"
-              id="school-search"
-              placeholder="学校名で検索..."
-              class="w-full px-6 py-4 pl-12 bg-white rounded-2xl border border-ibt-border shadow-sm text-ibt-text placeholder-ibt-text-light/60 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-all"
-            />
-            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-ibt-text-light/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
+  <!-- Stats Bar -->
+  <section class="bg-white border-b border-ibt-border">
+    <div class="max-w-7xl mx-auto px-4 py-8 md:py-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="bg-gradient-to-br from-ibt-red/5 to-ibt-red/10 rounded-2xl p-5 text-center border border-ibt-red/10">
+          <div class="text-3xl md:text-4xl font-bold text-ibt-red">{totalCount}</div>
+          <div class="text-sm text-ibt-text font-medium mt-1">IB認定校</div>
+          <div class="text-xs text-ibt-text-light mt-0.5">全プログラム合計</div>
         </div>
-        <p class="text-center text-ibt-text-light text-sm mt-3">
-          全 <span id="school-count">{schools.length}</span> 校
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl p-5 text-center border border-blue-100">
+          <div class="text-3xl md:text-4xl font-bold text-blue-600">{ichijoCount}</div>
+          <div class="text-sm text-ibt-text font-medium mt-1">一条校</div>
+          <div class="text-xs text-ibt-text-light mt-0.5">日本の学校教育法認定</div>
+        </div>
+        <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-2xl p-5 text-center border border-emerald-100">
+          <div class="text-3xl md:text-4xl font-bold text-emerald-600">{interCount}</div>
+          <div class="text-sm text-ibt-text font-medium mt-1">インター等</div>
+          <div class="text-xs text-ibt-text-light mt-0.5">インターナショナルスクール等</div>
+        </div>
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-2xl p-5 text-center border border-purple-100">
+          <div class="text-3xl md:text-4xl font-bold text-purple-600">{sonotaCount}</div>
+          <div class="text-sm text-ibt-text font-medium mt-1">その他</div>
+          <div class="text-xs text-ibt-text-light mt-0.5">各種学校・その他</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IB Explanation + Program Cards -->
+  <section class="py-12 md:py-16 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-ibt-text text-center mb-4">
+        IB（国際バカロレア）とは？
+      </h2>
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        <p class="text-ibt-text-light leading-relaxed mb-3">
+          国際バカロレア（IB）は、スイス・ジュネーブに本部を置く国際バカロレア機構（IBO）が提供する国際的な教育プログラムです。
+          探究型学習・批判的思考・国際的な視野を重視し、世界160か国以上、5,700校以上で導入されています。
+        </p>
+        <p class="text-ibt-text-light leading-relaxed">
+          日本では文部科学省がIB教育の推進を掲げ、認定校数は年々増加しています。
+          プログラムは年齢に応じて4つに分かれています。
         </p>
       </div>
 
-      {schools.length === 0 ? (
-        <p class="text-center text-ibt-text-light text-lg">学校情報を準備中です。</p>
-      ) : (
-        <div id="school-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {schools.map((school) => (
-            <article
-              class="school-card bg-white rounded-2xl shadow-sm border border-ibt-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              data-name={school.data.title.toLowerCase()}
+      <!-- Program Filter Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="program-filters">
+        <button
+          class="program-btn group bg-white rounded-2xl p-5 border-2 border-transparent hover:border-emerald-400 transition-all shadow-sm hover:shadow-md text-left"
+          data-program="PYP"
+        >
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-block w-3 h-3 rounded-full bg-emerald-500"></span>
+            <span class="font-bold text-emerald-700 text-lg">PYP</span>
+          </div>
+          <div class="text-xs text-ibt-text-light mb-1">3〜12歳（初等教育）</div>
+          <div class="text-2xl font-bold text-ibt-text">{pypCount}<span class="text-sm font-normal text-ibt-text-light ml-1">校</span></div>
+          <p class="text-xs text-ibt-text-light mt-2 leading-relaxed">
+            探究心と国際的な視野を育む初等教育プログラム
+          </p>
+        </button>
+
+        <button
+          class="program-btn group bg-white rounded-2xl p-5 border-2 border-transparent hover:border-blue-400 transition-all shadow-sm hover:shadow-md text-left"
+          data-program="MYP"
+        >
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-block w-3 h-3 rounded-full bg-blue-500"></span>
+            <span class="font-bold text-blue-700 text-lg">MYP</span>
+          </div>
+          <div class="text-xs text-ibt-text-light mb-1">11〜16歳（中等教育）</div>
+          <div class="text-2xl font-bold text-ibt-text">{mypCount}<span class="text-sm font-normal text-ibt-text-light ml-1">校</span></div>
+          <p class="text-xs text-ibt-text-light mt-2 leading-relaxed">
+            教科横断的な学びで思考力と表現力を伸ばす
+          </p>
+        </button>
+
+        <button
+          class="program-btn group bg-white rounded-2xl p-5 border-2 border-transparent hover:border-red-400 transition-all shadow-sm hover:shadow-md text-left"
+          data-program="DP"
+        >
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-block w-3 h-3 rounded-full bg-red-500"></span>
+            <span class="font-bold text-red-700 text-lg">DP</span>
+          </div>
+          <div class="text-xs text-ibt-text-light mb-1">16〜19歳（ディプロマ）</div>
+          <div class="text-2xl font-bold text-ibt-text">{dpCount}<span class="text-sm font-normal text-ibt-text-light ml-1">校</span></div>
+          <p class="text-xs text-ibt-text-light mt-2 leading-relaxed">
+            大学進学に直結する国際的な卒業資格プログラム
+          </p>
+        </button>
+
+        <button
+          class="program-btn group bg-white rounded-2xl p-5 border-2 border-transparent hover:border-orange-400 transition-all shadow-sm hover:shadow-md text-left"
+          data-program="CP"
+        >
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-block w-3 h-3 rounded-full bg-orange-500"></span>
+            <span class="font-bold text-orange-700 text-lg">CP</span>
+          </div>
+          <div class="text-xs text-ibt-text-light mb-1">16〜19歳（キャリア関連）</div>
+          <div class="text-2xl font-bold text-ibt-text">{cpCount}<span class="text-sm font-normal text-ibt-text-light ml-1">校</span></div>
+          <p class="text-xs text-ibt-text-light mt-2 leading-relaxed">
+            キャリアに直結した実践的な学びのプログラム
+          </p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Filter Bar + Search -->
+  <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-ibt-border shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3">
+      <div class="flex flex-col md:flex-row md:items-center gap-3">
+        <!-- Region Filters -->
+        <div class="flex flex-wrap gap-2 flex-1" id="region-filters">
+          <button
+            class="region-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-ibt-red text-white shadow-sm"
+            data-region="all"
+          >
+            すべて（{totalCount}）
+          </button>
+          {regionOrder.map(region => (
+            <button
+              class="region-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-gray-100 text-ibt-text-light hover:bg-gray-200"
+              data-region={region}
             >
-              <a
-                href={`/ib-schools/${school.data.slug}/`}
-                class="group block p-6"
-              >
-                <h2 class="text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-2 line-clamp-2">
-                  {school.data.title}
-                </h2>
-                {school.data.description && (
-                  <p class="text-ibt-text-light text-sm leading-relaxed line-clamp-3">
-                    {school.data.description}
-                  </p>
-                )}
-              </a>
-            </article>
+              {region}（{regionCounts[region]}）
+            </button>
           ))}
         </div>
+        <!-- Search -->
+        <div class="relative md:w-64 flex-shrink-0">
+          <input
+            type="text"
+            id="school-search"
+            placeholder="学校名で検索..."
+            class="w-full px-4 py-2 pl-10 bg-gray-50 rounded-full border border-ibt-border text-sm text-ibt-text placeholder-ibt-text-light/60 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-all"
+          />
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ibt-text-light/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      </div>
+      <!-- Active filter info -->
+      <div class="mt-2 flex items-center gap-2 text-sm text-ibt-text-light" id="filter-info">
+        <span id="visible-count">{totalCount}</span> 校表示中
+        <span id="active-filters" class="hidden">
+          <span class="mx-1">|</span>
+          <button id="clear-filters" class="text-ibt-red hover:underline">フィルターをクリア</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- School Grid grouped by region -->
+  <section class="py-10 md:py-16 bg-ibt-bg" id="school-list">
+    <div class="max-w-7xl mx-auto px-4">
+
+      {regionOrder.map(region => {
+        const regionSchools = schoolsByRegion[region];
+        const prefectures = Object.keys(regionSchools);
+        if (prefectures.length === 0) return null;
+
+        return (
+          <div class="region-group mb-12" data-region={region}>
+            <h2 class="text-xl md:text-2xl font-bold text-ibt-text mb-6 flex items-center gap-3">
+              <span class="inline-block w-1.5 h-8 bg-ibt-red rounded-full"></span>
+              {region}
+              <span class="text-base font-normal text-ibt-text-light">（{regionCounts[region]}校）</span>
+            </h2>
+
+            {prefectures.map(pref => (
+              <div class="prefecture-group mb-8" data-prefecture={pref}>
+                <h3 class="text-lg font-semibold text-ibt-text mb-4 pl-4 border-l-2 border-ibt-red/30">
+                  {pref}
+                  <span class="text-sm font-normal text-ibt-text-light ml-2">（{regionSchools[pref].length}校）</span>
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                  {regionSchools[pref].map(school => {
+                    const gradient = getGradient(school.data.title);
+                    const initial = school.data.title.charAt(0);
+                    const programs = school.data.programs || [];
+                    const schoolType = school.data.schoolType || '';
+                    return (
+                      <article
+                        class="school-card bg-white rounded-2xl shadow-sm border border-ibt-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                        data-name={school.data.title.toLowerCase()}
+                        data-region={school.data.region || ''}
+                        data-prefecture={school.data.prefecture || ''}
+                        data-programs={programs.join(',')}
+                        data-type={schoolType}
+                      >
+                        <div class={`h-1 bg-gradient-to-r ${gradient}`} />
+                        <a href={`/ib-schools/${school.data.slug}/`} class="group block p-5">
+                          <div class="flex items-start gap-3">
+                            <div class={`flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-bold text-base shadow-sm`}>
+                              {initial}
+                            </div>
+                            <div class="flex-1 min-w-0">
+                              <h4 class="text-base font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-2 line-clamp-2 leading-snug">
+                                {school.data.title.replace(/のIB対策.*$/, '')}
+                              </h4>
+                              {/* Badges */}
+                              <div class="flex flex-wrap gap-1.5 mb-2">
+                                {programs.includes('PYP') && (
+                                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">PYP</span>
+                                )}
+                                {programs.includes('MYP') && (
+                                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">MYP</span>
+                                )}
+                                {programs.includes('DP') && (
+                                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-50 text-red-700 border border-red-200">DP</span>
+                                )}
+                                {programs.includes('CP') && (
+                                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-orange-50 text-orange-700 border border-orange-200">CP</span>
+                                )}
+                                {schoolType === '一条校' && (
+                                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-600 border border-blue-200">一条校</span>
+                                )}
+                                {schoolType === 'インター' && (
+                                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-600 border border-emerald-200">インター</span>
+                                )}
+                              </div>
+                              {school.data.description && (
+                                <p class="text-ibt-text-light text-xs leading-relaxed line-clamp-2 mb-2">
+                                  {school.data.description}
+                                </p>
+                              )}
+                              <span class="text-ibt-red text-sm font-medium group-hover:translate-x-1 inline-block transition-transform">
+                                詳しく見る →
+                              </span>
+                            </div>
+                          </div>
+                        </a>
+                      </article>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+      })}
+
+      {/* Schools with no region */}
+      {noRegionSchools.length > 0 && (
+        <div class="region-group mb-12" data-region="">
+          <h2 class="text-xl md:text-2xl font-bold text-ibt-text mb-6 flex items-center gap-3">
+            <span class="inline-block w-1.5 h-8 bg-gray-400 rounded-full"></span>
+            その他
+            <span class="text-base font-normal text-ibt-text-light">（{noRegionSchools.length}校）</span>
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {noRegionSchools.map(school => {
+              const gradient = getGradient(school.data.title);
+              const initial = school.data.title.charAt(0);
+              const programs = school.data.programs || [];
+              const schoolType = school.data.schoolType || '';
+              return (
+                <article
+                  class="school-card bg-white rounded-2xl shadow-sm border border-ibt-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                  data-name={school.data.title.toLowerCase()}
+                  data-region=""
+                  data-prefecture=""
+                  data-programs={programs.join(',')}
+                  data-type={schoolType}
+                >
+                  <div class={`h-1 bg-gradient-to-r ${gradient}`} />
+                  <a href={`/ib-schools/${school.data.slug}/`} class="group block p-5">
+                    <div class="flex items-start gap-3">
+                      <div class={`flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-bold text-base shadow-sm`}>
+                        {initial}
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <h4 class="text-base font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-2 line-clamp-2 leading-snug">
+                          {school.data.title.replace(/のIB対策.*$/, '')}
+                        </h4>
+                        <div class="flex flex-wrap gap-1.5 mb-2">
+                          {programs.includes('PYP') && (
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">PYP</span>
+                          )}
+                          {programs.includes('MYP') && (
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">MYP</span>
+                          )}
+                          {programs.includes('DP') && (
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-50 text-red-700 border border-red-200">DP</span>
+                          )}
+                          {programs.includes('CP') && (
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-orange-50 text-orange-700 border border-orange-200">CP</span>
+                          )}
+                          {schoolType === 'インター' && (
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-600 border border-emerald-200">インター</span>
+                          )}
+                        </div>
+                        {school.data.description && (
+                          <p class="text-ibt-text-light text-xs leading-relaxed line-clamp-2 mb-2">
+                            {school.data.description}
+                          </p>
+                        )}
+                        <span class="text-ibt-red text-sm font-medium group-hover:translate-x-1 inline-block transition-transform">
+                          詳しく見る →
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+              );
+            })}
+          </div>
+        </div>
       )}
+
+      <!-- No Results Message -->
+      <div id="no-results" class="hidden text-center py-16">
+        <div class="text-5xl mb-4">🔍</div>
+        <p class="text-xl text-ibt-text font-medium mb-2">該当する学校が見つかりませんでした</p>
+        <p class="text-ibt-text-light">検索条件を変更してお試しください</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        IBの学習でお困りですか？
+      </h2>
+      <p class="text-white/85 text-lg mb-8">
+        IB卒業生の家庭教師が、あなたの学校のカリキュラムに合わせて直接サポートします。<br class="hidden md:inline" />
+        まずは話を聞いてみるだけでも大丈夫です。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 bg-white text-ibt-red font-bold rounded-full hover:bg-gray-50 transition-colors shadow-lg">
+          まずは無料で相談する →
+        </a>
+        <a href="https://lin.ee/xWMOBbI" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/30">
+          LINEで気軽に相談
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
 
 <script>
+  // --- State ---
+  let activeRegion = 'all';
+  let activeProgram = '';
+  let searchQuery = '';
+
+  // --- DOM ---
   const searchInput = document.getElementById('school-search') as HTMLInputElement;
   const cards = document.querySelectorAll('.school-card') as NodeListOf<HTMLElement>;
-  const countEl = document.getElementById('school-count');
+  const regionGroups = document.querySelectorAll('.region-group') as NodeListOf<HTMLElement>;
+  const prefectureGroups = document.querySelectorAll('.prefecture-group') as NodeListOf<HTMLElement>;
+  const regionBtns = document.querySelectorAll('.region-btn') as NodeListOf<HTMLButtonElement>;
+  const programBtns = document.querySelectorAll('.program-btn') as NodeListOf<HTMLButtonElement>;
+  const visibleCountEl = document.getElementById('visible-count');
+  const activeFiltersEl = document.getElementById('active-filters');
+  const clearFiltersBtn = document.getElementById('clear-filters');
+  const noResultsEl = document.getElementById('no-results');
 
-  searchInput?.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase().trim();
-    let visible = 0;
-    cards.forEach((card) => {
+  function applyFilters() {
+    let visibleCount = 0;
+
+    cards.forEach(card => {
       const name = card.dataset.name || '';
-      const match = !query || name.includes(query);
-      card.style.display = match ? '' : 'none';
-      if (match) visible++;
+      const region = card.dataset.region || '';
+      const programs = card.dataset.programs || '';
+
+      const matchRegion = activeRegion === 'all' || region === activeRegion;
+      const matchProgram = !activeProgram || programs.split(',').includes(activeProgram);
+      const matchSearch = !searchQuery || name.includes(searchQuery);
+
+      const show = matchRegion && matchProgram && matchSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
     });
-    if (countEl) countEl.textContent = String(visible);
+
+    // Show/hide region groups based on visible cards
+    regionGroups.forEach(group => {
+      const groupCards = group.querySelectorAll('.school-card') as NodeListOf<HTMLElement>;
+      const hasVisible = Array.from(groupCards).some(c => c.style.display !== 'none');
+      group.style.display = hasVisible ? '' : 'none';
+    });
+
+    // Show/hide prefecture groups
+    prefectureGroups.forEach(group => {
+      const groupCards = group.querySelectorAll('.school-card') as NodeListOf<HTMLElement>;
+      const hasVisible = Array.from(groupCards).some(c => c.style.display !== 'none');
+      group.style.display = hasVisible ? '' : 'none';
+    });
+
+    // Update count
+    if (visibleCountEl) visibleCountEl.textContent = String(visibleCount);
+
+    // Show/hide active filters indicator
+    const hasActiveFilter = activeRegion !== 'all' || activeProgram || searchQuery;
+    if (activeFiltersEl) {
+      activeFiltersEl.classList.toggle('hidden', !hasActiveFilter);
+    }
+
+    // No results message
+    if (noResultsEl) {
+      noResultsEl.classList.toggle('hidden', visibleCount > 0);
+    }
+  }
+
+  // Region filter
+  regionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeRegion = btn.dataset.region || 'all';
+      regionBtns.forEach(b => {
+        b.classList.remove('bg-ibt-red', 'text-white', 'shadow-sm');
+        b.classList.add('bg-gray-100', 'text-ibt-text-light');
+      });
+      btn.classList.remove('bg-gray-100', 'text-ibt-text-light');
+      btn.classList.add('bg-ibt-red', 'text-white', 'shadow-sm');
+      applyFilters();
+    });
+  });
+
+  // Program filter
+  programBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const program = btn.dataset.program || '';
+      if (activeProgram === program) {
+        // Deselect
+        activeProgram = '';
+        btn.classList.remove('border-emerald-400', 'border-blue-400', 'border-red-400', 'border-orange-400', 'bg-emerald-50', 'bg-blue-50', 'bg-red-50', 'bg-orange-50');
+        btn.classList.add('border-transparent');
+      } else {
+        // Deselect all
+        programBtns.forEach(b => {
+          b.classList.remove('border-emerald-400', 'border-blue-400', 'border-red-400', 'border-orange-400', 'bg-emerald-50', 'bg-blue-50', 'bg-red-50', 'bg-orange-50');
+          b.classList.add('border-transparent');
+        });
+        activeProgram = program;
+        // Style active button
+        const colorMap: Record<string, string[]> = {
+          'PYP': ['border-emerald-400', 'bg-emerald-50'],
+          'MYP': ['border-blue-400', 'bg-blue-50'],
+          'DP': ['border-red-400', 'bg-red-50'],
+          'CP': ['border-orange-400', 'bg-orange-50'],
+        };
+        const classes = colorMap[program] || [];
+        btn.classList.remove('border-transparent');
+        classes.forEach(c => btn.classList.add(c));
+      }
+      applyFilters();
+    });
+  });
+
+  // Search
+  searchInput?.addEventListener('input', () => {
+    searchQuery = searchInput.value.toLowerCase().trim();
+    applyFilters();
+  });
+
+  // Clear filters
+  clearFiltersBtn?.addEventListener('click', () => {
+    activeRegion = 'all';
+    activeProgram = '';
+    searchQuery = '';
+    if (searchInput) searchInput.value = '';
+
+    regionBtns.forEach(b => {
+      b.classList.remove('bg-ibt-red', 'text-white', 'shadow-sm');
+      b.classList.add('bg-gray-100', 'text-ibt-text-light');
+    });
+    regionBtns[0]?.classList.remove('bg-gray-100', 'text-ibt-text-light');
+    regionBtns[0]?.classList.add('bg-ibt-red', 'text-white', 'shadow-sm');
+
+    programBtns.forEach(b => {
+      b.classList.remove('border-emerald-400', 'border-blue-400', 'border-red-400', 'border-orange-400', 'bg-emerald-50', 'bg-blue-50', 'bg-red-50', 'bg-orange-50');
+      b.classList.add('border-transparent');
+    });
+
+    applyFilters();
   });
 </script>

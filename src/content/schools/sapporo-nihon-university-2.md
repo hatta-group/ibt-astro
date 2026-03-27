@@ -4,6 +4,10 @@ slug: "sapporo-nihon-university-2"
 description: "札幌日本大学高等学校のIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""
 draft: false
+prefecture: "北海道"
+region: "北海道・東北"
+programs: ["PYP", "MYP", "DP"]
+schoolType: "一条校"
 ---
 
 IB専門家庭教師

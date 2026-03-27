@@ -53,6 +53,5 @@ export const tutors: Tutor[] = [
     school: '玉川学園IB',
     university: '立教大学 GLAP',
     subjects: ['Japanese', 'English', 'Economics', 'ESS', 'Art'],
-    image: '/images/tutors/ai-w.jpg',
   },
 ];
