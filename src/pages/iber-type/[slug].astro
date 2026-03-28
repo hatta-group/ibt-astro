@@ -60,11 +60,11 @@ const breadcrumbSchema = {
         <span class="text-white">{type.data.title}</span>
       </nav>
       <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-        <div class="w-32 h-32 md:w-40 md:h-40 bg-white/20 backdrop-blur-sm rounded-2xl p-4 shrink-0 shadow-lg">
+        <div class="w-40 h-40 md:w-56 md:h-56 shrink-0">
           <img
             src={`/images/iber-types/${type.data.slug}.png`}
             alt={type.data.title}
-            class="w-full h-full object-contain drop-shadow-lg"
+            class="w-full h-full object-contain drop-shadow-2xl"
           />
         </div>
         <div class="text-center md:text-left">
@@ -95,7 +95,7 @@ const breadcrumbSchema = {
   </div>
 
   <!-- Content -->
-  <article class="py-12 md:py-20 bg-white">
+  <article class="py-12 md:py-20 bg-gray-50">
     <div class="max-w-3xl mx-auto px-4">
       <div class="iber-type-content" style={`--type-color: ${typeColor}`}>
         <Content />
@@ -182,128 +182,83 @@ const breadcrumbSchema = {
 </style>
 
 <style is:global>
-  /* IBer Type Content Styling */
   .iber-type-content {
     font-size: 1rem;
     line-height: 1.8;
     color: #333;
   }
-
-  /* Section anchors for navigation */
-  .iber-type-content h2:has(~ *),
-  .iber-type-content > p:first-child {
-    scroll-margin-top: 80px;
-  }
-
-  /* Hide the raw emoji intro block (first few lines before first h2-like section) */
-  .iber-type-content > p:first-child {
-    display: none;
-  }
-  .iber-type-content > p:nth-child(2) {
-    display: none;
-  }
-  .iber-type-content > p:nth-child(3) {
-    display: none;
-  }
-  /* Hide standalone empty paragraph sometimes generated */
-  .iber-type-content > p:empty {
-    display: none;
-  }
-  /* Hide the TOC sections embedded in WP markdown */
-  .iber-type-content > p:has(a[href="#"]) {
-    display: none;
-  }
+  .iber-type-content > p:first-child,
+  .iber-type-content > p:nth-child(2),
+  .iber-type-content > p:nth-child(3),
+  .iber-type-content > p:empty,
+  .iber-type-content > p:has(a[href="#"]),
   .iber-type-content > ul:has(a[href*="ib-tutors.net/iber-type"]) {
     display: none;
   }
-
-  /* Main section headings (the emoji + text ones) */
-  .iber-type-content > h2,
-  .iber-type-content > p:has(+ h4),
-  .iber-type-content > p:only-of-type {
-    scroll-margin-top: 80px;
-  }
-
-  /* Style paragraphs that act as section titles (starting with emoji) */
-  .iber-type-content > p:first-of-type {
-    scroll-margin-top: 80px;
-  }
-
-  /* H2 styling: colored left border */
   .iber-type-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 900;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     margin-bottom: 1.25rem;
-    padding: 0.75rem 0 0.75rem 1rem;
+    padding: 1rem 1.25rem;
     border-left: 4px solid var(--type-color);
-    background: linear-gradient(to right, color-mix(in srgb, var(--type-color) 8%, transparent), transparent);
-    border-radius: 0 8px 8px 0;
+    background: white;
+    border-radius: 0 16px 16px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     scroll-margin-top: 80px;
   }
-
-  /* H3 styling */
   .iber-type-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 800;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #f0f0f0;
     scroll-margin-top: 80px;
   }
-
-  /* H4 styling */
   .iber-type-content h4 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-bottom: 0.75rem;
     color: #333;
     scroll-margin-top: 80px;
   }
-
-  /* Paragraphs */
   .iber-type-content p {
     margin-bottom: 1.25rem;
     color: #555;
     line-height: 1.9;
   }
-
-  /* Lists - custom bullet styling */
   .iber-type-content ul {
     list-style: none;
     padding-left: 0;
     margin-bottom: 1.5rem;
   }
-
   .iber-type-content ul li {
     position: relative;
-    padding-left: 1.75rem;
-    margin-bottom: 0.75rem;
-    color: #555;
-    line-height: 1.7;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    border: 1px solid #f0f0f0;
+    color: #444;
+    line-height: 1.6;
   }
-
   .iber-type-content ul li::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0.55rem;
+    left: 1rem;
+    top: 1.1rem;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background-color: var(--type-color);
-    opacity: 0.7;
   }
-
-  /* Bold text */
   .iber-type-content strong {
     color: #111;
     font-weight: 700;
   }
-
-  /* Links */
   .iber-type-content a {
     color: var(--type-color);
     text-decoration: none;
@@ -314,65 +269,18 @@ const breadcrumbSchema = {
     opacity: 0.8;
     text-decoration: underline;
   }
-
-  /* Compatibility type cards - style bold text in compatibility sections */
-  .iber-type-content h4 + p {
-    margin-bottom: 0.5rem;
-  }
-
-  /* Style the compatibility section cards */
-  .iber-type-content h4:has(+ p > strong) + p,
-  .iber-type-content h4 ~ p:has(strong:first-child) {
-    background: #fafafa;
-    border: 1px solid #f0f0f0;
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 0.75rem;
-  }
-
-  /* Footer links section - style as button cards */
-  .iber-type-content > p:last-child a,
-  .iber-type-content > p:nth-last-child(-n+4) a[href*="contact"],
-  .iber-type-content > p:nth-last-child(-n+4) a[href*="shindan"],
-  .iber-type-content > p:nth-last-child(-n+4) a[href*="iber-type/"] {
-    display: inline-block;
-    padding: 0.5rem 1.25rem;
-    border: 2px solid var(--type-color);
-    border-radius: 9999px;
-    font-weight: 700;
-    font-size: 0.875rem;
-    transition: all 0.2s;
-    margin: 0.25rem;
-  }
-
-  .iber-type-content > p:last-child a:hover,
-  .iber-type-content > p:nth-last-child(-n+4) a[href*="contact"]:hover,
-  .iber-type-content > p:nth-last-child(-n+4) a[href*="shindan"]:hover,
-  .iber-type-content > p:nth-last-child(-n+4) a[href*="iber-type/"]:hover {
-    background-color: var(--type-color);
-    color: white;
-  }
-
-  /* Tips/advice callout styling for paragraphs containing advice */
   .iber-type-content > p:has(strong:first-child):not(:has(a)) {
-    background: linear-gradient(135deg, #fafafa, #f5f5f5);
+    background: white;
     border: 1px solid #e8e8e8;
     border-left: 4px solid var(--type-color);
     border-radius: 0 12px 12px 0;
     padding: 1rem 1.25rem;
     margin: 1.5rem 0;
     font-size: 0.95rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
   }
-
-  /* Hide the embedded TOC "Toggle" links */
   .iber-type-content a[href="#"] {
     display: none;
-  }
-
-  /* Section IDs for anchor linking */
-  .iber-type-content > h2:nth-of-type(1),
-  .iber-type-content > p:has(> strong):nth-of-type(1) {
-    /* personality section */
   }
 </style>
 
