@@ -140,6 +140,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <p class="text-xs text-ibt-text-light">
               ※ 送信後、確認ページが表示されます。返信は通常24時間以内にいたします。
             </p>
+            <p class="text-xs text-ibt-text-light">
+              送信いただいた個人情報は、お問い合わせへの対応にのみ使用いたします。詳しくは<a href="/legal/" class="text-ibt-red hover:underline">特定商取引法に基づく表記</a>をご確認ください。
+            </p>
 
             <!-- 送信ボタン -->
             <button
@@ -208,3 +211,48 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      let valid = true;
+      // Clear previous errors
+      form.querySelectorAll('.field-error').forEach(el => el.remove());
+      form.querySelectorAll('.border-red-400').forEach(el => {
+        el.classList.remove('border-red-400');
+        el.classList.add('border-ibt-border');
+      });
+
+      const name = form.querySelector('#name') as HTMLInputElement;
+      const email = form.querySelector('#email') as HTMLInputElement;
+
+      if (!name?.value.trim()) {
+        showError(name, 'お名前を入力してください');
+        valid = false;
+      }
+      if (!email?.value.trim()) {
+        showError(email, 'メールアドレスを入力してください');
+        valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        showError(email, '正しいメールアドレスを入力してください');
+        valid = false;
+      }
+
+      if (!valid) {
+        e.preventDefault();
+        form.querySelector('.field-error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
+
+  function showError(input: HTMLInputElement | null, message: string) {
+    if (!input) return;
+    input.classList.remove('border-ibt-border');
+    input.classList.add('border-red-400');
+    const err = document.createElement('p');
+    err.className = 'field-error text-red-500 text-xs mt-1';
+    err.textContent = message;
+    input.parentElement?.appendChild(err);
+  }
+</script>
