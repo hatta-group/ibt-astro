@@ -1,5 +1,5 @@
 ---
-title: "鹿追町立瓜幕中学校のIB対策・家庭教師｜IBT"
+title: "鹿追町立瓜幕中学校"
 slug: "shikaoi-urimaku-jhs"
 description: "HOME &gt; IB校一覧 &gt; 瓜幕中学校 IB School Guide 鹿追町立瓜幕中学校（IB MYP認定校） 2026年1月MYP認定。日本初、自治体内の全公立中学校がIB認定を達成した北海道鹿追町の少 [&hellip;]"
 ogImage: ""

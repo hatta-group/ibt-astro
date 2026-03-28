@@ -1,5 +1,5 @@
 ---
-title: "Capital Tokyo International SchoolのIB対策・家庭教師｜IBT"
+title: "Capital Tokyo International School"
 slug: "capital-tokyo-international-school"
 description: "Capital Tokyo International SchoolのIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

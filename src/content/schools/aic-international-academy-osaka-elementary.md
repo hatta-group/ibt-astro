@@ -1,5 +1,5 @@
 ---
-title: "AIC International Academy Osaka ElementaryのIB対策・家庭教師｜IBT"
+title: "AIC International Academy Osaka Elementary"
 slug: "aic-international-academy-osaka-elementary"
 description: "AIC International Academy Osaka ElementaryのIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

@@ -1,5 +1,5 @@
 ---
-title: "AIC World College Elementary School KyotoのIB対策・家庭教師｜IBT"
+title: "AIC World College Elementary School Kyoto"
 slug: "aic-world-college-elementary-school-kyoto"
 description: "AIC World College Elementary School KyotoのIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

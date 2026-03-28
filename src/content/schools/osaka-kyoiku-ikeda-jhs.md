@@ -1,5 +1,5 @@
 ---
-title: "大阪教育大学附属池田中学校のIB対策・家庭教師｜IBT"
+title: "大阪教育大学附属池田中学校"
 slug: "osaka-kyoiku-ikeda-jhs"
 description: "大阪教育大学附属池田中学校のIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

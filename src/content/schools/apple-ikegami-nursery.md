@@ -1,5 +1,5 @@
 ---
-title: "あっぷる池上保育園のIB対策・家庭教師｜IBT"
+title: "あっぷる池上保育園"
 slug: "apple-ikegami-nursery"
 description: "あっぷる池上保育園のIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

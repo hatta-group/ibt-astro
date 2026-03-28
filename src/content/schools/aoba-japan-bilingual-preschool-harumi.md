@@ -1,5 +1,5 @@
 ---
-title: "Aoba-Japan Bilingual Preschool HarumiのIB対策・家庭教師｜IBT"
+title: "Aoba-Japan Bilingual Preschool Harumi"
 slug: "aoba-japan-bilingual-preschool-harumi"
 description: "Aoba-Japan Bilingual Preschool HarumiのIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

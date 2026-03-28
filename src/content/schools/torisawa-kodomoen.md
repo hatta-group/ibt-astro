@@ -1,5 +1,5 @@
 ---
-title: "とりさわ認定こども園のIB対策・家庭教師｜IBT"
+title: "とりさわ認定こども園"
 slug: "torisawa-kodomoen"
 description: "とりさわ認定こども園のIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

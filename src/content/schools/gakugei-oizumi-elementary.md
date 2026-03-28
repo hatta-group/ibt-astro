@@ -1,5 +1,5 @@
 ---
-title: "東京学芸大学附属大泉小学校のIB対策・家庭教師｜IBT"
+title: "東京学芸大学附属大泉小学校"
 slug: "gakugei-oizumi-elementary"
 description: "東京学芸大学附属大泉小学校のIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

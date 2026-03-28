@@ -1,5 +1,5 @@
 ---
-title: "Aoba-Japan Bilingual Preschool MitakaのIB対策・家庭教師｜IBT"
+title: "Aoba-Japan Bilingual Preschool Mitaka"
 slug: "aoba-japan-bilingual-preschool-mitaka"
 description: "Aoba-Japan Bilingual Preschool MitakaのIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

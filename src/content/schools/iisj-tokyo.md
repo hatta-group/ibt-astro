@@ -1,5 +1,5 @@
 ---
-title: "India International School in JapanのIB対策・家庭教師｜IBT"
+title: "India International School in Japan"
 slug: "iisj-tokyo"
 description: "India International School in JapanのIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

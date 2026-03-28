@@ -1,5 +1,5 @@
 ---
-title: "千里国際学園（SIS/OIS）のIB対策・家庭教師｜IBT"
+title: "千里国際学園（SIS/OIS）"
 slug: "senri-international-school"
 description: "HOME &gt; IB校一覧 &gt; OIS / 千里国際 IB School Guide Osaka International School of Kwansei Gakuin（関西学院大阪インターナショナルスク [&hellip;]"
 ogImage: ""

@@ -1,5 +1,5 @@
 ---
-title: "AIC World College of Hiroshima Elementary SchoolのIB対策・家庭教師｜IBT"
+title: "AIC World College of Hiroshima Elementary School"
 slug: "aic-world-college-of-hiroshima-elementary-school"
 description: "AIC World College of Hiroshima Elementary SchoolのIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""

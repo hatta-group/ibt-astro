@@ -1,5 +1,5 @@
 ---
-title: "Deutsche Schule Kobe InternationalのIB対策・家庭教師｜IBT"
+title: "Deutsche Schule Kobe International"
 slug: "deutsche-schule-kobe-international"
 description: "Deutsche Schule Kobe InternationalのIBプログラム対策ならIBT。IB卒業生講師によるマンツーマン指導。TOK・EE・IA対策も対応。60分無料体験受付中。"
 ogImage: ""
