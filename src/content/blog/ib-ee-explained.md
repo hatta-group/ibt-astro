@@ -1,17 +1,13 @@
 ---
-title: "EE（Extended Essay）とは？"
+title: "IB卒業生チューター紹介 - サイエンスが得意なバイリンガル先生"
 slug: "ib-ee-explained"
 date: "2024-04-17"
-description: "IB Extended Essay（EE）とは？字数・構成・評価基準をIB卒業生がわかりやすく解説。EEで高得点を取るための基礎知識。"
-category: "ib-basics"
+description: "IBT講師紹介。上智大学在学のIB卒業生が、BiologyやChemistryなどサイエンス科目を中心にバイリンガルで指導。レッスンへの情熱と効果的な学習方法をご紹介。"
+category: "tutor-intro"
 ogImage: ""
 draft: false
 ---
 
-目次
-
-[Toggle](#)
-- [チューター紹介](https://ib-tutors.net/ib-ee-explained/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E7%B4%B9%E4%BB%8B)[はじめに](https://ib-tutors.net/ib-ee-explained/#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)- [チューターのプロファイル](https://ib-tutors.net/ib-ee-explained/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB)- [レッスンへの情熱と努力](https://ib-tutors.net/ib-ee-explained/#%E3%83%AC%E3%83%83%E3%82%B9%E3%83%B3%E3%81%B8%E3%81%AE%E6%83%85%E7%86%B1%E3%81%A8%E5%8A%AA%E5%8A%9B)- [効果的な学習方法](https://ib-tutors.net/ib-ee-explained/#%E5%8A%B9%E6%9E%9C%E7%9A%84%E3%81%AA%E5%AD%A6%E7%BF%92%E6%96%B9%E6%B3%95)- [生徒からの信頼と人気](https://ib-tutors.net/ib-ee-explained/#%E7%94%9F%E5%BE%92%E3%81%8B%E3%82%89%E3%81%AE%E4%BF%A1%E9%A0%BC%E3%81%A8%E4%BA%BA%E6%B0%97)- [明快な説明とコミュニケーション](https://ib-tutors.net/ib-ee-explained/#%E6%98%8E%E5%BF%AB%E3%81%AA%E8%AA%AC%E6%98%8E%E3%81%A8%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)- [生徒へのメッセージ](https://ib-tutors.net/ib-ee-explained/#%E7%94%9F%E5%BE%92%E3%81%B8%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8)- [最後に](https://ib-tutors.net/ib-ee-explained/#%E6%9C%80%E5%BE%8C%E3%81%AB)- [📚 関連記事](https://ib-tutors.net/ib-ee-explained/#%F0%9F%93%9A_%E9%96%A2%E9%80%A3%E8%A8%98%E4%BA%8B)
 
 ## チューター紹介
 
@@ -71,7 +67,7 @@ draft: false
 
 ### 📚 関連記事
 
-- [IBでEEの具体的なトピックの決め方は？](https://ib-tutors.net/ib-ee-topic-selection/)
-- [〜EEテーマの選び方〜](https://ib-tutors.net/ib-ee-topic-selection-guide/)
-- [EEについて教えてください！](https://ib-tutors.net/extended-essay-guide/)
-- [志望理由書はEEと被らない方がいいですか？](https://ib-tutors.net/personal-statement-vs-ee/)
+- [IBでEEの具体的なトピックの決め方は？](/ib-ee-topic-selection/)
+- [〜EEテーマの選び方〜](/ib-ee-topic-selection-guide/)
+- [EEについて教えてください！](/extended-essay-guide/)
+- [志望理由書はEEと被らない方がいいですか？](/personal-statement-vs-ee/)

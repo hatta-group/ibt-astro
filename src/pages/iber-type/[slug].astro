@@ -81,24 +81,56 @@ const breadcrumbSchema = {
   <!-- Color Accent Bar -->
   <div class="h-1" style={`background: linear-gradient(to right, ${typeColor}, ${typeColor}80)`}></div>
 
-  <!-- Quick Navigation -->
-  <div class="bg-white border-b border-ibt-border sticky top-0 z-20">
-    <div class="max-w-3xl mx-auto px-4">
-      <nav class="flex gap-1 overflow-x-auto py-3 text-sm -mx-4 px-4 scrollbar-hide">
-        <a href="#personality" class="shrink-0 px-4 py-2 rounded-full hover:bg-ibt-bg transition-colors text-ibt-text-light hover:text-ibt-text font-medium">性格・特徴</a>
-        <a href="#strengths" class="shrink-0 px-4 py-2 rounded-full hover:bg-ibt-bg transition-colors text-ibt-text-light hover:text-ibt-text font-medium">強み</a>
-        <a href="#challenges" class="shrink-0 px-4 py-2 rounded-full hover:bg-ibt-bg transition-colors text-ibt-text-light hover:text-ibt-text font-medium">課題</a>
-        <a href="#subjects" class="shrink-0 px-4 py-2 rounded-full hover:bg-ibt-bg transition-colors text-ibt-text-light hover:text-ibt-text font-medium">得意科目</a>
-        <a href="#compatibility" class="shrink-0 px-4 py-2 rounded-full hover:bg-ibt-bg transition-colors text-ibt-text-light hover:text-ibt-text font-medium">相性タイプ</a>
-      </nav>
-    </div>
-  </div>
-
   <!-- Content -->
   <article class="py-12 md:py-20 bg-gray-50">
-    <div class="max-w-3xl mx-auto px-4">
-      <div class="iber-type-content" style={`--type-color: ${typeColor}`}>
-        <Content />
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Main Content -->
+        <div class="flex-1 min-w-0">
+          <div class="iber-type-content" style={`--type-color: ${typeColor}`}>
+            <Content />
+          </div>
+        </div>
+        <!-- Sidebar -->
+        <div class="lg:w-80 xl:w-96 shrink-0">
+          <div class="lg:sticky lg:top-20 space-y-6">
+            <!-- Character Card -->
+            <div class="rounded-2xl overflow-hidden" style={`background: linear-gradient(135deg, ${typeColor}20, ${typeColor}10)`}>
+              <div class="p-6 text-center">
+                <img src={`/images/iber-types/${type.data.slug}.png`} alt={type.data.title} class="w-32 h-32 mx-auto object-contain drop-shadow-lg mb-4" />
+                <h3 class="font-bold text-lg" style={`color: ${typeColor}`}>{typeData?.name}</h3>
+                <p class="text-sm text-gray-500">{typeData?.nameJa}</p>
+              </div>
+            </div>
+            <!-- Quick Nav -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+              <h3 class="font-bold text-sm text-gray-400 tracking-widest mb-4">CONTENTS</h3>
+              <nav class="space-y-2 text-sm">
+                <a href="#personality" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">性格・特徴</a>
+                <a href="#strengths" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">IBでの強み</a>
+                <a href="#challenges" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">IBでの課題</a>
+                <a href="#subjects" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">得意科目</a>
+                <a href="#compatibility" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">相性タイプ</a>
+              </nav>
+            </div>
+            <!-- Diagnosis CTA -->
+            <div class="rounded-2xl p-6 text-white text-center" style={`background: linear-gradient(135deg, ${typeColor}, ${typeColor}cc)`}>
+              <h3 class="font-bold mb-2">あなたのタイプは？</h3>
+              <p class="text-white/80 text-sm mb-4">15問で診断できます</p>
+              <a href="/iber-type-shindan/" class="block w-full bg-white font-bold py-3 rounded-full hover:bg-gray-50 transition-colors text-sm" style={`color: ${typeColor}`}>
+                IBerタイプ診断を受ける
+              </a>
+            </div>
+            <!-- IBT CTA -->
+            <div class="bg-gradient-to-br from-ibt-red to-ibt-red-dark rounded-2xl p-6 text-white text-center">
+              <h3 class="font-bold mb-2">IBの学習でお困りですか？</h3>
+              <p class="text-white/80 text-sm mb-4">IB卒業生講師がサポートします</p>
+              <a href="/contact/" class="block w-full bg-white text-ibt-red font-bold py-3 rounded-full hover:bg-gray-50 transition-colors text-sm">
+                60分無料体験に申し込む
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </article>
@@ -169,17 +201,6 @@ const breadcrumbSchema = {
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </BaseLayout>
-
-<style>
-  /* Scrollbar hide for nav */
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-</style>
 
 <style is:global>
   .iber-type-content {
