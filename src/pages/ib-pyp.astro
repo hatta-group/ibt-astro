@@ -1,0 +1,393 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="PYP（初等教育プログラム）とは？｜IB専門家庭教師IBT"
+  description="IB PYP（Primary Years Programme）を徹底解説。3〜12歳対象の探究型学習プログラムの特徴、カリキュラム、メリット、日本のPYP認定校一覧。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "PYP（初等教育プログラム）とは", "item": "https://ib-tutors.net/ib-pyp/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "IB PYP（初等教育プログラム）個別指導",
+      "description": "IB PYP（Primary Years Programme）対応の個別指導。探究型学習、6つの教科横断テーマ、Exhibitionなど、IB卒業生講師がマンツーマンでサポートします。",
+      "provider": {
+        "@type": "Organization",
+        "name": "IBT（IB Tutors）",
+        "url": "https://ib-tutors.net/"
+      },
+      "educationalLevel": "Primary",
+      "teaches": "IB PYP全科目・探究学習・Exhibition",
+      "offers": {
+        "@type": "Offer",
+        "price": "4840",
+        "priceCurrency": "JPY",
+        "description": "1回60分あたり4,840円〜5,258円（税込）"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "IB PYP（初等教育プログラム）とは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IB PYP（Primary Years Programme）は、国際バカロレア（IB）が提供する3歳から12歳を対象とした初等教育プログラムです。6つの教科横断テーマを軸に、探究型学習を通じて国際的な視野と学ぶ力の基盤を育みます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PYPの6つの教科横断テーマとは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PYPの6つの教科横断テーマは、「私たちは誰か」「私たちはどのような場所と時代にいるのか」「私たちはどのように自分を表現するか」「世界はどのような仕組みになっているのか」「私たちは自分たちをどう組織しているのか」「この地球を共有するということ」です。これらのテーマを通じて教科の枠を超えた学びを行います。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PYPのExhibition（エキシビション）とは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Exhibitionは、PYP最終学年の生徒が行う集大成的な探究プロジェクトです。自分で選んだテーマについて数週間かけて探究し、その成果を発表します。PYPで培った探究スキル・知識・態度を総合的に発揮する場であり、MYPへの橋渡しとなる重要な経験です。"
+          }
+        }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/85 text-sm mb-4">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">&gt;</span>
+        <span class="text-white">PYP（初等教育プログラム）とは</span>
+      </nav>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="bg-white/20 text-white text-sm font-bold px-4 py-1.5 rounded-full">3-12歳対象</span>
+        <span class="bg-white/20 text-white text-sm font-bold px-4 py-1.5 rounded-full">Primary Years Programme</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
+        PYP（初等教育プログラム）とは？
+      </h1>
+      <p class="text-white/80 mt-4 text-lg md:text-xl max-w-2xl leading-relaxed">
+        IBの学びの土台となる探究型学習プログラム。<br />6つの教科横断テーマで「考える力」の基盤を育みます。
+      </p>
+    </div>
+  </section>
+
+  <!-- PYPとは -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-emerald-600 font-bold text-sm tracking-widest mb-4 text-center">WHAT IS PYP?</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">PYP（初等教育プログラム）とは</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-6">
+          IB PYP（Primary Years Programme / 初等教育プログラム）は、国際バカロレア（IB）が提供する<strong>3歳から12歳を対象とした教育プログラム</strong>です。日本では主に小学校段階（一部幼稚園を含む）で実施されています。
+        </p>
+        <p class="text-ibt-text-light leading-relaxed mb-6">
+          PYPの最大の特徴は<strong>「探究型学習（inquiry-based learning）」</strong>です。教師が一方的に教えるのではなく、子どもたち自身が疑問を持ち、調べ、考え、発表するプロセスを通じて学びます。教科の枠を超えた「教科横断テーマ」を軸に、子どもたちの好奇心を引き出しながら深い理解を促します。
+        </p>
+        <p class="text-ibt-text-light leading-relaxed">
+          PYPは世界109カ国以上、1,900校以上で実施されており、日本でも文部科学省が推進する「IB教育」の一環として認定校が増加しています。PYPで培われる探究心・国際感覚・コミュニケーション力は、その後のMYP・DPへとつながるIB教育の大切な土台です。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PYPの特徴 -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="text-emerald-600 font-bold text-sm tracking-widest mb-4">KEY FEATURES</p>
+        <h2 class="text-2xl md:text-4xl font-bold">PYPの5つの特徴</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-3">探究型学習（Inquiry-based Learning）</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            子どもたちが自ら問いを立て、調べ、考え、表現するプロセスを大切にします。「教わる」のではなく「発見する」学びのスタイルです。
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-3">教科横断テーマ（Transdisciplinary Themes）</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            6つの教科横断テーマを軸に、国語・算数・理科などの教科を統合して学びます。現実世界とつながった深い理解を促進します。
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-3">母語（日本語）の重視</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            PYPでは母語の発達を非常に重視します。日本のPYP認定校では日本語での教育を基本とし、母語でしっかり思考できる力を育てます。
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-3">Exhibition（エキシビション）</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            PYP最終学年の集大成プロジェクト。自分で選んだテーマを数週間かけて探究し、成果を発表します。PYPで培ったスキルを総合的に発揮する場です。
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-3">IB Learner Profile（学習者像）</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            「探究する人」「考える人」「思いやりのある人」など10の理想像を指針として、学力だけでなく人間性も含めたバランスの取れた成長を目指します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6つの教科横断テーマ -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-emerald-600 font-bold text-sm tracking-widest mb-4 text-center">TRANSDISCIPLINARY THEMES</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">PYPの6つの教科横断テーマ</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-8 text-center">
+          PYPでは、以下の6つのテーマを軸に教科を統合した「探究の単元（Unit of Inquiry）」を展開します。
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-emerald-50 rounded-2xl border border-emerald-100 p-6">
+            <h3 class="text-lg font-bold mb-2 text-emerald-800">1. 私たちは誰か（Who We Are）</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">自己の本質、信念と価値観、個人的・身体的・精神的・社会的・霊的な健康、家族・友人・地域社会・文化を含む人間関係の探究。</p>
+          </div>
+          <div class="bg-emerald-50 rounded-2xl border border-emerald-100 p-6">
+            <h3 class="text-lg font-bold mb-2 text-emerald-800">2. 私たちはどのような場所と時代にいるのか（Where We Are in Place and Time）</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">場所と時間における自分たちの位置づけ、個人の歴史、発見の歴史と移住、地域やグローバルな視点から見た個人と文明のつながりの探究。</p>
+          </div>
+          <div class="bg-emerald-50 rounded-2xl border border-emerald-100 p-6">
+            <h3 class="text-lg font-bold mb-2 text-emerald-800">3. 私たちはどのように自分を表現するか（How We Express Ourselves）</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">考え・感情・性質・価値観・信念を発見し表現する方法、創造性について振り返り、広げ、楽しむ方法の探究。</p>
+          </div>
+          <div class="bg-emerald-50 rounded-2xl border border-emerald-100 p-6">
+            <h3 class="text-lg font-bold mb-2 text-emerald-800">4. 世界はどのような仕組みになっているのか（How the World Works）</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">自然界とその法則、自然界（物理学的・生物学的）と人間社会のつながり、科学的原理の理解と応用の探究。</p>
+          </div>
+          <div class="bg-emerald-50 rounded-2xl border border-emerald-100 p-6">
+            <h3 class="text-lg font-bold mb-2 text-emerald-800">5. 私たちは自分たちをどう組織しているのか（How We Organize Ourselves）</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">人間が作ったシステムとコミュニティの相互関連性、組織の構造と機能、社会的な意思決定、経済活動の探究。</p>
+          </div>
+          <div class="bg-emerald-50 rounded-2xl border border-emerald-100 p-6">
+            <h3 class="text-lg font-bold mb-2 text-emerald-800">6. この地球を共有するということ（Sharing the Planet）</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">限りある資源を他の人々や他の生物と分かち合う上での権利と責任、コミュニティとその内部・相互の関係性の探究。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PYPのメリット -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="text-emerald-600 font-bold text-sm tracking-widest mb-4">BENEFITS</p>
+        <h2 class="text-2xl md:text-4xl font-bold">PYPで身につく4つの力</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
+          <div class="text-3xl mb-4">1</div>
+          <h3 class="text-lg font-bold mb-3">主体的に学ぶ力</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            「自分で問いを立てて調べる」探究型学習により、受け身ではなく自ら学ぶ姿勢が身につきます。この力はMYP・DP、さらには大学・社会でも大きな強みになります。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
+          <div class="text-3xl mb-4">2</div>
+          <h3 class="text-lg font-bold mb-3">つなげて考える力</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            教科横断テーマにより、算数と理科、国語と社会など、教科の枠を超えて知識をつなげる力が育まれます。複雑な問題を多角的に捉える視野が広がります。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
+          <div class="text-3xl mb-4">3</div>
+          <h3 class="text-lg font-bold mb-3">国際的な視野</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            多文化理解・地球規模の課題について考える経験を通じて、世界に目を向け、他者を尊重する姿勢が自然と育ちます。IB Learner Profileの体現です。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
+          <div class="text-3xl mb-4">4</div>
+          <h3 class="text-lg font-bold mb-3">MYP・DPへの確かな土台</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            PYPで培った探究スキル・思考力・自己管理力は、MYP・DPでのより高度な学びに直結します。PYPの経験があるIB生は、上位プログラムへの適応がスムーズです。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IBTのPYPサポート -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-emerald-600 font-bold text-sm tracking-widest mb-4 text-center">IBT SUPPORT</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">IBTのPYPサポート</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="bg-emerald-50 rounded-2xl border border-emerald-100 p-8 md:p-10 mb-8">
+          <h3 class="text-xl font-bold mb-4">PYP対応の個別指導</h3>
+          <p class="text-ibt-text-light leading-relaxed mb-6">
+            IBTでは、IB卒業生の講師がPYP生一人ひとりに合わせたマンツーマン指導を提供しています。探究の進め方がわからない、Exhibitionの準備をしたい、英語での学びをサポートしてほしいなど、様々なニーズに対応します。
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-emerald-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">探究の単元（Unit of Inquiry）のサポート</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-emerald-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">Exhibition（エキシビション）の準備・指導</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-emerald-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">英語・算数・理科などの教科サポート</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-emerald-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">学習スキル（リサーチ・プレゼン・レポート）の強化</span>
+            </li>
+          </ul>
+
+          <div class="bg-white rounded-xl p-6 border border-emerald-200">
+            <p class="text-sm font-bold text-emerald-800 mb-2">PYP授業料（税込）</p>
+            <p class="text-2xl font-black text-emerald-700">4,840円〜5,258円<span class="text-sm font-normal text-ibt-text-light">/回（60分）</span></p>
+            <p class="text-xs text-ibt-text-light mt-2">入会金0円・都度払い制</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/lessons-pricing/" class="inline-block bg-emerald-600 text-white font-bold px-6 py-3 rounded-full hover:bg-emerald-700 transition-colors text-center">
+            料金・授業内容を見る
+          </a>
+          <a href="/contact/" class="inline-block bg-white text-emerald-600 font-bold px-6 py-3 rounded-full border-2 border-emerald-600 hover:bg-emerald-50 transition-colors text-center">
+            60分無料体験に申し込む
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PYP認定校を探す -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-emerald-600 font-bold text-sm tracking-widest mb-4">IB SCHOOLS</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6">日本のPYP認定校を探す</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-8">
+          日本全国のIB認定校（PYP実施校を含む）を一覧で確認できます。お近くの認定校や、オンラインで受講可能な学校を探してみましょう。
+        </p>
+        <a href="/ib-schools/" class="inline-block bg-emerald-600 text-white font-bold px-8 py-4 rounded-full hover:bg-emerald-700 transition-colors text-lg">
+          IB認定校一覧を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-emerald-600 font-bold text-sm tracking-widest mb-4 text-center">FAQ</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-8 text-center">PYPに関するよくある質問</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="space-y-4">
+          <details class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 group">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg">
+              PYP（初等教育プログラム）とは何ですか？
+              <svg class="w-5 h-5 text-ibt-text-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="text-ibt-text-light leading-relaxed mt-4">
+              IB PYP（Primary Years Programme）は、3歳から12歳を対象とした国際バカロレアの初等教育プログラムです。6つの教科横断テーマを軸に探究型学習を行い、子どもたちの好奇心・国際感覚・学ぶ力の基盤を育みます。
+            </p>
+          </details>
+          <details class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 group">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg">
+              PYPの6つの教科横断テーマとは？
+              <svg class="w-5 h-5 text-ibt-text-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="text-ibt-text-light leading-relaxed mt-4">
+              「私たちは誰か」「私たちはどのような場所と時代にいるのか」「私たちはどのように自分を表現するか」「世界はどのような仕組みになっているのか」「私たちは自分たちをどう組織しているのか」「この地球を共有するということ」の6つです。これらを軸に教科を統合した探究学習を展開します。
+            </p>
+          </details>
+          <details class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 group">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg">
+              PYPのExhibitionとは何ですか？
+              <svg class="w-5 h-5 text-ibt-text-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="text-ibt-text-light leading-relaxed mt-4">
+              Exhibitionは、PYP最終学年の生徒が行う集大成の探究プロジェクトです。自分で選んだテーマを数週間かけて探究し、成果を発表します。PYPで培った探究スキル・知識・態度を総合的に発揮する場であり、MYPへの橋渡しとなる重要な経験です。
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 rounded-2xl p-10 md:p-16 text-center">
+        <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">PYPの学びを、もっと深く</h2>
+        <p class="text-white/80 mb-8 text-lg max-w-xl mx-auto">
+          IB卒業生の講師が、PYP生の探究学習をマンツーマンでサポートします。まずは60分の無料体験から。
+        </p>
+        <a
+          href="/contact/"
+          class="inline-block bg-white text-emerald-700 font-bold px-8 py-4 rounded-full hover:bg-emerald-50 transition-colors text-lg shadow-lg"
+        >
+          60分無料体験に申し込む
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
