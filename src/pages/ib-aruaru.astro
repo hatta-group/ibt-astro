@@ -1,0 +1,320 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  { id: 'dp', label: 'DP生活' },
+  { id: 'tok', label: 'TOK' },
+  { id: 'ee', label: 'EE' },
+  { id: 'ia', label: 'IA' },
+  { id: 'cas', label: 'CAS' },
+  { id: 'exam', label: '試験' },
+  { id: 'people', label: '先生・友達' },
+  { id: 'parents', label: '保護者' },
+];
+
+const aruaruItems = [
+  // DP生活 (10)
+  { id: 1, cat: 'dp', text: 'EEの締め切り前日に「まだ大丈夫」と言い聞かせる' },
+  { id: 2, cat: 'dp', text: 'CASの時間記録を3ヶ月分まとめて書く' },
+  { id: 3, cat: 'dp', text: '「IBやめたい」が口癖だけど実は辞める気ゼロ' },
+  { id: 4, cat: 'dp', text: '6科目のIA締め切りが全部同じ週に来る絶望' },
+  { id: 5, cat: 'dp', text: '「普通の高校生」に憧れる瞬間がある' },
+  { id: 6, cat: 'dp', text: '土日に遊んでる同級生のSNSを見て遠い目になる' },
+  { id: 7, cat: 'dp', text: '「IB取って良かった」と思う日と「なんで選んだ」と思う日が交互に来る' },
+  { id: 8, cat: 'dp', text: '45点満点のスコアをいつのまにか覚えて計算するようになる' },
+  { id: 9, cat: 'dp', text: '深夜2時にGoogle Docsで友達がオンラインなのを見て安心する' },
+  { id: 10, cat: 'dp', text: 'IBの説明を非IB生にするのが面倒で「まあ、大変な高校」で済ませる' },
+  // TOK (7)
+  { id: 11, cat: 'tok', text: '「知識とは何か」を考えすぎて何もわからなくなる' },
+  { id: 12, cat: 'tok', text: 'TOK Exhibitionのオブジェクト選びで1ヶ月悩む' },
+  { id: 13, cat: 'tok', text: '「それはTOK的に言うと...」が日常会話に出てしまう' },
+  { id: 14, cat: 'tok', text: 'TOKのプレゼンで哲学者の名前を連発して自分でも何言ってるかわからなくなる' },
+  { id: 15, cat: 'tok', text: 'Knowledge Questionを作るのに3日かかる' },
+  { id: 16, cat: 'tok', text: '友達と議論してて「それってKnowledge Claimだよね」と言ってしまう' },
+  { id: 17, cat: 'tok', text: 'Areas of Knowledgeを全部言えるのがちょっとした特技になる' },
+  // EE (7)
+  { id: 18, cat: 'ee', text: 'Research Questionを5回変えてやっと決まる' },
+  { id: 19, cat: 'ee', text: 'Word Countが3,800語で「あと200語どうしよう」と頭を抱える' },
+  { id: 20, cat: 'ee', text: '参考文献リストが本文より気合が入っている' },
+  { id: 21, cat: 'ee', text: 'スーパーバイザーとのミーティングで毎回方向性が変わる' },
+  { id: 22, cat: 'ee', text: '図書館のデータベースに詳しくなりすぎてライブラリアンと友達になる' },
+  { id: 23, cat: 'ee', text: 'EEの科目選びで「好きな科目」と「書きやすい科目」の間で揺れる' },
+  { id: 24, cat: 'ee', text: '提出後に誤字を見つけて3日くらい落ち込む' },
+  // IA (7)
+  { id: 25, cat: 'ia', text: 'Biology IAの実験データが仮説と真逆でパニックになる' },
+  { id: 26, cat: 'ia', text: 'Math IAのテーマが「日常生活との関連」を求められて無理やりこじつける' },
+  { id: 27, cat: 'ia', text: 'History IAのword countが気づいたら2,200語超えてて削る作業が始まる' },
+  { id: 28, cat: 'ia', text: 'Economics IAのニュース記事を探すために毎日ニュースサイトを巡回する' },
+  { id: 29, cat: 'ia', text: 'Chemistry IAで実験を3回やり直す羽目になる' },
+  { id: 30, cat: 'ia', text: 'IAのルーブリックを穴が開くほど読む' },
+  { id: 31, cat: 'ia', text: '「IAさえなければIBは楽しいのに」と1日3回は思う' },
+  // CAS (6)
+  { id: 32, cat: 'cas', text: 'CASプロジェクトのアイデアは壮大なのに実行すると地味になる' },
+  { id: 33, cat: 'cas', text: 'Reflectionを書くのが本体の活動より大変' },
+  { id: 34, cat: 'cas', text: '「Service」の活動を探すために逆に誰かに助けを求めたくなる' },
+  { id: 35, cat: 'cas', text: 'CASコーディネーターに「もっとReflectionを深めて」と言われて途方に暮れる' },
+  { id: 36, cat: 'cas', text: 'Creativity, Activity, Serviceのバランスに永遠に悩む' },
+  { id: 37, cat: 'cas', text: '友達と一緒にCASプロジェクトを始めるけど結局自分だけがやっている' },
+  // 試験 (6)
+  { id: 38, cat: 'exam', text: 'Paper 1とPaper 2の対策バランスに永遠に悩む' },
+  { id: 39, cat: 'exam', text: '試験中に「この知識、前日に覚えたやつだ」と感動する' },
+  { id: 40, cat: 'exam', text: 'Mock Examの結果で一喜一憂してメンタルが乱高下する' },
+  { id: 41, cat: 'exam', text: 'Past Paperを解きすぎて問題番号で内容を覚え始める' },
+  { id: 42, cat: 'exam', text: '試験期間中のカフェイン摂取量が人生最高記録を更新する' },
+  { id: 43, cat: 'exam', text: 'Mark Schemeの模範解答を見て「こんなの書けるわけない」と思う' },
+  // 先生・友達 (7)
+  { id: 44, cat: 'people', text: '非IB生の友達に「今日も忙しい」と言いすぎて誘われなくなる' },
+  { id: 45, cat: 'people', text: 'IB生同士だと「Predicted Score何点？」が挨拶代わりになる' },
+  { id: 46, cat: 'people', text: '先生に「IBは人生で一番大変な2年間だけど一番成長する」と言われて微妙な顔になる' },
+  { id: 47, cat: 'people', text: '同じ科目を取っている友達とノートを見せ合うのが日課になる' },
+  { id: 48, cat: 'people', text: '先生の「これは試験に出る」を信じて勉強したら本当に出て先生を神だと思う' },
+  { id: 49, cat: 'people', text: 'グループワークで一人だけ頑張りすぎて疲弊する' },
+  { id: 50, cat: 'people', text: 'IB卒業生の先輩の話を聞いて「自分もいつかこうなれる」と希望を持つ' },
+  // 保護者 (5)
+  { id: 51, cat: 'parents', text: '親に「今日何したの？」と聞かれて「TOKのエッセイ書いた」と答えても伝わらない' },
+  { id: 52, cat: 'parents', text: '「7段階評価」を説明するのに毎回5分かかる' },
+  { id: 53, cat: 'parents', text: '親が「IBって国際的でかっこいいね」と言うたびに苦笑いする' },
+  { id: 54, cat: 'parents', text: '保護者面談でIBの仕組みを先生が親に説明してるのを聞いて「それ違う」と心の中で突っ込む' },
+  { id: 55, cat: 'parents', text: '「大学受験どうするの？」と聞かれるたびにIBスコアの説明から始めないといけない' },
+];
+---
+
+<BaseLayout
+  title="IB生あるある50選｜共感しすぎて泣ける｜IBT"
+  description="IB生なら絶対わかる「あるある」を50個厳選。DP・MYP・TOK・EE・CASの日常を面白おかしく紹介。シェアして友達と盛り上がろう！"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "IB生あるある50選", "item": "https://ib-tutors.net/ib-aruaru/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-amber-400 via-orange-400 to-pink-500 py-16 md:py-24">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 text-8xl">😂</div>
+      <div class="absolute top-20 right-20 text-7xl">🤣</div>
+      <div class="absolute bottom-10 left-1/3 text-9xl">😭</div>
+      <div class="absolute bottom-20 right-10 text-6xl">💀</div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 relative">
+      <nav class="text-white/85 text-sm mb-6" aria-label="パンくずリスト">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">IB生あるある50選</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
+        IB生あるある<span class="inline-block bg-white/20 backdrop-blur-sm rounded-xl px-4 py-1 ml-2">55選</span>
+      </h1>
+      <p class="mt-4 text-white/90 text-lg md:text-xl max-w-2xl leading-relaxed">
+        IB経験者なら絶対わかる。共感しすぎて泣けるあるあるを集めました。
+      </p>
+      <p class="mt-2 text-white/70 text-sm">
+        DP・TOK・EE・IA・CAS...全部入り。友達にシェアして盛り上がろう！
+      </p>
+    </div>
+  </section>
+
+  <!-- Category Tabs + Cards -->
+  <section class="py-12 md:py-20 bg-ibt-bg">
+    <div class="max-w-5xl mx-auto px-4">
+
+      <!-- Category Tabs -->
+      <div class="flex flex-wrap gap-2 mb-10 justify-center" id="category-tabs">
+        <button
+          data-cat="all"
+          class="cat-tab active px-4 py-2 rounded-full text-sm font-bold transition-all bg-ibt-red text-white shadow-md"
+        >
+          すべて
+        </button>
+        {categories.map((cat) => (
+          <button
+            data-cat={cat.id}
+            class="cat-tab px-4 py-2 rounded-full text-sm font-bold transition-all bg-white text-ibt-text border border-ibt-border hover:border-ibt-red hover:text-ibt-red"
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- Aruaru Cards -->
+      <div class="grid gap-4 md:grid-cols-2" id="aruaru-grid">
+        {aruaruItems.map((item) => {
+          const catLabel = categories.find(c => c.id === item.cat)?.label || '';
+          const shareText = encodeURIComponent(`IB生あるある #${item.id}「${item.text}」\n\n#IB生あるある #国際バカロレア #IBT`);
+          const shareUrl = encodeURIComponent('https://ib-tutors.net/ib-aruaru/');
+          return (
+            <div class="aruaru-card bg-white rounded-2xl shadow-sm border border-ibt-border p-5 md:p-6 hover:shadow-md transition-shadow group" data-cat={item.cat}>
+              <div class="flex items-start gap-4">
+                <div class="shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-pink-500 flex items-center justify-center text-white font-black text-sm">
+                  {item.id}
+                </div>
+                <div class="flex-1 min-w-0">
+                  <span class="inline-block text-xs font-bold text-ibt-red bg-ibt-red-50 px-2 py-0.5 rounded-full mb-2">{catLabel}</span>
+                  <p class="text-ibt-text font-bold leading-relaxed">{item.text}</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+                <!-- わかる！ボタン -->
+                <button
+                  class="wakaru-btn flex items-center gap-1.5 text-sm text-gray-400 hover:text-pink-500 transition-colors"
+                  aria-label="わかる！"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                  </svg>
+                  <span class="wakaru-label">わかる！</span>
+                  <span class="wakaru-count font-bold text-xs"></span>
+                </button>
+                <!-- Share buttons -->
+                <div class="flex items-center gap-2">
+                  <a
+                    href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-black hover:text-white text-gray-500 transition-colors"
+                    aria-label="Xでシェア"
+                  >
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  </a>
+                  <a
+                    href={`https://social-plugins.line.me/lineit/share?url=${shareUrl}&text=${shareText}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-[#06C755] hover:text-white text-gray-500 transition-colors"
+                    aria-label="LINEでシェア"
+                  >
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- カウント -->
+      <p class="text-center text-ibt-text-light text-sm mt-8" id="showing-count">
+        全 {aruaruItems.length} 件を表示中
+      </p>
+    </div>
+  </section>
+
+  <!-- IBerタイプ診断 CTA -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">NEXT STEP</p>
+      <h2 class="text-2xl md:text-4xl font-black mb-4">あなたはどのタイプのIBer？</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mb-6 rounded-full mx-auto"></div>
+      <p class="text-ibt-text-light leading-relaxed mb-8">
+        あるあるに共感したあなた。IB Learner Profileの10タイプから、自分のタイプを診断してみよう。
+      </p>
+      <a
+        href="/iber-type-shindan/"
+        class="inline-flex items-center gap-2 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow text-lg"
+      >
+        IBerタイプ診断をやってみる
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- IBT CTA -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-12 text-center">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">IB TUTORS</p>
+        <h2 class="text-2xl md:text-3xl font-black mb-4">あるあるを「わかる！」と言える先生に教わろう</h2>
+        <p class="text-ibt-text-light leading-relaxed mb-8 max-w-2xl mx-auto">
+          IBTの講師は全員IB卒業生。同じ経験をしたからこそ、あなたの気持ちがわかります。<br />
+          TOK・EE・IAの悩みも、まずは気軽に相談してみませんか？
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://line.me/R/ti/p/@974okamx"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-[#06C755] hover:bg-[#05b34c] text-white font-bold rounded-full transition-colors"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINEで相談する
+          </a>
+          <a
+            href="/contact/"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end hover:shadow-lg text-white font-bold rounded-full transition-shadow"
+          >
+            無料体験を申し込む
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  // Category filter
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.cat-tab');
+  const cards = document.querySelectorAll<HTMLElement>('.aruaru-card');
+  const countEl = document.getElementById('showing-count');
+  const totalCount = cards.length;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const cat = tab.dataset.cat;
+
+      // Update active tab style
+      tabs.forEach((t) => {
+        t.classList.remove('bg-ibt-red', 'text-white', 'shadow-md');
+        t.classList.add('bg-white', 'text-ibt-text', 'border', 'border-ibt-border');
+      });
+      tab.classList.remove('bg-white', 'text-ibt-text', 'border', 'border-ibt-border');
+      tab.classList.add('bg-ibt-red', 'text-white', 'shadow-md');
+
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (countEl) {
+        countEl.textContent = cat === 'all'
+          ? `全 ${totalCount} 件を表示中`
+          : `${visibleCount} 件を表示中（全 ${totalCount} 件中）`;
+      }
+    });
+  });
+
+  // わかる！ button
+  const wakaruBtns = document.querySelectorAll<HTMLButtonElement>('.wakaru-btn');
+  wakaruBtns.forEach((btn) => {
+    let clicked = false;
+    const label = btn.querySelector('.wakaru-label');
+    const count = btn.querySelector('.wakaru-count');
+    const svg = btn.querySelector('svg');
+    // Random initial count for visual fun
+    const initial = Math.floor(Math.random() * 200) + 50;
+    if (count) count.textContent = String(initial);
+
+    btn.addEventListener('click', () => {
+      if (clicked) return;
+      clicked = true;
+      btn.classList.remove('text-gray-400');
+      btn.classList.add('text-pink-500');
+      if (svg) {
+        svg.setAttribute('fill', 'currentColor');
+      }
+      if (count) count.textContent = String(initial + 1);
+      if (label) label.textContent = 'わかる！';
+    });
+  });
+</script>

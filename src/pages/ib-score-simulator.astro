@@ -1,0 +1,596 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const siteUrl = 'https://ib-tutors.net';
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "IBスコアシミュレーター",
+  "description": "IBディプロマのスコアをシミュレーション。6科目+TOK+EEを入力して合計点と大学合格ラインを確認。目標スコアまでの戦略もわかる。",
+  "url": `${siteUrl}/ib-score-simulator/`,
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "IBT（IB Tutors）",
+    "url": siteUrl
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": `${siteUrl}/` },
+    { "@type": "ListItem", "position": 2, "name": "IBスコアシミュレーター", "item": `${siteUrl}/ib-score-simulator/` },
+  ],
+};
+
+const subjectGroups = [
+  { id: 'group1', label: 'Group 1: 言語と文学（Language & Literature）', examples: 'Japanese A, English A など' },
+  { id: 'group2', label: 'Group 2: 言語習得（Language Acquisition）', examples: 'English B, French Ab Initio など' },
+  { id: 'group3', label: 'Group 3: 個人と社会（Individuals & Societies）', examples: 'History, Economics, Psychology など' },
+  { id: 'group4', label: 'Group 4: 理科（Sciences）', examples: 'Biology, Chemistry, Physics など' },
+  { id: 'group5', label: 'Group 5: 数学（Mathematics）', examples: 'Math AA, Math AI' },
+  { id: 'group6', label: 'Group 6: 芸術 or 選択科目（Arts / Elective）', examples: 'Visual Arts, Music, または他グループから追加選択' },
+];
+---
+
+<BaseLayout
+  title="IBスコアシミュレーター｜IB専門家庭教師IBT"
+  description="IBディプロマのスコアをシミュレーション。6科目+TOK+EEを入力して合計点と大学合格ラインを確認。目標スコアまでの戦略もわかる。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/85 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">IBスコアシミュレーター</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">IBスコアシミュレーター</h1>
+      <p class="mt-4 text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed">
+        6科目 + TOK + EE を入力するだけで、IBディプロマの合計スコアを即座に計算。<br class="hidden md:block" />
+        目標大学に必要なスコアもチェックできます。
+      </p>
+    </div>
+  </section>
+
+  <!-- Simulator Body -->
+  <section class="bg-ibt-bg py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-4">
+
+      <!-- Subject Scores -->
+      <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8 mb-6">
+        <h2 class="text-xl md:text-2xl font-bold text-ibt-text mb-2">科目スコアを入力</h2>
+        <p class="text-ibt-text-light text-sm mb-6">各科目の予想スコア（1-7）を選択してください。合計42点満点。</p>
+
+        <div class="grid gap-4">
+          {subjectGroups.map((group) => (
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-4 bg-ibt-bg rounded-xl">
+              <div class="flex-1 min-w-0">
+                <label for={group.id} class="block text-sm font-bold text-ibt-text">{group.label}</label>
+                <span class="text-xs text-ibt-text-light">{group.examples}</span>
+              </div>
+              <select
+                id={group.id}
+                class="subject-score w-full sm:w-24 px-3 py-2.5 bg-white border border-ibt-border rounded-xl text-ibt-text font-bold text-center focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors appearance-none cursor-pointer"
+              >
+                <option value="0">--</option>
+                <option value="7">7</option>
+                <option value="6">6</option>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+              </select>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- TOK + EE -->
+      <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8 mb-6">
+        <h2 class="text-xl md:text-2xl font-bold text-ibt-text mb-2">TOK + EE（ボーナスポイント）</h2>
+        <p class="text-ibt-text-light text-sm mb-6">TOKとEEの成績から最大3点のボーナスポイントが加算されます。</p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <!-- TOK -->
+          <div class="p-4 bg-ibt-bg rounded-xl">
+            <label for="tok-grade" class="block text-sm font-bold text-ibt-text mb-1">TOK（知の理論）</label>
+            <span class="text-xs text-ibt-text-light block mb-2">Theory of Knowledge</span>
+            <select
+              id="tok-grade"
+              class="w-full px-3 py-2.5 bg-white border border-ibt-border rounded-xl text-ibt-text font-bold text-center focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors appearance-none cursor-pointer"
+            >
+              <option value="">--</option>
+              <option value="A">A（優秀）</option>
+              <option value="B">B（良好）</option>
+              <option value="C">C（普通）</option>
+              <option value="D">D（基準以下）</option>
+              <option value="E">E（不合格）</option>
+            </select>
+          </div>
+
+          <!-- EE -->
+          <div class="p-4 bg-ibt-bg rounded-xl">
+            <label for="ee-grade" class="block text-sm font-bold text-ibt-text mb-1">EE（課題論文）</label>
+            <span class="text-xs text-ibt-text-light block mb-2">Extended Essay</span>
+            <select
+              id="ee-grade"
+              class="w-full px-3 py-2.5 bg-white border border-ibt-border rounded-xl text-ibt-text font-bold text-center focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors appearance-none cursor-pointer"
+            >
+              <option value="">--</option>
+              <option value="A">A（優秀）</option>
+              <option value="B">B（良好）</option>
+              <option value="C">C（普通）</option>
+              <option value="D">D（基準以下）</option>
+              <option value="E">E（不合格）</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Bonus Matrix Reference -->
+        <div id="bonus-display" class="flex items-center gap-3 p-4 bg-ibt-red-50 rounded-xl border border-ibt-red-light">
+          <div class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-sm">
+            <span id="bonus-value" class="text-xl font-bold text-ibt-text-light">-</span>
+          </div>
+          <div>
+            <p class="text-sm font-bold text-ibt-text">ボーナスポイント</p>
+            <p id="bonus-message" class="text-xs text-ibt-text-light">TOKとEEの成績を選択してください</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="results-panel" class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8 mb-6">
+        <h2 class="text-xl md:text-2xl font-bold text-ibt-text mb-6">スコア結果</h2>
+
+        <!-- Total Score -->
+        <div class="text-center mb-8">
+          <div class="inline-flex items-baseline gap-1">
+            <span id="total-score" class="text-6xl md:text-7xl font-black text-ibt-red">0</span>
+            <span class="text-2xl md:text-3xl font-bold text-ibt-text-light">/ 45</span>
+          </div>
+          <p id="grade-label" class="mt-2 text-lg font-bold text-ibt-text-light">スコアを入力してください</p>
+          <div id="failing-warning" class="hidden mt-3 p-3 bg-red-50 border border-red-200 rounded-xl">
+            <p class="text-sm font-bold text-red-700">Failing Condition: ディプロマは付与されません</p>
+            <p id="failing-reason" class="text-xs text-red-600 mt-1"></p>
+          </div>
+        </div>
+
+        <!-- Score Bar -->
+        <div class="mb-8">
+          <div class="flex justify-between text-xs text-ibt-text-light mb-2">
+            <span>0</span>
+            <span>24 (Diploma)</span>
+            <span>45</span>
+          </div>
+          <div class="w-full h-6 bg-gray-100 rounded-full overflow-hidden relative">
+            <!-- Threshold markers -->
+            <div class="absolute top-0 bottom-0 left-[53.3%] w-px bg-gray-300 z-10" title="24 - Diploma"></div>
+            <div class="absolute top-0 bottom-0 left-[62.2%] w-px bg-gray-300 z-10" title="28 - Good"></div>
+            <div class="absolute top-0 bottom-0 left-[71.1%] w-px bg-gray-300 z-10" title="32 - Very Good"></div>
+            <div class="absolute top-0 bottom-0 left-[80%] w-px bg-gray-300 z-10" title="36 - Excellent"></div>
+            <div class="absolute top-0 bottom-0 left-[88.9%] w-px bg-gray-300 z-10" title="40 - Outstanding"></div>
+            <div id="score-bar" class="h-full rounded-full transition-all duration-500 ease-out" style="width: 0%; background: #ccc;"></div>
+          </div>
+          <div class="flex justify-between mt-2">
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-ibt-text-light">
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-gray-400"></span>~23</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>24-27</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>28-31</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-lime-500"></span>32-35</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>36-39</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>40+</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Score Breakdown -->
+        <div class="grid grid-cols-3 gap-3 mb-8">
+          <div class="text-center p-3 bg-ibt-bg rounded-xl">
+            <p class="text-xs text-ibt-text-light mb-1">科目合計</p>
+            <p id="subjects-total" class="text-2xl font-bold text-ibt-text">0<span class="text-sm font-normal text-ibt-text-light">/42</span></p>
+          </div>
+          <div class="text-center p-3 bg-ibt-bg rounded-xl">
+            <p class="text-xs text-ibt-text-light mb-1">ボーナス</p>
+            <p id="bonus-total" class="text-2xl font-bold text-ibt-text">0<span class="text-sm font-normal text-ibt-text-light">/3</span></p>
+          </div>
+          <div class="text-center p-3 bg-ibt-bg rounded-xl">
+            <p class="text-xs text-ibt-text-light mb-1">合計</p>
+            <p id="combined-total" class="text-2xl font-bold text-ibt-red">0<span class="text-sm font-normal text-ibt-text-light">/45</span></p>
+          </div>
+        </div>
+
+        <!-- University Guide -->
+        <div id="uni-guide" class="hidden">
+          <h3 class="text-lg font-bold text-ibt-text mb-4">大学合格ラインの目安</h3>
+          <div id="uni-guide-content" class="space-y-3"></div>
+        </div>
+      </div>
+
+      <!-- Tips Section -->
+      <div id="tips-panel" class="hidden bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8 mb-6">
+        <h2 class="text-xl md:text-2xl font-bold text-ibt-text mb-2">スコアを上げるには?</h2>
+        <p class="text-ibt-text-light text-sm mb-6">あなたの入力に基づいた改善アドバイス</p>
+        <div id="tips-content" class="space-y-4"></div>
+      </div>
+
+      <!-- Share -->
+      <div id="share-panel" class="hidden bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8 mb-6">
+        <h2 class="text-lg font-bold text-ibt-text mb-4">結果をシェアする</h2>
+        <div class="flex flex-wrap gap-3">
+          <a
+            id="share-x"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-sm font-bold rounded-full hover:bg-gray-800 transition-colors"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Xでシェア
+          </a>
+          <a
+            id="share-line"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#06C755] text-white text-sm font-bold rounded-full hover:bg-[#05b34c] transition-colors"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINEでシェア
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end rounded-2xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3">目標スコアを達成しよう</h2>
+        <p class="text-white/85 mb-6 max-w-lg mx-auto">IBTの講師は全員IB卒業生。あなたの弱点科目を知り尽くした先輩が、マンツーマンでスコアアップをサポートします。</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white text-ibt-red font-bold rounded-full hover:bg-gray-50 transition-colors"
+          >
+            無料体験を予約する
+          </a>
+          <a
+            href="https://line.me/R/ti/p/@974okamx"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white/20 text-white font-bold rounded-full hover:bg-white/30 transition-colors border border-white/30"
+          >
+            LINEで相談する
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // TOK+EE Bonus Matrix
+    // Rows = TOK (A-E), Cols = EE (A-E)
+    // -1 = Failing condition
+    const bonusMatrix: Record<string, Record<string, number>> = {
+      A: { A: 3, B: 3, C: 2, D: 2, E: -1 },
+      B: { A: 3, B: 2, C: 2, D: 1, E: -1 },
+      C: { A: 2, B: 2, C: 1, D: 0, E: -1 },
+      D: { A: 2, B: 1, C: 0, D: 0, E: -1 },
+      E: { A: -1, B: -1, C: -1, D: -1, E: -1 },
+    };
+
+    const subjectGroupLabels: Record<string, string> = {
+      group1: '言語と文学',
+      group2: '言語習得',
+      group3: '個人と社会',
+      group4: '理科',
+      group5: '数学',
+      group6: '芸術/選択',
+    };
+
+    const gradeAssessments = [
+      { min: 40, label: 'Outstanding', color: '#3B82F6', emoji: '' },
+      { min: 36, label: 'Excellent', color: '#10B981', emoji: '' },
+      { min: 32, label: 'Very Good', color: '#84CC16', emoji: '' },
+      { min: 28, label: 'Good', color: '#EAB308', emoji: '' },
+      { min: 24, label: 'Diploma', color: '#F59E0B', emoji: '' },
+      { min: 0,  label: 'Below Diploma', color: '#9CA3AF', emoji: '' },
+    ];
+
+    const uniGuides = [
+      {
+        min: 40, max: 45,
+        label: '40-45点: 世界最難関レベル',
+        icon: '🏆',
+        color: 'border-blue-400 bg-blue-50',
+        text: 'オックスフォード、ケンブリッジ、MIT、スタンフォードなど世界最難関大学に十分な競争力があります。日本国内ではほぼ全てのIB入試で合格圏内です。',
+      },
+      {
+        min: 36, max: 39,
+        label: '36-39点: 海外Top50圏内',
+        icon: '🌍',
+        color: 'border-emerald-400 bg-emerald-50',
+        text: '海外Top50大学（UCL、トロント大学、メルボルン大学など）で高い競争力があります。国内では東大推薦・京大特色入試などの最難関にもチャレンジ可能です。',
+      },
+      {
+        min: 32, max: 35,
+        label: '32-35点: 難関大学圏内',
+        icon: '🎓',
+        color: 'border-lime-400 bg-lime-50',
+        text: '慶應義塾大学、東京大学推薦入試、国際教養大学などの難関大学IB入試で合格ラインに入ります。海外大学もTop100クラスを十分に狙えます。',
+      },
+      {
+        min: 28, max: 31,
+        label: '28-31点: 有力私大圏内',
+        icon: '📚',
+        color: 'border-yellow-400 bg-yellow-50',
+        text: '上智大学、ICU、早稲田大学などのIB入試合格ラインです。多くの国公立大学のIB入試にも出願可能です。',
+      },
+      {
+        min: 24, max: 27,
+        label: '24-27点: 日本のIB入試出願可能',
+        icon: '📝',
+        color: 'border-amber-400 bg-amber-50',
+        text: '多くの日本の大学IB入試に出願可能なスコアです。岡山大学、広島大学、筑波大学など国公立のIB特別入試を中心に検討しましょう。',
+      },
+    ];
+
+    function calculate() {
+      const subjectSelects = document.querySelectorAll<HTMLSelectElement>('.subject-score');
+      const tokSelect = document.getElementById('tok-grade') as HTMLSelectElement;
+      const eeSelect = document.getElementById('ee-grade') as HTMLSelectElement;
+
+      // Subject scores
+      let subjectTotal = 0;
+      let filledCount = 0;
+      const scores: { id: string; score: number }[] = [];
+
+      subjectSelects.forEach((sel) => {
+        const val = parseInt(sel.value) || 0;
+        subjectTotal += val;
+        if (val > 0) filledCount++;
+        scores.push({ id: sel.id, score: val });
+      });
+
+      // Bonus points
+      const tok = tokSelect.value;
+      const ee = eeSelect.value;
+      let bonus = 0;
+      let isFailing = false;
+      let failingReasons: string[] = [];
+
+      const bonusValueEl = document.getElementById('bonus-value')!;
+      const bonusMessageEl = document.getElementById('bonus-message')!;
+      const bonusDisplayEl = document.getElementById('bonus-display')!;
+
+      if (tok && ee) {
+        const matrixVal = bonusMatrix[tok][ee];
+        if (matrixVal === -1) {
+          isFailing = true;
+          bonus = 0;
+          failingReasons.push('TOKまたはEEの成績がE（不合格）のため、ディプロマは付与されません。');
+          bonusValueEl.textContent = 'F';
+          bonusValueEl.className = 'text-xl font-bold text-red-600';
+          bonusMessageEl.textContent = 'Failing Condition - ディプロマ不可';
+          bonusDisplayEl.className = 'flex items-center gap-3 p-4 bg-red-50 rounded-xl border border-red-200';
+        } else {
+          bonus = matrixVal;
+          bonusValueEl.textContent = `+${bonus}`;
+          bonusValueEl.className = 'text-xl font-bold text-ibt-red';
+          bonusMessageEl.textContent = `TOK: ${tok} + EE: ${ee} = ${bonus}点`;
+          bonusDisplayEl.className = 'flex items-center gap-3 p-4 bg-ibt-red-50 rounded-xl border border-ibt-red-light';
+        }
+      } else {
+        bonusValueEl.textContent = '-';
+        bonusValueEl.className = 'text-xl font-bold text-ibt-text-light';
+        bonusMessageEl.textContent = 'TOKとEEの成績を選択してください';
+        bonusDisplayEl.className = 'flex items-center gap-3 p-4 bg-ibt-red-50 rounded-xl border border-ibt-red-light';
+      }
+
+      // Check other failing conditions
+      const hasScoreBelow2 = scores.some(s => s.score > 0 && s.score < 2);
+      if (hasScoreBelow2) {
+        // Score of 1 is very poor but not an automatic fail per IB rules in the same way
+        // We'll keep the matrix-based fail only
+      }
+
+      const total = subjectTotal + bonus;
+
+      // Update display
+      (document.getElementById('total-score') as HTMLElement).textContent = String(total);
+      (document.getElementById('subjects-total') as HTMLElement).innerHTML = `${subjectTotal}<span class="text-sm font-normal text-ibt-text-light">/42</span>`;
+      (document.getElementById('bonus-total') as HTMLElement).innerHTML = `${bonus}<span class="text-sm font-normal text-ibt-text-light">/3</span>`;
+      (document.getElementById('combined-total') as HTMLElement).innerHTML = `${total}<span class="text-sm font-normal text-ibt-text-light">/45</span>`;
+
+      // Score bar
+      const barEl = document.getElementById('score-bar') as HTMLElement;
+      const pct = Math.min((total / 45) * 100, 100);
+      barEl.style.width = `${pct}%`;
+
+      // Bar color & grade label
+      const gradeLabelEl = document.getElementById('grade-label') as HTMLElement;
+      const failingWarningEl = document.getElementById('failing-warning') as HTMLElement;
+      const failingReasonEl = document.getElementById('failing-reason') as HTMLElement;
+
+      if (filledCount === 0 && !tok && !ee) {
+        barEl.style.background = '#ccc';
+        gradeLabelEl.textContent = 'スコアを入力してください';
+        gradeLabelEl.className = 'mt-2 text-lg font-bold text-ibt-text-light';
+        failingWarningEl.classList.add('hidden');
+      } else if (isFailing) {
+        barEl.style.background = '#EF4444';
+        gradeLabelEl.textContent = 'Failing Condition';
+        gradeLabelEl.className = 'mt-2 text-lg font-bold text-red-600';
+        failingWarningEl.classList.remove('hidden');
+        failingReasonEl.textContent = failingReasons.join(' ');
+      } else {
+        failingWarningEl.classList.add('hidden');
+        const assessment = gradeAssessments.find(a => total >= a.min) || gradeAssessments[gradeAssessments.length - 1];
+        barEl.style.background = assessment.color;
+        gradeLabelEl.textContent = `${assessment.emoji} ${assessment.label}`;
+        gradeLabelEl.className = 'mt-2 text-lg font-bold text-ibt-text';
+      }
+
+      // University guide
+      const uniGuideEl = document.getElementById('uni-guide') as HTMLElement;
+      const uniContentEl = document.getElementById('uni-guide-content') as HTMLElement;
+
+      if (total > 0 && !isFailing) {
+        uniGuideEl.classList.remove('hidden');
+        uniContentEl.innerHTML = uniGuides.map(g => {
+          const isMatch = total >= g.min && total <= g.max;
+          const isCurrent = isMatch ? 'ring-2 ring-ibt-red' : 'opacity-60';
+          const currentBadge = isMatch ? '<span class="ml-2 px-2 py-0.5 bg-ibt-red text-white text-[10px] font-bold rounded-full">現在のスコア</span>' : '';
+          return `
+            <div class="p-4 rounded-xl border-l-4 ${g.color} ${isCurrent}">
+              <p class="text-sm font-bold text-ibt-text">${g.icon} ${g.label}${currentBadge}</p>
+              <p class="text-xs text-ibt-text-light mt-1">${g.text}</p>
+            </div>
+          `;
+        }).join('');
+      } else {
+        uniGuideEl.classList.add('hidden');
+      }
+
+      // Tips
+      const tipsPanel = document.getElementById('tips-panel') as HTMLElement;
+      const tipsContent = document.getElementById('tips-content') as HTMLElement;
+
+      if (filledCount >= 3) {
+        tipsPanel.classList.remove('hidden');
+        const tips: string[] = [];
+
+        // Find weakest subjects
+        const filledScores = scores.filter(s => s.score > 0).sort((a, b) => a.score - b.score);
+
+        if (filledScores.length > 0) {
+          const weakest = filledScores[0];
+          const weakName = subjectGroupLabels[weakest.id] || weakest.id;
+          if (weakest.score <= 4) {
+            tips.push(`<div class="p-4 bg-amber-50 border border-amber-200 rounded-xl">
+              <p class="text-sm font-bold text-amber-800">最も改善余地がある科目: ${weakName}（${weakest.score}点）</p>
+              <p class="text-xs text-amber-700 mt-1">この科目を1点上げるだけで合計スコアが大きく変わります。IBTの講師と一緒に弱点を克服しましょう。</p>
+            </div>`);
+          }
+
+          // Check for subjects below 4
+          const below4 = filledScores.filter(s => s.score < 4);
+          if (below4.length > 0) {
+            const names = below4.map(s => subjectGroupLabels[s.id] || s.id).join('、');
+            tips.push(`<div class="p-4 bg-red-50 border border-red-200 rounded-xl">
+              <p class="text-sm font-bold text-red-800">要注意: ${names}</p>
+              <p class="text-xs text-red-700 mt-1">IBディプロマ取得には全科目で一定以上のスコアが必要です。3点以下の科目は優先的に対策しましょう。</p>
+            </div>`);
+          }
+        }
+
+        // TOK/EE tips
+        if (tok === 'D' || tok === 'E') {
+          tips.push(`<div class="p-4 bg-blue-50 border border-blue-200 rounded-xl">
+            <p class="text-sm font-bold text-blue-800">TOKの成績向上がカギ</p>
+            <p class="text-xs text-blue-700 mt-1">TOKは対策次第でA-Bを狙えます。IBTではTOK専門の指導も行っています。エッセイの構成や知識の問いへのアプローチを一緒に磨きましょう。</p>
+          </div>`);
+        }
+        if (ee === 'D' || ee === 'E') {
+          tips.push(`<div class="p-4 bg-blue-50 border border-blue-200 rounded-xl">
+            <p class="text-sm font-bold text-blue-800">EE（課題論文）を見直そう</p>
+            <p class="text-xs text-blue-700 mt-1">EEはリサーチクエスチョンの設定と論文構成が重要です。IBT講師がEEの添削・指導でグレードアップをサポートします。</p>
+          </div>`);
+        }
+
+        // General encouragement based on score range
+        if (total >= 24 && total < 32) {
+          tips.push(`<div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+            <p class="text-sm font-bold text-emerald-800">あと少しで難関大学圏内!</p>
+            <p class="text-xs text-emerald-700 mt-1">32点以上で慶應や東大推薦が見えてきます。弱点科目を集中的に対策すれば十分に到達可能です。</p>
+          </div>`);
+        } else if (total >= 32 && total < 40) {
+          tips.push(`<div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+            <p class="text-sm font-bold text-emerald-800">素晴らしいスコア!</p>
+            <p class="text-xs text-emerald-700 mt-1">海外のTop大学も視野に入ります。40点以上を目指すなら、得意科目を7に、苦手科目を底上げする戦略が効果的です。</p>
+          </div>`);
+        }
+
+        if (tips.length === 0) {
+          tips.push(`<div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+            <p class="text-sm font-bold text-emerald-800">順調です!</p>
+            <p class="text-xs text-emerald-700 mt-1">全科目バランスよくスコアが取れています。さらに上を目指すなら、IBTの講師と一緒に戦略を立てましょう。</p>
+          </div>`);
+        }
+
+        tipsContent.innerHTML = tips.join('');
+      } else {
+        tipsPanel.classList.add('hidden');
+      }
+
+      // Share buttons
+      const sharePanel = document.getElementById('share-panel') as HTMLElement;
+      if (total > 0) {
+        sharePanel.classList.remove('hidden');
+        const shareText = `IBスコアシミュレーションの結果: ${total}/45点! #IB #国際バカロレア #IBT`;
+        const shareUrl = 'https://ib-tutors.net/ib-score-simulator/';
+
+        const xLink = document.getElementById('share-x') as HTMLAnchorElement;
+        xLink.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+
+        const lineLink = document.getElementById('share-line') as HTMLAnchorElement;
+        lineLink.href = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
+      } else {
+        sharePanel.classList.add('hidden');
+      }
+    }
+
+    // Attach event listeners
+    document.querySelectorAll<HTMLSelectElement>('.subject-score').forEach(sel => {
+      sel.addEventListener('change', calculate);
+    });
+    document.getElementById('tok-grade')!.addEventListener('change', calculate);
+    document.getElementById('ee-grade')!.addEventListener('change', calculate);
+
+    // Initial state
+    calculate();
+  </script>
+
+  <style>
+    select.appearance-none {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 32px;
+    }
+
+    .bg-ibt-red {
+      background-color: var(--color-ibt-red);
+    }
+
+    .text-ibt-red {
+      color: var(--color-ibt-red);
+    }
+
+    .ring-ibt-red {
+      --tw-ring-color: var(--color-ibt-red);
+    }
+
+    .bg-ibt-red-50 {
+      background-color: var(--color-ibt-red-50);
+    }
+
+    .border-ibt-red-light {
+      border-color: var(--color-ibt-red-light);
+    }
+  </style>
+</BaseLayout>

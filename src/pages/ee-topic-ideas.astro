@@ -1,0 +1,387 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const subjects = [
+  { id: 'biology', label: 'Biology', emoji: '🧬', color: 'from-green-400 to-emerald-600' },
+  { id: 'history', label: 'History', emoji: '📜', color: 'from-amber-400 to-orange-600' },
+  { id: 'economics', label: 'Economics', emoji: '📊', color: 'from-blue-400 to-indigo-600' },
+  { id: 'japanese-a', label: 'Japanese A', emoji: '🇯🇵', color: 'from-red-400 to-rose-600' },
+  { id: 'english-a', label: 'English A', emoji: '📖', color: 'from-purple-400 to-violet-600' },
+  { id: 'math', label: 'Math', emoji: '📐', color: 'from-cyan-400 to-teal-600' },
+  { id: 'physics', label: 'Physics', emoji: '⚛️', color: 'from-sky-400 to-blue-600' },
+  { id: 'chemistry', label: 'Chemistry', emoji: '🧪', color: 'from-yellow-400 to-amber-600' },
+  { id: 'psychology', label: 'Psychology', emoji: '🧠', color: 'from-pink-400 to-fuchsia-600' },
+  { id: 'visual-arts', label: 'Visual Arts', emoji: '🎨', color: 'from-rose-400 to-pink-600' },
+];
+
+interface TopicIdea {
+  subject: string;
+  title: string;
+  description: string;
+  difficulty: number; // 1-3
+  approach: string;
+}
+
+const topicIdeas: TopicIdea[] = [
+  // Biology (12)
+  { subject: 'biology', title: 'カフェインが植物の成長に与える影響', description: '異なる濃度のカフェイン溶液で植物を育て、成長速度や根の発達を比較する実験的研究。', difficulty: 1, approach: '実験型 / 対照実験を設計し、定量データを統計分析' },
+  { subject: 'biology', title: '地域の水質と微生物多様性の関係', description: '地元の河川や湖の水質指標と微生物の種類・量の相関を調べるフィールドワーク研究。', difficulty: 2, approach: 'フィールドワーク型 / サンプリング+顕微鏡観察+統計分析' },
+  { subject: 'biology', title: '紫外線がビタミンC含有量に与える影響', description: '果物や野菜を異なるUV条件下で保管し、ビタミンC含有量の変化を滴定で測定。', difficulty: 1, approach: '実験型 / ヨウ素滴定法でビタミンC定量' },
+  { subject: 'biology', title: '土壌pHと植物の発芽率の関係', description: '酸性からアルカリ性まで異なるpHの土壌で種子の発芽率を比較する。', difficulty: 1, approach: '実験型 / 複数のpH条件での対照実験' },
+  { subject: 'biology', title: '抗菌作用を持つ天然素材の比較', description: 'ハチミツ、ニンニク、ショウガなど天然素材の抗菌効果をディスク拡散法で比較。', difficulty: 2, approach: '実験型 / 寒天培地でのゾーン・オブ・インヒビション測定' },
+  { subject: 'biology', title: '運動が心拍変動に与える短期的影響', description: '異なる強度の運動後の心拍変動(HRV)回復パターンを測定し、フィットネスレベルとの関連を分析。', difficulty: 2, approach: 'データ収集型 / 心拍モニター+統計分析' },
+  { subject: 'biology', title: '音楽が植物の成長速度に影響するか', description: '異なるジャンルの音楽を聞かせた植物の成長率を対照群と比較する実験。', difficulty: 1, approach: '実験型 / 変数統制を意識した長期観察実験' },
+  { subject: 'biology', title: '食品添加物が酵母の発酵に与える影響', description: '一般的な食品添加物(保存料、着色料等)が酵母のCO2産生量に与える影響を測定。', difficulty: 2, approach: '実験型 / ガス収集法+定量分析' },
+  { subject: 'biology', title: '塩分濃度がアルテミアの孵化率に与える影響', description: 'ブラインシュリンプ(アルテミア)の卵を異なる塩分濃度で孵化させ、最適濃度を探る。', difficulty: 1, approach: '実験型 / 複数濃度の塩水での比較実験' },
+  { subject: 'biology', title: '葉の気孔密度と環境条件の関係', description: '日向と日陰、乾燥地と湿潤地など異なる環境に育つ同種植物の気孔密度を比較。', difficulty: 2, approach: 'フィールドワーク型 / 顕微鏡観察+統計分析' },
+  { subject: 'biology', title: '洗剤が水生生物に与える影響', description: '異なる濃度の家庭用洗剤がミジンコの心拍数や生存率に与える影響を測定。', difficulty: 2, approach: '実験型 / 顕微鏡下での心拍カウント+用量反応曲線' },
+  { subject: 'biology', title: '果物の熟成過程におけるエチレンの役割', description: 'エチレン産生果物の近接が他の果物の熟成速度に与える影響を色変化やBrix値で測定。', difficulty: 1, approach: '実験型 / Brix計測定+定期観察記録' },
+
+  // History (12)
+  { subject: 'history', title: '明治維新が日本の教育制度に与えた影響', description: '1868年以降の教育改革が日本の近代化にどのように貢献したかを一次史料から分析。', difficulty: 2, approach: '史料分析型 / 政府文書・教育令等の一次史料比較' },
+  { subject: 'history', title: '冷戦期のプロパガンダ映画の比較分析', description: '米ソ両国の冷戦期映画を比較し、プロパガンダ手法と国民意識形成への影響を考察。', difficulty: 3, approach: '比較分析型 / 映画分析+歴史的文脈の考察' },
+  { subject: 'history', title: '広島・長崎への原爆投下の道義的議論', description: '原爆投下をめぐる正当化論と批判論の変遷を歴史的文脈の中で分析。', difficulty: 3, approach: '史学論争型 / 複数の歴史家の見解を比較分析' },
+  { subject: 'history', title: '日系アメリカ人の強制収容と市民権', description: '第二次世界大戦中の日系人収容政策とその後の補償運動の歴史的意義を考察。', difficulty: 2, approach: '史料分析型 / 政府文書+証言+法的文書の分析' },
+  { subject: 'history', title: 'ベトナム戦争に対するアメリカ国内の反戦運動', description: '反戦運動の展開がアメリカの外交政策転換にどの程度影響したかを分析。', difficulty: 2, approach: '因果関係分析型 / メディア報道+政策文書の比較' },
+  { subject: 'history', title: '天安門事件の歴史的記憶と検閲', description: '1989年の天安門事件がどのように記憶・忘却されてきたかを中国内外の史料から分析。', difficulty: 3, approach: '記憶研究型 / メディア分析+検閲政策の調査' },
+  { subject: 'history', title: '沖縄返還交渉における日米関係', description: '1972年の沖縄返還に至る外交交渉過程と両国の思惑を外交文書から分析。', difficulty: 3, approach: '外交史型 / 外交文書+議会記録の一次史料分析' },
+  { subject: 'history', title: 'アパルトヘイト廃止における国際制裁の役割', description: '経済制裁やスポーツボイコットが南アフリカのアパルトヘイト廃止に与えた影響を評価。', difficulty: 2, approach: '因果関係分析型 / 経済データ+政策文書の分析' },
+  { subject: 'history', title: 'フランス革命における女性の役割', description: '革命期の女性参加者の活動と、その後の女性の権利への影響を一次史料から検討。', difficulty: 2, approach: '社会史型 / 書簡・請願書・パンフレットの分析' },
+  { subject: 'history', title: '関東大震災後の朝鮮人虐殺事件', description: '1923年の関東大震災後に起きた朝鮮人虐殺の実態と背景を史料から検証。', difficulty: 3, approach: '史料検証型 / 政府記録+証言+新聞報道の突合' },
+  { subject: 'history', title: 'キューバ危機における意思決定プロセス', description: 'ケネディ政権内の意思決定過程を分析し、核戦争回避の要因を考察。', difficulty: 2, approach: '意思決定分析型 / ExCommの議事録+回想録の分析' },
+  { subject: 'history', title: 'マーシャル・プランがヨーロッパ復興に与えた影響', description: '援助受入国の経済データを比較し、マーシャル・プランの実効性を評価。', difficulty: 2, approach: '経済史型 / 経済統計+政策文書の定量・定性分析' },
+
+  // Economics (12)
+  { subject: 'economics', title: '最低賃金引き上げが地方経済に与える影響', description: '特定地域の最低賃金改定前後の雇用データと消費動向を分析し、地方経済への影響を評価。', difficulty: 2, approach: 'データ分析型 / 政府統計+地域経済データの計量分析' },
+  { subject: 'economics', title: '暗号通貨の普及が金融政策に与える影響', description: 'ビットコイン等の普及が中央銀行の金融政策の有効性に与える理論的影響を考察。', difficulty: 3, approach: '理論分析型 / 経済モデル+各国の事例比較' },
+  { subject: 'economics', title: '観光業が地域経済に与える乗数効果', description: '特定の観光地を対象に、観光収入の波及効果を地域経済全体で推計。', difficulty: 2, approach: 'データ分析型 / 乗数効果モデル+地域統計の活用' },
+  { subject: 'economics', title: 'ファストファッション産業の外部不経済', description: '環境汚染・労働搾取など、ファストファッションの社会的コストを経済学的に分析。', difficulty: 2, approach: '理論+事例型 / 外部性の理論+企業データ分析' },
+  { subject: 'economics', title: 'フードデリバリー市場の価格戦略', description: 'Uber Eats等のプラットフォームの価格設定メカニズムとギグワーカーへの影響を分析。', difficulty: 2, approach: '市場構造分析型 / 価格データ+市場集中度の分析' },
+  { subject: 'economics', title: '炭素税が企業行動に与える影響', description: '炭素税導入国の企業のCO2排出量変化と技術革新への投資動向を比較分析。', difficulty: 3, approach: '比較分析型 / 各国の政策データ+排出量統計' },
+  { subject: 'economics', title: 'コンビニの出店戦略と市場構造', description: '日本のコンビニ業界の寡占市場構造と出店戦略を経済学的に分析。', difficulty: 2, approach: '産業組織論型 / 出店データ+市場集中度指数の計算' },
+  { subject: 'economics', title: '少子高齢化が年金制度に与える影響', description: '日本の人口動態変化が賦課方式年金制度の持続可能性に与える影響をモデル化。', difficulty: 3, approach: '理論+シミュレーション型 / 人口推計+年金財政モデル' },
+  { subject: 'economics', title: '円安が日本の輸出産業に与える影響', description: '為替レート変動と輸出量の関係を特定産業に焦点を当てて実証分析。', difficulty: 2, approach: 'データ分析型 / 貿易統計+為替データの回帰分析' },
+  { subject: 'economics', title: 'サブスクリプションモデルの消費者行動への影響', description: 'サブスク型サービスが消費者の支出パターンと効用最大化行動に与える変化を分析。', difficulty: 2, approach: 'アンケート+理論型 / 消費者調査+行動経済学の理論適用' },
+  { subject: 'economics', title: '教育投資の収益率の国際比較', description: '複数国の教育支出と所得データから、教育の私的・社会的収益率を比較。', difficulty: 3, approach: '計量経済学型 / ミンサー方程式+OECDデータ分析' },
+  { subject: 'economics', title: 'キャッシュレス決済普及の経済効果', description: 'キャッシュレス化が消費行動・取引コスト・金融包摂に与える影響を分析。', difficulty: 2, approach: '事例分析型 / 各国の決済データ+消費統計の比較' },
+
+  // Japanese A (10)
+  { subject: 'japanese-a', title: '村上春樹作品における「喪失」のテーマ分析', description: '複数の村上作品を横断し、「喪失」がどのように描かれ、読者に何を問いかけるかを分析。', difficulty: 2, approach: '比較文学型 / 複数作品のテーマ・モチーフ比較' },
+  { subject: 'japanese-a', title: '太宰治「人間失格」と現代の自己喪失', description: '「人間失格」における主人公の自己喪失を現代社会の文脈から再解釈する試み。', difficulty: 2, approach: 'テクスト分析型 / 作品精読+社会的文脈の考察' },
+  { subject: 'japanese-a', title: '宮沢賢治の童話における自然観と倫理観', description: '「銀河鉄道の夜」「注文の多い料理店」等から賢治の自然倫理を考察。', difficulty: 2, approach: 'テーマ分析型 / 複数童話の比較+思想的背景の調査' },
+  { subject: 'japanese-a', title: '川端康成「雪国」における色彩表現の機能', description: '「雪国」で用いられる色彩表現が物語の雰囲気や人物描写にどう機能するかを分析。', difficulty: 2, approach: 'スタイル分析型 / テクスト内の色彩表現を体系的に抽出・分析' },
+  { subject: 'japanese-a', title: '芥川龍之介の短編における「語り」の技法', description: '「藪の中」「羅生門」等の語りの構造を分析し、信頼できない語り手の効果を考察。', difficulty: 3, approach: 'ナラトロジー型 / 語りの視点・構造の体系的分析' },
+  { subject: 'japanese-a', title: '日本語の敬語システムが文学に与える影響', description: '文学作品における敬語使用が人間関係や社会的階層をどう反映するかを分析。', difficulty: 3, approach: '言語+文学分析型 / 敬語表現の抽出+社会言語学的考察' },
+  { subject: 'japanese-a', title: '又吉直樹「火花」における「笑い」と「芸術」', description: '「火花」での漫才=芸術というテーマが現代日本文学にどう位置づけられるかを考察。', difficulty: 2, approach: 'テーマ分析型 / 作品精読+日本の「笑い」の文化論的考察' },
+  { subject: 'japanese-a', title: '夏目漱石作品における「個人主義」の変遷', description: '前期三部作と後期三部作を比較し、漱石の「個人主義」概念の発展を追う。', difficulty: 3, approach: '通時的分析型 / 作品群の体系的比較+伝記的背景' },
+  { subject: 'japanese-a', title: '現代日本のライトノベルにおける異世界転生の意味', description: '異世界転生ジャンルが現代日本社会の何を反映しているかを文学社会学的に考察。', difficulty: 2, approach: '文学社会学型 / ジャンル分析+社会的背景の考察' },
+  { subject: 'japanese-a', title: '谷崎潤一郎「細雪」における関西文化の表象', description: '「細雪」に描かれる関西の風俗・言語・美意識の文学的機能を分析。', difficulty: 2, approach: '文化研究型 / テクスト分析+文化人類学的アプローチ' },
+
+  // English A (10)
+  { subject: 'english-a', title: 'Dystopian literature: comparing 1984 and Brave New World', description: 'How do Orwell and Huxley use different methods of control to critique society, and which vision is more relevant today?', difficulty: 2, approach: 'Comparative analysis / Close reading of both texts + historical context' },
+  { subject: 'english-a', title: 'The role of unreliable narrators in Gone Girl', description: 'How does Gillian Flynn use unreliable narration to challenge reader assumptions about truth and gender?', difficulty: 2, approach: 'Narratological analysis / Point of view shifts + reader response theory' },
+  { subject: 'english-a', title: 'Postcolonial identity in Chimamanda Ngozi Adichie\'s works', description: 'Analyzing how Adichie portrays the negotiation of identity between Nigerian and Western cultures.', difficulty: 3, approach: 'Postcolonial theory / Close reading + cultural context analysis' },
+  { subject: 'english-a', title: 'Shakespeare\'s Othello: race and jealousy in performance', description: 'How have different stage and film adaptations of Othello interpreted the themes of race and jealousy?', difficulty: 3, approach: 'Performance analysis / Text comparison + production history research' },
+  { subject: 'english-a', title: 'The American Dream in The Great Gatsby and Death of a Salesman', description: 'How do Fitzgerald and Miller critique the American Dream through their protagonists\' tragic failures?', difficulty: 2, approach: 'Comparative thematic analysis / Close reading + historical context' },
+  { subject: 'english-a', title: 'Language and power in Margaret Atwood\'s The Handmaid\'s Tale', description: 'How does Atwood use language control as a mechanism of political oppression in Gilead?', difficulty: 2, approach: 'Stylistic analysis / Linguistic features + feminist literary theory' },
+  { subject: 'english-a', title: 'The use of magical realism in Salman Rushdie\'s Midnight\'s Children', description: 'How does Rushdie employ magical realism to represent India\'s postcolonial history and national identity?', difficulty: 3, approach: 'Genre analysis / Magical realism theory + historical context' },
+  { subject: 'english-a', title: 'Symbolism of nature in Romantic poetry: Wordsworth vs. Keats', description: 'Comparing how Wordsworth and Keats use natural imagery to explore human emotion and mortality.', difficulty: 2, approach: 'Comparative poetry analysis / Close reading + Romantic movement context' },
+  { subject: 'english-a', title: 'Gender roles in Jane Austen\'s Pride and Prejudice', description: 'How does Austen use irony and social commentary to critique Regency-era gender expectations?', difficulty: 2, approach: 'Feminist criticism / Close reading + historical-social context' },
+  { subject: 'english-a', title: 'The impact of colonialism in Joseph Conrad\'s Heart of Darkness', description: 'Analyzing Conrad\'s portrayal of colonialism and its lasting critical debates, including Achebe\'s response.', difficulty: 3, approach: 'Postcolonial critique / Multiple critical perspectives + close reading' },
+
+  // Math (8)
+  { subject: 'math', title: 'フィボナッチ数列の自然界への応用', description: 'ひまわりの種配列や貝殻の螺旋などにおけるフィボナッチ数列の出現を数学的に分析。', difficulty: 2, approach: '応用数学型 / 数列理論+実測データの数学的モデリング' },
+  { subject: 'math', title: '暗号理論: RSA暗号の数学的基盤', description: 'RSA暗号の背後にある素因数分解の困難性と安全性を数論から考察。', difficulty: 3, approach: '純粋数学型 / 数論(素数・合同式)+アルゴリズム分析' },
+  { subject: 'math', title: 'ゲーム理論を用いたジャンケン必勝法の分析', description: '混合戦略ナッシュ均衡の観点からジャンケンの最適戦略を分析し、実験で検証。', difficulty: 2, approach: '理論+実験型 / ゲーム理論+実験データの統計分析' },
+  { subject: 'math', title: '感染症の拡大をSIRモデルで予測する', description: 'SIRモデルを用いて感染症の拡大パターンをシミュレーションし、実データと比較。', difficulty: 2, approach: '数理モデル型 / 微分方程式+シミュレーション+実データ比較' },
+  { subject: 'math', title: '黄金比とデザインの美学', description: '黄金比が建築・絵画・写真などのデザインにどう活用されているかを数学的に検証。', difficulty: 1, approach: '応用数学型 / 比率計算+実例の測定分析' },
+  { subject: 'math', title: 'ベイズ統計学による医療診断の精度分析', description: '偽陽性・偽陰性問題をベイズの定理で分析し、スクリーニング検査の有用性を評価。', difficulty: 2, approach: '統計学型 / ベイズの定理+条件付き確率の応用' },
+  { subject: 'math', title: 'フラクタル幾何学と海岸線のパラドックス', description: 'マンデルブロ集合とフラクタル次元の概念を用いて海岸線の長さの問題を考察。', difficulty: 3, approach: '純粋数学型 / フラクタル理論+コンピュータによる生成・分析' },
+  { subject: 'math', title: '待ち行列理論によるレジ混雑の最適化', description: 'スーパーのレジ待ち時間をM/M/cモデルで分析し、最適なレジ数を導出。', difficulty: 2, approach: '応用数学型 / 待ち行列理論+実地データ収集・分析' },
+
+  // Physics (8)
+  { subject: 'physics', title: '太陽電池の角度と発電効率の関係', description: 'ソーラーパネルの設置角度を変化させ、季節・時刻ごとの最適角度を実験的に決定。', difficulty: 1, approach: '実験型 / 角度変化+発電量測定+三角関数による理論値比較' },
+  { subject: 'physics', title: '楽器の形状と音響特性の関係', description: 'ギターのボディ形状や素材が共鳴周波数とスペクトルに与える影響を測定・分析。', difficulty: 2, approach: '実験型 / 周波数分析ソフト+音響物理学の理論適用' },
+  { subject: 'physics', title: '磁気浮上の原理と応用', description: '電磁石を用いた磁気浮上装置を製作し、浮上高さと電流の関係を定量分析。', difficulty: 2, approach: '実験型 / 装置製作+電磁気学の理論+定量データ分析' },
+  { subject: 'physics', title: 'ペンデュラム(振り子)のカオス的振る舞い', description: '二重振り子の運動を高速カメラで記録し、初期条件への敏感な依存性を実証。', difficulty: 3, approach: '実験+理論型 / 動画解析+カオス理論の考察' },
+  { subject: 'physics', title: '建物の耐震設計: 固有振動数と共振', description: '簡易建物モデルを製作し、固有振動数と地震波周波数の共振条件を実験的に調査。', difficulty: 2, approach: '実験型 / モデル製作+振動台実験+データ分析' },
+  { subject: 'physics', title: '液体の粘性と温度の関係', description: '異なる温度での液体(蜂蜜、油等)の粘性係数を測定し、アレニウス方程式で分析。', difficulty: 1, approach: '実験型 / 落球法+温度制御+データフィッティング' },
+  { subject: 'physics', title: 'LEDの色と発光効率の関係', description: '異なる色(波長)のLEDの電力消費量と光出力を測定し、発光効率を比較。', difficulty: 1, approach: '実験型 / 光度計測定+電気測定+量子力学的考察' },
+  { subject: 'physics', title: '弦の張力・長さ・材質と音程の関係', description: 'モノコードを用いて弦の物理的条件と基本周波数の関係を実験的に検証。', difficulty: 1, approach: '実験型 / 周波数測定+波動方程式による理論値との比較' },
+
+  // Chemistry (8)
+  { subject: 'chemistry', title: '天然抗酸化物質のビタミンC含有量比較', description: '異なる果物・野菜のビタミンC含有量をヨウ素滴定法で定量比較。', difficulty: 1, approach: '実験型 / 酸化還元滴定+定量分析' },
+  { subject: 'chemistry', title: '水質浄化における活性炭の吸着効率', description: '活性炭の種類・粒度・接触時間が水中汚染物質の吸着効率に与える影響を分析。', difficulty: 2, approach: '実験型 / 吸着等温線(ラングミュア/フロインドリッヒ)のフィッティング' },
+  { subject: 'chemistry', title: '食品中の人工着色料の同定と定量', description: 'ペーパークロマトグラフィーと分光光度法で市販食品の着色料を分析。', difficulty: 2, approach: '分析化学型 / クロマトグラフィー+分光光度法' },
+  { subject: 'chemistry', title: '温度がアスピリンの分解速度に与える影響', description: 'アスピリンの加水分解反応の速度定数を異なる温度で測定し、アレニウスプロットを作成。', difficulty: 2, approach: '反応速度論型 / 滴定+アレニウス方程式の適用' },
+  { subject: 'chemistry', title: '牛乳からカゼインプラスチックの合成', description: '牛乳からカゼインを抽出し、ホルムアルデヒドで硬化させたバイオプラスチックの物性を評価。', difficulty: 1, approach: '合成+物性評価型 / 合成実験+強度・分解性テスト' },
+  { subject: 'chemistry', title: '電気分解による水素生成の効率最適化', description: '電極材料・電解質濃度・電圧が水の電気分解効率に与える影響を定量分析。', difficulty: 2, approach: '実験型 / 電気化学+ファラデーの法則の検証' },
+  { subject: 'chemistry', title: '天然染料の色素抽出と繊維への定着性', description: '植物由来の天然染料を抽出し、異なる媒染剤での繊維への定着性と耐光性を比較。', difficulty: 2, approach: '実験型 / 抽出+分光分析+耐久試験' },
+  { subject: 'chemistry', title: '酸性雨が建材に与える影響のシミュレーション', description: '異なるpHの溶液で石灰石・大理石・金属の腐食速度を測定し、酸性雨の影響を評価。', difficulty: 1, approach: '実験型 / 質量変化測定+反応速度の計算' },
+
+  // Psychology (10)
+  { subject: 'psychology', title: 'SNS使用時間と自己肯定感の相関', description: 'SNS利用時間と自己肯定感(ローゼンバーグ尺度)の関係をアンケート調査で分析。', difficulty: 1, approach: 'アンケート型 / 質問紙調査+相関分析+考察' },
+  { subject: 'psychology', title: '色彩が感情と記憶に与える影響', description: '異なる色の背景で提示された情報の記憶保持率と感情反応を実験的に測定。', difficulty: 2, approach: '実験型 / 対照実験+記憶テスト+統計分析' },
+  { subject: 'psychology', title: 'バイリンガルの認知的柔軟性', description: 'モノリンガルとバイリンガルの認知的柔軟性(タスク切替能力)を比較実験で検証。', difficulty: 2, approach: '実験型 / ストループテスト等+群間比較+統計検定' },
+  { subject: 'psychology', title: '音楽がストレス軽減に与える影響', description: '異なるジャンルの音楽聴取が心拍数・主観的ストレス評価に与える影響を測定。', difficulty: 1, approach: '実験型 / 生理指標測定+質問紙+統計分析' },
+  { subject: 'psychology', title: '確証バイアスが意思決定に与える影響', description: '確証バイアスの強さと日常の意思決定パターンの関係を実験とアンケートで検証。', difficulty: 2, approach: '実験+調査型 / 情報提示実験+質問紙調査' },
+  { subject: 'psychology', title: '睡眠時間と学業成績の関係', description: '高校生の睡眠時間と学業成績の相関を調査し、最適な睡眠時間を考察。', difficulty: 1, approach: 'アンケート型 / 睡眠日誌+成績データ+相関分析' },
+  { subject: 'psychology', title: '同調圧力: アッシュの実験の現代版再現', description: 'アッシュの同調実験を現代のオンライン環境で再現し、同調行動の変化を分析。', difficulty: 2, approach: '実験型 / 実験デザイン+倫理的配慮+統計分析' },
+  { subject: 'psychology', title: 'ゲーミフィケーションが学習動機に与える影響', description: 'ポイント・バッジ等のゲーム要素が学習への内発的動機づけに与える影響を実験で検証。', difficulty: 2, approach: '実験型 / 対照群実験+動機づけ尺度+統計分析' },
+  { subject: 'psychology', title: 'マスメディアのフレーミング効果', description: '同一ニュースの異なるフレーミング(肯定的/否定的)が判断に与える影響を実験で検証。', difficulty: 2, approach: '実験型 / フレーミング操作+判断課題+統計分析' },
+  { subject: 'psychology', title: 'ノスタルジアが幸福感に与える影響', description: 'ノスタルジックな記憶の想起が現在の幸福感と社会的つながりの感覚に与える影響を調査。', difficulty: 2, approach: '実験+調査型 / ノスタルジア誘発課題+幸福度尺度' },
+
+  // Visual Arts (5)
+  { subject: 'visual-arts', title: '浮世絵が印象派に与えた影響の比較研究', description: '歌川広重やモネの作品を比較し、構図・色彩・視点における浮世絵の影響を視覚的に分析。', difficulty: 2, approach: '比較分析型 / 作品の視覚的要素を体系的に比較' },
+  { subject: 'visual-arts', title: 'ストリートアートの社会的機能', description: 'バンクシーなどのストリートアートが公共空間でどのような社会的メッセージを伝えるかを分析。', difficulty: 2, approach: '社会文化分析型 / 作品分析+インタビュー+文化的文脈' },
+  { subject: 'visual-arts', title: 'AIアートは「芸術」か: 創造性の再定義', description: 'AI生成画像と人間の芸術作品を比較し、「創造性」の定義を美学的に考察。', difficulty: 3, approach: '美学・哲学型 / 作品比較+芸術理論+哲学的議論' },
+  { subject: 'visual-arts', title: '日本の「侘び寂び」美学の現代デザインへの影響', description: '侘び寂びの概念が現代のプロダクトデザインや建築にどう取り入れられているかを分析。', difficulty: 2, approach: '文化分析型 / 伝統美学の理論+現代事例の分析' },
+  { subject: 'visual-arts', title: '写真のフレーミングが観る者の感情に与える影響', description: '同一被写体を異なるアングル・構図で撮影し、観る者の感情反応の違いを調査。', difficulty: 2, approach: '実験+制作型 / 自作写真作品+アンケート調査' },
+];
+
+const difficultyLabels = ['', '基礎', '標準', '発展'];
+const difficultyStars = ['', '★', '★★', '★★★'];
+---
+
+<BaseLayout
+  title="EEテーマアイデア100選｜科目別のおすすめテーマ｜IBT"
+  description="IB Extended Essay（EE）のテーマアイデアを科目別に100個以上紹介。Biology、History、Economics、Japanese A、English A、Math、Physics、Chemistry、Psychology対応。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "EEテーマアイデア100選", "item": "https://ib-tutors.net/ee-topic-ideas/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/85 text-sm mb-6" aria-label="パンくずリスト">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">EEテーマアイデア100選</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
+        EEテーマアイデア<span class="inline-block bg-white/20 backdrop-blur-sm rounded-xl px-4 py-1 ml-2">100選+</span>
+      </h1>
+      <p class="mt-4 text-white/90 text-lg md:text-xl max-w-3xl leading-relaxed">
+        Extended Essayのテーマ選びに迷っていませんか？<br />
+        科目別に105個のアイデアを難易度・アプローチ付きで紹介します。
+      </p>
+    </div>
+  </section>
+
+  <!-- How to use -->
+  <section class="py-10 bg-white border-b border-ibt-border">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="flex items-start gap-3">
+          <span class="shrink-0 w-8 h-8 rounded-full bg-ibt-red-50 flex items-center justify-center text-ibt-red font-bold text-sm">1</span>
+          <div>
+            <p class="font-bold text-sm">科目を選ぶ</p>
+            <p class="text-ibt-text-light text-sm">タブで科目をフィルタリング</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="shrink-0 w-8 h-8 rounded-full bg-ibt-red-50 flex items-center justify-center text-ibt-red font-bold text-sm">2</span>
+          <div>
+            <p class="font-bold text-sm">アイデアを見る</p>
+            <p class="text-ibt-text-light text-sm">難易度とアプローチを参考に</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="shrink-0 w-8 h-8 rounded-full bg-ibt-red-50 flex items-center justify-center text-ibt-red font-bold text-sm">3</span>
+          <div>
+            <p class="font-bold text-sm">相談する</p>
+            <p class="text-ibt-text-light text-sm">テーマを絞り込みたければIBTに相談</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subject Filter + Topic Cards -->
+  <section class="py-12 md:py-20 bg-ibt-bg">
+    <div class="max-w-5xl mx-auto px-4">
+
+      <!-- Subject Tabs -->
+      <div class="flex flex-wrap gap-2 mb-10 justify-center" id="subject-tabs">
+        <button
+          data-subject="all"
+          class="subject-tab active px-4 py-2 rounded-full text-sm font-bold transition-all bg-ibt-red text-white shadow-md"
+        >
+          すべて ({topicIdeas.length})
+        </button>
+        {subjects.map((sub) => {
+          const count = topicIdeas.filter(t => t.subject === sub.id).length;
+          return (
+            <button
+              data-subject={sub.id}
+              class="subject-tab px-4 py-2 rounded-full text-sm font-bold transition-all bg-white text-ibt-text border border-ibt-border hover:border-ibt-red hover:text-ibt-red"
+            >
+              {sub.emoji} {sub.label} ({count})
+            </button>
+          );
+        })}
+      </div>
+
+      <!-- Difficulty Legend -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-8 text-sm text-ibt-text-light">
+        <span class="font-bold">難易度:</span>
+        <span class="flex items-center gap-1"><span class="text-amber-500">★</span> 基礎（取り組みやすい）</span>
+        <span class="flex items-center gap-1"><span class="text-amber-500">★★</span> 標準</span>
+        <span class="flex items-center gap-1"><span class="text-amber-500">★★★</span> 発展（高得点を狙える）</span>
+      </div>
+
+      <!-- Topic Cards Grid -->
+      <div class="grid gap-4 md:grid-cols-2" id="topic-grid">
+        {topicIdeas.map((idea, index) => {
+          const sub = subjects.find(s => s.id === idea.subject);
+          return (
+            <div class="topic-card bg-white rounded-2xl shadow-sm border border-ibt-border p-5 md:p-6 hover:shadow-md transition-shadow" data-subject={idea.subject}>
+              <div class="flex items-start justify-between gap-3 mb-3">
+                <span class={`inline-flex items-center gap-1 text-xs font-bold text-white px-2.5 py-1 rounded-full bg-gradient-to-r ${sub?.color || 'from-gray-400 to-gray-600'}`}>
+                  {sub?.emoji} {sub?.label}
+                </span>
+                <span class="text-amber-500 text-sm font-bold shrink-0" title={`難易度: ${difficultyLabels[idea.difficulty]}`}>
+                  {difficultyStars[idea.difficulty]}
+                </span>
+              </div>
+              <h3 class="text-ibt-text font-bold leading-relaxed mb-2">{idea.title}</h3>
+              <p class="text-ibt-text-light text-sm leading-relaxed mb-3">{idea.description}</p>
+              <div class="pt-3 border-t border-gray-100">
+                <p class="text-xs text-ibt-text-light">
+                  <span class="font-bold text-ibt-red">アプローチ:</span> {idea.approach}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Count -->
+      <p class="text-center text-ibt-text-light text-sm mt-8" id="topic-showing-count">
+        全 {topicIdeas.length} 件を表示中
+      </p>
+    </div>
+  </section>
+
+  <!-- テーマ選びで迷ったら CTA -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-gradient-to-br from-ibt-bg to-white rounded-2xl border border-ibt-border p-8 md:p-12">
+        <div class="max-w-2xl mx-auto text-center">
+          <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">NEED HELP?</p>
+          <h2 class="text-2xl md:text-3xl font-black mb-4">テーマ選びで迷ったら</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mb-6 rounded-full mx-auto"></div>
+          <p class="text-ibt-text-light leading-relaxed mb-4">
+            EEのテーマ選びは、最終スコアを大きく左右する重要なステップです。
+          </p>
+          <ul class="text-left space-y-3 mb-8 max-w-md mx-auto">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+              <span class="text-ibt-text-light text-sm">自分の興味と成績を両立するテーマの絞り込み</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+              <span class="text-ibt-text-light text-sm">Research Questionの作り方のアドバイス</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-ibt-red shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+              <span class="text-ibt-text-light text-sm">IB卒業生の経験に基づく実践的なアドバイス</span>
+            </li>
+          </ul>
+          <p class="text-ibt-text-light text-sm mb-8">
+            IBTの講師は全員IB卒業生。EEを書いた経験があるからこそ、リアルなアドバイスができます。
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://line.me/R/ti/p/@974okamx"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-[#06C755] hover:bg-[#05b34c] text-white font-bold rounded-full transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              LINEで相談する
+            </a>
+            <a
+              href="/contact/"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end hover:shadow-lg text-white font-bold rounded-full transition-shadow"
+            >
+              無料体験を申し込む
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-ibt-red font-bold text-sm tracking-widest mb-4 text-center">RELATED</p>
+      <h2 class="text-2xl md:text-3xl font-black mb-8 text-center">関連コンテンツ</h2>
+      <div class="grid gap-4 md:grid-cols-3">
+        <a href="/ib-tok-ee-ia-guide/" class="block bg-white rounded-2xl shadow-sm border border-ibt-border p-6 hover:shadow-md transition-shadow group">
+          <p class="text-ibt-red font-bold text-xs mb-2">GUIDE</p>
+          <h3 class="font-bold mb-2 group-hover:text-ibt-red transition-colors">TOK・EE・IA完全ガイド</h3>
+          <p class="text-ibt-text-light text-sm">EEの書き方・評価基準を詳しく解説</p>
+        </a>
+        <a href="/iber-type-shindan/" class="block bg-white rounded-2xl shadow-sm border border-ibt-border p-6 hover:shadow-md transition-shadow group">
+          <p class="text-ibt-red font-bold text-xs mb-2">QUIZ</p>
+          <h3 class="font-bold mb-2 group-hover:text-ibt-red transition-colors">IBerタイプ診断</h3>
+          <p class="text-ibt-text-light text-sm">あなたのIBerタイプを診断してみよう</p>
+        </a>
+        <a href="/ib-aruaru/" class="block bg-white rounded-2xl shadow-sm border border-ibt-border p-6 hover:shadow-md transition-shadow group">
+          <p class="text-ibt-red font-bold text-xs mb-2">FUN</p>
+          <h3 class="font-bold mb-2 group-hover:text-ibt-red transition-colors">IB生あるある55選</h3>
+          <p class="text-ibt-text-light text-sm">共感しすぎて泣けるあるあるを集めました</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  // Subject filter
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.subject-tab');
+  const cards = document.querySelectorAll<HTMLElement>('.topic-card');
+  const countEl = document.getElementById('topic-showing-count');
+  const totalCount = cards.length;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const subject = tab.dataset.subject;
+
+      // Update active tab style
+      tabs.forEach((t) => {
+        t.classList.remove('bg-ibt-red', 'text-white', 'shadow-md');
+        t.classList.add('bg-white', 'text-ibt-text', 'border', 'border-ibt-border');
+      });
+      tab.classList.remove('bg-white', 'text-ibt-text', 'border', 'border-ibt-border');
+      tab.classList.add('bg-ibt-red', 'text-white', 'shadow-md');
+
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        if (subject === 'all' || card.dataset.subject === subject) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (countEl) {
+        countEl.textContent = subject === 'all'
+          ? `全 ${totalCount} 件を表示中`
+          : `${visibleCount} 件を表示中（全 ${totalCount} 件中）`;
+      }
+    });
+  });
+</script>

@@ -1,0 +1,422 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schedules = {
+  normal: {
+    label: '通常の1日',
+    items: [
+      { time: '6:30', activity: '起床・準備', type: 'rest', icon: '☀️', detail: '朝ごはんをしっかり食べてエネルギーチャージ' },
+      { time: '7:30', activity: '登校', type: 'rest', icon: '🚃', detail: '通学時間に単語帳やリスニング教材をチェック' },
+      { time: '8:00-8:50', activity: '1限 English A (HL)', type: 'class', icon: '📖', detail: '文学作品の分析ディスカッション' },
+      { time: '9:00-9:50', activity: '2限 Math AA (HL)', type: 'class', icon: '📐', detail: '微分積分の応用問題に取り組む' },
+      { time: '10:00-10:20', activity: '休憩', type: 'rest', icon: '☕', detail: '友達とTOKの話で盛り上がる' },
+      { time: '10:20-11:10', activity: '3限 TOK', type: 'core', icon: '🧠', detail: '「知識とは何か」を多角的に考えるディスカッション' },
+      { time: '11:20-12:10', activity: '4限 Biology (HL)', type: 'class', icon: '🔬', detail: '実験レポートの書き方もIAに直結する大事な授業' },
+      { time: '12:10-13:00', activity: '昼休み', type: 'rest', icon: '🍱', detail: 'EEの資料を読みながら食べる（IB生あるある）' },
+      { time: '13:00-13:50', activity: '5限 Japanese A (SL)', type: 'class', icon: '✍️', detail: '日本文学の分析エッセイに取り組む' },
+      { time: '14:00-14:50', activity: '6限 Economics (SL)', type: 'class', icon: '📊', detail: '経済理論をリアルなニュースに当てはめて理解' },
+      { time: '15:00-16:30', activity: 'CAS活動（ボランティア）', type: 'cas', icon: '🤝', detail: '地域の子ども支援ボランティアに参加' },
+      { time: '17:00', activity: '帰宅', type: 'rest', icon: '🏠', detail: '少しリラックスしてから勉強モードへ' },
+      { time: '17:30-19:00', activity: 'IA作業（Biology）', type: 'study', icon: '🧪', detail: '実験データの分析とグラフ作成' },
+      { time: '19:00-20:00', activity: '夕食・休憩', type: 'rest', icon: '🍽️', detail: '家族との時間。リフレッシュも大切' },
+      { time: '20:00-22:00', activity: '自習（予習 + EE執筆）', type: 'study', icon: '📝', detail: '明日の授業準備とEE（課題論文）の執筆を並行' },
+      { time: '22:30', activity: '就寝', type: 'rest', icon: '🌙', detail: '睡眠はパフォーマンスに直結。しっかり休む' },
+    ],
+    summary: { class: 6, core: 1, cas: 1.5, study: 3 },
+  },
+  exam: {
+    label: '試験前の1日',
+    items: [
+      { time: '5:30', activity: '早起き・復習開始', type: 'study', icon: '⏰', detail: '朝の集中力が高い時間を活用' },
+      { time: '6:30', activity: '朝食', type: 'rest', icon: '☀️', detail: '脳にエネルギーを補給' },
+      { time: '7:30', activity: '登校', type: 'rest', icon: '🚃', detail: '暗記カードで最終確認' },
+      { time: '8:00-8:50', activity: '1限 English A (HL)', type: 'class', icon: '📖', detail: 'Paper 1の演習。時間配分を意識' },
+      { time: '9:00-9:50', activity: '2限 Math AA (HL)', type: 'class', icon: '📐', detail: '過去問演習で本番形式に慣れる' },
+      { time: '10:00-10:20', activity: '休憩', type: 'rest', icon: '☕', detail: '友達と問題の解法を確認し合う' },
+      { time: '10:20-11:10', activity: '3限 Biology (HL)', type: 'class', icon: '🔬', detail: 'HL範囲の総復習' },
+      { time: '11:20-12:10', activity: '4限 Economics (SL)', type: 'class', icon: '📊', detail: 'ダイアグラムの描き方を完璧にする' },
+      { time: '12:10-13:00', activity: '昼休み', type: 'rest', icon: '🍱', detail: '食べながら友達と問題を出し合う' },
+      { time: '13:00-14:50', activity: '自習時間（図書館）', type: 'study', icon: '📚', detail: '弱点科目を集中的に復習' },
+      { time: '15:00', activity: '帰宅', type: 'rest', icon: '🏠', detail: '試験前はCAS活動を調整' },
+      { time: '15:30-18:00', activity: '過去問演習', type: 'study', icon: '✏️', detail: '本番と同じ時間配分で過去問を解く' },
+      { time: '18:00-19:00', activity: '夕食・休憩', type: 'rest', icon: '🍽️', detail: '短い休憩を挟んでリセット' },
+      { time: '19:00-21:30', activity: '苦手分野の集中復習', type: 'study', icon: '🎯', detail: 'マーカーで印をつけた箇所を徹底的に' },
+      { time: '22:00', activity: '就寝', type: 'rest', icon: '🌙', detail: '試験前こそ睡眠が大事' },
+    ],
+    summary: { class: 4, core: 0, cas: 0, study: 7 },
+  },
+  ee: {
+    label: 'EE締め切り前',
+    items: [
+      { time: '6:00', activity: '起床・EE執筆開始', type: 'core', icon: '⏰', detail: '朝の集中力でEEを一気に進める' },
+      { time: '7:00', activity: '朝食', type: 'rest', icon: '☀️', detail: '食べながら論文構成を頭の中で整理' },
+      { time: '7:30', activity: '登校', type: 'rest', icon: '🚃', detail: '参考文献リストを通学中にチェック' },
+      { time: '8:00-12:10', activity: '通常授業', type: 'class', icon: '📖', detail: '授業に集中しつつ、休み時間はEEのメモ' },
+      { time: '12:10-13:00', activity: '昼休み（EE指導教員に相談）', type: 'core', icon: '👨‍🏫', detail: 'フィードバックをもらって修正方針を確認' },
+      { time: '13:00-14:50', activity: '午後の授業', type: 'class', icon: '📊', detail: '残り2コマをこなす' },
+      { time: '15:00-16:00', activity: '図書館でEE参考文献調査', type: 'core', icon: '📚', detail: '引用元を確認し、参考文献リストを整備' },
+      { time: '16:30', activity: '帰宅', type: 'rest', icon: '🏠', detail: 'すぐに執筆モードへ切り替え' },
+      { time: '17:00-19:00', activity: 'EE本文執筆', type: 'core', icon: '📝', detail: '分析セクションの執筆に集中' },
+      { time: '19:00-19:30', activity: '夕食', type: 'rest', icon: '🍽️', detail: '短めに済ませてすぐ戻る' },
+      { time: '19:30-22:00', activity: 'EE推敲・修正', type: 'core', icon: '🔍', detail: '文章の論理展開と引用形式をチェック' },
+      { time: '22:00-23:00', activity: '最終チェック・明日の準備', type: 'study', icon: '✅', detail: 'ワードカウント確認、フォーマット調整' },
+      { time: '23:00', activity: '就寝', type: 'rest', icon: '🌙', detail: '締め切り前は少し遅くなりがち...' },
+    ],
+    summary: { class: 5, core: 5, cas: 0, study: 1 },
+  },
+  cas: {
+    label: 'CASプロジェクト日',
+    items: [
+      { time: '6:30', activity: '起床・準備', type: 'rest', icon: '☀️', detail: 'CASプロジェクトの資材を忘れずに準備' },
+      { time: '7:30', activity: '登校', type: 'rest', icon: '🚃', detail: 'チームメンバーとLINEで最終確認' },
+      { time: '8:00-12:10', activity: '午前の授業', type: 'class', icon: '📖', detail: '4コマ分の授業をこなす' },
+      { time: '12:10-13:00', activity: '昼休み（CAS準備）', type: 'cas', icon: '🍱', detail: 'プロジェクトの段取りを最終確認' },
+      { time: '13:00-14:50', activity: '午後の授業', type: 'class', icon: '📊', detail: '残り2コマ' },
+      { time: '15:00-18:00', activity: 'CASプロジェクト実施', type: 'cas', icon: '🌍', detail: '地域清掃活動の企画・実行。写真撮影も忘れずに' },
+      { time: '18:00-18:30', activity: 'CAS振り返りミーティング', type: 'cas', icon: '💬', detail: 'チームで今日の成果と改善点を共有' },
+      { time: '18:30', activity: '帰宅', type: 'rest', icon: '🏠', detail: 'CAS活動後はヘトヘト' },
+      { time: '19:00-19:30', activity: '夕食', type: 'rest', icon: '🍽️', detail: 'しっかり食べてエネルギー回復' },
+      { time: '19:30-20:30', activity: 'CASリフレクション執筆', type: 'cas', icon: '📝', detail: 'ManageBacにリフレクションを記録' },
+      { time: '20:30-22:00', activity: '自習（明日の予習）', type: 'study', icon: '📚', detail: 'CAS日は勉強時間が少なくなるので効率重視' },
+      { time: '22:30', activity: '就寝', type: 'rest', icon: '🌙', detail: '体を動かした日はぐっすり眠れる' },
+    ],
+    summary: { class: 5, core: 0, cas: 4.5, study: 1.5 },
+  },
+};
+
+const typeColors = {
+  class: { bg: 'bg-blue-50', border: 'border-blue-200', dot: 'bg-blue-500', text: 'text-blue-700', label: '授業' },
+  core: { bg: 'bg-red-50', border: 'border-red-200', dot: 'bg-red-500', text: 'text-red-700', label: 'コア（TOK/EE）' },
+  cas: { bg: 'bg-emerald-50', border: 'border-emerald-200', dot: 'bg-emerald-500', text: 'text-emerald-700', label: 'CAS' },
+  study: { bg: 'bg-purple-50', border: 'border-purple-200', dot: 'bg-purple-500', text: 'text-purple-700', label: '自習・IA' },
+  rest: { bg: 'bg-gray-50', border: 'border-gray-200', dot: 'bg-gray-400', text: 'text-gray-600', label: '休憩・移動' },
+};
+
+const tabKeys = Object.keys(schedules) as (keyof typeof schedules)[];
+---
+
+<BaseLayout
+  title="IB生の1日｜DP生のリアルなスケジュール｜IBT"
+  description="IB DP生の1日を時間帯別に紹介。授業・TOK・EE・CAS・自習のリアルなスケジュールとIB生活の実態を公開。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "IB生の1日", "item": "https://ib-tutors.net/ib-daily-life/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "IB生の1日｜DP生のリアルなスケジュール",
+      "description": "IB DP生の1日を時間帯別に紹介。授業・TOK・EE・CAS・自習のリアルなスケジュールとIB生活の実態を公開。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IBT（IB Tutors）",
+        "url": "https://ib-tutors.net/"
+      }
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/85 text-sm mb-4">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">&gt;</span>
+        <span class="text-white">IB生の1日</span>
+      </nav>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="bg-white/20 text-white text-sm font-bold px-4 py-1.5 rounded-full">DP生のリアル</span>
+        <span class="bg-white/20 text-white text-sm font-bold px-4 py-1.5 rounded-full">タイムスケジュール公開</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
+        IB生の1日って、<br class="hidden md:block" />こんなに忙しい。
+      </h1>
+      <p class="text-white/80 mt-4 text-lg md:text-xl max-w-2xl leading-relaxed">
+        授業6コマ、TOK、EE、CAS、IA...。<br />IB DP生のリアルなスケジュールを時間帯別に紹介します。
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <p class="text-ibt-red font-bold text-sm tracking-widest mb-4 text-center">A DAY IN THE LIFE</p>
+      <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">IB DP生のリアルな1日</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mb-8 rounded-full"></div>
+      <p class="text-ibt-text-light leading-relaxed mb-4">
+        IB DP（ディプロマプログラム）は、6科目の授業に加えてTOK（知の理論）、EE（課題論文）、CAS（創造性・活動・奉仕）という3つのコア要素をこなす必要があります。
+      </p>
+      <p class="text-ibt-text-light leading-relaxed">
+        「普通の高校生より忙しい」と言われるIB生の1日を、<strong>4つのシチュエーション別</strong>にリアルなタイムスケジュールで紹介します。
+      </p>
+    </div>
+  </section>
+
+  <!-- Color Legend -->
+  <section class="pb-8 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="flex flex-wrap justify-center gap-3">
+        {Object.values(typeColors).map((c) => (
+          <span class={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold ${c.bg} ${c.border} border ${c.text}`}>
+            <span class={`w-2.5 h-2.5 rounded-full ${c.dot}`}></span>
+            {c.label}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Day Tabs + Timeline -->
+  <section class="py-8 md:py-16 bg-white" id="timeline-section">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10" role="tablist">
+        {tabKeys.map((key, i) => (
+          <button
+            role="tab"
+            aria-selected={i === 0 ? 'true' : 'false'}
+            aria-controls={`panel-${key}`}
+            data-tab={key}
+            class={`tab-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all ${
+              i === 0
+                ? 'bg-ibt-red text-white border-ibt-red'
+                : 'bg-white text-gray-600 border-gray-200 hover:border-ibt-red hover:text-ibt-red'
+            }`}
+          >
+            {schedules[key].label}
+          </button>
+        ))}
+      </div>
+
+      <!-- Panels -->
+      {tabKeys.map((key, i) => {
+        const sched = schedules[key];
+        return (
+          <div
+            id={`panel-${key}`}
+            role="tabpanel"
+            class={`tab-panel ${i === 0 ? '' : 'hidden'}`}
+          >
+            <!-- Summary Bar -->
+            <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-4 md:p-6 mb-8">
+              <h3 class="font-bold text-center mb-4 text-lg">{sched.label}の時間配分</h3>
+              <div class="flex flex-wrap justify-center gap-3 md:gap-6">
+                {sched.summary.class > 0 && (
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                    <span class="text-sm font-bold text-blue-700">授業 {sched.summary.class}h</span>
+                  </div>
+                )}
+                {sched.summary.core > 0 && (
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                    <span class="text-sm font-bold text-red-700">コア {sched.summary.core}h</span>
+                  </div>
+                )}
+                {sched.summary.cas > 0 && (
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                    <span class="text-sm font-bold text-emerald-700">CAS {sched.summary.cas}h</span>
+                  </div>
+                )}
+                {sched.summary.study > 0 && (
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                    <span class="text-sm font-bold text-purple-700">自習 {sched.summary.study}h</span>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative pl-4 md:pl-8">
+              {/* Vertical line */}
+              <div class="absolute left-[1.15rem] md:left-[2.15rem] top-0 bottom-0 w-0.5 bg-gray-200"></div>
+
+              <div class="space-y-4">
+                {sched.items.map((item) => {
+                  const c = typeColors[item.type as keyof typeof typeColors];
+                  return (
+                    <div class="relative flex gap-4 md:gap-6">
+                      {/* Dot */}
+                      <div class={`relative z-10 w-4 h-4 rounded-full ${c.dot} mt-1 shrink-0 ring-4 ring-white`}></div>
+                      {/* Card */}
+                      <div class={`flex-1 ${c.bg} ${c.border} border rounded-xl p-4 md:p-5 hover:shadow-md transition-shadow`}>
+                        <div class="flex items-start gap-3">
+                          <span class="text-xl md:text-2xl shrink-0">{item.icon}</span>
+                          <div class="flex-1 min-w-0">
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                              <span class={`text-xs font-bold ${c.text}`}>{item.time}</span>
+                              <span class={`text-xs px-2 py-0.5 rounded-full ${c.bg} ${c.text} font-bold border ${c.border}`}>{c.label}</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 text-sm md:text-base">{item.activity}</h4>
+                            <p class="text-gray-500 text-xs md:text-sm mt-1">{item.detail}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- For Parents -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-ibt-red font-bold text-sm tracking-widest mb-4 text-center">FOR PARENTS</p>
+      <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">保護者の方へ</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mb-8 rounded-full"></div>
+
+      <div class="bg-white rounded-2xl border border-ibt-border p-6 md:p-8 mb-6">
+        <h3 class="font-bold text-lg mb-4">IB生はこんなに忙しいことをご存知ですか？</h3>
+        <div class="space-y-4 text-ibt-text-light leading-relaxed">
+          <p>
+            IB DP生は、通常の高校生と比べて<strong>圧倒的に多くの課題</strong>を抱えています。6科目の授業・宿題に加え、4,000語のEE（課題論文）、TOKのプレゼンテーションとエッセイ、各科目のIA（内部評価）、そしてCAS活動まで...。
+          </p>
+          <p>
+            お子さまが「忙しい」「大変だ」と言っているとき、それは決して甘えではありません。IBプログラムは世界的に見ても<strong>最も負荷の高い高校教育課程のひとつ</strong>です。
+          </p>
+          <p>
+            だからこそ、<strong>効率的なサポート</strong>が必要です。IBTでは、IB卒業生の講師が「あのとき自分がこうしていれば」という経験をもとに、最短ルートで結果を出す指導を提供しています。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl border border-ibt-border p-6 text-center">
+          <div class="text-3xl mb-3">📚</div>
+          <div class="text-2xl font-black text-ibt-red mb-2">6科目+3コア</div>
+          <p class="text-sm text-ibt-text-light">同時並行で進める<br />膨大な学習量</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-ibt-border p-6 text-center">
+          <div class="text-3xl mb-3">📝</div>
+          <div class="text-2xl font-black text-ibt-red mb-2">4,000語</div>
+          <p class="text-sm text-ibt-text-light">EE（課題論文）の<br />最低文字数</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-ibt-border p-6 text-center">
+          <div class="text-3xl mb-3">⏰</div>
+          <div class="text-2xl font-black text-ibt-red mb-2">150時間</div>
+          <p class="text-sm text-ibt-text-light">CAS活動の<br />目安時間</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IBT Support -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-ibt-red font-bold text-sm tracking-widest mb-4 text-center">IBT SUPPORT</p>
+      <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">忙しいIB生だからこそ、<br class="md:hidden" />効率的な学習を</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mb-8 rounded-full"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-ibt-red text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">1</span>
+            <h3 class="font-bold text-lg">マンツーマンだから時間効率が最大</h3>
+          </div>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            集団授業と違い、お子さまの理解度に合わせて進められるので、限られた時間を最大限活用できます。IB生にとって「時間」は最も貴重な資源です。
+          </p>
+        </div>
+        <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-ibt-red text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">2</span>
+            <h3 class="font-bold text-lg">IB卒業生だからわかるスケジュール管理</h3>
+          </div>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            IBTの講師は全員IB卒業生。「EE締め切り前にどう時間を使うか」「試験前の優先順位のつけ方」など、経験に基づくアドバイスができます。
+          </p>
+        </div>
+        <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-ibt-red text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">3</span>
+            <h3 class="font-bold text-lg">忙しいスケジュールに柔軟対応</h3>
+          </div>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            オンラインだから通塾時間ゼロ。CAS活動や部活の後でも自宅から受講可能。スケジュール変更にも柔軟に対応します。
+          </p>
+        </div>
+        <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-ibt-red text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">4</span>
+            <h3 class="font-bold text-lg">TOK・EE・IAも完全サポート</h3>
+          </div>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            学校では十分な指導を受けにくいコア要素も、IBTなら個別にしっかりサポート。「何を書けばいいかわからない」を一緒に解決します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-4xl font-black text-white mb-4">
+        忙しいIB生活を、<br class="md:hidden" />一緒に乗り越えよう
+      </h2>
+      <p class="text-white/80 text-lg mb-8 leading-relaxed">
+        IB卒業生の講師が、あなたのスケジュールに合わせた<br class="hidden md:block" />効率的なマンツーマン指導を提供します。<br />まずは60分の無料体験から。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="https://line.me/R/ti/p/@974okamx"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#06C755] hover:bg-[#05b34c] text-white text-lg font-bold rounded-full transition-colors shadow-lg min-w-[220px]"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINEで相談する
+        </a>
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-ibt-red text-lg font-bold rounded-full transition-colors shadow-lg min-w-[220px]"
+        >
+          無料体験を申し込む
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab switching script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.tab-btn');
+      const panels = document.querySelectorAll('.tab-panel');
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-tab');
+
+          buttons.forEach((b) => {
+            b.classList.remove('bg-ibt-red', 'text-white', 'border-ibt-red');
+            b.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
+          btn.classList.add('bg-ibt-red', 'text-white', 'border-ibt-red');
+          btn.setAttribute('aria-selected', 'true');
+
+          panels.forEach((p) => {
+            if (p.id === `panel-${target}`) {
+              p.classList.remove('hidden');
+            } else {
+              p.classList.add('hidden');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</BaseLayout>
