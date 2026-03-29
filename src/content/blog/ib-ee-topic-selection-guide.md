@@ -48,6 +48,6 @@ IBTでは、IBの経験者がチューターとして在籍しており、彼ら
 
 ### 📚 関連記事
 
-- [EE（Extended Essay）とは？](/ib-ee-explained/)
+- [EE（Extended Essay）とは？](/blog/extended-essay-ee-theme-selection-writing-guide/)
 - [IBでEEの具体的なトピックの決め方は？](/ib-ee-topic-selection/)
 - [EEについて教えてください！](/extended-essay-guide/)

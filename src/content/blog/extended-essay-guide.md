@@ -35,6 +35,6 @@ EEは、いきなりエッセイを書き始める前に自分なりに情報を
 
 ### 📚 関連記事
 
-- [EE（Extended Essay）とは？](/ib-ee-explained/)
+- [EE（Extended Essay）とは？](/blog/extended-essay-ee-theme-selection-writing-guide/)
 - [IBでEEの具体的なトピックの決め方は？](/ib-ee-topic-selection/)
 - [〜EEテーマの選び方〜](/ib-ee-topic-selection-guide/)

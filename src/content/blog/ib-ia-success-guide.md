@@ -52,9 +52,9 @@ IAは自分の力を試す絶好のチャンスです。IBTと一緒に、最高
 
 ### 📚 関連記事
 
-- [IA（Internal Assessment）とは？](/ib-ia-explained/)
+- [IA（Internal Assessment）とは？](/blog/ib-psychology-ia-guide/)
 - [IBのIA,IO,paper1&paper2はいつから本番？](/ib-ia-io-paper-schedule/)
-- [EE（Extended Essay）とは？](/ib-ee-explained/)
+- [EE（Extended Essay）とは？](/blog/extended-essay-ee-theme-selection-writing-guide/)
 
 ---
 

@@ -75,8 +75,8 @@ draft: true
 
 - [「IA 成功への第一歩」](/ib-ia-success-guide/)
 - [IBのIA,IO,paper1&paper2はいつから本番？](/ib-ia-io-paper-schedule/)
-- [EE（Extended Essay）とは？](/ib-ee-explained/)
-- [TOK（Theory of Knowledge）とは？](/ib-tok-explained/)
+- [EE（Extended Essay）とは？](/blog/extended-essay-ee-theme-selection-writing-guide/)
+- [TOK（Theory of Knowledge）とは？](/blog/tok-essay-high-score-techniques/)
 
 ---
 
