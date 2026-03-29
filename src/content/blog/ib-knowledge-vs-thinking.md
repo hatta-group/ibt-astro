@@ -25,3 +25,11 @@ IBでの授業では特に、グローバルな視点から物事を考えられ
 > **gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
 **website** : [ib-tutors.net](https://ib-tutors.net/)
+
+---
+
+## 関連記事
+
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)
+- [家庭教師を始めるベストタイミング](/blog/ib-tutor-best-timing/)

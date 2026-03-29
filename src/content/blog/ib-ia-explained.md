@@ -77,3 +77,11 @@ draft: false
 - [IBのIA,IO,paper1&paper2はいつから本番？](/ib-ia-io-paper-schedule/)
 - [EE（Extended Essay）とは？](/ib-ee-explained/)
 - [TOK（Theory of Knowledge）とは？](/ib-tok-explained/)
+
+---
+
+## 関連記事
+
+- [TOKエッセイで高得点を取るコツ](/blog/tok-essay-high-score-techniques/)
+- [TOKプレゼンテーション構成ガイド](/blog/tok-presentation-structure-guide/)
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)

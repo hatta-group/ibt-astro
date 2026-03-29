@@ -49,8 +49,9 @@ const breadcrumbSchema = {
   description={type.data.description}
 >
   <!-- Hero -->
-  <section class="relative overflow-hidden py-14 md:py-20" style={`background: linear-gradient(135deg, ${typeColor}ee, ${typeColor}bb)`}>
+  <section class="relative overflow-hidden py-20 md:py-28" style={`background: linear-gradient(135deg, ${typeColor}ee, ${typeColor}bb)`}>
     <div class="absolute inset-0 opacity-10" style="background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.4), transparent 60%);"></div>
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
     <div class="max-w-7xl mx-auto px-4 relative z-10">
       <nav class="text-white/70 text-sm mb-8">
         <a href="/" class="hover:text-white transition-colors">ホーム</a>
@@ -60,11 +61,13 @@ const breadcrumbSchema = {
         <span class="text-white">{type.data.title}</span>
       </nav>
       <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-        <div class="w-40 h-40 md:w-56 md:h-56 shrink-0">
+        <div class="relative w-48 h-48 md:w-64 md:h-64 shrink-0">
+          <div class="absolute inset-[-16px] rounded-full opacity-20" style={`background: radial-gradient(circle, white 0%, transparent 70%);`}></div>
+          <div class="absolute inset-[-8px] rounded-full border-2 border-white/20 animate-pulse"></div>
           <img
             src={`/images/iber-types/${type.data.slug}.png`}
             alt={type.data.title}
-            class="w-full h-full object-contain drop-shadow-2xl"
+            class="w-full h-full object-contain drop-shadow-2xl relative z-10"
           />
         </div>
         <div class="text-center md:text-left">
@@ -82,7 +85,7 @@ const breadcrumbSchema = {
   <div class="h-1" style={`background: linear-gradient(to right, ${typeColor}, ${typeColor}80)`}></div>
 
   <!-- Content -->
-  <article class="py-12 md:py-20 bg-gray-50">
+  <article class="py-12 md:py-20" style="background: linear-gradient(180deg, #f9fafb 0%, #ffffff 30%, #f9fafb 60%, #ffffff 100%);">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex flex-col lg:flex-row gap-8">
         <!-- Main Content -->
@@ -95,7 +98,7 @@ const breadcrumbSchema = {
         <div class="lg:w-80 xl:w-96 shrink-0">
           <div class="lg:sticky lg:top-20 space-y-6">
             <!-- Character Card -->
-            <div class="rounded-2xl overflow-hidden" style={`background: linear-gradient(135deg, ${typeColor}20, ${typeColor}10)`}>
+            <div class="rounded-2xl overflow-hidden" style={`background: linear-gradient(135deg, ${typeColor}20, ${typeColor}10); border-top: 4px solid ${typeColor}`}>
               <div class="p-6 text-center">
                 <img src={`/images/iber-types/${type.data.slug}.png`} alt={type.data.title} class="w-32 h-32 mx-auto object-contain drop-shadow-lg mb-4" />
                 <h3 class="font-bold text-lg" style={`color: ${typeColor}`}>{typeData?.name}</h3>
@@ -103,7 +106,7 @@ const breadcrumbSchema = {
               </div>
             </div>
             <!-- Quick Nav -->
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6" style={`border-top: 4px solid ${typeColor}`}>
               <h3 class="font-bold text-sm text-gray-400 tracking-widest mb-4">CONTENTS</h3>
               <nav class="space-y-2 text-sm">
                 <a href="#personality" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">性格・特徴</a>
@@ -216,70 +219,75 @@ const breadcrumbSchema = {
   .iber-type-content > ul:has(a[href*="ib-tutors.net/iber-type"]) {
     display: none;
   }
+
   .iber-type-content h2 {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 900;
-    margin-top: 2.5rem;
-    margin-bottom: 1.25rem;
-    padding: 1rem 1.25rem;
-    border-left: 4px solid var(--type-color);
-    background: white;
-    border-radius: 0 16px 16px 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: var(--type-color);
+    border-radius: 16px;
     scroll-margin-top: 80px;
+    letter-spacing: 0.05em;
   }
+
   .iber-type-content h3 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 800;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #f0f0f0;
+    padding: 0.5rem 0;
+    border-bottom: 3px solid var(--type-color);
+    color: #1f2937;
     scroll-margin-top: 80px;
   }
+
   .iber-type-content h4 {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 700;
     margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: #333;
+    margin-bottom: 0.5rem;
+    color: #374151;
     scroll-margin-top: 80px;
   }
+
   .iber-type-content p {
     margin-bottom: 1.25rem;
-    color: #555;
+    color: #4b5563;
     line-height: 1.9;
   }
+
   .iber-type-content ul {
     list-style: none;
     padding-left: 0;
     margin-bottom: 1.5rem;
   }
+
   .iber-type-content ul li {
     position: relative;
-    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    padding: 0.875rem 1rem 0.875rem 1.25rem;
     margin-bottom: 0.5rem;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-    border: 1px solid #f0f0f0;
+    border-left: 4px solid var(--type-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     color: #444;
     line-height: 1.6;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .iber-type-content ul li::before {
-    content: '';
-    position: absolute;
-    left: 1rem;
-    top: 1.1rem;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--type-color);
+
+  .iber-type-content ul li:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
+
   .iber-type-content strong {
     color: #111;
     font-weight: 700;
   }
+
   .iber-type-content a {
     color: var(--type-color);
     text-decoration: none;
@@ -290,18 +298,32 @@ const breadcrumbSchema = {
     opacity: 0.8;
     text-decoration: underline;
   }
+
   .iber-type-content > p:has(strong:first-child):not(:has(a)) {
-    background: white;
-    border: 1px solid #e8e8e8;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--type-color) 8%, white), color-mix(in srgb, var(--type-color) 3%, white));
+    border: 1px solid color-mix(in srgb, var(--type-color) 20%, white);
     border-left: 4px solid var(--type-color);
-    border-radius: 0 12px 12px 0;
-    padding: 1rem 1.25rem;
-    margin: 1.5rem 0;
+    border-radius: 0 16px 16px 0;
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
     font-size: 0.95rem;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--type-color) 10%, transparent);
   }
+
   .iber-type-content a[href="#"] {
     display: none;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .iber-type-content h2,
+  .iber-type-content h3,
+  .iber-type-content ul li {
+    animation: fadeInUp 0.5s ease-out both;
   }
 </style>
 

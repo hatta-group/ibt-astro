@@ -31,3 +31,11 @@ IBプログラムについて興味はあるけれど、具体的にどんなも
 > **gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
 **website** : [ib-tutors.net](https://ib-tutors.net/)
+
+---
+
+## 関連記事
+
+- [IB保護者向けサポートガイド](/blog/ib-parenting-tips/)
+- [家庭教師を始めるベストタイミング](/blog/ib-tutor-best-timing/)
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)

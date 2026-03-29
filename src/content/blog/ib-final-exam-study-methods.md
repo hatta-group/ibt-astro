@@ -39,3 +39,11 @@ IB最終試験は、効果的な勉強方法と計画的なスケジュールで
 - [IBDP最終試験とは？](https://ib-tutors.net/ibdp-final-exam-guide/)
 - [IB-Mock勉強の優先順位の付け方](https://ib-tutors.net/ib-mock-exam-study-tips/)
 - [入試準備をどういうスケジュールでこなせば最終試験勉強に集中できますか？](https://ib-tutors.net/ib-exam-prep-schedule/)
+
+---
+
+## 関連記事
+
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)
+- [IBメンタルヘルスとストレス管理](/blog/ib-mental-health-stress-management/)

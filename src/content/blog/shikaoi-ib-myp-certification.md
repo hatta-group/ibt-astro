@@ -197,3 +197,11 @@ IBプログラムは素晴らしい教育の枠組みですが、従来の学び
 - [教育新聞 — 町内の全公立中がIB認定校に 北海道鹿追町、全国初の事例](https://www.kyobun.co.jp/article/2026011302)
 - [文部科学省 IB教育推進コンソーシアム — 認定校・候補校一覧](https://ibconsortium.mext.go.jp/about-ib/school/)
 - [文部科学省 IB教育推進コンソーシアム — MYPについて](https://ibconsortium.mext.go.jp/about-ib/myp/)
+
+---
+
+## 関連記事
+
+- [EEのテーマ選びガイド](/blog/extended-essay-ee-theme-selection-writing-guide/)
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)

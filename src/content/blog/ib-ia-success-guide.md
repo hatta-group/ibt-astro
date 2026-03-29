@@ -56,3 +56,11 @@ IAは自分の力を試す絶好のチャンスです。IBTと一緒に、最高
 - [IA（Internal Assessment）とは？](https://ib-tutors.net/ib-ia-explained/)
 - [IBのIA,IO,paper1&paper2はいつから本番？](https://ib-tutors.net/ib-ia-io-paper-schedule/)
 - [EE（Extended Essay）とは？](https://ib-tutors.net/ib-ee-explained/)
+
+---
+
+## 関連記事
+
+- [EEのテーマ選びガイド](/blog/extended-essay-ee-theme-selection-writing-guide/)
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)

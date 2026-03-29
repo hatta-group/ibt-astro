@@ -41,3 +41,11 @@ IBでは、関連する外部試験や活動を計画的に進めることで最
 - [IBDP最終試験とは？](https://ib-tutors.net/ibdp-final-exam-guide/)
 - [IB-Mock勉強の優先順位の付け方](https://ib-tutors.net/ib-mock-exam-study-tips/)
 - [最終試験に向けてどのような勉強方法を行なっていましたか？](https://ib-tutors.net/ib-final-exam-study-methods/)
+
+---
+
+## 関連記事
+
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)
+- [IBメンタルヘルスとストレス管理](/blog/ib-mental-health-stress-management/)

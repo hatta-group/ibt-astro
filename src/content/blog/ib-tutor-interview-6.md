@@ -55,3 +55,11 @@ DPの勉強だけでなく、CASプロジェクトにも熱心で、特にバイ
 > **gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
 **website** : [ib-tutors.net](https://ib-tutors.net)
+
+---
+
+## 関連記事
+
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)
+- [家庭教師を始めるベストタイミング](/blog/ib-tutor-best-timing/)

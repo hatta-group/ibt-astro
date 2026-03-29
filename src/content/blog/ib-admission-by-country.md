@@ -47,3 +47,11 @@ draft: false
 - [大学でのIB経験者アドバンテージはあった？](https://ib-tutors.net/ib-advantage-in-university/)
 - [IBからの受験で日本の国公立と海外の大学の決断方法は？](https://ib-tutors.net/ib-japan-vs-overseas-university/)
 - [IBDPを使った日本大学と海外大学併願の仕方](https://ib-tutors.net/ibdp-japan-overseas-dual-application/)
+
+---
+
+## 関連記事
+
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)
+- [家庭教師を始めるベストタイミング](/blog/ib-tutor-best-timing/)

@@ -130,3 +130,11 @@ TOK・EE（Extended Essay）・IAなど、IB特有の課題にも経験者だか
 👉 [無料体験を申し込む](https://ib-tutors.net/contact/)
 
 📱 Xでも毎日IB情報を発信中 → [@IBTutors_ib](https://x.com/IBTutors_ib)
+
+---
+
+## 関連記事
+
+- [TOKエッセイで高得点を取るコツ](/blog/tok-essay-high-score-techniques/)
+- [TOKプレゼンテーション構成ガイド](/blog/tok-presentation-structure-guide/)
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)

@@ -42,3 +42,11 @@ IBの教育はあってるけど、日本での学びはあってないって方
 - [大学でのIB経験者アドバンテージはあった？](https://ib-tutors.net/ib-advantage-in-university/)
 - [国ごとのIB受験方法の特徴は？](https://ib-tutors.net/ib-admission-by-country/)
 - [IBからの受験で日本の国公立と海外の大学の決断方法は？](https://ib-tutors.net/ib-japan-vs-overseas-university/)
+
+---
+
+## 関連記事
+
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)
+- [IBメンタルヘルスとストレス管理](/blog/ib-mental-health-stress-management/)

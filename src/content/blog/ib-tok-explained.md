@@ -85,3 +85,11 @@ draft: false
 - [IB家庭教師が教える！TOK対策で高得点を取る5つのコツ](/tok-tips-high-score/)
 - [TOK高得点のためにできることは？](/tok-high-score-tips/)
 - [「TOK成功への第一歩」](/ib-tok-success-guide/)
+
+---
+
+## 関連記事
+
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)
+- [家庭教師を始めるベストタイミング](/blog/ib-tutor-best-timing/)

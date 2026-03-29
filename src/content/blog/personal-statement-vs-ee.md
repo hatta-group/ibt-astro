@@ -37,3 +37,11 @@ draft: false
 - [EE（Extended Essay）とは？](https://ib-tutors.net/ib-ee-explained/)
 - [IBでEEの具体的なトピックの決め方は？](https://ib-tutors.net/ib-ee-topic-selection/)
 - [〜EEテーマの選び方〜](https://ib-tutors.net/ib-ee-topic-selection-guide/)
+
+---
+
+## 関連記事
+
+- [EEのテーマ選びガイド](/blog/extended-essay-ee-theme-selection-writing-guide/)
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)

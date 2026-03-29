@@ -71,3 +71,11 @@ draft: false
 - [〜EEテーマの選び方〜](/ib-ee-topic-selection-guide/)
 - [EEについて教えてください！](/extended-essay-guide/)
 - [志望理由書はEEと被らない方がいいですか？](/personal-statement-vs-ee/)
+
+---
+
+## 関連記事
+
+- [TOKエッセイで高得点を取るコツ](/blog/tok-essay-high-score-techniques/)
+- [TOKプレゼンテーション構成ガイド](/blog/tok-presentation-structure-guide/)
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)

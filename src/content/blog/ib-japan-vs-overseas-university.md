@@ -38,3 +38,11 @@ draft: false
 - [国ごとのIB受験方法の特徴は？](https://ib-tutors.net/ib-admission-by-country/)
 - [IBDPを使った日本大学と海外大学併願の仕方](https://ib-tutors.net/ibdp-japan-overseas-dual-application/)
 - [中学や高校から海外のIB校に行く子はいますか？](https://ib-tutors.net/studying-ib-abroad-from-japan/)
+
+---
+
+## 関連記事
+
+- [IBスコアの上げ方](/blog/how-to-improve-ib-score/)
+- [IB時間管理のコツ](/blog/ib-dp-time-management/)
+- [家庭教師を始めるベストタイミング](/blog/ib-tutor-best-timing/)
