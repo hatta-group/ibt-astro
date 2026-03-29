@@ -1,0 +1,558 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="DP（ディプロマプログラム）とは？｜IB専門家庭教師IBT"
+  description="IB DP（Diploma Programme）を徹底解説。16〜19歳対象のIBディプロマ取得プログラム。6科目+TOK+EE+CASの構成、評価方法、大学進学。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "DP（ディプロマプログラム）とは", "item": "https://ib-tutors.net/ib-dp/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "IB DP（ディプロマプログラム）個別指導",
+      "description": "IB DP（Diploma Programme）対応の個別指導。6科目群+TOK+EE+IA+CASすべてに対応。IB卒業生講師がマンツーマンで45点満点を目指すサポートを提供します。",
+      "provider": {
+        "@type": "Organization",
+        "name": "IBT（IB Tutors）",
+        "url": "https://ib-tutors.net/"
+      },
+      "educationalLevel": "Upper Secondary",
+      "teaches": "IB DP全6科目群・TOK・EE・IA・CAS",
+      "offers": {
+        "@type": "Offer",
+        "price": "7260",
+        "priceCurrency": "JPY",
+        "description": "1回60分あたり7,260円〜7,678円（税込）"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "IB DP（ディプロマプログラム）とは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IB DP（Diploma Programme）は、国際バカロレア（IB）が提供する16歳から19歳を対象とした2年間の教育プログラムです。6科目群+コア3要素（TOK・EE・CAS）で構成され、45点満点で評価されます。世界中の大学で入学資格として認められる国際的な卒業資格（IBディプロマ）を取得できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "IBディプロマの満点は何点ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IBディプロマの満点は45点です。6科目各7点満点で42点、TOKとEEの組み合わせによるボーナス最大3点を加えて45点満点となります。ディプロマ取得には最低24点が必要で、世界平均は約30点前後です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "IBディプロマは日本の大学受験に使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、使えます。日本では多くの大学がIB入試を導入しています。東京大学、京都大学、早慶、上智、ICUなど有名大学をはじめ、2024年時点で70校以上がIBスコアでの出願を受け付けています。一般入試と比べて少人数の選抜になるため、有利に働くケースも多いです。"
+          }
+        }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-purple-700 via-red-600 to-rose-500 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/85 text-sm mb-4">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">&gt;</span>
+        <span class="text-white">DP（ディプロマプログラム）とは</span>
+      </nav>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="bg-white/20 text-white text-sm font-bold px-4 py-1.5 rounded-full">16-19歳対象</span>
+        <span class="bg-white/20 text-white text-sm font-bold px-4 py-1.5 rounded-full">Diploma Programme</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
+        DP（ディプロマプログラム）とは？
+      </h1>
+      <p class="text-white/80 mt-4 text-lg md:text-xl max-w-2xl leading-relaxed">
+        世界の大学が認める国際的な卒業資格。<br />6科目+TOK+EE+CASで構成される、IBの最高峰プログラム。
+      </p>
+    </div>
+  </section>
+
+  <!-- DPとは -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4 text-center">WHAT IS DP?</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">DP（ディプロマプログラム）とは</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-6">
+          IB DP（Diploma Programme / ディプロマプログラム）は、国際バカロレア（IB）が提供する<strong>16歳から19歳を対象とした2年間の教育プログラム</strong>です。日本では主に高校2・3年生にあたる時期に実施されています。
+        </p>
+        <p class="text-ibt-text-light leading-relaxed mb-6">
+          DPは<strong>6つの科目群から選択した科目</strong>と、<strong>3つのコア要素（TOK・EE・CAS）</strong>で構成されます。<strong>45点満点</strong>で評価され、最低24点でIBディプロマ（国際バカロレア資格）を取得できます。
+        </p>
+        <p class="text-ibt-text-light leading-relaxed">
+          IBディプロマは世界中の大学で入学資格として認められており、イギリス・アメリカ・カナダ・オーストラリアをはじめ、日本の大学でもIB入試を導入する大学が増加しています。DPはIBプログラムの最高峰であり、取得者は国際的に通用する高い学力と思考力を証明できます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPの構成 -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4 text-center">DP STRUCTURE</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">DPの構成 - 6科目群+コア</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-8 text-center">
+          DP生は6つの科目群から1科目ずつ選択し、うち3〜4科目をHL（Higher Level）、残りをSL（Standard Level）で履修します。
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <div class="bg-white rounded-2xl border border-ibt-border p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">Group 1</span>
+              <h3 class="font-bold">言語と文学（Studies in Language and Literature）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">母語での文学研究。文学作品の分析・比較・批評を通じて、高度な言語運用力と批判的読解力を養います。日本語A、English Aなど。</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ibt-border p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">Group 2</span>
+              <h3 class="font-bold">言語習得（Language Acquisition）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">外国語の習得。Language B（既習言語）とLanguage ab initio（初習言語）から選択。コミュニケーション能力と異文化理解を深めます。</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ibt-border p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">Group 3</span>
+              <h3 class="font-bold">個人と社会（Individuals and Societies）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">歴史、経済、地理、心理学、ビジネスなど。社会科学的な分析力と論述力を鍛えます。IAでは独自のリサーチを行います。</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ibt-border p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">Group 4</span>
+              <h3 class="font-bold">理科（Sciences）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">生物、化学、物理、環境システムと社会（ESS）など。実験とデータ分析を重視し、科学的探究力を高度に発展させます。</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ibt-border p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">Group 5</span>
+              <h3 class="font-bold">数学（Mathematics）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">Mathematics: Analysis and Approaches（AA）またはApplications and Interpretation（AI）を選択。それぞれHL/SLがあり、進路に合わせて選びます。</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ibt-border p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">Group 6</span>
+              <h3 class="font-bold">芸術（The Arts）/ 選択科目</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">音楽、美術、演劇、映画など。Group 6の代わりにGroup 3または4から追加科目を選択することも可能です。</p>
+          </div>
+        </div>
+
+        <!-- コア3要素 -->
+        <h3 class="text-xl font-bold mb-6 text-center">コア3要素（The Core）</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-purple-50 rounded-2xl border border-purple-100 p-6 text-center">
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-sm">TOK</span>
+            </div>
+            <h4 class="font-bold mb-2">知の理論</h4>
+            <p class="text-ibt-text-light text-sm">Theory of Knowledge</p>
+          </div>
+          <div class="bg-purple-50 rounded-2xl border border-purple-100 p-6 text-center">
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-sm">EE</span>
+            </div>
+            <h4 class="font-bold mb-2">課題論文</h4>
+            <p class="text-ibt-text-light text-sm">Extended Essay</p>
+          </div>
+          <div class="bg-purple-50 rounded-2xl border border-purple-100 p-6 text-center">
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-sm">CAS</span>
+            </div>
+            <h4 class="font-bold mb-2">創造・活動・奉仕</h4>
+            <p class="text-ibt-text-light text-sm">Creativity, Activity, Service</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 評価とスコアリング -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4 text-center">SCORING</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">評価とスコアリング</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="bg-purple-50 rounded-2xl border border-purple-100 p-8 md:p-10 mb-8">
+          <div class="text-center mb-6">
+            <p class="text-sm text-purple-600 font-bold mb-2">IBディプロマ満点</p>
+            <p class="text-5xl font-black text-purple-700">45<span class="text-lg font-normal text-ibt-text-light ml-1">点</span></p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl p-5 border border-purple-200">
+              <p class="text-sm font-bold text-purple-800 mb-2">6科目のスコア</p>
+              <p class="text-2xl font-black text-purple-700">7点 x 6科目 = 42点</p>
+              <p class="text-xs text-ibt-text-light mt-2">各科目1〜7点で評価。外部試験（筆記試験）とIA（内部評価）の合算。</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-purple-200">
+              <p class="text-sm font-bold text-purple-800 mb-2">ボーナスポイント</p>
+              <p class="text-2xl font-black text-purple-700">TOK + EE = 最大3点</p>
+              <p class="text-xs text-ibt-text-light mt-2">TOKとEEの成績の組み合わせにより0〜3点のボーナスが加算されます。</p>
+            </div>
+          </div>
+          <div class="mt-6 bg-white rounded-xl p-5 border border-purple-200">
+            <p class="text-sm font-bold text-purple-800 mb-2">ディプロマ取得条件</p>
+            <ul class="text-ibt-text-light text-sm space-y-1">
+              <li>- 合計24点以上</li>
+              <li>- CASの要件を満たしていること</li>
+              <li>- TOKとEEでN（未評価）やE（不合格）がないこと</li>
+              <li>- HL科目で合計12点以上、SL科目で合計9点以上</li>
+              <li>- 1点の科目がないこと</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKとは -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4 text-center">THEORY OF KNOWLEDGE</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">TOK（知の理論）とは</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10">
+          <p class="text-ibt-text-light leading-relaxed mb-6">
+            TOK（Theory of Knowledge / 知の理論）は、DPの中核をなす独自の科目です。<strong>「私たちはどのように知識を得るのか？」「何かを『知っている』とはどういうことか？」</strong>という根本的な問いに取り組みます。
+          </p>
+          <div class="space-y-4 mb-6">
+            <div class="bg-purple-50 rounded-xl p-5 border border-purple-100">
+              <h4 class="font-bold mb-2">Knowledge Questions（知識の問い）</h4>
+              <p class="text-ibt-text-light text-sm">TOKでは「知識に関する問い」を探究します。例: 「科学的知識と芸術的知識はどのように異なるか？」「感情は知識の妨げになるか、助けになるか？」</p>
+            </div>
+            <div class="bg-purple-50 rounded-xl p-5 border border-purple-100">
+              <h4 class="font-bold mb-2">TOKエッセイ（1,600語）</h4>
+              <p class="text-ibt-text-light text-sm">IBが提示する6つの処方課題（Prescribed Titles）から1つを選び、1,600語のエッセイを執筆します。外部評価の対象です。</p>
+            </div>
+            <div class="bg-purple-50 rounded-xl p-5 border border-purple-100">
+              <h4 class="font-bold mb-2">TOKエキシビション（Exhibition）</h4>
+              <p class="text-ibt-text-light text-sm">3つの実物（objects）を選び、それらがどのようにTOKのテーマと関連するかを説明するプレゼンテーション。内部評価の対象です。</p>
+            </div>
+          </div>
+          <a href="/ib-tok-ee-ia-guide/" class="text-purple-600 font-bold text-sm hover:text-purple-800 transition-colors">
+            TOK・EE・IA対策ガイドも見る →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EEとは -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4 text-center">EXTENDED ESSAY</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">EE（課題論文）とは</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-8 md:p-10">
+          <p class="text-ibt-text-light leading-relaxed mb-6">
+            EE（Extended Essay / 課題論文）は、<strong>自分で選んだテーマについて4,000語の学術論文を執筆する</strong>プロジェクトです。DPの科目の中から1つを選び、その分野で独自のリサーチクエスチョン（研究課題）を設定して探究します。
+          </p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-purple-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm"><strong>分量:</strong> 最大4,000語（約日本語8,000字相当）</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-purple-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm"><strong>テーマ:</strong> DP科目から1つ選択し、独自のリサーチクエスチョンを設定</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-purple-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm"><strong>プロセス:</strong> 文献調査・データ収集・分析・論述・参考文献リスト作成</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-purple-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm"><strong>Viva Voce:</strong> 論文完成後にスーパーバイザーとの口頭面談（振り返り）</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-purple-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm"><strong>評価:</strong> A〜E（外部評価）。TOKとの組み合わせでボーナスポイントに影響</span>
+            </li>
+          </ul>
+          <a href="/ib-tok-ee-ia-guide/" class="text-purple-600 font-bold text-sm hover:text-purple-800 transition-colors">
+            TOK・EE・IA対策ガイドも見る →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IAとは -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4 text-center">INTERNAL ASSESSMENT</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">IA（内部評価）とは</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10">
+          <p class="text-ibt-text-light leading-relaxed mb-6">
+            IA（Internal Assessment / 内部評価）は、<strong>各DP科目で課される校内評価課題</strong>です。科目によって形式は異なりますが、最終成績の20〜30%（科目により異なる）を占める重要な評価です。
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-ibt-bg rounded-xl p-5 border border-ibt-border">
+              <h4 class="font-bold text-sm mb-2">理科のIA</h4>
+              <p class="text-ibt-text-light text-xs">自ら設計した実験を行い、データを収集・分析。約6〜12ページのレポートを作成します。</p>
+            </div>
+            <div class="bg-ibt-bg rounded-xl p-5 border border-ibt-border">
+              <h4 class="font-bold text-sm mb-2">数学のIA</h4>
+              <p class="text-ibt-text-light text-xs">数学的探究レポート（Mathematical Exploration）。自分で選んだ数学的テーマを6〜12ページで探究します。</p>
+            </div>
+            <div class="bg-ibt-bg rounded-xl p-5 border border-ibt-border">
+              <h4 class="font-bold text-sm mb-2">言語と文学のIA</h4>
+              <p class="text-ibt-text-light text-xs">個人口述（Individual Oral）。文学作品とグローバルな問題を結びつけた15分間の口頭発表です。</p>
+            </div>
+            <div class="bg-ibt-bg rounded-xl p-5 border border-ibt-border">
+              <h4 class="font-bold text-sm mb-2">個人と社会のIA</h4>
+              <p class="text-ibt-text-light text-xs">科目により異なります。歴史はHistorical Investigation（2,200語）、経済はCommentary Portfolio等。</p>
+            </div>
+          </div>
+          <a href="/ib-tok-ee-ia-guide/" class="text-purple-600 font-bold text-sm hover:text-purple-800 transition-colors">
+            TOK・EE・IA対策ガイドも見る →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASとは -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4 text-center">CREATIVITY, ACTIVITY, SERVICE</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">CAS（創造・活動・奉仕）とは</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 text-center">
+            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Creativity（創造性）</h3>
+            <p class="text-ibt-text-light text-sm">芸術的・創造的な活動。音楽、美術、演劇、クリエイティブライティング、ウェブサイト制作など。</p>
+          </div>
+          <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 text-center">
+            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.047 8.287 8.287 0 009 9.601a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Activity（活動）</h3>
+            <p class="text-ibt-text-light text-sm">身体的な活動。スポーツ、ハイキング、ダンス、ヨガなど。健康的なライフスタイルの維持を目的とします。</p>
+          </div>
+          <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 text-center">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Service（奉仕）</h3>
+            <p class="text-ibt-text-light text-sm">地域社会への貢献活動。ボランティア、環境保護活動、チュータリング、募金活動など。</p>
+          </div>
+        </div>
+
+        <div class="bg-purple-50 rounded-2xl border border-purple-100 p-6">
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            CASは点数評価ではありませんが、<strong>ディプロマ取得の必須要件</strong>です。18か月以上にわたり、Creativity・Activity・Serviceのバランスの取れた活動を行い、CASポートフォリオとして記録します。CASプロジェクト（複数の要素を含む長期プロジェクト）も必須です。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPと大学進学 -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4 text-center">UNIVERSITY ADMISSION</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">DPと大学進学</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl border border-ibt-border p-6">
+            <h3 class="font-bold mb-2">日本の大学 - IB入試</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">
+              東京大学、京都大学、早稲田大学、慶應義塾大学、上智大学、ICU、筑波大学など、多くの大学がIB入試を導入しています。一般入試とは別枠の選抜で、IBスコア・志望理由書・面接で合否が決まるケースが多く、IB生にとって有利な入試方式です。
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ibt-border p-6">
+            <h3 class="font-bold mb-2">海外の大学</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">
+              IBディプロマは世界中の大学で広く認められています。イギリスの大学ではIBスコアで直接出願でき、アメリカの大学ではHL科目で高得点を取ると大学の単位として認定されることもあります。カナダ、オーストラリア、ヨーロッパの大学でも高く評価されます。
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl border border-ibt-border p-6">
+            <h3 class="font-bold mb-2">スコアの目安</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">
+              世界平均は約30点前後。日本のトップ大学のIB入試では概ね36点以上、海外トップ大学（オックスフォード・ケンブリッジ等）では38〜42点以上が目安とされています。IBTでは目標スコアに合わせた戦略的な対策を行います。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IBTのDPサポート -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4 text-center">IBT SUPPORT</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">IBTのDPサポート</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="bg-purple-50 rounded-2xl border border-purple-100 p-8 md:p-10 mb-8">
+          <h3 class="text-xl font-bold mb-4">DP対応の個別指導</h3>
+          <p class="text-ibt-text-light leading-relaxed mb-6">
+            IBTでは、IB卒業生の講師がDP生一人ひとりに合わせたマンツーマン指導を提供しています。全6科目群に加え、TOK・EE・IA・CASまで幅広くカバー。IB卒業生ならではの実体験に基づくアドバイスが強みです。
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-purple-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">全6科目群（HL/SL）の教科指導・試験対策</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-purple-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">TOKエッセイ・エキシビションの作成サポート</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-purple-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">EE（課題論文）のテーマ設定から完成までの伴走</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-purple-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">各科目IA（内部評価）の制作・改善指導</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-purple-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">大学進学に向けた戦略的なスコア対策</span>
+            </li>
+          </ul>
+
+          <div class="bg-white rounded-xl p-6 border border-purple-200">
+            <p class="text-sm font-bold text-purple-800 mb-2">DP授業料（税込）</p>
+            <p class="text-2xl font-black text-purple-700">7,260円〜7,678円<span class="text-sm font-normal text-ibt-text-light">/回（60分）</span></p>
+            <p class="text-xs text-ibt-text-light mt-2">入会金0円・都度払い制</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/lessons-pricing/" class="inline-block bg-purple-600 text-white font-bold px-6 py-3 rounded-full hover:bg-purple-700 transition-colors text-center">
+            料金・授業内容を見る
+          </a>
+          <a href="/contact/" class="inline-block bg-white text-purple-600 font-bold px-6 py-3 rounded-full border-2 border-purple-600 hover:bg-purple-50 transition-colors text-center">
+            60分無料体験に申し込む
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IB認定校 -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4">IB SCHOOLS</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6">日本のDP認定校を探す</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-8">
+          日本全国のIB認定校（DP実施校を含む）を一覧で確認できます。
+        </p>
+        <a href="/ib-schools/" class="inline-block bg-purple-600 text-white font-bold px-8 py-4 rounded-full hover:bg-purple-700 transition-colors text-lg">
+          IB認定校一覧を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-purple-600 font-bold text-sm tracking-widest mb-4 text-center">FAQ</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-8 text-center">DPに関するよくある質問</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-rose-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="space-y-4">
+          <details class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 group">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg">
+              IBディプロマの満点は何点ですか？
+              <svg class="w-5 h-5 text-ibt-text-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="text-ibt-text-light leading-relaxed mt-4">
+              45点満点です。6科目各7点で42点、TOKとEEのボーナス最大3点を加えて45点満点。ディプロマ取得には最低24点が必要で、世界平均は約30点前後です。
+            </p>
+          </details>
+          <details class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 group">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg">
+              IBディプロマは日本の大学受験に使えますか？
+              <svg class="w-5 h-5 text-ibt-text-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="text-ibt-text-light leading-relaxed mt-4">
+              はい、使えます。東京大学、京都大学、早慶、上智、ICUなど多くの大学がIB入試を導入しています。IBスコア・志望理由書・面接で合否が決まるケースが多く、一般入試とは別枠の選抜になります。
+            </p>
+          </details>
+          <details class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 group">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg">
+              HLとSLの違いは何ですか？
+              <svg class="w-5 h-5 text-ibt-text-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="text-ibt-text-light leading-relaxed mt-4">
+              HL（Higher Level）は授業時間240時間、SL（Standard Level）は150時間で、HLはより深く広い内容を学びます。DP生は3〜4科目をHL、残りをSLで履修します。大学進学を見据えて、志望分野に関連する科目をHLで取るのが一般的です。
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-gradient-to-r from-purple-700 via-red-600 to-rose-500 rounded-2xl p-10 md:p-16 text-center">
+        <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">DPのスコアを、最大限に</h2>
+        <p class="text-white/80 mb-8 text-lg max-w-xl mx-auto">
+          IB卒業生の講師が、全科目+TOK+EE+IA対策をマンツーマンでサポートします。まずは60分の無料体験から。
+        </p>
+        <a
+          href="/contact/"
+          class="inline-block bg-white text-purple-700 font-bold px-8 py-4 rounded-full hover:bg-purple-50 transition-colors text-lg shadow-lg"
+        >
+          60分無料体験に申し込む
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
