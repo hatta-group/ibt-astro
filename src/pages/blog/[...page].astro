@@ -108,8 +108,8 @@ const paginationRange = getPaginationRange(page.currentPage, page.lastPage);
 
   <!-- Category Filters -->
   <section class="bg-white border-b border-ibt-border sticky top-0 z-10">
-    <div class="max-w-7xl mx-auto px-4 py-4">
-      <div class="flex flex-wrap items-center gap-2">
+    <div class="max-w-7xl mx-auto px-4 py-4 overflow-x-auto -webkit-overflow-scrolling-touch">
+      <div class="flex items-center gap-2 min-w-max">
         <span class="text-xs font-bold text-ibt-text-light uppercase tracking-wider mr-2">カテゴリ</span>
         <a
           href="/blog/"
@@ -273,7 +273,7 @@ const paginationRange = getPaginationRange(page.currentPage, page.lastPage);
           {page.url.prev ? (
             <a
               href={page.url.prev}
-              class="flex items-center justify-center w-10 h-10 rounded-xl border border-ibt-border bg-white hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-all duration-200 text-ibt-text-light"
+              class="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-xl border border-ibt-border bg-white hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-all duration-200 text-ibt-text-light"
               aria-label="前のページ"
             >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -281,7 +281,7 @@ const paginationRange = getPaginationRange(page.currentPage, page.lastPage);
               </svg>
             </a>
           ) : (
-            <span class="flex items-center justify-center w-10 h-10 rounded-xl border border-ibt-border bg-ibt-bg text-ibt-border cursor-not-allowed">
+            <span class="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-xl border border-ibt-border bg-ibt-bg text-ibt-border cursor-not-allowed">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
               </svg>
@@ -291,15 +291,15 @@ const paginationRange = getPaginationRange(page.currentPage, page.lastPage);
           {/* Page numbers */}
           {paginationRange.map((item) => (
             item === '...' ? (
-              <span class="flex items-center justify-center w-10 h-10 text-ibt-text-light text-sm">...</span>
+              <span class="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 text-ibt-text-light text-sm">...</span>
             ) : item === page.currentPage ? (
-              <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-ibt-red text-white font-bold text-sm shadow-sm">
+              <span class="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-xl bg-ibt-red text-white font-bold text-sm shadow-sm">
                 {item}
               </span>
             ) : (
               <a
                 href={getPageUrl(item as number)}
-                class="flex items-center justify-center w-10 h-10 rounded-xl border border-ibt-border bg-white hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-all duration-200 text-sm font-medium text-ibt-text"
+                class="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-xl border border-ibt-border bg-white hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-all duration-200 text-sm font-medium text-ibt-text"
               >
                 {item}
               </a>
@@ -310,7 +310,7 @@ const paginationRange = getPaginationRange(page.currentPage, page.lastPage);
           {page.url.next ? (
             <a
               href={page.url.next}
-              class="flex items-center justify-center w-10 h-10 rounded-xl border border-ibt-border bg-white hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-all duration-200 text-ibt-text-light"
+              class="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-xl border border-ibt-border bg-white hover:bg-ibt-red hover:text-white hover:border-ibt-red transition-all duration-200 text-ibt-text-light"
               aria-label="次のページ"
             >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -318,7 +318,7 @@ const paginationRange = getPaginationRange(page.currentPage, page.lastPage);
               </svg>
             </a>
           ) : (
-            <span class="flex items-center justify-center w-10 h-10 rounded-xl border border-ibt-border bg-ibt-bg text-ibt-border cursor-not-allowed">
+            <span class="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-xl border border-ibt-border bg-ibt-bg text-ibt-border cursor-not-allowed">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>

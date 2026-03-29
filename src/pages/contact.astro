@@ -66,7 +66,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 id="name"
                 name="name"
                 required
+                autocomplete="name"
                 placeholder="例: 山田 太郎"
+                aria-required="true"
                 class="w-full border border-ibt-border rounded-lg px-4 py-3 text-ibt-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
               />
             </div>
@@ -81,7 +83,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 id="email"
                 name="email"
                 required
+                autocomplete="email"
                 placeholder="例: example@email.com"
+                aria-required="true"
                 class="w-full border border-ibt-border rounded-lg px-4 py-3 text-ibt-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
               />
             </div>
@@ -95,6 +99,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 type="tel"
                 id="tel"
                 name="tel"
+                autocomplete="tel"
                 placeholder="例: 090-1234-5678"
                 class="w-full border border-ibt-border rounded-lg px-4 py-3 text-ibt-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
               />
@@ -151,16 +156,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               ></textarea>
             </div>
 
-            <p class="text-xs text-ibt-text-light">
+            <p id="form-helper-response" class="text-xs text-ibt-text-light">
               ※ 送信後、確認ページが表示されます。返信は通常24時間以内にいたします。
             </p>
-            <p class="text-xs text-ibt-text-light">
+            <p id="form-helper-privacy" class="text-xs text-ibt-text-light">
               送信いただいた個人情報は、お問い合わせへの対応にのみ使用いたします。詳しくは<a href="/legal/" class="text-ibt-red hover:underline">特定商取引法に基づく表記</a>をご確認ください。
             </p>
 
             <!-- 送信ボタン -->
+            <div aria-live="polite" id="form-errors" class="sr-only"></div>
             <button
               type="submit"
+              aria-describedby="form-helper-response form-helper-privacy"
               class="w-full bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow"
             >
               送信する
@@ -236,6 +243,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       form.querySelectorAll('.border-red-400').forEach(el => {
         el.classList.remove('border-red-400');
         el.classList.add('border-ibt-border');
+        el.removeAttribute('aria-invalid');
+        el.removeAttribute('aria-describedby');
       });
 
       const name = form.querySelector('#name') as HTMLInputElement;
@@ -264,9 +273,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     if (!input) return;
     input.classList.remove('border-ibt-border');
     input.classList.add('border-red-400');
+    const errId = `error-${input.id}`;
     const err = document.createElement('p');
+    err.id = errId;
     err.className = 'field-error text-red-500 text-xs mt-1';
+    err.setAttribute('role', 'alert');
     err.textContent = message;
+    input.setAttribute('aria-invalid', 'true');
+    input.setAttribute('aria-describedby', errId);
     input.parentElement?.appendChild(err);
   }
 </script>

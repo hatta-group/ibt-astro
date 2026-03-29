@@ -51,19 +51,21 @@ const navItems = [
   <nav
     id="mobile-menu"
     class="lg:hidden hidden bg-ibt-red-dark border-t border-white/10"
+    aria-label="モバイルナビゲーション"
+    aria-hidden="true"
   >
     <div class="px-4 py-4 space-y-1">
       {navItems.map((item) => (
         <a
           href={item.href}
-          class="block text-white/90 hover:text-white text-base px-4 py-3 rounded-lg hover:bg-white/10 transition-colors"
+          class="mobile-menu-link block text-white/90 hover:text-white text-base px-4 py-3 rounded-lg hover:bg-white/10 transition-colors"
         >
           {item.label}
         </a>
       ))}
       <a
         href="/contact/"
-        class="block text-center bg-white text-ibt-red font-bold text-base px-4 py-3 rounded-full mt-3"
+        class="mobile-menu-link block text-center bg-white text-ibt-red font-bold text-base px-4 py-3 rounded-full mt-3"
       >
         まずは無料で相談する
       </a>
@@ -74,9 +76,50 @@ const navItems = [
 <script>
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
+  const menuLinks = menu?.querySelectorAll('.mobile-menu-link') as NodeListOf<HTMLElement>;
+
+  function openMenu() {
+    btn?.setAttribute('aria-expanded', 'true');
+    menu?.classList.remove('hidden');
+    menu?.setAttribute('aria-hidden', 'false');
+    // Focus first link in menu
+    menuLinks?.[0]?.focus();
+  }
+
+  function closeMenu() {
+    btn?.setAttribute('aria-expanded', 'false');
+    menu?.classList.add('hidden');
+    menu?.setAttribute('aria-hidden', 'true');
+    btn?.focus();
+  }
+
   btn?.addEventListener('click', () => {
     const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    menu?.classList.toggle('hidden');
+    if (expanded) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Close menu on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && btn?.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+    }
+  });
+
+  // Focus trap within mobile menu when open
+  menu?.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab' || !menuLinks?.length) return;
+    const firstLink = menuLinks[0];
+    const lastLink = menuLinks[menuLinks.length - 1];
+    if (e.shiftKey && document.activeElement === firstLink) {
+      e.preventDefault();
+      lastLink.focus();
+    } else if (!e.shiftKey && document.activeElement === lastLink) {
+      e.preventDefault();
+      firstLink.focus();
+    }
   });
 </script>

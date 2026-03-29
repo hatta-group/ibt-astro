@@ -1,0 +1,965 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="マイアカウント｜IB専門家庭教師IBT"
+  description="IBTチケット管理ダッシュボード。チケット残数の確認、予約状況の閲覧ができます。"
+  noindex={true}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "マイアカウント", "item": "https://ib-tutors.net/my-account/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Page Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/70 text-sm mb-4">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">&gt;</span>
+        <span class="text-white">マイアカウント</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">マイアカウント</h1>
+      <p class="text-white/80 mt-3 text-lg">チケット残数・予約状況を確認できます</p>
+    </div>
+  </section>
+
+  <!-- Password Gate -->
+  <section id="password-gate" class="py-24 md:py-32 bg-ibt-bg">
+    <div class="max-w-md mx-auto px-4 text-center">
+      <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10">
+        <div class="w-16 h-16 bg-ibt-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-ibt-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+          </svg>
+        </div>
+        <h2 class="text-xl font-bold text-ibt-text mb-2">パスワードを入力してください</h2>
+        <p class="text-ibt-text-light text-sm mb-6">このページは生徒様・講師専用です。<br>ご案内済みのパスワードを入力してください。</p>
+        <form id="password-form" class="space-y-4">
+          <input
+            type="password"
+            id="password-input"
+            placeholder="パスワード"
+            autocomplete="off"
+            class="w-full px-4 py-3 border border-ibt-border rounded-xl text-center text-lg tracking-widest focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
+          />
+          <p id="password-error" class="text-red-500 text-sm hidden">パスワードが正しくありません</p>
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-6 py-3 rounded-full hover:shadow-lg transition-shadow"
+          >
+            ログイン
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content (hidden by default) -->
+  <div id="main-content" class="hidden">
+
+    <!-- Role Selector -->
+    <section id="role-selector" class="py-16 md:py-20 bg-ibt-bg">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">SELECT ROLE</p>
+        <h2 class="text-2xl md:text-4xl font-bold text-ibt-text mb-8">ログイン種別を選んでください</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <button data-role="parent" class="role-btn group bg-white rounded-2xl shadow-sm border-2 border-ibt-border hover:border-ibt-red p-8 transition-all">
+            <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition-colors">
+              <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              </svg>
+            </div>
+            <p class="font-bold text-ibt-text text-lg">保護者</p>
+            <p class="text-ibt-text-light text-sm mt-1">チケット残数・予約確認</p>
+          </button>
+          <button data-role="teacher" class="role-btn group bg-white rounded-2xl shadow-sm border-2 border-ibt-border hover:border-ibt-red p-8 transition-all">
+            <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors">
+              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+              </svg>
+            </div>
+            <p class="font-bold text-ibt-text text-lg">講師</p>
+            <p class="text-ibt-text-light text-sm mt-1">スケジュール・生徒情報</p>
+          </button>
+          <button data-role="admin" class="role-btn group bg-white rounded-2xl shadow-sm border-2 border-ibt-border hover:border-ibt-red p-8 transition-all">
+            <div class="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-100 transition-colors">
+              <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              </svg>
+            </div>
+            <p class="font-bold text-ibt-text text-lg">管理者</p>
+            <p class="text-ibt-text-light text-sm mt-1">全体管理・統計</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PARENT VIEW ===== -->
+    <section id="view-parent" class="hidden py-12 md:py-16 bg-ibt-bg">
+      <div class="max-w-5xl mx-auto px-4">
+
+        <!-- Back & Title -->
+        <div class="flex items-center gap-4 mb-8">
+          <button class="back-to-role text-ibt-text-light hover:text-ibt-red transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+          </button>
+          <div>
+            <p class="text-ibt-red font-bold text-sm tracking-widest">PARENT DASHBOARD</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-ibt-text">保護者ダッシュボード</h2>
+          </div>
+        </div>
+
+        <!-- Email Lookup -->
+        <div id="parent-email-gate" class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8 mb-8">
+          <h3 class="font-bold text-ibt-text text-lg mb-4">メールアドレスで検索</h3>
+          <p class="text-ibt-text-light text-sm mb-4">ご登録のメールアドレスを入力してください。</p>
+          <form id="parent-email-form" class="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              id="parent-email-input"
+              placeholder="example@email.com"
+              class="flex-1 px-4 py-3 border border-ibt-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
+            />
+            <button type="submit" class="px-6 py-3 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold rounded-full hover:shadow-lg transition-shadow whitespace-nowrap">
+              検索
+            </button>
+          </form>
+          <p id="parent-email-error" class="text-red-500 text-sm mt-2 hidden">該当するアカウントが見つかりませんでした。</p>
+        </div>
+
+        <!-- Parent Dashboard Content (hidden until email entered) -->
+        <div id="parent-dashboard" class="hidden space-y-8">
+
+          <!-- Welcome -->
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6">
+            <p class="text-ibt-text-light text-sm">ようこそ</p>
+            <p id="parent-name" class="text-xl font-bold text-ibt-text">田中 太郎 さま</p>
+          </div>
+
+          <!-- Ticket Balance Cards -->
+          <div>
+            <h3 class="font-bold text-ibt-text text-lg mb-4">チケット残数</h3>
+            <div id="parent-ticket-cards" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap gap-3">
+            <a href="/lesson-tickets/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold rounded-full hover:shadow-lg transition-shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+              チケット購入
+            </a>
+            <a href="/contact/" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-ibt-text font-bold border-2 border-ibt-border rounded-full hover:border-ibt-red hover:text-ibt-red transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>
+              新しい予約
+            </a>
+          </div>
+
+          <!-- Upcoming Bookings -->
+          <div>
+            <h3 class="font-bold text-ibt-text text-lg mb-4">今後の予約</h3>
+            <div class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead class="bg-gray-50 border-b border-ibt-border">
+                    <tr>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">日時</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">プログラム</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">講師</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">形式</th>
+                    </tr>
+                  </thead>
+                  <tbody id="parent-upcoming-bookings">
+                    <!-- Injected by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Past Lessons -->
+          <div>
+            <h3 class="font-bold text-ibt-text text-lg mb-4">過去の授業履歴</h3>
+            <div class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead class="bg-gray-50 border-b border-ibt-border">
+                    <tr>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">日時</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">プログラム</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">講師</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">ステータス</th>
+                    </tr>
+                  </thead>
+                  <tbody id="parent-past-lessons">
+                    <!-- Injected by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEACHER VIEW ===== -->
+    <section id="view-teacher" class="hidden py-12 md:py-16 bg-ibt-bg">
+      <div class="max-w-5xl mx-auto px-4">
+
+        <!-- Back & Title -->
+        <div class="flex items-center gap-4 mb-8">
+          <button class="back-to-role text-ibt-text-light hover:text-ibt-red transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+          </button>
+          <div>
+            <p class="text-ibt-red font-bold text-sm tracking-widest">TEACHER DASHBOARD</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-ibt-text">講師ダッシュボード</h2>
+          </div>
+        </div>
+
+        <!-- Teacher Selector -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 mb-8">
+          <h3 class="font-bold text-ibt-text text-lg mb-4">講師を選択</h3>
+          <div id="teacher-selector" class="flex flex-wrap gap-3">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+
+        <!-- Teacher Dashboard Content -->
+        <div id="teacher-dashboard" class="hidden space-y-8">
+
+          <!-- Today's Schedule -->
+          <div>
+            <h3 class="font-bold text-ibt-text text-lg mb-4">今日のスケジュール</h3>
+            <div id="teacher-today" class="space-y-3">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+
+          <!-- This Week's Bookings -->
+          <div>
+            <h3 class="font-bold text-ibt-text text-lg mb-4">今週の予約</h3>
+            <div class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead class="bg-gray-50 border-b border-ibt-border">
+                    <tr>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">日時</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">生徒</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">プログラム</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">形式</th>
+                    </tr>
+                  </thead>
+                  <tbody id="teacher-weekly-bookings">
+                    <!-- Injected by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student List -->
+          <div>
+            <h3 class="font-bold text-ibt-text text-lg mb-4">担当生徒一覧</h3>
+            <div class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead class="bg-gray-50 border-b border-ibt-border">
+                    <tr>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">生徒名</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">プログラム</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">チケット残数</th>
+                      <th class="text-left px-4 py-3 font-medium text-ibt-text-light">最終授業</th>
+                    </tr>
+                  </thead>
+                  <tbody id="teacher-student-list">
+                    <!-- Injected by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ADMIN VIEW ===== -->
+    <section id="view-admin" class="hidden py-12 md:py-16 bg-ibt-bg">
+      <div class="max-w-6xl mx-auto px-4">
+
+        <!-- Back & Title -->
+        <div class="flex items-center gap-4 mb-8">
+          <button class="back-to-role text-ibt-text-light hover:text-ibt-red transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+          </button>
+          <div>
+            <p class="text-ibt-red font-bold text-sm tracking-widest">ADMIN DASHBOARD</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-ibt-text">管理者ダッシュボード</h2>
+          </div>
+        </div>
+
+        <!-- Overview Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-5 text-center">
+            <p class="text-ibt-text-light text-sm mb-1">総生徒数</p>
+            <p id="admin-total-students" class="text-3xl font-bold text-ibt-text">--</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-5 text-center">
+            <p class="text-ibt-text-light text-sm mb-1">販売チケット総数</p>
+            <p id="admin-total-tickets" class="text-3xl font-bold text-ibt-text">--</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-5 text-center">
+            <p class="text-ibt-text-light text-sm mb-1">今週のレッスン</p>
+            <p id="admin-weekly-lessons" class="text-3xl font-bold text-ibt-text">--</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-5 text-center">
+            <p class="text-ibt-text-light text-sm mb-1">チケット残少アラート</p>
+            <p id="admin-low-balance" class="text-3xl font-bold text-red-500">--</p>
+          </div>
+        </div>
+
+        <!-- Admin Tabs -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          <button data-admin-tab="alerts" class="admin-tab active-admin-tab px-5 py-2.5 rounded-full font-medium text-sm transition-all">残少アラート</button>
+          <button data-admin-tab="orders" class="admin-tab px-5 py-2.5 rounded-full font-medium text-sm transition-all">最近の注文</button>
+          <button data-admin-tab="actions" class="admin-tab px-5 py-2.5 rounded-full font-medium text-sm transition-all">クイック操作</button>
+        </div>
+
+        <!-- Low Balance Alerts -->
+        <div id="admin-tab-alerts" class="admin-tab-content">
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-gray-50 border-b border-ibt-border">
+                  <tr>
+                    <th class="text-left px-4 py-3 font-medium text-ibt-text-light">生徒名</th>
+                    <th class="text-left px-4 py-3 font-medium text-ibt-text-light">プログラム</th>
+                    <th class="text-left px-4 py-3 font-medium text-ibt-text-light">残数</th>
+                    <th class="text-left px-4 py-3 font-medium text-ibt-text-light">保護者メール</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-alerts-body">
+                  <!-- Injected by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders -->
+        <div id="admin-tab-orders" class="admin-tab-content hidden">
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-gray-50 border-b border-ibt-border">
+                  <tr>
+                    <th class="text-left px-4 py-3 font-medium text-ibt-text-light">日付</th>
+                    <th class="text-left px-4 py-3 font-medium text-ibt-text-light">保護者</th>
+                    <th class="text-left px-4 py-3 font-medium text-ibt-text-light">プログラム</th>
+                    <th class="text-left px-4 py-3 font-medium text-ibt-text-light">枚数</th>
+                    <th class="text-left px-4 py-3 font-medium text-ibt-text-light">金額</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-orders-body">
+                  <!-- Injected by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div id="admin-tab-actions" class="admin-tab-content hidden">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6">
+              <h4 class="font-bold text-ibt-text mb-4">レッスン完了を記録</h4>
+              <form id="admin-complete-form" class="space-y-3">
+                <select id="admin-complete-student" class="w-full px-4 py-3 border border-ibt-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors">
+                  <option value="">生徒を選択...</option>
+                </select>
+                <input type="date" id="admin-complete-date" class="w-full px-4 py-3 border border-ibt-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors" />
+                <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold rounded-full hover:shadow-lg transition-shadow">
+                  レッスン完了を記録
+                </button>
+              </form>
+              <p id="admin-complete-msg" class="text-green-600 text-sm mt-2 hidden">記録しました</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6">
+              <h4 class="font-bold text-ibt-text mb-4">予約を追加</h4>
+              <form id="admin-booking-form" class="space-y-3">
+                <select id="admin-booking-student" class="w-full px-4 py-3 border border-ibt-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors">
+                  <option value="">生徒を選択...</option>
+                </select>
+                <select id="admin-booking-teacher" class="w-full px-4 py-3 border border-ibt-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors">
+                  <option value="">講師を選択...</option>
+                </select>
+                <input type="datetime-local" id="admin-booking-datetime" class="w-full px-4 py-3 border border-ibt-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors" />
+                <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold rounded-full hover:shadow-lg transition-shadow">
+                  予約を追加
+                </button>
+              </form>
+              <p id="admin-booking-msg" class="text-green-600 text-sm mt-2 hidden">予約を追加しました</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // TODO: Replace with actual GAS Web App URL
+    const API_URL = 'YOUR_GAS_WEB_APP_URL';
+
+    const CORRECT_PASSWORD = 'IBT';
+
+    // ========================
+    // DEMO DATA (replace with API calls)
+    // ========================
+
+    const TEACHERS = ['AI.O', 'MASATO', 'CYNTHIA', 'SUZU', 'LUKA', 'AI.W'];
+
+    const DEMO_PARENTS: Record<string, {
+      name: string;
+      email: string;
+      tickets: { program: string; remaining: number }[];
+      upcomingBookings: { date: string; program: string; teacher: string; format: string }[];
+      pastLessons: { date: string; program: string; teacher: string; status: string }[];
+    }> = {
+      'tanaka@example.com': {
+        name: '田中 太郎',
+        email: 'tanaka@example.com',
+        tickets: [
+          { program: 'PYP', remaining: 5 },
+          { program: 'MYP', remaining: 1 },
+        ],
+        upcomingBookings: [
+          { date: '2026-04-01 16:00', program: 'PYP', teacher: 'AI.O', format: 'オンライン' },
+          { date: '2026-04-05 17:00', program: 'MYP', teacher: 'MASATO', format: 'オンライン' },
+        ],
+        pastLessons: [
+          { date: '2026-03-25 16:00', program: 'PYP', teacher: 'AI.O', status: '完了' },
+          { date: '2026-03-20 17:00', program: 'PYP', teacher: 'AI.O', status: '完了' },
+          { date: '2026-03-15 16:00', program: 'MYP', teacher: 'MASATO', status: '完了' },
+        ],
+      },
+      'suzuki@example.com': {
+        name: '鈴木 花子',
+        email: 'suzuki@example.com',
+        tickets: [
+          { program: 'DP', remaining: 0 },
+        ],
+        upcomingBookings: [],
+        pastLessons: [
+          { date: '2026-03-22 18:00', program: 'DP', teacher: 'CYNTHIA', status: '完了' },
+        ],
+      },
+      'yamada@example.com': {
+        name: '山田 一郎',
+        email: 'yamada@example.com',
+        tickets: [
+          { program: 'MYP', remaining: 8 },
+          { program: 'DP', remaining: 2 },
+        ],
+        upcomingBookings: [
+          { date: '2026-04-02 15:00', program: 'MYP', teacher: 'SUZU', format: '対面' },
+        ],
+        pastLessons: [
+          { date: '2026-03-27 15:00', program: 'MYP', teacher: 'SUZU', status: '完了' },
+        ],
+      },
+    };
+
+    const DEMO_TEACHER_DATA: Record<string, {
+      todaySchedule: { time: string; student: string; program: string; format: string }[];
+      weeklyBookings: { date: string; student: string; program: string; format: string }[];
+      students: { name: string; program: string; tickets: number; lastLesson: string }[];
+    }> = {
+      'AI.O': {
+        todaySchedule: [
+          { time: '16:00', student: '田中 太郎', program: 'PYP', format: 'オンライン' },
+        ],
+        weeklyBookings: [
+          { date: '2026-03-30 16:00', student: '田中 太郎', program: 'PYP', format: 'オンライン' },
+          { date: '2026-04-01 16:00', student: '田中 太郎', program: 'PYP', format: 'オンライン' },
+          { date: '2026-04-03 14:00', student: '佐藤 愛', program: 'PYP', format: '対面' },
+        ],
+        students: [
+          { name: '田中 太郎', program: 'PYP', tickets: 5, lastLesson: '2026-03-25' },
+          { name: '佐藤 愛', program: 'PYP', tickets: 3, lastLesson: '2026-03-23' },
+        ],
+      },
+      'MASATO': {
+        todaySchedule: [],
+        weeklyBookings: [
+          { date: '2026-04-01 17:00', student: '田中 太郎', program: 'MYP', format: 'オンライン' },
+          { date: '2026-04-02 18:00', student: '高橋 翼', program: 'MYP', format: 'オンライン' },
+        ],
+        students: [
+          { name: '田中 太郎', program: 'MYP', tickets: 1, lastLesson: '2026-03-15' },
+          { name: '高橋 翼', program: 'MYP', tickets: 6, lastLesson: '2026-03-24' },
+        ],
+      },
+      'CYNTHIA': {
+        todaySchedule: [
+          { time: '18:00', student: '鈴木 花子', program: 'DP', format: 'オンライン' },
+        ],
+        weeklyBookings: [
+          { date: '2026-03-30 18:00', student: '鈴木 花子', program: 'DP', format: 'オンライン' },
+        ],
+        students: [
+          { name: '鈴木 花子', program: 'DP', tickets: 0, lastLesson: '2026-03-22' },
+        ],
+      },
+      'SUZU': {
+        todaySchedule: [],
+        weeklyBookings: [
+          { date: '2026-04-02 15:00', student: '山田 一郎', program: 'MYP', format: '対面' },
+        ],
+        students: [
+          { name: '山田 一郎', program: 'MYP', tickets: 8, lastLesson: '2026-03-27' },
+        ],
+      },
+      'LUKA': {
+        todaySchedule: [],
+        weeklyBookings: [],
+        students: [],
+      },
+      'AI.W': {
+        todaySchedule: [],
+        weeklyBookings: [
+          { date: '2026-04-04 16:00', student: '山田 一郎', program: 'DP', format: 'オンライン' },
+        ],
+        students: [
+          { name: '山田 一郎', program: 'DP', tickets: 2, lastLesson: '2026-03-20' },
+        ],
+      },
+    };
+
+    const DEMO_ADMIN = {
+      totalStudents: 5,
+      totalTickets: 82,
+      weeklyLessons: 7,
+      lowBalanceAlerts: [
+        { student: '田中 太郎', program: 'MYP', remaining: 1, parentEmail: 'tanaka@example.com' },
+        { student: '鈴木 花子', program: 'DP', remaining: 0, parentEmail: 'suzuki@example.com' },
+        { student: '山田 一郎', program: 'DP', remaining: 2, parentEmail: 'yamada@example.com' },
+      ],
+      recentOrders: [
+        { date: '2026-03-27', parent: '田中 太郎', program: 'PYP オンライン', count: 8, amount: 38500 },
+        { date: '2026-03-25', parent: '山田 一郎', program: 'MYP 対面', count: 12, amount: 77220 },
+        { date: '2026-03-20', parent: '鈴木 花子', program: 'DP オンライン', count: 4, amount: 28930 },
+        { date: '2026-03-18', parent: '高橋 翼', program: 'MYP オンライン', count: 8, amount: 48180 },
+      ],
+      allStudents: ['田中 太郎', '鈴木 花子', '山田 一郎', '佐藤 愛', '高橋 翼'],
+    };
+
+    // ========================
+    // UTILITY FUNCTIONS
+    // ========================
+
+    function ticketColorClass(remaining: number): string {
+      if (remaining >= 3) return 'bg-green-50 border-green-200 text-green-700';
+      if (remaining >= 1) return 'bg-yellow-50 border-yellow-200 text-yellow-700';
+      return 'bg-red-50 border-red-200 text-red-700';
+    }
+
+    function ticketBadgeClass(remaining: number): string {
+      if (remaining >= 3) return 'bg-green-100 text-green-800';
+      if (remaining >= 1) return 'bg-yellow-100 text-yellow-800';
+      return 'bg-red-100 text-red-800';
+    }
+
+    function formatAmount(n: number): string {
+      return n.toLocaleString('ja-JP');
+    }
+
+    // ========================
+    // PASSWORD GATE
+    // ========================
+
+    const pwForm = document.getElementById('password-form');
+    const pwInput = document.getElementById('password-input') as HTMLInputElement;
+    const pwError = document.getElementById('password-error');
+    const pwGate = document.getElementById('password-gate');
+    const mainContent = document.getElementById('main-content');
+
+    if (sessionStorage.getItem('ibt-account-auth') === 'true') {
+      pwGate?.classList.add('hidden');
+      mainContent?.classList.remove('hidden');
+    }
+
+    pwForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (pwInput?.value === CORRECT_PASSWORD) {
+        sessionStorage.setItem('ibt-account-auth', 'true');
+        pwGate?.classList.add('hidden');
+        mainContent?.classList.remove('hidden');
+      } else {
+        pwError?.classList.remove('hidden');
+        pwInput?.classList.add('border-red-400');
+        pwInput?.focus();
+      }
+    });
+
+    // ========================
+    // ROLE SELECTOR
+    // ========================
+
+    const roleSelector = document.getElementById('role-selector');
+
+    function showRole(role: string) {
+      roleSelector?.classList.add('hidden');
+      document.getElementById(`view-${role}`)?.classList.remove('hidden');
+
+      if (role === 'admin') {
+        renderAdminDashboard();
+      }
+    }
+
+    function backToRole() {
+      roleSelector?.classList.remove('hidden');
+      document.querySelectorAll('[id^="view-"]').forEach((el) => el.classList.add('hidden'));
+    }
+
+    document.querySelectorAll('.role-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const role = (btn as HTMLElement).dataset.role;
+        if (role) showRole(role);
+      });
+    });
+
+    document.querySelectorAll('.back-to-role').forEach((btn) => {
+      btn.addEventListener('click', backToRole);
+    });
+
+    // ========================
+    // PARENT VIEW
+    // ========================
+
+    const parentEmailForm = document.getElementById('parent-email-form');
+    const parentEmailInput = document.getElementById('parent-email-input') as HTMLInputElement;
+    const parentEmailError = document.getElementById('parent-email-error');
+    const parentEmailGate = document.getElementById('parent-email-gate');
+    const parentDashboard = document.getElementById('parent-dashboard');
+
+    parentEmailForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = parentEmailInput?.value.trim().toLowerCase();
+
+      // TODO: Replace with actual API call
+      // const response = await fetch(`${API_URL}?action=getParent&email=${encodeURIComponent(email)}`);
+      // const data = await response.json();
+
+      const data = DEMO_PARENTS[email];
+
+      if (!data) {
+        parentEmailError?.classList.remove('hidden');
+        return;
+      }
+
+      parentEmailError?.classList.add('hidden');
+      parentEmailGate?.classList.add('hidden');
+      parentDashboard?.classList.remove('hidden');
+
+      // Name
+      const nameEl = document.getElementById('parent-name');
+      if (nameEl) nameEl.textContent = `${data.name} さま`;
+
+      // Ticket cards
+      const ticketContainer = document.getElementById('parent-ticket-cards');
+      if (ticketContainer) {
+        ticketContainer.innerHTML = data.tickets.map((t) => `
+          <div class="rounded-2xl border-2 p-6 text-center ${ticketColorClass(t.remaining)}">
+            <p class="text-sm font-medium mb-2">${t.program}</p>
+            <p class="text-4xl font-bold">${t.remaining}</p>
+            <p class="text-sm mt-1">残りチケット</p>
+          </div>
+        `).join('');
+      }
+
+      // Upcoming bookings
+      const upcomingBody = document.getElementById('parent-upcoming-bookings');
+      if (upcomingBody) {
+        if (data.upcomingBookings.length === 0) {
+          upcomingBody.innerHTML = '<tr><td colspan="4" class="px-4 py-8 text-center text-ibt-text-light">予約はありません</td></tr>';
+        } else {
+          upcomingBody.innerHTML = data.upcomingBookings.map((b) => `
+            <tr class="border-b border-gray-100 last:border-0">
+              <td class="px-4 py-3 text-ibt-text">${b.date}</td>
+              <td class="px-4 py-3 text-ibt-text">${b.program}</td>
+              <td class="px-4 py-3 text-ibt-text">${b.teacher}</td>
+              <td class="px-4 py-3 text-ibt-text">${b.format}</td>
+            </tr>
+          `).join('');
+        }
+      }
+
+      // Past lessons
+      const pastBody = document.getElementById('parent-past-lessons');
+      if (pastBody) {
+        if (data.pastLessons.length === 0) {
+          pastBody.innerHTML = '<tr><td colspan="4" class="px-4 py-8 text-center text-ibt-text-light">授業履歴はありません</td></tr>';
+        } else {
+          pastBody.innerHTML = data.pastLessons.map((l) => `
+            <tr class="border-b border-gray-100 last:border-0">
+              <td class="px-4 py-3 text-ibt-text">${l.date}</td>
+              <td class="px-4 py-3 text-ibt-text">${l.program}</td>
+              <td class="px-4 py-3 text-ibt-text">${l.teacher}</td>
+              <td class="px-4 py-3"><span class="inline-block px-2 py-0.5 bg-green-100 text-green-800 text-xs font-medium rounded-full">${l.status}</span></td>
+            </tr>
+          `).join('');
+        }
+      }
+    });
+
+    // ========================
+    // TEACHER VIEW
+    // ========================
+
+    const teacherSelectorEl = document.getElementById('teacher-selector');
+    const teacherDashboard = document.getElementById('teacher-dashboard');
+
+    if (teacherSelectorEl) {
+      teacherSelectorEl.innerHTML = TEACHERS.map((name) => `
+        <button data-teacher="${name}" class="teacher-btn px-5 py-2.5 rounded-full font-medium text-sm bg-white border-2 border-ibt-border text-ibt-text-light hover:border-ibt-red hover:text-ibt-red transition-all">${name}</button>
+      `).join('');
+    }
+
+    document.querySelectorAll('.teacher-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const name = (btn as HTMLElement).dataset.teacher;
+        if (!name) return;
+
+        // Active state
+        document.querySelectorAll('.teacher-btn').forEach((b) => {
+          b.classList.remove('active-teacher');
+          b.classList.add('border-ibt-border', 'text-ibt-text-light');
+          b.classList.remove('border-transparent', 'text-white');
+        });
+        btn.classList.add('active-teacher');
+        btn.classList.remove('border-ibt-border', 'text-ibt-text-light');
+        btn.classList.add('border-transparent', 'text-white');
+
+        renderTeacherDashboard(name);
+      });
+    });
+
+    function renderTeacherDashboard(teacherName: string) {
+      // TODO: Replace with actual API call
+      // const response = await fetch(`${API_URL}?action=getTeacher&name=${encodeURIComponent(teacherName)}`);
+      // const data = await response.json();
+
+      const data = DEMO_TEACHER_DATA[teacherName];
+      if (!data) return;
+
+      teacherDashboard?.classList.remove('hidden');
+
+      // Today's schedule
+      const todayEl = document.getElementById('teacher-today');
+      if (todayEl) {
+        if (data.todaySchedule.length === 0) {
+          todayEl.innerHTML = `
+            <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 text-center text-ibt-text-light">
+              今日の授業はありません
+            </div>
+          `;
+        } else {
+          todayEl.innerHTML = data.todaySchedule.map((s) => `
+            <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-4 flex items-center gap-4">
+              <div class="w-14 h-14 bg-ibt-red-50 rounded-xl flex items-center justify-center shrink-0">
+                <span class="text-ibt-red font-bold text-sm">${s.time}</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="font-bold text-ibt-text">${s.student}</p>
+                <p class="text-ibt-text-light text-sm">${s.program} / ${s.format}</p>
+              </div>
+            </div>
+          `).join('');
+        }
+      }
+
+      // Weekly bookings
+      const weeklyBody = document.getElementById('teacher-weekly-bookings');
+      if (weeklyBody) {
+        if (data.weeklyBookings.length === 0) {
+          weeklyBody.innerHTML = '<tr><td colspan="4" class="px-4 py-8 text-center text-ibt-text-light">今週の予約はありません</td></tr>';
+        } else {
+          weeklyBody.innerHTML = data.weeklyBookings.map((b) => `
+            <tr class="border-b border-gray-100 last:border-0">
+              <td class="px-4 py-3 text-ibt-text">${b.date}</td>
+              <td class="px-4 py-3 text-ibt-text">${b.student}</td>
+              <td class="px-4 py-3 text-ibt-text">${b.program}</td>
+              <td class="px-4 py-3 text-ibt-text">${b.format}</td>
+            </tr>
+          `).join('');
+        }
+      }
+
+      // Student list
+      const studentBody = document.getElementById('teacher-student-list');
+      if (studentBody) {
+        if (data.students.length === 0) {
+          studentBody.innerHTML = '<tr><td colspan="4" class="px-4 py-8 text-center text-ibt-text-light">担当生徒はいません</td></tr>';
+        } else {
+          studentBody.innerHTML = data.students.map((s) => `
+            <tr class="border-b border-gray-100 last:border-0">
+              <td class="px-4 py-3 text-ibt-text font-medium">${s.name}</td>
+              <td class="px-4 py-3 text-ibt-text">${s.program}</td>
+              <td class="px-4 py-3"><span class="inline-block px-2.5 py-0.5 text-xs font-bold rounded-full ${ticketBadgeClass(s.tickets)}">${s.tickets}枚</span></td>
+              <td class="px-4 py-3 text-ibt-text-light">${s.lastLesson}</td>
+            </tr>
+          `).join('');
+        }
+      }
+    }
+
+    // ========================
+    // ADMIN VIEW
+    // ========================
+
+    function renderAdminDashboard() {
+      // TODO: Replace with actual API call
+      // const response = await fetch(`${API_URL}?action=getAdminOverview`);
+      // const data = await response.json();
+
+      const data = DEMO_ADMIN;
+
+      // Stats
+      const totalStudents = document.getElementById('admin-total-students');
+      const totalTickets = document.getElementById('admin-total-tickets');
+      const weeklyLessons = document.getElementById('admin-weekly-lessons');
+      const lowBalance = document.getElementById('admin-low-balance');
+
+      if (totalStudents) totalStudents.textContent = String(data.totalStudents);
+      if (totalTickets) totalTickets.textContent = String(data.totalTickets);
+      if (weeklyLessons) weeklyLessons.textContent = String(data.weeklyLessons);
+      if (lowBalance) lowBalance.textContent = String(data.lowBalanceAlerts.length);
+
+      // Low balance alerts
+      const alertsBody = document.getElementById('admin-alerts-body');
+      if (alertsBody) {
+        alertsBody.innerHTML = data.lowBalanceAlerts.map((a) => `
+          <tr class="border-b border-gray-100 last:border-0">
+            <td class="px-4 py-3 text-ibt-text font-medium">${a.student}</td>
+            <td class="px-4 py-3 text-ibt-text">${a.program}</td>
+            <td class="px-4 py-3"><span class="inline-block px-2.5 py-0.5 text-xs font-bold rounded-full ${ticketBadgeClass(a.remaining)}">${a.remaining}枚</span></td>
+            <td class="px-4 py-3 text-ibt-text-light">${a.parentEmail}</td>
+          </tr>
+        `).join('');
+      }
+
+      // Recent orders
+      const ordersBody = document.getElementById('admin-orders-body');
+      if (ordersBody) {
+        ordersBody.innerHTML = data.recentOrders.map((o) => `
+          <tr class="border-b border-gray-100 last:border-0">
+            <td class="px-4 py-3 text-ibt-text">${o.date}</td>
+            <td class="px-4 py-3 text-ibt-text">${o.parent}</td>
+            <td class="px-4 py-3 text-ibt-text">${o.program}</td>
+            <td class="px-4 py-3 text-ibt-text">${o.count}枚</td>
+            <td class="px-4 py-3 text-ibt-text font-medium">&yen;${formatAmount(o.amount)}</td>
+          </tr>
+        `).join('');
+      }
+
+      // Quick action dropdowns
+      const completeStudentSelect = document.getElementById('admin-complete-student') as HTMLSelectElement;
+      const bookingStudentSelect = document.getElementById('admin-booking-student') as HTMLSelectElement;
+      const bookingTeacherSelect = document.getElementById('admin-booking-teacher') as HTMLSelectElement;
+
+      if (completeStudentSelect) {
+        completeStudentSelect.innerHTML = '<option value="">生徒を選択...</option>' +
+          data.allStudents.map((s) => `<option value="${s}">${s}</option>`).join('');
+      }
+      if (bookingStudentSelect) {
+        bookingStudentSelect.innerHTML = '<option value="">生徒を選択...</option>' +
+          data.allStudents.map((s) => `<option value="${s}">${s}</option>`).join('');
+      }
+      if (bookingTeacherSelect) {
+        bookingTeacherSelect.innerHTML = '<option value="">講師を選択...</option>' +
+          TEACHERS.map((t) => `<option value="${t}">${t}</option>`).join('');
+      }
+    }
+
+    // Admin tabs
+    document.querySelectorAll('.admin-tab').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tab = (btn as HTMLElement).dataset.adminTab;
+        if (!tab) return;
+
+        document.querySelectorAll('.admin-tab').forEach((b) => b.classList.remove('active-admin-tab'));
+        btn.classList.add('active-admin-tab');
+
+        document.querySelectorAll('.admin-tab-content').forEach((el) => el.classList.add('hidden'));
+        document.getElementById(`admin-tab-${tab}`)?.classList.remove('hidden');
+      });
+    });
+
+    // Admin quick action forms
+    document.getElementById('admin-complete-form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // TODO: Replace with actual API call
+      // const student = (document.getElementById('admin-complete-student') as HTMLSelectElement).value;
+      // const date = (document.getElementById('admin-complete-date') as HTMLInputElement).value;
+      // await fetch(`${API_URL}?action=completeLesson`, { method: 'POST', body: ... });
+      const msg = document.getElementById('admin-complete-msg');
+      msg?.classList.remove('hidden');
+      setTimeout(() => msg?.classList.add('hidden'), 3000);
+    });
+
+    document.getElementById('admin-booking-form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // TODO: Replace with actual API call
+      // const student = (document.getElementById('admin-booking-student') as HTMLSelectElement).value;
+      // const teacher = (document.getElementById('admin-booking-teacher') as HTMLSelectElement).value;
+      // const datetime = (document.getElementById('admin-booking-datetime') as HTMLInputElement).value;
+      // await fetch(`${API_URL}?action=addBooking`, { method: 'POST', body: ... });
+      const msg = document.getElementById('admin-booking-msg');
+      msg?.classList.remove('hidden');
+      setTimeout(() => msg?.classList.add('hidden'), 3000);
+    });
+  </script>
+
+  <style>
+    .role-btn:hover {
+      border-color: #CC2210;
+    }
+    .admin-tab {
+      background: white;
+      color: #555;
+      border: 2px solid #e5e7eb;
+    }
+    .admin-tab:hover {
+      border-color: #CC2210;
+      color: #CC2210;
+    }
+    .admin-tab.active-admin-tab {
+      background: linear-gradient(to right, #C62828, #FF5252);
+      color: white;
+      border-color: transparent;
+    }
+    .teacher-btn.active-teacher {
+      background: linear-gradient(to right, #C62828, #FF5252) !important;
+      color: white !important;
+      border-color: transparent !important;
+    }
+    .bg-ibt-red-50 {
+      background-color: #FFF5F4;
+    }
+    .text-ibt-red {
+      color: #CC2210;
+    }
+  </style>
+</BaseLayout>

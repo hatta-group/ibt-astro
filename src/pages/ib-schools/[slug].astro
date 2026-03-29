@@ -241,6 +241,9 @@ const breadcrumbSchema = {
     border-collapse: collapse;
     margin: 1.5rem 0;
     font-size: 0.875rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .school-content th {
     background: #f9fafb;
@@ -266,6 +269,8 @@ const breadcrumbSchema = {
   .school-content img {
     border-radius: 0.75rem;
     margin: 1.5rem 0;
+    max-width: 100%;
+    height: auto;
   }
   .school-content blockquote {
     border-left: 4px solid #e5e7eb;
