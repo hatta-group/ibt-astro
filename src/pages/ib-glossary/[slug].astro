@@ -1,0 +1,394 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { glossaryTerms } from '../../data/ib-glossary';
+import type { GlossaryTerm } from '../../data/ib-glossary';
+
+export function getStaticPaths() {
+  return glossaryTerms.map((term) => ({
+    params: { slug: term.slug },
+    props: { term },
+  }));
+}
+
+interface Props {
+  term: GlossaryTerm;
+}
+
+const { term } = Astro.props;
+const siteUrl = 'https://ib-tutors.net';
+
+// Category colors
+const categoryColors: Record<string, { bg: string; text: string; border: string; gradient: string }> = {
+  'IB Core': { bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200', gradient: 'from-blue-600 to-blue-800' },
+  'DP Core': { bg: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-200', gradient: 'from-purple-600 to-purple-800' },
+  'DP Subjects': { bg: 'bg-indigo-50', text: 'text-indigo-700', border: 'border-indigo-200', gradient: 'from-indigo-600 to-indigo-800' },
+  'Assessment': { bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200', gradient: 'from-amber-600 to-amber-800' },
+  'MYP': { bg: 'bg-teal-50', text: 'text-teal-700', border: 'border-teal-200', gradient: 'from-teal-600 to-teal-800' },
+  'PYP': { bg: 'bg-green-50', text: 'text-green-700', border: 'border-green-200', gradient: 'from-green-600 to-green-800' },
+  'General': { bg: 'bg-gray-50', text: 'text-gray-700', border: 'border-gray-200', gradient: 'from-gray-600 to-gray-800' },
+};
+
+const categoryLabels: Record<string, string> = {
+  'IB Core': 'IBプログラム基本',
+  'DP Core': 'DPコア要素',
+  'DP Subjects': 'DP科目グループ',
+  'Assessment': '評価・試験',
+  'MYP': 'MYP（中等教育プログラム）',
+  'PYP': 'PYP（初等教育プログラム）',
+  'General': '一般用語',
+};
+
+const categoryIcons: Record<string, string> = {
+  'IB Core': '🌍',
+  'DP Core': '📚',
+  'DP Subjects': '📖',
+  'Assessment': '📝',
+  'MYP': '🎯',
+  'PYP': '🌱',
+  'General': '💡',
+};
+
+const programmeLabels: Record<string, string> = {
+  'PYP': 'PYP（初等教育）',
+  'MYP': 'MYP（中等教育）',
+  'DP': 'DP（ディプロマ）',
+  'all': '全プログラム共通',
+};
+
+const colors = categoryColors[term.category] || categoryColors['General'];
+
+// Resolve related terms
+const relatedTermObjects = term.relatedTerms
+  .map(slug => glossaryTerms.find(t => t.slug === slug))
+  .filter((t): t is GlossaryTerm => t !== undefined);
+
+// SEO
+const pageTitle = `${term.abbr ? term.abbr + '（' + term.en + '）' : term.en}とは？IB用語解説｜IBT`;
+const pageDescription = `${term.abbr ? term.abbr + '（' + term.ja + '）' : term.ja}の意味と重要性をIB経験者が詳しく解説。${term.definition}`;
+
+// Schema.org
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": term.abbr ? `${term.abbr} (${term.en})` : term.en,
+  "description": term.definition,
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "IB用語集",
+    "url": `${siteUrl}/ib-glossary/`,
+  },
+  "url": `${siteUrl}/ib-glossary/${term.slug}/`,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": `${siteUrl}/` },
+    { "@type": "ListItem", "position": 2, "name": "IB用語集", "item": `${siteUrl}/ib-glossary/` },
+    { "@type": "ListItem", "position": 3, "name": term.abbr || term.en, "item": `${siteUrl}/ib-glossary/${term.slug}/` },
+  ],
+};
+
+const faqSchema = term.faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": term.faq.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+} : null;
+
+// Split longDescription into paragraphs
+const descriptionParagraphs = term.longDescription.split('\n\n').filter(p => p.trim());
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  </Fragment>
+
+  <!-- Hero -->
+  <section class={`bg-gradient-to-r ${colors.gradient} py-12 md:py-20`}>
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/80 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <a href="/ib-glossary/" class="hover:text-white transition-colors">IB用語集</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">{term.abbr || term.en}</span>
+      </nav>
+
+      <div class="flex items-center gap-3 mb-4">
+        <span class={`inline-block ${colors.bg} ${colors.text} text-sm font-bold px-3 py-1 rounded-full`}>
+          {categoryIcons[term.category]} {categoryLabels[term.category]}
+        </span>
+        {term.programme.map(p => (
+          <span class="inline-block bg-white/20 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+            {p === 'all' ? '全プログラム' : p}
+          </span>
+        ))}
+      </div>
+
+      {term.abbr && (
+        <span class="inline-block bg-white/20 text-white font-bold text-2xl md:text-3xl px-4 py-1 rounded-lg mb-3">
+          {term.abbr}
+        </span>
+      )}
+      <h1 class="text-2xl md:text-4xl font-bold text-white leading-tight">
+        {term.en}<span class="text-white/70 text-xl md:text-2xl ml-2">({term.ja})</span>
+      </h1>
+      <p class="mt-4 text-white/80 text-lg max-w-3xl leading-relaxed">
+        {term.definition}
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-10 md:py-16 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <!-- Left: Main Content -->
+        <div class="lg:col-span-2 space-y-10">
+
+          <!-- Definition -->
+          <div class="bg-white rounded-2xl border border-ibt-border p-6 md:p-8">
+            <h2 class="text-xl md:text-2xl font-bold text-ibt-text mb-5 flex items-center gap-2">
+              <span class="w-1.5 h-7 bg-ibt-red rounded-full"></span>
+              定義
+            </h2>
+            <div class="prose prose-lg max-w-none text-ibt-text-light leading-relaxed space-y-4">
+              {descriptionParagraphs.map(paragraph => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+
+          <!-- Importance -->
+          <div class="bg-white rounded-2xl border border-ibt-border p-6 md:p-8">
+            <h2 class="text-xl md:text-2xl font-bold text-ibt-text mb-5 flex items-center gap-2">
+              <span class="w-1.5 h-7 bg-ibt-red rounded-full"></span>
+              IBでの重要性
+            </h2>
+            <div class={`${colors.bg} ${colors.border} border rounded-xl p-5`}>
+              <p class="text-ibt-text leading-relaxed">{term.importance}</p>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          {term.faq.length > 0 && (
+            <div class="bg-white rounded-2xl border border-ibt-border p-6 md:p-8">
+              <h2 class="text-xl md:text-2xl font-bold text-ibt-text mb-5 flex items-center gap-2">
+                <span class="w-1.5 h-7 bg-ibt-red rounded-full"></span>
+                よくある質問
+              </h2>
+              <div class="space-y-4">
+                {term.faq.map((item, i) => (
+                  <div class="border border-ibt-border rounded-xl overflow-hidden">
+                    <button
+                      class="faq-toggle w-full text-left px-5 py-4 flex items-center justify-between gap-3 hover:bg-gray-50 transition-colors"
+                      data-faq-index={i}
+                    >
+                      <span class="font-bold text-ibt-text flex items-center gap-2">
+                        <span class="text-ibt-red font-bold">Q.</span>
+                        {item.q}
+                      </span>
+                      <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-4">
+                      <p class="text-ibt-text-light leading-relaxed pl-6">
+                        <span class="text-blue-600 font-bold">A.</span> {item.a}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Related Terms -->
+          {relatedTermObjects.length > 0 && (
+            <div class="bg-white rounded-2xl border border-ibt-border p-6 md:p-8">
+              <h2 class="text-xl md:text-2xl font-bold text-ibt-text mb-5 flex items-center gap-2">
+                <span class="w-1.5 h-7 bg-ibt-red rounded-full"></span>
+                関連用語
+              </h2>
+              <div class="grid gap-3 sm:grid-cols-2">
+                {relatedTermObjects.map(related => (
+                  <a
+                    href={`/ib-glossary/${related.slug}/`}
+                    class="group flex items-start gap-3 p-4 rounded-xl border border-ibt-border hover:border-ibt-red/30 hover:shadow-sm transition-all"
+                  >
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center gap-2 mb-1">
+                        {related.abbr && (
+                          <span class="inline-block bg-ibt-red/10 text-ibt-red font-bold text-xs px-1.5 py-0.5 rounded">
+                            {related.abbr}
+                          </span>
+                        )}
+                        <span class="font-bold text-ibt-text text-sm group-hover:text-ibt-red transition-colors truncate">
+                          {related.en}
+                        </span>
+                      </div>
+                      <p class="text-xs text-ibt-text-light">{related.ja}</p>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-300 group-hover:text-ibt-red flex-shrink-0 mt-1 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <!-- Right: Sidebar -->
+        <div class="space-y-6">
+
+          <!-- Quick Info Card -->
+          <div class="bg-white rounded-2xl border border-ibt-border p-6 sticky top-6">
+            <h3 class="font-bold text-ibt-text mb-4">基本情報</h3>
+            <table class="w-full text-sm">
+              <tbody>
+                <tr class="border-b border-ibt-border">
+                  <td class="py-2.5 text-ibt-text-light">英語名</td>
+                  <td class="py-2.5 text-ibt-text font-medium text-right">{term.en}</td>
+                </tr>
+                <tr class="border-b border-ibt-border">
+                  <td class="py-2.5 text-ibt-text-light">日本語名</td>
+                  <td class="py-2.5 text-ibt-text font-medium text-right">{term.ja}</td>
+                </tr>
+                {term.abbr && (
+                  <tr class="border-b border-ibt-border">
+                    <td class="py-2.5 text-ibt-text-light">略称</td>
+                    <td class="py-2.5 text-right">
+                      <span class="inline-block bg-ibt-red/10 text-ibt-red font-bold text-sm px-2 py-0.5 rounded">
+                        {term.abbr}
+                      </span>
+                    </td>
+                  </tr>
+                )}
+                <tr class="border-b border-ibt-border">
+                  <td class="py-2.5 text-ibt-text-light">カテゴリ</td>
+                  <td class="py-2.5 text-right">
+                    <span class={`inline-block ${colors.bg} ${colors.text} text-xs font-bold px-2 py-0.5 rounded-full`}>
+                      {categoryLabels[term.category]}
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 text-ibt-text-light">対象</td>
+                  <td class="py-2.5 text-right">
+                    <div class="flex flex-wrap gap-1 justify-end">
+                      {term.programme.map(p => (
+                        <span class="inline-block bg-gray-100 text-gray-600 text-xs font-bold px-2 py-0.5 rounded-full">
+                          {p === 'all' ? '全プログラム' : p}
+                        </span>
+                      ))}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- IBT Services -->
+          <div class="bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end rounded-2xl p-6 text-white">
+            <h3 class="font-bold text-lg mb-3">IBTでサポート</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-5">
+              IBTの講師は全員IB卒業生。
+              {term.programme.includes('DP') || term.programme.includes('all')
+                ? 'TOK・EE・IAなどDP独自の課題から、日々の学習まで、'
+                : ''}
+              IB経験者だからこそできるサポートを提供します。
+            </p>
+            <div class="space-y-2.5">
+              <a
+                href="/contact/"
+                class="block w-full text-center bg-white text-ibt-red font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors text-sm"
+              >
+                無料体験を申し込む
+              </a>
+              <a
+                href="/tutors/"
+                class="block w-full text-center bg-white/20 text-white font-bold py-3 rounded-xl hover:bg-white/30 transition-colors text-sm"
+              >
+                講師紹介を見る
+              </a>
+            </div>
+          </div>
+
+          <!-- Back to Glossary -->
+          <a
+            href="/ib-glossary/"
+            class="flex items-center gap-2 text-sm font-bold text-ibt-text-light hover:text-ibt-red transition-colors"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            IB用語集に戻る
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-ibt-text mb-4">
+        IBの勉強で困っていませんか？
+      </h2>
+      <p class="text-ibt-text-light mb-8 leading-relaxed">
+        IBTの講師は全員IB卒業生。TOK・EE・IAなどDP独自の課題から、MYP・PYPの日々の学習まで、<br class="hidden md:block" />
+        IB経験者だからこそできるサポートを提供します。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow"
+        >
+          無料体験を申し込む
+        </a>
+        <a
+          href="/tutors/"
+          class="inline-flex items-center justify-center gap-2 bg-white text-ibt-text font-bold px-8 py-4 rounded-full border-2 border-ibt-border hover:border-ibt-red/30 transition-colors"
+        >
+          講師紹介を見る
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling as HTMLElement;
+      const icon = btn.querySelector('.faq-icon') as HTMLElement;
+      const isOpen = !content.classList.contains('hidden');
+
+      // Close all
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+      // Toggle current
+      if (!isOpen) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    });
+  });
+</script>

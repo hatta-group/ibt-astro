@@ -51,6 +51,7 @@ const schemaData = {
     "@type": "DefinedTerm",
     "name": t.abbr ? `${t.abbr} (${t.en})` : t.en,
     "description": t.definition,
+    "url": `${siteUrl}/ib-glossary/${t.slug}/`,
     "inDefinedTermSet": `${siteUrl}/ib-glossary/`,
   })),
 };
@@ -169,8 +170,9 @@ const termCount = glossaryTerms.length;
             {glossaryTerms
               .filter(t => t.category === cat)
               .map(term => (
-                <div
-                  class="glossary-card bg-white rounded-2xl border border-ibt-border p-5 hover:shadow-md hover:border-ibt-red/20 transition-all"
+                <a
+                  href={`/ib-glossary/${term.slug}/`}
+                  class="glossary-card group bg-white rounded-2xl border border-ibt-border p-5 hover:shadow-md hover:border-ibt-red/20 transition-all block"
                   data-en={term.en.toLowerCase()}
                   data-ja={term.ja}
                   data-abbr={(term.abbr || '').toLowerCase()}
@@ -184,23 +186,21 @@ const termCount = glossaryTerms.length;
                           {term.abbr}
                         </span>
                       )}
-                      <h3 class="font-bold text-ibt-text leading-snug">{term.en}</h3>
+                      <h3 class="font-bold text-ibt-text leading-snug group-hover:text-ibt-red transition-colors">{term.en}</h3>
                       <p class="text-sm text-ibt-text-light">{term.ja}</p>
                     </div>
+                    <svg class="w-4 h-4 text-gray-300 group-hover:text-ibt-red flex-shrink-0 mt-1 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                   <p class="text-sm text-ibt-text-light leading-relaxed mt-2">{term.definition}</p>
-                  {term.link && (
-                    <a
-                      href={term.link}
-                      class="inline-flex items-center gap-1 mt-3 text-sm font-bold text-ibt-red hover:underline"
-                    >
-                      詳しく見る
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                      </svg>
-                    </a>
-                  )}
-                </div>
+                  <span class="inline-flex items-center gap-1 mt-3 text-sm font-bold text-ibt-red">
+                    詳しく見る
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </span>
+                </a>
               ))}
           </div>
         </div>
@@ -221,8 +221,9 @@ const termCount = glossaryTerms.length;
           </div>
           <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {terms.map(term => (
-              <div
-                class="glossary-card-alpha bg-white rounded-2xl border border-ibt-border p-5 hover:shadow-md hover:border-ibt-red/20 transition-all"
+              <a
+                href={`/ib-glossary/${term.slug}/`}
+                class="glossary-card-alpha group bg-white rounded-2xl border border-ibt-border p-5 hover:shadow-md hover:border-ibt-red/20 transition-all block"
                 data-en={term.en.toLowerCase()}
                 data-ja={term.ja}
                 data-abbr={(term.abbr || '').toLowerCase()}
@@ -236,23 +237,21 @@ const termCount = glossaryTerms.length;
                         {term.abbr}
                       </span>
                     )}
-                    <h3 class="font-bold text-ibt-text leading-snug">{term.en}</h3>
+                    <h3 class="font-bold text-ibt-text leading-snug group-hover:text-ibt-red transition-colors">{term.en}</h3>
                     <p class="text-sm text-ibt-text-light">{term.ja}</p>
                   </div>
+                  <svg class="w-4 h-4 text-gray-300 group-hover:text-ibt-red flex-shrink-0 mt-1 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
                 <p class="text-sm text-ibt-text-light leading-relaxed mt-2">{term.definition}</p>
-                {term.link && (
-                  <a
-                    href={term.link}
-                    class="inline-flex items-center gap-1 mt-3 text-sm font-bold text-ibt-red hover:underline"
-                  >
-                    詳しく見る
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </a>
-                )}
-              </div>
+                <span class="inline-flex items-center gap-1 mt-3 text-sm font-bold text-ibt-red">
+                  詳しく見る
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </a>
             ))}
           </div>
         </div>
