@@ -1,0 +1,478 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { glossaryTerms, glossaryCategories } from '../data/ib-glossary';
+
+const siteUrl = 'https://ib-tutors.net';
+
+const categoryLabels: Record<string, string> = {
+  'IB Core': 'IBプログラム基本',
+  'DP Core': 'DPコア要素',
+  'DP Subjects': 'DP科目グループ',
+  'Assessment': '評価・試験',
+  'MYP': 'MYP（中等教育プログラム）',
+  'PYP': 'PYP（初等教育プログラム）',
+  'General': '一般用語',
+};
+
+const categoryIcons: Record<string, string> = {
+  'IB Core': '🌍',
+  'DP Core': '📚',
+  'DP Subjects': '📖',
+  'Assessment': '📝',
+  'MYP': '🎯',
+  'PYP': '🌱',
+  'General': '💡',
+};
+
+// Build alphabetical index (A-Z)
+const alphaLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const termsByLetter: Record<string, typeof glossaryTerms> = {};
+for (const letter of alphaLetters) {
+  const matches = glossaryTerms.filter(t => {
+    const first = (t.abbr || t.en).charAt(0).toUpperCase();
+    return first === letter;
+  });
+  if (matches.length > 0) {
+    termsByLetter[letter] = matches.sort((a, b) =>
+      (a.abbr || a.en).localeCompare(b.abbr || b.en)
+    );
+  }
+}
+
+// Schema.org DefinedTermSet
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "IB用語集",
+  "description": "IBプログラムの専門用語をわかりやすく解説。TOK、EE、IA、CAS、DP、MYP、PYPなど、IBで使われる用語を50語以上収録。",
+  "url": `${siteUrl}/ib-glossary/`,
+  "inLanguage": ["ja", "en"],
+  "hasDefinedTerm": glossaryTerms.map(t => ({
+    "@type": "DefinedTerm",
+    "name": t.abbr ? `${t.abbr} (${t.en})` : t.en,
+    "description": t.definition,
+    "inDefinedTermSet": `${siteUrl}/ib-glossary/`,
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": `${siteUrl}/` },
+    { "@type": "ListItem", "position": 2, "name": "IB用語集", "item": `${siteUrl}/ib-glossary/` },
+  ],
+};
+
+const termCount = glossaryTerms.length;
+---
+
+<BaseLayout
+  title="IB用語集｜IB専門家庭教師IBT"
+  description="IBプログラムの専門用語をわかりやすく解説。TOK、EE、IA、CAS、DP、MYP、PYPなど、IBで使われる用語を50語以上収録。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/85 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">IB用語集</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">IB用語集</h1>
+      <p class="mt-4 text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed">
+        IB（国際バカロレア）で使われる専門用語を{termCount}語収録。<br class="hidden md:block" />
+        わからない用語があったら、ここで確認しよう。
+      </p>
+    </div>
+  </section>
+
+  <!-- Search & Filter -->
+  <section class="bg-white border-b border-ibt-border sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row gap-4 items-center">
+        <!-- Search Input -->
+        <div class="relative flex-1 w-full">
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+          <input
+            type="text"
+            id="glossary-search"
+            placeholder="用語を検索（例: TOK、内部評価、Extended Essay）"
+            class="w-full pl-12 pr-4 py-3 bg-ibt-bg border border-ibt-border rounded-xl text-ibt-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
+          />
+          <button
+            id="clear-search"
+            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-ibt-text hidden"
+            aria-label="検索をクリア"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="flex flex-wrap gap-2 justify-center md:justify-end">
+          <button class="category-btn active px-3 py-1.5 text-xs font-bold rounded-full border transition-colors" data-category="all">
+            すべて
+          </button>
+          {glossaryCategories.map(cat => (
+            <button class="category-btn px-3 py-1.5 text-xs font-bold rounded-full border transition-colors" data-category={cat}>
+              {categoryIcons[cat]} {categoryLabels[cat]}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Alphabet Jump Links -->
+      <div class="flex flex-wrap gap-1 mt-3 justify-center" id="alpha-nav">
+        {alphaLetters.map(letter => (
+          <a
+            href={`#letter-${letter}`}
+            class={`alpha-link w-8 h-8 flex items-center justify-center text-xs font-bold rounded-lg transition-colors ${
+              termsByLetter[letter]
+                ? 'text-ibt-red hover:bg-ibt-red hover:text-white border border-ibt-red/20'
+                : 'text-gray-300 cursor-default pointer-events-none'
+            }`}
+            data-letter={letter}
+          >
+            {letter}
+          </a>
+        ))}
+      </div>
+
+      <!-- Search Result Count -->
+      <p id="result-count" class="text-sm text-ibt-text-light mt-2 text-center hidden"></p>
+    </div>
+  </section>
+
+  <!-- Terms by Category (default view) -->
+  <section class="py-12 md:py-20 bg-ibt-bg" id="category-view">
+    <div class="max-w-7xl mx-auto px-4">
+      {glossaryCategories.map(cat => (
+        <div class="mb-12 last:mb-0 category-section" data-category={cat}>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-2xl">{categoryIcons[cat]}</span>
+            <h2 class="text-xl md:text-2xl font-bold text-ibt-text">{categoryLabels[cat]}</h2>
+            <span class="text-sm text-ibt-text-light bg-white px-2 py-0.5 rounded-full border border-ibt-border">
+              {glossaryTerms.filter(t => t.category === cat).length}語
+            </span>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {glossaryTerms
+              .filter(t => t.category === cat)
+              .map(term => (
+                <div
+                  class="glossary-card bg-white rounded-2xl border border-ibt-border p-5 hover:shadow-md hover:border-ibt-red/20 transition-all"
+                  data-en={term.en.toLowerCase()}
+                  data-ja={term.ja}
+                  data-abbr={(term.abbr || '').toLowerCase()}
+                  data-def={term.definition}
+                  data-category={term.category}
+                >
+                  <div class="flex items-start justify-between gap-2 mb-2">
+                    <div>
+                      {term.abbr && (
+                        <span class="inline-block bg-ibt-red/10 text-ibt-red font-bold text-sm px-2 py-0.5 rounded-md mb-1">
+                          {term.abbr}
+                        </span>
+                      )}
+                      <h3 class="font-bold text-ibt-text leading-snug">{term.en}</h3>
+                      <p class="text-sm text-ibt-text-light">{term.ja}</p>
+                    </div>
+                  </div>
+                  <p class="text-sm text-ibt-text-light leading-relaxed mt-2">{term.definition}</p>
+                  {term.link && (
+                    <a
+                      href={term.link}
+                      class="inline-flex items-center gap-1 mt-3 text-sm font-bold text-ibt-red hover:underline"
+                    >
+                      詳しく見る
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Terms by Alphabet (hidden by default, shown on search or alpha click) -->
+  <section class="py-12 md:py-20 bg-ibt-bg hidden" id="alpha-view">
+    <div class="max-w-7xl mx-auto px-4">
+      {Object.entries(termsByLetter).map(([letter, terms]) => (
+        <div class="mb-10 last:mb-0 alpha-section" id={`letter-${letter}`} data-letter={letter}>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 flex items-center justify-center bg-ibt-red text-white font-bold text-lg rounded-xl">
+              {letter}
+            </span>
+            <div class="flex-1 h-px bg-ibt-border"></div>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {terms.map(term => (
+              <div
+                class="glossary-card-alpha bg-white rounded-2xl border border-ibt-border p-5 hover:shadow-md hover:border-ibt-red/20 transition-all"
+                data-en={term.en.toLowerCase()}
+                data-ja={term.ja}
+                data-abbr={(term.abbr || '').toLowerCase()}
+                data-def={term.definition}
+                data-category={term.category}
+              >
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <div>
+                    {term.abbr && (
+                      <span class="inline-block bg-ibt-red/10 text-ibt-red font-bold text-sm px-2 py-0.5 rounded-md mb-1">
+                        {term.abbr}
+                      </span>
+                    )}
+                    <h3 class="font-bold text-ibt-text leading-snug">{term.en}</h3>
+                    <p class="text-sm text-ibt-text-light">{term.ja}</p>
+                  </div>
+                </div>
+                <p class="text-sm text-ibt-text-light leading-relaxed mt-2">{term.definition}</p>
+                {term.link && (
+                  <a
+                    href={term.link}
+                    class="inline-flex items-center gap-1 mt-3 text-sm font-bold text-ibt-red hover:underline"
+                  >
+                    詳しく見る
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- No Results Message -->
+  <section class="py-20 bg-ibt-bg hidden" id="no-results">
+    <div class="max-w-md mx-auto px-4 text-center">
+      <p class="text-5xl mb-4">🔍</p>
+      <p class="text-lg font-bold text-ibt-text mb-2">該当する用語が見つかりませんでした</p>
+      <p class="text-ibt-text-light text-sm">検索キーワードを変えて、もう一度お試しください。</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-ibt-text mb-4">
+        IBの勉強で困っていませんか？
+      </h2>
+      <p class="text-ibt-text-light mb-8 leading-relaxed">
+        IBTの講師は全員IB卒業生。TOK・EE・IAなどDP独自の課題から、MYP・PYPの日々の学習まで、<br class="hidden md:block" />
+        IB経験者だからこそできるサポートを提供します。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow"
+        >
+          無料体験を申し込む
+        </a>
+        <a
+          href="/tutors/"
+          class="inline-flex items-center justify-center gap-2 bg-white text-ibt-text font-bold px-8 py-4 rounded-full border-2 border-ibt-border hover:border-ibt-red/30 transition-colors"
+        >
+          講師紹介を見る
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .category-btn {
+    background: white;
+    color: #555;
+    border-color: #f0f0f0;
+  }
+  .category-btn:hover,
+  .category-btn.active {
+    background: #CC2210;
+    color: white;
+    border-color: #CC2210;
+  }
+</style>
+
+<script>
+  const searchInput = document.getElementById('glossary-search') as HTMLInputElement;
+  const clearBtn = document.getElementById('clear-search') as HTMLButtonElement;
+  const categoryBtns = document.querySelectorAll('.category-btn');
+  const categoryView = document.getElementById('category-view') as HTMLElement;
+  const alphaView = document.getElementById('alpha-view') as HTMLElement;
+  const noResults = document.getElementById('no-results') as HTMLElement;
+  const resultCount = document.getElementById('result-count') as HTMLElement;
+  const allCards = document.querySelectorAll('.glossary-card');
+  const allAlphaCards = document.querySelectorAll('.glossary-card-alpha');
+  const categorySections = document.querySelectorAll('.category-section');
+  const alphaSections = document.querySelectorAll('.alpha-section');
+
+  let activeCategory = 'all';
+
+  function showCategoryView() {
+    categoryView.classList.remove('hidden');
+    alphaView.classList.add('hidden');
+    noResults.classList.add('hidden');
+  }
+
+  function showAlphaView() {
+    categoryView.classList.add('hidden');
+    alphaView.classList.remove('hidden');
+    noResults.classList.add('hidden');
+  }
+
+  function showNoResults() {
+    categoryView.classList.add('hidden');
+    alphaView.classList.add('hidden');
+    noResults.classList.remove('hidden');
+  }
+
+  function filterBySearch(query: string) {
+    const q = query.toLowerCase().trim();
+
+    if (!q && activeCategory === 'all') {
+      showCategoryView();
+      resultCount.classList.add('hidden');
+      allCards.forEach(c => (c as HTMLElement).classList.remove('hidden'));
+      categorySections.forEach(s => (s as HTMLElement).classList.remove('hidden'));
+      return;
+    }
+
+    if (!q) {
+      filterByCategory(activeCategory);
+      return;
+    }
+
+    showCategoryView();
+    let count = 0;
+
+    categorySections.forEach(section => {
+      const cat = (section as HTMLElement).dataset.category;
+      if (activeCategory !== 'all' && cat !== activeCategory) {
+        (section as HTMLElement).classList.add('hidden');
+        return;
+      }
+
+      let sectionVisible = false;
+      const cards = section.querySelectorAll('.glossary-card');
+      cards.forEach(card => {
+        const el = card as HTMLElement;
+        const en = el.dataset.en || '';
+        const ja = el.dataset.ja || '';
+        const abbr = el.dataset.abbr || '';
+        const def = el.dataset.def || '';
+        const match = en.includes(q) || ja.includes(q) || abbr.includes(q) || def.includes(q);
+        el.classList.toggle('hidden', !match);
+        if (match) {
+          sectionVisible = true;
+          count++;
+        }
+      });
+      (section as HTMLElement).classList.toggle('hidden', !sectionVisible);
+    });
+
+    if (count === 0) {
+      showNoResults();
+    }
+
+    resultCount.textContent = `${count}件の用語が見つかりました`;
+    resultCount.classList.toggle('hidden', count === 0);
+  }
+
+  function filterByCategory(category: string) {
+    activeCategory = category;
+    const q = searchInput.value.toLowerCase().trim();
+
+    categoryBtns.forEach(btn => {
+      btn.classList.toggle('active', (btn as HTMLElement).dataset.category === category);
+    });
+
+    if (q) {
+      filterBySearch(q);
+      return;
+    }
+
+    showCategoryView();
+    resultCount.classList.add('hidden');
+
+    if (category === 'all') {
+      categorySections.forEach(s => (s as HTMLElement).classList.remove('hidden'));
+      allCards.forEach(c => (c as HTMLElement).classList.remove('hidden'));
+    } else {
+      categorySections.forEach(section => {
+        const cat = (section as HTMLElement).dataset.category;
+        (section as HTMLElement).classList.toggle('hidden', cat !== category);
+      });
+      allCards.forEach(c => (c as HTMLElement).classList.remove('hidden'));
+    }
+  }
+
+  // Event listeners
+  searchInput.addEventListener('input', () => {
+    const val = searchInput.value;
+    clearBtn.classList.toggle('hidden', !val);
+    filterBySearch(val);
+  });
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    clearBtn.classList.add('hidden');
+    filterBySearch('');
+  });
+
+  categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterByCategory((btn as HTMLElement).dataset.category || 'all');
+    });
+  });
+
+  // Alpha nav: scroll to letter section in alpha view
+  document.querySelectorAll('.alpha-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const letter = (link as HTMLElement).dataset.letter;
+      if (!letter) return;
+
+      // Switch to alpha view
+      showAlphaView();
+      searchInput.value = '';
+      clearBtn.classList.add('hidden');
+      resultCount.classList.add('hidden');
+
+      // Reset category filter
+      activeCategory = 'all';
+      categoryBtns.forEach(btn => {
+        btn.classList.toggle('active', (btn as HTMLElement).dataset.category === 'all');
+      });
+
+      // Show all alpha sections
+      alphaSections.forEach(s => (s as HTMLElement).classList.remove('hidden'));
+      allAlphaCards.forEach(c => (c as HTMLElement).classList.remove('hidden'));
+
+      // Scroll to letter
+      const target = document.getElementById(`letter-${letter}`);
+      if (target) {
+        const offset = 200; // account for sticky header
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
