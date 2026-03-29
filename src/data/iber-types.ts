@@ -47,7 +47,7 @@ export const iberTypes: IBerType[] = [
     name: 'Open-minded',
     nameJa: '心を開く人',
     description: '異なる文化や価値観を理解し、尊重するタイプ。国際的な視野でTOKに取り組めます。',
-    color: '#8D6E63',
+    color: '#26A69A',
   },
   {
     id: 'caring',

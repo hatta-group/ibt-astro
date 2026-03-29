@@ -1,0 +1,448 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="MYP（中等教育プログラム）とは？｜IB専門家庭教師IBT"
+  description="IB MYP（Middle Years Programme）を徹底解説。11〜16歳対象の8教科グループ、Personal Project、コミュニティプロジェクトの特徴と対策。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "MYP（中等教育プログラム）とは", "item": "https://ib-tutors.net/ib-myp/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "IB MYP（中等教育プログラム）個別指導",
+      "description": "IB MYP（Middle Years Programme）対応の個別指導。8教科グループ、ATLスキル、Personal Project、Service as Actionなど、IB卒業生講師がマンツーマンでサポートします。",
+      "provider": {
+        "@type": "Organization",
+        "name": "IBT（IB Tutors）",
+        "url": "https://ib-tutors.net/"
+      },
+      "educationalLevel": "Secondary",
+      "teaches": "IB MYP全8教科グループ・Personal Project・Service as Action",
+      "offers": {
+        "@type": "Offer",
+        "price": "6050",
+        "priceCurrency": "JPY",
+        "description": "1回60分あたり6,050円〜6,468円（税込）"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "IB MYP（中等教育プログラム）とは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IB MYP（Middle Years Programme）は、国際バカロレア（IB）が提供する11歳から16歳を対象とした5年間の中等教育プログラムです。8つの教科グループを通じて、批判的思考力・学際的理解・国際的視野を育みます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "MYPのPersonal Projectとは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Personal Projectは、MYP最終年（Year 5）に行う個人プロジェクトです。自分の興味・関心に基づいてテーマを選び、成果物の制作とレポート（3,500語）を作成します。MYPで培ったATLスキルを総合的に発揮する集大成的な評価です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "MYPからDPへの移行で大切なことは？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MYPはDPの準備段階として非常に重要です。MYPで身につけるATLスキル（思考・コミュニケーション・社会性・自己管理・リサーチ）は、DPの厳格なカリキュラムに不可欠です。特にMYP Year 4-5でのスキル定着が、DPでの成功を大きく左右します。"
+          }
+        }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-500 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/85 text-sm mb-4">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">&gt;</span>
+        <span class="text-white">MYP（中等教育プログラム）とは</span>
+      </nav>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="bg-white/20 text-white text-sm font-bold px-4 py-1.5 rounded-full">11-16歳対象</span>
+        <span class="bg-white/20 text-white text-sm font-bold px-4 py-1.5 rounded-full">Middle Years Programme</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
+        MYP（中等教育プログラム）とは？
+      </h1>
+      <p class="text-white/80 mt-4 text-lg md:text-xl max-w-2xl leading-relaxed">
+        8つの教科グループで幅広い知識と批判的思考力を育む。<br />PYPとDPをつなぐ、IBの中核プログラム。
+      </p>
+    </div>
+  </section>
+
+  <!-- MYPとは -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-blue-600 font-bold text-sm tracking-widest mb-4 text-center">WHAT IS MYP?</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">MYP（中等教育プログラム）とは</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-500 mx-auto mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-6">
+          IB MYP（Middle Years Programme / 中等教育プログラム）は、国際バカロレア（IB）が提供する<strong>11歳から16歳を対象とした5年間の教育プログラム</strong>です。日本では主に中学校から高校1年生にあたる時期に実施されています。
+        </p>
+        <p class="text-ibt-text-light leading-relaxed mb-6">
+          MYPは<strong>8つの教科グループ</strong>を通じて、幅広い知識と批判的思考力を育むプログラムです。各教科は「グローバルな文脈（Global Contexts）」と関連づけて学習するため、現実世界との結びつきを常に意識した学びが展開されます。
+        </p>
+        <p class="text-ibt-text-light leading-relaxed">
+          PYPの探究型学習で培った力を発展させ、DPの高度な学びに備える「架け橋」としての役割を担います。MYPで身につけるATLスキル（Approaches to Learning）は、DPでの成功に直結する重要な学習スキルです。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MYPの特徴 -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="text-blue-600 font-bold text-sm tracking-widest mb-4">KEY FEATURES</p>
+        <h2 class="text-2xl md:text-4xl font-bold">MYPの5つの特徴</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-3">8つの教科グループ</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            言語と文学、言語習得、個人と社会、理科、数学、芸術、保健体育、デザインの8教科を必修で学びます。幅広い知識とバランスの取れた教育を実現します。
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-3">ATLスキル（学習のアプローチ）</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            思考スキル、コミュニケーションスキル、社会性スキル、自己管理スキル、リサーチスキルの5カテゴリ。教科を超えて活用できる「学び方を学ぶ」力です。
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-3">グローバルな文脈（Global Contexts）</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            「アイデンティティと関係性」「時空間における方向づけ」「個人的表現と文化的表現」など6つの文脈を通じて、学びと現実世界を結びつけます。
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-3">Personal Project</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            MYP最終年の集大成。自分の興味に基づくテーマで成果物とレポート（3,500語）を作成。ATLスキルを総合的に発揮する個人プロジェクトです。
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-3">Service as Action</h3>
+          <p class="text-ibt-text-light leading-relaxed text-sm">
+            学んだことを実際の行動に移す「奉仕活動」。地域や学校コミュニティへの貢献を通じて、責任感と共感力を育みます。DPのCASへとつながります。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8教科グループ -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-blue-600 font-bold text-sm tracking-widest mb-4 text-center">8 SUBJECT GROUPS</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">MYPの8つの教科グループ</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-500 mx-auto mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-8 text-center">
+          MYPでは8つの教科グループを全て学ぶことが求められます。専門性を深めるDPとは異なり、幅広い教養を身につけることが目的です。
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-blue-50 rounded-2xl border border-blue-100 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-blue-600 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">1</span>
+              <h3 class="text-lg font-bold text-blue-800">言語と文学（Language and Literature）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">母語での文学作品の読解・分析・批評。テクスト分析力、文章構成力、批判的読解力を養います。</p>
+          </div>
+          <div class="bg-blue-50 rounded-2xl border border-blue-100 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-blue-600 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">2</span>
+              <h3 class="text-lg font-bold text-blue-800">言語習得（Language Acquisition）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">外国語の習得。コミュニケーション能力と異文化理解を重視。日本のIB校では主に英語が対象です。</p>
+          </div>
+          <div class="bg-blue-50 rounded-2xl border border-blue-100 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-blue-600 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">3</span>
+              <h3 class="text-lg font-bold text-blue-800">個人と社会（Individuals and Societies）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">歴史・地理・経済・公民など。社会事象を多角的に分析し、根拠に基づいた議論を展開する力を育みます。</p>
+          </div>
+          <div class="bg-blue-50 rounded-2xl border border-blue-100 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-blue-600 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">4</span>
+              <h3 class="text-lg font-bold text-blue-800">理科（Sciences）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">生物・化学・物理・地球科学。実験・データ分析を重視し、科学的探究のプロセスを体験的に学びます。</p>
+          </div>
+          <div class="bg-blue-50 rounded-2xl border border-blue-100 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-blue-600 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">5</span>
+              <h3 class="text-lg font-bold text-blue-800">数学（Mathematics）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">数と代数、関数、幾何と三角法、統計と確率の4分野。論理的思考力と問題解決力を重点的に養います。</p>
+          </div>
+          <div class="bg-blue-50 rounded-2xl border border-blue-100 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-blue-600 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">6</span>
+              <h3 class="text-lg font-bold text-blue-800">芸術（Arts）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">音楽・美術・演劇・映像など。創造的表現力と芸術的鑑賞力を養い、自己表現の幅を広げます。</p>
+          </div>
+          <div class="bg-blue-50 rounded-2xl border border-blue-100 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-blue-600 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">7</span>
+              <h3 class="text-lg font-bold text-blue-800">保健体育（Physical and Health Education）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">身体活動を通じた健康的なライフスタイルの構築。チームワーク・自己管理・目標設定のスキルも育みます。</p>
+          </div>
+          <div class="bg-blue-50 rounded-2xl border border-blue-100 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-blue-600 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">8</span>
+              <h3 class="text-lg font-bold text-blue-800">デザイン（Design）</h3>
+            </div>
+            <p class="text-ibt-text-light leading-relaxed text-sm">デザインサイクル（調査・開発・制作・評価）を通じて、実践的な問題解決能力とクリエイティブ思考を養います。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Project -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-blue-600 font-bold text-sm tracking-widest mb-4 text-center">PERSONAL PROJECT</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">Personal Projectとは</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10">
+          <p class="text-ibt-text-light leading-relaxed mb-6">
+            Personal Projectは、<strong>MYP最終年（Year 5）に行う個人プロジェクト</strong>です。MYPでの学びの集大成として、自分の興味・関心に基づくテーマを選び、長期間にわたって探究を進めます。
+          </p>
+          <div class="space-y-4 mb-6">
+            <div class="flex items-start gap-4">
+              <span class="bg-blue-600 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">1</span>
+              <div>
+                <p class="font-bold mb-1">テーマ設定</p>
+                <p class="text-ibt-text-light text-sm">自分の興味に基づいてテーマを決定。グローバルな文脈と結びつけ、明確な目標を設定します。</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="bg-blue-600 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">2</span>
+              <div>
+                <p class="font-bold mb-1">探究・制作プロセス</p>
+                <p class="text-ibt-text-light text-sm">リサーチ、計画、制作を進め、プロセスジャーナルに記録。ATLスキルを駆使して進めます。</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="bg-blue-600 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">3</span>
+              <div>
+                <p class="font-bold mb-1">成果物とレポート</p>
+                <p class="text-ibt-text-light text-sm">成果物（作品・イベント・キャンペーン等）を完成させ、レポート（最大3,500語）を作成します。</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="bg-blue-600 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">4</span>
+              <div>
+                <p class="font-bold mb-1">評価</p>
+                <p class="text-ibt-text-light text-sm">「調査」「計画」「行動」「振り返り」の4つの規準で評価されます。プロセスと結果の両方が重要です。</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-ibt-text-light bg-blue-50 rounded-xl p-4 border border-blue-100">
+            Personal Projectは、DP進学時にも重視される重要な評価です。IBTではテーマ設定からレポート作成まで、経験豊富なIB卒業生講師がサポートします。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MYPからDPへ -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-blue-600 font-bold text-sm tracking-widest mb-4 text-center">MYP TO DP</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">MYPからDPへの接続</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-500 mx-auto mb-8 rounded-full"></div>
+        <p class="text-ibt-text-light leading-relaxed mb-8">
+          MYPはDPへの重要な準備段階です。MYPで培ったスキルや学習姿勢が、DPでの成功を大きく左右します。
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6">
+            <h3 class="font-bold mb-2">ATLスキルがDPの基盤になる</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">MYPで鍛えたリサーチスキル・批判的思考・自己管理力は、DPのTOK・EE・IAすべてに不可欠です。MYPでこれらのスキルを定着させておくことが、DPでの高得点につながります。</p>
+          </div>
+          <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6">
+            <h3 class="font-bold mb-2">科目選択の準備</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">DPでは6科目群から科目を選択します。MYPで8教科すべてを学ぶことで、自分の得意分野・興味のある分野を把握し、DP科目選択の判断材料になります。</p>
+          </div>
+          <div class="bg-ibt-bg rounded-2xl border border-ibt-border p-6">
+            <h3 class="font-bold mb-2">学習習慣と時間管理</h3>
+            <p class="text-ibt-text-light leading-relaxed text-sm">DPは非常にハードなプログラムです。MYPのうちから課題管理・時間管理・自主学習の習慣を確立しておくことが、DP2年間を乗り切る鍵になります。</p>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <a href="/ib-dp/" class="inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">
+            DP（ディプロマプログラム）の詳細を見る →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IBTのMYPサポート -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-blue-600 font-bold text-sm tracking-widest mb-4 text-center">IBT SUPPORT</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-center">IBTのMYPサポート</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="bg-blue-50 rounded-2xl border border-blue-100 p-8 md:p-10 mb-8">
+          <h3 class="text-xl font-bold mb-4">MYP対応の個別指導</h3>
+          <p class="text-ibt-text-light leading-relaxed mb-6">
+            IBTでは、IB卒業生の講師がMYP生一人ひとりに合わせたマンツーマン指導を提供しています。8教科すべてに対応し、各教科の評価基準（Criteria）に沿った指導を行います。
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">8教科グループすべての教科指導</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">Personal Projectのテーマ設定・レポート指導</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">評価基準（Criteria A-D）に沿ったスキル向上</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></span>
+              <span class="text-ibt-text-light text-sm">DP進学に向けた準備・科目選択アドバイス</span>
+            </li>
+          </ul>
+
+          <div class="bg-white rounded-xl p-6 border border-blue-200">
+            <p class="text-sm font-bold text-blue-800 mb-2">MYP授業料（税込）</p>
+            <p class="text-2xl font-black text-blue-700">6,050円〜6,468円<span class="text-sm font-normal text-ibt-text-light">/回（60分）</span></p>
+            <p class="text-xs text-ibt-text-light mt-2">入会金0円・都度払い制</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/lessons-pricing/" class="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-full hover:bg-blue-700 transition-colors text-center">
+            料金・授業内容を見る
+          </a>
+          <a href="/contact/" class="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-full border-2 border-blue-600 hover:bg-blue-50 transition-colors text-center">
+            60分無料体験に申し込む
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-blue-600 font-bold text-sm tracking-widest mb-4 text-center">FAQ</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-8 text-center">MYPに関するよくある質問</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-500 mx-auto mb-8 rounded-full"></div>
+
+        <div class="space-y-4">
+          <details class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 group">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg">
+              MYP（中等教育プログラム）とは何ですか？
+              <svg class="w-5 h-5 text-ibt-text-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="text-ibt-text-light leading-relaxed mt-4">
+              IB MYP（Middle Years Programme）は、11歳から16歳を対象とした5年間の中等教育プログラムです。8つの教科グループを通じて幅広い知識と批判的思考力を育み、DPへの準備を行います。
+            </p>
+          </details>
+          <details class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 group">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg">
+              Personal Projectとは何ですか？
+              <svg class="w-5 h-5 text-ibt-text-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="text-ibt-text-light leading-relaxed mt-4">
+              MYP最終年（Year 5）に行う個人プロジェクトです。自分の興味に基づいてテーマを選び、成果物の制作とレポート（最大3,500語）を作成します。「調査」「計画」「行動」「振り返り」の4つの規準で評価されます。
+            </p>
+          </details>
+          <details class="bg-ibt-bg rounded-2xl border border-ibt-border p-6 group">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg">
+              MYPからDPへの移行で大切なことは？
+              <svg class="w-5 h-5 text-ibt-text-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="text-ibt-text-light leading-relaxed mt-4">
+              MYPで身につけるATLスキル（思考・コミュニケーション・リサーチ等）はDPに不可欠です。特にMYP Year 4-5で学習習慣・時間管理・自主学習の力を確立しておくことが、DPでの成功の鍵になります。科目選択に向けて、自分の得意分野を見極めることも重要です。
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-500 rounded-2xl p-10 md:p-16 text-center">
+        <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">MYPの成績を、次のレベルへ</h2>
+        <p class="text-white/80 mb-8 text-lg max-w-xl mx-auto">
+          IB卒業生の講師が、MYP生の学びをマンツーマンでサポートします。まずは60分の無料体験から。
+        </p>
+        <a
+          href="/contact/"
+          class="inline-block bg-white text-blue-700 font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition-colors text-lg shadow-lg"
+        >
+          60分無料体験に申し込む
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
