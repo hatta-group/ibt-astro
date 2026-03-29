@@ -2,7 +2,7 @@
 title: "Open-minded（視野の広い探索者）タイプ｜IBerタイプ徹底解説"
 slug: "open-minded"
 description: "Open-minded（視野の広い探索者） 🌍 Open-minded 視野の広い探索者タイプ 多角的な視点で世界を見る。異文化・異意見への理解が深く、IBが求める「国際的な視野」を自 [...]"
-color: "#00ACC1"
+color: "#8D6E63"
 draft: false
 ---
 ## 性格・特徴

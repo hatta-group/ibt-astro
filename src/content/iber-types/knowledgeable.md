@@ -2,7 +2,7 @@
 title: "Knowledgeable（知識の蓄積者）タイプ｜IBerタイプ徹底解説"
 slug: "knowledgeable"
 description: "Knowledgeable（知識の蓄積者） 📚 Knowledgeable 知識の蓄積者タイプ 「知ること」自体が喜びになっているタイプ。IBの膨大な知識量にも怯まず、着実にインプット [...]"
-color: "#FB8C00"
+color: "#7B1FA2"
 draft: false
 ---
 ## 性格・特徴

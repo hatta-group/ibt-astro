@@ -2,7 +2,7 @@
 title: "Thinker（論理の職人）タイプ｜IBerタイプ徹底解説"
 slug: "thinker"
 description: "Thinker（論理の職人） 🧠 Thinker 論理の職人タイプ 分析と批判的思考のエキスパート。「本当にそれが正しいのか？」と考え続ける。ToKやMaths Analysisで本領 [...]"
-color: "#43A047"
+color: "#37474F"
 draft: false
 ---
 ## 性格・特徴

@@ -2,7 +2,7 @@
 title: "Principled（信念の人）タイプ｜IBerタイプ徹底解説"
 slug: "principled"
 description: "Principled（信念の人） ⚖️ Principled 信念の人タイプ ブレない軸と誠実さを持つIBer。倫理観の強さがTOKやCASで輝く。正義感と責任感で周囲の信頼を集める存 [...]"
-color: "#8E24AA"
+color: "#455A64"
 draft: false
 ---
 ## 性格・特徴

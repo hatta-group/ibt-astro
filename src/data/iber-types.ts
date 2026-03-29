@@ -19,14 +19,14 @@ export const iberTypes: IBerType[] = [
     name: 'Knowledgeable',
     nameJa: '知識のある人',
     description: '幅広い知識を持ち、それを活用して問題解決に挑むタイプ。TOKで深い議論ができます。',
-    color: '#FB8C00',
+    color: '#7B1FA2',
   },
   {
     id: 'thinker',
     name: 'Thinker',
     nameJa: '考える人',
     description: '論理的思考が得意で、複雑な問題を分析し解決策を導くタイプ。数学やサイエンスが得意。',
-    color: '#43A047',
+    color: '#37474F',
   },
   {
     id: 'communicator',
@@ -40,14 +40,14 @@ export const iberTypes: IBerType[] = [
     name: 'Principled',
     nameJa: '信念をもつ人',
     description: '誠実で倫理観が強く、正しいことのために行動するタイプ。CAS活動で力を発揮します。',
-    color: '#8E24AA',
+    color: '#455A64',
   },
   {
     id: 'open-minded',
     name: 'Open-minded',
     nameJa: '心を開く人',
     description: '異なる文化や価値観を理解し、尊重するタイプ。国際的な視野でTOKに取り組めます。',
-    color: '#00ACC1',
+    color: '#8D6E63',
   },
   {
     id: 'caring',
