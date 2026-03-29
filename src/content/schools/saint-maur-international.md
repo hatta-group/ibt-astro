@@ -128,7 +128,7 @@ INFO
 info@stmaur.ac.jp で問い合わせ可能
 
         **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://www.stmaur.ac.jp/)でご確認ください。
-      
+
 
 ## 学費（参考情報）
 
@@ -150,44 +150,44 @@ info@stmaur.ac.jp で問い合わせ可能
 
 | 初年度総費用（G1入学時） | 約¥4,200,000〜¥4,300,000 |
 
-        ※ 上記は参考値です。最新の費用は[Saint Maur 公式サイト](https://www.stmaur.ac.jp/)でご確認ください。
-      
+※ 上記は参考値です。最新の費用は[Saint Maur 公式サイト](https://www.stmaur.ac.jp/)でご確認ください。
+
 
 ## 進学実績
 
 国内大学（実績あり）
 
-          国内: 早稲田大学
+国内: 早稲田大学
 
-          慶應義塾大学
-        
+慶應義塾大学
+
 
 海外大学（実績あり）
 
-          上智大学
+上智大学
 
 海外: University of Toronto
 
-          UBC
+UBC
 
-          Boston University
+Boston University
 
-          NYU
+NYU
 
-          Purdue University
+Purdue University
 
-          University of California各校
+University of California各校
 
-          英国G5大学
-        
+英国G5大学
 
-        ※ IBスコアの平均点等の公式データは学校にお問い合わせください。
-      
+
+※ IBスコアの平均点等の公式データは学校にお問い合わせください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 みなとみらい線「元町・中華街」駅 徒歩約10分、JR根岸線「石川町」駅 徒歩約15分
@@ -201,21 +201,21 @@ Saint Maurへのアクセス
 
 ## Saint MaurのIBでお悩みですか？
 
-      IA・EEの書き方
+IA・EEの書き方
 
-      TOKエッセイ
+TOKエッセイ
 
-      DPスコアアップ
+DPスコアアップ
 
-      Biology対策
-    
+Biology対策
+
 IB卒業生の家庭教師が、Saint Maurのカリキュラムに合わせて直接サポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -247,8 +247,8 @@ DP全科目（Group 1～6）に加え、TOK・EE・IA対策、MYP課題サポー
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [Saint Maur 公式サイト ↗](https://www.stmaur.ac.jp/)
+[Saint Maur 公式サイト ↗](https://www.stmaur.ac.jp/)

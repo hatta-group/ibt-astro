@@ -111,7 +111,7 @@ INFO
 iisjtokyo@iisjapan.com
 
         **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://iisjapan.com/)でご確認ください。
-      
+
 
 ## 学費（参考情報）
 
@@ -129,13 +129,13 @@ iisjtokyo@iisjapan.com
 
 | スクールバス（往復・江東区内） | ¥150,000/年 |
 
-        ※ 上記は参考値です。最新の費用は[IISJ 公式サイト](https://iisjapan.com/)でご確認ください。
-      
+※ 上記は参考値です。最新の費用は[IISJ 公式サイト](https://iisjapan.com/)でご確認ください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 東京メトロ東西線「東陽町」駅 徒歩約12分
@@ -149,21 +149,21 @@ IISJへのアクセス
 
 ## IISJのIBでお悩みですか？
 
-      IA・EEの書き方
+IA・EEの書き方
 
-      TOKエッセイ
+TOKエッセイ
 
-      DPスコアアップ
+DPスコアアップ
 
-      IB科目全般
-    
+IB科目全般
+
 IB卒業生の家庭教師が、IISJのカリキュラムに合わせて直接サポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -195,8 +195,8 @@ DP全科目（Group 1～6）に加え、TOK・EE・IA対策、MYP課題サポー
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [IISJ 公式サイト ↗](https://iisjapan.com/)
+[IISJ 公式サイト ↗](https://iisjapan.com/)

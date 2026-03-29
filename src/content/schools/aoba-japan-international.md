@@ -146,7 +146,7 @@ INFO
 英語力の証明が必要。編入も随時受付
 
         **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://japaninternationalschool.com/)でご確認ください。
-      
+
 
 ## 学費（参考情報）
 
@@ -170,46 +170,46 @@ INFO
 
 | 施設開発費（新入生のみ） | ¥320,000 |
 
-        ※ 上記は参考値です。最新の費用は[A-JIS 公式サイト](https://japaninternationalschool.com/)でご確認ください。
-      
+※ 上記は参考値です。最新の費用は[A-JIS 公式サイト](https://japaninternationalschool.com/)でご確認ください。
+
 
 ## 進学実績
 
 国内大学（実績あり）
 
-          国内: 東京大学
+国内: 東京大学
 
-          東北大学
+東北大学
 
-          慶應義塾大学
+慶應義塾大学
 
-          早稲田大学
+早稲田大学
 
-          上智大学
-        
+上智大学
+
 
 海外大学（実績あり）
 
-          国際基督教大学
+国際基督教大学
 
 海外: UC Berkeley
 
-          Imperial College London
+Imperial College London
 
-          University of Chicago
+University of Chicago
 
-          University of Michigan
+University of Michigan
 
-          University of London
-        
+University of London
 
-        ※ IBスコアの平均点等の公式データは学校にお問い合わせください。
-      
+
+※ IBスコアの平均点等の公式データは学校にお問い合わせください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 Bunkyoキャンパス: JR山手線「巣鴨」駅・「駒込」駅 徒歩圏内、光が丘キャンパス: 都営大江戸線「光が丘」駅 徒歩15分、目黒キャンパス: 東急田園都市線「池尻大橋」駅 徒歩圏内
@@ -223,21 +223,21 @@ A-JISへのアクセス
 
 ## A-JISのIBでお悩みですか？
 
-      IA・EEの書き方
+IA・EEの書き方
 
-      TOKエッセイ
+TOKエッセイ
 
-      DPスコアアップ
+DPスコアアップ
 
-      Biology対策
-    
+Biology対策
+
 IB卒業生の家庭教師が、A-JISのカリキュラムに合わせて直接サポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -269,8 +269,8 @@ DP全科目（Group 1～6）に加え、TOK・EE・IA対策、MYP課題サポー
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [A-JIS 公式サイト ↗](https://japaninternationalschool.com/)
+[A-JIS 公式サイト ↗](https://japaninternationalschool.com/)

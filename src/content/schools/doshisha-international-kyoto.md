@@ -126,7 +126,7 @@ EXAM 03
 学校にお問い合わせください
 
         **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://www.diskyoto.com/)でご確認ください。
-      
+
 
 ## 学費（参考情報）
 
@@ -134,13 +134,13 @@ EXAM 03
 
 学校にお問い合わせください。
 
-        ※ 上記は参考値です。最新の費用は[DISK 公式サイト](https://www.diskyoto.com/)でご確認ください。
-      
+※ 上記は参考値です。最新の費用は[DISK 公式サイト](https://www.diskyoto.com/)でご確認ください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 JR学研都市線 木津駅からバス約10分、近鉄京都線 山田川駅から徒歩約15分
@@ -154,21 +154,21 @@ DISKへのアクセス
 
 ## DISKのIBでお悩みですか？
 
-      IA・EEの書き方
+IA・EEの書き方
 
-      TOKエッセイ
+TOKエッセイ
 
-      DPスコアアップ
+DPスコアアップ
 
-      Physics対策
-    
+Physics対策
+
 IB卒業生の家庭教師が、DISKのカリキュラムに合わせて直接サポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -200,8 +200,8 @@ DP全科目（Group 1～6）に加え、TOK・EE・IA対策、MYP課題サポー
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [DISK 公式サイト ↗](https://www.diskyoto.com/)
+[DISK 公式サイト ↗](https://www.diskyoto.com/)

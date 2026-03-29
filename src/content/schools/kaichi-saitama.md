@@ -85,7 +85,7 @@ Group
 ## 入試情報
 
         **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://ikkanbu.kaichigakuen.ed.jp/)でご確認ください。
-      
+
 
 ## 学費（参考情報）
 
@@ -93,18 +93,18 @@ Group
 
 学校にお問い合わせください。
 
-        ※ 上記は参考値です。最新の学費は[開智 公式サイト](https://ikkanbu.kaichigakuen.ed.jp/)でご確認ください。
-      
+※ 上記は参考値です。最新の学費は[開智 公式サイト](https://ikkanbu.kaichigakuen.ed.jp/)でご確認ください。
+
 
 ## 進学実績
 
-        ※ IBスコアの平均点等の公式データは学校にお問い合わせください。
-      
+※ IBスコアの平均点等の公式データは学校にお問い合わせください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 東武アーバンパークライン（野田線）「東岩槻駅」徒歩15分
@@ -118,21 +118,21 @@ Group
 
 ## 開智のIBでお悩みですか？
 
-      IA・EEの書き方
+IA・EEの書き方
 
-      TOKエッセイ
+TOKエッセイ
 
-      DPスコアアップ
+DPスコアアップ
 
-      IB科目全般
-    
+IB科目全般
+
 IB卒業生の家庭教師が、開智のカリキュラムに合わせて直接サポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -164,8 +164,8 @@ DP全科目（Group 1～6）に加え、TOK・EE・IA対策、MYP課題サポー
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [開智 公式サイト ↗](https://ikkanbu.kaichigakuen.ed.jp/)
+[開智 公式サイト ↗](https://ikkanbu.kaichigakuen.ed.jp/)

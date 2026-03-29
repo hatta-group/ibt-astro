@@ -105,7 +105,7 @@ INFO
 2歳〜5歳
 
         **注意:** 入園・入学手続きは変更される場合があります。最新情報は[学校公式サイト](https://www.willowbrookschool.com/)でご確認ください。
-      
+
 
 ## 費用（参考情報）
 
@@ -113,13 +113,13 @@ INFO
 
 学校にお問い合わせください。
 
-        ※ 上記は参考値です。最新の費用は[Willowbrook 公式サイト](https://www.willowbrookschool.com/)でご確認ください。
-      
+※ 上記は参考値です。最新の費用は[Willowbrook 公式サイト](https://www.willowbrookschool.com/)でご確認ください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 東京メトロ南北線「麻布十番」駅 徒歩約8分、都営大江戸線「麻布十番」駅 徒歩約10分
@@ -133,21 +133,21 @@ Willowbrookへのアクセス
 
 ## WillowbrookのIB学習でお悩みですか？
 
-      PYP探究学習
+PYP探究学習
 
-      英語力サポート
+英語力サポート
 
-      IB学習相談
+IB学習相談
 
-      家庭学習サポート
-    
+家庭学習サポート
+
 IB卒業生の家庭教師が、Willowbrookのカリキュラムに合わせて学習をサポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -179,8 +179,8 @@ PYPの探究学習サポート、英語力強化、各教科の補習など、Wi
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [Willowbrook 公式サイト ↗](https://www.willowbrookschool.com/)
+[Willowbrook 公式サイト ↗](https://www.willowbrookschool.com/)

@@ -110,7 +110,7 @@ EXAM 03
 学校にお問い合わせください
 
         **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://osaka.abroadschools.jp/)でご確認ください。
-      
+
 
 ## 学費（参考情報）
 
@@ -118,28 +118,28 @@ EXAM 03
 
 学校にお問い合わせください。
 
-        ※ 上記は参考値です。最新の費用は[AIS Osaka 公式サイト](https://osaka.abroadschools.jp/)でご確認ください。
-      
+※ 上記は参考値です。最新の費用は[AIS Osaka 公式サイト](https://osaka.abroadschools.jp/)でご確認ください。
+
 
 ## 進学実績
 
 国内大学（実績あり）
 
-          今後の蓄積となります。
-        
+今後の蓄積となります。
+
 
 海外大学（実績あり）
 
-          DP開始予定のため
-        
+DP開始予定のため
 
-        ※ IBスコアの平均点等の公式データは学校にお問い合わせください。
-      
+
+※ IBスコアの平均点等の公式データは学校にお問い合わせください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 JR大阪環状線 寺田町駅から徒歩約10分
@@ -153,21 +153,21 @@ AIS Osakaへのアクセス
 
 ## AIS OsakaのIBでお悩みですか？
 
-      IA・EEの書き方
+IA・EEの書き方
 
-      TOKエッセイ
+TOKエッセイ
 
-      DPスコアアップ
+DPスコアアップ
 
-      IB科目全般
-    
+IB科目全般
+
 IB卒業生の家庭教師が、AIS Osakaのカリキュラムに合わせて直接サポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -199,8 +199,8 @@ DP全科目（Group 1～6）に加え、TOK・EE・IA対策、MYP課題サポー
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [AIS Osaka 公式サイト ↗](https://osaka.abroadschools.jp/)
+[AIS Osaka 公式サイト ↗](https://osaka.abroadschools.jp/)

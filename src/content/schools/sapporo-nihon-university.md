@@ -114,7 +114,7 @@ EXAM 02
 IBコース専用の選抜あり
 
         **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://www.sapporonichidai.ed.jp/high/)でご確認ください。
-      
+
 
 ## 学費（参考情報）
 
@@ -122,44 +122,44 @@ IBコース専用の選抜あり
 
 私立高校。IBコースは通常の校納金に加え、IBコース費として月額20,000円（年間240,000円）が追加。具体的な授業料の総額は学校にお問い合わせください。
 
-        ※ 上記は参考値です。最新の学費は[札幌日大 公式サイト](https://www.sapporonichidai.ed.jp/high/)でご確認ください。
-      
+※ 上記は参考値です。最新の学費は[札幌日大 公式サイト](https://www.sapporonichidai.ed.jp/high/)でご確認ください。
+
 
 ## 進学実績
 
 国内大学（実績あり）
 
-          慶應義塾大学
+慶應義塾大学
 
-          上智大学
+上智大学
 
-          北海道大学
+北海道大学
 
-          筑波大学
+筑波大学
 
-          東京医科歯科大学
+東京医科歯科大学
 
-          愛知医科大学
-        
+愛知医科大学
+
 
 海外大学（実績あり）
 
-          日本大学
+日本大学
 
 University College London
 
-          University of Toronto
+University of Toronto
 
-          University of British Columbia
-        
+University of British Columbia
 
-        ※ IBスコアの平均点等の公式データは学校にお問い合わせください。
-      
+
+※ IBスコアの平均点等の公式データは学校にお問い合わせください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 JR千歳線「上野幌駅」徒歩約7分（札幌駅から約17分）
@@ -177,21 +177,21 @@ JR千歳線「上野幌駅」徒歩約7分（札幌駅から約17分）
 
 ## 札幌日大のIBでお悩みですか？
 
-      IA・EEの書き方
+IA・EEの書き方
 
-      TOKエッセイ
+TOKエッセイ
 
-      DPスコアアップ
+DPスコアアップ
 
-      Biology対策
-    
+Biology対策
+
 IB卒業生の家庭教師が、札幌日大のカリキュラムに合わせて直接サポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -223,8 +223,8 @@ DP全科目（Group 1～6）に加え、TOK・EE・IA対策、MYP課題サポー
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [札幌日大 公式サイト ↗](https://www.sapporonichidai.ed.jp/high/)
+[札幌日大 公式サイト ↗](https://www.sapporonichidai.ed.jp/high/)

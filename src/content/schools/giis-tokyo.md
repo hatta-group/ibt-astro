@@ -138,7 +138,7 @@ INFO
 兄弟割引制度あり（2人目25%割引）
 
         **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://globalindianschool.org/jp/tokyo/)でご確認ください。
-      
+
 
 ## 学費（参考情報）
 
@@ -158,13 +158,13 @@ INFO
 
 | 年間授業料目安 | ¥290,905〜¥632,500（カリキュラムにより異なる） |
 
-        ※ 上記は参考値です。最新の費用は[GIIS Tokyo 公式サイト](https://globalindianschool.org/jp/tokyo/)でご確認ください。
-      
+※ 上記は参考値です。最新の費用は[GIIS Tokyo 公式サイト](https://globalindianschool.org/jp/tokyo/)でご確認ください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 東京メトロ東西線「葛西」駅よりバスまたは徒歩約15分
@@ -178,21 +178,21 @@ GIIS Tokyoへのアクセス
 
 ## GIIS TokyoのIBでお悩みですか？
 
-      IA・EEの書き方
+IA・EEの書き方
 
-      TOKエッセイ
+TOKエッセイ
 
-      DPスコアアップ
+DPスコアアップ
 
-      Biology対策
-    
+Biology対策
+
 IB卒業生の家庭教師が、GIIS Tokyoのカリキュラムに合わせて直接サポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -224,8 +224,8 @@ DP全科目（Group 1～6）に加え、TOK・EE・IA対策、MYP課題サポー
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [GIIS Tokyo 公式サイト ↗](https://globalindianschool.org/jp/tokyo/)
+[GIIS Tokyo 公式サイト ↗](https://globalindianschool.org/jp/tokyo/)

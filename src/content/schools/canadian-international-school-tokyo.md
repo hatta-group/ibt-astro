@@ -101,7 +101,7 @@ INFO
 info@cisjapan.net
 
         **注意:** 入園・入学手続きは変更される場合があります。最新情報は[学校公式サイト](https://www.cisjapan.net/)でご確認ください。
-      
+
 
 ## 費用（参考情報）
 
@@ -109,13 +109,13 @@ info@cisjapan.net
 
 学校にお問い合わせください。
 
-        ※ 上記は参考値です。最新の費用は[CIS Tokyo 公式サイト](https://www.cisjapan.net/)でご確認ください。
-      
+※ 上記は参考値です。最新の費用は[CIS Tokyo 公式サイト](https://www.cisjapan.net/)でご確認ください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 JR山手線「大崎」駅 徒歩約10分
@@ -129,21 +129,21 @@ CIS Tokyoへのアクセス
 
 ## CIS TokyoのIB学習でお悩みですか？
 
-      PYP探究学習
+PYP探究学習
 
-      英語力サポート
+英語力サポート
 
-      IB学習相談
+IB学習相談
 
-      家庭学習サポート
-    
+家庭学習サポート
+
 IB卒業生の家庭教師が、CIS Tokyoのカリキュラムに合わせて学習をサポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -175,8 +175,8 @@ PYPの探究学習サポート、英語力強化、各教科の補習など、CI
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [CIS Tokyo 公式サイト ↗](https://www.cisjapan.net/)
+[CIS Tokyo 公式サイト ↗](https://www.cisjapan.net/)

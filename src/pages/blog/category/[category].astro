@@ -23,6 +23,19 @@ const categoryNames: Record<string, string> = {
   'ib-schools': 'IB認定校情報',
 };
 const catName = categoryNames[category] || category;
+
+// Build category counts for navigation bar
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const categoryMap: Record<string, { label: string; color: string; bgColor: string; activeColor: string; count: number }> = {
+  'dp-tips': { label: 'DP対策', color: 'text-red-700', bgColor: 'bg-red-50 border-red-200', activeColor: 'bg-red-600 text-white border-red-600', count: 0 },
+  'ib-basics': { label: 'IB基礎知識', color: 'text-blue-700', bgColor: 'bg-blue-50 border-blue-200', activeColor: 'bg-blue-600 text-white border-blue-600', count: 0 },
+  'ib-schools': { label: 'IB校情報', color: 'text-emerald-700', bgColor: 'bg-emerald-50 border-emerald-200', activeColor: 'bg-emerald-600 text-white border-emerald-600', count: 0 },
+  'ib-stories': { label: 'IB体験談', color: 'text-amber-700', bgColor: 'bg-amber-50 border-amber-200', activeColor: 'bg-amber-600 text-white border-amber-600', count: 0 },
+};
+allPosts.forEach(post => {
+  const cat = post.data.category;
+  if (cat && categoryMap[cat]) categoryMap[cat].count++;
+});
 ---
 <BaseLayout
   title={`${catName}の記事一覧｜IB専門家庭教師IBT`}
@@ -55,15 +68,37 @@ const catName = categoryNames[category] || category;
     </div>
   </section>
 
+  <!-- Category Filters -->
+  <section class="bg-white border-b border-ibt-border sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs font-bold text-ibt-text-light uppercase tracking-wider mr-2">カテゴリ</span>
+        <a
+          href="/blog/"
+          class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 hover:shadow-sm bg-white border-ibt-border text-ibt-text-light hover:text-ibt-text"
+        >
+          すべて
+          <span class="text-xs opacity-70">({allPosts.length})</span>
+        </a>
+        {Object.entries(categoryMap).map(([slug, cat]) => {
+          const isActive = slug === category;
+          return (
+            <a
+              href={`/blog/category/${slug}/`}
+              class={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${isActive ? cat.activeColor + ' shadow-sm' : cat.bgColor + ' ' + cat.color + ' hover:shadow-sm'}`}
+            >
+              {cat.label}
+              <span class={`text-xs ${isActive ? 'opacity-80' : 'opacity-70'}`}>({cat.count})</span>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
   <!-- Posts Grid -->
-  <section class="py-16 md:py-24 bg-ibt-bg">
+  <section class="py-12 md:py-20 bg-ibt-bg">
     <div class="max-w-7xl mx-auto px-4">
-      <a
-        href="/blog/"
-        class="inline-flex items-center text-sm font-medium text-ibt-red hover:text-ibt-red/80 transition-colors mb-8"
-      >
-        &larr; ブログ一覧に戻る
-      </a>
 
       {posts.length === 0 ? (
         <p class="text-center text-ibt-text-light text-lg">記事を準備中です。</p>

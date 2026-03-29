@@ -30,6 +30,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  {Astro.url.searchParams.get('sent') === 'true' && (
+    <section class="py-6 bg-emerald-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="bg-white border border-emerald-200 rounded-2xl p-6 text-center">
+          <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+          </div>
+          <h2 class="text-xl font-bold text-emerald-800 mb-2">送信完了しました！</h2>
+          <p class="text-emerald-600">24時間以内にご返信いたします。しばらくお待ちください。</p>
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Form + Info -->
   <section class="py-16 md:py-24 bg-ibt-bg">
     <div class="max-w-7xl mx-auto px-4">

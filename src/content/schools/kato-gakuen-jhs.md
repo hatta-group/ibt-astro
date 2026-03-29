@@ -102,7 +102,7 @@ EXAM 03
 バイリンガルクラスでIBプログラムを履修
 
         **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://www.katoh-net.ac.jp/GyoshuHS/JH/)でご確認ください。
-      
+
 
 ## 学費（参考情報）
 
@@ -110,13 +110,13 @@ EXAM 03
 
 学校にお問い合わせください。
 
-        ※ 上記は参考値です。最新の費用は[暁秀 公式サイト](https://www.katoh-net.ac.jp/GyoshuHS/JH/)でご確認ください。
-      
+※ 上記は参考値です。最新の費用は[暁秀 公式サイト](https://www.katoh-net.ac.jp/GyoshuHS/JH/)でご確認ください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 JR東海道線「沼津」駅南口よりバス約20分、東名沼津IC 徒歩10分
@@ -130,21 +130,21 @@ JR東海道線「沼津」駅南口よりバス約20分、東名沼津IC 徒歩1
 
 ## 暁秀のIBでお悩みですか？
 
-      IA・EEの書き方
+IA・EEの書き方
 
-      TOKエッセイ
+TOKエッセイ
 
-      DPスコアアップ
+DPスコアアップ
 
-      IB科目全般
-    
+IB科目全般
+
 IB卒業生の家庭教師が、暁秀のカリキュラムに合わせて直接サポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -176,8 +176,8 @@ DP全科目（Group 1～6）に加え、TOK・EE・IA対策、MYP課題サポー
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [暁秀 公式サイト ↗](https://www.katoh-net.ac.jp/GyoshuHS/JH/)
+[暁秀 公式サイト ↗](https://www.katoh-net.ac.jp/GyoshuHS/JH/)

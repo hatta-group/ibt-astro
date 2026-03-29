@@ -136,8 +136,8 @@ DP履修について
 
         **入試の特徴:** 一般的な4科入試（国算理社）ではなく、適性検査型の入試です。A方式は6言語（英語・中国語・韓国語・フランス語・ドイツ語・スペイン語）から外国語作文を選択可能。
 
-        詳しくは[学校公式サイト](https://www.iss.oizumi.u-gakugei.ac.jp/)をご確認ください。
-      
+詳しくは[学校公式サイト](https://www.iss.oizumi.u-gakugei.ac.jp/)をご確認ください。
+
 
 ## 学費（参考情報）
 
@@ -157,62 +157,62 @@ DP履修について
 
 年間合計（実質）約300,000円
 
-        ※ 上記は参考値です。最新の学費は[学芸大附属国際公式サイト](https://www.iss.oizumi.u-gakugei.ac.jp/)でご確認ください。
+※ 上記は参考値です。最新の学費は[学芸大附属国際公式サイト](https://www.iss.oizumi.u-gakugei.ac.jp/)でご確認ください。
 
-        ※ 別途、海外研修費用・教材費等がかかる場合があります。
-      
+※ 別途、海外研修費用・教材費等がかかる場合があります。
+
 
 ## 進学実績
 
 海外大学（実績あり）
 
-          UCL
+UCL
 
-          UC San Diego
+UC San Diego
 
-          University of Pennsylvania
+University of Pennsylvania
 
-          University College Utrecht
+University College Utrecht
 
-          Grinnell College
+Grinnell College
 
-          Carleton College
+Carleton College
 
-          LSE
+LSE
 
-          NUS
+NUS
 
-          University of Manchester
-        
+University of Manchester
+
 
 国内大学
 
-          東京大学
+東京大学
 
-          京都大学
+京都大学
 
-          一橋大学
+一橋大学
 
-          筑波大学
+筑波大学
 
-          早稲田大学
+早稲田大学
 
-          慶應義塾大学
+慶應義塾大学
 
-          上智大学
+上智大学
 
-          立教大学
+立教大学
 
-          明治大学
-        
+明治大学
 
-        ※ IBスコアの平均点等の公式データは学校にお問い合わせください。
-      
+
+※ IBスコアの平均点等の公式データは学校にお問い合わせください。
+
 
 ## アクセス・所在地
 
-        
-      
+
+
 
 🚃
 西武池袋線「大泉学園」駅
@@ -230,21 +230,21 @@ JR中央線「吉祥寺」駅等からバスで「学芸大付属前」下車す
 
 ## 学芸大附属国際のIBでお悩みですか？
 
-      IA・EEの書き方
+IA・EEの書き方
 
-      TOKエッセイ
+TOKエッセイ
 
-      DPスコアアップ
+DPスコアアップ
 
-      History HL対策
-    
+History HL対策
+
 IB卒業生の家庭教師が、学芸大附属国際のカリキュラムに合わせて直接サポートします。
 まずは話を聞いてみるだけでも大丈夫です。
 
-      [🎓 まずは無料で相談する →](/contact/)
+[🎓 まずは無料で相談する →](/contact/)
 
-      [💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
-    
+[💬 LINEで気軽に相談](https://lin.ee/xWMOBbI)
+
 
 ## IBTが選ばれる理由
 
@@ -276,15 +276,15 @@ DP全科目（Group 1～6）に加え、TOK・EE・IA対策、MYP課題サポー
 
 ## 関連リンク
 
-        [← IB校一覧に戻る](/ib-schools/)
+[← IB校一覧に戻る](/ib-schools/)
 
-        [無料体験の流れ](/contact/)
+[無料体験の流れ](/contact/)
 
-        [学芸大附属国際 公式サイト ↗](https://www.iss.oizumi.u-gakugei.ac.jp/)
-      
+[学芸大附属国際 公式サイト ↗](https://www.iss.oizumi.u-gakugei.ac.jp/)
+
 
 MYP DP       — プログラムバッジHTML
-                           例: MYP DP
+例: MYP DP
 35.7573       — Google Map 緯度
 139.5887       — Google Map 経度
 
@@ -297,459 +297,459 @@ MYP DP       — プログラムバッジHTML
 
 国立校のため、**授業料は実質無料**（高等学校等就学支援金制度の対象）。副教材費・行事費等を含めても年間約30万円と、私立IB校と比べて圧倒的に経済的です。東京大学や一橋大学、UCLやUC San Diegoなど、国内外の難関大学への進学実績も豊富で、IB入試を活用した進学ルートが充実しています。
 
-          — 学校説明（
+— 学校説明（
 
 タグ3段落）
 
-          
+
 
 🌍
 
-          
+
 
 多様な文化の中でIBを学びたい子
 
-          
+
 
 帰国生が約4割を占める環境。異なるバックグラウンドを持つ仲間と切磋琢磨しながら、国際的な視野を自然に身につけられます。
 
-        
 
-        
 
-          
+
+
+
 
 📚
 
-          
+
 
 費用を抑えてIB教育を受けたい家庭
 
-          
+
 
 国立校のため授業料は実質無料。年間約30万円の諸経費のみで、私立IB校の1/3〜1/5の負担でDP取得を目指せます。
 
-        
 
-        
 
-          
+
+
+
 
 🏆
 
-          
+
 
 帰国子女で国内IB校を探している家庭
 
-          
+
 
 帰国生入試（A方式）は6言語から選択可能。海外での学びを途切れさせず、日本国内でIB教育を継続できます。
 
-        
 
-        
 
-          
+
+
+
 
 🏅
 
-          
+
 
 国内難関大学もIBで目指したい子
 
-          
+
 
 東大・一橋・京大・早慶上智など国内難関大学への進学実績が豊富。IB入試やAO入試を活用した進学ルートが確立されています。
 
-        
 
-      — おすすめカード（4枚分の.ibt-card HTML）
 
-          
+— おすすめカード（4枚分の.ibt-card HTML）
 
-            
+
+
+
 
 ### MYP 中等教育プログラム
 
-            
+
 
 1年生～4年生（12～16歳）
 
-          
 
-          
 
-            
 
-              
+
+
+
+
 
 - 全生徒がMYPカリキュラムで学習
 
-              
+
 
 - 帰国生と一般生が混合クラスで学ぶ
 
-              
+
 
 - 探究型学習を通じて批判的思考力を育成
 
-              
+
 
 - 英語イマージョン教育で実践的英語力を養成
 
-              
+
 
 - 4年生でMYP Personal Projectに取り組む
 
-            
 
-          
 
-        
 
-        
 
-          
 
-            
+
+
+
+
+
+
 
 ### DP ディプロマプログラム
 
-            
+
 
 5年生～6年生（16～18歳）
 
-          
 
-          
 
-            
 
-              
+
+
+
+
 
 - 希望制：毎年約15名がDP課程に進む
 
-              
+
 
 - デュアルランゲージDP（日本語＋英語）
 
-              
+
 
 - 6科目 + TOK + EE + CAS（最高45点）
 
-              
+
 
 - 少人数制でのきめ細かな指導
 
-              
+
 
 - 日本の高校卒業資格も同時取得
 
-            
 
-          
 
-        
 
-        — プログラムカード（.ibt-prog-card HTML × プログラム数）
+
+
+
+— プログラムカード（.ibt-prog-card HTML × プログラム数）
 ※ English A / Visual Artsは英語で授業が行われます。その他の科目は日本語での授業です。DP履修者は約15名の少人数制。        — 科目一覧の注記
 
-              
+
 
 Group 1言語と文学
 
-              
+
 
 Japanese A: Literature HL, English A: Language & Literature HL
 
-            
 
-            
 
-              
+
+
+
 
 Group 2言語習得
 
-              
+
 
 English B HL
 
-            
 
-            
 
-              
+
+
+
 
 Group 3個人と社会
 
-              
+
 
 History HL
 
-            
 
-            
 
-              
+
+
+
 
 Group 4理科
 
-              
+
 
 Chemistry SL
 
-            
 
-            
 
-              
+
+
+
 
 Group 5数学
 
-              
+
 
 Math AI SL
 
-            
 
-            
 
-              
+
+
+
 
 Group 6芸術
 
-              
+
 
 Visual Arts SL
 
-            
 
-            
 
-              
+
+
+
 
 コア
 
-              
+
 
 TOK（知の理論）, Extended Essay（課題論文）, CAS（創造・活動・奉仕）
 
-            
 
-        — 科目テーブル行（
+
+— 科目テーブル行（
 
 ...
 
  × Group数 + コア）
 
-          
+
 
 EXAM 01
 
-          
+
 
 A方式（帰国生等対象）
 
-          
+
 
 外国語作文（6言語から選択）・基礎日本語作文・面接。海外在住経験のある生徒向け。募集30名。
 
-        
 
-        
 
-          
+
+
+
 
 EXAM 02
 
-          
+
 
 B方式（一般対象）
 
-          
+
 
 適性検査Ⅰ・適性検査Ⅱ・面接。国内在住の生徒向け。募集30名。
 
-        
 
-        
 
-          
+
+
+
 
 EXAM 03
 
-          
+
 
 編入学試験
 
-          
+
 
 年2回（4月・9月）実施。海外からの帰国生などを対象。DP編成後の5年4月まで受け入れ可能。
 
-        
 
-        
 
-          
+
+
+
 
 INFO
 
-          
+
 
 DP履修について
 
-          
+
 
 5年生からのDP課程は希望制。MYPでの学びを基盤に、毎年約15名がDPに進みます。
 
-        
 
-      — 入試カード（.ibt-adm-card HTML）
+
+— 入試カード（.ibt-adm-card HTML）
 **入試の特徴:** 一般的な4科入試（国算理社）ではなく、適性検査型の入試です。A方式は6言語（英語・中国語・韓国語・フランス語・ドイツ語・スペイン語）から外国語作文を選択可能。
 
-        詳しくは[学校公式サイト](https://www.iss.oizumi.u-gakugei.ac.jp/)をご確認ください。       — 入試の補足情報HTML
+詳しくは[学校公式サイト](https://www.iss.oizumi.u-gakugei.ac.jp/)をご確認ください。       — 入試の補足情報HTML
 
-          
+
 
 前期課程（1〜3年生）
 
-          
 
-            
+
+
 
 入学金無料
 
-            
+
 
 授業料無料（義務教育）
 
-            
+
 
 副教材費・行事費等約300,000円
 
-            
 
-              
+
+
 
 年間合計約300,000円
 
-            
 
-          
 
-        
 
-        
 
-          
+
+
+
+
+
 
 後期課程（4〜6年生・DP含む）
 
-          
 
-            
+
+
 
 入学金無料
 
-            
+
 
 授業料月額9,600円 ※支援金対象
 
-            
+
 
 副教材費・行事費等約300,000円
 
-            
 
-              
+
+
 
 年間合計（実質）約300,000円
 
-            
 
-          
 
-        
 
-        — 学費カード（.ibt-tuition-card HTML）
 
-        
+
+
+— 学費カード（.ibt-tuition-card HTML）
+
+
 
 海外大学（実績あり）
 
-        
 
-          UCL
-          UC San Diego
-          University of Pennsylvania
-          University College Utrecht
-          Grinnell College
-          Carleton College
-          LSE
-          NUS
-          University of Manchester
-        
 
-      
+UCL
+UC San Diego
+University of Pennsylvania
+University College Utrecht
+Grinnell College
+Carleton College
+LSE
+NUS
+University of Manchester
 
-      
 
-        
+
+
+
+
+
 
 国内大学
 
-        
 
-          東京大学
-          京都大学
-          一橋大学
-          筑波大学
-          早稲田大学
-          慶應義塾大学
-          上智大学
-          立教大学
-          明治大学
-        
 
-      
+東京大学
+京都大学
+一橋大学
+筑波大学
+早稲田大学
+慶應義塾大学
+上智大学
+立教大学
+明治大学
 
-         — 進学実績セクションHTML（.ibt-uni-section等）
 
-          
+
+
+— 進学実績セクションHTML（.ibt-uni-section等）
+
+
 
 🚃
 
-          
+
 
 西武池袋線「大泉学園」駅
 
-          
+
 
 南口より徒歩8分。学芸大通り沿いに直進。
 
-        
 
-        
 
-          
+
+
+
 
 🚌
 
-          
+
 
 JR中央線他 バス利用
 
-          
+
 
 JR中央線「吉祥寺」駅等からバスで「学芸大付属前」下車すぐ。
 
-        
 
-         — アクセスカード（.ibt-access-card HTML）
+
+— アクセスカード（.ibt-access-card HTML）
 IA・EEの書き方
-      TOKエッセイ
-      DPスコアアップ
-      History HL対策             — CTAタグ（.ibt-cta-tag HTML）
+TOKエッセイ
+DPスコアアップ
+History HL対策             — CTAタグ（.ibt-cta-tag HTML）
 
 ============================================================
 -->
