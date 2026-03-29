@@ -1,5 +1,5 @@
 ---
-title: "IBでEEの具体的なトピックの決め方は？"
+title: "IB Extended Essay(EE)のトピックの決め方 - 科目選びから絞り込みまで具体的に解説"
 slug: "ib-ee-topic-selection"
 date: "2024-10-08"
 description: "IB Extended Essayのテーマ選びで悩んでいませんか？科目別のテーマ例と選び方のコツをIB卒業生が具体的にアドバイス。"

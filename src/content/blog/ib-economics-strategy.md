@@ -1,5 +1,5 @@
 ---
-title: "「Economics攻略法」"
+title: "IB Economics攻略法 - 経済理論・データ分析・試験対策の勉強法をIB卒業生が解説"
 slug: "ib-economics-strategy"
 date: "2024-05-05"
 description: "IB Economics（経済学）の勉強法と試験対策。HL/SLの違い、ペーパー別攻略法をIB卒業生が解説。高得点を狙う戦略。"

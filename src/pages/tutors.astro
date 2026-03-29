@@ -92,6 +92,16 @@ import { tutors } from '../data/tutors';
                   </span>
                 ))}
               </div>
+              {tutor.bio && (
+                <p class="mt-4 text-sm text-ibt-text-light italic leading-relaxed border-t border-ibt-border pt-4">"{tutor.bio}"</p>
+              )}
+              {tutor.funFacts && (
+                <div class="flex flex-wrap gap-2 mt-3">
+                  {tutor.funFacts.food && <span class="text-xs bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full">&#x1F37D; {tutor.funFacts.food}</span>}
+                  {tutor.funFacts.hobby && <span class="text-xs bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full">&#x2B50; {tutor.funFacts.hobby}</span>}
+                  {tutor.funFacts.place && <span class="text-xs bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full">&#x1F4CD; {tutor.funFacts.place}</span>}
+                </div>
+              )}
             </div>
           );
         })}

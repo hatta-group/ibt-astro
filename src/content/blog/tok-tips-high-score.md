@@ -1,5 +1,5 @@
 ---
-title: "IB家庭教師が教える！TOK対策で高得点を取る5つのコツ"
+title: "TOKエッセイ・プレゼンで高得点を取る5つのコツ - Knowledge Questionの作り方から実践まで"
 slug: "tok-tips-high-score"
 date: "2026-03-12"
 description: "TOKの勉強法と高得点のコツ。IB卒業生が実践した効果的な対策法を具体的に紹介します。"

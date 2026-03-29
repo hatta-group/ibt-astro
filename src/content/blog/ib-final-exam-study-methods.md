@@ -1,5 +1,5 @@
 ---
-title: "最終試験に向けてどのような勉強方法を行なっていましたか?"
+title: "IB最終試験の科目別勉強法とスケジュール - 生物・物理・経済の実践的な対策"
 slug: "ib-final-exam-study-methods"
 date: "2024-10-13"
 description: "IB Final Examの効果的な勉強法。科目別の攻略法と本番で実力を発揮するためのテクニックを紹介。"

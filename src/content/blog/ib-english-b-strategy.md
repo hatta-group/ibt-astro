@@ -1,5 +1,5 @@
 ---
-title: "「English B攻略法」"
+title: "IB English B攻略法 - リーディング・ライティング・リスニングの勉強法と試験対策"
 slug: "ib-english-b-strategy"
 date: "2024-05-04"
 description: "IB English B（英語B）の勉強法と試験対策。リーディング・ライティング・リスニングの攻略法をIB家庭教師が伝授。"

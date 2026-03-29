@@ -1,5 +1,5 @@
 ---
-title: "そもそもTOKって何？"
+title: "TOK(Theory of Knowledge)とは? IBの必修科目の仕組み・評価方法・学び方を解説"
 slug: "what-is-tok"
 date: "2024-11-14"
 description: "IBのTOK（Theory of Knowledge）とは？仕組み・評価方法・学び方をIB卒業生が解説。TOKで高得点を取るための基礎知識。"
