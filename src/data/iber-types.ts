@@ -26,7 +26,7 @@ export const iberTypes: IBerType[] = [
     name: 'Thinker',
     nameJa: '考える人',
     description: '論理的思考が得意で、複雑な問題を分析し解決策を導くタイプ。数学やサイエンスが得意。',
-    color: '#37474F',
+    color: '#1565C0',
   },
   {
     id: 'communicator',
@@ -40,7 +40,7 @@ export const iberTypes: IBerType[] = [
     name: 'Principled',
     nameJa: '信念をもつ人',
     description: '誠実で倫理観が強く、正しいことのために行動するタイプ。CAS活動で力を発揮します。',
-    color: '#455A64',
+    color: '#5D4037',
   },
   {
     id: 'open-minded',
