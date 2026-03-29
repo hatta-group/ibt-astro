@@ -57,30 +57,48 @@ import { iberTypes } from '../../data/iber-types';
         {iberTypes.map((type) => (
           <a
             href={`/iber-type/${type.id}/`}
-            class="group bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            class="group relative rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
           >
-            <div class="h-1.5 transition-all duration-300 group-hover:h-2" style={`background-color: ${type.color}`}></div>
-            <div class="p-8">
-              <div class="flex items-center gap-5 mb-5">
-                <div class="w-20 h-20 shrink-0 rounded-xl p-2 transition-colors duration-300" style={`background-color: ${type.color}10`}>
-                  <img
-                    src={`/images/iber-types/${type.id}.png`}
-                    alt={`${type.name} - ${type.nameJa}`}
-                    class="w-full h-full object-contain drop-shadow-sm"
-                    loading="lazy"
-                  />
+            {/* Colored background gradient */}
+            <div class="absolute inset-0 opacity-[0.07] group-hover:opacity-[0.12] transition-opacity duration-300" style={`background: linear-gradient(135deg, ${type.color}, ${type.color}80)`}></div>
+            <div class="absolute top-0 left-0 right-0 h-24" style={`background: linear-gradient(180deg, ${type.color}15, transparent)`}></div>
+
+            <div class="relative border border-gray-200 group-hover:border-transparent rounded-2xl bg-white/80 backdrop-blur-sm">
+              {/* Top color bar */}
+              <div class="h-1.5 rounded-t-2xl" style={`background: linear-gradient(90deg, ${type.color}, ${type.color}99)`}></div>
+
+              <div class="p-8">
+                {/* Character + Name */}
+                <div class="flex items-center gap-5 mb-6">
+                  <div class="w-24 h-24 shrink-0 rounded-2xl p-2 shadow-sm group-hover:scale-110 transition-transform duration-300" style={`background: linear-gradient(135deg, ${type.color}15, ${type.color}05)`}>
+                    <img
+                      src={`/images/iber-types/${type.id}.png`}
+                      alt={`${type.name} - ${type.nameJa}`}
+                      class="w-full h-full object-contain drop-shadow-md"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-black group-hover:tracking-wide transition-all duration-300" style={`color: ${type.color}`}>{type.name}</h3>
+                    <p class="text-sm text-gray-500 font-bold mt-0.5">{type.nameJa}</p>
+                    <div class="w-10 h-1 mt-2 rounded-full transition-all duration-300 group-hover:w-16" style={`background: linear-gradient(90deg, ${type.color}, ${type.color}60)`}></div>
+                  </div>
                 </div>
-                <div>
-                  <h3 class="text-xl font-bold transition-colors duration-300" style={`color: inherit`}>{type.name}</h3>
-                  <p class="text-sm text-ibt-text-light font-medium">{type.nameJa}</p>
-                  <div class="w-8 h-0.5 mt-2 rounded-full transition-all duration-300 group-hover:w-12" style={`background-color: ${type.color}`}></div>
+
+                {/* Description */}
+                <p class="text-gray-500 leading-relaxed text-sm mb-6">{type.description}</p>
+
+                {/* CTA */}
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5" style={`color: ${type.color}`}>
+                    詳しく見る
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                  </span>
+                  <span class="text-xs px-3 py-1 rounded-full font-bold opacity-60 group-hover:opacity-100 transition-opacity" style={`background-color: ${type.color}15; color: ${type.color}`}>
+                    {type.id === 'inquirer' ? '探究' : type.id === 'knowledgeable' ? '知識' : type.id === 'thinker' ? '論理' : type.id === 'communicator' ? '表現' : type.id === 'principled' ? '信念' : type.id === 'open-minded' ? '視野' : type.id === 'caring' ? '共感' : type.id === 'risk-taker' ? '挑戦' : type.id === 'balanced' ? '調和' : '内省'}
+                  </span>
                 </div>
               </div>
-              <p class="text-ibt-text-light leading-relaxed text-sm mb-5">{type.description}</p>
-              <p class="font-bold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1" style={`color: ${type.color}`}>
-                詳しく見る
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-              </p>
             </div>
           </a>
         ))}
