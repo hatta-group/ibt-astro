@@ -1,0 +1,427 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="レッスンチケット購入｜IB専門家庭教師IBT"
+  description="IBT授業チケットの購入ページ。PYP・MYP・DP対応、オンライン・対面から選べます。まとめ買いでお得に。"
+  noindex={true}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "レッスンチケット購入", "item": "https://ib-tutors.net/lesson-tickets/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Page Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/70 text-sm mb-4">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">&gt;</span>
+        <span class="text-white">レッスンチケット購入</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">レッスンチケット購入</h1>
+      <p class="text-white/80 mt-3 text-lg">プログラム・回数を選んで、かんたん決済</p>
+    </div>
+  </section>
+
+  <!-- Password Gate -->
+  <section id="password-gate" class="py-24 md:py-32 bg-ibt-bg">
+    <div class="max-w-md mx-auto px-4 text-center">
+      <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10">
+        <div class="w-16 h-16 bg-ibt-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-ibt-red" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+          </svg>
+        </div>
+        <h2 class="text-xl font-bold text-ibt-text mb-2">パスワードを入力してください</h2>
+        <p class="text-ibt-text-light text-sm mb-6">このページは生徒様専用です。<br>ご案内済みのパスワードを入力してください。</p>
+        <form id="password-form" class="space-y-4">
+          <input
+            type="password"
+            id="password-input"
+            placeholder="パスワード"
+            autocomplete="off"
+            class="w-full px-4 py-3 border border-ibt-border rounded-xl text-center text-lg tracking-widest focus:outline-none focus:ring-2 focus:ring-ibt-red/30 focus:border-ibt-red transition-colors"
+          />
+          <p id="password-error" class="text-red-500 text-sm hidden">パスワードが正しくありません</p>
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-6 py-3 rounded-full hover:shadow-lg transition-shadow"
+          >
+            ログイン
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content (hidden by default) -->
+  <div id="ticket-content" class="hidden">
+
+    <!-- Program Tabs -->
+    <section class="py-16 md:py-24 bg-ibt-bg">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">LESSON TICKETS</p>
+          <h2 class="text-2xl md:text-4xl font-bold text-ibt-text">チケットを選ぶ</h2>
+          <p class="text-ibt-text-light mt-4">プログラムと形式を選んでください</p>
+        </div>
+
+        <!-- Step 1: Program selector -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <button data-program="pyp" class="program-tab active-tab px-6 py-3 rounded-full font-bold text-sm transition-all">PYP</button>
+          <button data-program="myp" class="program-tab px-6 py-3 rounded-full font-bold text-sm transition-all">MYP</button>
+          <button data-program="dp" class="program-tab px-6 py-3 rounded-full font-bold text-sm transition-all">DP</button>
+          <button data-program="individual" class="program-tab px-6 py-3 rounded-full font-bold text-sm transition-all">IB Individual (30min)</button>
+        </div>
+
+        <!-- Step 2: Format selector (hidden for individual) -->
+        <div id="format-selector" class="flex justify-center gap-3 mb-12">
+          <button data-format="online" class="format-tab active-format px-5 py-2.5 rounded-full font-medium text-sm transition-all">オンライン</button>
+          <button data-format="inperson" class="format-tab px-5 py-2.5 rounded-full font-medium text-sm transition-all">対面</button>
+        </div>
+
+        <!-- Ticket Cards Container -->
+        <div id="ticket-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">FAQ</p>
+          <h2 class="text-2xl md:text-4xl font-bold text-ibt-text">チケットについてのよくある質問</h2>
+        </div>
+
+        <div class="space-y-4">
+          <details class="group bg-ibt-bg rounded-2xl shadow-sm border border-ibt-border">
+            <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
+              <span class="pr-4">チケットの使い方を教えてください</span>
+              <span class="shrink-0 w-6 h-6 flex items-center justify-center text-ibt-red transition-transform group-open:rotate-45">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
+              チケットを購入すると、購入回数分の授業を受講できます。担当講師と日程を調整し、1回ずつ授業を消化していきます。有効期限はありませんので、ご自身のペースで受講いただけます。
+            </div>
+          </details>
+
+          <details class="group bg-ibt-bg rounded-2xl shadow-sm border border-ibt-border">
+            <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
+              <span class="pr-4">キャンセルポリシーについて</span>
+              <span class="shrink-0 w-6 h-6 flex items-center justify-center text-ibt-red transition-transform group-open:rotate-45">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
+              <ul class="list-disc pl-5 space-y-1">
+                <li><strong>授業開始の24時間前まで：</strong>無料でキャンセル・振替が可能です。</li>
+                <li><strong>24時間以内のキャンセル：</strong>チケット1回分が消化扱いとなります。</li>
+              </ul>
+              <p class="mt-3">急な体調不良などやむを得ない場合は、お早めにご連絡ください。</p>
+            </div>
+          </details>
+
+          <details class="group bg-ibt-bg rounded-2xl shadow-sm border border-ibt-border">
+            <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
+              <span class="pr-4">支払い方法は何がありますか？</span>
+              <span class="shrink-0 w-6 h-6 flex items-center justify-center text-ibt-red transition-transform group-open:rotate-45">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
+              Square決済を利用しています。クレジットカード（Visa / Mastercard / American Express / JCB / Diners Club / Discover）に対応しています。
+            </div>
+          </details>
+
+          <details class="group bg-ibt-bg rounded-2xl shadow-sm border border-ibt-border">
+            <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
+              <span class="pr-4">まとめ買いの割引はありますか？</span>
+              <span class="shrink-0 w-6 h-6 flex items-center justify-center text-ibt-red transition-transform group-open:rotate-45">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
+              はい。回数が多いパックほど、1回あたりの単価がお得になります。各チケットカードに1回あたりの料金を表示していますので、ご確認ください。16回パックが最もお得です。
+            </div>
+          </details>
+
+          <details class="group bg-ibt-bg rounded-2xl shadow-sm border border-ibt-border">
+            <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
+              <span class="pr-4">チケットに有効期限はありますか？</span>
+              <span class="shrink-0 w-6 h-6 flex items-center justify-center text-ibt-red transition-transform group-open:rotate-45">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
+              チケットに有効期限はありません。ご購入いただいた回数分、お好きなタイミングで受講いただけます。
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 md:py-24 bg-ibt-bg">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-ibt-text mb-4">ご不明な点がありましたら</h2>
+        <p class="text-ibt-text-light mb-8">チケットや授業についてのご質問は、お気軽にどうぞ。</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="https://line.me/R/ti/p/@974okamx"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-[#06C755] hover:bg-[#05b34c] text-white font-bold rounded-full transition-colors"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINEで相談
+          </a>
+          <a
+            href="/contact/"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold rounded-full hover:shadow-lg transition-shadow"
+          >
+            お問い合わせ
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const CORRECT_PASSWORD = 'IBT';
+
+    // Ticket data
+    const tickets: Record<string, { count: number; price: number; url: string }[]> = {
+      'pyp-online': [
+        { count: 1, price: 4840, url: 'https://square.link/u/djHRxwBW' },
+        { count: 4, price: 19250, url: 'https://square.link/u/DK5GZDUf' },
+        { count: 8, price: 38500, url: 'https://square.link/u/q3Iia2NV' },
+        { count: 12, price: 57750, url: 'https://square.link/u/ldMa1n1A' },
+        { count: 16, price: 77000, url: 'https://square.link/u/nXlWCqur' },
+      ],
+      'pyp-inperson': [
+        { count: 1, price: 5258, url: 'https://square.link/u/QWCBO9wf' },
+        { count: 4, price: 20900, url: 'https://square.link/u/oPWHAArT' },
+        { count: 8, price: 41800, url: 'https://square.link/u/3KN7MZW8' },
+        { count: 12, price: 62700, url: 'https://square.link/u/ukBaK9jU' },
+        { count: 16, price: 83600, url: 'https://square.link/u/mOGGLEdx' },
+      ],
+      'myp-online': [
+        { count: 1, price: 6050, url: 'https://square.link/u/FGpRaPi1' },
+        { count: 4, price: 24090, url: 'https://square.link/u/CaHjVdo7' },
+        { count: 8, price: 48180, url: 'https://square.link/u/FZchGsRH' },
+        { count: 12, price: 72270, url: 'https://square.link/u/LNEGfJwa' },
+        { count: 16, price: 93630, url: 'https://square.link/u/dD6Tlvid' },
+      ],
+      'myp-inperson': [
+        { count: 1, price: 6468, url: 'https://square.link/u/V3G9V9Zr' },
+        { count: 4, price: 25740, url: 'https://square.link/u/ifjuQlow' },
+        { count: 8, price: 51480, url: 'https://square.link/u/2EHGM29o' },
+        { count: 12, price: 77220, url: 'https://square.link/u/sS5MdTxB' },
+        { count: 16, price: 102960, url: 'https://square.link/u/NLjnuc4P' },
+      ],
+      'dp-online': [
+        { count: 1, price: 7260, url: 'https://square.link/u/7nrp21bu' },
+        { count: 4, price: 28930, url: 'https://square.link/u/Zzw8aMup' },
+        { count: 8, price: 57860, url: 'https://square.link/u/cCHEXUQA' },
+        { count: 12, price: 86790, url: 'https://square.link/u/2sNm7jGB' },
+        { count: 16, price: 115720, url: 'https://square.link/u/QhhcPB78' },
+      ],
+      'dp-inperson': [
+        { count: 1, price: 7678, url: 'https://square.link/u/9b41yRNv' },
+        { count: 4, price: 30580, url: 'https://square.link/u/pdGABUxi' },
+        { count: 8, price: 61160, url: 'https://square.link/u/AoiCYaFi' },
+        { count: 12, price: 91740, url: 'https://square.link/u/CzJ84bxw' },
+        { count: 16, price: 122320, url: 'https://square.link/u/ShPUKndr' },
+      ],
+      'individual-online': [
+        { count: 1, price: 3300, url: 'https://square.link/u/1IGu6EJJ' },
+        { count: 4, price: 12870, url: 'https://square.link/u/6JPVzAoR' },
+      ],
+    };
+
+    const programLabels: Record<string, string> = {
+      pyp: 'PYP (50min)',
+      myp: 'MYP (50min)',
+      dp: 'DP (50min)',
+      individual: 'IB Individual (30min)',
+    };
+
+    const formatLabels: Record<string, string> = {
+      online: 'オンライン',
+      inperson: '対面',
+    };
+
+    let currentProgram = 'pyp';
+    let currentFormat = 'online';
+
+    function formatPrice(n: number): string {
+      return n.toLocaleString('ja-JP');
+    }
+
+    function renderCards() {
+      const container = document.getElementById('ticket-cards');
+      if (!container) return;
+
+      const key = currentProgram === 'individual'
+        ? 'individual-online'
+        : `${currentProgram}-${currentFormat}`;
+      const items = tickets[key];
+      if (!items) { container.innerHTML = ''; return; }
+
+      // Find the best per-lesson rate
+      let bestPerLesson = Infinity;
+      for (const t of items) {
+        const per = t.price / t.count;
+        if (per < bestPerLesson) bestPerLesson = per;
+      }
+
+      container.innerHTML = items.map((t) => {
+        const perLesson = Math.round(t.price / t.count);
+        const isBest = items.length > 1 && perLesson <= bestPerLesson;
+        const savings = items.length > 1 && t.count > 1
+          ? Math.round(((items[0].price * t.count) - t.price) / (items[0].price * t.count) * 100)
+          : 0;
+
+        return `
+          <div class="relative bg-white rounded-2xl shadow-sm border ${isBest ? 'border-ibt-red ring-2 ring-ibt-red/20' : 'border-ibt-border'} p-6 flex flex-col">
+            ${isBest ? '<span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-ibt-red text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">最もお得</span>' : ''}
+            <div class="text-center mb-4">
+              <p class="text-3xl font-bold text-ibt-text">${t.count}<span class="text-base font-medium ml-1">回</span></p>
+              <p class="text-ibt-text-light text-sm mt-1">${programLabels[currentProgram]}${currentProgram !== 'individual' ? ' / ' + formatLabels[currentFormat] : ''}</p>
+            </div>
+            <div class="text-center mb-4">
+              <p class="text-2xl font-bold text-ibt-red">&yen;${formatPrice(t.price)}<span class="text-sm font-normal text-ibt-text-light ml-1">(税込)</span></p>
+              <p class="text-sm text-ibt-text-light mt-1">1回あたり &yen;${formatPrice(perLesson)}</p>
+              ${savings > 0 ? `<p class="text-xs text-green-600 font-medium mt-1">${savings}% OFF</p>` : ''}
+            </div>
+            <a
+              href="${t.url}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-auto block text-center bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold py-3 rounded-full hover:shadow-lg transition-shadow"
+            >
+              購入する
+            </a>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Password gate
+    const form = document.getElementById('password-form');
+    const input = document.getElementById('password-input') as HTMLInputElement;
+    const error = document.getElementById('password-error');
+    const gate = document.getElementById('password-gate');
+    const content = document.getElementById('ticket-content');
+
+    // Check session
+    if (sessionStorage.getItem('ibt-ticket-auth') === 'true') {
+      gate?.classList.add('hidden');
+      content?.classList.remove('hidden');
+      renderCards();
+    }
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (input?.value === CORRECT_PASSWORD) {
+        sessionStorage.setItem('ibt-ticket-auth', 'true');
+        gate?.classList.add('hidden');
+        content?.classList.remove('hidden');
+        renderCards();
+      } else {
+        error?.classList.remove('hidden');
+        input?.classList.add('border-red-400');
+        input?.focus();
+      }
+    });
+
+    // Program tabs
+    document.querySelectorAll('.program-tab').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        currentProgram = (btn as HTMLElement).dataset.program || 'pyp';
+
+        // Update active tab style
+        document.querySelectorAll('.program-tab').forEach((b) => b.classList.remove('active-tab'));
+        btn.classList.add('active-tab');
+
+        // Show/hide format selector for individual
+        const formatSelector = document.getElementById('format-selector');
+        if (currentProgram === 'individual') {
+          formatSelector?.classList.add('hidden');
+        } else {
+          formatSelector?.classList.remove('hidden');
+        }
+
+        renderCards();
+      });
+    });
+
+    // Format tabs
+    document.querySelectorAll('.format-tab').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        currentFormat = (btn as HTMLElement).dataset.format || 'online';
+
+        document.querySelectorAll('.format-tab').forEach((b) => b.classList.remove('active-format'));
+        btn.classList.add('active-format');
+
+        renderCards();
+      });
+    });
+  </script>
+
+  <style>
+    .program-tab {
+      background: white;
+      color: #555;
+      border: 2px solid #e5e7eb;
+    }
+    .program-tab:hover {
+      border-color: #CC2210;
+      color: #CC2210;
+    }
+    .program-tab.active-tab {
+      background: linear-gradient(to right, #C62828, #FF5252);
+      color: white;
+      border-color: transparent;
+    }
+    .format-tab {
+      background: white;
+      color: #555;
+      border: 2px solid #e5e7eb;
+    }
+    .format-tab:hover {
+      border-color: #CC2210;
+      color: #CC2210;
+    }
+    .format-tab.active-format {
+      background: #CC2210;
+      color: white;
+      border-color: transparent;
+    }
+    /* Override border color used in JS innerHTML */
+    .border-ibt-red {
+      border-color: #CC2210;
+    }
+    .ring-ibt-red\/20 {
+      --tw-ring-color: rgb(204 34 16 / 0.2);
+    }
+    .bg-ibt-red {
+      background-color: #CC2210;
+    }
+    .text-ibt-red {
+      color: #CC2210;
+    }
+  </style>
+</BaseLayout>

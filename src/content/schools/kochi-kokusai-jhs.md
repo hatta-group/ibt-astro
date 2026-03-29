@@ -96,7 +96,7 @@ EXAM 04
 備考
 高知県内在住者対象
 
-        **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://sites.google.com/g.kochinet.ed.jp/kokusai-jh)でご確認ください。
+**注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://sites.google.com/g.kochinet.ed.jp/kokusai-jh)でご確認ください。
 
 
 ## 学費（参考情報）

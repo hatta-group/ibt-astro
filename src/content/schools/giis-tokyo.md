@@ -137,7 +137,7 @@ INFO
 備考
 兄弟割引制度あり（2人目25%割引）
 
-        **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://globalindianschool.org/jp/tokyo/)でご確認ください。
+**注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://globalindianschool.org/jp/tokyo/)でご確認ください。
 
 
 ## 学費（参考情報）

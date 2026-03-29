@@ -145,7 +145,7 @@ INFO
 備考
 英語力の証明が必要。編入も随時受付
 
-        **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://japaninternationalschool.com/)でご確認ください。
+**注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://japaninternationalschool.com/)でご確認ください。
 
 
 ## 学費（参考情報）

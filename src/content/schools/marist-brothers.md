@@ -22,10 +22,10 @@ Marist Brothers International School
 兵庫県 神戸市
 DP MYP 
 
-  
 
-  
-  
+
+
+
 
 
 目次
@@ -66,11 +66,11 @@ Marist Brothers International School
 DPMYP
 
 
-  
 
-  
-  
-  
+
+
+
+
 
 ## この学校のIBプログラム
 
@@ -79,24 +79,24 @@ DPMYP
 
 
 
-  
+
 MYP（中等教育プログラム）
 
 11〜16歳対象。8教科領域を横断的に学ぶ5年間のプログラム。プロジェクト型評価・eAssessmentでDPへの基礎を固める。
 
-  
-  
+
+
 DP（ディプロマプログラム）
 
 16〜19歳対象。6科目群＋TOK・EE・CASの3要素で構成。最大45点の国際資格で、世界中の大学が認める難関プログラム。
 
-  
 
-  
 
-  
-  
-  
+
+
+
+
+
 
 ## IB生が直面しやすい課題
 
@@ -148,11 +148,11 @@ IBは課題の締め切りが複数重なることが多く、計画的に学習
 
 
 
-  
 
-  
-  
-  
+
+
+
+
 IBT（International Baccalaureate Tutors）
 
 
@@ -207,11 +207,11 @@ MYPプロジェクト指導
 体験授業あり・保護者の方もお気軽に・全国オンライン対応
 
 
-  
 
-  
-  
-  
+
+
+
+
 
 ## よくある保護者の声
 
@@ -252,11 +252,11 @@ Q
 DP全科目（数学・物理・化学・生物・経済・歴史・英語・日本語など）のほか、TOK・EE・IAの論文指導も行います。MYP対象の指導も対応しています。担当できる講師を確認の上、最適なマッチングを行います。
 
 
-  
 
-  
-  
-  
+
+
+
+
 
 ## 同じ地域のIB校
 
@@ -315,10 +315,10 @@ DP
 
 ](/ib-schools/doshisha-international-kyoto/)
 
-  
 
-  
-  
+
+
+
 
 ## まずは無料で相談してみませんか？
 
@@ -328,10 +328,10 @@ IB卒業生の講師が、お子様の状況をヒアリングし
 [無料体験を申し込む](https://docs.google.com/forms/d/e/1FAIpQLSfxBF9OmN3xRhRFLWlhJNj5LhLIxqVkc6SIIlSy2_9ADxUhAg/viewform)
 体験授業あり・保護者の方もお気軽に・全国オンライン対応
 
-  
 
-  
-  
+
+
+
 [
 ← IB校一覧に戻る
 ](/ib-schools/)

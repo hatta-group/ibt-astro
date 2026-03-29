@@ -88,7 +88,7 @@ EXAM 02
 入試種別
 校区制のため入試なし（香美市香北町の通学区域に居住する生徒が対象）
 
-        **注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://sites.google.com/g.kochinet.ed.jp/kahoku-j/)でご確認ください。
+**注意:** 入試制度は変更される場合があります。最新情報は[学校公式サイト](https://sites.google.com/g.kochinet.ed.jp/kahoku-j/)でご確認ください。
 
 
 ## 学費（参考情報）
