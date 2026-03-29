@@ -5,7 +5,7 @@ date: "2024-04-18"
 description: "IBT講師紹介。テンプル大学在学のIB卒業生が、理数系科目やEconomicsをマンツーマンで丁寧に指導。チュータリングスタイルや実績を詳しくご紹介します。"
 category: "tutor-intro"
 ogImage: ""
-draft: false
+draft: true
 ---
 
 
@@ -26,9 +26,6 @@ draft: false
  	- HL科目：【Japanese A / English B / Economics】
  	- SL科目：【Chemistry / Math AA / ESS (Environmental Systems and Societies)】
  	- CAS / TOK / EE / MYP subjects も対応可能
-
-
-#### 
 
 
 #### チュータリングスタイル

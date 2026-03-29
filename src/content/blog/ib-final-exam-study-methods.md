@@ -32,13 +32,13 @@ IB最終試験は、効果的な勉強方法と計画的なスケジュールで
 
 > **gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
-**website** : [ib-tutors.net](https://ib-tutors.net/)
+**website** : [ib-tutors.net](/)
 
 ### 📚 関連記事
 
-- [IBDP最終試験とは？](https://ib-tutors.net/ibdp-final-exam-guide/)
-- [IB-Mock勉強の優先順位の付け方](https://ib-tutors.net/ib-mock-exam-study-tips/)
-- [入試準備をどういうスケジュールでこなせば最終試験勉強に集中できますか？](https://ib-tutors.net/ib-exam-prep-schedule/)
+- [IBDP最終試験とは？](/ibdp-final-exam-guide/)
+- [IB-Mock勉強の優先順位の付け方](/ib-mock-exam-study-tips/)
+- [入試準備をどういうスケジュールでこなせば最終試験勉強に集中できますか？](/ib-exam-prep-schedule/)
 
 ---
 

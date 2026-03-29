@@ -10,8 +10,7 @@ draft: false
 
 目次
 
-[Toggle](#)
-- [IBのIA攻略！](https://ib-tutors.net/ib-ia-success-guide/#IB%E3%81%AEIA%E6%94%BB%E7%95%A5%EF%BC%81)- [IA 成功への第一歩](https://ib-tutors.net/ib-ia-success-guide/#IA_%E6%88%90%E5%8A%9F%E3%81%B8%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9)[IBTでのサポートを活用しよう！](https://ib-tutors.net/ib-ia-success-guide/#IBT%E3%81%A7%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%82%88%E3%81%86%EF%BC%81)- [📚 関連記事](https://ib-tutors.net/ib-ia-success-guide/#%F0%9F%93%9A_%E9%96%A2%E9%80%A3%E8%A8%98%E4%BA%8B)
+- [IBのIA攻略！](/ib-ia-success-guide/#IB%E3%81%AEIA%E6%94%BB%E7%95%A5%EF%BC%81)- [IA 成功への第一歩](/ib-ia-success-guide/#IA_%E6%88%90%E5%8A%9F%E3%81%B8%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9)[IBTでのサポートを活用しよう！](/ib-ia-success-guide/#IBT%E3%81%A7%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%82%88%E3%81%86%EF%BC%81)- [📚 関連記事](/ib-ia-success-guide/#%F0%9F%93%9A_%E9%96%A2%E9%80%A3%E8%A8%98%E4%BA%8B)
 
 ### IBのIA攻略！
 
@@ -49,13 +48,13 @@ IAは自分の力を試す絶好のチャンスです。IBTと一緒に、最高
 
 > **gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
-**website** : [ib-tutors.net](https://ib-tutors.net/)
+**website** : [ib-tutors.net](/)
 
 ### 📚 関連記事
 
-- [IA（Internal Assessment）とは？](https://ib-tutors.net/ib-ia-explained/)
-- [IBのIA,IO,paper1&paper2はいつから本番？](https://ib-tutors.net/ib-ia-io-paper-schedule/)
-- [EE（Extended Essay）とは？](https://ib-tutors.net/ib-ee-explained/)
+- [IA（Internal Assessment）とは？](/ib-ia-explained/)
+- [IBのIA,IO,paper1&paper2はいつから本番？](/ib-ia-io-paper-schedule/)
+- [EE（Extended Essay）とは？](/ib-ee-explained/)
 
 ---
 

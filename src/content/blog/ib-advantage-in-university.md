@@ -26,10 +26,10 @@ IBの生徒は、多くの科目を同時に学習する必要があり、タイ
 
 ### 📚 関連記事
 
-- [IBからの受験で日本の国公立と海外の大学の決断方法は？](https://ib-tutors.net/ib-japan-vs-overseas-university/)
-- [中学や高校から海外のIB校に行く子はいますか？](https://ib-tutors.net/studying-ib-abroad-from-japan/)
-- [国ごとのIB受験方法の特徴は？](https://ib-tutors.net/ib-admission-by-country/)
-- [IBDPを使った日本大学と海外大学併願の仕方](https://ib-tutors.net/ibdp-japan-overseas-dual-application/)
+- [IBからの受験で日本の国公立と海外の大学の決断方法は？](/ib-japan-vs-overseas-university/)
+- [中学や高校から海外のIB校に行く子はいますか？](/studying-ib-abroad-from-japan/)
+- [国ごとのIB受験方法の特徴は？](/ib-admission-by-country/)
+- [IBDPを使った日本大学と海外大学併願の仕方](/ibdp-japan-overseas-dual-application/)
 
 ---
 

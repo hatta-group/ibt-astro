@@ -30,13 +30,13 @@ draft: false
 
 > **gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
-**website** : [ib-tutors.net](https://ib-tutors.net/)
+**website** : [ib-tutors.net](/)
 
 ### 📚 関連記事
 
-- [EE（Extended Essay）とは？](https://ib-tutors.net/ib-ee-explained/)
-- [IBでEEの具体的なトピックの決め方は？](https://ib-tutors.net/ib-ee-topic-selection/)
-- [〜EEテーマの選び方〜](https://ib-tutors.net/ib-ee-topic-selection-guide/)
+- [EE（Extended Essay）とは？](/ib-ee-explained/)
+- [IBでEEの具体的なトピックの決め方は？](/ib-ee-topic-selection/)
+- [〜EEテーマの選び方〜](/ib-ee-topic-selection-guide/)
 
 ---
 

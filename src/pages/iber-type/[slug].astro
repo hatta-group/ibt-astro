@@ -100,7 +100,7 @@ const breadcrumbSchema = {
             <!-- Character Card -->
             <div class="rounded-2xl overflow-hidden" style={`background: linear-gradient(135deg, ${typeColor}20, ${typeColor}10); border-top: 4px solid ${typeColor}`}>
               <div class="p-6 text-center">
-                <img src={`/images/iber-types/${type.data.slug}.png`} alt={type.data.title} class="w-32 h-32 mx-auto object-contain drop-shadow-lg mb-4" />
+                <img src={`/images/iber-types/${type.data.slug}.png`} alt={`IBerタイプ「${type.data.title}」のキャラクターイラスト`} class="w-32 h-32 mx-auto object-contain drop-shadow-lg mb-4" />
                 <h3 class="font-bold text-lg" style={`color: ${typeColor}`}>{typeData?.name}</h3>
                 <p class="text-sm text-gray-500">{typeData?.nameJa}</p>
               </div>

@@ -12,8 +12,7 @@ TOKプレゼンテーション（TOK Exhibition）は、実世界の状況と知
 
 目次
 
-[Toggle](#)
-- [TOK Exhibitionの基本ルール](https://ib-tutors.net/ib-tok-presentation-guide/#TOK_Exhibition%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%83%AB%E3%83%BC%E3%83%AB)- [Promptの選び方](https://ib-tutors.net/ib-tok-presentation-guide/#Prompt%E3%81%AE%E9%81%B8%E3%81%B3%E6%96%B9)- [オブジェクトの選び方](https://ib-tutors.net/ib-tok-presentation-guide/#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E9%81%B8%E3%81%B3%E6%96%B9)- [コメンタリーの構成（各950語）](https://ib-tutors.net/ib-tok-presentation-guide/#%E3%82%B3%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AA%E3%83%BC%E3%81%AE%E6%A7%8B%E6%88%90%EF%BC%88%E5%90%84950%E8%AA%9E%EF%BC%89)- [高得点のコツ](https://ib-tutors.net/ib-tok-presentation-guide/#%E9%AB%98%E5%BE%97%E7%82%B9%E3%81%AE%E3%82%B3%E3%83%84)- [IBの勉強でお悩みですか？](https://ib-tutors.net/ib-tok-presentation-guide/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
+- [TOK Exhibitionの基本ルール](/ib-tok-presentation-guide/#TOK_Exhibition%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%83%AB%E3%83%BC%E3%83%AB)- [Promptの選び方](/ib-tok-presentation-guide/#Prompt%E3%81%AE%E9%81%B8%E3%81%B3%E6%96%B9)- [オブジェクトの選び方](/ib-tok-presentation-guide/#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E9%81%B8%E3%81%B3%E6%96%B9)- [コメンタリーの構成（各950語）](/ib-tok-presentation-guide/#%E3%82%B3%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AA%E3%83%BC%E3%81%AE%E6%A7%8B%E6%88%90%EF%BC%88%E5%90%84950%E8%AA%9E%EF%BC%89)- [高得点のコツ](/ib-tok-presentation-guide/#%E9%AB%98%E5%BE%97%E7%82%B9%E3%81%AE%E3%82%B3%E3%83%84)- [IBの勉強でお悩みですか？](/ib-tok-presentation-guide/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
 
 ## TOK Exhibitionの基本ルール
 

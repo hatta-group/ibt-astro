@@ -10,8 +10,7 @@ draft: false
 
 目次
 
-[Toggle](#)
-- [海外IB校への進学は増えている](https://ib-tutors.net/studying-ib-abroad-from-japan/#%E6%B5%B7%E5%A4%96IB%E6%A0%A1%E3%81%B8%E3%81%AE%E9%80%B2%E5%AD%A6%E3%81%AF%E5%A2%97%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B)- [海外IB校の教育環境と特徴](https://ib-tutors.net/studying-ib-abroad-from-japan/#%E6%B5%B7%E5%A4%96IB%E6%A0%A1%E3%81%AE%E6%95%99%E8%82%B2%E7%92%B0%E5%A2%83%E3%81%A8%E7%89%B9%E5%BE%B4)- [入学に必要な準備と手続き](https://ib-tutors.net/studying-ib-abroad-from-japan/#%E5%85%A5%E5%AD%A6%E3%81%AB%E5%BF%85%E8%A6%81%E3%81%AA%E6%BA%96%E5%82%99%E3%81%A8%E6%89%8B%E7%B6%9A%E3%81%8D)- [ビザ取得と異文化への適応](https://ib-tutors.net/studying-ib-abroad-from-japan/#%E3%83%93%E3%82%B6%E5%8F%96%E5%BE%97%E3%81%A8%E7%95%B0%E6%96%87%E5%8C%96%E3%81%B8%E3%81%AE%E9%81%A9%E5%BF%9C)- [学費と家族の負担](https://ib-tutors.net/studying-ib-abroad-from-japan/#%E5%AD%A6%E8%B2%BB%E3%81%A8%E5%AE%B6%E6%97%8F%E3%81%AE%E8%B2%A0%E6%8B%85)[📚 関連記事](https://ib-tutors.net/studying-ib-abroad-from-japan/#%F0%9F%93%9A_%E9%96%A2%E9%80%A3%E8%A8%98%E4%BA%8B)
+- [海外IB校への進学は増えている](/studying-ib-abroad-from-japan/#%E6%B5%B7%E5%A4%96IB%E6%A0%A1%E3%81%B8%E3%81%AE%E9%80%B2%E5%AD%A6%E3%81%AF%E5%A2%97%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B)- [海外IB校の教育環境と特徴](/studying-ib-abroad-from-japan/#%E6%B5%B7%E5%A4%96IB%E6%A0%A1%E3%81%AE%E6%95%99%E8%82%B2%E7%92%B0%E5%A2%83%E3%81%A8%E7%89%B9%E5%BE%B4)- [入学に必要な準備と手続き](/studying-ib-abroad-from-japan/#%E5%85%A5%E5%AD%A6%E3%81%AB%E5%BF%85%E8%A6%81%E3%81%AA%E6%BA%96%E5%82%99%E3%81%A8%E6%89%8B%E7%B6%9A%E3%81%8D)- [ビザ取得と異文化への適応](/studying-ib-abroad-from-japan/#%E3%83%93%E3%82%B6%E5%8F%96%E5%BE%97%E3%81%A8%E7%95%B0%E6%96%87%E5%8C%96%E3%81%B8%E3%81%AE%E9%81%A9%E5%BF%9C)- [学費と家族の負担](/studying-ib-abroad-from-japan/#%E5%AD%A6%E8%B2%BB%E3%81%A8%E5%AE%B6%E6%97%8F%E3%81%AE%E8%B2%A0%E6%8B%85)[📚 関連記事](/studying-ib-abroad-from-japan/#%F0%9F%93%9A_%E9%96%A2%E9%80%A3%E8%A8%98%E4%BA%8B)
 
 ## 海外IB校への進学は増えている
 
@@ -39,9 +38,9 @@ IBの教育はあってるけど、日本での学びはあってないって方
 
 ### 📚 関連記事
 
-- [大学でのIB経験者アドバンテージはあった？](https://ib-tutors.net/ib-advantage-in-university/)
-- [国ごとのIB受験方法の特徴は？](https://ib-tutors.net/ib-admission-by-country/)
-- [IBからの受験で日本の国公立と海外の大学の決断方法は？](https://ib-tutors.net/ib-japan-vs-overseas-university/)
+- [大学でのIB経験者アドバンテージはあった？](/ib-advantage-in-university/)
+- [国ごとのIB受験方法の特徴は？](/ib-admission-by-country/)
+- [IBからの受験で日本の国公立と海外の大学の決断方法は？](/ib-japan-vs-overseas-university/)
 
 ---
 

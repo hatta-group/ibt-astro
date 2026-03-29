@@ -12,8 +12,7 @@ IB Psychology IAは、1,800-2,200語の実験レポートで、SLの25%・HLの2
 
 目次
 
-[Toggle](#)
-- [テーマ選びのポイント](https://ib-tutors.net/ib-psychology-ia-guide/#%E3%83%86%E3%83%BC%E3%83%9E%E9%81%B8%E3%81%B3%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88)[おすすめのテーマ例](https://ib-tutors.net/ib-psychology-ia-guide/#%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%81%AE%E3%83%86%E3%83%BC%E3%83%9E%E4%BE%8B)- [レポートの構成（22点満点）](https://ib-tutors.net/ib-psychology-ia-guide/#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AE%E6%A7%8B%E6%88%90%EF%BC%8822%E7%82%B9%E6%BA%80%E7%82%B9%EF%BC%89)- [高得点のコツ](https://ib-tutors.net/ib-psychology-ia-guide/#%E9%AB%98%E5%BE%97%E7%82%B9%E3%81%AE%E3%82%B3%E3%83%84)- [IBの勉強でお悩みですか？](https://ib-tutors.net/ib-psychology-ia-guide/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
+- [テーマ選びのポイント](/ib-psychology-ia-guide/#%E3%83%86%E3%83%BC%E3%83%9E%E9%81%B8%E3%81%B3%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88)[おすすめのテーマ例](/ib-psychology-ia-guide/#%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%81%AE%E3%83%86%E3%83%BC%E3%83%9E%E4%BE%8B)- [レポートの構成（22点満点）](/ib-psychology-ia-guide/#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AE%E6%A7%8B%E6%88%90%EF%BC%8822%E7%82%B9%E6%BA%80%E7%82%B9%EF%BC%89)- [高得点のコツ](/ib-psychology-ia-guide/#%E9%AB%98%E5%BE%97%E7%82%B9%E3%81%AE%E3%82%B3%E3%83%84)- [IBの勉強でお悩みですか？](/ib-psychology-ia-guide/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
 
 ## テーマ選びのポイント
 

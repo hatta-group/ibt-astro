@@ -12,8 +12,7 @@ IB English A: Literatureは、文学作品を深く分析する科目です。Pa
 
 目次
 
-[Toggle](#)
-- [Paper 1：初見テキスト分析の攻略](https://ib-tutors.net/ib-english-a-literature-strategy/#Paper_1%EF%BC%9A%E5%88%9D%E8%A6%8B%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E5%88%86%E6%9E%90%E3%81%AE%E6%94%BB%E7%95%A5)[高得点のポイント](https://ib-tutors.net/ib-english-a-literature-strategy/#%E9%AB%98%E5%BE%97%E7%82%B9%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88)- [Paper 2：比較エッセイの攻略](https://ib-tutors.net/ib-english-a-literature-strategy/#Paper_2%EF%BC%9A%E6%AF%94%E8%BC%83%E3%82%A8%E3%83%83%E3%82%BB%E3%82%A4%E3%81%AE%E6%94%BB%E7%95%A5)- [IO（Individual Oral）の攻略](https://ib-tutors.net/ib-english-a-literature-strategy/#IO%EF%BC%88Individual_Oral%EF%BC%89%E3%81%AE%E6%94%BB%E7%95%A5)- [日々の勉強法](https://ib-tutors.net/ib-english-a-literature-strategy/#%E6%97%A5%E3%80%85%E3%81%AE%E5%8B%89%E5%BC%B7%E6%B3%95)- [IBの勉強でお悩みですか？](https://ib-tutors.net/ib-english-a-literature-strategy/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
+- [Paper 1：初見テキスト分析の攻略](/ib-english-a-literature-strategy/#Paper_1%EF%BC%9A%E5%88%9D%E8%A6%8B%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E5%88%86%E6%9E%90%E3%81%AE%E6%94%BB%E7%95%A5)[高得点のポイント](/ib-english-a-literature-strategy/#%E9%AB%98%E5%BE%97%E7%82%B9%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88)- [Paper 2：比較エッセイの攻略](/ib-english-a-literature-strategy/#Paper_2%EF%BC%9A%E6%AF%94%E8%BC%83%E3%82%A8%E3%83%83%E3%82%BB%E3%82%A4%E3%81%AE%E6%94%BB%E7%95%A5)- [IO（Individual Oral）の攻略](/ib-english-a-literature-strategy/#IO%EF%BC%88Individual_Oral%EF%BC%89%E3%81%AE%E6%94%BB%E7%95%A5)- [日々の勉強法](/ib-english-a-literature-strategy/#%E6%97%A5%E3%80%85%E3%81%AE%E5%8B%89%E5%BC%B7%E6%B3%95)- [IBの勉強でお悩みですか？](/ib-english-a-literature-strategy/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
 
 ## Paper 1：初見テキスト分析の攻略
 

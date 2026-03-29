@@ -238,11 +238,11 @@ IBTでは、60分の無料体験を受け付けています。
 
 しつこい勧誘は一切ありません。
 
-無料体験のお申し込みはこちら：https://ib-tutors.net/contact/
+無料体験のお申し込みはこちら：/contact/
 
 ---
 
 IBT（IB Tutors）
 IB専門 オンライン家庭教師サービス
 講師は全員IB卒業生 | 60分無料体験受付中
-https://ib-tutors.net/
+/

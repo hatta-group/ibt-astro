@@ -30,7 +30,7 @@ IBプログラムについて興味はあるけれど、具体的にどんなも
 
 > **gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
-**website** : [ib-tutors.net](https://ib-tutors.net/)
+**website** : [ib-tutors.net](/)
 
 ---
 

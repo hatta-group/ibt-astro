@@ -10,8 +10,7 @@ draft: false
 
 目次
 
-[Toggle](#)
-- [チューター紹介](https://ib-tutors.net/ib-tutor-interview-6/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E7%B4%B9%E4%BB%8B)[はじめに](https://ib-tutors.net/ib-tutor-interview-6/#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)- [チューターのプロファイル](https://ib-tutors.net/ib-tutor-interview-6/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB)- [丁寧で詳細な説明](https://ib-tutors.net/ib-tutor-interview-6/#%E4%B8%81%E5%AF%A7%E3%81%A7%E8%A9%B3%E7%B4%B0%E3%81%AA%E8%AA%AC%E6%98%8E)- [課外活動との統合教育](https://ib-tutors.net/ib-tutor-interview-6/#%E8%AA%B2%E5%A4%96%E6%B4%BB%E5%8B%95%E3%81%A8%E3%81%AE%E7%B5%B1%E5%90%88%E6%95%99%E8%82%B2)- [バスケと学業の経験からのアドバイス](https://ib-tutors.net/ib-tutor-interview-6/#%E3%83%90%E3%82%B9%E3%82%B1%E3%81%A8%E5%AD%A6%E6%A5%AD%E3%81%AE%E7%B5%8C%E9%A8%93%E3%81%8B%E3%82%89%E3%81%AE%E3%82%A2%E3%83%89%E3%83%90%E3%82%A4%E3%82%B9)- [最後に](https://ib-tutors.net/ib-tutor-interview-6/#%E6%9C%80%E5%BE%8C%E3%81%AB)
+- [チューター紹介](/ib-tutor-interview-6/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E7%B4%B9%E4%BB%8B)[はじめに](/ib-tutor-interview-6/#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)- [チューターのプロファイル](/ib-tutor-interview-6/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB)- [丁寧で詳細な説明](/ib-tutor-interview-6/#%E4%B8%81%E5%AF%A7%E3%81%A7%E8%A9%B3%E7%B4%B0%E3%81%AA%E8%AA%AC%E6%98%8E)- [課外活動との統合教育](/ib-tutor-interview-6/#%E8%AA%B2%E5%A4%96%E6%B4%BB%E5%8B%95%E3%81%A8%E3%81%AE%E7%B5%B1%E5%90%88%E6%95%99%E8%82%B2)- [バスケと学業の経験からのアドバイス](/ib-tutor-interview-6/#%E3%83%90%E3%82%B9%E3%82%B1%E3%81%A8%E5%AD%A6%E6%A5%AD%E3%81%AE%E7%B5%8C%E9%A8%93%E3%81%8B%E3%82%89%E3%81%AE%E3%82%A2%E3%83%89%E3%83%90%E3%82%A4%E3%82%B9)- [最後に](/ib-tutor-interview-6/#%E6%9C%80%E5%BE%8C%E3%81%AB)
 
 ## チューター紹介
 

@@ -10,8 +10,7 @@ draft: false
 
 目次
 
-[Toggle](#)
-- [チューター紹介](https://ib-tutors.net/ib-tutor-interview-1-ibt/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E7%B4%B9%E4%BB%8B)[はじめに](https://ib-tutors.net/ib-tutor-interview-1-ibt/#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)- [チューターのプロファイル](https://ib-tutors.net/ib-tutor-interview-1-ibt/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB)- [チュータリングスタイル](https://ib-tutors.net/ib-tutor-interview-1-ibt/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB)- [真面目でまめな性格が光る指導スタイル](https://ib-tutors.net/ib-tutor-interview-1-ibt/#%E7%9C%9F%E9%9D%A2%E7%9B%AE%E3%81%A7%E3%81%BE%E3%82%81%E3%81%AA%E6%80%A7%E6%A0%BC%E3%81%8C%E5%85%89%E3%82%8B%E6%8C%87%E5%B0%8E%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB)- [学びを身近に感じさせるアプローチ](https://ib-tutors.net/ib-tutor-interview-1-ibt/#%E5%AD%A6%E3%81%B3%E3%82%92%E8%BA%AB%E8%BF%91%E3%81%AB%E6%84%9F%E3%81%98%E3%81%95%E3%81%9B%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AD%E3%83%BC%E3%83%81)- [生徒へのメッセージ](https://ib-tutors.net/ib-tutor-interview-1-ibt/#%E7%94%9F%E5%BE%92%E3%81%B8%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8)- [最後に](https://ib-tutors.net/ib-tutor-interview-1-ibt/#%E6%9C%80%E5%BE%8C%E3%81%AB)
+- [チューター紹介](/ib-tutor-interview-1-ibt/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E7%B4%B9%E4%BB%8B)[はじめに](/ib-tutor-interview-1-ibt/#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)- [チューターのプロファイル](/ib-tutor-interview-1-ibt/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB)- [チュータリングスタイル](/ib-tutor-interview-1-ibt/#%E3%83%81%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB)- [真面目でまめな性格が光る指導スタイル](/ib-tutor-interview-1-ibt/#%E7%9C%9F%E9%9D%A2%E7%9B%AE%E3%81%A7%E3%81%BE%E3%82%81%E3%81%AA%E6%80%A7%E6%A0%BC%E3%81%8C%E5%85%89%E3%82%8B%E6%8C%87%E5%B0%8E%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB)- [学びを身近に感じさせるアプローチ](/ib-tutor-interview-1-ibt/#%E5%AD%A6%E3%81%B3%E3%82%92%E8%BA%AB%E8%BF%91%E3%81%AB%E6%84%9F%E3%81%98%E3%81%95%E3%81%9B%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AD%E3%83%BC%E3%83%81)- [生徒へのメッセージ](/ib-tutor-interview-1-ibt/#%E7%94%9F%E5%BE%92%E3%81%B8%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8)- [最後に](/ib-tutor-interview-1-ibt/#%E6%9C%80%E5%BE%8C%E3%81%AB)
 
 ## チューター紹介
 
@@ -30,9 +29,6 @@ draft: false
  	- HL科目：【English A / History / Economics】
  	- SL科目：【Japanese A / Math AA / ESS (Environmental Systems and Societies)】
  	- CAS / TOK / EE / MYP subjects も対応可能
-
-
-#### 
 
 
 #### チュータリングスタイル

@@ -5,7 +5,7 @@ date: "2024-04-19"
 description: "IBT講師紹介。立命館大学在学のIB卒業生が、Art・Economicsを中心にクリエイティブなアプローチで指導。生徒のニーズに合わせた丁寧な指導スタイルをご紹介。"
 category: "tutor-intro"
 ogImage: ""
-draft: false
+draft: true
 ---
 
 

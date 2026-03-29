@@ -30,7 +30,7 @@ MYPからDPに進学を検討している子たちは、なんとなく入る前
 
 > **gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
-**website** : [ib-tutors.net](https://ib-tutors.net/)
+**website** : [ib-tutors.net](/)
 
 ---
 

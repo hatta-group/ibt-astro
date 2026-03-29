@@ -5,7 +5,7 @@ date: "2024-04-17"
 description: "IBT講師紹介。上智大学在学のIB卒業生が、BiologyやChemistryなどサイエンス科目を中心にバイリンガルで指導。レッスンへの情熱と効果的な学習方法をご紹介。"
 category: "tutor-intro"
 ogImage: ""
-draft: false
+draft: true
 ---
 
 

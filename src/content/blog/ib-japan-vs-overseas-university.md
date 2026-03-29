@@ -30,14 +30,14 @@ draft: false
 
 > **gmail** : [info@ib-tutors.net](mailto:info@ib-tutors.net)
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
-**website** : [ib-tutors.net](https://ib-tutors.net/)
+**website** : [ib-tutors.net](/)
 
 ### 📚 関連記事
 
-- [大学でのIB経験者アドバンテージはあった？](https://ib-tutors.net/ib-advantage-in-university/)
-- [国ごとのIB受験方法の特徴は？](https://ib-tutors.net/ib-admission-by-country/)
-- [IBDPを使った日本大学と海外大学併願の仕方](https://ib-tutors.net/ibdp-japan-overseas-dual-application/)
-- [中学や高校から海外のIB校に行く子はいますか？](https://ib-tutors.net/studying-ib-abroad-from-japan/)
+- [大学でのIB経験者アドバンテージはあった？](/ib-advantage-in-university/)
+- [国ごとのIB受験方法の特徴は？](/ib-admission-by-country/)
+- [IBDPを使った日本大学と海外大学併願の仕方](/ibdp-japan-overseas-dual-application/)
+- [中学や高校から海外のIB校に行く子はいますか？](/studying-ib-abroad-from-japan/)
 
 ---
 

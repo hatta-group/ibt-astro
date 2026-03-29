@@ -363,7 +363,10 @@ import { iberTypes } from '../data/iber-types';
         const btn = document.createElement('button');
         btn.className =
           'w-full text-left p-4 md:p-5 rounded-xl border border-ibt-border hover:border-ibt-red hover:bg-ibt-red-50 transition-all cursor-pointer group';
-        btn.innerHTML = `<span class="flex items-center gap-3"><span class="w-8 h-8 rounded-full border-2 border-ibt-border group-hover:border-ibt-red group-hover:bg-ibt-red group-hover:text-white flex items-center justify-center text-sm font-bold shrink-0 transition-all">${String.fromCharCode(65 + i)}</span><span class="leading-relaxed">${answer.text}</span></span>`;
+        btn.setAttribute('role', 'radio');
+        btn.setAttribute('aria-checked', 'false');
+        btn.setAttribute('aria-label', `選択肢${String.fromCharCode(65 + i)}: ${answer.text}`);
+        btn.innerHTML = `<span class="flex items-center gap-3"><span class="w-8 h-8 rounded-full border-2 border-ibt-border group-hover:border-ibt-red group-hover:bg-ibt-red group-hover:text-white flex items-center justify-center text-sm font-bold shrink-0 transition-all" aria-hidden="true">${String.fromCharCode(65 + i)}</span><span class="leading-relaxed">${answer.text}</span></span>`;
         btn.addEventListener('click', () => selectAnswer(answer.types));
         answersDiv.appendChild(btn);
       });

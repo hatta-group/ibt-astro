@@ -10,8 +10,7 @@ draft: true
 
 目次
 
-[Toggle](#)
-- [はじめに](https://ib-tutors.net/ib-ee-topic-selection-guide/#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)- [テーマ選びの重要性](https://ib-tutors.net/ib-ee-topic-selection-guide/#%E3%83%86%E3%83%BC%E3%83%9E%E9%81%B8%E3%81%B3%E3%81%AE%E9%87%8D%E8%A6%81%E6%80%A7)- [テーマ選びのステップ](https://ib-tutors.net/ib-ee-topic-selection-guide/#%E3%83%86%E3%83%BC%E3%83%9E%E9%81%B8%E3%81%B3%E3%81%AE%E3%82%B9%E3%83%86%E3%83%83%E3%83%97)- [IBTのサポート](https://ib-tutors.net/ib-ee-topic-selection-guide/#IBT%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88)- [最後に](https://ib-tutors.net/ib-ee-topic-selection-guide/#%E6%9C%80%E5%BE%8C%E3%81%AB)- [EEテーマの選び方](https://ib-tutors.net/ib-ee-topic-selection-guide/#EE%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E9%81%B8%E3%81%B3%E6%96%B9)[📚 関連記事](https://ib-tutors.net/ib-ee-topic-selection-guide/#%F0%9F%93%9A_%E9%96%A2%E9%80%A3%E8%A8%98%E4%BA%8B)
+- [はじめに](/ib-ee-topic-selection-guide/#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)- [テーマ選びの重要性](/ib-ee-topic-selection-guide/#%E3%83%86%E3%83%BC%E3%83%9E%E9%81%B8%E3%81%B3%E3%81%AE%E9%87%8D%E8%A6%81%E6%80%A7)- [テーマ選びのステップ](/ib-ee-topic-selection-guide/#%E3%83%86%E3%83%BC%E3%83%9E%E9%81%B8%E3%81%B3%E3%81%AE%E3%82%B9%E3%83%86%E3%83%83%E3%83%97)- [IBTのサポート](/ib-ee-topic-selection-guide/#IBT%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88)- [最後に](/ib-ee-topic-selection-guide/#%E6%9C%80%E5%BE%8C%E3%81%AB)- [EEテーマの選び方](/ib-ee-topic-selection-guide/#EE%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E9%81%B8%E3%81%B3%E6%96%B9)[📚 関連記事](/ib-ee-topic-selection-guide/#%F0%9F%93%9A_%E9%96%A2%E9%80%A3%E8%A8%98%E4%BA%8B)
 
 #### はじめに
 
@@ -49,6 +48,6 @@ IBTでは、IBの経験者がチューターとして在籍しており、彼ら
 
 ### 📚 関連記事
 
-- [EE（Extended Essay）とは？](https://ib-tutors.net/ib-ee-explained/)
-- [IBでEEの具体的なトピックの決め方は？](https://ib-tutors.net/ib-ee-topic-selection/)
-- [EEについて教えてください！](https://ib-tutors.net/extended-essay-guide/)
+- [EE（Extended Essay）とは？](/ib-ee-explained/)
+- [IBでEEの具体的なトピックの決め方は？](/ib-ee-topic-selection/)
+- [EEについて教えてください！](/extended-essay-guide/)

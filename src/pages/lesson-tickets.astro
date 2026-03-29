@@ -76,16 +76,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Step 1: Program selector -->
         <div class="flex flex-wrap justify-center gap-3 mb-8">
-          <button data-program="pyp" class="program-tab active-tab px-6 py-3 rounded-full font-bold text-sm transition-all">PYP</button>
-          <button data-program="myp" class="program-tab px-6 py-3 rounded-full font-bold text-sm transition-all">MYP</button>
-          <button data-program="dp" class="program-tab px-6 py-3 rounded-full font-bold text-sm transition-all">DP</button>
-          <button data-program="individual" class="program-tab px-6 py-3 rounded-full font-bold text-sm transition-all">IB Individual (30min)</button>
+          <button data-program="pyp" class="program-tab active-tab px-6 py-3 min-h-[48px] rounded-full font-bold text-sm transition-all">PYP</button>
+          <button data-program="myp" class="program-tab px-6 py-3 min-h-[48px] rounded-full font-bold text-sm transition-all">MYP</button>
+          <button data-program="dp" class="program-tab px-6 py-3 min-h-[48px] rounded-full font-bold text-sm transition-all">DP</button>
+          <button data-program="individual" class="program-tab px-6 py-3 min-h-[48px] rounded-full font-bold text-sm transition-all">IB Individual (30min)</button>
         </div>
 
         <!-- Step 2: Format selector (hidden for individual) -->
         <div id="format-selector" class="flex justify-center gap-3 mb-12">
-          <button data-format="online" class="format-tab active-format px-5 py-2.5 rounded-full font-medium text-sm transition-all">オンライン</button>
-          <button data-format="inperson" class="format-tab px-5 py-2.5 rounded-full font-medium text-sm transition-all">対面</button>
+          <button data-format="online" class="format-tab active-format px-5 py-2.5 min-h-[44px] rounded-full font-medium text-sm transition-all">オンライン</button>
+          <button data-format="inperson" class="format-tab px-5 py-2.5 min-h-[44px] rounded-full font-medium text-sm transition-all">対面</button>
         </div>
 
         <!-- Ticket Cards Container -->
