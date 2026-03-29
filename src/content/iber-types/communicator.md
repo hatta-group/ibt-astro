@@ -2,7 +2,7 @@
 title: "Communicator（言葉の使い手）タイプ｜IBerタイプ徹底解説"
 slug: "communicator"
 description: "Communicator（言葉の使い手） 💬 Communicator 言葉の使い手タイプ 表現力とプレゼン力のカリスマ。英語での発信が得意で、Oral試験やプレゼンテーションをむしろ [...]"
-color: "#1E88E5"
+color: "#FF7043"
 draft: false
 ---
 ## 性格・特徴

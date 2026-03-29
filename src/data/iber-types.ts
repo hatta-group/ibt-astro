@@ -12,7 +12,7 @@ export const iberTypes: IBerType[] = [
     name: 'Inquirer',
     nameJa: '探究する人',
     description: '好奇心旺盛で、自ら問いを立てて学びを深めるタイプ。リサーチやEEで力を発揮します。',
-    color: '#E53935',
+    color: '#F9A825',
   },
   {
     id: 'knowledgeable',
@@ -33,7 +33,7 @@ export const iberTypes: IBerType[] = [
     name: 'Communicator',
     nameJa: 'コミュニケーションができる人',
     description: '自分の考えを効果的に伝え、他者の意見にも耳を傾けるタイプ。プレゼンやIOが得意。',
-    color: '#1E88E5',
+    color: '#FF7043',
   },
   {
     id: 'principled',

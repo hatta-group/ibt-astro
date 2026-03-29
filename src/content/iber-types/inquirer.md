@@ -2,7 +2,7 @@
 title: "Inquirer（探究者）タイプ｜IBerタイプ徹底解説"
 slug: "inquirer"
 description: "Inquirer（探究者） 🔍 Inquirer 探究者タイプ 「なぜ？」が止まらない。知的好奇心の塊。ToKやEEで一番生き生きするタイプ。自分だけの問いを立てる作業が、他のタイプに [...]"
-color: "#E53935"
+color: "#F9A825"
 draft: false
 ---
 ## 性格・特徴
