@@ -179,44 +179,82 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2 class="text-2xl md:text-4xl font-bold">料金</h2>
         <p class="text-ibt-text-light mt-4 max-w-2xl mx-auto">シンプルで分かりやすい料金体系</p>
       </div>
-      <div class="max-w-2xl mx-auto">
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden">
-          <table class="w-full">
-            <tbody>
-              <tr class="border-b border-ibt-border">
-                <td class="px-6 md:px-8 py-5 font-bold bg-gray-50 w-1/3">入会金</td>
-                <td class="px-6 md:px-8 py-5">
-                  <span class="text-ibt-red text-2xl font-bold">0</span>
-                  <span class="text-ibt-text-light ml-1">円</span>
-                </td>
-              </tr>
-              <tr class="border-b border-ibt-border">
-                <td class="px-6 md:px-8 py-5 font-bold bg-gray-50">授業料</td>
-                <td class="px-6 md:px-8 py-5">
-                  <span class="text-ibt-red text-2xl font-bold">6,500</span>
-                  <span class="text-ibt-text-light ml-1">円 / 1回（50分）</span>
-                  <p class="text-ibt-text-light text-sm mt-1">都度払い制・月謝や長期契約なし</p>
-                </td>
-              </tr>
-              <tr class="border-b border-ibt-border">
-                <td class="px-6 md:px-8 py-5 font-bold bg-gray-50">教材費</td>
-                <td class="px-6 md:px-8 py-5">
-                  <span class="font-bold">基本不要</span>
-                  <p class="text-ibt-text-light text-sm mt-1">お手持ちの教材で授業を進めます</p>
-                </td>
-              </tr>
-              <tr>
-                <td class="px-6 md:px-8 py-5 font-bold bg-gray-50">無料体験</td>
-                <td class="px-6 md:px-8 py-5">
-                  <span class="text-ibt-red font-bold">60分 × 1回</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- 料金テーブル -->
+      <div class="max-w-4xl mx-auto">
+        <!-- 基本情報 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 text-center">
+            <p class="text-ibt-text-light text-sm mb-1">入会金</p>
+            <p class="text-ibt-red text-3xl font-bold">0<span class="text-base text-ibt-text-light ml-1">円</span></p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 text-center">
+            <p class="text-ibt-text-light text-sm mb-1">教材費</p>
+            <p class="text-xl font-bold">基本不要</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 text-center">
+            <p class="text-ibt-text-light text-sm mb-1">無料体験</p>
+            <p class="text-ibt-red text-xl font-bold">60分 x 1回</p>
+          </div>
         </div>
-        <p class="text-ibt-text-light text-sm text-center mt-6">
-          ※ 料金は税込です。教材費は基本的にかかりません。
+
+        <!-- プログラム別料金 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-gray-50 border-b border-ibt-border">
+                  <th class="px-6 py-4 text-left font-bold">プログラム</th>
+                  <th class="px-6 py-4 text-center font-bold">オンライン<br /><span class="text-xs font-normal text-ibt-text-light">50分/回</span></th>
+                  <th class="px-6 py-4 text-center font-bold">対面<br /><span class="text-xs font-normal text-ibt-text-light">50分/回</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-ibt-border">
+                  <td class="px-6 py-5">
+                    <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mr-2">PYP</span>
+                    <span class="text-ibt-text-light text-xs">初等教育</span>
+                  </td>
+                  <td class="px-6 py-5 text-center">
+                    <span class="text-lg font-bold">4,840</span><span class="text-ibt-text-light text-xs ml-1">円/回</span>
+                  </td>
+                  <td class="px-6 py-5 text-center">
+                    <span class="text-lg font-bold">5,258</span><span class="text-ibt-text-light text-xs ml-1">円/回</span>
+                  </td>
+                </tr>
+                <tr class="border-b border-ibt-border">
+                  <td class="px-6 py-5">
+                    <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full mr-2">MYP</span>
+                    <span class="text-ibt-text-light text-xs">中等教育</span>
+                  </td>
+                  <td class="px-6 py-5 text-center">
+                    <span class="text-lg font-bold">6,050</span><span class="text-ibt-text-light text-xs ml-1">円/回</span>
+                  </td>
+                  <td class="px-6 py-5 text-center">
+                    <span class="text-lg font-bold">6,468</span><span class="text-ibt-text-light text-xs ml-1">円/回</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5">
+                    <span class="inline-block px-3 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full mr-2">DP</span>
+                    <span class="text-ibt-text-light text-xs">ディプロマ</span>
+                  </td>
+                  <td class="px-6 py-5 text-center">
+                    <span class="text-lg font-bold">7,260</span><span class="text-ibt-text-light text-xs ml-1">円/回</span>
+                  </td>
+                  <td class="px-6 py-5 text-center">
+                    <span class="text-lg font-bold">7,678</span><span class="text-ibt-text-light text-xs ml-1">円/回</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="text-ibt-text-light text-sm text-center mt-4">
+          ※ 料金は税込です。都度払い制・月謝や長期契約なし。まとめ買い割引あり（4回/8回/12回/16回パック）
         </p>
+        <div class="text-center mt-4">
+          <a href="/lesson-tickets/" class="text-ibt-red font-bold text-sm hover:underline">チケット購入はこちら →</a>
+        </div>
       </div>
     </div>
   </section>
