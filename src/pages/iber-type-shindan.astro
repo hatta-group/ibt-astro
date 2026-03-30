@@ -154,6 +154,14 @@ import { iberTypes } from '../data/iber-types';
 
           <!-- Answer Choices -->
           <div id="answers" class="space-y-3" role="radiogroup" aria-label="回答選択肢"></div>
+
+          <!-- Back Button -->
+          <div class="mt-6">
+            <button id="back-btn" class="hidden inline-flex items-center gap-2 text-ibt-text-light text-sm font-medium hover:text-ibt-red transition-colors cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+              前の質問に戻る
+            </button>
+          </div>
         </div>
       </div>
 
@@ -528,6 +536,7 @@ import { iberTypes } from '../data/iber-types';
     const scores = {};
     types.forEach((t) => (scores[t.id] = 0));
     let currentQuestion = 0;
+    const answerHistory = []; // Store selected answer types for back functionality
     let isDirectResult = false;
 
     const startScreen = document.getElementById('quiz-start');
@@ -545,6 +554,14 @@ import { iberTypes } from '../data/iber-types';
       progressBar.style.width = pct + '%';
       progressBar.setAttribute('aria-valuenow', String(Math.round(pct)));
       document.getElementById('question-text').textContent = q.q;
+
+      // Show/hide back button
+      const backBtn = document.getElementById('back-btn');
+      if (currentQuestion > 0) {
+        backBtn.classList.remove('hidden');
+      } else {
+        backBtn.classList.add('hidden');
+      }
 
       const answersDiv = document.getElementById('answers');
       answersDiv.innerHTML = '';
@@ -577,6 +594,7 @@ import { iberTypes } from '../data/iber-types';
       }
 
       typeIds.forEach((id) => (scores[id] = (scores[id] || 0) + 1));
+      answerHistory.push(typeIds); // Save for back functionality
       currentQuestion++;
 
       // Fade out after 0.3s delay, then show next
@@ -900,6 +918,7 @@ import { iberTypes } from '../data/iber-types';
     function resetQuiz() {
       currentQuestion = 0;
       types.forEach((t) => (scores[t.id] = 0));
+      answerHistory.length = 0;
       isDirectResult = false;
       // Remove dynamically added sections
       var dynamicSections = resultContainer.querySelectorAll('.bg-white.rounded-2xl.shadow-sm.border.border-ibt-border.p-6.md\\:p-8.mb-8:not(#result-analysis):not(#score-distribution-section):not(.grid *)');
@@ -932,6 +951,16 @@ import { iberTypes } from '../data/iber-types';
       // Direct link - show result immediately
       showResult(resultParam);
     }
+
+    // Back button
+    document.getElementById('back-btn').addEventListener('click', () => {
+      if (currentQuestion > 0 && answerHistory.length > 0) {
+        const lastTypes = answerHistory.pop();
+        lastTypes.forEach((id) => (scores[id] = Math.max(0, (scores[id] || 0) - 1)));
+        currentQuestion--;
+        renderQuestion();
+      }
+    });
 
     startBtn.addEventListener('click', () => {
       startScreen.classList.add('hidden');
