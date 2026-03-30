@@ -5,7 +5,7 @@ import { iberTypes } from '../data/iber-types';
 
 <BaseLayout
   title="IBerタイプ診断｜あなたのIBerタイプは？｜IBT"
-  description="あなたのIBerタイプは？たった15問でIB Learner's Profileの10タイプを診断。試験・EE・CASなどIB生ならではの質問で強みと課題を発見。"
+  description="あなたのIBerタイプは？たった20問でIB Learner's Profileの10タイプを診断。試験・EE・CASなどIB生ならではの質問で強みと課題を発見。"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -27,7 +27,7 @@ import { iberTypes } from '../data/iber-types';
         <span class="text-white">IBerタイプ診断</span>
       </nav>
       <h1 class="text-3xl md:text-5xl font-bold text-white">あなたのIBerタイプは？</h1>
-      <p class="mt-4 text-white/85 text-lg md:text-xl">たった15問であなたのIB Learner Profileタイプを診断！</p>
+      <p class="mt-4 text-white/85 text-lg md:text-xl">たった20問であなたのIB Learner Profileタイプを診断!</p>
     </div>
   </section>
 
@@ -45,7 +45,7 @@ import { iberTypes } from '../data/iber-types';
           <h2 class="text-2xl md:text-3xl font-bold mb-4">IBerタイプ診断</h2>
           <p class="text-ibt-text-light mb-2">IB Learner's Profileの10タイプから</p>
           <p class="text-ibt-text-light mb-8">あなたに最も当てはまるタイプを診断します。</p>
-          <p class="text-sm text-ibt-text-light mb-6">所要時間：約3分 / 全15問</p>
+          <p class="text-sm text-ibt-text-light mb-6">所要時間：約3分 / 全20問</p>
           <button
             id="start-btn"
             class="inline-block bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow text-lg cursor-pointer"
@@ -66,7 +66,7 @@ import { iberTypes } from '../data/iber-types';
           <!-- Progress -->
           <div class="mb-8">
             <div class="flex justify-between items-center text-sm text-ibt-text-light mb-2">
-              <span>質問 <span id="current-q">1</span> / 15</span>
+              <span>質問 <span id="current-q">1</span> / 20</span>
               <span id="progress-pct">0%</span>
             </div>
             <div class="w-full bg-ibt-border rounded-full h-2">
@@ -97,7 +97,8 @@ import { iberTypes } from '../data/iber-types';
             <div class="text-center md:text-left">
               <p class="text-white/70 text-sm font-bold tracking-widest mb-2">YOUR TYPE</p>
               <div id="result-badge" class="text-4xl md:text-5xl font-black text-white mb-2"></div>
-              <p id="result-name-ja" class="text-xl md:text-2xl font-bold text-white/90 mb-4"></p>
+              <p id="result-name-ja" class="text-xl md:text-2xl font-bold text-white/90 mb-2"></p>
+              <p id="result-stat" class="text-white/70 text-sm font-bold mb-4"></p>
               <p id="result-desc" class="text-white/80 leading-relaxed max-w-md text-sm md:text-base"></p>
             </div>
           </div>
@@ -105,7 +106,7 @@ import { iberTypes } from '../data/iber-types';
 
         <!-- Share -->
         <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 text-center mb-8">
-          <p class="font-bold text-base mb-1">友達にもやってみてもらおう！</p>
+          <p class="font-bold text-base mb-1">友達にもやってみてもらおう!</p>
           <p class="text-sm text-ibt-text-light mb-4">結果をシェアする</p>
           <div class="flex flex-wrap gap-3 justify-center">
             <button id="share-x" class="flex items-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-sm font-bold hover:bg-gray-800 transition-colors cursor-pointer" aria-label="Xでシェア">
@@ -123,7 +124,7 @@ import { iberTypes } from '../data/iber-types';
           </div>
           <!-- Instagram share image preview -->
           <div id="ig-share-preview" class="hidden mt-6">
-            <p class="text-sm text-ibt-text-light mb-3">この画像を保存して、Instagramのストーリーズやフィードに投稿しよう！</p>
+            <p class="text-sm text-ibt-text-light mb-3">この画像を保存して、Instagramのストーリーズやフィードに投稿しよう!</p>
             <img id="ig-share-image" src="" alt="IBerタイプ診断結果シェア画像" class="mx-auto rounded-xl shadow-lg max-w-[320px] w-full" />
             <a id="ig-download-btn" href="" download="" class="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white rounded-full text-sm font-bold hover:opacity-90 transition-opacity">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
@@ -168,9 +169,18 @@ import { iberTypes } from '../data/iber-types';
         </div>
 
         <!-- Score Distribution -->
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8 mb-8">
+        <div id="score-distribution-section" class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8 mb-8">
           <h3 class="font-bold text-lg mb-5 text-center">あなたのタイプ分布</h3>
           <div id="result-scores" class="space-y-3"></div>
+        </div>
+
+        <!-- Direct Link CTA (shown when accessed via ?result= parameter) -->
+        <div id="direct-link-cta" class="hidden bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end rounded-2xl p-8 md:p-10 text-center mb-8">
+          <h3 class="text-xl md:text-2xl font-bold text-white mb-3">自分も診断してみよう!</h3>
+          <p class="text-white/80 mb-6">20問の質問に答えるだけで、あなたのIBerタイプがわかります。</p>
+          <button id="direct-start-btn" class="inline-block bg-white text-ibt-red font-bold px-8 py-4 rounded-full hover:bg-ibt-red-light transition-colors text-lg shadow-lg cursor-pointer">
+            診断を始める
+          </button>
         </div>
 
         <!-- CTA Buttons -->
@@ -213,7 +223,35 @@ import { iberTypes } from '../data/iber-types';
     </div>
   </section>
 
+  <style>
+    .quiz-fade-out {
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    }
+    .quiz-fade-in {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    .quiz-fade-in-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+    }
+    .answer-selected {
+      border-color: #e53e3e !important;
+      background-color: #fff5f5 !important;
+    }
+    .answer-selected .answer-letter {
+      background-color: #e53e3e !important;
+      border-color: #e53e3e !important;
+      color: white !important;
+    }
+  </style>
+
   <script define:vars={{ iberTypes }}>
+    // 20 questions - each type gets 8 scoring chances (20 x 4 = 80, / 10 types = 8 each)
+    // Tally: inquirer=8, knowledgeable=8, thinker=8, communicator=8, principled=8, open-minded=8, caring=8, risk-taker=8, balanced=8, reflective=8
     const questions = [
       {
         q: 'Q1. グループプロジェクトで、あなたの役割は？',
@@ -234,16 +272,16 @@ import { iberTypes } from '../data/iber-types';
         ],
       },
       {
-        q: 'Q3. EE（Extended Essay）のテーマ選びで重視することは？',
+        q: 'Q3. EE（卒業論文のようなもの）のテーマを選ぶなら？',
         a: [
-          { text: '自分の興味・好奇心', types: ['inquirer'] },
-          { text: '社会的意義・誰かの役に立つか', types: ['caring'] },
-          { text: 'データの入手しやすさ・分析可能性', types: ['thinker'] },
-          { text: '誰もやっていない新しい挑戦', types: ['risk-taker'] },
+          { text: '自分の興味・好奇心を追求できるテーマ', types: ['inquirer'] },
+          { text: '社会的意義があり誰かの役に立つテーマ', types: ['caring'] },
+          { text: 'データを集めやすく分析しやすいテーマ', types: ['thinker'] },
+          { text: '誰もやっていない新しい挑戦的なテーマ', types: ['risk-taker'] },
         ],
       },
       {
-        q: 'Q4. CAS活動で選びたいのは？',
+        q: 'Q4. CAS（課外活動・ボランティア）で選びたいのは？',
         a: [
           { text: 'ボランティア活動', types: ['caring'] },
           { text: 'スポーツ・フィットネス', types: ['balanced'] },
@@ -252,9 +290,9 @@ import { iberTypes } from '../data/iber-types';
         ],
       },
       {
-        q: 'Q5. TOK（知の理論）の授業で好きなのは？',
+        q: 'Q5. TOK（哲学のような授業）で好きなのは？',
         a: [
-          { text: '哲学的な議論', types: ['thinker'] },
+          { text: '哲学的な議論で深く考えること', types: ['thinker'] },
           { text: '異文化の視点を学ぶこと', types: ['open-minded'] },
           { text: '倫理的な問題を考えること', types: ['principled'] },
           { text: '知識の限界について考えること', types: ['reflective'] },
@@ -270,10 +308,10 @@ import { iberTypes } from '../data/iber-types';
         ],
       },
       {
-        q: 'Q7. IBで一番大変だと思うことは？',
+        q: 'Q7. 学校生活で一番大変だと思うことは？',
         a: [
           { text: '時間管理（やることが多すぎる）', types: ['balanced'] },
-          { text: '深い理解が求められること', types: ['thinker'] },
+          { text: '周りの人の気持ちに敏感になりすぎること', types: ['caring'] },
           { text: 'プレゼンや口頭試問', types: ['communicator'] },
           { text: '自分の意見をしっかり持つこと', types: ['principled'] },
         ],
@@ -297,7 +335,7 @@ import { iberTypes } from '../data/iber-types';
         ],
       },
       {
-        q: 'Q10. IA（Internal Assessment）で最も気をつけることは？',
+        q: 'Q10. IA（科目ごとのレポート課題）で最も気をつけることは？',
         a: [
           { text: 'データの正確性と信頼性', types: ['knowledgeable'] },
           { text: 'テーマのオリジナリティ', types: ['inquirer'] },
@@ -327,7 +365,7 @@ import { iberTypes } from '../data/iber-types';
         q: 'Q13. チームで意見が割れたら？',
         a: [
           { text: '全員の意見をまず聞いてみる', types: ['open-minded'] },
-          { text: 'データや根拠で説得する', types: ['thinker'] },
+          { text: 'データや根拠で説得する', types: ['knowledgeable'] },
           { text: '正しいと思うことを堂々と主張する', types: ['principled'] },
           { text: '妥協点を探して合意を作る', types: ['balanced'] },
         ],
@@ -342,7 +380,7 @@ import { iberTypes } from '../data/iber-types';
         ],
       },
       {
-        q: 'Q15. IBで学んだ最も大切なことは？',
+        q: 'Q15. 学校生活で学んだ最も大切なことは？',
         a: [
           { text: '批判的に考える力', types: ['thinker'] },
           { text: '異文化を理解し尊重する姿勢', types: ['open-minded'] },
@@ -350,12 +388,72 @@ import { iberTypes } from '../data/iber-types';
           { text: '自分を振り返り成長する力', types: ['reflective'] },
         ],
       },
+      {
+        q: 'Q16. 授業中にわからないことがあったら？',
+        a: [
+          { text: 'その場で手を挙げて質問する', types: ['inquirer'] },
+          { text: '授業後に自分で調べてみる', types: ['knowledgeable'] },
+          { text: '友達と話し合って理解を深める', types: ['communicator'] },
+          { text: 'なぜわからないのか自分の思考を振り返る', types: ['reflective'] },
+        ],
+      },
+      {
+        q: 'Q17. ボランティアや社会貢献について思うことは？',
+        a: [
+          { text: '困っている人を直接助けたい', types: ['caring'] },
+          { text: '支援する仕組みを分析して最善策を見つけたい', types: ['thinker'] },
+          { text: '不公平なことは見過ごせない', types: ['principled'] },
+          { text: '海外の現場に行って自分の目で見たい', types: ['risk-taker'] },
+        ],
+      },
+      {
+        q: 'Q18. 友達から「あなたってこういう人だよね」と言われるのは？',
+        a: [
+          { text: '「なんでも知ってるよね」', types: ['knowledgeable'] },
+          { text: '「いつも周りを気にかけてるよね」', types: ['caring'] },
+          { text: '「色んな考え方を受け入れるよね」', types: ['open-minded'] },
+          { text: '「ルールや約束をちゃんと守るよね」', types: ['principled'] },
+        ],
+      },
+      {
+        q: 'Q19. 新しい挑戦をする時、あなたの気持ちは？',
+        a: [
+          { text: 'ワクワクする! まず飛び込んでみたい', types: ['risk-taker'] },
+          { text: '事前に情報を集めてから挑みたい', types: ['inquirer'] },
+          { text: '仲間と一緒なら心強い', types: ['communicator'] },
+          { text: 'リスクと見返りを冷静に分析してから判断する', types: ['principled'] },
+        ],
+      },
+      {
+        q: 'Q20. 長期休みの理想的な過ごし方は？',
+        a: [
+          { text: '海外旅行で新しい文化に触れる', types: ['open-minded'] },
+          { text: '興味のある分野を徹底的に調べる', types: ['inquirer'] },
+          { text: '勉強・趣味・休息をバランスよく過ごす', types: ['balanced'] },
+          { text: '日記や振り返りで自分を見つめ直す', types: ['reflective'] },
+        ],
+      },
     ];
+
+    // Type rarity statistics (static)
+    const typeStats = {
+      'inquirer': 12,
+      'knowledgeable': 8,
+      'thinker': 14,
+      'communicator': 11,
+      'principled': 7,
+      'open-minded': 10,
+      'caring': 11,
+      'risk-taker': 9,
+      'balanced': 10,
+      'reflective': 8,
+    };
 
     const types = iberTypes;
     const scores = {};
     types.forEach((t) => (scores[t.id] = 0));
     let currentQuestion = 0;
+    let isDirectResult = false;
 
     const startScreen = document.getElementById('quiz-start');
     const quizContainer = document.getElementById('quiz-container');
@@ -382,20 +480,62 @@ import { iberTypes } from '../data/iber-types';
         btn.setAttribute('role', 'radio');
         btn.setAttribute('aria-checked', 'false');
         btn.setAttribute('aria-label', `選択肢${String.fromCharCode(65 + i)}: ${answer.text}`);
-        btn.innerHTML = `<span class="flex items-center gap-3"><span class="w-8 h-8 rounded-full border-2 border-ibt-border group-hover:border-ibt-red group-hover:bg-ibt-red group-hover:text-white flex items-center justify-center text-sm font-bold shrink-0 transition-all" aria-hidden="true">${String.fromCharCode(65 + i)}</span><span class="leading-relaxed">${answer.text}</span></span>`;
-        btn.addEventListener('click', () => selectAnswer(answer.types));
+        btn.innerHTML = `<span class="flex items-center gap-3"><span class="answer-letter w-8 h-8 rounded-full border-2 border-ibt-border group-hover:border-ibt-red group-hover:bg-ibt-red group-hover:text-white flex items-center justify-center text-sm font-bold shrink-0 transition-all" aria-hidden="true">${String.fromCharCode(65 + i)}</span><span class="leading-relaxed">${answer.text}</span></span>`;
+        btn.addEventListener('click', () => selectAnswer(answer.types, btn));
         answersDiv.appendChild(btn);
       });
     }
 
-    function selectAnswer(typeIds) {
+    function selectAnswer(typeIds, selectedBtn) {
+      // Disable all buttons to prevent double-click
+      const answersDiv = document.getElementById('answers');
+      const allBtns = answersDiv.querySelectorAll('button');
+      allBtns.forEach(btn => {
+        btn.style.pointerEvents = 'none';
+      });
+
+      // Show selected state with checkmark
+      selectedBtn.classList.add('answer-selected');
+      const letterSpan = selectedBtn.querySelector('.answer-letter');
+      if (letterSpan) {
+        letterSpan.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>';
+      }
+
       typeIds.forEach((id) => (scores[id] = (scores[id] || 0) + 1));
       currentQuestion++;
-      if (currentQuestion < questions.length) {
-        renderQuestion();
-      } else {
-        showResult();
-      }
+
+      // Fade out after 0.3s delay, then show next
+      setTimeout(() => {
+        if (currentQuestion < questions.length) {
+          // Fade out
+          const quizCard = quizContainer.querySelector('.bg-white');
+          const questionEl = document.getElementById('question-text');
+          const answersEl = document.getElementById('answers');
+          questionEl.classList.add('quiz-fade-out');
+          answersEl.classList.add('quiz-fade-out');
+
+          setTimeout(() => {
+            renderQuestion();
+            // Fade in
+            questionEl.classList.remove('quiz-fade-out');
+            answersEl.classList.remove('quiz-fade-out');
+            questionEl.classList.add('quiz-fade-in');
+            answersEl.classList.add('quiz-fade-in');
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                questionEl.classList.add('quiz-fade-in-active');
+                answersEl.classList.add('quiz-fade-in-active');
+                setTimeout(() => {
+                  questionEl.classList.remove('quiz-fade-in', 'quiz-fade-in-active');
+                  answersEl.classList.remove('quiz-fade-in', 'quiz-fade-in-active');
+                }, 200);
+              });
+            });
+          }, 200);
+        } else {
+          showResult();
+        }
+      }, 300);
     }
 
     // Strengths & challenges data for each type
@@ -502,24 +642,41 @@ import { iberTypes } from '../data/iber-types';
       },
     };
 
-    function showResult() {
+    function showResult(directTypeId) {
       quizContainer.classList.add('hidden');
+      startScreen.classList.add('hidden');
       resultContainer.classList.remove('hidden');
 
-      // Calculate total and find winner
-      let maxScore = 0;
-      let winnerId = 'inquirer';
+      let winnerId;
       let totalScore = 0;
-      for (const [id, score] of Object.entries(scores)) {
-        totalScore += score;
-        if (score > maxScore) {
-          maxScore = score;
-          winnerId = id;
+
+      if (directTypeId) {
+        // Direct link access - use provided type ID
+        winnerId = directTypeId;
+        isDirectResult = true;
+        // Hide score distribution for direct link results
+        document.getElementById('score-distribution-section').classList.add('hidden');
+        // Show "try it yourself" CTA
+        document.getElementById('direct-link-cta').classList.remove('hidden');
+      } else {
+        // Normal quiz completion - calculate winner
+        let maxScore = 0;
+        winnerId = 'inquirer';
+        for (const [id, score] of Object.entries(scores)) {
+          totalScore += score;
+          if (score > maxScore) {
+            maxScore = score;
+            winnerId = id;
+          }
         }
+        // Update URL with result parameter
+        history.replaceState(null, '', '?result=' + winnerId);
       }
 
       const winner = types.find((t) => t.id === winnerId);
+      if (!winner) return;
       const details = typeDetails[winnerId];
+      if (!details) return;
 
       // Header color
       const header = document.getElementById('result-header');
@@ -538,6 +695,11 @@ import { iberTypes } from '../data/iber-types';
       document.getElementById('result-name-ja').textContent = winner.nameJa;
       document.getElementById('result-desc').textContent = winner.description;
       document.getElementById('result-link').href = `/iber-type/${winner.id}/`;
+
+      // Statistics
+      const statEl = document.getElementById('result-stat');
+      const statPct = typeStats[winnerId] || 10;
+      statEl.textContent = '全診断者の約' + statPct + '%がこのタイプ';
 
       // Strengths
       const strengthsList = document.getElementById('result-strengths');
@@ -559,28 +721,29 @@ import { iberTypes } from '../data/iber-types';
         challengesList.appendChild(li);
       });
 
-      // Score distribution bars
-      const scoresContainer = document.getElementById('result-scores');
-      scoresContainer.innerHTML = '';
-      // Sort types by score descending
-      const sortedTypes = [...types].sort((a, b) => (scores[b.id] || 0) - (scores[a.id] || 0));
-      sortedTypes.forEach((t) => {
-        const score = scores[t.id] || 0;
-        const pct = totalScore > 0 ? Math.round((score / totalScore) * 100) : 0;
-        const isWinner = t.id === winnerId;
-        const row = document.createElement('div');
-        row.className = 'flex items-center gap-3';
-        row.innerHTML = `
-          <div class="w-28 md:w-36 text-right shrink-0">
-            <span class="text-xs font-bold ${isWinner ? 'text-ibt-text' : 'text-ibt-text-light'}">${t.name}</span>
-          </div>
-          <div class="flex-1 bg-ibt-border rounded-full h-5 overflow-hidden">
-            <div class="h-full rounded-full transition-all duration-700 ease-out" style="width: ${pct}%; background-color: ${t.color}; ${isWinner ? 'box-shadow: 0 0 8px ' + t.color + '60;' : 'opacity: 0.6;'}"></div>
-          </div>
-          <span class="w-10 text-xs font-bold text-right ${isWinner ? 'text-ibt-text' : 'text-ibt-text-light'}">${pct}%</span>
-        `;
-        scoresContainer.appendChild(row);
-      });
+      // Score distribution bars (only for quiz completions, not direct links)
+      if (!directTypeId) {
+        const scoresContainer = document.getElementById('result-scores');
+        scoresContainer.innerHTML = '';
+        const sortedTypes = [...types].sort((a, b) => (scores[b.id] || 0) - (scores[a.id] || 0));
+        sortedTypes.forEach((t) => {
+          const score = scores[t.id] || 0;
+          const pct = totalScore > 0 ? Math.round((score / totalScore) * 100) : 0;
+          const isWinner = t.id === winnerId;
+          const row = document.createElement('div');
+          row.className = 'flex items-center gap-3';
+          row.innerHTML = `
+            <div class="w-28 md:w-36 text-right shrink-0">
+              <span class="text-xs font-bold ${isWinner ? 'text-ibt-text' : 'text-ibt-text-light'}">${t.name}</span>
+            </div>
+            <div class="flex-1 bg-ibt-border rounded-full h-5 overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-700 ease-out" style="width: ${pct}%; background-color: ${t.color}; ${isWinner ? 'box-shadow: 0 0 8px ' + t.color + '60;' : 'opacity: 0.6;'}"></div>
+            </div>
+            <span class="w-10 text-xs font-bold text-right ${isWinner ? 'text-ibt-text' : 'text-ibt-text-light'}">${pct}%</span>
+          `;
+          scoresContainer.appendChild(row);
+        });
+      }
 
       // Analysis text
       document.getElementById('result-analysis-text').textContent = details.analysis;
@@ -622,9 +785,9 @@ import { iberTypes } from '../data/iber-types';
       tipDiv.innerHTML = '<h3 class="font-bold text-lg mb-3">成長のヒント</h3><p class="text-white/90 leading-relaxed">' + details.growthTip + '</p>';
       compatDiv.parentNode.insertBefore(tipDiv, compatDiv.nextSibling);
 
-      // Share buttons
-      const shareText = `IBerタイプ診断の結果、私は「${winner.name}（${winner.nameJa}）」でした！あなたも診断してみよう！`;
-      const shareUrl = 'https://ib-tutors.net/iber-type-shindan/';
+      // Share buttons - include result parameter in share URL
+      const shareText = `IBerタイプ診断の結果、私は「${winner.name}（${winner.nameJa}）」でした!あなたも診断してみよう!`;
+      const shareUrl = 'https://ib-tutors.net/iber-type-shindan/?result=' + winnerId;
 
       document.getElementById('share-x').onclick = () => {
         window.open(
@@ -662,10 +825,37 @@ import { iberTypes } from '../data/iber-types';
     function resetQuiz() {
       currentQuestion = 0;
       types.forEach((t) => (scores[t.id] = 0));
+      isDirectResult = false;
+      // Remove dynamically added sections
+      var dynamicSections = resultContainer.querySelectorAll('.bg-white.rounded-2xl.shadow-sm.border.border-ibt-border.p-6.md\\:p-8.mb-8:not(#result-analysis):not(#score-distribution-section):not(.grid *)');
+      // Remove personality, study, subjects, compat, tip divs that were dynamically added
+      var analysisDiv = document.getElementById('result-analysis');
+      if (analysisDiv) {
+        var next = analysisDiv.nextElementSibling;
+        while (next && next.id !== 'score-distribution-section' && !next.classList.contains('grid') && next.id !== 'direct-link-cta' && !next.classList.contains('flex')) {
+          var toRemove = next;
+          next = next.nextElementSibling;
+          toRemove.remove();
+        }
+      }
       resultContainer.classList.add('hidden');
       startScreen.classList.remove('hidden');
       quizContainer.classList.add('hidden');
+      // Show score distribution section again
+      document.getElementById('score-distribution-section').classList.remove('hidden');
+      // Hide direct link CTA
+      document.getElementById('direct-link-cta').classList.add('hidden');
+      // Reset URL
+      history.replaceState(null, '', window.location.pathname);
       startScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Check for URL parameter on page load
+    const urlParams = new URLSearchParams(window.location.search);
+    const resultParam = urlParams.get('result');
+    if (resultParam && typeDetails[resultParam]) {
+      // Direct link - show result immediately
+      showResult(resultParam);
     }
 
     startBtn.addEventListener('click', () => {
@@ -673,6 +863,17 @@ import { iberTypes } from '../data/iber-types';
       quizContainer.classList.remove('hidden');
       renderQuestion();
     });
+
+    // Direct start button (shown in direct link results)
+    const directStartBtn = document.getElementById('direct-start-btn');
+    if (directStartBtn) {
+      directStartBtn.addEventListener('click', () => {
+        resetQuiz();
+        startScreen.classList.add('hidden');
+        quizContainer.classList.remove('hidden');
+        renderQuestion();
+      });
+    }
 
     retryBtn.addEventListener('click', resetQuiz);
   </script>
