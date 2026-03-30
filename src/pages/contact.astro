@@ -163,6 +163,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               送信いただいた個人情報は、お問い合わせへの対応にのみ使用いたします。詳しくは<a href="/legal/" class="text-ibt-red hover:underline">特定商取引法に基づく表記</a>をご確認ください。
             </p>
 
+            <!-- プライバシー同意 -->
+            <div class="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="privacy-consent"
+                name="privacy-consent"
+                required
+                aria-required="true"
+                class="mt-1 w-4 h-4 text-ibt-red border-ibt-border rounded focus:ring-ibt-red/30 cursor-pointer"
+              />
+              <label for="privacy-consent" class="text-sm text-ibt-text cursor-pointer">
+                <a href="/legal/" target="_blank" class="text-ibt-red hover:underline">個人情報の取り扱い</a>に同意します <span class="text-ibt-red">*</span>
+              </label>
+            </div>
+
             <!-- 送信ボタン -->
             <div aria-live="polite" id="form-errors" class="sr-only"></div>
             <button
