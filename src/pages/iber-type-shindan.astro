@@ -18,16 +18,76 @@ import { iberTypes } from '../data/iber-types';
     })} />
   </Fragment>
 
-  <!-- Hero -->
-  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
-    <div class="max-w-7xl mx-auto px-4">
-      <nav class="text-white/85 text-sm mb-6" aria-label="パンくずリスト">
+  <!-- Hero - Visual & Exciting -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-20 md:py-28">
+    <!-- Decorative background -->
+    <div class="absolute inset-0 opacity-[0.06]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/3 blur-2xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <nav class="text-white/85 text-sm mb-8" aria-label="パンくずリスト">
         <a href="/" class="hover:text-white transition-colors">ホーム</a>
         <span class="mx-2">/</span>
         <span class="text-white">IBerタイプ診断</span>
       </nav>
-      <h1 class="text-3xl md:text-5xl font-bold text-white">あなたのIBerタイプは？</h1>
-      <p class="mt-4 text-white/85 text-lg md:text-xl">たった20問であなたのIB Learner Profileタイプを診断!</p>
+
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <!-- Left: Text -->
+        <div class="flex-1 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+            <span class="w-2 h-2 bg-yellow-300 rounded-full animate-pulse"></span>
+            <span class="text-white/90 text-sm font-bold">10タイプから診断</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+            あなたの<br /><span class="text-yellow-300">IBerタイプ</span>は？
+          </h1>
+          <p class="mt-5 text-white/85 text-lg md:text-xl leading-relaxed">
+            たった20問であなたの学習スタイルを診断！<br class="hidden md:block" />
+            IB Learner Profileの10タイプから、<br class="hidden md:block" />
+            あなたの強み・課題・相性がわかる。
+          </p>
+          <div class="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start text-white/70 text-sm">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+              約3分
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"/></svg>
+              全20問
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+              完全無料
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Character Grid -->
+        <div class="shrink-0 w-72 md:w-80 lg:w-96">
+          <div class="grid grid-cols-5 gap-2 shindan-characters">
+            {iberTypes.map((type, i) => (
+              <div
+                class="relative group"
+                style={`animation: float ${2 + (i % 3) * 0.5}s ease-in-out infinite; animation-delay: ${i * 0.2}s;`}
+              >
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-1.5 hover:bg-white/30 hover:scale-110 transition-all duration-300 cursor-default">
+                  <img
+                    src={`/images/iber-types/${type.id}.png`}
+                    alt={type.nameJa}
+                    class="w-full aspect-square object-contain drop-shadow-md"
+                    loading="eager"
+                  />
+                </div>
+                <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-white text-gray-800 text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-md z-20">
+                  {type.nameJa}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p class="text-center text-white/50 text-xs mt-3">あなたはどのタイプ？</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -37,22 +97,39 @@ import { iberTypes } from '../data/iber-types';
       <!-- Start Screen -->
       <div id="quiz-start" class="text-center">
         <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-10 md:p-14">
-          <div class="w-20 h-20 bg-ibt-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-            </svg>
+          <h2 class="text-2xl md:text-3xl font-bold mb-3">診断スタート!</h2>
+          <p class="text-ibt-text-light mb-2">20問の質問に答えるだけで</p>
+          <p class="text-ibt-text-light mb-6">あなたのIBerタイプがわかります。</p>
+
+          <!-- What you'll discover -->
+          <div class="grid grid-cols-2 gap-3 max-w-sm mx-auto mb-8 text-left">
+            <div class="flex items-center gap-2 bg-ibt-bg rounded-lg px-3 py-2.5">
+              <span class="text-lg">💪</span>
+              <span class="text-sm font-medium text-ibt-text">あなたの強み</span>
+            </div>
+            <div class="flex items-center gap-2 bg-ibt-bg rounded-lg px-3 py-2.5">
+              <span class="text-lg">📚</span>
+              <span class="text-sm font-medium text-ibt-text">得意科目</span>
+            </div>
+            <div class="flex items-center gap-2 bg-ibt-bg rounded-lg px-3 py-2.5">
+              <span class="text-lg">💕</span>
+              <span class="text-sm font-medium text-ibt-text">恋愛傾向</span>
+            </div>
+            <div class="flex items-center gap-2 bg-ibt-bg rounded-lg px-3 py-2.5">
+              <span class="text-lg">🤝</span>
+              <span class="text-sm font-medium text-ibt-text">相性タイプ</span>
+            </div>
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold mb-4">IBerタイプ診断</h2>
-          <p class="text-ibt-text-light mb-2">IB Learner's Profileの10タイプから</p>
-          <p class="text-ibt-text-light mb-8">あなたに最も当てはまるタイプを診断します。</p>
-          <p class="text-sm text-ibt-text-light mb-6">所要時間：約3分 / 全20問</p>
+
           <button
             id="start-btn"
-            class="inline-block bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-lg transition-shadow text-lg cursor-pointer"
+            class="inline-flex items-center gap-2 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-10 py-5 rounded-full hover:shadow-xl hover:scale-[1.03] transition-all text-lg cursor-pointer cta-pulse"
           >
             診断を始める
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
           </button>
-          <p class="mt-6">
+          <p class="mt-5 text-xs text-ibt-text-light">IB生はもちろん、IB以外の方もOK!</p>
+          <p class="mt-2">
             <a href="/ib-learner-profile/" class="text-sm text-ibt-text-light hover:text-ibt-red transition-colors underline underline-offset-4">
               IB Learner Profileとは？ →
             </a>
@@ -877,4 +954,14 @@ import { iberTypes } from '../data/iber-types';
 
     retryBtn.addEventListener('click', resetQuiz);
   </script>
+
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .shindan-characters > div:nth-child(even) {
+      margin-top: 12px;
+    }
+  </style>
 </BaseLayout>
