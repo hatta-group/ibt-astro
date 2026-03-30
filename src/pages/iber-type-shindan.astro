@@ -34,7 +34,7 @@ import { iberTypes } from '../data/iber-types';
 
       <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
         <!-- Left: Text -->
-        <div class="flex-1 text-center lg:text-left">
+        <div class="flex-1 text-center lg:text-left max-w-xl">
           <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
             <span class="w-2 h-2 bg-yellow-300 rounded-full animate-pulse"></span>
             <span class="text-white/90 text-sm font-bold">10タイプから診断</span>
@@ -62,29 +62,29 @@ import { iberTypes } from '../data/iber-types';
             </span>
           </div>
         </div>
+      </div>
 
-        <!-- Right: Character Grid - BIG & Bold -->
-        <div class="shrink-0 w-full lg:w-[480px]">
-          <div class="grid grid-cols-5 gap-3 md:gap-4 shindan-characters">
-            {iberTypes.map((type, i) => (
-              <div
-                class="relative group"
-                style={`animation: float ${2 + (i % 3) * 0.5}s ease-in-out infinite; animation-delay: ${i * 0.15}s;`}
-              >
-                <div class="bg-white/25 backdrop-blur-sm rounded-2xl p-2 md:p-3 hover:bg-white/40 hover:scale-110 transition-all duration-300 cursor-default shadow-lg hover:shadow-xl">
-                  <img
-                    src={`/images/iber-types/${type.id}.png`}
-                    alt={type.nameJa}
-                    class="w-full aspect-square object-contain drop-shadow-lg"
-                    loading="eager"
-                  />
-                </div>
-                <p class="text-center text-white/80 text-[10px] md:text-xs font-bold mt-1.5 truncate">{type.name}</p>
+      <!-- Character Grid - Full Width Below -->
+      <div class="max-w-7xl mx-auto px-4 mt-12 relative z-10">
+        <div class="grid grid-cols-5 md:grid-cols-10 gap-4 md:gap-5 shindan-characters">
+          {iberTypes.map((type, i) => (
+            <div
+              class="relative group"
+              style={`animation: float ${2 + (i % 3) * 0.5}s ease-in-out infinite; animation-delay: ${i * 0.15}s;`}
+            >
+              <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-2.5 md:p-3 hover:bg-white/40 hover:scale-110 transition-all duration-300 cursor-default shadow-lg hover:shadow-xl">
+                <img
+                  src={`/images/iber-types/${type.id}.png`}
+                  alt={type.nameJa}
+                  class="w-full aspect-square object-contain drop-shadow-lg"
+                  loading="eager"
+                />
               </div>
-            ))}
-          </div>
-          <p class="text-center text-white/60 text-sm font-bold mt-4">あなたはどのタイプ？</p>
+              <p class="text-center text-white/90 text-xs md:text-sm font-bold mt-2">{type.name}</p>
+            </div>
+          ))}
         </div>
+        <p class="text-center text-white/60 text-base font-bold mt-5 mb-2">あなたはどのタイプ？</p>
       </div>
     </div>
   </section>
