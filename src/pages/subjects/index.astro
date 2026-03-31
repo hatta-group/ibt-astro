@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ibSubjects } from '../../data/ib-subjects';
+
+const groups = [
+  { id: 0, name: 'コア（必修）', color: 'red' },
+  { id: 1, name: 'Group 1: 言語と文学', color: 'red' },
+  { id: 2, name: 'Group 2: 言語習得', color: 'orange' },
+  { id: 3, name: 'Group 3: 個人と社会', color: 'green' },
+  { id: 4, name: 'Group 4: 理科', color: 'blue' },
+  { id: 5, name: 'Group 5: 数学', color: 'purple' },
+  { id: 6, name: 'Group 6: 芸術', color: 'pink' },
+];
+---
+
+<BaseLayout
+  title="IB DP科目一覧｜科目別対策ガイド｜IBT"
+  description="IB DPの全科目を解説。各科目の概要、評価方法、勉強のコツ、おすすめの対策法をIB卒業生講師がわかりやすくガイドします。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "IB科目一覧", "item": "https://ib-tutors.net/subjects/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/85 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">IB科目一覧</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">IB DP 科目別対策ガイド</h1>
+      <p class="mt-4 text-white/85 text-lg">IB卒業生講師が教える、科目ごとの勉強法と対策のコツ</p>
+      <p class="mt-2 text-white/60 text-sm">{ibSubjects.length} 科目</p>
+    </div>
+  </section>
+
+  <!-- Subject Grid by Group -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      {groups.map((group) => {
+        const subjects = ibSubjects.filter(s => s.group === group.id);
+        if (subjects.length === 0) return null;
+        return (
+          <div class="mb-12 last:mb-0">
+            <h2 class="text-xl md:text-2xl font-bold mb-6">{group.name}</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {subjects.map((subject) => (
+                <a href={`/subjects/${subject.slug}/`} class="group bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all">
+                  <div class="h-1.5" style={`background: ${subject.color}`}></div>
+                  <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                      {subject.levels.map(level => (
+                        <span class="text-xs font-bold px-2 py-0.5 rounded-full border" style={`color: ${subject.color}; border-color: ${subject.color}30; background: ${subject.color}10`}>{level}</span>
+                      ))}
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-ibt-red transition-colors">{subject.name}</h3>
+                    <p class="text-sm text-ibt-text-light mt-1">{subject.nameJa}</p>
+                    <p class="text-sm text-ibt-text-light mt-3 line-clamp-2">{subject.description}</p>
+                    <span class="inline-flex items-center gap-1 text-ibt-red text-sm font-medium mt-4 group-hover:gap-2 transition-all">
+                      対策ガイドを見る
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg>
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">科目の対策でお困りですか？</h2>
+      <p class="text-ibt-text-light text-lg mb-8">IB卒業生の講師が、あなたの科目に合わせたマンツーマン指導を行います。</p>
+      <a href="/contact/" class="inline-block px-8 py-4 bg-ibt-red text-white font-bold rounded-full shadow-lg hover:bg-ibt-red-dark transition-colors cta-pulse">
+        60分無料体験に申し込む
+      </a>
+    </div>
+  </section>
+</BaseLayout>
