@@ -30,8 +30,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Mission -->
+  <!-- Founder Story -->
   <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4 text-center">OUR STORY</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-8 text-center">IBTが生まれた理由</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mb-10 rounded-full"></div>
+
+        <div class="space-y-6 text-ibt-text-light leading-relaxed">
+          <p>
+            IBの勉強は、本当に大変です。6科目の課題に追われながら、TOKのエッセイを書き、EEのリサーチを進め、CASの活動もこなす。周りに相談できる人が少なくて、一人で抱え込んでしまう。
+          </p>
+          <p>
+            IBTの代表であるMiriも、かつてそんなIB生の一人でした。
+          </p>
+          <p>
+            DP時代、課題の進め方がわからなくて困ったとき、助けてくれたのはIBを先に経験した先輩たちでした。「TOKはこうやって考えるといいよ」「EEのテーマはこう絞ると書きやすいよ」。教科書には載っていない、経験者だからこそのアドバイスが、どれだけ心強かったか。
+          </p>
+          <p>
+            <strong class="text-ibt-text">「この経験を、次のIB生に届けたい。」</strong>
+          </p>
+          <p>
+            そんな思いから、IB卒業生だけで構成された家庭教師サービス「IBT」が生まれました。講師は全員IB卒業生。教科書の知識だけでなく、IBを乗り越えたリアルな経験をもとに、一人ひとりに寄り添った指導を行っています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="py-16 md:py-24 bg-ibt-bg">
     <div class="max-w-7xl mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
         <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">OUR MISSION</p>
@@ -43,10 +72,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="text-ibt-text-light text-lg md:text-xl leading-relaxed mt-3">
           IB生一人ひとりの可能性を最大限に引き出す。
         </p>
-        <p class="text-ibt-text-light leading-relaxed mt-6">
-          IBTは、IB（国際バカロレア）プログラムを実際に経験し卒業した講師だけで構成された、IB専門の家庭教師サービスです。<br />
-          教科書だけでは伝わらない、IBならではの学び方・考え方・乗り越え方を、先輩として一人ひとりに寄り添いながらお伝えします。
-        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+          <div class="bg-white rounded-2xl p-6 border border-ibt-border">
+            <p class="text-3xl font-black text-ibt-red mb-2">100%</p>
+            <p class="text-sm text-ibt-text-light">講師全員がIB卒業生</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 border border-ibt-border">
+            <p class="text-3xl font-black text-ibt-red mb-2">0円</p>
+            <p class="text-sm text-ibt-text-light">入会金なし</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 border border-ibt-border">
+            <p class="text-3xl font-black text-ibt-red mb-2">60分</p>
+            <p class="text-sm text-ibt-text-light">無料体験授業</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
