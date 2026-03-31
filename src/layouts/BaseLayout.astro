@@ -129,5 +129,28 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
     </div>
     <!-- 固定CTAバー分のスペーサー（バッジ+ボタン2行分） -->
     <div class="h-24"></div>
+
+    <!-- Cookie通知バナー -->
+    <div id="cookie-banner" class="hidden fixed bottom-28 left-4 right-4 md:left-auto md:right-4 md:max-w-sm z-40 bg-white rounded-2xl shadow-xl border border-gray-200 p-5">
+      <p class="text-sm text-ibt-text leading-relaxed mb-3">当サイトでは、利便性向上とアクセス解析のためにCookieを使用しています。詳しくは<a href="/privacy/" class="text-ibt-red hover:underline">プライバシーポリシー</a>をご確認ください。</p>
+      <div class="flex gap-2">
+        <button id="cookie-accept" class="flex-1 px-4 py-2 bg-ibt-red text-white text-sm font-bold rounded-full hover:bg-ibt-red-dark transition-colors">同意する</button>
+        <button id="cookie-decline" class="px-4 py-2 bg-gray-100 text-gray-600 text-sm font-medium rounded-full hover:bg-gray-200 transition-colors">拒否</button>
+      </div>
+    </div>
+    <script>
+      if (!localStorage.getItem('cookie-consent')) {
+        const banner = document.getElementById('cookie-banner');
+        if (banner) banner.classList.remove('hidden');
+      }
+      document.getElementById('cookie-accept')?.addEventListener('click', () => {
+        localStorage.setItem('cookie-consent', 'accepted');
+        document.getElementById('cookie-banner')?.classList.add('hidden');
+      });
+      document.getElementById('cookie-decline')?.addEventListener('click', () => {
+        localStorage.setItem('cookie-consent', 'declined');
+        document.getElementById('cookie-banner')?.classList.add('hidden');
+      });
+    </script>
   </body>
 </html>
