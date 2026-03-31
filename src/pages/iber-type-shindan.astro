@@ -6,6 +6,7 @@ import { iberTypes } from '../data/iber-types';
 <BaseLayout
   title="IBerタイプ診断｜あなたのIBerタイプは？｜IBT"
   description="あなたのIBerタイプは？たった20問でIB Learner's Profileの10タイプを診断。試験・EE・CASなどIB生ならではの質問で強みと課題を発見。"
+  ogImage="/images/iber-types/iber-shindan-banner.png"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -64,27 +65,14 @@ import { iberTypes } from '../data/iber-types';
         </div>
     </div>
 
-      <!-- Character Grid - Full Width Below -->
-      <div class="max-w-7xl mx-auto px-4 mt-12 relative z-10">
-        <div class="grid grid-cols-5 md:grid-cols-10 gap-4 md:gap-5 shindan-characters">
-          {iberTypes.map((type, i) => (
-            <div
-              class="relative group"
-              style={`animation: float ${2 + (i % 3) * 0.5}s ease-in-out infinite; animation-delay: ${i * 0.15}s;`}
-            >
-              <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-2.5 md:p-3 hover:bg-white/40 hover:scale-110 transition-all duration-300 cursor-default shadow-lg hover:shadow-xl">
-                <img
-                  src={`/images/iber-types/${type.id}.png`}
-                  alt={type.nameJa}
-                  class="w-full aspect-square object-contain drop-shadow-lg"
-                  loading="eager"
-                />
-              </div>
-              <p class="text-center text-white/90 text-xs md:text-sm font-bold mt-2">{type.name}</p>
-            </div>
-          ))}
-        </div>
-        <p class="text-center text-white/60 text-base font-bold mt-5 mb-2">あなたはどのタイプ？</p>
+      <!-- Banner Image -->
+      <div class="max-w-4xl mx-auto px-4 mt-10 relative z-10">
+        <img
+          src="/images/iber-types/iber-shindan-banner.png"
+          alt="IBerタイプ診断 - 10タイプのキャラクター集合イラスト"
+          class="w-full rounded-2xl shadow-2xl hover:scale-[1.01] transition-transform duration-300"
+          loading="eager"
+        />
       </div>
     </div>
   </section>
