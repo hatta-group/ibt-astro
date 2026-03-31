@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { iberTypes } from '../data/iber-types';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { iberTypes } from '../../data/iber-types';
 ---
 
 <BaseLayout
@@ -131,7 +131,7 @@ import { iberTypes } from '../data/iber-types';
           <div class="mb-8">
             <div class="flex justify-between items-center text-sm text-ibt-text-light mb-2">
               <span>質問 <span id="current-q">1</span> / 20</span>
-              <span id="progress-pct">0%</span>
+              <span id="remaining-q" class="font-bold text-ibt-red">あと20問</span>
             </div>
             <div class="w-full bg-ibt-border rounded-full h-2">
               <div id="progress-bar" class="bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end h-2 rounded-full transition-all duration-300" style="width: 0%" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -585,7 +585,21 @@ import { iberTypes } from '../data/iber-types';
       const q = questions[currentQuestion];
       document.getElementById('current-q').textContent = currentQuestion + 1;
       const pct = Math.round((currentQuestion / questions.length) * 100);
-      document.getElementById('progress-pct').textContent = pct + '%';
+      const remaining = questions.length - currentQuestion;
+      const remainingEl = document.getElementById('remaining-q');
+      if (remaining <= 5) {
+        remainingEl.textContent = 'あと' + remaining + '問!';
+        remainingEl.classList.add('text-emerald-600');
+        remainingEl.classList.remove('text-ibt-red');
+      } else if (remaining <= 10) {
+        remainingEl.textContent = 'あと' + remaining + '問';
+        remainingEl.classList.add('text-amber-600');
+        remainingEl.classList.remove('text-ibt-red');
+      } else {
+        remainingEl.textContent = 'あと' + remaining + '問';
+        remainingEl.classList.remove('text-emerald-600', 'text-amber-600');
+        remainingEl.classList.add('text-ibt-red');
+      }
       const progressBar = document.getElementById('progress-bar');
       progressBar.style.width = pct + '%';
       progressBar.setAttribute('aria-valuenow', String(Math.round(pct)));
@@ -811,7 +825,7 @@ import { iberTypes } from '../data/iber-types';
           }
         }
         // Update URL with result parameter
-        history.replaceState(null, '', '?result=' + winnerId);
+        history.replaceState(null, '', '/iber-type-shindan/' + winnerId + '/');
       }
 
       const winner = types.find((t) => t.id === winnerId);
@@ -927,7 +941,7 @@ import { iberTypes } from '../data/iber-types';
       compatDiv.parentNode.insertBefore(tipDiv, compatDiv.nextSibling);
 
       // Share buttons - personalized text per type
-      const shareUrl = 'https://ib-tutors.net/iber-type-shindan/?result=' + winnerId;
+      const shareUrl = 'https://ib-tutors.net/iber-type-shindan/' + winnerId + '/';
       const shareTextX = `IBerタイプ診断で「${winner.name}（${winner.nameJa}）」だった!\n${details.description}\nあなたは何タイプ?`;
       const shareTextLine = `IBerタイプ診断やってみたら「${winner.name}（${winner.nameJa}）」だった! あなたもやってみて!`;
       const shareTextFB = `IBerタイプ診断の結果は「${winner.name}（${winner.nameJa}）」! IB Learner Profileの10タイプからあなたの強みがわかるよ。`;
@@ -1069,16 +1083,18 @@ import { iberTypes } from '../data/iber-types';
       // Hide direct link CTA
       document.getElementById('direct-link-cta').classList.add('hidden');
       // Reset URL
-      history.replaceState(null, '', window.location.pathname);
+      history.replaceState(null, '', '/iber-type-shindan/');
       startScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    // Check for URL parameter on page load
+    // Check for result in URL (new path format or legacy query param)
     const urlParams = new URLSearchParams(window.location.search);
     const resultParam = urlParams.get('result');
-    if (resultParam && typeDetails[resultParam]) {
+    const pathMatch = window.location.pathname.match(/\/iber-type-shindan\/([a-z-]+)\/?$/);
+    const detectedType = resultParam || (pathMatch && pathMatch[1]);
+    if (detectedType && typeDetails[detectedType]) {
       // Direct link - show result immediately
-      showResult(resultParam);
+      showResult(detectedType);
     }
 
     // Back button
