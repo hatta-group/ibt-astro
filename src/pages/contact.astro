@@ -53,6 +53,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h2 class="text-xl font-bold text-ibt-text mb-6">お問い合わせフォーム</h2>
           <form action="https://formspree.io/f/mdapzogd" method="POST" class="space-y-5">
             <input type="hidden" name="_subject" value="【IBT】新規お問合せ" />
+            <input type="hidden" name="_next" value="https://ib-tutors.net/contact/?sent=true" />
             <input type="text" name="_gotcha" style="display:none" />
             <!-- お名前 -->
             <div>
