@@ -36,7 +36,7 @@ HL 3科目の「重さ」のバランスが重要です。Math HL + Physics HL +
 
 ### Group 2: Language B（第二言語）
 
-英語が母語でない場合はEnglish Bを選ぶのが一般的。HLでは文学作品も扱う。[English Bの勉強法はこちら](/ib-english-b-strategy/)。バイリンガルの場合は[Bilingual Diploma](/bilingual-diploma-guide/)も検討。
+英語が母語でない場合はEnglish Bを選ぶのが一般的。HLでは文学作品も扱う。[English Bの勉強法はこちら](/ib-english-b-strategy/)。バイリンガルの場合は[Bilingual Diploma](/bilingual-diploma-guide/)も検討。バイリンガルならではの言語選択の悩みについては、[バイリンガルIB生の体験談](/blog/ib-bilingual-student-challenges/)も参考になります。
 
 ### Group 3: Individuals and Societies
 

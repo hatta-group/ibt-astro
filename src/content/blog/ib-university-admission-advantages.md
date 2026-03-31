@@ -42,6 +42,8 @@ IB Diplomaがあれば、日本のIB入試と海外大学の出願を**同時並
 
 - **高いPredicted Gradeを取る**：[Predicted Gradeの上げ方はこちら](/ib-predicted-grade-how-to-improve/)- **志望大学の要件を早めに調べる**：[科目選択ガイドはこちら](/ib-dp-subject-selection-guide/)- **EEのテーマを戦略的に選ぶ**：志望分野に関連するテーマを選ぶとPSの材料になる- **CASを「やらされている」ではなく「自ら設計する」**：[CASアイデア50選はこちら](/ib-cas-activity-ideas/)
 
+実際にIBスコアを活用して海外大学に進学した卒業生が感じたことを、[IBで海外大学に進学して感じたこと](/blog/ib-overseas-university-experience/)で語っています。
+
 IBTでは、大学受験戦略の相談にもIB卒業生の講師が対応しています。IBスコアの活かし方、出願書類の書き方、面接対策まで、トータルでサポートします。
 
 ## IBの勉強でお悩みですか？

@@ -142,7 +142,7 @@ EEでつまずく生徒には、共通のパターンがあります。
 
 4,000語で論じるには、**時期・地域・対象を具体的に絞る**ことが不可欠です。
 
-→ テーマ選びの詳細は[EEの書き方と失敗しないテーマ選びのコツ](/blog/extended-essay-ee-theme-selection-writing-guide/)で解説しています。
+→ テーマ選びの詳細は[EEの書き方と失敗しないテーマ選びのコツ](/blog/extended-essay-ee-theme-selection-writing-guide/)で解説しています。実際にテーマ選びで苦労した[IB卒業生の体験談](/blog/ib-ee-topic-failure-story/)も参考にしてみてください。
 
 ### 失敗②：スケジュールを甘く見る
 
