@@ -1,6 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { faqItems } from '../data/faq';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { faqItems } from '../../data/faq';
+
+const displayCount = 6;
+const displayItems = faqItems.slice(0, displayCount);
+const hasMore = faqItems.length > displayCount;
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -10,7 +14,7 @@ const faqSchema = {
     "name": item.question,
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": item.answer,
+      "text": item.detail || item.answer,
     },
   })),
 };
@@ -45,11 +49,11 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- FAQ List -->
+  <!-- FAQ List (top 6) -->
   <section class="py-16 md:py-24 bg-ibt-bg">
     <div class="max-w-3xl mx-auto px-4">
       <div class="space-y-4">
-        {faqItems.map((item) => (
+        {displayItems.map((item) => (
           <details class="group bg-white rounded-2xl shadow-sm border border-ibt-border">
             <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
               <span class="pr-4">{item.question}</span>
@@ -61,10 +65,28 @@ const faqSchema = {
             </summary>
             <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
               {item.answer}
+              {item.detail && (
+                <a href={`/faq/${item.slug}/`} class="inline-flex items-center gap-1 text-ibt-red text-sm font-medium mt-3 hover:gap-2 transition-all">
+                  もっと詳しく
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg>
+                </a>
+              )}
             </div>
           </details>
         ))}
       </div>
+
+      {hasMore && (
+        <div class="text-center mt-10">
+          <a
+            href="/faq/all/"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-white text-ibt-red font-bold rounded-full border-2 border-ibt-red hover:bg-ibt-red hover:text-white transition-colors"
+          >
+            全ての質問を見る（{faqItems.length}件）
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg>
+          </a>
+        </div>
+      )}
     </div>
   </section>
 

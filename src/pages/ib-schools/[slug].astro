@@ -167,6 +167,50 @@ const breadcrumbSchema = {
               </ul>
             </div>
 
+            <!-- Related Resources -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+              <h3 class="font-bold text-sm text-gray-400 tracking-widest mb-4">おすすめ記事</h3>
+              <ul class="space-y-2.5 text-sm">
+                <li><a href="/blog/ib-school-selection-guide-japan/" class="text-gray-600 hover:text-ibt-red transition-colors">IB校の選び方ガイド</a></li>
+                {school.data.programs.includes('DP') && (
+                  <li><a href="/blog/ib-dp-subject-selection-guide/" class="text-gray-600 hover:text-ibt-red transition-colors">DP科目選択ガイド</a></li>
+                )}
+                {school.data.programs.includes('MYP') && (
+                  <li><a href="/blog/ib-myp-to-dp-transition-story/" class="text-gray-600 hover:text-ibt-red transition-colors">MYPからDPへの移行体験</a></li>
+                )}
+                <li><a href="/blog/ib-parent-honest-thoughts/" class="text-gray-600 hover:text-ibt-red transition-colors">IB生の保護者が本音で語る</a></li>
+                <li><a href="/blog/ib-transfer-student-story/" class="text-gray-600 hover:text-ibt-red transition-colors">IB校に転校した体験談</a></li>
+              </ul>
+            </div>
+
+            <!-- Subject Pages -->
+            {school.data.programs.includes('DP') && (
+              <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                <h3 class="font-bold text-sm text-gray-400 tracking-widest mb-4">科目別対策</h3>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <a href="/subjects/math-aa/" class="p-2 rounded-lg bg-gray-50 hover:bg-ibt-red-50 text-gray-600 hover:text-ibt-red transition-colors text-center font-medium">Math AA</a>
+                  <a href="/subjects/english-b/" class="p-2 rounded-lg bg-gray-50 hover:bg-ibt-red-50 text-gray-600 hover:text-ibt-red transition-colors text-center font-medium">English B</a>
+                  <a href="/subjects/physics/" class="p-2 rounded-lg bg-gray-50 hover:bg-ibt-red-50 text-gray-600 hover:text-ibt-red transition-colors text-center font-medium">Physics</a>
+                  <a href="/subjects/chemistry/" class="p-2 rounded-lg bg-gray-50 hover:bg-ibt-red-50 text-gray-600 hover:text-ibt-red transition-colors text-center font-medium">Chemistry</a>
+                  <a href="/subjects/economics/" class="p-2 rounded-lg bg-gray-50 hover:bg-ibt-red-50 text-gray-600 hover:text-ibt-red transition-colors text-center font-medium">Economics</a>
+                  <a href="/subjects/tok/" class="p-2 rounded-lg bg-gray-50 hover:bg-ibt-red-50 text-gray-600 hover:text-ibt-red transition-colors text-center font-medium">TOK</a>
+                </div>
+                <a href="/subjects/" class="inline-flex items-center gap-1 text-ibt-red text-xs font-medium mt-3 hover:gap-2 transition-all">
+                  全科目を見る
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg>
+                </a>
+              </div>
+            )}
+
+            <!-- Diagnosis CTA -->
+            <div class="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl p-6 text-white text-center">
+              <h3 class="font-bold mb-2">あなたのIBerタイプは？</h3>
+              <p class="text-white/80 text-sm mb-4">20問で診断できます</p>
+              <a href="/iber-type-shindan/" class="block w-full bg-white text-orange-600 font-bold py-3 rounded-full hover:bg-gray-50 transition-colors text-sm">
+                IBerタイプ診断を受ける
+              </a>
+            </div>
+
             <!-- Back to List -->
             <a href="/ib-schools/" class="flex items-center justify-center gap-2 w-full py-3 text-sm font-medium text-gray-500 hover:text-ibt-red bg-white rounded-2xl shadow-sm border border-gray-100 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" /></svg>
