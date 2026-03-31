@@ -96,7 +96,7 @@ const breadcrumbSchema = {
         </div>
         <!-- Sidebar -->
         <div class="lg:w-80 xl:w-96 shrink-0">
-          <div class="lg:sticky lg:top-20 space-y-6">
+          <div class="lg:sticky lg:top-20 space-y-6 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
             <!-- Character Card -->
             <div class="rounded-2xl overflow-hidden bg-white shadow-sm border border-gray-100" style={`border-top: 4px solid ${typeColor}`}>
               <div class="p-6 text-center">
@@ -117,6 +117,9 @@ const breadcrumbSchema = {
                 <a href="#challenges" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">IBでの課題</a>
                 <a href="#subjects" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">得意科目</a>
                 <a href="#compatibility" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">相性タイプ</a>
+                <a href="#love" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">恋愛傾向</a>
+                <a href="#career" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">将来のキャリア</a>
+                <a href="#aruaru" class="block py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors">日常あるある</a>
               </nav>
             </div>
             <!-- Diagnosis CTA -->
@@ -350,6 +353,9 @@ const breadcrumbSchema = {
       'challenges': ['課題'],
       'subjects': ['得意科目', 'おすすめ'],
       'compatibility': ['相性'],
+      'love': ['恋愛'],
+      'career': ['キャリア', '将来'],
+      'aruaru': ['あるある', '日常'],
     };
 
     headings.forEach((h) => {
