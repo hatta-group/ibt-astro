@@ -51,11 +51,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Left: Contact Form -->
         <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8">
           <h2 class="text-xl font-bold text-ibt-text mb-6">お問い合わせフォーム</h2>
-          <form action="https://formsubmit.co/info@ib-tutors.net" method="POST" class="space-y-5">
-            <input type="hidden" name="_subject" value="【IBT】新しいお問い合わせ" />
-            <input type="hidden" name="_captcha" value="true" />
-            <input type="hidden" name="_next" value="https://ib-tutors.net/contact/?sent=true" />
-            <input type="text" name="_honey" style="display:none" />
+          <form action="https://formspree.io/f/mdapzogd" method="POST" class="space-y-5">
+            <input type="hidden" name="_subject" value="【IBT】新規お問合せ" />
+            <input type="text" name="_gotcha" style="display:none" />
             <!-- お名前 -->
             <div>
               <label for="name" class="block text-sm font-medium text-ibt-text mb-1">
