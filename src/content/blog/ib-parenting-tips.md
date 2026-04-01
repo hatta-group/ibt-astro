@@ -40,5 +40,6 @@ IBという自分から行動することを求められるハードなプログ
 
 ## 関連記事
 
+- [IB家庭教師おすすめ7選](/blog/ib-kateikyoushi-osusume/)
 - [家庭教師を始めるベストタイミング](/blog/ib-tutor-best-timing/)
 - [IBスコアの上げ方](/blog/how-to-improve-ib-score/)

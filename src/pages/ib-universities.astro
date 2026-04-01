@@ -1,0 +1,495 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { japanUniversities, overseasUniversities, regionLabels } from '../data/ib-universities';
+
+const japanCount = japanUniversities.length;
+const overseasCount = overseasUniversities.length;
+
+const overseasRegions = ['uk', 'us', 'canada', 'australia', 'europe', 'asia'] as const;
+const overseasByRegion: Record<string, typeof overseasUniversities> = {};
+for (const r of overseasRegions) {
+  overseasByRegion[r] = overseasUniversities.filter(u => u.region === r);
+}
+
+const regionTabLabels: Record<string, string> = {
+  uk: 'イギリス',
+  us: 'アメリカ',
+  canada: 'カナダ',
+  australia: '豪州',
+  europe: '欧州',
+  asia: 'アジア',
+};
+
+// Score filter ranges
+const scoreFilters = [
+  { key: 'all', label: '全て' },
+  { key: '24-30', label: '24-30点' },
+  { key: '31-35', label: '31-35点' },
+  { key: '36-40', label: '36-40点' },
+  { key: '41-45', label: '41-45点' },
+];
+
+// FAQ data
+const faqItems = [
+  {
+    question: 'IBスコアで大学に出願できますか?',
+    answer: 'はい、IBディプロマのスコアで国内外の多くの大学に出願できます。日本では80校以上の大学がIBスコアを活用した入試を導入しており、海外大学ではIBは世界的に認められた資格として広く受け入れられています。IBディプロマを取得していれば、一般入試とは異なるルートで大学進学が可能です。',
+  },
+  {
+    question: '何点あればどの大学に行けますか?',
+    answer: '大学や学部によって大きく異なります。目安として、日本の大学ではディプロマ取得の24点から出願できる大学がある一方、東京大学や京都大学では36点以上が推奨されます。海外ではオックスフォードやケンブリッジで40点以上、一般的な名門大学で32-36点程度が目安です。ただし、これはあくまで参考値であり、最新の要件は各大学の公式サイトで必ずご確認ください。',
+  },
+  {
+    question: 'IBと一般入試、どちらが有利ですか?',
+    answer: 'IB入試は一般入試に比べて受験者数が少なく、倍率が低い傾向にあります。また、IBディプロマを持っていると国内と海外の大学に同時に出願できるため、進路の選択肢が広がります。一方で、IBのカリキュラム自体が非常にハードなため、高いスコアを取るには相応の努力が必要です。どちらが有利かは個人の状況によりますが、IBは「大学入試のための勉強」ではなく「大学で活きる力」を身につけられる点が大きなメリットです。',
+  },
+  {
+    question: '海外大学にIBで出願する方法は?',
+    answer: 'イギリスの大学にはUCASを通じて出願し、IBスコアが直接的な合否基準になります。アメリカの大学にはCommon ApplicationやCoalition Applicationを使い、IBスコアに加えてエッセイ、推薦状、課外活動などが総合的に評価されます。カナダやオーストラリアの大学は各大学の出願システムから直接申し込みます。いずれの場合も、IBの最終スコアが出る前に予測スコア(Predicted Grade)で出願するのが一般的です。',
+  },
+];
+
+const siteUrl = 'https://ib-tutors.net';
+---
+
+<BaseLayout
+  title="IBで行ける大学一覧｜国内82校+海外トップ大学｜IB専門家庭教師IBT"
+  description="IB(国際バカロレア)のスコアで出願できる国内大学82校と海外トップ大学を紹介。IBスコア別のおすすめ大学、出願要件、合格のコツをIB卒業生が解説します。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": `${siteUrl}/` },
+        { "@type": "ListItem", "position": 2, "name": "IBで行ける大学ガイド", "item": `${siteUrl}/ib-universities/` }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer,
+        }
+      }))
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/85 text-sm mb-4">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">&gt;</span>
+        <span class="text-white">IBで行ける大学ガイド</span>
+      </nav>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="bg-white/20 text-white text-sm font-bold px-4 py-1.5 rounded-full">国内+海外対応</span>
+        <span class="bg-white/20 text-white text-sm font-bold px-4 py-1.5 rounded-full">スコア別ガイド</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
+        IBで行ける大学ガイド
+      </h1>
+      <p class="text-white/80 mt-4 text-lg md:text-xl max-w-2xl leading-relaxed">
+        国内82校+海外トップ大学。IBスコアで広がる進学先。
+      </p>
+    </div>
+  </section>
+
+  <!-- 統計バー -->
+  <section class="py-8 bg-white border-b border-ibt-border">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-black text-ibt-red">82<span class="text-lg">校+</span></p>
+          <p class="text-sm text-ibt-text-light mt-1">国内IB入試実施校</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-black text-ibt-red">100<span class="text-lg">校+</span></p>
+          <p class="text-sm text-ibt-text-light mt-1">海外対応大学</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-black text-ibt-red">75<span class="text-lg">ヶ国+</span></p>
+          <p class="text-sm text-ibt-text-light mt-1">IB認知国</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-black text-ibt-red">5,700<span class="text-lg">校+</span></p>
+          <p class="text-sm text-ibt-text-light mt-1">世界のIB認定校</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 国内大学セクション -->
+  <section class="py-16 md:py-24 bg-ibt-bg" id="japan-universities">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="text-ibt-red font-bold text-sm tracking-widest mb-4 text-center">JAPAN UNIVERSITIES</p>
+      <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center">日本の大学</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mb-4 rounded-full"></div>
+      <p class="text-ibt-text-light text-center mb-8 max-w-2xl mx-auto">
+        国内80校以上の大学がIBスコアを活用した入試を実施しています。ここでは主要20校を紹介します。
+      </p>
+
+      <!-- スコアフィルター -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10">
+        {scoreFilters.map((f, i) => (
+          <button
+            data-jp-filter={f.key}
+            class={`jp-filter-btn px-4 py-2 rounded-full text-sm font-bold border-2 transition-all ${
+              i === 0
+                ? 'bg-ibt-red text-white border-ibt-red'
+                : 'bg-white text-gray-600 border-gray-200 hover:border-ibt-red hover:text-ibt-red'
+            }`}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- 大学カード -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="japan-cards">
+        {japanUniversities.map((uni) => (
+          <div
+            class="jp-uni-card bg-white rounded-2xl shadow-sm border border-ibt-border p-6 hover:shadow-md transition-shadow"
+            data-score={uni.ibScoreRange}
+          >
+            <div class="flex items-start justify-between gap-2 mb-3">
+              <div>
+                <h3 class="font-bold text-gray-900 text-lg leading-tight">{uni.name}</h3>
+                <p class="text-xs text-ibt-text-light mt-0.5">{uni.nameEn}</p>
+              </div>
+              {uni.featured && (
+                <span class="shrink-0 text-[10px] font-bold bg-ibt-red-50 text-ibt-red px-2 py-0.5 rounded-full border border-red-200">注目</span>
+              )}
+            </div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-bold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">
+                目安: {uni.ibScoreRange}点
+              </span>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed mb-3">{uni.ibPolicy}</p>
+            {uni.website && (
+              <a
+                href={uni.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-xs text-ibt-red hover:text-ibt-red-dark font-medium transition-colors"
+              >
+                公式サイト
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <p class="text-xs text-ibt-text-light text-center mt-8">
+        ※ 上記は主要20校の一部です。国内では80校以上の大学がIBスコアを活用した入試を実施しています。<br />
+        ※ スコア要件は目安です。最新の入試要件は各大学の公式サイトで必ずご確認ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- 海外大学セクション -->
+  <section class="py-16 md:py-24 bg-white" id="overseas-universities">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="text-ibt-red font-bold text-sm tracking-widest mb-4 text-center">OVERSEAS UNIVERSITIES</p>
+      <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center">海外の大学</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mb-4 rounded-full"></div>
+      <p class="text-ibt-text-light text-center mb-8 max-w-2xl mx-auto">
+        IBディプロマは世界中の大学で認められた国際資格です。主要な海外大学をご紹介します。
+      </p>
+
+      <!-- 国別タブ -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10" role="tablist">
+        {overseasRegions.map((r, i) => (
+          <button
+            role="tab"
+            aria-selected={i === 0 ? 'true' : 'false'}
+            aria-controls={`region-panel-${r}`}
+            data-region-tab={r}
+            class={`region-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all ${
+              i === 0
+                ? 'bg-ibt-red text-white border-ibt-red'
+                : 'bg-white text-gray-600 border-gray-200 hover:border-ibt-red hover:text-ibt-red'
+            }`}
+          >
+            {regionTabLabels[r]}
+          </button>
+        ))}
+      </div>
+
+      <!-- 国別パネル -->
+      {overseasRegions.map((r, i) => (
+        <div
+          id={`region-panel-${r}`}
+          role="tabpanel"
+          class={`region-panel ${i === 0 ? '' : 'hidden'}`}
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {overseasByRegion[r].map((uni) => (
+              <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between gap-2 mb-3">
+                  <div>
+                    <h3 class="font-bold text-gray-900 text-lg leading-tight">{uni.name}</h3>
+                    <p class="text-xs text-ibt-text-light mt-0.5">{uni.nameEn}</p>
+                  </div>
+                  {uni.featured && (
+                    <span class="shrink-0 text-[10px] font-bold bg-ibt-red-50 text-ibt-red px-2 py-0.5 rounded-full border border-red-200">注目</span>
+                  )}
+                </div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-xs font-bold bg-purple-50 text-purple-700 px-3 py-1 rounded-full">
+                    {uni.country}
+                  </span>
+                  <span class="text-xs font-bold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">
+                    目安: {uni.ibScoreRange}点
+                  </span>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed mb-3">{uni.ibPolicy}</p>
+                {uni.website && (
+                  <a
+                    href={uni.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 text-xs text-ibt-red hover:text-ibt-red-dark font-medium transition-colors"
+                  >
+                    公式サイト
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <p class="text-xs text-ibt-text-light text-center mt-8">
+        ※ スコア要件は目安です。特にアメリカの大学ではIBスコアのみでの合否判断は行われません。<br />
+        ※ 最新の入試要件は各大学の公式サイトで必ずご確認ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- IBスコア別おすすめ大学 -->
+  <section class="py-16 md:py-24 bg-ibt-bg" id="score-guide">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-ibt-red font-bold text-sm tracking-widest mb-4 text-center">SCORE GUIDE</p>
+      <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center">IBスコア別 進学ガイド</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mb-10 rounded-full"></div>
+
+      <div class="space-y-6">
+        <!-- 24-30点 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-sm font-black bg-emerald-100 text-emerald-700 px-4 py-1.5 rounded-full">24-30点</span>
+            <span class="text-sm font-bold text-emerald-700">ディプロマ取得圏</span>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-3">
+            IBディプロマを取得できるスコア帯です。日本ではAPU(立命館アジア太平洋大学)、岡山大学、広島大学、国際教養大学(AIU)など、IB入試を積極的に導入している大学に出願できます。海外ではオーストラリアやカナダの大学が比較的入りやすく、IBスコアでの出願に慣れています。
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            この帯のポイント: IBディプロマを取得すること自体が大きな価値です。一般入試では測れない探究力やクリティカルシンキングが評価されます。スコアアップと並行して、EEやTOKの質を高めることが合格への近道です。
+          </p>
+        </div>
+
+        <!-- 31-35点 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-sm font-black bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full">31-35点</span>
+            <span class="text-sm font-bold text-blue-700">世界平均以上</span>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-3">
+            世界平均(約30点)を上回るスコア帯です。日本では早稲田大学、慶應義塾大学、上智大学、ICUなどの有名私立大学に出願可能。海外ではトロント大学、UBC、メルボルン大学など、カナダやオーストラリアの名門大学が現実的なターゲットになります。イギリスの大学も多くの学部で出願できる帯です。
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            この帯のポイント: HL科目の選択と得点が重要になります。志望大学が求めるHL科目で高得点を取ることが合格の鍵。また、この帯からイギリスの大学への出願が現実的になるため、UCASの準備も視野に入れましょう。
+          </p>
+        </div>
+
+        <!-- 36-40点 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-sm font-black bg-violet-100 text-violet-700 px-4 py-1.5 rounded-full">36-40点</span>
+            <span class="text-sm font-bold text-violet-700">ハイスコア</span>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-3">
+            IB生の上位10%に入るハイスコア帯です。日本では東京大学(PEAK)、京都大学を含む全ての大学が射程圏内。海外ではUCL、エディンバラ大学、NUS(シンガポール国立大学)などの世界トップ大学が現実的なターゲットになります。ETH Zurich(チューリッヒ工科大学)も狙えます。
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            この帯のポイント: 大学の選択肢が大きく広がります。国内と海外を同時に出願する戦略が有効です。イギリスの大学ではUCAS経由で最大5校に出願できるため、併願プランを早めに立てましょう。アメリカの大学を目指す場合は、SATやエッセイの準備も並行して進めてください。
+          </p>
+        </div>
+
+        <!-- 41-45点 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-sm font-black bg-amber-100 text-amber-700 px-4 py-1.5 rounded-full">41-45点</span>
+            <span class="text-sm font-bold text-amber-700">最高峰</span>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-3">
+            世界のIB生の中でもトップ数%。オックスフォード、ケンブリッジ、インペリアル・カレッジ・ロンドン、LSEといったイギリスの超名門大学が現実的なターゲットです。アメリカのIvy League(ハーバード、イェール、プリンストンなど)にも出願できますが、アメリカではIBスコアだけでなく課外活動やエッセイも非常に重要です。
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            この帯のポイント: スコアだけでなく、出願書類の質が合否を分けます。Personal Statement(イギリス)やCommon App Essay(アメリカ)の準備に十分な時間をかけてください。また、HL科目で7を取ると多くの大学で単位認定を受けられるため、入学後のアドバンテージにもなります。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-24 bg-white" id="faq">
+    <div class="max-w-3xl mx-auto px-4">
+      <p class="text-ibt-red font-bold text-sm tracking-widest mb-4 text-center">FAQ</p>
+      <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center">よくある質問</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mb-10 rounded-full"></div>
+
+      <div class="space-y-4">
+        {faqItems.map((item) => (
+          <details class="group bg-ibt-bg rounded-2xl border border-ibt-border overflow-hidden">
+            <summary class="flex items-center justify-between gap-4 p-5 md:p-6 cursor-pointer list-none">
+              <h3 class="font-bold text-gray-900 text-sm md:text-base leading-relaxed">{item.question}</h3>
+              <svg class="w-5 h-5 shrink-0 text-ibt-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-5 pb-5 md:px-6 md:pb-6">
+              <p class="text-gray-600 text-sm leading-relaxed">{item.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 免責事項 -->
+  <section class="py-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white rounded-xl border border-gray-200 p-4 md:p-6">
+        <div class="flex items-start gap-3">
+          <span class="text-amber-500 text-xl shrink-0">&#9888;</span>
+          <div>
+            <h3 class="font-bold text-sm mb-1">免責事項</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">
+              本ページに記載されているIBスコアの目安は、各大学の公表情報や過去の実績に基づく参考値です。実際の合否はIBスコアだけでなく、HL/SL科目の選択、面接、エッセイ、課外活動、志望理由書など多くの要素で判断されます。最新の入試要件は各大学の公式サイトで必ずご確認ください。特にアメリカの大学ではIBスコアのみでの合否判断は行われません。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-4xl font-black text-white mb-4">
+        大学合格に向けた<br class="md:hidden" />IB対策なら
+      </h2>
+      <p class="text-white/80 text-lg mb-8 leading-relaxed">
+        IBTの講師は全員IB卒業生。<br />
+        あなたの目標大学に合わせた<br class="md:hidden" />スコアアップ戦略を一緒に立てましょう。<br />
+        まずは60分の無料体験から。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="https://line.me/R/ti/p/@974okamx"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#06C755] hover:bg-[#05b34c] text-white text-lg font-bold rounded-full transition-colors shadow-lg min-w-[220px]"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINEで相談する
+        </a>
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-ibt-red text-lg font-bold rounded-full transition-colors shadow-lg min-w-[220px]"
+        >
+          無料体験を申し込む
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for tabs and filters -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Japan score filter
+      const jpFilterBtns = document.querySelectorAll('.jp-filter-btn');
+      const jpCards = document.querySelectorAll('.jp-uni-card');
+
+      jpFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = (btn as HTMLElement).dataset.jpFilter;
+
+          // Update active state
+          jpFilterBtns.forEach(b => {
+            b.classList.remove('bg-ibt-red', 'text-white', 'border-ibt-red');
+            b.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+          });
+          btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
+          btn.classList.add('bg-ibt-red', 'text-white', 'border-ibt-red');
+
+          // Filter cards
+          jpCards.forEach(card => {
+            const el = card as HTMLElement;
+            if (filter === 'all') {
+              el.classList.remove('hidden');
+              return;
+            }
+
+            const scoreText = el.dataset.score || '';
+            const nums = scoreText.match(/\d+/g);
+            if (!nums || nums.length === 0) {
+              el.classList.add('hidden');
+              return;
+            }
+
+            const minScore = parseInt(nums[0], 10);
+            const [filterMin, filterMax] = (filter || '').split('-').map(Number);
+
+            if (minScore >= filterMin && minScore <= filterMax) {
+              el.classList.remove('hidden');
+            } else {
+              el.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // Overseas region tabs
+      const regionTabBtns = document.querySelectorAll('.region-tab-btn');
+      const regionPanels = document.querySelectorAll('.region-panel');
+
+      regionTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const region = (btn as HTMLElement).dataset.regionTab;
+
+          // Update active state
+          regionTabBtns.forEach(b => {
+            b.setAttribute('aria-selected', 'false');
+            b.classList.remove('bg-ibt-red', 'text-white', 'border-ibt-red');
+            b.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+          });
+          btn.setAttribute('aria-selected', 'true');
+          btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
+          btn.classList.add('bg-ibt-red', 'text-white', 'border-ibt-red');
+
+          // Show/hide panels
+          regionPanels.forEach(panel => {
+            const el = panel as HTMLElement;
+            if (el.id === `region-panel-${region}`) {
+              el.classList.remove('hidden');
+            } else {
+              el.classList.add('hidden');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</BaseLayout>

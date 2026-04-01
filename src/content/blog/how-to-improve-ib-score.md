@@ -35,5 +35,6 @@ IBでは、ただ事実を暗記するというよりは、知識の原理から
 
 ## 関連記事
 
+- [IB DPの効率的な勉強法](/blog/ib-benkyouhou-dp-kouritsu/)
 - [IB時間管理のコツ](/blog/ib-dp-time-management/)
 - [IBメンタルヘルスとストレス管理](/blog/ib-mental-health-stress-management/)

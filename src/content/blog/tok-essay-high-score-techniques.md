@@ -133,7 +133,7 @@ TOK・EE（Extended Essay）・IAなど、IB特有の課題にも経験者だか
 
 ### 関連記事
 
-- [TOK（知の理論）とは？](/blog/blog/tok-essay-high-score-techniques/)
+- [TOKエッセイの書き方完全ガイド](/blog/tok-essay-kakikata-guide/)
 - [IBで45点満点を取った講師の勉強法](/blog/ib-tok-extended-essay-study-method-45-points/)
 - [IA（Internal Assessment）とは？](/blog/blog/ib-psychology-ia-guide/)
 - [IA対策の進め方](/blog/ib-ia-success-guide/)

@@ -1,0 +1,708 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allSchools = await getCollection('schools', ({ data }) => !data.draft);
+const schools = allSchools.sort((a, b) => a.data.title.localeCompare(b.data.title, 'ja'));
+
+const totalCount = schools.length;
+const pypCount = schools.filter(s => s.data.programs?.includes('PYP')).length;
+const mypCount = schools.filter(s => s.data.programs?.includes('MYP')).length;
+const dpCount = schools.filter(s => s.data.programs?.includes('DP')).length;
+
+// Prefecture data with counts
+const prefectureOrder: Record<string, string[]> = {
+  '北海道・東北': ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県'],
+  '関東': ['東京都','神奈川県','千葉県','埼玉県','茨城県','栃木県','群馬県'],
+  '中部': ['新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県'],
+  '関西': ['大阪府','京都府','兵庫県','奈良県','滋賀県','和歌山県','三重県'],
+  '中国・四国': ['鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県'],
+  '九州・沖縄': ['福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'],
+};
+
+const regionOrder = ['北海道・東北', '関東', '中部', '関西', '中国・四国', '九州・沖縄'];
+
+// Build prefecture counts and school data
+type SchoolEntry = typeof schools[number];
+const prefectureCounts: Record<string, number> = {};
+const schoolsByPrefecture: Record<string, SchoolEntry[]> = {};
+
+for (const region of regionOrder) {
+  for (const pref of prefectureOrder[region]) {
+    const prefSchools = schools.filter(s => s.data.prefecture === pref);
+    prefectureCounts[pref] = prefSchools.length;
+    if (prefSchools.length > 0) {
+      schoolsByPrefecture[pref] = prefSchools;
+    }
+  }
+}
+
+// Max count for color scaling
+const maxCount = Math.max(...Object.values(prefectureCounts));
+
+// Region counts
+const regionCounts: Record<string, number> = {};
+for (const region of regionOrder) {
+  regionCounts[region] = prefectureOrder[region].reduce((sum, pref) => sum + (prefectureCounts[pref] || 0), 0);
+}
+
+// Build JSON data for client-side interactivity
+const schoolsJson = JSON.stringify(
+  Object.entries(schoolsByPrefecture).reduce((acc, [pref, prefSchools]) => {
+    acc[pref] = prefSchools.map(s => ({
+      title: s.data.title.replace(/のIB対策.*$/, '').replace(/のIBプログラム対策.*$/, ''),
+      slug: s.data.slug,
+      programs: s.data.programs || [],
+      schoolType: s.data.schoolType || '',
+    }));
+    return acc;
+  }, {} as Record<string, any[]>)
+);
+
+// Grid layout for Japan map - approximate geographic positions
+// Grid: 13 cols x 15 rows (col, row)
+const prefecturePositions: Record<string, [number, number]> = {
+  '北海道': [10, 0],
+  '青森県': [9, 2],
+  '秋田県': [8, 3],
+  '岩手県': [9, 3],
+  '山形県': [8, 4],
+  '宮城県': [9, 4],
+  '新潟県': [7, 5],
+  '福島県': [8, 5],
+  '富山県': [6, 6],
+  '群馬県': [8, 6],
+  '栃木県': [9, 5],
+  '茨城県': [9, 6],
+  '石川県': [5, 6],
+  '福井県': [5, 7],
+  '長野県': [7, 7],
+  '埼玉県': [8, 7],
+  '千葉県': [9, 7],
+  '山梨県': [7, 8],
+  '東京都': [8, 8],
+  '神奈川県': [8, 9],
+  '岐阜県': [6, 8],
+  '静岡県': [7, 9],
+  '愛知県': [6, 9],
+  '三重県': [5, 9],
+  '滋賀県': [5, 8],
+  '京都府': [4, 7],
+  '大阪府': [4, 8],
+  '兵庫県': [3, 8],
+  '奈良県': [4, 9],
+  '和歌山県': [4, 10],
+  '鳥取県': [3, 7],
+  '島根県': [2, 7],
+  '岡山県': [3, 9],
+  '広島県': [2, 9],
+  '山口県': [1, 9],
+  '徳島県': [4, 11],
+  '香川県': [3, 10],
+  '愛媛県': [2, 10],
+  '高知県': [3, 11],
+  '福岡県': [1, 10],
+  '佐賀県': [0, 10],
+  '長崎県': [0, 11],
+  '大分県': [1, 11],
+  '熊本県': [0, 12],
+  '宮崎県': [1, 12],
+  '鹿児島県': [0, 13],
+  '沖縄県': [0, 14],
+};
+
+// All 47 prefectures list
+const allPrefectures = Object.keys(prefecturePositions);
+
+// Determine grid dimensions
+const gridCols = 13;
+const gridRows = 16;
+---
+
+<BaseLayout
+  title="都道府県別IB認定校マップ｜日本のIB校を地図で探す｜IBT"
+  description={`日本全国${totalCount}校のIB認定校（国際バカロレア校）を都道府県別の地図で探せます。PYP・MYP・DPのプログラム別フィルターや学校種別で絞り込みも可能。お近くのIB校を見つけましょう。`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
+        { "@type": "ListItem", "position": 2, "name": "IB認定校一覧", "item": "https://ib-tutors.net/ib-schools/" },
+        { "@type": "ListItem", "position": 3, "name": "都道府県別マップ", "item": "https://ib-tutors.net/ib-schools/map/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-white/85 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">ホーム</a>
+        <span class="mx-2">/</span>
+        <a href="/ib-schools/" class="hover:text-white transition-colors">IB認定校一覧</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">都道府県別マップ</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight">
+        都道府県別 IB認定校マップ
+      </h1>
+      <p class="mt-4 text-white/85 text-lg md:text-xl leading-relaxed max-w-3xl">
+        日本全国のIB認定校を地図から探せます。都道府県をクリックすると、その地域のIB校一覧が表示されます。
+      </p>
+      <!-- Stats -->
+      <div class="mt-8 flex flex-wrap gap-6">
+        <div class="bg-white/10 rounded-xl px-5 py-3 backdrop-blur-sm">
+          <div class="text-2xl md:text-3xl font-bold text-white">{totalCount}</div>
+          <div class="text-white/70 text-sm">認定校数</div>
+        </div>
+        <div class="bg-white/10 rounded-xl px-5 py-3 backdrop-blur-sm">
+          <div class="text-2xl md:text-3xl font-bold text-white">{Object.values(prefectureCounts).filter(c => c > 0).length}</div>
+          <div class="text-white/70 text-sm">都道府県</div>
+        </div>
+        <div class="bg-white/10 rounded-xl px-5 py-3 backdrop-blur-sm">
+          <div class="text-2xl md:text-3xl font-bold text-white">{dpCount}</div>
+          <div class="text-white/70 text-sm">DP実施校</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="bg-white border-b border-ibt-border sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-sm font-medium text-ibt-text-light">絞り込み:</span>
+        <!-- Program filters -->
+        <div class="flex flex-wrap gap-2" id="program-filters">
+          <button class="filter-btn program-filter active px-3 py-1.5 rounded-full text-sm font-medium border transition-all" data-program="all">
+            全プログラム
+          </button>
+          <button class="filter-btn program-filter px-3 py-1.5 rounded-full text-sm font-medium border transition-all" data-program="PYP">
+            PYP ({pypCount})
+          </button>
+          <button class="filter-btn program-filter px-3 py-1.5 rounded-full text-sm font-medium border transition-all" data-program="MYP">
+            MYP ({mypCount})
+          </button>
+          <button class="filter-btn program-filter px-3 py-1.5 rounded-full text-sm font-medium border transition-all" data-program="DP">
+            DP ({dpCount})
+          </button>
+        </div>
+        <div class="w-px h-6 bg-ibt-border hidden sm:block"></div>
+        <!-- School type filters -->
+        <div class="flex flex-wrap gap-2" id="type-filters">
+          <button class="filter-btn type-filter active px-3 py-1.5 rounded-full text-sm font-medium border transition-all" data-type="all">
+            全種別
+          </button>
+          <button class="filter-btn type-filter px-3 py-1.5 rounded-full text-sm font-medium border transition-all" data-type="一条校">
+            一条校
+          </button>
+          <button class="filter-btn type-filter px-3 py-1.5 rounded-full text-sm font-medium border transition-all" data-type="インター">
+            インター
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="py-8 md:py-12 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-[1fr_340px] gap-8">
+        <!-- Map Grid -->
+        <div>
+          <div class="bg-white rounded-2xl border border-ibt-border p-4 md:p-6 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-lg font-bold text-ibt-text">日本地図</h2>
+              <div class="flex items-center gap-3 text-xs text-ibt-text-light">
+                <span class="flex items-center gap-1">
+                  <span class="w-3 h-3 rounded-sm bg-gray-200 inline-block"></span> 0校
+                </span>
+                <span class="flex items-center gap-1">
+                  <span class="w-3 h-3 rounded-sm bg-red-200 inline-block"></span> 少
+                </span>
+                <span class="flex items-center gap-1">
+                  <span class="w-3 h-3 rounded-sm bg-red-500 inline-block"></span> 中
+                </span>
+                <span class="flex items-center gap-1">
+                  <span class="w-3 h-3 rounded-sm bg-red-800 inline-block"></span> 多
+                </span>
+              </div>
+            </div>
+
+            <!-- SVG Japan Map -->
+            <div class="overflow-x-auto -mx-2 px-2 pb-2">
+              <div class="min-w-[560px]">
+                <svg viewBox="-10 -10 710 920" class="w-full" id="japan-map" role="img" aria-label="日本のIB認定校 都道府県別マップ">
+                  <title>日本のIB認定校 都道府県別マップ</title>
+                  {allPrefectures.map(pref => {
+                    const [col, row] = prefecturePositions[pref];
+                    const count = prefectureCounts[pref] || 0;
+                    const x = col * 55 + 10;
+                    const y = row * 55 + 10;
+                    const w = 50;
+                    const h = 50;
+
+                    // Color based on count
+                    let fill = '#E5E7EB'; // gray-200
+                    if (count > 0) {
+                      const ratio = Math.log(count + 1) / Math.log(maxCount + 1);
+                      if (ratio > 0.7) fill = '#991B1B'; // red-800
+                      else if (ratio > 0.5) fill = '#DC2626'; // red-600
+                      else if (ratio > 0.3) fill = '#EF4444'; // red-500
+                      else if (ratio > 0.15) fill = '#F87171'; // red-400
+                      else fill = '#FCA5A5'; // red-300
+                    }
+
+                    // Short name (remove 県/府/都/道 for display)
+                    const shortName = pref.replace(/[県府都道]$/, '');
+
+                    return (
+                      <g
+                        class="prefecture-cell cursor-pointer"
+                        data-prefecture={pref}
+                        data-count={count}
+                        role="button"
+                        tabindex="0"
+                        aria-label={`${pref}: ${count}校`}
+                      >
+                        <rect
+                          x={x} y={y} width={w} height={h}
+                          rx="6" ry="6"
+                          fill={fill}
+                          stroke="#ffffff"
+                          stroke-width="2"
+                          class="transition-all duration-200"
+                        />
+                        <text
+                          x={x + w / 2} y={y + (count > 0 ? 22 : 28)}
+                          text-anchor="middle"
+                          fill={count > 5 ? '#ffffff' : count > 0 ? '#7F1D1D' : '#6B7280'}
+                          font-size={shortName.length > 3 ? '9' : '11'}
+                          font-weight="bold"
+                        >{shortName}</text>
+                        {count > 0 && (
+                          <text
+                            x={x + w / 2} y={y + 38}
+                            text-anchor="middle"
+                            fill={count > 5 ? '#ffffff' : '#7F1D1D'}
+                            font-size="11"
+                            font-weight="600"
+                          >{count}校</text>
+                        )}
+                      </g>
+                    );
+                  })}
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selected Prefecture Schools -->
+          <div id="selected-schools" class="mt-6 hidden">
+            <div class="bg-white rounded-2xl border border-ibt-border p-5 md:p-6 shadow-sm">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-ibt-text" id="selected-title"></h3>
+                <button id="close-selection" class="text-ibt-text-light hover:text-ibt-red transition-colors p-1" aria-label="閉じる">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+              </div>
+              <div id="school-list" class="space-y-3"></div>
+              <div id="no-schools-msg" class="hidden text-center py-8">
+                <p class="text-ibt-text-light">この都道府県にはフィルター条件に一致するIB認定校はありません</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar: Region Summary -->
+        <div class="lg:sticky lg:top-20 lg:self-start">
+          <div class="bg-white rounded-2xl border border-ibt-border p-5 shadow-sm">
+            <h3 class="text-lg font-bold text-ibt-text mb-4">地域別の学校数</h3>
+            <div class="space-y-3">
+              {regionOrder.map(region => (
+                <button
+                  class="region-summary-btn w-full flex items-center justify-between p-3 rounded-xl hover:bg-ibt-bg transition-colors text-left group"
+                  data-region={region}
+                >
+                  <div>
+                    <div class="font-medium text-ibt-text group-hover:text-ibt-red transition-colors">{region}</div>
+                    <div class="text-xs text-ibt-text-light mt-0.5">
+                      {prefectureOrder[region].filter(p => prefectureCounts[p] > 0).length}都道府県にIB校あり
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <span class="text-xl font-bold text-ibt-red">{regionCounts[region]}</span>
+                    <span class="text-sm text-ibt-text-light ml-0.5">校</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+            <div class="mt-4 pt-4 border-t border-ibt-border">
+              <a href="/ib-schools/" class="text-ibt-red text-sm font-medium hover:underline">
+                一覧で全校を見る →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prefecture Table (SEO) -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-ibt-text text-center mb-4">
+        都道府県別 IB認定校数一覧
+      </h2>
+      <p class="text-center text-ibt-text-light mb-10 max-w-2xl mx-auto">
+        日本全国{totalCount}校のIB認定校の都道府県別分布です。都道府県名をクリックすると、その地域のIB校一覧ページに移動します。
+      </p>
+
+      {regionOrder.map(region => (
+        <div class="mb-8">
+          <h3 class="text-lg font-bold text-ibt-text mb-3 flex items-center gap-2">
+            <span class="inline-block w-1 h-6 bg-ibt-red rounded-full"></span>
+            {region}
+            <span class="text-sm font-normal text-ibt-text-light">({regionCounts[region]}校)</span>
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2">
+            {prefectureOrder[region].map(pref => {
+              const count = prefectureCounts[pref] || 0;
+              return (
+                <button
+                  class={`pref-table-btn text-left p-3 rounded-xl border transition-all ${
+                    count > 0
+                      ? 'bg-red-50/50 border-red-100 hover:border-ibt-red hover:shadow-sm cursor-pointer'
+                      : 'bg-gray-50 border-gray-100 cursor-default opacity-60'
+                  }`}
+                  data-prefecture={pref}
+                  disabled={count === 0}
+                >
+                  <div class="font-medium text-sm text-ibt-text">{pref}</div>
+                  <div class={`text-lg font-bold ${count > 0 ? 'text-ibt-red' : 'text-gray-400'}`}>
+                    {count}<span class="text-xs font-normal text-ibt-text-light ml-0.5">校</span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        IB校のお子さんの学習をサポートします
+      </h2>
+      <p class="text-white/85 text-lg mb-8">
+        IBT（IB Tutors）は、IB卒業生の講師がマンツーマンで指導するIB専門の家庭教師サービスです。<br class="hidden md:inline" />
+        お近くのIB校に通うお子さんの学習、まずはお気軽にご相談ください。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 bg-white text-ibt-red font-bold rounded-full hover:bg-gray-50 transition-colors shadow-lg">
+          まずは無料で相談する →
+        </a>
+        <a href="https://lin.ee/xWMOBbI" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/30">
+          LINEで気軽に相談
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .filter-btn {
+    border-color: #E5E7EB;
+    background: white;
+    color: #555555;
+  }
+  .filter-btn:hover {
+    border-color: #CC2210;
+    color: #CC2210;
+  }
+  .filter-btn.active {
+    background: #CC2210;
+    border-color: #CC2210;
+    color: white;
+  }
+  .prefecture-cell:hover rect,
+  .prefecture-cell:focus rect {
+    stroke: #CC2210;
+    stroke-width: 3;
+    filter: brightness(1.1);
+  }
+  .prefecture-cell.selected rect {
+    stroke: #CC2210;
+    stroke-width: 3;
+  }
+  /* Tooltip */
+  #map-tooltip {
+    pointer-events: none;
+    position: fixed;
+    z-index: 50;
+    background: #111111;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.15s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  #map-tooltip.visible {
+    opacity: 1;
+  }
+</style>
+
+<div id="map-tooltip"></div>
+
+<script define:vars={{ schoolsJson, prefectureCounts: JSON.stringify(prefectureCounts) }}>
+  const schoolsData = JSON.parse(schoolsJson);
+  const countsData = JSON.parse(prefectureCounts);
+
+  let activeProgram = 'all';
+  let activeType = 'all';
+  let selectedPrefecture = '';
+
+  // DOM elements
+  const cells = document.querySelectorAll('.prefecture-cell');
+  const tooltip = document.getElementById('map-tooltip');
+  const selectedSchoolsEl = document.getElementById('selected-schools');
+  const selectedTitle = document.getElementById('selected-title');
+  const schoolList = document.getElementById('school-list');
+  const noSchoolsMsg = document.getElementById('no-schools-msg');
+  const closeBtn = document.getElementById('close-selection');
+  const programBtns = document.querySelectorAll('.program-filter');
+  const typeBtns = document.querySelectorAll('.type-filter');
+  const regionBtns = document.querySelectorAll('.region-summary-btn');
+  const prefTableBtns = document.querySelectorAll('.pref-table-btn');
+
+  // Tooltip
+  cells.forEach(cell => {
+    cell.addEventListener('mouseenter', (e) => {
+      const pref = cell.getAttribute('data-prefecture');
+      const count = cell.getAttribute('data-count');
+      tooltip.textContent = `${pref}: ${count}校`;
+      tooltip.classList.add('visible');
+    });
+
+    cell.addEventListener('mousemove', (e) => {
+      tooltip.style.left = (e.clientX + 12) + 'px';
+      tooltip.style.top = (e.clientY - 10) + 'px';
+    });
+
+    cell.addEventListener('mouseleave', () => {
+      tooltip.classList.remove('visible');
+    });
+
+    // Click to select
+    cell.addEventListener('click', () => {
+      const pref = cell.getAttribute('data-prefecture');
+      selectPrefecture(pref);
+    });
+
+    // Keyboard support
+    cell.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const pref = cell.getAttribute('data-prefecture');
+        selectPrefecture(pref);
+      }
+    });
+  });
+
+  // Close button
+  closeBtn.addEventListener('click', () => {
+    selectedSchoolsEl.classList.add('hidden');
+    cells.forEach(c => c.classList.remove('selected'));
+    selectedPrefecture = '';
+  });
+
+  // Program filters
+  programBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      programBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeProgram = btn.getAttribute('data-program');
+      updateMap();
+      if (selectedPrefecture) showSchools(selectedPrefecture);
+    });
+  });
+
+  // Type filters
+  typeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      typeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeType = btn.getAttribute('data-type');
+      updateMap();
+      if (selectedPrefecture) showSchools(selectedPrefecture);
+    });
+  });
+
+  // Region summary buttons
+  regionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const region = btn.getAttribute('data-region');
+      // Find the first prefecture with schools in this region
+      const regionPrefs = {
+        '北海道・東北': ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県'],
+        '関東': ['東京都','神奈川県','千葉県','埼玉県','茨城県','栃木県','群馬県'],
+        '中部': ['新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県'],
+        '関西': ['大阪府','京都府','兵庫県','奈良県','滋賀県','和歌山県','三重県'],
+        '中国・四国': ['鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県'],
+        '九州・沖縄': ['福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'],
+      };
+      const prefs = regionPrefs[region] || [];
+      const firstWithSchools = prefs.find(p => getFilteredCount(p) > 0) || prefs[0];
+      if (firstWithSchools) selectPrefecture(firstWithSchools);
+    });
+  });
+
+  // Prefecture table buttons
+  prefTableBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pref = btn.getAttribute('data-prefecture');
+      selectPrefecture(pref);
+      // Scroll to map
+      document.getElementById('japan-map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+
+  function getFilteredSchools(pref) {
+    const schools = schoolsData[pref] || [];
+    return schools.filter(s => {
+      const matchProgram = activeProgram === 'all' || (s.programs && s.programs.includes(activeProgram));
+      const matchType = activeType === 'all' || s.schoolType === activeType;
+      return matchProgram && matchType;
+    });
+  }
+
+  function getFilteredCount(pref) {
+    return getFilteredSchools(pref).length;
+  }
+
+  function updateMap() {
+    const maxFiltered = Math.max(...Object.keys(countsData).map(p => getFilteredCount(p)), 1);
+
+    cells.forEach(cell => {
+      const pref = cell.getAttribute('data-prefecture');
+      const count = getFilteredCount(pref);
+      const rect = cell.querySelector('rect');
+      const texts = cell.querySelectorAll('text');
+
+      // Update count display
+      cell.setAttribute('data-count', count);
+
+      // Update color
+      let fill = '#E5E7EB';
+      if (count > 0) {
+        const ratio = Math.log(count + 1) / Math.log(maxFiltered + 1);
+        if (ratio > 0.7) fill = '#991B1B';
+        else if (ratio > 0.5) fill = '#DC2626';
+        else if (ratio > 0.3) fill = '#EF4444';
+        else if (ratio > 0.15) fill = '#F87171';
+        else fill = '#FCA5A5';
+      }
+      rect.setAttribute('fill', fill);
+
+      // Update text colors
+      const nameText = texts[0];
+      if (nameText) {
+        nameText.setAttribute('fill', count > 5 ? '#ffffff' : count > 0 ? '#7F1D1D' : '#6B7280');
+        nameText.setAttribute('y', String(parseFloat(rect.getAttribute('y')) + (count > 0 ? 22 : 28)));
+      }
+
+      // Count text
+      if (texts.length > 1) {
+        const countText = texts[1];
+        countText.textContent = count + '校';
+        countText.setAttribute('fill', count > 5 ? '#ffffff' : '#7F1D1D');
+        countText.style.display = count > 0 ? '' : 'none';
+      } else if (count > 0) {
+        // Create count text if not existing
+        const x = parseFloat(rect.getAttribute('x'));
+        const y = parseFloat(rect.getAttribute('y'));
+        const w = parseFloat(rect.getAttribute('width'));
+        const newText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        newText.setAttribute('x', String(x + w / 2));
+        newText.setAttribute('y', String(y + 38));
+        newText.setAttribute('text-anchor', 'middle');
+        newText.setAttribute('fill', count > 5 ? '#ffffff' : '#7F1D1D');
+        newText.setAttribute('font-size', '11');
+        newText.setAttribute('font-weight', '600');
+        newText.textContent = count + '校';
+        cell.appendChild(newText);
+      }
+    });
+  }
+
+  function selectPrefecture(pref) {
+    selectedPrefecture = pref;
+    cells.forEach(c => {
+      c.classList.toggle('selected', c.getAttribute('data-prefecture') === pref);
+    });
+    showSchools(pref);
+    selectedSchoolsEl.classList.remove('hidden');
+  }
+
+  function showSchools(pref) {
+    const filtered = getFilteredSchools(pref);
+    const totalForPref = (schoolsData[pref] || []).length;
+
+    selectedTitle.textContent = `${pref}のIB認定校 (${filtered.length}校)`;
+
+    if (filtered.length === 0) {
+      schoolList.innerHTML = '';
+      noSchoolsMsg.classList.remove('hidden');
+      if (totalForPref > 0) {
+        noSchoolsMsg.querySelector('p').textContent = `${pref}には${totalForPref}校のIB認定校がありますが、現在のフィルター条件に一致する学校はありません`;
+      } else {
+        noSchoolsMsg.querySelector('p').textContent = `${pref}にはIB認定校はまだありません`;
+      }
+      return;
+    }
+
+    noSchoolsMsg.classList.add('hidden');
+
+    const programColors = {
+      PYP: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      MYP: 'bg-blue-50 text-blue-700 border-blue-200',
+      DP: 'bg-red-50 text-red-700 border-red-200',
+      CP: 'bg-orange-50 text-orange-700 border-orange-200',
+    };
+
+    schoolList.innerHTML = filtered.map(school => `
+      <a href="/ib-schools/${school.slug}/" class="group block p-4 rounded-xl border border-ibt-border hover:border-ibt-red/30 hover:shadow-sm transition-all bg-white">
+        <div class="flex items-start justify-between gap-3">
+          <div class="flex-1 min-w-0">
+            <h4 class="font-bold text-ibt-text group-hover:text-ibt-red transition-colors text-sm leading-snug mb-2">
+              ${school.title}
+            </h4>
+            <div class="flex flex-wrap gap-1.5">
+              ${school.programs.map(p => `
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${programColors[p] || 'bg-gray-50 text-gray-700 border-gray-200'}">${p}</span>
+              `).join('')}
+              ${school.schoolType ? `
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-50 text-gray-600 border border-gray-200">${school.schoolType}</span>
+              ` : ''}
+            </div>
+          </div>
+          <span class="text-ibt-red text-sm font-medium flex-shrink-0 group-hover:translate-x-1 transition-transform">詳細 →</span>
+        </div>
+      </a>
+    `).join('');
+
+    // Scroll into view on mobile
+    if (window.innerWidth < 1024) {
+      selectedSchoolsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+</script>

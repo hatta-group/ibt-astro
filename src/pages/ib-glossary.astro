@@ -11,6 +11,9 @@ const categoryLabels: Record<string, string> = {
   'Assessment': '評価・試験',
   'MYP': 'MYP（中等教育プログラム）',
   'PYP': 'PYP（初等教育プログラム）',
+  'University': '大学出願・進学',
+  'Japan IB': '日本のIB',
+  'School Admin': '学校運営',
   'General': '一般用語',
 };
 
@@ -21,6 +24,9 @@ const categoryIcons: Record<string, string> = {
   'Assessment': '📝',
   'MYP': '🎯',
   'PYP': '🌱',
+  'University': '🎓',
+  'Japan IB': '🇯🇵',
+  'School Admin': '🏫',
   'General': '💡',
 };
 
@@ -44,7 +50,7 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "DefinedTermSet",
   "name": "IB用語集",
-  "description": "IBプログラムの専門用語をわかりやすく解説。TOK、EE、IA、CAS、DP、MYP、PYPなど、IBで使われる用語を50語以上収録。",
+  "description": "IBプログラムの専門用語をわかりやすく解説。TOK、EE、IA、CAS、DP、MYP、PYPなど、IBで使われる用語を200語収録。",
   "url": `${siteUrl}/ib-glossary/`,
   "inLanguage": ["ja", "en"],
   "hasDefinedTerm": glossaryTerms.map(t => ({
@@ -70,7 +76,7 @@ const termCount = glossaryTerms.length;
 
 <BaseLayout
   title="IB用語集｜IB専門家庭教師IBT"
-  description="IBプログラムの専門用語をわかりやすく解説。TOK、EE、IA、CAS、DP、MYP、PYPなど、IBで使われる用語を50語以上収録。"
+  description="IBプログラムの専門用語をわかりやすく解説。TOK、EE、IA、CAS、DP、MYP、PYPなど、IBで使われる用語を200語収録。"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
