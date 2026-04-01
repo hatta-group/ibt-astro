@@ -4,7 +4,7 @@ titleEn: "Princeton University"
 slug: "princeton-university"
 country: "アメリカ"
 region: "us"
-ibScoreRange: "40+"
+ibScoreRange: "ホリスティック審査"
 website: "https://www.princeton.edu/"
 featured: false
 programs: []
@@ -18,12 +18,12 @@ draft: false
 
 ## IBスコア要件
 
-ホリスティック審査により、IBスコアは総合評価の一部として考慮されます。IBディプロマの取得は高く評価され、HL科目で7の場合に一部単位認定の可能性があります。
+ホリスティック審査により、IBスコアは総合評価の一部として考慮されます。2025年以降Advanced Standingは廃止されました。HL6-7で配置(placement)・一部要件免除に使用可能です。
 
 ## IB生にとってのメリット
 
 - 学部教育に力を入れるアメリカトップクラスの大学
-- HL科目の単位認定あり
+- HL6-7で配置(placement)・一部要件免除あり
 - 充実した経済支援制度（Need-blind admission）
 - 美しいキャンパスと強いコミュニティ
 

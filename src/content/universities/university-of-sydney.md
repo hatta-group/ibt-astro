@@ -4,7 +4,7 @@ titleEn: "University of Sydney"
 slug: "university-of-sydney"
 country: "オーストラリア"
 region: "australia"
-ibScoreRange: "25-32+"
+ibScoreRange: "25-35+"
 website: "https://www.sydney.edu.au/"
 featured: false
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-学部によって25点から32点以上が求められます。IBスコアはATARに換算されて評価されます。学部によりスコア要件が大きく異なります。
+学部によって25点から35点以上が求められます。IBスコアはATARに換算されて評価されます。学部によりスコア要件が大きく異なります。
 
 ## IB生にとってのメリット
 

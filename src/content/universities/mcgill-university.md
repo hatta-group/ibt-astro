@@ -4,7 +4,7 @@ titleEn: "McGill University"
 slug: "mcgill-university"
 country: "カナダ"
 region: "canada"
-ibScoreRange: "32+"
+ibScoreRange: "28-41+"
 website: "https://www.mcgill.ca/"
 featured: true
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-学部によってスコア要件が異なりますが、32点以上が目安です。IB科目の単位認定が充実しており、HL科目の成績に応じて最大30単位まで認定される場合があります。
+学部により大きく異なり、Arts: 33-35、Science: 36-38が目安です。IB科目の単位認定が充実しており、HL科目の成績に応じて最大30単位まで認定される場合があります。
 
 ## IB生にとってのメリット
 

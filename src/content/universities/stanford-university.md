@@ -4,7 +4,7 @@ titleEn: "Stanford University"
 slug: "stanford-university"
 country: "アメリカ"
 region: "us"
-ibScoreRange: "40+"
+ibScoreRange: "ホリスティック審査"
 website: "https://www.stanford.edu/"
 featured: true
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-ホリスティック審査のため、IBスコアだけでは合否は決まりません。HL科目で5以上の場合に単位認定の可能性がありますが、高いスコアを取ることは学業の優秀さを示す一つの指標として重要です。
+ホリスティック審査のため、IBスコアだけでは合否は決まりません。HL5以上で一部科目の単位認定あり(最大45単位まで)。高いスコアを取ることは学業の優秀さを示す一つの指標として重要です。
 
 ## IB生にとってのメリット
 

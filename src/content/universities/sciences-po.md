@@ -4,7 +4,7 @@ titleEn: "Sciences Po"
 slug: "sciences-po"
 country: "フランス"
 region: "europe"
-ibScoreRange: "34+"
+ibScoreRange: "37+"
 website: "https://www.sciencespo.fr/"
 featured: false
 programs: []
@@ -18,7 +18,7 @@ Sciences Poはフランス・パリに位置する社会科学系の名門大学
 
 ## IBスコア要件
 
-34点以上が目安です。IBスコアでの出願に積極的で、IBディプロマは正式な入学資格として認められています。
+37点以上が目安です。IBスコアでの出願に積極的で、IBディプロマは正式な入学資格として認められています。
 
 ## IB生にとってのメリット
 

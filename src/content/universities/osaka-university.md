@@ -8,7 +8,7 @@ ibScoreRange: "32+"
 website: "https://www.osaka-u.ac.jp/"
 featured: true
 programs: []
-ibAdmissionType: "世界適塾入試"
+ibAdmissionType: "総合型選抜・学校推薦型選抜(世界適塾入試)"
 draft: false
 ---
 
@@ -18,7 +18,7 @@ draft: false
 
 ## IB入試の特徴
 
-大阪大学では「世界適塾入試」としてIBスコアを活用した選考を実施しています。複数の学部でIB入試が導入されており、書類審査と面接が主な選考方法です。
+大阪大学では総合型選抜・学校推薦型選抜（世界適塾入試）としてIBスコアを活用した選考を実施しています。複数の学部でIB入試が導入されており、書類審査と面接が主な選考方法です。
 
 ## IB生にとってのメリット
 

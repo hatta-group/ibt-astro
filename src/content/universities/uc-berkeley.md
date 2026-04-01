@@ -4,7 +4,7 @@ titleEn: "University of California, Berkeley"
 slug: "uc-berkeley"
 country: "アメリカ"
 region: "us"
-ibScoreRange: "36+"
+ibScoreRange: "30+(合格者平均40程度)"
 website: "https://www.berkeley.edu/"
 featured: false
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-公立大学トップとして、IBディプロマは出願時に高く評価されます。HL科目で5以上の場合に単位認定を受けられる可能性があります。IBスコア36点以上が目安ですが、学部によって異なります。
+公立大学トップとして、IBディプロマは出願時に高く評価されます。IBディプロマ30点以上で追加単位付与があり、HL5以上で科目別単位認定を受けられます。合格者平均は40程度です。
 
 ## IB生にとってのメリット
 

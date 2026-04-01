@@ -4,7 +4,7 @@ titleEn: "University of Cambridge"
 slug: "university-of-cambridge"
 country: "イギリス"
 region: "uk"
-ibScoreRange: "40-42+"
+ibScoreRange: "41-42+"
 website: "https://www.cam.ac.uk/"
 featured: true
 programs: []

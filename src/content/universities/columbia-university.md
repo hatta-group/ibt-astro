@@ -4,7 +4,7 @@ titleEn: "Columbia University"
 slug: "columbia-university"
 country: "アメリカ"
 region: "us"
-ibScoreRange: "40+"
+ibScoreRange: "ホリスティック審査"
 website: "https://www.columbia.edu/"
 featured: false
 programs: []

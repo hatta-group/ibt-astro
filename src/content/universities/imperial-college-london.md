@@ -4,7 +4,7 @@ titleEn: "Imperial College London"
 slug: "imperial-college-london"
 country: "イギリス"
 region: "uk"
-ibScoreRange: "38-40+"
+ibScoreRange: "38-42+"
 website: "https://www.imperial.ac.uk/"
 featured: true
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-学部によって38点から40点以上が目安です。HL科目で6や7が必要で、特に理系科目（Math、Physics、Chemistry、Biology）のHL成績が重視されます。
+学部によって38点から42点以上が目安です。CS等は41-42点が必要です。HL科目で6や7が必要で、特に理系科目（Math、Physics、Chemistry、Biology）のHL成績が重視されます。
 
 ## IB生にとってのメリット
 

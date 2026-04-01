@@ -4,7 +4,7 @@ titleEn: "Australian National University"
 slug: "australian-national-university"
 country: "オーストラリア"
 region: "australia"
-ibScoreRange: "26-31+"
+ibScoreRange: "30+"
 website: "https://www.anu.edu.au/"
 featured: false
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-学部によって26点から31点以上が目安です。IBスコアでの出願に積極的で、奨学金プログラムも用意されています。
+30点以上が目安です。IBスコアでの出願に積極的で、奨学金プログラムも用意されています。
 
 ## IB生にとってのメリット
 

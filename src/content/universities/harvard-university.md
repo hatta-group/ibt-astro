@@ -4,7 +4,7 @@ titleEn: "Harvard University"
 slug: "harvard-university"
 country: "アメリカ"
 region: "us"
-ibScoreRange: "40+"
+ibScoreRange: "ホリスティック審査"
 website: "https://www.harvard.edu/"
 featured: true
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-合格率は3%台と非常に競争が激しい大学です。ホリスティック審査でIBスコアは一つの要素に過ぎず、課外活動、リーダーシップ、エッセイ、推薦状などが総合的に評価されます。
+ホリスティック審査でIBスコアは一つの要素に過ぎず、課外活動、リーダーシップ、エッセイ、推薦状などが総合的に評価されます。HL3科目で7の場合、Advanced Standing(早期卒業)の資格があります。
 
 ## IB生にとってのメリット
 
@@ -33,6 +33,6 @@ Common ApplicationまたはCoalition Applicationで出願します。IBスコア
 
 ## IBTからのアドバイス
 
-ハーバードを目指すなら、IBスコア40点以上を目指しつつ、課外活動やリーダーシップ経験も積み上げましょう。TOKやEEで培った思考力はエッセイで大きな武器になります。IBTの[講師陣](/tutors/)がIB科目のスコアアップをサポートします。
+ハーバードを目指すなら、IBスコアで高得点を目指しつつ、課外活動やリーダーシップ経験も積み上げましょう。TOKやEEで培った思考力はエッセイで大きな武器になります。IBTの[講師陣](/tutors/)がIB科目のスコアアップをサポートします。
 
 ※ 最新の入試要件は[ハーバード大学公式サイト](https://www.harvard.edu/)で必ずご確認ください。

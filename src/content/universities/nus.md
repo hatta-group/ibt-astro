@@ -4,7 +4,7 @@ titleEn: "National University of Singapore"
 slug: "nus"
 country: "シンガポール"
 region: "asia"
-ibScoreRange: "36-40+"
+ibScoreRange: "37-40+"
 website: "https://www.nus.edu.sg/"
 featured: true
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-学部によって36点から40点以上が求められます。IBスコアでの出願が一般的で、IB生の受け入れ実績が豊富です。人気学部は非常に高いスコアが必要です。
+学部によって37点から40点以上が求められます。IBスコアでの出願が一般的で、IB生の受け入れ実績が豊富です。人気学部は非常に高いスコアが必要です。
 
 ## IB生にとってのメリット
 
@@ -34,6 +34,6 @@ NUSの出願システムから直接出願します。IBスコア（予測スコ
 
 ## IBTからのアドバイス
 
-NUSはアジアで学びたいIB生にとって最高の選択肢の一つです。36点以上を目標にしつつ、志望学部のHL科目要件を確認しましょう。IBTの[科目対策](/subjects/)で効率的にスコアアップを。[無料体験はこちら](/contact/)。
+NUSはアジアで学びたいIB生にとって最高の選択肢の一つです。37点以上を目標にしつつ、志望学部のHL科目要件を確認しましょう。IBTの[科目対策](/subjects/)で効率的にスコアアップを。[無料体験はこちら](/contact/)。
 
 ※ 最新の入試要件は[NUS公式サイト](https://www.nus.edu.sg/)で必ずご確認ください。

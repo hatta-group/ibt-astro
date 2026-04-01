@@ -4,7 +4,7 @@ titleEn: "Massachusetts Institute of Technology"
 slug: "mit"
 country: "アメリカ"
 region: "us"
-ibScoreRange: "40+"
+ibScoreRange: "ホリスティック審査"
 website: "https://www.mit.edu/"
 featured: true
 programs: []
@@ -33,6 +33,6 @@ Common Applicationまたは独自の出願システムで出願します。IBス
 
 ## IBTからのアドバイス
 
-MITを目指すなら、IBスコア40点以上を目標にしつつ、課外活動やプロジェクトにも力を入れましょう。[Math AA](/subjects/math-aa/)や[Physics](/subjects/physics/)のHL科目で7を目指すことが出発点です。IBTで[科目対策](/subjects/)を始めましょう。
+MITを目指すなら、IBスコアで高得点を目標にしつつ、課外活動やプロジェクトにも力を入れましょう。[Math AA](/subjects/math-aa/)や[Physics](/subjects/physics/)のHL科目で7を目指すことが出発点です。IBTで[科目対策](/subjects/)を始めましょう。
 
 ※ 最新の入試要件は[MIT公式サイト](https://www.mit.edu/)で必ずご確認ください。

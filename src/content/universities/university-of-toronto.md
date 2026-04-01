@@ -4,7 +4,7 @@ titleEn: "University of Toronto"
 slug: "university-of-toronto"
 country: "カナダ"
 region: "canada"
-ibScoreRange: "28-32+"
+ibScoreRange: "28-38+"
 website: "https://www.utoronto.ca/"
 featured: true
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-学部によって28点から32点以上が求められます。IBスコアでの出願が一般的で、IB生の受け入れ体制が整っています。HL科目で5以上の場合に単位認定の可能性があります。
+学部によって28点から38点以上が求められます。CS・Engineering等は38+が必要です。IBスコアでの出願が一般的で、IB生の受け入れ体制が整っています。HL科目で5以上の場合に単位認定の可能性があります。
 
 ## IB生にとってのメリット
 
@@ -26,7 +26,7 @@ draft: false
 - HL科目で5以上の場合に単位認定あり
 - トロントという国際都市での大学生活
 - 充実した留学生サポート
-- 28点から出願可能な学部もあり、チャレンジしやすい
+- 28点から出願可能な学部もあり、CS・Engineering等は38+
 
 ## 出願のポイント
 

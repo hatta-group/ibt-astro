@@ -34,7 +34,7 @@ const scoreRanges = [
     japan: [
       { name: '立命館アジア太平洋大学（APU）', score: '24+', hasIBAdmission: true, notes: 'IB入試の先駆け。英語基準でも出願可。留学生比率50%の国際環境' },
       { name: '岡山大学', score: '24+', hasIBAdmission: true, notes: 'グローバル・ディスカバリー・プログラムで英語学位取得可' },
-      { name: '広島大学', score: '24+', hasIBAdmission: true, notes: '総合科学部などでIBスコアを活用した入試あり' },
+      { name: '広島大学', score: '24+', hasIBAdmission: true, notes: 'IBスコアを活用した入試あり' },
       { name: '筑波大学（一部学群）', score: '26+', hasIBAdmission: true, notes: '国際総合学類などでIB特別入試を実施' },
       { name: '関西学院大学', score: '24+', hasIBAdmission: true, notes: '国際学部を中心にIBスコアでの出願が可能' },
     ],
@@ -74,14 +74,14 @@ const scoreRanges = [
     japan: [
       { name: '慶應義塾大学', score: '32+', hasIBAdmission: true, notes: 'PEARL（経済学部英語プログラム）やSFC等でIB入試実施' },
       { name: '早稲田大学（主要学部）', score: '32+', hasIBAdmission: true, notes: '政治経済学部・法学部等の主要学部でIBスコア利用可' },
-      { name: '東京大学（推薦入試）', score: '34+', hasIBAdmission: true, notes: '学校推薦型選抜でIBスコアを評価要素として考慮' },
+      { name: '東京大学（推薦入試）', score: '38+', hasIBAdmission: true, notes: '学校推薦型選抜でIBスコアを評価要素として考慮。PEAKは2026年9月入学で最後の募集。後継のCollege of Design (CoD)が2027年秋開設予定' },
       { name: '京都大学（特色入試）', score: '34+', hasIBAdmission: true, notes: '特色入試の出願資格にIBディプロマを含む学部あり' },
     ],
     overseas: [
-      { name: 'UCL (University College London)', country: 'UK', flag: '🇬🇧', score: '34+', notes: 'ロンドン大学群の中核。学部により34-38点' },
+      { name: 'UCL (University College London)', country: 'UK', flag: '🇬🇧', score: '34+', notes: 'ロンドン大学群の中核。学部により34-40点' },
       { name: "King's College London", country: 'UK', flag: '🇬🇧', score: '32-35+', notes: 'ラッセルグループ所属。医学部は36+' },
-      { name: 'McGill University', country: 'CA', flag: '🇨🇦', score: '32+', notes: 'カナダの名門。IB科目の単位認定が充実' },
-      { name: 'University of British Columbia', country: 'CA', flag: '🇨🇦', score: '32+', notes: 'バンクーバーの名門。IB生の受け入れ実績豊富' },
+      { name: 'McGill University', country: 'CA', flag: '🇨🇦', score: '28-41+', notes: 'Arts: 33-35、Science: 36-38。単位認定が充実' },
+      { name: 'University of British Columbia', country: 'CA', flag: '🇨🇦', score: '24+', notes: 'バンクーバーの名門。競争的プログラムはより高い' },
     ],
   },
   {
@@ -91,16 +91,16 @@ const scoreRanges = [
     color: 'violet',
     description: 'トップ10%に入るハイスコア帯。世界の名門大学が十分に狙えるレベル。',
     japan: [
-      { name: '東京大学', score: '36+', hasIBAdmission: true, notes: '推薦入試でIBスコアを高く評価。PEAK(英語コース)は38+推奨' },
+      { name: '東京大学', score: '38+', hasIBAdmission: true, notes: '推薦入試でIBスコアを高く評価。PEAK(英語コース)は38+推奨。PEAKは2026年9月入学で最後の募集。後継のCollege of Design (CoD)が2027年秋開設予定' },
       { name: '京都大学', score: '36+', hasIBAdmission: true, notes: '特色入試で高いIBスコアは大きなアドバンテージ' },
       { name: '医学部（国公立）', score: '38+', hasIBAdmission: true, notes: '一部の国公立大学医学部でIB入試あり。非常に高いスコアが必要' },
     ],
     overseas: [
       { name: 'Imperial College London', country: 'UK', flag: '🇬🇧', score: '38+', notes: '理工系世界トップ。HL科目で6-7が必要' },
       { name: 'University of Edinburgh', country: 'UK', flag: '🇬🇧', score: '36+', notes: 'スコットランドの名門。学部により34-40' },
-      { name: 'NUS (National University of Singapore)', country: 'SG', flag: '🇸🇬', score: '36+', notes: 'アジア1位常連。IBスコアでの出願が一般的' },
+      { name: 'NUS (National University of Singapore)', country: 'SG', flag: '🇸🇬', score: '37-40+', notes: 'アジア1位常連。IBスコアでの出願が一般的' },
       { name: 'NTU (Nanyang Technological University)', country: 'SG', flag: '🇸🇬', score: '36+', notes: 'シンガポールの理工系名門' },
-      { name: 'ETH Zurich', country: 'CH', flag: '🇨🇭', score: '36+', notes: 'ヨーロッパ理工系最高峰。授業料が非常に安い' },
+      { name: 'ETH Zurich', country: 'CH', flag: '🇨🇭', score: '38+', notes: 'ヨーロッパ理工系最高峰。授業料が非常に安い' },
     ],
   },
   {
@@ -110,16 +110,16 @@ const scoreRanges = [
     color: 'amber',
     description: '世界のIB生のトップ数%。Oxbridge、Ivy Leagueなど世界最高峰の大学が現実的なターゲットになります。',
     japan: [
-      { name: '東京大学 PEAK', score: '40+', hasIBAdmission: true, notes: '英語による学位プログラム。世界中のIB生と競争' },
+      { name: '東京大学 PEAK', score: '40+', hasIBAdmission: true, notes: '英語による学位プログラム。世界中のIB生と競争。PEAKは2026年9月入学で最後の募集。後継のCollege of Design (CoD)が2027年秋開設予定' },
     ],
     overseas: [
       { name: 'University of Oxford', country: 'UK', flag: '🇬🇧', score: '38-40+', notes: '学部により38-40。面接・入試テストも重要' },
-      { name: 'University of Cambridge', country: 'UK', flag: '🇬🇧', score: '40-42+', notes: '学部により40-42。HL776が一般的な条件' },
-      { name: 'MIT', country: 'US', flag: '🇺🇸', score: '40+', notes: 'IBスコアは参考要素。課外活動・エッセイも重視' },
-      { name: 'Stanford University', country: 'US', flag: '🇺🇸', score: '40+', notes: 'ホリスティック審査。IBスコアだけでは不十分' },
-      { name: 'Harvard University', country: 'US', flag: '🇺🇸', score: '40+', notes: '合格率3%台。IBスコア以外の要素も非常に重要' },
-      { name: 'Yale University', country: 'US', flag: '🇺🇸', score: '40+', notes: 'リベラルアーツ重視。多面的な評価' },
-      { name: 'LSE (London School of Economics)', country: 'UK', flag: '🇬🇧', score: '38-40+', notes: '社会科学系世界トップ。HL766以上が目安' },
+      { name: 'University of Cambridge', country: 'UK', flag: '🇬🇧', score: '41-42+', notes: '学部により41-42。HL776が一般的な条件' },
+      { name: 'MIT', country: 'US', flag: '🇺🇸', score: 'ホリスティック審査', notes: 'IBスコアのみでの合格基準はない。総合評価' },
+      { name: 'Stanford University', country: 'US', flag: '🇺🇸', score: 'ホリスティック審査', notes: 'HL5以上で単位認定あり。最大45単位まで' },
+      { name: 'Harvard University', country: 'US', flag: '🇺🇸', score: 'ホリスティック審査', notes: 'HL3科目で7でAdvanced Standing資格あり' },
+      { name: 'Yale University', country: 'US', flag: '🇺🇸', score: 'ホリスティック審査', notes: '合格者IB平坧42程度。HL6-7で単位認定あり' },
+      { name: 'LSE (London School of Economics)', country: 'UK', flag: '🇬🇧', score: '37-39+', notes: '社会科学系世界トップ。HL766以上が目安' },
     ],
   },
 ];

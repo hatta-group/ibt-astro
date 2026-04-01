@@ -4,7 +4,7 @@ titleEn: "University of Pennsylvania"
 slug: "university-of-pennsylvania"
 country: "アメリカ"
 region: "us"
-ibScoreRange: "40+"
+ibScoreRange: "ホリスティック審査"
 website: "https://www.upenn.edu/"
 featured: false
 programs: []

@@ -4,7 +4,7 @@ titleEn: "University of Melbourne"
 slug: "university-of-melbourne"
 country: "オーストラリア"
 region: "australia"
-ibScoreRange: "28-33+"
+ibScoreRange: "29-42+"
 website: "https://www.unimelb.edu.au/"
 featured: true
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-IBスコアはATAR（Australian Tertiary Admission Rank）に換算されて評価されます。学部によって28点から33点以上が目安ですが、人気学部はより高いスコアが求められます。
+IBスコアはATAR（Australian Tertiary Admission Rank）に換算されて評価されます。学部によって29点から42点以上が目安で、人気学部はより高いスコアが求められます。
 
 ## IB生にとってのメリット
 

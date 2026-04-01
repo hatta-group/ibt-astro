@@ -4,7 +4,7 @@ titleEn: "Korea Advanced Institute of Science and Technology"
 slug: "kaist"
 country: "韓国"
 region: "asia"
-ibScoreRange: "34+"
+ibScoreRange: "33+"
 website: "https://www.kaist.ac.kr/"
 featured: false
 programs: []
@@ -18,7 +18,7 @@ KAIST（韓国科学技術院）は韓国の理工系トップ大学です。英
 
 ## IBスコア要件
 
-34点以上が目安です。英語での授業が中心で、IBスコアでの出願に対応しています。理系科目のHL成績が特に重視されます。
+33点以上が目安です。英語での授業が中心で、IBスコアでの出願に対応しています。理系科目のHL成績が特に重視されます。
 
 ## IB生にとってのメリット
 

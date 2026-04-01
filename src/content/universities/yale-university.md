@@ -4,7 +4,7 @@ titleEn: "Yale University"
 slug: "yale-university"
 country: "アメリカ"
 region: "us"
-ibScoreRange: "40+"
+ibScoreRange: "ホリスティック審査"
 website: "https://www.yale.edu/"
 featured: false
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-ホリスティック審査で、IBディプロマの取得は学業の厳しさを示す指標として評価されます。HL科目で6から7を取得した場合に単位認定を受けられる可能性があります。
+ホリスティック審査で、合格者のIB平均は42程度です。HL6-7で科目別に単位認定を受けられる可能性があります。
 
 ## IB生にとってのメリット
 

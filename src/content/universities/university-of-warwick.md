@@ -4,7 +4,7 @@ titleEn: "University of Warwick"
 slug: "university-of-warwick"
 country: "イギリス"
 region: "uk"
-ibScoreRange: "34-38+"
+ibScoreRange: "36-38+"
 website: "https://warwick.ac.uk/"
 featured: false
 programs: []
@@ -18,7 +18,7 @@ draft: false
 
 ## IBスコア要件
 
-学部によって34点から38点以上が求められます。IBスコアでの出願に積極的で、IB生を広く受け入れています。
+学部によって36点から38点以上が求められます。IBスコアでの出願に積極的で、IB生を広く受け入れています。
 
 ## IB生にとってのメリット
 

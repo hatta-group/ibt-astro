@@ -7,7 +7,7 @@ region: "japan"
 ibScoreRange: "30-32+"
 website: "https://www.waseda.jp/"
 featured: true
-programs: ["国際教養学部(SILS)"]
+programs: ["国際教養学部(SILS)", "EDESSA(政治経済学部英語学位プログラム)"]
 ibAdmissionType: "IB入試・AO入試"
 draft: false
 ---
@@ -18,7 +18,7 @@ draft: false
 
 ## IB入試の特徴
 
-早稲田大学では国際教養学部、政治経済学部などでIBスコアを利用した入試を実施しています。学部によりIBスコアの活用方法や求められるスコアが異なります。国際教養学部では英語での出願が可能です。
+早稲田大学では国際教養学部（SILS）、政治経済学部のEDESSA（English-based Degree Studies September Admission）などでIBスコアを利用した入試を実施しています。学部によりIBスコアの活用方法や求められるスコアが異なります。国際教養学部では英語での出願が可能です。EDESSAは政治経済学部の英語学位プログラムで、9月入学に対応しています。
 
 ## IB生にとってのメリット
 
