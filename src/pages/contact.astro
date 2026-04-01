@@ -349,6 +349,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         });
 
         if (response.ok) {
+          // GA4: フォーム送信成功イベント
+          if (typeof gtag === 'function') {
+            gtag('event', 'form_submit_contact', {
+              event_category: 'engagement',
+              event_label: 'contact_form',
+            });
+          }
           form.classList.add('hidden');
           if (thankYouMessage) thankYouMessage.classList.remove('hidden');
         } else {
