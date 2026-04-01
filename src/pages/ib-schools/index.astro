@@ -91,8 +91,8 @@ function getExcerpt(desc: string | undefined, maxLen = 60) {
 ---
 
 <BaseLayout
-  title={`日本のIB認定校一覧【2026年最新版】全国${totalCount}校｜IBT`}
-  description="日本全国のIB（国際バカロレア）認定校を地域別・プログラム別に一覧で紹介。PYP・MYP・DP・CP対応校を検索できます。一条校・インターナショナルスクール別の情報も。"
+  title={`日本のIB認定校（国際バカロレア校）一覧【2026年最新】全${totalCount}校｜IBT`}
+  description={`日本国内のIB認定校（国際バカロレア認定校）を全${totalCount}校掲載。都道府県別・プログラム別（PYP/MYP/DP）で検索可能。各校の特徴・対策情報も。IB専門家庭教師IBTが運営。`}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -102,6 +102,19 @@ function getExcerpt(desc: string | undefined, maxLen = 60) {
         { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
         { "@type": "ListItem", "position": 2, "name": "IB認定校一覧", "item": "https://ib-tutors.net/ib-schools/" }
       ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "日本のIB認定校一覧",
+      "description": `日本国内のIB（国際バカロレア）認定校全${totalCount}校の一覧`,
+      "numberOfItems": totalCount,
+      "itemListElement": schools.map((s, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": s.data.title.replace(/のIB対策.*$/, ''),
+        "url": `https://ib-tutors.net/ib-schools/${s.data.slug}/`
+      }))
     })} />
   </Fragment>
 
@@ -114,10 +127,10 @@ function getExcerpt(desc: string | undefined, maxLen = 60) {
         <span class="text-white">IB認定校一覧</span>
       </nav>
       <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight">
-        日本のIB認定校一覧<span class="block md:inline text-xl md:text-3xl font-normal text-white/80 md:ml-3">【2026年最新版】</span>
+        日本のIB認定校（国際バカロレア校）一覧<span class="block md:inline text-xl md:text-3xl font-normal text-white/80 md:ml-3">【2026年最新】</span>
       </h1>
-      <p class="mt-4 text-white/85 text-lg md:text-xl">
-        全国のIB認定校（PYP・MYP・DP・CP）を地域別にまとめました。
+      <p class="mt-4 text-white/85 text-lg md:text-xl leading-relaxed">
+        日本国内でIB（国際バカロレア）認定を受けている全{totalCount}校の情報をまとめました。PYP・MYP・DPのプログラム別、都道府県別に探せます。各学校の詳細ページでは、プログラム内容やIBT講師による対策情報もご覧いただけます。
       </p>
     </div>
   </section>
@@ -460,6 +473,147 @@ function getExcerpt(desc: string | undefined, maxLen = 60) {
         <div class="text-5xl mb-4">🔍</div>
         <p class="text-xl text-ibt-text font-medium mb-2">該当する学校が見つかりませんでした</p>
         <p class="text-ibt-text-light">検索条件を変更してお試しください</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-ibt-text text-center mb-10">
+        IB認定校についてよくある質問
+      </h2>
+      <div class="space-y-6">
+        <details class="group bg-ibt-bg rounded-2xl border border-ibt-border overflow-hidden" open>
+          <summary class="flex items-center justify-between cursor-pointer p-5 md:p-6 font-bold text-ibt-text hover:text-ibt-red transition-colors">
+            <span>日本にIB認定校は何校ありますか？</span>
+            <svg class="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180 text-ibt-text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-5 md:px-6 pb-5 md:pb-6 text-ibt-text-light leading-relaxed">
+            2026年4月現在、日本には{totalCount}校のIB認定校があります。内訳は一条校（日本の学校教育法に基づく学校）が{ichijoCount}校、インターナショナルスクール等が{interCount}校です。文部科学省のIB教育推進により、認定校数は年々増加しています。
+          </div>
+        </details>
+        <details class="group bg-ibt-bg rounded-2xl border border-ibt-border overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-5 md:p-6 font-bold text-ibt-text hover:text-ibt-red transition-colors">
+            <span>IB認定校の種類にはどのようなものがありますか？</span>
+            <svg class="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180 text-ibt-text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-5 md:px-6 pb-5 md:pb-6 text-ibt-text-light leading-relaxed">
+            大きく分けて「一条校」と「インターナショナルスクール」の2種類があります。一条校は日本の学校教育法に基づく認可校で、日本語DPを提供する学校も増えています。インターナショナルスクールは主に英語でIBプログラムを実施しており、PYPからDPまで一貫した教育を提供する学校が多いのが特徴です。
+          </div>
+        </details>
+        <details class="group bg-ibt-bg rounded-2xl border border-ibt-border overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-5 md:p-6 font-bold text-ibt-text hover:text-ibt-red transition-colors">
+            <span>IB DP（ディプロマ・プログラム）を提供している学校は？</span>
+            <svg class="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180 text-ibt-text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-5 md:px-6 pb-5 md:pb-6 text-ibt-text-light leading-relaxed">
+            日本では{dpCount}校がIB DP（ディプロマ・プログラム）を提供しています。DPは16〜19歳を対象とした2年間のプログラムで、修了時に取得できるIBディプロマは世界中の大学入学資格として認められています。上のフィルターで「DP」を選択すると、DP提供校だけを絞り込めます。
+          </div>
+        </details>
+        <details class="group bg-ibt-bg rounded-2xl border border-ibt-border overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-5 md:p-6 font-bold text-ibt-text hover:text-ibt-red transition-colors">
+            <span>IB認定校が多い都道府県はどこですか？</span>
+            <svg class="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180 text-ibt-text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-5 md:px-6 pb-5 md:pb-6 text-ibt-text-light leading-relaxed">
+            東京都が最も多く、次いで大阪府、神奈川県、愛知県、兵庫県と続きます。首都圏・関西圏にインターナショナルスクールが集中していることが大きな要因です。地方でも一条校を中心にIB認定校が増えており、上の地域フィルターからお住まいのエリアの学校を探すことができます。
+          </div>
+        </details>
+        <details class="group bg-ibt-bg rounded-2xl border border-ibt-border overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-5 md:p-6 font-bold text-ibt-text hover:text-ibt-red transition-colors">
+            <span>IBの学習で困ったときはどうすればいいですか？</span>
+            <svg class="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180 text-ibt-text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-5 md:px-6 pb-5 md:pb-6 text-ibt-text-light leading-relaxed">
+            IBT（IB Tutors）では、IB卒業生の講師がマンツーマンで学習をサポートしています。IBの独特な評価基準やIA・EE・TOKなどの課題にも対応可能です。まずは<a href="/contact/" class="text-ibt-red hover:underline font-medium">無料相談</a>からお気軽にお問い合わせください。
+          </div>
+        </details>
+      </div>
+    </div>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "日本にIB認定校は何校ありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `2026年4月現在、日本には${totalCount}校のIB認定校があります。内訳は一条校が${ichijoCount}校、インターナショナルスクール等が${interCount}校です。文部科学省のIB教育推進により、認定校数は年々増加しています。`
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "IB認定校の種類にはどのようなものがありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "大きく分けて「一条校」と「インターナショナルスクール」の2種類があります。一条校は日本の学校教育法に基づく認可校で、日本語DPを提供する学校も増えています。インターナショナルスクールは主に英語でIBプログラムを実施しています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "IB DP（ディプロマ・プログラム）を提供している学校は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `日本では${dpCount}校がIB DP（ディプロマ・プログラム）を提供しています。DPは16〜19歳を対象とした2年間のプログラムで、修了時に取得できるIBディプロマは世界中の大学入学資格として認められています。`
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "IB認定校が多い都道府県はどこですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "東京都が最も多く、次いで大阪府、神奈川県、愛知県、兵庫県と続きます。首都圏・関西圏にインターナショナルスクールが集中していることが大きな要因です。地方でも一条校を中心にIB認定校が増えています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "IBの学習で困ったときはどうすればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IBT（IB Tutors）では、IB卒業生の講師がマンツーマンで学習をサポートしています。IBの独特な評価基準やIA・EE・TOKなどの課題にも対応可能です。まずは無料相談からお気軽にお問い合わせください。"
+          }
+        }
+      ]
+    })} />
+  </section>
+
+  <!-- Related Content Links -->
+  <section class="py-12 md:py-16 bg-ibt-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-ibt-text text-center mb-10">
+        IB学習に役立つ情報
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="/blog/ib-school-selection-guide-japan/" class="group bg-white rounded-2xl p-6 border border-ibt-border hover:shadow-lg transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+          </div>
+          <h3 class="font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-2">IB校の選び方ガイド</h3>
+          <p class="text-sm text-ibt-text-light leading-relaxed">一条校とインター、日本語DPと英語DP、選び方のポイントを解説</p>
+        </a>
+        <a href="/subjects/" class="group bg-white rounded-2xl p-6 border border-ibt-border hover:shadow-lg transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+          </div>
+          <h3 class="font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-2">科目別対策ガイド</h3>
+          <p class="text-sm text-ibt-text-light leading-relaxed">IB DPの各科目の特徴と高得点を取るためのポイント</p>
+        </a>
+        <a href="/lessons-pricing/" class="group bg-white rounded-2xl p-6 border border-ibt-border hover:shadow-lg transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h3 class="font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-2">授業内容・料金</h3>
+          <p class="text-sm text-ibt-text-light leading-relaxed">IB卒業生講師によるマンツーマン指導の詳細</p>
+        </a>
+        <a href="/contact/" class="group bg-white rounded-2xl p-6 border border-ibt-border hover:shadow-lg transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+          </div>
+          <h3 class="font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-2">無料体験を申し込む</h3>
+          <p class="text-sm text-ibt-text-light leading-relaxed">まずはお気軽にご相談ください。体験授業も受付中です</p>
+        </a>
       </div>
     </div>
   </section>
