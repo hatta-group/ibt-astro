@@ -34,7 +34,6 @@ draft: false
 
 ## 関連記事
 
-- [IB家庭教師おすすめ7選](/blog/ib-kateikyoushi-osusume/)
 - [IB保護者向けサポートガイド](/blog/ib-parenting-tips/)
 - [家庭教師を始めるベストタイミング](/blog/ib-tutor-best-timing/)
 - [IBスコアの上げ方](/blog/how-to-improve-ib-score/)

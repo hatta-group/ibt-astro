@@ -12,15 +12,11 @@ IBの勉強を効率化してくれるアプリやツールを、IB卒業生が*
 
 目次
 
-- [過去問・学習リソース](/ib-study-apps-tools/#%E9%81%8E%E5%8E%BB%E5%95%8F%E3%83%BB%E5%AD%A6%E7%BF%92%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9)[1. Revision Village](/ib-study-apps-tools/#1_Revision_Village)- [2. Clastify](/ib-study-apps-tools/#2_Clastify)- [3. Save My Exams](/ib-study-apps-tools/#3_Save_My_Exams)- [暗記・復習ツール](/ib-study-apps-tools/#%E6%9A%97%E8%A8%98%E3%83%BB%E5%BE%A9%E7%BF%92%E3%83%84%E3%83%BC%E3%83%AB)[4. Anki](/ib-study-apps-tools/#4_Anki)- [5. Quizlet](/ib-study-apps-tools/#5_Quizlet)- [ノート・整理ツール](/ib-study-apps-tools/#%E3%83%8E%E3%83%BC%E3%83%88%E3%83%BB%E6%95%B4%E7%90%86%E3%83%84%E3%83%BC%E3%83%AB)[6. Notion](/ib-study-apps-tools/#6_Notion)- [7. GoodNotes / Notability](/ib-study-apps-tools/#7_GoodNotes_Notability)- [集中力・時間管理](/ib-study-apps-tools/#%E9%9B%86%E4%B8%AD%E5%8A%9B%E3%83%BB%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86)[8. Forest](/ib-study-apps-tools/#8_Forest)- [9. Todoist](/ib-study-apps-tools/#9_Todoist)- [文章校正](/ib-study-apps-tools/#%E6%96%87%E7%AB%A0%E6%A0%A1%E6%AD%A3)[10. Grammarly](/ib-study-apps-tools/#10_Grammarly)- [IBの勉強でお悩みですか？](/ib-study-apps-tools/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
+- [過去問・学習リソース](/ib-study-apps-tools/#%E9%81%8E%E5%8E%BB%E5%95%8F%E3%83%BB%E5%AD%A6%E7%BF%92%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9)[1. Clastify](/ib-study-apps-tools/#1_Clastify)- [2. Save My Exams](/ib-study-apps-tools/#2_Save_My_Exams)- [暗記・復習ツール](/ib-study-apps-tools/#%E6%9A%97%E8%A8%98%E3%83%BB%E5%BE%A9%E7%BF%92%E3%83%84%E3%83%BC%E3%83%AB)[4. Anki](/ib-study-apps-tools/#4_Anki)- [5. Quizlet](/ib-study-apps-tools/#5_Quizlet)- [ノート・整理ツール](/ib-study-apps-tools/#%E3%83%8E%E3%83%BC%E3%83%88%E3%83%BB%E6%95%B4%E7%90%86%E3%83%84%E3%83%BC%E3%83%AB)[6. Notion](/ib-study-apps-tools/#6_Notion)- [7. GoodNotes / Notability](/ib-study-apps-tools/#7_GoodNotes_Notability)- [集中力・時間管理](/ib-study-apps-tools/#%E9%9B%86%E4%B8%AD%E5%8A%9B%E3%83%BB%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86)[8. Forest](/ib-study-apps-tools/#8_Forest)- [9. Todoist](/ib-study-apps-tools/#9_Todoist)- [文章校正](/ib-study-apps-tools/#%E6%96%87%E7%AB%A0%E6%A0%A1%E6%AD%A3)[10. Grammarly](/ib-study-apps-tools/#10_Grammarly)- [IBの勉強でお悩みですか？](/ib-study-apps-tools/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
 
 ## 過去問・学習リソース
 
-### 1. Revision Village
-
-IB Math専門の学習サイト。過去問がトピック別に整理されており、動画解説付き。Math AA/AIの両方に対応。IB Math対策の定番ツール。
-
-### 2. Clastify
+### 1. Clastify
 
 IB生が自分のIA、EE、エッセイを投稿・共有するプラットフォーム。高得点の模範解答を読むことで「どのレベルが求められているか」を理解できる。
 
