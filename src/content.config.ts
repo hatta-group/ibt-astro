@@ -30,6 +30,23 @@ const schools = defineCollection({
   }),
 });
 
+const universities = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/universities' }),
+  schema: z.object({
+    title: z.string(),
+    titleEn: z.string(),
+    slug: z.string(),
+    country: z.string(),
+    region: z.enum(['japan', 'uk', 'us', 'canada', 'australia', 'europe', 'asia']),
+    ibScoreRange: z.string(),
+    website: z.string(),
+    featured: z.boolean().default(false),
+    programs: z.array(z.string()).optional(),
+    ibAdmissionType: z.string().optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+
 const iberTypes = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/iber-types' }),
   schema: z.object({
@@ -41,4 +58,4 @@ const iberTypes = defineCollection({
   }),
 });
 
-export const collections = { blog, schools, 'iber-types': iberTypes };
+export const collections = { blog, schools, universities, 'iber-types': iberTypes };

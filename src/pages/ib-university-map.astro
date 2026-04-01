@@ -1,5 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const uniCollection = await getCollection('universities');
+const slugByTitle = new Map<string, string>();
+const slugByTitleEn = new Map<string, string>();
+for (const u of uniCollection) {
+  slugByTitle.set(u.data.title, u.data.slug);
+  slugByTitleEn.set(u.data.titleEn, u.data.slug);
+}
+
+function getUniSlug(name: string): string | undefined {
+  // Try matching by Japanese title first, then English title, then partial match
+  if (slugByTitle.has(name)) return slugByTitle.get(name);
+  if (slugByTitleEn.has(name)) return slugByTitleEn.get(name);
+  // Partial match for names like "東京大学 PEAK" or "早稲田大学（一部学部）"
+  for (const [title, slug] of slugByTitle) {
+    if (name.includes(title) || title.includes(name)) return slug;
+  }
+  for (const [titleEn, slug] of slugByTitleEn) {
+    if (name.includes(titleEn) || titleEn.includes(name)) return slug;
+  }
+  return undefined;
+}
 
 const scoreRanges = [
   {
@@ -289,7 +312,13 @@ const colorMap: Record<string, { tab: string; tabActive: string; card: string; b
                 {range.japan.map((uni) => (
                   <div class={`bg-white rounded-xl border ${cm.border} p-5 hover:shadow-md transition-shadow`}>
                     <div class="flex items-start justify-between gap-2 mb-2">
-                      <h4 class="font-bold text-gray-900">{uni.name}</h4>
+                      <h4 class="font-bold text-gray-900">
+                        {getUniSlug(uni.name) ? (
+                          <a href={`/ib-universities/${getUniSlug(uni.name)}/`} class="hover:text-ibt-red transition-colors">{uni.name}</a>
+                        ) : (
+                          uni.name
+                        )}
+                      </h4>
                       {uni.hasIBAdmission && (
                         <span class="shrink-0 text-[10px] font-bold bg-green-100 text-green-700 px-2 py-0.5 rounded-full border border-green-200">IB入試あり</span>
                       )}
@@ -314,7 +343,11 @@ const colorMap: Record<string, { tab: string; tabActive: string; card: string; b
                     <div class="flex items-start justify-between gap-2 mb-2">
                       <h4 class="font-bold text-gray-900 flex items-center gap-2">
                         <span class="text-lg">{uni.flag}</span>
-                        {uni.name}
+                        {getUniSlug(uni.name) ? (
+                          <a href={`/ib-universities/${getUniSlug(uni.name)}/`} class="hover:text-ibt-red transition-colors">{uni.name}</a>
+                        ) : (
+                          uni.name
+                        )}
                       </h4>
                     </div>
                     <div class="flex items-center gap-2 mb-2">
