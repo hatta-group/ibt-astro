@@ -1,0 +1,38 @@
+---
+title: "アデレード大学"
+titleEn: "University of Adelaide"
+slug: "university-of-adelaide"
+country: "オーストラリア"
+region: "australia"
+ibScoreRange: "24-34+"
+website: "https://www.adelaide.edu.au/"
+featured: false
+programs: ["ワイン醸造学", "鉱山工学", "医学"]
+ibAdmissionType: "直接出願"
+draft: false
+---
+
+## 大学概要
+
+アデレード大学はGroup of Eightに属する南オーストラリアの名門大学です。ワイン醸造学・鉱山工学で独自の強みを持ちます。
+
+## IB入試の特徴
+
+IBスコアをATAR換算して評価。学部により24-34点が目安。
+
+## IB生にとってのメリット
+
+- Group of Eightの名門
+- ワイン醸造学・鉱山工学で世界的
+- 生活コストがシドニー・メルボルンより低い
+- IB生向け奨学金の機会
+
+## 出願のポイント
+
+出願前に公式サイトで最新の入試要項を必ず確認してください。
+
+## IBTからのアドバイス
+
+IBTの講師と一緒に目標スコアを設定し、効率的に対策を進めましょう。[無料体験はこちら](/contact/)。
+
+※ 最新の入試要件は[アデレード大学公式サイト](https://www.adelaide.edu.au/)で必ずご確認ください。
