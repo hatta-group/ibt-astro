@@ -42,6 +42,8 @@ draft: false
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
 **website** : [ib-tutors.net](/)
 
+国別の大学情報をもっと詳しく知りたい方は、[IBで行ける大学ガイド](/ib-universities/)もあわせてご覧ください！
+
 ### 📚 関連記事
 
 - [大学でのIB経験者アドバンテージはあった？](/ib-advantage-in-university/)

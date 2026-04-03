@@ -32,6 +32,8 @@ draft: false
 **instagram** : [@ibt_ibtutors](https://www.instagram.com/ibt_ibtutors/?hl=es)
 **website** : [ib-tutors.net](/)
 
+各国の大学でIBがどう評価されるか、具体的な情報は[IBで行ける大学ガイド](/ib-universities/)にまとめているので参考にしてみてね！
+
 ### 📚 関連記事
 
 - [大学でのIB経験者アドバンテージはあった？](/ib-advantage-in-university/)

@@ -18,7 +18,7 @@ draft: false
 
 ## IB入試の特徴
 
-慶應義塾大学ではPEARL（Programme in Economics for Alliances, Research and Leadership）やSFC（湘南藤沢キャンパス）の総合政策学部・環境情報学部などでIB入試を実施しています。FIT入試でもIBスコアが評価されます。
+慶應義塾大学では法学部（法律学科・政治学科）でIB入試を実施しています（各10名、計20名）。PEARL（経済学部英語プログラム）では帰国生入試でIBスコアによる出願が可能です。SFC（湘南藤沢キャンパス）ではAO入試でIBスコアが評価されます。FIT入試でもIBスコアを活用できます。
 
 ## IB生にとってのメリット
 
