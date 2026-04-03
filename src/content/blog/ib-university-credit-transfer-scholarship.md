@@ -5,7 +5,7 @@ date: "2026-04-03"
 description: "IBディプロマで得られる大学入学後のメリットを徹底解説。単位免除・飛び級・IB特別奨学金の制度と活用法をIB卒業生講師がガイド。"
 category: "ib-university"
 ogImage: ""
-draft: true
+draft: false
 ---
 
 IBの価値は「大学に受かったら終わり」ではありません。実は、**大学入学後にこそIBのメリットが本領を発揮**します。
