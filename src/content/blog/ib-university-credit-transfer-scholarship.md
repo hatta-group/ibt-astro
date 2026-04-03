@@ -43,24 +43,20 @@ IBの価値は「大学に受かったら終わり」ではありません。実
 ### 大学別の例
 
 **ハーバード大学**
-- IB HL 7を4科目以上取ると「Advanced Standing」が認められ、3年で学部を卒業できる（通常4年）
-- 年間の学費約700万円の節約に相当
+- IBディプロマを取得し、HL科目で7を**3科目以上**取ると「Advanced Standing」の資格を得られる
+- Advanced Standingを利用すると3年で学部を卒業できる可能性がある（通常4年）
+- ただし、ハーバードは入学前の学習に対して通常の「単位免除（credit transfer）」は行わない。IBスコアは科目の配置（placement）や外国語要件の充足に活用される
 
 **スタンフォード大学**
-- IB HL 5以上で科目ごとに単位免除
-- 最大45単位（約1.5学期分）の免除が可能
+- IB HL 5以上で科目ごとに単位認定（Quarter制で最大10 quarter units/科目）
+- AP・IB・Transfer合計で**最大45 quarter units**（卒業に必要な180 unitsの約25%、約1年分）
+- 一般教養要件（GER）の充足にはIB単位は使えない（外国語要件を除く）
 
 **UCLA**
-- IB HL 5以上で各科目8単位まで免除
-- 最大約30単位の免除
+- IB HL 5以上で各科目**8 quarter units**（5.3 semester units相当）の単位認定
+- SL科目は原則対象外
 
-**NYU**
-- IB HL 5以上で科目ごとに4-8単位の免除
-- SLでもスコア6以上なら免除する科目あり（例外的）
-
-### 金額に換算すると
-
-アメリカの大学の1単位あたりの授業料は、私立大学で約5-10万円。IB HLで30単位分の免除を受けると、**150万〜300万円の節約**になる計算です。
+> **注意:** 各大学の単位免除ポリシーは毎年見直される可能性があります。出願前に各大学の公式サイトで最新情報を確認してください。
 
 ## イギリスの大学の単位免除
 
@@ -92,9 +88,9 @@ IBの価値は「大学に受かったら終わり」ではありません。実
 ### 大学別の例
 
 **UBC（ブリティッシュコロンビア大学）**
-- IB HL 5以上で科目ごとに6単位免除
-- 最大30単位（約1年分）の免除が可能
-- 3年で卒業した学生の実績あり
+- Arts系科目: IB HL **5以上**で単位認定
+- Science系科目: IB HL **6以上**で単位認定
+- 認定される単位数は科目により異なる
 
 **University of Toronto**
 - IB HL 5以上で科目ごとに1.0単位（フルコース分）の免除
@@ -141,14 +137,14 @@ IBスコアを条件とした奨学金制度を持つ大学があります。特
 
 ### カナダの大学（最も充実）
 
-| 大学名 | 奨学金名 | 条件 | 金額 |
-|--------|---------|------|------|
-| UBC | International Major Entrance Scholarship | IBスコア考慮 | 年間最大約200万円 |
-| University of Alberta | International IB Diploma Scholarship | IB DP取得者 | 年間約50-100万円 |
-| University of Calgary | International Entrance Scholarship | 高いIBスコア | 年間約50-150万円 |
-| Dalhousie University | Entrance Scholarship | IB DP取得者 | 年間約30-80万円 |
+| 大学名 | 奨学金名 | 金額（CAD） | 備考 |
+|--------|---------|------------|------|
+| UBC | Outstanding International Student Award | $10,000-$25,000/年 | 更新可能（最大3年） |
+| UBC | International Major Entrance Scholarship | $10,000-$20,000/年 | 更新可能（最大3年） |
+| University of Alberta | International IB Diploma Scholarship | 大学公式サイト参照 | IB DP取得者対象 |
+| University of Calgary | International Entrance Scholarship | 大学公式サイト参照 | 高いIBスコアが有利 |
 
-カナダの大学のIB奨学金は**自動適用**される場合が多く、別途の申請が不要なケースもあります。入学手続き時にIBスコアを提出するだけで適用されます。
+> 奨学金の金額・条件は毎年変更される可能性があります。最新情報は各大学の公式サイトでご確認ください。一部の奨学金は自動適用されますが、別途申請が必要な場合もあります。
 
 ### アメリカの大学
 

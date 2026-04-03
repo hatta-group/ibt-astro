@@ -98,12 +98,12 @@ Visual Arts HLはポートフォリオ提出が必要なため、制作時間の
 
 ### イギリスの大学（特に注意）
 
-- **工学部**: Mathematics AA HL + Physics HL が必須の大学がほとんど
-- **医学部**: Biology HL + Chemistry HL が必須
-- **経済学部（LSE等）**: Mathematics AA HL が必須
-- **理学部**: 関連科目のHL（Chemistry学科ならChemistry HLなど）
+- **工学部**: Mathematics AA HL + Physics HL を要求する大学が多い
+- **医学部**: Biology HL + Chemistry HL を要求する大学がほとんど
+- **経済学部**: Mathematics AA HLを要求する大学がある（特に難関校）
+- **理学部**: 関連科目のHLを要求されることが多い（Chemistry学科ならChemistry HLなど）
 
-イギリスの大学は「この科目のHLが必要」と明確に指定してくるため、科目選択ミスが致命的です。
+イギリスの大学は「この科目のHLが必要」と明確に指定してくるため、科目選択ミスが致命的です。志望大学の公式サイトで出願要件を必ず事前に確認してください。
 
 ### アメリカの大学
 
