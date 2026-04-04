@@ -1,4 +1,6 @@
 ---
+import '@fontsource-variable/noto-sans-jp';
+import '@fontsource/zen-kaku-gothic-new/700.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -54,6 +56,9 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
 
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="IBTブログ" href="/rss.xml" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -66,10 +71,7 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
       gtag('config', 'G-BRM53EVE37');
     </script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet" />
+    <!-- Fonts (self-hosted via fontsource) -->
 
     <!-- Schema.org -->
     <script type="application/ld+json" set:html={JSON.stringify({

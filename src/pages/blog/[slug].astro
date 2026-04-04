@@ -42,6 +42,12 @@ const relatedPosts = allPosts
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 3);
 
+// Prev / Next posts (date order, oldest first)
+const sortedPosts = [...allPosts].sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+const currentIndex = sortedPosts.findIndex(p => p.data.slug === post.data.slug);
+const prevPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
+const nextPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
+
 // Table of contents (h2 and h3 only)
 const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 
@@ -347,6 +353,46 @@ const breadcrumbSchema = {
         </div>
       </div>
     </section>
+  )}
+
+  <!-- Prev / Next Navigation -->
+  {(prevPost || nextPost) && (
+    <nav class="bg-white border-t border-ibt-border">
+      <div class="max-w-4xl mx-auto px-4 py-8 md:py-10">
+        <div class="flex flex-col sm:flex-row sm:justify-between gap-6">
+          {/* Prev Post (left) */}
+          {prevPost ? (
+            <a
+              href={`/blog/${prevPost.data.slug}/`}
+              class="group flex items-start gap-3 sm:max-w-[48%] text-ibt-text-light hover:text-ibt-red transition-colors"
+            >
+              <svg class="w-5 h-5 mt-0.5 shrink-0 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+              <div>
+                <span class="block text-xs font-medium text-ibt-text-light mb-1">前の記事</span>
+                <span class="block text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors leading-relaxed line-clamp-2">{prevPost.data.title}</span>
+              </div>
+            </a>
+          ) : (
+            <div />
+          )}
+          {/* Next Post (right) */}
+          {nextPost ? (
+            <a
+              href={`/blog/${nextPost.data.slug}/`}
+              class="group flex items-start gap-3 sm:max-w-[48%] sm:ml-auto sm:text-right text-ibt-text-light hover:text-ibt-red transition-colors"
+            >
+              <div class="sm:order-first">
+                <span class="block text-xs font-medium text-ibt-text-light mb-1">次の記事</span>
+                <span class="block text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors leading-relaxed line-clamp-2">{nextPost.data.title}</span>
+              </div>
+              <svg class="w-5 h-5 mt-0.5 shrink-0 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+            </a>
+          ) : (
+            <div />
+          )}
+        </div>
+      </div>
+    </nav>
   )}
 
   <!-- CTA -->
