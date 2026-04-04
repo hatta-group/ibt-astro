@@ -2,6 +2,99 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
+/**
+ * カテゴリ名の日本語マッピング（全カテゴリ対応）
+ * 色・スタイル情報も含む
+ */
+const categoryConfig: Record<string, { label: string; color: string; bgColor: string; activeColor: string; description: string }> = {
+  'dp-tips': {
+    label: 'DP対策・勉強法',
+    color: 'text-red-700',
+    bgColor: 'bg-red-50 border-red-200',
+    activeColor: 'bg-red-600 text-white border-red-600',
+    description: 'TOK・EE・IA対策、科目別の勉強法、試験テクニックなどDP（ディプロマ・プログラム）に関する記事一覧。'
+  },
+  'ib-basics': {
+    label: 'IB基礎知識',
+    color: 'text-blue-700',
+    bgColor: 'bg-blue-50 border-blue-200',
+    activeColor: 'bg-blue-600 text-white border-blue-600',
+    description: 'IBの仕組み、科目選択の基本、IB教育の特徴などIB初心者向けの記事一覧。'
+  },
+  'ib-schools': {
+    label: 'IB認定校情報',
+    color: 'text-emerald-700',
+    bgColor: 'bg-emerald-50 border-emerald-200',
+    activeColor: 'bg-emerald-600 text-white border-emerald-600',
+    description: '日本国内・海外のIB認定校の比較、選び方、進学先との関連など学校選びの記事一覧。'
+  },
+  'ib-stories': {
+    label: 'IB生の体験談',
+    color: 'text-amber-700',
+    bgColor: 'bg-amber-50 border-amber-200',
+    activeColor: 'bg-amber-600 text-white border-amber-600',
+    description: 'IB卒業生のリアルな体験談、失敗談、成功の秘訣、保護者の声など。'
+  },
+  'ib-university': {
+    label: '大学進学',
+    color: 'text-purple-700',
+    bgColor: 'bg-purple-50 border-purple-200',
+    activeColor: 'bg-purple-600 text-white border-purple-600',
+    description: 'IB入試の大学一覧、出願戦略、IB×大学受験に関する記事一覧。'
+  },
+  'ib-parents': {
+    label: '保護者向け',
+    color: 'text-pink-700',
+    bgColor: 'bg-pink-50 border-pink-200',
+    activeColor: 'bg-pink-600 text-white border-pink-600',
+    description: 'IBを学ぶお子さまの保護者向けガイド、サポート方法、費用の話など。'
+  },
+  'tutor-intro': {
+    label: '講師紹介',
+    color: 'text-teal-700',
+    bgColor: 'bg-teal-50 border-teal-200',
+    activeColor: 'bg-teal-600 text-white border-teal-600',
+    description: 'IBT講師によるIBの解説記事、講師目線の学習アドバイスなど。'
+  },
+  'study-tips': {
+    label: '勉強法',
+    color: 'text-indigo-700',
+    bgColor: 'bg-indigo-50 border-indigo-200',
+    activeColor: 'bg-indigo-600 text-white border-indigo-600',
+    description: 'IB生向けの効率的な勉強法、学習習慣づくりのコツなど。'
+  },
+  'subject-guide': {
+    label: '科目ガイド',
+    color: 'text-cyan-700',
+    bgColor: 'bg-cyan-50 border-cyan-200',
+    activeColor: 'bg-cyan-600 text-white border-cyan-600',
+    description: 'IB各科目の対策ガイド、科目選択のポイントなど。'
+  },
+  'ib-guide': {
+    label: 'IBガイド',
+    color: 'text-orange-700',
+    bgColor: 'bg-orange-50 border-orange-200',
+    activeColor: 'bg-orange-600 text-white border-orange-600',
+    description: 'IB（国際バカロレア）に関する総合ガイド記事。'
+  },
+  'university': {
+    label: '大学情報',
+    color: 'text-violet-700',
+    bgColor: 'bg-violet-50 border-violet-200',
+    activeColor: 'bg-violet-600 text-white border-violet-600',
+    description: '大学受験・進学に関する情報記事。'
+  },
+};
+
+/** デフォルトスタイル（未定義カテゴリ用） */
+const defaultStyle = {
+  label: '',
+  color: 'text-gray-700',
+  bgColor: 'bg-gray-50 border-gray-200',
+  activeColor: 'bg-gray-600 text-white border-gray-600',
+  description: ''
+};
+
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))];
@@ -10,36 +103,39 @@ export async function getStaticPaths() {
     props: {
       posts: posts.filter(p => p.data.category === cat)
         .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()),
-      category: cat
+      category: cat!
     }
   }));
 }
 
 const { posts, category } = Astro.props;
-const categoryNames: Record<string, string> = {
-  'dp-tips': 'DP対策・勉強法',
-  'ib-basics': 'IB基礎知識',
-  'ib-stories': 'IB生の体験談',
-  'ib-schools': 'IB認定校情報',
-};
-const catName = categoryNames[category] || category;
+const catConfig = categoryConfig[category] || { ...defaultStyle, label: category, description: `${category}に関する記事一覧。` };
 
-// Build category counts for navigation bar
+// 全記事を取得してカテゴリ別カウントを計算
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const categoryMap: Record<string, { label: string; color: string; bgColor: string; activeColor: string; count: number }> = {
-  'dp-tips': { label: 'DP対策', color: 'text-red-700', bgColor: 'bg-red-50 border-red-200', activeColor: 'bg-red-600 text-white border-red-600', count: 0 },
-  'ib-basics': { label: 'IB基礎知識', color: 'text-blue-700', bgColor: 'bg-blue-50 border-blue-200', activeColor: 'bg-blue-600 text-white border-blue-600', count: 0 },
-  'ib-schools': { label: 'IB校情報', color: 'text-emerald-700', bgColor: 'bg-emerald-50 border-emerald-200', activeColor: 'bg-emerald-600 text-white border-emerald-600', count: 0 },
-  'ib-stories': { label: 'IB体験談', color: 'text-amber-700', bgColor: 'bg-amber-50 border-amber-200', activeColor: 'bg-amber-600 text-white border-amber-600', count: 0 },
-};
-allPosts.forEach(post => {
-  const cat = post.data.category;
-  if (cat && categoryMap[cat]) categoryMap[cat].count++;
+const categoryCounts: Record<string, number> = {};
+allPosts.forEach(p => {
+  if (p.data.category) categoryCounts[p.data.category] = (categoryCounts[p.data.category] || 0) + 1;
 });
+
+// カテゴリを記事数順にソート（多い順）
+const sortedCategories = Object.entries(categoryCounts)
+  .sort(([, a], [, b]) => b - a)
+  .map(([slug]) => slug);
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr);
+  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function getCatStyle(cat: string) {
+  return categoryConfig[cat] || { ...defaultStyle, label: cat };
+}
 ---
+
 <BaseLayout
-  title={`${catName}の記事一覧｜IB専門家庭教師IBT`}
-  description={`${catName}に関するIBブログ記事一覧。IB卒業生講師が解説。`}
+  title={`${catConfig.label}の記事一覧｜IB専門家庭教師IBT`}
+  description={catConfig.description || `${catConfig.label}に関するIBブログ記事一覧。IB卒業生講師が解説。`}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -48,7 +144,7 @@ allPosts.forEach(post => {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
         { "@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://ib-tutors.net/blog/" },
-        { "@type": "ListItem", "position": 3, "name": catName, "item": `https://ib-tutors.net/blog/category/${category}/` }
+        { "@type": "ListItem", "position": 3, "name": catConfig.label, "item": `https://ib-tutors.net/blog/category/${category}/` }
       ]
     })} />
   </Fragment>
@@ -61,17 +157,20 @@ allPosts.forEach(post => {
         <span class="mx-2">/</span>
         <a href="/blog/" class="hover:text-white transition-colors">ブログ</a>
         <span class="mx-2">/</span>
-        <span class="text-white">{catName}</span>
+        <span class="text-white">{catConfig.label}</span>
       </nav>
-      <h1 class="text-3xl md:text-5xl font-bold text-white">{catName}</h1>
+      <h1 class="text-3xl md:text-5xl font-bold text-white">{catConfig.label}</h1>
       <p class="mt-4 text-white/85 text-lg md:text-xl">{posts.length}件の記事</p>
+      {catConfig.description && (
+        <p class="mt-2 text-white/70 text-sm max-w-2xl">{catConfig.description}</p>
+      )}
     </div>
   </section>
 
   <!-- Category Filters -->
   <section class="bg-white border-b border-ibt-border sticky top-0 z-10">
-    <div class="max-w-7xl mx-auto px-4 py-4">
-      <div class="flex flex-wrap items-center gap-2">
+    <div class="max-w-7xl mx-auto px-4 py-4 overflow-x-auto">
+      <div class="flex items-center gap-2 min-w-max">
         <span class="text-xs font-bold text-ibt-text-light uppercase tracking-wider mr-2">カテゴリ</span>
         <a
           href="/blog/"
@@ -80,7 +179,8 @@ allPosts.forEach(post => {
           すべて
           <span class="text-xs opacity-70">({allPosts.length})</span>
         </a>
-        {Object.entries(categoryMap).map(([slug, cat]) => {
+        {sortedCategories.map((slug) => {
+          const cat = getCatStyle(slug);
           const isActive = slug === category;
           return (
             <a
@@ -88,7 +188,7 @@ allPosts.forEach(post => {
               class={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${isActive ? cat.activeColor + ' shadow-sm' : cat.bgColor + ' ' + cat.color + ' hover:shadow-sm'}`}
             >
               {cat.label}
-              <span class={`text-xs ${isActive ? 'opacity-80' : 'opacity-70'}`}>({cat.count})</span>
+              <span class={`text-xs ${isActive ? 'opacity-80' : 'opacity-70'}`}>({categoryCounts[slug] || 0})</span>
             </a>
           );
         })}
@@ -99,39 +199,61 @@ allPosts.forEach(post => {
   <!-- Posts Grid -->
   <section class="py-12 md:py-20 bg-ibt-bg">
     <div class="max-w-7xl mx-auto px-4">
-
       {posts.length === 0 ? (
-        <p class="text-center text-ibt-text-light text-lg">記事を準備中です。</p>
+        <p class="text-center text-ibt-text-light text-lg py-20">このカテゴリの記事はまだありません。</p>
       ) : (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <article class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {posts.map((post) => {
+            const style = getCatStyle(post.data.category || '');
+            return (
               <a
                 href={`/blog/${post.data.slug}/`}
-                class="group block p-6"
+                class="group block"
               >
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="inline-block px-3 py-1 text-xs font-bold text-ibt-red bg-ibt-red-50 rounded-full">
-                    {catName}
-                  </span>
-                  <time class="text-xs text-ibt-text-light">{post.data.date}</time>
-                </div>
-                <h2 class="text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-3 line-clamp-2">
-                  {post.data.title}
-                </h2>
-                {post.data.description && (
-                  <p class="text-ibt-text-light text-sm leading-relaxed mb-4 line-clamp-3">
-                    {post.data.description}
-                  </p>
-                )}
-                <span class="text-sm font-medium text-ibt-red group-hover:translate-x-1 inline-block transition-transform duration-200">
-                  続きを読む &rarr;
-                </span>
+                <article class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+                  <div class="h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div class="p-6 flex flex-col flex-1">
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                      {post.data.category && (
+                        <span class={`inline-block px-2.5 py-0.5 text-xs font-bold rounded-full border ${style.bgColor} ${style.color}`}>
+                          {style.label}
+                        </span>
+                      )}
+                      <time class="text-xs text-ibt-text-light whitespace-nowrap">
+                        {formatDate(post.data.date)}
+                      </time>
+                    </div>
+                    <h2 class="text-lg font-bold text-ibt-text group-hover:text-ibt-red transition-colors mb-3 leading-snug line-clamp-2">
+                      {post.data.title}
+                    </h2>
+                    {post.data.description && (
+                      <p class="text-ibt-text-light text-sm leading-relaxed mb-4 line-clamp-3 flex-1">
+                        {post.data.description}
+                      </p>
+                    )}
+                    <span class="inline-flex items-center text-ibt-red font-medium text-sm mt-auto group-hover:gap-1.5 gap-1 transition-all duration-200">
+                      続きを読む
+                      <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                </article>
               </a>
-            </article>
-          ))}
+            );
+          })}
         </div>
       )}
+
+      <!-- 全カテゴリに戻るリンク -->
+      <div class="text-center mt-12">
+        <a href="/blog/" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-ibt-border bg-white text-ibt-text font-medium hover:shadow-md hover:border-ibt-red hover:text-ibt-red transition-all duration-200">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          すべての記事を見る
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
