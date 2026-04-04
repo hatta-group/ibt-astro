@@ -1,68 +1,83 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { tutors } from '../../data/tutors';
+
+const previewTutors = tutors.slice(0, 3);
+
+const stats = [
+  { label: 'IB Graduate Tutors', value: '100%' },
+  { label: 'Subjects Covered', value: 'All' },
+  { label: 'Free Trial', value: '60 min' },
+  { label: 'Enrollment Fee', value: '0 JPY' },
+];
+
+const features = [
+  {
+    title: 'All Tutors Are IB Graduates',
+    description: 'Every single tutor at IBT holds an IB diploma. They share real strategies and study tips that you won\'t find in textbooks, helping you boost your scores efficiently.',
+    icon: '\u{1F393}',
+  },
+  {
+    title: 'All Subjects, One-on-One',
+    description: 'PYP, MYP, DP, plus TOK, EE, and IA support. Personalized instruction tailored to your weak points for steady improvement.',
+    icon: '\u{1F4DA}',
+  },
+  {
+    title: 'No Enrollment Fee, Ticket System',
+    description: 'No long-term contracts, no cancellation fees. Start with a free trial and buy lesson tickets as needed.',
+    icon: '\u{1F4B0}',
+  },
+];
+
+const programs = [
+  {
+    name: 'PYP',
+    fullName: 'Primary Years Programme',
+    grades: 'Ages 3-12',
+    description: 'Building curiosity and inquiry skills through IB\'s primary programme. From English learning habits to subject support, we create an enjoyable learning environment.',
+  },
+  {
+    name: 'MYP',
+    fullName: 'Middle Years Programme',
+    grades: 'Ages 11-16',
+    description: 'Deepening interdisciplinary learning through IB\'s middle years programme. Instruction aligned with MYP assessment criteria to prepare thoroughly for DP.',
+  },
+  {
+    name: 'DP',
+    fullName: 'Diploma Programme',
+    grades: 'Ages 16-19',
+    description: 'The final IB programme. Full support for 6 subjects plus TOK, EE, and CAS. Our IB graduate tutors help you achieve high scores and university admission.',
+  },
+];
+
+const trustPoints = [
+  'TOK, EE & IA Full Support',
+  'Japanese-English Bilingual Tutoring',
+  'Online & In-Person Available',
+  'Students Worldwide Welcome',
+];
 
 const faqItems = [
-  {
-    question: 'What is IBT?',
-    answer: 'IBT (IB Tutors) is a tutoring service in Japan specializing exclusively in the International Baccalaureate (IB) program. Every single one of our tutors is an IB diploma holder, so they understand exactly what IB students go through.',
-  },
   {
     question: 'Are all tutors really IB graduates?',
     answer: 'Yes, 100%. Every tutor at IBT holds an IB diploma. This is our core principle and what sets us apart from other tutoring services.',
   },
   {
-    question: 'How much does it cost?',
-    answer: 'There is no enrollment fee or monthly management fee. You only pay for lessons: PYP 4,840 JPY / MYP 6,050 JPY / DP 7,260 JPY per 50-minute online session. Purchase lesson tickets and use them at your own pace.',
+    question: 'Can tutors teach in Japanese?',
+    answer: 'Absolutely. All our tutors are Japanese-English bilingual. They can explain difficult concepts in Japanese and switch to English for academic writing and exam prep. This is especially helpful for families where parents are more comfortable in Japanese.',
   },
   {
-    question: 'Can I take lessons online?',
-    answer: 'Yes. All lessons are available online, so you can learn from anywhere in the world. We also offer in-person lessons in certain areas of Japan.',
+    question: 'How much does it cost?',
+    answer: 'There is no enrollment fee. You only pay for lessons via our ticket system: PYP 4,840 JPY / MYP 6,050 JPY / DP 7,260 JPY per session. No monthly fees, no long-term contracts.',
+  },
+  {
+    question: 'Can I take lessons from outside Japan?',
+    answer: 'Yes! All lessons are available online, so you can learn from anywhere in the world. We accommodate different time zones and have students across Asia, Europe, and North America.',
   },
   {
     question: 'Do you offer a free trial?',
-    answer: 'Yes! We offer a free 60-minute trial lesson. You can experience our teaching style and meet your tutor before committing to anything.',
+    answer: 'Yes! We offer a free 60-minute trial lesson. Experience our teaching style and meet your tutor before committing to anything. No pressure, no obligation.',
   },
-  {
-    question: 'What subjects do you cover?',
-    answer: 'We cover all IB subjects across PYP, MYP, and DP, including Group 1 through Group 6 subjects, as well as TOK (Theory of Knowledge), Extended Essay (EE), and Internal Assessments (IA).',
-  },
-];
-
-const steps = [
-  {
-    number: '01',
-    title: 'Contact Us',
-    description: 'Reach out via our contact form or LINE. Tell us about your IB program, subjects, and goals.',
-    icon: '📩',
-  },
-  {
-    number: '02',
-    title: 'Tutor Matching',
-    description: 'We match you with an IB graduate tutor who specializes in your subjects and understands your needs.',
-    icon: '🤝',
-  },
-  {
-    number: '03',
-    title: 'Free 60-min Trial',
-    description: 'Try a full lesson for free. Experience our teaching approach and see if it is a good fit.',
-    icon: '🎯',
-  },
-  {
-    number: '04',
-    title: 'Start Learning',
-    description: 'Purchase lesson tickets and schedule sessions at your convenience. No contracts, no monthly fees.',
-    icon: '🚀',
-  },
-];
-
-const subjects = [
-  { group: 'Group 1', name: 'Studies in Language & Literature', examples: 'English A, Japanese A, etc.' },
-  { group: 'Group 2', name: 'Language Acquisition', examples: 'English B, Japanese B, Spanish, etc.' },
-  { group: 'Group 3', name: 'Individuals & Societies', examples: 'Economics, History, Psychology, etc.' },
-  { group: 'Group 4', name: 'Sciences', examples: 'Biology, Chemistry, Physics, etc.' },
-  { group: 'Group 5', name: 'Mathematics', examples: 'Math AA, Math AI' },
-  { group: 'Group 6', name: 'The Arts', examples: 'Visual Arts, Music, Theatre, etc.' },
-  { group: 'Core', name: 'TOK, Extended Essay & CAS', examples: 'Theory of Knowledge, EE guidance, IA support' },
 ];
 
 const pricing = [
@@ -108,42 +123,28 @@ const serviceSchema = {
   "@type": "EducationalOrganization",
   "name": "IBT (IB Tutors)",
   "url": "https://ib-tutors.net/en/",
-  "description": "Expert IB tutoring by IB graduates in Japan. PYP, MYP & DP all subjects. TOK, EE & IA support.",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Japan"
-  },
+  "description": "Expert IB tutoring by IB graduates. Japanese-English bilingual tutors for PYP, MYP & DP. All subjects, TOK, EE & IA support.",
+  "areaServed": "Worldwide",
+  "availableLanguage": ["ja", "en"],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "IB Tutoring Services",
     "itemListElement": [
       {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "PYP Tutoring",
-          "description": "One-on-one tutoring for IB Primary Years Programme students"
-        },
+        "itemOffered": { "@type": "Service", "name": "PYP Tutoring" },
         "price": "4840",
         "priceCurrency": "JPY"
       },
       {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "MYP Tutoring",
-          "description": "One-on-one tutoring for IB Middle Years Programme students"
-        },
+        "itemOffered": { "@type": "Service", "name": "MYP Tutoring" },
         "price": "6050",
         "priceCurrency": "JPY"
       },
       {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "DP Tutoring",
-          "description": "One-on-one tutoring for IB Diploma Programme students"
-        },
+        "itemOffered": { "@type": "Service", "name": "DP Tutoring" },
         "price": "7260",
         "priceCurrency": "JPY"
       }
@@ -153,13 +154,15 @@ const serviceSchema = {
 ---
 
 <BaseLayout
-  title="IB Tutoring in Japan | Online IB Tutors - All IB Graduates | IBT"
-  description="Expert IB tutoring by IB graduates. PYP, MYP & DP all subjects. TOK, EE & IA support. No enrollment fee, pay-as-you-go. Free 60-min trial lesson."
+  title="IB Tutoring by IB Graduates | Bilingual Japanese-English Tutors | IBT"
+  description="Expert IB tutoring by IB graduates. Japanese-English bilingual tutors for PYP, MYP & DP all subjects. TOK, EE & IA support. No enrollment fee. Free 60-min trial."
+  lang="en"
 >
   <Fragment slot="head">
     <link rel="alternate" hreflang="ja" href="https://ib-tutors.net/" />
     <link rel="alternate" hreflang="en" href="https://ib-tutors.net/en/" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ja_JP" />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -167,193 +170,270 @@ const serviceSchema = {
 
   <!-- ===== 1. Hero Section ===== -->
   <section class="relative overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center">
-    <div class="absolute inset-0 bg-gradient-to-br from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end"></div>
-    <div class="absolute inset-0 bg-black/20"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 py-20 md:py-28 text-center">
-      <p class="inline-block bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-        IB Tutoring Exclusively by IB Graduates
-      </p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-        IB Tutoring<br class="md:hidden" /> by IB Graduates
-      </h1>
-      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed">
-        Expert one-on-one tutoring for PYP, MYP & DP.<br class="hidden md:block" />
-        All our tutors are IB diploma holders who understand exactly what you're going through.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a
-          href="/contact/"
-          class="bg-white text-ibt-red font-bold py-4 px-10 rounded-full hover:bg-gray-50 transition-colors text-lg shadow-lg"
-        >
-          Book a Free Trial Lesson
-        </a>
-        <a
-          href="https://lin.ee/xWMOBbI"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-[#06C755] text-white font-bold py-4 px-10 rounded-full hover:bg-[#05b34c] transition-colors text-lg shadow-lg inline-flex items-center gap-2"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          Chat on LINE
-        </a>
-      </div>
-      <!-- Stats -->
-      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-        <div class="text-center">
-          <p class="text-3xl md:text-4xl font-extrabold text-white">100%</p>
-          <p class="text-white/80 text-sm mt-1">IB Graduate Tutors</p>
-        </div>
-        <div class="text-center">
-          <p class="text-3xl md:text-4xl font-extrabold text-white">All</p>
-          <p class="text-white/80 text-sm mt-1">Subjects Covered</p>
-        </div>
-        <div class="text-center">
-          <p class="text-3xl md:text-4xl font-extrabold text-white">60 min</p>
-          <p class="text-white/80 text-sm mt-1">Free Trial</p>
-        </div>
-        <div class="text-center">
-          <p class="text-3xl md:text-4xl font-extrabold text-white">0 JPY</p>
-          <p class="text-white/80 text-sm mt-1">Enrollment Fee</p>
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="/images/hero/hero-bg.webp" alt="An IB student receiving one-on-one tutoring online" class="w-full h-full object-cover object-[center_25%]" loading="eager" fetchpriority="high" width="1920" height="1080" />
+    </div>
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/50"></div>
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 py-20 md:py-28 lg:py-36 w-full">
+      <div class="max-w-2xl">
+        <p class="text-white/80 text-sm md:text-base font-medium tracking-widest mb-4 hero-text-shadow">IB TUTORS -- Bilingual IB Specialists</p>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight hero-text-shadow">
+          IB Tutoring<br />by IB Graduates
+        </h1>
+        <div class="w-24 h-1 bg-ibt-red mt-6 mb-6"></div>
+        <p class="text-white/90 text-base md:text-lg leading-relaxed hero-text-shadow">
+          PYP / MYP / DP - All Subjects<br />
+          Online & In-Person | Japanese-English Bilingual
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center bg-ibt-red text-white font-[800] text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200 cta-pulse"
+          >
+            Book a Free Trial
+          </a>
+          <a
+            href="/lessons-pricing/"
+            class="inline-flex items-center justify-center text-white font-medium text-base px-6 py-4 hover:text-white/80 transition-colors"
+          >
+            View Pricing &rarr;
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 2. Why Choose IBT ===== -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12 md:mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Why Choose IBT?</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Three reasons families trust us for IB tutoring</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-ibt-red-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-          <div class="w-16 h-16 bg-ibt-red/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl">🎓</span>
+  <!-- ===== 2. Stats Bar ===== -->
+  <section class="bg-white border-b border-ibt-border">
+    <div class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <p class="text-2xl md:text-3xl lg:text-4xl font-black text-ibt-red">{stat.value}</p>
+            <p class="mt-1 text-sm md:text-base text-ibt-text-light font-medium">{stat.label}</p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">All Tutors Are IB Graduates</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Unlike other services, every single tutor at IBT holds an IB diploma. They've been through the same challenges you're facing.
-          </p>
-        </div>
-        <!-- Card 2 -->
-        <div class="bg-ibt-red-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-          <div class="w-16 h-16 bg-ibt-red/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl">💰</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">No Enrollment Fee, Pay-As-You-Go</h3>
-          <p class="text-gray-600 leading-relaxed">
-            No long-term contracts. No monthly fees. Purchase lesson tickets and use them at your own pace.
-          </p>
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-ibt-red-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-          <div class="w-16 h-16 bg-ibt-red/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl">📚</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">PYP, MYP & DP - All Subjects</h3>
-          <p class="text-gray-600 leading-relaxed">
-            From PYP for elementary students to DP exam prep. We also cover TOK, Extended Essay, and Internal Assessments.
-          </p>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ===== 3. Pricing ===== -->
-  <section class="py-16 md:py-24 bg-gray-50">
+  <!-- ===== Bilingual Advantage Banner ===== -->
+  <section class="bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end py-10 md:py-14">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-4">Japanese-Speaking IB Tutors</h2>
+      <p class="text-white/90 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+        All our tutors are <strong>Japanese-English bilingual</strong> and IB graduates. They can explain complex IB concepts in Japanese when needed, making it easier for students and parents who are more comfortable in Japanese. This is what makes IBT unique -- there is no other service offering bilingual IB-specialist tutoring.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 3. Features / Why IBT ===== -->
+  <section class="bg-ibt-bg py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12 md:mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">No enrollment fee. No monthly management fee. Pay only for lessons.</p>
+        <p class="section-label mb-3">Why IBT</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text">Why Families Choose IBT</h2>
       </div>
-      <div class="max-w-3xl mx-auto">
-        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-          <div class="grid grid-cols-4 bg-ibt-red text-white font-bold text-sm md:text-base">
-            <div class="p-4 text-center">Program</div>
-            <div class="p-4 text-center">Duration</div>
-            <div class="p-4 text-center">Price</div>
-            <div class="p-4 text-center">Ages</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {features.map((feature) => (
+          <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-8">
+            <span class="text-4xl block mb-4">{feature.icon}</span>
+            <h3 class="text-xl font-bold text-ibt-text mb-3">{feature.title}</h3>
+            <p class="text-ibt-text-light leading-relaxed">{feature.description}</p>
           </div>
-          {pricing.map((item, i) => (
-            <div class={`grid grid-cols-4 text-sm md:text-base ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
-              <div class="p-4 text-center font-bold text-ibt-red">{item.program}</div>
-              <div class="p-4 text-center text-gray-700">{item.duration}</div>
-              <div class="p-4 text-center font-semibold text-gray-900">{item.price}</div>
-              <div class="p-4 text-center text-gray-500">{item.ages}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Programs ===== -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="section-label mb-3">Programs</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text">Programs We Support</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {programs.map((program) => (
+          <div class="relative bg-white border border-ibt-border rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-8 group">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end mb-5">
+              <span class="text-white font-black text-xl">{program.name}</span>
+            </div>
+            <p class="text-xs text-ibt-text-light font-medium mb-1">{program.fullName}</p>
+            <p class="text-sm text-ibt-red font-bold mb-3">{program.grades}</p>
+            <p class="text-ibt-text-light leading-relaxed">{program.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. Tutors Preview ===== -->
+  <section class="bg-ibt-bg py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="section-label mb-3">Tutors</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text">Meet Our Tutors</h2>
+        <p class="mt-4 text-ibt-text-light text-lg">All of our tutors are university students and IB graduates. Having been through IB themselves, they offer real, practical advice.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {previewTutors.map((tutor) => (
+          <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-8">
+            {tutor.image ? (
+              <img src={tutor.image} alt={`Tutor ${tutor.name}`} class="w-20 h-20 rounded-full object-cover mb-5" loading="lazy" width="80" height="80" />
+            ) : (
+              <div class="w-20 h-20 rounded-full bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end flex items-center justify-center mb-5">
+                <span class="text-white font-black text-xl">{tutor.name.charAt(0)}</span>
+              </div>
+            )}
+            <h3 class="text-xl font-bold text-ibt-text">{tutor.name}</h3>
+            <p class="text-sm text-ibt-text-light mt-1">{tutor.school} Graduate</p>
+            <p class="text-sm text-ibt-text-light">{tutor.university}</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {tutor.subjects.map((subject) => (
+                <span class="inline-block text-xs font-medium bg-ibt-red-50 text-ibt-red px-3 py-1 rounded-full">
+                  {subject}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/tutors/"
+          class="inline-flex items-center text-ibt-red font-bold hover:text-ibt-red-dark transition-colors duration-200"
+        >
+          View All Tutors
+          <svg class="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. Trust / Features ===== -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="section-label mb-3">Features</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text mb-10 md:mb-14">What Sets IBT Apart</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {trustPoints.map((point) => (
+            <div class="flex items-center gap-4 bg-ibt-bg rounded-xl p-5">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span class="text-lg font-bold text-ibt-text">{point}</span>
             </div>
           ))}
         </div>
-        <div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6">
-          <p class="text-amber-800 font-semibold mb-2">How does IBT compare?</p>
-          <p class="text-amber-700 text-sm leading-relaxed">
-            Other IB tutoring services in Japan charge 11,000-22,000 JPY enrollment fees plus monthly management fees of 3,000-4,400 JPY. At IBT, you pay zero enrollment fee and zero monthly fee.
-          </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6.5 Pricing Comparison ===== -->
+  <section class="bg-ibt-bg py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="section-label mb-3">Pricing</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text">Simple, Transparent Pricing</h2>
+        <p class="mt-4 text-ibt-text-light text-lg">No hidden fees. Pay only for the lessons you take.</p>
+      </div>
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-ibt-border">
+                  <th class="px-4 md:px-6 py-4 text-left font-bold text-ibt-text-light"></th>
+                  <th class="px-4 md:px-6 py-4 text-center">
+                    <div class="inline-flex flex-col items-center">
+                      <span class="bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white text-xs font-bold px-3 py-1 rounded-full mb-1">Recommended</span>
+                      <span class="font-black text-ibt-red text-lg">IBT</span>
+                    </div>
+                  </th>
+                  <th class="px-4 md:px-6 py-4 text-center font-bold text-ibt-text-light">Company A</th>
+                  <th class="px-4 md:px-6 py-4 text-center font-bold text-ibt-text-light">Company B</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-ibt-border">
+                  <td class="px-4 md:px-6 py-4 font-bold">Enrollment Fee</td>
+                  <td class="px-4 md:px-6 py-4 text-center">
+                    <span class="text-ibt-red font-black text-xl">0 JPY</span>
+                  </td>
+                  <td class="px-4 md:px-6 py-4 text-center text-ibt-text-light">22,000 JPY</td>
+                  <td class="px-4 md:px-6 py-4 text-center text-ibt-text-light">Contact</td>
+                </tr>
+                <tr class="border-b border-ibt-border">
+                  <td class="px-4 md:px-6 py-4 font-bold">Pricing Model</td>
+                  <td class="px-4 md:px-6 py-4 text-center">
+                    <span class="text-ibt-red font-bold">Ticket System</span>
+                    <span class="block text-xs text-ibt-text-light mt-0.5">From 4,840 JPY/session</span>
+                  </td>
+                  <td class="px-4 md:px-6 py-4 text-center text-ibt-text-light">Hourly<span class="block text-xs mt-0.5">From 6,500 JPY/hr</span></td>
+                  <td class="px-4 md:px-6 py-4 text-center text-ibt-text-light">Monthly<span class="block text-xs mt-0.5">From 49,800 JPY/mo</span></td>
+                </tr>
+                <tr class="border-b border-ibt-border">
+                  <td class="px-4 md:px-6 py-4 font-bold">Tutor IB Experience</td>
+                  <td class="px-4 md:px-6 py-4 text-center">
+                    <span class="inline-flex items-center gap-1 text-ibt-red font-bold">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                      100% IB Grads
+                    </span>
+                  </td>
+                  <td class="px-4 md:px-6 py-4 text-center text-ibt-text-light">Some only</td>
+                  <td class="px-4 md:px-6 py-4 text-center text-ibt-text-light">Some only</td>
+                </tr>
+                <tr class="border-b border-ibt-border">
+                  <td class="px-4 md:px-6 py-4 font-bold">Free Trial</td>
+                  <td class="px-4 md:px-6 py-4 text-center">
+                    <span class="text-ibt-red font-bold">60 min Free</span>
+                  </td>
+                  <td class="px-4 md:px-6 py-4 text-center text-ibt-text-light">Paid</td>
+                  <td class="px-4 md:px-6 py-4 text-center text-ibt-text-light">30 min Free</td>
+                </tr>
+                <tr>
+                  <td class="px-4 md:px-6 py-4 font-bold">Contracts / Penalties</td>
+                  <td class="px-4 md:px-6 py-4 text-center">
+                    <span class="text-ibt-red font-bold">None</span>
+                  </td>
+                  <td class="px-4 md:px-6 py-4 text-center text-ibt-text-light">None</td>
+                  <td class="px-4 md:px-6 py-4 text-center text-ibt-text-light">Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+        <p class="text-xs text-ibt-text-light text-center mt-3">* Comparison based on publicly available information as of March 2026. Companies A and B represent typical pricing from other IB tutoring services in Japan.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== 4. Subjects We Cover ===== -->
-  <section class="py-16 md:py-24 bg-white">
+  <!-- ===== 7. FAQ ===== -->
+  <section class="bg-white py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12 md:mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Subjects We Cover</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">All IB subject groups plus core components</p>
+        <p class="section-label mb-3">FAQ</p>
+        <h2 class="text-3xl md:text-4xl font-black text-ibt-text">Frequently Asked Questions</h2>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {subjects.map((subject) => (
-          <div class="border border-ibt-border rounded-xl p-5 hover:border-ibt-red hover:shadow-md transition-all">
-            <span class="inline-block bg-ibt-red text-white text-xs font-bold px-2.5 py-1 rounded-full mb-3">
-              {subject.group}
-            </span>
-            <h3 class="font-bold text-gray-900 mb-1.5 text-sm">{subject.name}</h3>
-            <p class="text-gray-500 text-xs">{subject.examples}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 5. How It Works ===== -->
-  <section class="py-16 md:py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12 md:mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">How It Works</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Getting started is simple - just 4 steps</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {steps.map((step) => (
-          <div class="relative text-center">
-            <div class="w-14 h-14 bg-ibt-red text-white rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-extrabold">
-              {step.number}
-            </div>
-            <div class="text-3xl mb-3">{step.icon}</div>
-            <h3 class="font-bold text-gray-900 text-lg mb-2">{step.title}</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">{step.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 6. FAQ ===== -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-3xl mx-auto px-4">
-      <div class="text-center mb-12 md:mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Frequently Asked Questions</h2>
-      </div>
-      <div class="space-y-4">
+      <div class="max-w-3xl mx-auto space-y-4">
         {faqItems.map((item) => (
-          <details class="group bg-gray-50 rounded-xl overflow-hidden">
-            <summary class="flex items-center justify-between cursor-pointer p-5 md:p-6 font-semibold text-gray-900 hover:text-ibt-red transition-colors">
-              <span>{item.question}</span>
-              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          <details class="group bg-ibt-bg rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between cursor-pointer p-6 text-left font-bold text-ibt-text hover:text-ibt-red transition-colors duration-200">
+              <span class="pr-4">{item.question}</span>
+              <svg class="w-5 h-5 flex-shrink-0 text-ibt-text-light group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="px-5 pb-5 md:px-6 md:pb-6 text-gray-600 leading-relaxed">
+            <div class="px-6 pb-6 text-ibt-text-light leading-relaxed">
               {item.answer}
             </div>
           </details>
@@ -362,30 +442,49 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- ===== 7. CTA ===== -->
-  <section class="py-16 md:py-24 bg-gradient-to-br from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Ready to Get Started?</h2>
-      <p class="text-white/90 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-        Book a free 60-minute trial lesson and experience IB tutoring by real IB graduates. No commitment, no enrollment fee.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+  <!-- ===== 8. For Parents ===== -->
+  <section class="bg-ibt-bg py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-sm p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h2 class="text-xl md:text-2xl font-bold text-ibt-text">For Parents</h2>
+          <p class="mt-2 text-ibt-text-light leading-relaxed">
+            Not sure how IB works? We explain the IB system, grading, and how to support your child at home -- in Japanese or English. Our parent guide page has everything you need.
+          </p>
+        </div>
         <a
-          href="/contact/"
-          class="bg-white text-ibt-red font-bold py-4 px-10 rounded-full hover:bg-gray-50 transition-colors text-lg shadow-lg"
+          href="/ib-parents/"
+          class="inline-flex items-center justify-center bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold px-8 py-4 rounded-full hover:shadow-md hover:scale-[1.02] transition-all duration-200 whitespace-nowrap"
         >
-          Book Free Trial
-        </a>
-        <a
-          href="https://lin.ee/xWMOBbI"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-[#06C755] text-white font-bold py-4 px-10 rounded-full hover:bg-[#05b34c] transition-colors text-lg shadow-lg inline-flex items-center gap-2"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          Chat on LINE
+          Learn More
+          <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. CTA Section ===== -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.12),transparent_50%)]"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-16 md:py-24 text-center">
+      <h2 class="text-3xl md:text-4xl font-black text-white">Book Your Free 60-Minute Trial</h2>
+      <p class="mt-4 text-white/85 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        An IB graduate tutor will assess your child's current level and create a personalized study plan. No enrollment fee. No pressure. No obligation.
+      </p>
+      <div class="mt-10">
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center bg-white text-ibt-red font-bold text-lg px-10 py-5 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200"
+        >
+          Book Free Trial
+          <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+      <p class="mt-4 text-white/60 text-sm">Feel free to contact us by email or LINE as well</p>
     </div>
   </section>
 
