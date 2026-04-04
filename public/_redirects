@@ -1,3 +1,0 @@
-# IBT Management System redirect
-# ib-tutors.net/manage/* → miri.hatta.jp/ibt/*
-/manage/*  https://miri.hatta.jp/ibt/:splat  301
