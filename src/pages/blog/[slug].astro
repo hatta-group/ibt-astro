@@ -61,7 +61,8 @@ const blogPostingSchema = {
   "dateModified": post.data.lastMod || post.data.date,
   "author": {
     "@type": "Organization",
-    "name": "IBT（IB Tutors）"
+    "name": "IBT（IB Tutors）",
+    "url": "https://ib-tutors.net"
   },
   "publisher": {
     "@type": "Organization",
@@ -72,7 +73,10 @@ const blogPostingSchema = {
       "url": "https://ib-tutors.net/images/logo.png"
     }
   },
-  "mainEntityOfPage": shareUrl
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": shareUrl
+  }
 };
 
 const breadcrumbSchema = {

@@ -1,96 +1,74 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="ページが見つかりません｜IBT" noindex={true}>
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end py-16 md:py-24">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <p class="text-7xl md:text-8xl font-black text-white/20 mb-4">404</p>
-      <h1 class="text-2xl md:text-4xl font-black text-white mb-4">お探しのページが見つかりません</h1>
-      <p class="text-white/80 text-base md:text-lg leading-relaxed">
-        URLが変更されたか、ページが削除された可能性があります。<br class="hidden md:inline" />
-        以下のリンクから目的のページをお探しください。
+
+<BaseLayout
+  title="404 - ページが見つかりません | IBT"
+  description="お探しのページは移動または削除された可能性があります。"
+  noindex={true}
+>
+  <section class="min-h-[70vh] flex items-center justify-center px-4 py-16">
+    <div class="text-center max-w-lg mx-auto">
+      <!-- 404 数字 -->
+      <p class="text-[8rem] sm:text-[10rem] font-black leading-none bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end bg-clip-text text-transparent select-none">
+        404
       </p>
-    </div>
-  </section>
 
-  <!-- Main Navigation Links -->
-  <section class="py-12 md:py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-lg font-bold text-ibt-text mb-6 text-center">主要ページ</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <a href="/" class="group flex items-center gap-3 p-4 rounded-xl border border-ibt-border bg-white hover:border-ibt-red hover:shadow-md transition-all duration-200">
-          <div class="w-10 h-10 rounded-lg bg-ibt-red-50 flex items-center justify-center shrink-0 group-hover:bg-ibt-red group-hover:text-white transition-colors">
-            <svg class="w-5 h-5 text-ibt-red group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-          </div>
-          <span class="text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors">ホーム</span>
+      <!-- メッセージ -->
+      <h1 class="text-2xl sm:text-3xl font-bold text-ibt-text mt-2 mb-3">
+        ページが見つかりません
+      </h1>
+      <p class="text-ibt-text-light text-base sm:text-lg mb-10 leading-relaxed">
+        お探しのページは移動または削除された可能性があります。<br class="hidden sm:inline" />
+        URLをご確認いただくか、以下のリンクからお進みください。
+      </p>
+
+      <!-- リンクボタン群 -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a
+          href="/"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold rounded-full hover:shadow-lg transition-shadow cta-pulse"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1" /></svg>
+          トップページへ
         </a>
-        <a href="/blog/" class="group flex items-center gap-3 p-4 rounded-xl border border-ibt-border bg-white hover:border-ibt-red hover:shadow-md transition-all duration-200">
-          <div class="w-10 h-10 rounded-lg bg-ibt-red-50 flex items-center justify-center shrink-0 group-hover:bg-ibt-red group-hover:text-white transition-colors">
-            <svg class="w-5 h-5 text-ibt-red group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
-          </div>
-          <span class="text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors">ブログ</span>
-        </a>
-        <a href="/tutors/" class="group flex items-center gap-3 p-4 rounded-xl border border-ibt-border bg-white hover:border-ibt-red hover:shadow-md transition-all duration-200">
-          <div class="w-10 h-10 rounded-lg bg-ibt-red-50 flex items-center justify-center shrink-0 group-hover:bg-ibt-red group-hover:text-white transition-colors">
-            <svg class="w-5 h-5 text-ibt-red group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg>
-          </div>
-          <span class="text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors">講師紹介</span>
-        </a>
-        <a href="/contact/" class="group flex items-center gap-3 p-4 rounded-xl border border-ibt-border bg-white hover:border-ibt-red hover:shadow-md transition-all duration-200">
-          <div class="w-10 h-10 rounded-lg bg-ibt-red-50 flex items-center justify-center shrink-0 group-hover:bg-ibt-red group-hover:text-white transition-colors">
-            <svg class="w-5 h-5 text-ibt-red group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
-          </div>
-          <span class="text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors">お問い合わせ</span>
-        </a>
-        <a href="/iber-type-shindan/" class="group flex items-center gap-3 p-4 rounded-xl border border-ibt-border bg-white hover:border-ibt-red hover:shadow-md transition-all duration-200">
-          <div class="w-10 h-10 rounded-lg bg-ibt-red-50 flex items-center justify-center shrink-0 group-hover:bg-ibt-red group-hover:text-white transition-colors">
-            <svg class="w-5 h-5 text-ibt-red group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>
-          </div>
-          <span class="text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors">IBerタイプ診断</span>
-        </a>
-        <a href="/ib-schools/" class="group flex items-center gap-3 p-4 rounded-xl border border-ibt-border bg-white hover:border-ibt-red hover:shadow-md transition-all duration-200">
-          <div class="w-10 h-10 rounded-lg bg-ibt-red-50 flex items-center justify-center shrink-0 group-hover:bg-ibt-red group-hover:text-white transition-colors">
-            <svg class="w-5 h-5 text-ibt-red group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
-          </div>
-          <span class="text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors">IB校一覧</span>
+        <a
+          href="/contact/"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-ibt-red text-ibt-red font-bold rounded-full hover:bg-ibt-red-50 transition-colors"
+        >
+          お問い合わせ
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- Popular Pages -->
-  <section class="py-12 md:py-16 bg-ibt-bg">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-lg font-bold text-ibt-text mb-6 text-center">よく読まれているページ</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <a href="/lessons-pricing/" class="group block p-5 bg-white rounded-xl border border-ibt-border hover:border-ibt-red hover:shadow-md transition-all duration-200">
-          <p class="text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors">授業内容・料金</p>
-          <p class="text-xs text-ibt-text-light mt-1">PYP・MYP・DP全科目対応。料金プランの詳細はこちら</p>
+      <!-- サブリンク -->
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
+        <a href="/blog/" class="text-ibt-text-light hover:text-ibt-red transition-colors underline underline-offset-4 decoration-ibt-border hover:decoration-ibt-red">
+          ブログ記事を読む
         </a>
-        <a href="/about/" class="group block p-5 bg-white rounded-xl border border-ibt-border hover:border-ibt-red hover:shadow-md transition-all duration-200">
-          <p class="text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors">IBTについて</p>
-          <p class="text-xs text-ibt-text-light mt-1">IB専門家庭教師サービスの特徴と強み</p>
+        <span class="hidden sm:inline text-ibt-border">|</span>
+        <a href="/faq/" class="text-ibt-text-light hover:text-ibt-red transition-colors underline underline-offset-4 decoration-ibt-border hover:decoration-ibt-red">
+          よくある質問
         </a>
-        <a href="/faq/" class="group block p-5 bg-white rounded-xl border border-ibt-border hover:border-ibt-red hover:shadow-md transition-all duration-200">
-          <p class="text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors">よくある質問</p>
-          <p class="text-xs text-ibt-text-light mt-1">体験授業・料金・対応科目に関するQ&A</p>
-        </a>
-        <a href="/ib-parents/" class="group block p-5 bg-white rounded-xl border border-ibt-border hover:border-ibt-red hover:shadow-md transition-all duration-200">
-          <p class="text-sm font-bold text-ibt-text group-hover:text-ibt-red transition-colors">保護者の方へ</p>
-          <p class="text-xs text-ibt-text-light mt-1">IB教育でお子様をサポートするために知っておきたいこと</p>
+        <span class="hidden sm:inline text-ibt-border">|</span>
+        <a href="/tutors/" class="text-ibt-text-light hover:text-ibt-red transition-colors underline underline-offset-4 decoration-ibt-border hover:decoration-ibt-red">
+          講師紹介
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="py-12 md:py-16 bg-white">
-    <div class="max-w-2xl mx-auto px-4 text-center">
-      <p class="text-ibt-text-light mb-4">お探しの情報が見つからない場合は、お気軽にお問い合わせください。</p>
-      <a href="/contact/" class="inline-block bg-ibt-red text-white font-bold px-8 py-4 rounded-full hover:bg-ibt-red-dark transition-colors shadow-lg">
-        お問い合わせはこちら
-      </a>
+      <!-- IBerタイプ診断への誘導 -->
+      <div class="mt-14 p-6 bg-ibt-red-50 rounded-2xl border border-ibt-red-light">
+        <p class="text-ibt-text-light text-sm mb-1">迷子になったついでに...</p>
+        <p class="text-ibt-text font-bold text-lg mb-4">
+          あなたの「IBerタイプ」診断してみない?
+        </p>
+        <a
+          href="/iber-type-shindan/"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white text-ibt-red font-bold rounded-full border border-ibt-red-light hover:border-ibt-red hover:shadow-md transition-all"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+          IBerタイプ診断をやってみる
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
