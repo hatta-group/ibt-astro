@@ -6,7 +6,7 @@ import { iberTypes } from '../../data/iber-types';
 <BaseLayout
   title="IBerタイプ診断｜あなたのIBerタイプは？｜IBT"
   description="あなたのIBerタイプは？たった20問でIB Learner's Profileの10タイプを診断。試験・EE・CASなどIB生ならではの質問で強みと課題を発見。"
-  ogImage="/images/iber-types/iber-shindan-banner.png"
+  ogImage="/images/iber-types/iber-shindan-banner.jpg"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -116,7 +116,7 @@ import { iberTypes } from '../../data/iber-types';
         <!-- Banner Image -->
         <div class="mt-8">
           <img
-            src="/images/iber-types/iber-shindan-banner.png"
+            src="/images/iber-types/iber-shindan-banner.jpg"
             alt="IBerタイプ診断 - 10タイプのキャラクター集合イラスト"
             class="w-full rounded-2xl shadow-lg"
             loading="eager"
@@ -966,7 +966,7 @@ import { iberTypes } from '../../data/iber-types';
       };
 
       // Instagram share - show image and download
-      const igShareImage = `/images/iber-types/share/${winnerId}.png`;
+      const igShareImage = `/images/iber-types/share/${winnerId}.jpg`;
       const igPreview = document.getElementById('ig-share-preview');
       const igImage = document.getElementById('ig-share-image');
       const igDownloadBtn = document.getElementById('ig-download-btn');
