@@ -5,7 +5,7 @@ date: "2026-04-05"
 description: "IB Biology SL/HLの勉強法をIB卒業生が解説。暗記のコツ、IAのテーマ選び、Paper対策、実験スキルまで網羅。"
 category: "subject-guide"
 ogImage: ""
-draft: false
+draft: true
 ---
 
 IB Biologyは「暗記科目」と思われがちですが、それだけでは高得点は取れません。IBのBiologyでは、知識をベースにしながらも「なぜそうなるか」を説明する力、実験データを分析・評価する力が問われます。

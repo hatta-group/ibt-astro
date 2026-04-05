@@ -5,7 +5,7 @@ date: "2026-04-05"
 description: "IB Chemistry SL/HLの攻略法をIB卒業生が解説。IA・Paper対策、有機化学の勉強法、Data Bookletの使い方まで徹底ガイド。"
 category: "subject-guide"
 ogImage: ""
-draft: false
+draft: true
 ---
 
 IB Chemistryは、理科系科目の中でも「覚えることが多い上に、理解も必要」という二重の負荷がかかる科目です。SLでも油断できないし、HLになると大学レベルの内容まで踏み込みます。
