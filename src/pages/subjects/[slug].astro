@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { ibSubjects } from '../../data/ib-subjects';
-import { tutors } from '../../data/tutors';
 
 export function getStaticPaths() {
   return ibSubjects.map((s) => ({
@@ -11,15 +10,6 @@ export function getStaticPaths() {
 }
 
 const { subject } = Astro.props;
-
-// Find tutors who teach this subject (approximate match)
-const subjectKeywords = subject.name.toLowerCase().split(/[\s:()]+/).filter(w => w.length > 2);
-const matchingTutors = tutors.filter(t =>
-  t.subjects.some(ts => {
-    const tsLower = ts.toLowerCase();
-    return subjectKeywords.some(kw => tsLower.includes(kw)) || tsLower.includes(subject.slug.replace(/-/g, ' '));
-  })
-);
 
 const pageTitle = `${subject.name}（${subject.nameJa}）対策ガイド｜IBT`;
 const pageDescription = `IB DP ${subject.name}（${subject.nameJa}）の対策ガイド。評価方法、勉強のコツ、よくある質問をIB卒業生講師がわかりやすく解説します。`;
@@ -142,30 +132,6 @@ const faqSchema = {
           ))}
         </div>
       </div>
-
-      <!-- Matching Tutors -->
-      {matchingTutors.length > 0 && (
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10 mb-8">
-          <h2 class="text-xl font-bold mb-6">この科目に対応できる講師</h2>
-          <div class="grid sm:grid-cols-2 gap-4">
-            {matchingTutors.slice(0, 4).map((tutor) => (
-              <a href="/tutors/" class="flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:border-ibt-red/30 hover:bg-ibt-red-50/20 transition-all group">
-                {tutor.image && (
-                  <img src={tutor.image} alt={tutor.name} class="w-12 h-12 rounded-full object-cover" loading="lazy" />
-                )}
-                <div>
-                  <p class="font-bold text-ibt-text group-hover:text-ibt-red transition-colors">{tutor.name}</p>
-                  <p class="text-xs text-ibt-text-light">{tutor.university}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-          <a href="/tutors/" class="inline-flex items-center gap-1 text-ibt-red text-sm font-medium mt-4 hover:gap-2 transition-all">
-            全ての講師を見る
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg>
-          </a>
-        </div>
-      )}
 
       <!-- Related Blog -->
       {subject.relatedBlog.length > 0 && (
