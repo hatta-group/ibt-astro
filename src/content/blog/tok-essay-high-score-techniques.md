@@ -138,3 +138,12 @@ TOK・EE（Extended Essay）・IAなど、IB特有の課題にも経験者だか
 - [IA（Internal Assessment）とは？](/blog/blog/ib-psychology-ia-guide/)
 - [IA対策の進め方](/blog/ib-ia-success-guide/)
 - [IBで7点を取る方法](/blog/ib-how-to-get-7/)
+
+
+---
+
+**IB試験対策、一人で悩んでいませんか？**
+
+IBTの講師は全員IB卒業生。同じ試験を乗り越えた経験者が、あなたの弱点に合わせた対策を1対1でサポートします。入会金0円・1回から受講OK。
+
+[60分無料体験を予約する →](/contact/)

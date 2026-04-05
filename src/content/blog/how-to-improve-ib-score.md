@@ -38,3 +38,12 @@ IBでは、ただ事実を暗記するというよりは、知識の原理から
 - [IB DPの効率的な勉強法](/blog/ib-benkyouhou-dp-kouritsu/)
 - [IB時間管理のコツ](/blog/ib-dp-time-management/)
 - [IBメンタルヘルスとストレス管理](/blog/ib-mental-health-stress-management/)
+
+
+---
+
+**IB試験対策、一人で悩んでいませんか？**
+
+IBTの講師は全員IB卒業生。同じ試験を乗り越えた経験者が、あなたの弱点に合わせた対策を1対1でサポートします。入会金0円・1回から受講OK。
+
+[60分無料体験を予約する →](/contact/)

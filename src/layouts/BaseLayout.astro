@@ -111,37 +111,101 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
     </main>
     <Footer />
 
-    <!-- 固定CTAバー（スマホ・PC共通） -->
-    <div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.1)] py-2.5 px-4">
+    <!-- 固定CTAバー（スクロール200px以上で表示・/contact/では非表示） -->
+    <div id="floating-cta" class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.1)] py-2.5 px-4 translate-y-full transition-transform duration-300">
       <div class="max-w-7xl mx-auto">
-        <!-- 残り枠バッジ -->
-        <div class="flex justify-center mb-1.5">
-          <span class="inline-flex items-center gap-1.5 px-3 py-0.5 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold rounded-full animate-pulse">
-            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
-            4月の無料体験 残り3枠
-          </span>
+        <!-- スマホ用レイアウト -->
+        <div class="md:hidden">
+          <!-- 残り枠バッジ -->
+          <div class="flex justify-center mb-1.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-0.5 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold rounded-full animate-pulse">
+              <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+              4月の無料体験 残り3枠
+            </span>
+          </div>
+          <div class="flex items-center justify-center gap-3">
+            <a
+              href="https://line.me/R/ti/p/@974okamx"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 max-w-[180px] inline-flex items-center justify-center gap-2 px-4 py-3 min-h-[48px] bg-[#06C755] hover:bg-[#05b34c] text-white text-sm font-bold rounded-full transition-colors"
+            >
+              <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              LINEで相談
+            </a>
+            <a
+              href="/contact/"
+              class="flex-1 max-w-[220px] inline-flex items-center justify-center gap-2 px-4 py-3 min-h-[48px] bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end hover:shadow-lg text-white text-sm font-bold rounded-full transition-shadow cta-pulse"
+            >
+              無料体験を予約
+            </a>
+          </div>
         </div>
-        <div class="flex items-center justify-center gap-3">
-          <a
-            href="https://line.me/R/ti/p/@974okamx"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex-1 max-w-[180px] inline-flex items-center justify-center gap-2 px-4 py-3 min-h-[48px] bg-[#06C755] hover:bg-[#05b34c] text-white text-sm font-bold rounded-full transition-colors"
-          >
-            <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            LINEで相談
-          </a>
-          <a
-            href="/contact/"
-            class="flex-1 max-w-[220px] inline-flex items-center justify-center gap-2 px-4 py-3 min-h-[48px] bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end hover:shadow-lg text-white text-sm font-bold rounded-full transition-shadow cta-pulse"
-          >
-            60分無料体験を予約
-          </a>
+        <!-- PC用レイアウト -->
+        <div class="hidden md:flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-0.5 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold rounded-full animate-pulse">
+              <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+              4月の無料体験 残り3枠
+            </span>
+            <span class="text-sm font-bold text-ibt-text">60分無料体験実施中</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <a
+              href="https://line.me/R/ti/p/@974okamx"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-[44px] bg-[#06C755] hover:bg-[#05b34c] text-white text-sm font-bold rounded-full transition-colors"
+            >
+              <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              LINEで相談
+            </a>
+            <a
+              href="/contact/"
+              class="inline-flex items-center justify-center gap-2 px-6 py-2.5 min-h-[44px] bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end hover:shadow-lg text-white text-sm font-bold rounded-full transition-shadow cta-pulse"
+            >
+              無料体験を予約する
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <!-- 固定CTAバー分のスペーサー（バッジ+ボタン2行分） -->
-    <div class="h-24"></div>
+    <!-- 固定CTAバー分のスペーサー -->
+    <div id="floating-cta-spacer" class="h-24"></div>
+
+    <!-- フローティングCTAバー制御スクリプト -->
+    <script>
+      (function() {
+        const cta = document.getElementById('floating-cta');
+        const spacer = document.getElementById('floating-cta-spacer');
+        if (!cta || !spacer) return;
+
+        // /contact/ ページでは非表示
+        if (window.location.pathname === '/contact/' || window.location.pathname === '/contact') {
+          cta.style.display = 'none';
+          spacer.style.display = 'none';
+          return;
+        }
+
+        let shown = false;
+        function onScroll() {
+          const scrollY = window.scrollY || window.pageYOffset;
+          if (scrollY > 200 && !shown) {
+            shown = true;
+            cta.classList.remove('translate-y-full');
+            cta.classList.add('translate-y-0');
+          } else if (scrollY <= 200 && shown) {
+            shown = false;
+            cta.classList.remove('translate-y-0');
+            cta.classList.add('translate-y-full');
+          }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        // 初回チェック（ページ途中からの読み込み対応）
+        onScroll();
+      })();
+    </script>
 
     <!-- Cookie通知バナー -->
     <div id="cookie-banner" class="hidden fixed bottom-28 left-4 right-4 md:left-auto md:right-4 md:max-w-sm z-40 bg-white rounded-2xl shadow-xl border border-gray-200 p-5">
