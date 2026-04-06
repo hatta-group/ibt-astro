@@ -403,12 +403,21 @@ const breadcrumbSchema = {
       <p class="text-ibt-text-light text-lg mb-8 leading-relaxed">
         IB卒業生の専門家庭教師がマンツーマンでサポートします。<br class="hidden md:inline" />まずは60分の無料体験をお試しください。
       </p>
-      <a
-        href="/contact/"
-        class="inline-block px-8 py-4 bg-ibt-red text-white font-bold rounded-full shadow-lg hover:bg-ibt-red-dark transition-colors cta-pulse"
-      >
-        60分無料体験に申し込む
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-ibt-red text-white font-bold rounded-full shadow-lg hover:bg-ibt-red-dark transition-colors cta-pulse"
+        >
+          60分無料体験に申し込む
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </a>
+        <a
+          href="/iber-type-shindan/"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-ibt-red text-ibt-red font-bold rounded-full hover:bg-ibt-red-50 transition-colors"
+        >
+          IBerタイプ診断をやってみる
+        </a>
+      </div>
     </div>
   </section>
 

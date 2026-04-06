@@ -119,6 +119,14 @@ const resultSchema = {
           <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://ib-tutors.net/iber-type-shindan/${typeData.id}/`)}`} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 bg-[#1877F2] text-white rounded-full text-sm font-bold hover:opacity-90 transition-opacity">
             Facebook
           </a>
+          <button
+            id="copy-link-btn"
+            type="button"
+            class="flex items-center gap-2 px-5 py-2.5 bg-gray-100 text-gray-700 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>
+            <span id="copy-link-text">リンクをコピー</span>
+          </button>
         </div>
       </div>
     </div>
@@ -181,4 +189,32 @@ const resultSchema = {
       <p class="text-white/40 text-xs mt-6">入会金0円 / チケット制で長期契約なし / オンライン対応</p>
     </div>
   </section>
+  <script>
+    const copyBtn = document.getElementById('copy-link-btn');
+    const copyText = document.getElementById('copy-link-text');
+    if (copyBtn && copyText) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          copyText.textContent = 'コピーしました!';
+          copyBtn.classList.remove('bg-gray-100', 'text-gray-700');
+          copyBtn.classList.add('bg-emerald-100', 'text-emerald-700');
+          setTimeout(() => {
+            copyText.textContent = 'リンクをコピー';
+            copyBtn.classList.remove('bg-emerald-100', 'text-emerald-700');
+            copyBtn.classList.add('bg-gray-100', 'text-gray-700');
+          }, 2000);
+        } catch {
+          const textarea = document.createElement('textarea');
+          textarea.value = window.location.href;
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+          copyText.textContent = 'コピーしました!';
+          setTimeout(() => { copyText.textContent = 'リンクをコピー'; }, 2000);
+        }
+      });
+    }
+  </script>
 </BaseLayout>
