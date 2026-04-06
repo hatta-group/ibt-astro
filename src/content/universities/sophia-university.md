@@ -8,7 +8,7 @@ region: "japan"
 ibScoreRange: "28〜36+"
 ibScoreMin: 28
 ibScoreRecommended: 33
-ibAdmissionType: "海外就学経験者入試・TESOL入試・公募推薦入試"
+ibAdmissionType: "IB入学試験（第1期・第2期）・海外就学経験者入試・公募推薦入試"
 requiredHL: ["学部・入試区分により異なる"]
 applicationSystem: "上智大学独自出願"
 admissionDeadline: "学部・入試区分により異なる（9〜11月頃）"

@@ -13,7 +13,7 @@ ibAdmissionType: "特色入試（一部学部でIBディプロマを出願資格
 requiredHL: ["学部・学科により異なる（理系はMath・理科HL推奨）"]
 applicationSystem: "大学入試センター経由（共通テスト）＋京大独自選抜"
 admissionDeadline: "特色入試: 10〜11月頃（学部により異なる）"
-tuitionFeeApprox: "約53万円/年（国立大学標準授業料）※要公式確認"
+tuitionFeeApprox: "642,960円/年（2025年度入学者〜値上げ後）＋入学金282,000円 ※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "日本語能力が原則必須（学部授業は日本語中心）"
 website: "https://www.kyoto-u.ac.jp/"
