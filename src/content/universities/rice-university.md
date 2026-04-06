@@ -13,7 +13,7 @@ ibAdmissionType: "Common Application / Coalition Application"
 requiredHL: ["HL科目5点以上で単位認定の可能性あり。理工系：Math AA HL・Physics/Chemistry HL推奨"]
 applicationSystem: "Common App / Coalition App"
 admissionDeadline: "Early Decision: 11月1日 / Regular Decision: 1月4日"
-tuitionFeeApprox: "$60,000〜$65,000/年（2025/26年度）※要公式確認"
+tuitionFeeApprox: "$65,280〜$71,140/年（2026/27年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 100+ / IELTS 7.0+"
 website: "https://www.rice.edu/"
@@ -67,9 +67,9 @@ draft: false
 
 | 項目 | 金額目安（2025/26年度・参考） |
 |------|----------------------|
-| 授業料 | 約$60,000〜$65,000/年 |
-| 寮費・食費 | 約$16,000〜$18,000/年 |
-| 総費用概算 | 約$76,000〜$83,000/年 |
+| 授業料 | $65,280〜$71,140/年（入学年度による） |
+| 寮費・食費 | $20,530/年 |
+| 総費用概算 | 約$91,000〜$97,000/年 |
 
 **奨学金：**
 - **Need-Based Financial Aid** — 家計状況に応じた給付型（留学生にも一部適用）

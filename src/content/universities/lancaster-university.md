@@ -6,9 +6,9 @@ country: "イギリス"
 city: "ランカスター"
 region: "uk"
 qsRank: 141
-ibScoreRange: "30-36+"
-ibScoreMin: 30
-ibScoreRecommended: 34
+ibScoreRange: "35-36+"
+ibScoreMin: 35
+ibScoreRecommended: 35
 ibAdmissionType: "UCAS出願"
 requiredHL: ["コースにより異なる。多くのコースでHL 5-6点以上を要求"]
 applicationSystem: "UCAS"
@@ -34,12 +34,9 @@ draft: false
 
 | コース | IB総点 | HL要件 |
 |--------|--------|--------|
-| Management (LUMS) | 35点 | HL 6,5,5 |
-| Linguistics | 32点 | HL 5,5,5 |
-| Environmental Science | 32点 | Biology/Chemistry HL 5 |
-| Physics | 34点 | Math HL 6, Physics HL 6 |
-| Psychology | 34点 | HL 5,5,5 |
-| Data Science | 34点 | Math HL 6 |
+| Computer Science | 35点 | HL best3計16点。Math/CS HLで減額オファーの可能性 |
+| Physics | 36点 | HL best3計16点。Math HL 6必須 |
+| Psychology | 35点 | HL best3計16点 |
 
 ## 出願プロセス
 

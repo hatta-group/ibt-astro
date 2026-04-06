@@ -13,7 +13,7 @@ ibAdmissionType: "UC Application（カリフォルニア大学共通出願）"
 requiredHL: ["HL科目5点以上で単位認定の可能性あり。Engineering/CS：Math AA HL推奨。Biology：Biology/Chemistry HL推奨"]
 applicationSystem: "UC Application"
 admissionDeadline: "11月30日（UC共通締切）"
-tuitionFeeApprox: "$47,000〜$50,000/年（2025/26年度・留学生州外授業料）※要公式確認"
+tuitionFeeApprox: "$52,536/年（2025/26年度・非居住者年間授業料+費用）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 83+ / IELTS 7.0+"
 website: "https://www.ucsd.edu/"
@@ -50,9 +50,9 @@ UCSDは**UC Application（カリフォルニア大学共通出願システム）
 
 | 項目 | 金額目安（2025/26年度・参考） |
 |------|----------------------|
-| 授業料（留学生） | 約$47,000〜$50,000/年 |
+| 授業料+費用（非居住者） | $52,536/年（3クォーター） |
 | 寮費・食費 | 約$16,000〜$18,000/年 |
-| 総費用概算 | 約$63,000〜$68,000/年 |
+| 総費用概算 | 約$68,000〜$70,000/年 |
 
 **奨学金：**
 - **Regents Scholarship** — 最高額の学内奨学金

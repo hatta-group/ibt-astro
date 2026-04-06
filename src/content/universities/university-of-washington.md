@@ -13,7 +13,7 @@ ibAdmissionType: "Coalition Application / Common Application"
 requiredHL: ["HL科目5点以上で単位認定の可能性あり。CS：Math AA HL推奨。Engineering：Math/Physics HL推奨"]
 applicationSystem: "Coalition App / Common App"
 admissionDeadline: "11月15日（留学生向け優先締切）"
-tuitionFeeApprox: "$42,000〜$46,000/年（2025/26年度・留学生州外授業料）※要公式確認"
+tuitionFeeApprox: "$44,460/年（2026/27年度・非居住者授業料）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 76+ / IELTS 6.0+"
 website: "https://www.washington.edu/"
@@ -50,9 +50,9 @@ UWは**Coalition Application / Common Application**で出願します。
 
 | 項目 | 金額目安（2025/26年度・参考） |
 |------|----------------------|
-| 授業料（留学生） | 約$42,000〜$46,000/年 |
-| 寮費・食費 | 約$14,000〜$16,000/年 |
-| 総費用概算 | 約$56,000〜$62,000/年 |
+| 授業料（非居住者） | $44,460/年 |
+| 寮・食費・生活費 | 約$6,156〜$23,199/年（住居形態による） |
+| 総費用概算 | 約$55,098〜$72,648/年 |
 
 **奨学金：**
 - **UW International Scholarships** — 留学生向け（部分奨学金）

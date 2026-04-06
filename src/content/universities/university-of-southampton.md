@@ -8,12 +8,12 @@ region: "uk"
 qsRank: 80
 ibScoreRange: "32-38+"
 ibScoreMin: 32
-ibScoreRecommended: 35
+ibScoreRecommended: 36
 ibAdmissionType: "UCAS出願"
 requiredHL: ["コースにより異なる。多くのコースでHL 5-6点以上を要求"]
 applicationSystem: "UCAS"
 admissionDeadline: "1月31日（UCAS通常締切）"
-tuitionFeeApprox: "£22,760〜£40,000/年（2025/26年度・留学生）※要公式確認"
+tuitionFeeApprox: "£25,500〜£31,000/年（2025/26年度・留学生）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "IELTS 6.0〜7.0（コースにより異なる）"
 website: "https://www.southampton.ac.uk/"
@@ -36,12 +36,10 @@ draft: false
 
 | コース | IB総点 | HL要件 |
 |--------|--------|--------|
-| Electronic Engineering | 34点 | Math HL 6, Physics HL 5 |
-| Computer Science | 34点 | Math HL 6 |
-| Marine Biology | 32点 | Biology HL 5 |
-| Music | 32点 | Music HL 5 |
-| Law | 34点 | HL 6,5,5 |
-| Medicine | 36点 | Biology HL 6, Chemistry HL 6 |
+| Electronic Engineering | 36点 | Math AA HL 6（AI HL 7）+ Physics/CS HL 6 |
+| Computer Science | 38点 | Math AA HL 6（HL計19点以上） |
+| Marine Biology | 32点 | Biology HL 5 + 理科HL 5 |
+| Law | 36点 | HL計18点以上 |
 
 ※ 上記は目安です。最新要件は必ず公式サイトで確認してください。
 
@@ -55,10 +53,10 @@ draft: false
 
 | 項目 | 金額目安（2025/26年度・参考） |
 |------|----------------------|
-| 授業料（文系） | 約£22,760/年 |
-| 授業料（理系・工学） | 約£28,000〜£40,000/年 |
+| 授業料（文系） | £25,500/年 |
+| 授業料（理系・工学） | £30,300〜£31,000/年 |
 | 生活費（サウサンプトン） | 約£10,000〜£12,000/年 |
-| 総費用概算 | 約£32,000〜£52,000/年 |
+| 総費用概算 | 約£35,500〜£43,000/年 |
 
 **奨学金：**
 - **International Foundation Year Scholarship** — 留学生向け

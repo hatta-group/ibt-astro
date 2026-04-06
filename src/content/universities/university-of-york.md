@@ -6,14 +6,14 @@ country: "イギリス"
 city: "ヨーク"
 region: "uk"
 qsRank: 167
-ibScoreRange: "32-38+"
-ibScoreMin: 32
-ibScoreRecommended: 35
+ibScoreRange: "35-36+"
+ibScoreMin: 35
+ibScoreRecommended: 36
 ibAdmissionType: "UCAS出願"
 requiredHL: ["コースにより異なる。多くのコースでHL 5-6点以上を要求"]
 applicationSystem: "UCAS"
 admissionDeadline: "1月31日（UCAS通常締切）※医学部・オックスブリッジは10月15日"
-tuitionFeeApprox: "£23,700〜£38,600/年（2025/26年度・留学生）※要公式確認"
+tuitionFeeApprox: "£26,900〜£32,350/年（2026/27年度・留学生）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "IELTS 6.0〜7.0（コースにより異なる）"
 website: "https://www.york.ac.uk/"
@@ -36,13 +36,12 @@ draft: false
 
 | コース | IB総点 | HL要件 |
 |--------|--------|--------|
-| Psychology | 36点 | HL 6,6,5 |
-| Computer Science | 34点 | Math HL 6 |
-| Politics | 35点 | HL 6,5,5 |
-| Chemistry | 36点 | Chemistry HL 6 |
-| English | 35点 | English HL 6 |
-| Management | 34点 | HL 5,5,5 |
-| Biology | 35点 | Biology HL 6 |
+| Psychology | 36点 | HL 6 in one science subject（Psychology含む） |
+| Computer Science | 36点 | Math HL 5（AA or AI） |
+| Politics | 35点 | HL要件は公式サイト確認 |
+| Chemistry | 35〜36点 | Chemistry HL 6 + 理数HL 5 |
+| English | 36点 | English Literature HL 6 |
+| Biology | 35点 | Biology HL 5 + 理数HL/SL 5 |
 
 ※ 上記は目安です。最新要件は必ず公式サイトで確認してください。
 
@@ -63,10 +62,10 @@ draft: false
 
 | 項目 | 金額目安（2025/26年度・参考） |
 |------|----------------------|
-| 授業料（文系） | 約£23,700/年 |
-| 授業料（理系） | 約£28,800〜£38,600/年 |
+| 授業料（文系） | £26,900/年 |
+| 授業料（理系） | £32,350/年 |
 | 生活費（ヨーク） | 約£10,000〜£12,500/年 |
-| 総費用概算 | 約£34,000〜£51,000/年 |
+| 総費用概算 | 約£37,000〜£45,000/年 |
 
 **奨学金：**
 - **York Global Scholarship** — 留学生向け（最大£5,000/年）

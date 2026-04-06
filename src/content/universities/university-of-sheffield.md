@@ -6,9 +6,9 @@ country: "イギリス"
 city: "シェフィールド"
 region: "uk"
 qsRank: 105
-ibScoreRange: "32-38+"
-ibScoreMin: 32
-ibScoreRecommended: 35
+ibScoreRange: "34-38+"
+ibScoreMin: 34
+ibScoreRecommended: 36
 ibAdmissionType: "UCAS出願"
 requiredHL: ["コースにより異なる。多くのコースでHL 5-6点以上を要求"]
 applicationSystem: "UCAS"
@@ -36,13 +36,11 @@ draft: false
 
 | コース | IB総点 | HL要件 |
 |--------|--------|--------|
-| Mechanical Engineering | 35点 | Math HL 6, Physics HL 6 |
-| Architecture | 34点 | HL 5,5,5 |
-| Computer Science | 35点 | Math HL 6 |
-| Politics & International Relations | 34点 | HL 6,5,5 |
-| Journalism Studies | 34点 | HL 5,5,5 |
-| Law | 36点 | HL 6,6,5 |
-| Psychology | 35点 | HL 6,5,5 |
+| Mechanical Engineering | 38点（Access: 34点） | Math HL 6 + 理科HL必須 |
+| Architecture | 36点（Access: 34点） | HL要件は公式サイト確認 |
+| Computer Science | 38点（36点: Math+CS HL 6） | Math HL 6必須 |
+| Law | 36点（34点: EE A評価の場合） | HL要件は公式サイト確認 |
+| Psychology | 34点（Access: 33点） | 理科HL 5必須 |
 
 ※ 上記は目安です。最新要件は必ず公式サイトで確認してください。
 

@@ -6,9 +6,9 @@ country: "イギリス"
 city: "ブライトン"
 region: "uk"
 qsRank: 218
-ibScoreRange: "30-36+"
-ibScoreMin: 30
-ibScoreRecommended: 33
+ibScoreRange: "32-36+"
+ibScoreMin: 32
+ibScoreRecommended: 34
 ibAdmissionType: "UCAS出願"
 requiredHL: ["コースにより異なる。多くのコースでHL 5-6点以上を要求"]
 applicationSystem: "UCAS"
@@ -34,13 +34,8 @@ draft: false
 
 | コース | IB総点 | HL要件 |
 |--------|--------|--------|
-| Development Studies | 32点 | HL 5,5,5 |
-| International Relations | 33点 | HL 5,5,5 |
-| Psychology | 33点 | HL 5,5,5 |
-| AI & Data Science | 32点 | Math HL 5 |
-| Neuroscience | 34点 | Biology HL 5 |
-| Media & Communications | 30点 | HL 5,5,5 |
-| Gender Studies | 30点 | HL 5,5,5 |
+| International Relations | 32点 | HL要件は公式サイト確認 |
+| Psychology | 34点 | HL要件は公式サイト確認 |
 
 ## 出願プロセス
 
