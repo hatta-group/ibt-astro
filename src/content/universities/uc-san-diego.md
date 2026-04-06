@@ -10,7 +10,7 @@ ibScoreRange: "34-42+"
 ibScoreMin: 34
 ibScoreRecommended: 37
 ibAdmissionType: "UC Application（カリフォルニア大学共通出願）"
-requiredHL: ["HL科目5点以上で単位認定の可能性あり。Engineering/CS：Math AA HL推奨。Biology：Biology/Chemistry HL推奨"]
+requiredHL: ["HL科目で単位認定の可能性あり（詳細は公式サイト確認）。Engineering/CS：Math AA HL推奨。Biology：Biology/Chemistry HL推奨"]
 applicationSystem: "UC Application"
 admissionDeadline: "11月30日（UC共通締切）"
 tuitionFeeApprox: "$52,536/年（2025/26年度・非居住者年間授業料+費用）※要公式確認"

@@ -10,7 +10,7 @@ ibScoreRange: "32-40+"
 ibScoreMin: 32
 ibScoreRecommended: 35
 ibAdmissionType: "Coalition Application / Common Application"
-requiredHL: ["HL科目5点以上で単位認定の可能性あり。CS：Math AA HL推奨。Engineering：Math/Physics HL推奨"]
+requiredHL: ["HL/SL 4点以上で単位認定（公式）。ディプロマ取得者は追加5単位。CS：Math AA HL推奨。Engineering：Math/Physics HL推奨"]
 applicationSystem: "Coalition App / Common App"
 admissionDeadline: "11月15日（留学生向け優先締切）"
 tuitionFeeApprox: "$44,460/年（2026/27年度・非居住者授業料）※要公式確認"
@@ -42,7 +42,7 @@ UWは**Coalition Application / Common Application**で出願します。
 | Business (Foster) | 34〜38点 | Math/Economics HL推奨 |
 | Environmental Science | 32〜36点 | ESS/Biology HL推奨 |
 
-**HL科目5点以上で単位認定の可能性あり。**
+**HL/SL 4点以上で単位認定（公式）。ディプロマ取得者は追加5単位。**
 
 **締切：11月15日（留学生向け優先締切）**
 

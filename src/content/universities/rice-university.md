@@ -10,7 +10,7 @@ ibScoreRange: "36-42+"
 ibScoreMin: 36
 ibScoreRecommended: 39
 ibAdmissionType: "Common Application / Coalition Application"
-requiredHL: ["HL科目5点以上で単位認定の可能性あり。理工系：Math AA HL・Physics/Chemistry HL推奨"]
+requiredHL: ["HL科目6〜7点で単位認定（公式）。理工系：Math AA HL・Physics/Chemistry HL推奨"]
 applicationSystem: "Common App / Coalition App"
 admissionDeadline: "Early Decision: 11月1日 / Regular Decision: 1月4日"
 tuitionFeeApprox: "$65,280〜$71,140/年（2026/27年度）※要公式確認"
@@ -34,7 +34,7 @@ draft: false
 
 **IBの評価：**
 - IBスコアはホリスティック審査の重要な要素
-- **HL科目5点以上で単位認定の可能性あり**
+- **HL科目6〜7点で単位認定（公式）**
 - 推薦状・課外活動・エッセイとの総合評価
 - 合格率は約8〜9%と非常に競争的
 
