@@ -41,6 +41,15 @@ export default defineConfig({
 
   integrations: [
     sitemap({
+      filter: (page) =>
+        ![
+          'https://ib-tutors.net/legal/',
+          'https://ib-tutors.net/privacy/',
+          'https://ib-tutors.net/lesson-tickets/',
+          'https://ib-tutors.net/my-account/',
+          'https://ib-tutors.net/404/',
+          'https://ib-tutors.net/search/',
+        ].includes(page),
       serialize(item) {
         item.lastmod = new Date().toISOString();
         return item;
