@@ -3,8 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="海外スタートアップキャリア支援｜IB卒業後もIBTがサポート｜IBT"
-  description="IBTは卒業後も応援し続けます。IB教育で培った力を活かして、海外スタートアップで活躍するキャリアをサポート。キャリア相談・メンタリングなど、IB卒業生の次のステージを一緒に。"
+  title="スタートアップマッチング支援｜IB卒業生と海外スタートアップをつなぐ｜IBT"
+  description="IBTではIB卒業生と日本に進出する海外スタートアップのマッチング支援を行っています。IB教育で培った国際感覚・語学力を活かせるフィールドを一緒に探しましょう。"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -12,7 +12,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ib-tutors.net/" },
-        { "@type": "ListItem", "position": 2, "name": "海外スタートアップキャリア支援", "item": "https://ib-tutors.net/startup-career/" }
+        { "@type": "ListItem", "position": 2, "name": "マッチング支援", "item": "https://ib-tutors.net/startup-career/" }
       ]
     })} />
   </Fragment>
@@ -27,185 +27,130 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <nav class="text-white/85 text-sm mb-6">
         <a href="/" class="hover:text-white transition-colors">ホーム</a>
         <span class="mx-2">/</span>
-        <span class="text-white">海外スタートアップキャリア支援</span>
+        <span class="text-white">マッチング支援</span>
       </nav>
-      <p class="text-white/80 font-bold text-sm tracking-widest mb-4">STARTUP CAREER SUPPORT</p>
+      <p class="text-white/80 font-bold text-sm tracking-widest mb-4">STARTUP MATCHING SUPPORT</p>
       <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-        IB卒業後も、<br />IBTがそばにいる。
+        IB卒業生と<br />海外スタートアップをつなぐ。
       </h1>
       <p class="mt-6 text-white/85 text-lg md:text-xl max-w-2xl leading-relaxed">
-        IBTでは海外スタートアップも応援しています。<br />
-        IB教育で身につけた力を、世界のスタートアップで発揮しよう。
+        IBTでは、日本に進出する海外スタートアップと<br />
+        IB卒業生のマッチング支援を行っています。<br />
+        あなたのスキルや興味に合ったポジションを一緒に探しましょう。
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 mt-10">
-        <a
-          href="/contact/"
-          class="inline-block bg-white text-ibt-red font-bold px-8 py-4 rounded-full hover:bg-ibt-red-light transition-colors text-lg shadow-lg text-center"
-        >
-          まずは相談してみる
-        </a>
-        <a
-          href="https://line.me/R/ti/p/@974okamx"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 bg-[#06C755] text-white font-bold px-8 py-4 rounded-full hover:bg-[#05b34c] transition-colors text-lg shadow-lg"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          LINEで相談する
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- IBTが卒業後も支援する理由 -->
+  <!-- 海外スタートアップとは -->
   <section class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12 md:mb-16">
-        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">WHY WE SUPPORT YOUR CAREER</p>
-        <h2 class="text-2xl md:text-4xl font-bold">IBTが卒業後もサポートする理由</h2>
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">GLOBAL STARTUPS IN JAPAN</p>
+        <h2 class="text-2xl md:text-4xl font-bold">いま、海外スタートアップが<br class="hidden md:block" />日本に来ている。</h2>
         <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mt-6 rounded-full"></div>
       </div>
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-3xl mx-auto space-y-6">
         <p class="text-lg text-ibt-text-light leading-relaxed text-center">
-          IBTは「テストの点を上げる」だけの塾ではありません。<br class="hidden md:block" />
-          IB教育を通じて成長した生徒たちが、社会に出てからも活躍できるように。<br class="hidden md:block" />
-          IBTを卒業したら終わりではなく、<strong class="text-ibt-text">その先のキャリアまで一緒に歩む</strong>。<br class="hidden md:block" />
-          それがIBTのスタイルです。
+          世界中のスタートアップが、日本市場への進出を加速させています。
+        </p>
+        <p class="text-lg text-ibt-text-light leading-relaxed text-center">
+          テクノロジー、ヘルスケア、教育、フィンテック。<br class="hidden md:block" />
+          さまざまな分野の海外スタートアップが日本での事業展開を進める中、<br class="hidden md:block" />
+          <strong class="text-ibt-text">「英語が使える」「異文化を理解できる」「自分で考えて動ける」</strong><br class="hidden md:block" />
+          そんな人材が、いま最も求められています。
         </p>
       </div>
     </div>
   </section>
 
-  <!-- IB教育 × スタートアップの相性 -->
+  <!-- スタートアップの魅力 -->
   <section class="py-16 md:py-24 bg-ibt-bg">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12 md:mb-16">
-        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">IB MEETS STARTUP</p>
-        <h2 class="text-2xl md:text-4xl font-bold">IB教育で身につけた力は、<br class="hidden md:block" />スタートアップで最大の武器になる</h2>
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">STARTUP CULTURE</p>
+        <h2 class="text-2xl md:text-4xl font-bold">海外スタートアップで働く魅力</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10 hover:shadow-md transition-shadow">
-          <div class="w-14 h-14 bg-ibt-red-50 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">多言語 &times; 多文化理解</h3>
-          <p class="text-ibt-text-light leading-relaxed">
-            IBで鍛えた英語力と異文化理解は、グローバルチームで働くスタートアップの即戦力。多国籍メンバーとのコミュニケーションが当たり前の環境に、すぐに溶け込める。
-          </p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10 hover:shadow-md transition-shadow">
-          <div class="w-14 h-14 bg-ibt-red-50 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">批判的思考 &times; 問題解決力</h3>
-          <p class="text-ibt-text-light leading-relaxed">
-            TOKで培った「なぜ？」を問い続ける力。答えのない課題に立ち向かうスタートアップでは、この思考力が最も求められる。正解がない中で判断できる人材は貴重。
-          </p>
-        </div>
         <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10 hover:shadow-md transition-shadow">
           <div class="w-14 h-14 bg-ibt-red-50 rounded-2xl flex items-center justify-center mb-6">
             <svg class="w-7 h-7 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.58-5.84a14.927 14.927 0 0 1-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-3">CAS精神 &times; 行動力</h3>
+          <h3 class="text-xl font-bold mb-3">圧倒的なスピード感</h3>
           <p class="text-ibt-text-light leading-relaxed">
-            CAS（創造性・活動・奉仕）で学んだ「自分で考え、動く力」。スタートアップは指示待ちでは務まらない。自ら課題を見つけてアクションを起こせるIB卒業生は、まさにスタートアップ向き。
+            大企業では何ヶ月もかかることが、スタートアップでは数日で動く。自分のアイデアがすぐにプロダクトに反映される、そんなスピード感が味わえます。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-ibt-red-50 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">グローバルなチーム</h3>
+          <p class="text-ibt-text-light leading-relaxed">
+            チームメンバーは世界中から集まった多国籍メンバー。英語でのコミュニケーションが日常で、毎日が異文化体験。視野が一気に広がります。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 md:p-10 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-ibt-red-50 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">若くても裁量が大きい</h3>
+          <p class="text-ibt-text-light leading-relaxed">
+            年齢や経験年数よりも「何ができるか」で評価される世界。若いうちから大きな責任と裁量を持って、本気で成長できる環境があります。
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- サポート内容 -->
+  <!-- スタートアップとのマッチング -->
   <section class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12 md:mb-16">
-        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">WHAT WE OFFER</p>
-        <h2 class="text-2xl md:text-4xl font-bold">IBTのキャリアサポート</h2>
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">MATCHING SUPPORT</p>
+        <h2 class="text-2xl md:text-4xl font-bold">スタートアップとのマッチング</h2>
         <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mt-6 rounded-full"></div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 flex items-start gap-5 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 bg-ibt-red-50 rounded-xl flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold mb-2">キャリア相談</h3>
-            <p class="text-ibt-text-light leading-relaxed text-sm">IB卒業後の進路やキャリアについて、気軽に相談できます。海外スタートアップでの働き方や必要なスキルについてもアドバイス。</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 flex items-start gap-5 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 bg-ibt-red-50 rounded-xl flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold mb-2">メンタリング</h3>
-            <p class="text-ibt-text-light leading-relaxed text-sm">海外スタートアップの現場を知るメンターがサポート。実際の業務や文化、キャリアアップのリアルな話が聞けます。</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 flex items-start gap-5 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 bg-ibt-red-50 rounded-xl flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold mb-2">履歴書・応募書類サポート</h3>
-            <p class="text-ibt-text-light leading-relaxed text-sm">英文レジュメやカバーレターの作成をサポート。IB教育で得た経験をどうアピールするか、一緒に考えます。</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-8 flex items-start gap-5 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 bg-ibt-red-50 rounded-xl flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold mb-2">スタートアップとのマッチング</h3>
-            <p class="text-ibt-text-light leading-relaxed text-sm">日本に進出している海外スタートアップとIB卒業生をつなぎます。あなたのスキルや興味に合ったポジションを一緒に探しましょう。</p>
-          </div>
-        </div>
+      <div class="max-w-3xl mx-auto space-y-6">
+        <p class="text-lg text-ibt-text-light leading-relaxed text-center">
+          日本に進出している海外スタートアップとIB卒業生をつなぎます。<br class="hidden md:block" />
+          あなたのスキルや興味に合ったポジションを一緒に探しましょう。
+        </p>
+        <p class="text-lg text-ibt-text-light leading-relaxed text-center">
+          IBTはIB卒業生の教育支援の一環として、<br class="hidden md:block" />
+          卒業後のキャリアに関する情報提供やマッチングのお手伝いをしています。<br class="hidden md:block" />
+          人材紹介業ではなく、あくまでIB卒業生コミュニティとしての支援活動です。
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- こんな人におすすめ -->
+  <!-- IBTとの接点 -->
   <section class="py-16 md:py-24 bg-ibt-bg">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12 md:mb-16">
-        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">IS THIS FOR YOU?</p>
-        <h2 class="text-2xl md:text-4xl font-bold">こんなIB卒業生におすすめ</h2>
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">WHY IBT</p>
+        <h2 class="text-2xl md:text-4xl font-bold">なぜIBTがマッチング支援をするのか</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end mx-auto mt-6 rounded-full"></div>
       </div>
-      <div class="max-w-2xl mx-auto space-y-4">
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border px-8 py-6 flex items-center gap-4">
-          <span class="text-ibt-red text-2xl shrink-0">&#10003;</span>
-          <p class="text-ibt-text font-medium">大学卒業後、海外で働いてみたい</p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border px-8 py-6 flex items-center gap-4">
-          <span class="text-ibt-red text-2xl shrink-0">&#10003;</span>
-          <p class="text-ibt-text font-medium">スタートアップの成長環境で挑戦したい</p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border px-8 py-6 flex items-center gap-4">
-          <span class="text-ibt-red text-2xl shrink-0">&#10003;</span>
-          <p class="text-ibt-text font-medium">IBで培った語学力・思考力を仕事に活かしたい</p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border px-8 py-6 flex items-center gap-4">
-          <span class="text-ibt-red text-2xl shrink-0">&#10003;</span>
-          <p class="text-ibt-text font-medium">キャリアの相談をできる人が周りにいない</p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-ibt-border px-8 py-6 flex items-center gap-4">
-          <span class="text-ibt-red text-2xl shrink-0">&#10003;</span>
-          <p class="text-ibt-text font-medium">IBの経験を理解してくれる環境で働きたい</p>
-        </div>
+      <div class="max-w-3xl mx-auto space-y-6">
+        <p class="text-lg text-ibt-text-light leading-relaxed text-center">
+          IBTは「テストの点を上げて終わり」の塾ではありません。
+        </p>
+        <p class="text-lg text-ibt-text-light leading-relaxed text-center">
+          IB教育を通じて身につけた多言語力、批判的思考、行動力。<br class="hidden md:block" />
+          これらはまさに海外スタートアップが求める人材像そのものです。
+        </p>
+        <p class="text-lg text-ibt-text leading-relaxed text-center font-bold">
+          IBTで学んだ生徒を、IBTが最後まで応援する。<br class="hidden md:block" />
+          卒業後の進路やキャリアの相談にも、一緒に向き合っていく。<br class="hidden md:block" />
+          それがIBTのスタイルです。
+        </p>
       </div>
     </div>
   </section>
@@ -214,12 +159,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="py-20 md:py-28 bg-gradient-to-r from-ibt-gradient-start via-ibt-gradient-mid to-ibt-gradient-end">
     <div class="max-w-3xl mx-auto px-4 text-center">
       <h2 class="text-2xl md:text-4xl font-bold text-white leading-tight">
-        IBTは、あなたのキャリアも<br />全力で応援します。
+        海外スタートアップに<br />興味がありますか？
       </h2>
       <p class="mt-6 text-white/85 text-lg leading-relaxed">
-        まずは気軽に相談してみませんか？<br />
-        IB卒業生のキャリアを一番理解しているIBTが、<br class="hidden md:block" />
-        あなたの次のステージを一緒に考えます。
+        IB卒業生の方、まずは気軽にご相談ください。<br class="hidden md:block" />
+        あなたに合ったスタートアップの情報をお届けします。
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
         <a
@@ -237,57 +181,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           LINEで相談する
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-3xl mx-auto px-4">
-      <div class="text-center mb-12 md:mb-16">
-        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">FAQ</p>
-        <h2 class="text-2xl md:text-4xl font-bold">よくある質問</h2>
-      </div>
-      <div class="space-y-4">
-        <details class="group bg-white rounded-2xl shadow-sm border border-ibt-border">
-          <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
-            <span class="pr-4">IBTの卒業生でなくても利用できますか？</span>
-            <span class="shrink-0 w-6 h-6 flex items-center justify-center text-ibt-red transition-transform group-open:rotate-45">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-              </svg>
-            </span>
-          </summary>
-          <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
-            IB卒業生であればどなたでもご相談いただけます。IBTの受講経験の有無は問いません。IB教育を受けた方のキャリアを広く応援しています。
-          </div>
-        </details>
-        <details class="group bg-white rounded-2xl shadow-sm border border-ibt-border">
-          <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
-            <span class="pr-4">まだ大学在学中ですが相談できますか？</span>
-            <span class="shrink-0 w-6 h-6 flex items-center justify-center text-ibt-red transition-transform group-open:rotate-45">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-              </svg>
-            </span>
-          </summary>
-          <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
-            もちろんです。早い段階からキャリアについて考えることはとても大切です。在学中のインターンシップや卒業後の進路について、一緒に考えましょう。
-          </div>
-        </details>
-        <details class="group bg-white rounded-2xl shadow-sm border border-ibt-border">
-          <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
-            <span class="pr-4">海外在住でも利用できますか？</span>
-            <span class="shrink-0 w-6 h-6 flex items-center justify-center text-ibt-red transition-transform group-open:rotate-45">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-              </svg>
-            </span>
-          </summary>
-          <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
-            はい、すべてオンラインで対応しています。世界中どこからでもご相談いただけます。
-          </div>
-        </details>
       </div>
     </div>
   </section>
