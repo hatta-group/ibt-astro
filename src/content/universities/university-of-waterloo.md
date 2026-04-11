@@ -5,7 +5,7 @@ slug: "university-of-waterloo"
 country: "カナダ"
 city: "ウォータールー（オンタリオ州）"
 region: "canada"
-qsRank: 112
+qsRank: 115
 ibScoreRange: "35-42+"
 ibScoreMin: 35
 ibScoreRecommended: 38
@@ -24,7 +24,7 @@ draft: false
 
 ## 大学概要
 
-ウォータールー大学は1957年創立、QS世界大学ランキング2025で**世界112位**に位置するカナダ・オンタリオ州の研究型大学です。**Computer Science・Software Engineering・Mathematics・Electrical Engineering**の分野でカナダ屈指・北米有数の評価を受け、「カナダのMIT」とも呼ばれます。
+ウォータールー大学は1957年創立、QS世界大学ランキング2025で**世界115位**に位置するカナダ・オンタリオ州の研究型大学です。**Computer Science・Software Engineering・Mathematics・Electrical Engineering**の分野でカナダ屈指・北米有数の評価を受け、「カナダのMIT」とも呼ばれます。
 
 最大の特徴は**コープ（Co-op）プログラム**——世界最大級の産学連携インターンシップ制度です。4〜5年制プログラムの中に6期（各4ヶ月）の有給インターンシップが組み込まれており、在学中にGoogle・Apple・Amazon・Microsoftなど世界のトップテック企業で働く機会が得られます。ウォータールー卒業生はシリコンバレー・トロントのテック産業で圧倒的な存在感を持ちます。
 

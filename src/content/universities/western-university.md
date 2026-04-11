@@ -5,7 +5,7 @@ slug: "western-university"
 country: "カナダ"
 city: "ロンドン（オンタリオ州）"
 region: "canada"
-qsRank: 203
+qsRank: 120
 ibScoreRange: "32-38+"
 ibScoreMin: 32
 ibScoreRecommended: 35
@@ -24,7 +24,7 @@ draft: false
 
 ## 大学概要
 
-ウェスタン大学（University of Western Ontario, UWO）は1878年創立、QS世界大学ランキング2025で**世界203位**に位置するカナダ・オンタリオ州の研究型大学です。**Ivey Business School**はカナダで最も評価の高いビジネススクールの一つで、Harvard Business Schoolスタイルのケースメソッドを採用したビジネス教育で知られます。
+ウェスタン大学（University of Western Ontario, UWO）は1878年創立、QS世界大学ランキング2025で**世界120位**に位置するカナダ・オンタリオ州の研究型大学です。**Ivey Business School**はカナダで最も評価の高いビジネススクールの一つで、Harvard Business Schoolスタイルのケースメソッドを採用したビジネス教育で知られます。
 
 ウェスタン大学はカナダのビジネス・医療・法学分野で特別な評価を受けており、「カナダの上位大学の一つ」として政財界・医療界に多くの卒業生を輩出しています。Ivey HBAプログラムはカナダ最高峰のビジネス学部教育として、在学中からケーススタディ・企業訪問・グローバルネットワーク形成が充実しています。
 

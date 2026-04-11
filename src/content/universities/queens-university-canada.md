@@ -5,7 +5,7 @@ slug: "queens-university-canada"
 country: "カナダ"
 city: "キングストン（オンタリオ州）"
 region: "canada"
-qsRank: 246
+qsRank: 193
 ibScoreRange: "33-38+"
 ibScoreMin: 33
 ibScoreRecommended: 36
@@ -24,7 +24,7 @@ draft: false
 
 ## 大学概要
 
-クイーンズ大学（Queen's University）は1841年創立、QS世界大学ランキング2025で**世界246位**に位置するカナダ・オンタリオ州の名門私立型研究大学です。**Smith School of Business**はカナダで最も評価の高いビジネススクールの一つとして知られ、ファイナンス・コマース・MBA分野で卓越した就職実績を持ちます。
+クイーンズ大学（Queen's University）は1841年創立、QS世界大学ランキング2025で**世界193位**に位置するカナダ・オンタリオ州の名門私立型研究大学です。**Smith School of Business**はカナダで最も評価の高いビジネススクールの一つとして知られ、ファイナンス・コマース・MBA分野で卓越した就職実績を持ちます。
 
 オンタリオ湖西端のキングストン市に位置し、歴史ある石造りの建物が立ち並ぶキャンパスは「カナダで最も美しいキャンパス」の一つとされます。強力な卒業生ネットワーク（Queen's Network）と熱烈な学校愛（Purple and Gold spirit）がクイーンズ大学の文化の核です。カナダの政財界・医療界に多くのリーダーを輩出しています。
 

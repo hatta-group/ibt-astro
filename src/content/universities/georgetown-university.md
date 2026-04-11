@@ -5,7 +5,7 @@ slug: "georgetown-university"
 country: "アメリカ"
 city: "ワシントンD.C."
 region: "us"
-qsRank: 282
+qsRank: 301
 ibScoreRange: "ホリスティック審査"
 ibScoreMin: 36
 ibScoreRecommended: 40

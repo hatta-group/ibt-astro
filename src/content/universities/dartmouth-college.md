@@ -5,7 +5,7 @@ slug: "dartmouth-college"
 country: "アメリカ"
 city: "ハノーバー（ニューハンプシャー州）"
 region: "us"
-qsRank: 276
+qsRank: 243
 ibScoreRange: "ホリスティック審査"
 ibScoreMin: 37
 ibScoreRecommended: 41
