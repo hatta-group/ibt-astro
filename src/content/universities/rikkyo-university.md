@@ -9,13 +9,13 @@ qsRank: 1001
 ibScoreRange: "24-36+"
 ibScoreMin: 24
 ibScoreRecommended: 28
-ibAdmissionType: "自由選抜入試・GLAP入試（国際バカロレア活用）"
+ibAdmissionType: "自由選抜入試・国際コース選抜入試（GLAP）"
 requiredHL: ["GLAP：Language A/B English HL必須。社会学部・観光学部：Global Politics/History/Social Science HL推奨。理学部：Math/理科 HL推奨"]
 applicationSystem: "立教大学独自出願システム（自由選抜・GLAP入試）"
-admissionDeadline: "GLAP・自由選抜入試：10〜11月出願（要公式確認）"
-tuitionFeeApprox: "約1,200,000〜1,450,000円/年（私立大学・2025年度）※要公式確認"
+admissionDeadline: "国際コース選抜・自由選抜入試：9月上旬〜（2026年度）"
+tuitionFeeApprox: "約1,200,000〜2,103,500円/年（GLAPは初年度約210万円・2026年度）※要公式確認"
 scholarshipAvailable: true
-languageRequirement: "GLAP：全授業英語（TOEFL iBT 80+ / IELTS 6.0+推奨）。日本語プログラム：日本語能力"
+languageRequirement: "GLAP（国際コース選抜入試）：TOEFL iBT 72+ / IELTS 5.5+。日本語プログラム：日本語能力"
 website: "https://www.rikkyo.ac.jp/"
 featured: false
 programs: ["GLAP（グローバル・リベラルアーツ・プログラム）", "文学部", "異文化コミュニケーション学部", "経済学部", "経営学部", "社会学部", "法学部", "観光学部", "コミュニティ福祉学部", "現代心理学部", "理学部"]

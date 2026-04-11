@@ -9,13 +9,13 @@ qsRank: 1001
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 27
-ibAdmissionType: "グローバル型特別入試・帰国生入試（国際バカロレア活用）"
+ibAdmissionType: "政治経済学部グローバル型特別入試・国際日本学部自己推薦特別入試"
 requiredHL: ["国際日本学部：Language A/B・History/Global Politics HL推奨。情報コミュニケーション：社会科学系 HL推奨。理工・農：Math/理科 HL推奨"]
 applicationSystem: "明治大学独自出願システム（グローバル型特別入試）"
-admissionDeadline: "グローバル型特別入試：10〜11月出願（要公式確認）"
-tuitionFeeApprox: "約1,200,000〜1,450,000円/年（私立大学・2025年度）※要公式確認"
+admissionDeadline: "グローバル型特別入試：9月上旬出願（2026年度）"
+tuitionFeeApprox: "約1,384,000〜1,566,000円/年（初年度・2026年度）※要公式確認"
 scholarshipAvailable: true
-languageRequirement: "日本語中心。国際日本学部の一部は英語コースあり（TOEFL iBT 72+ / IELTS 5.5+推奨）"
+languageRequirement: "日本語中心。TOEFL iBT 72+ / IELTS 5.5+ / 英検準1級以上（出願要件）"
 website: "https://www.meiji.ac.jp/"
 featured: false
 programs: ["国際日本学部", "法学部", "商学部", "政治経済学部", "文学部", "理工学部", "農学部", "経営学部", "情報コミュニケーション学部", "総合数理学部"]

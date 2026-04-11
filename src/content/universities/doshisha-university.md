@@ -9,16 +9,16 @@ qsRank: 1001
 ibScoreRange: "24-36+"
 ibScoreMin: 24
 ibScoreRecommended: 28
-ibAdmissionType: "IB入試・自己推薦入試（国際バカロレア活用）"
+ibAdmissionType: "ILA（国際教養コース）入試・自己推薦入試（国際バカロレア活用）"
 requiredHL: ["グローバル・コミュニケーション学部：Language A/B HL必須。文学部・社会学部：人文系・社会科学 HL推奨。理工・生命：Math/理科 HL推奨"]
 applicationSystem: "同志社大学独自出願システム（IB入試・自己推薦）"
-admissionDeadline: "IB入試：10〜11月出願（要公式確認）"
+admissionDeadline: "自己推薦：8月下旬〜9月上旬出願（2026年度：8/25〜9/5）、ILA（9月入学）：1月〜2月出願"
 tuitionFeeApprox: "約1,200,000〜1,500,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
-languageRequirement: "グローバル・コミュニケーション学部：英語中心（TOEFL iBT 72+ / IELTS 5.5+推奨）。他学部：日本語"
+languageRequirement: "ILA（国際教養コース）：TOEFL iBT 85+ / IELTS 6.5+（必須）。グローバル・コミュニケーション学部：英語中心。他学部：日本語"
 website: "https://www.doshisha.ac.jp/"
 featured: false
-programs: ["グローバル・コミュニケーション学部", "文学部", "社会学部", "法学部", "経済学部", "商学部", "政策学部", "文化情報学部", "理工学部", "生命医科学部", "スポーツ健康科学部", "心理学部", "グローバル地域文化学部"]
+programs: ["ILA（国際教養コース）", "グローバル・コミュニケーション学部", "文学部", "社会学部", "法学部", "経済学部", "商学部", "政策学部", "文化情報学部", "理工学部", "生命医科学部", "スポーツ健康科学部", "心理学部", "グローバル地域文化学部"]
 draft: false
 ---
 

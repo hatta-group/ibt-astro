@@ -5,7 +5,7 @@ slug: "ritsumeikan-university"
 country: "日本"
 city: "京都（京都府）"
 region: "japan"
-qsRank: 1001
+qsRank: 645
 ibScoreRange: "24-36+"
 ibScoreMin: 24
 ibScoreRecommended: 28
@@ -13,7 +13,7 @@ ibAdmissionType: "IB入試・AO入試（国際バカロレア活用）"
 requiredHL: ["グローバル教養学部：Language A/B HL必須。国際関係学部：Global Politics/History HL推奨。理工・情報：Math/理科 HL推奨"]
 applicationSystem: "立命館大学独自出願システム（IB入試）"
 admissionDeadline: "IB入試：10〜11月出願（要公式確認）"
-tuitionFeeApprox: "約1,200,000〜1,450,000円/年（私立大学・2025年度）※要公式確認"
+tuitionFeeApprox: "約1,120,000〜2,400,000円/年（学部により異なる・2026年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "グローバル教養学部：全英語（TOEFL iBT 72+ / IELTS 5.5+推奨）。他学部：日本語"
 website: "https://www.ritsumei.ac.jp/"
@@ -67,10 +67,10 @@ draft: false
 
 | 項目 | 金額目安（2025年度・参考） |
 |------|----------------------|
-| 入学金 | 約200,000〜250,000円 |
-| 授業料 | 約950,000〜1,250,000円/年 |
+| 入学金 | 200,000円 |
+| 授業料 | 約1,120,000〜2,400,000円/年（学部により異なる） |
 | 生活費（京都） | 約800,000〜1,100,000円/年 |
-| 総費用概算 | 約1,950,000〜2,500,000円/年 |
+| 総費用概算 | 約2,120,000〜3,500,000円/年 |
 
 **財政支援：**
 - **JASSO奨学金** — 日本人学生向け給付・貸与型

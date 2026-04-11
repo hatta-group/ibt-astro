@@ -9,7 +9,7 @@ qsRank: 1001
 ibScoreRange: "24-36+"
 ibScoreMin: 24
 ibScoreRecommended: 28
-ibAdmissionType: "自己推薦入試・帰国生入試（国際バカロレア活用）"
+ibAdmissionType: "自己推薦入試・海外就学経験者入学者選抜（国際バカロレア活用）"
 requiredHL: ["地球社会共生学部：Language A/B・Global Politics HL推奨。国際政治経済学部：Economics/Global Politics HL推奨。総合文化政策・文：人文系 HL推奨"]
 applicationSystem: "青山学院大学独自出願システム（自己推薦・帰国生入試）"
 admissionDeadline: "自己推薦入試：10〜11月出願（要公式確認）"

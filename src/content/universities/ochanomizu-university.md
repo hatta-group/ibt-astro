@@ -12,7 +12,7 @@ ibScoreRecommended: 29
 ibAdmissionType: "新フンボルト入試・総合型選抜"
 requiredHL: ["文教育学部：人文・社会科学 HL推奨。理学部：Math/理科 HL推奨。生活科学部：Biology/Chemistry HL推奨"]
 applicationSystem: "お茶の水女子大学独自出願システム（新フンボルト入試）"
-admissionDeadline: "新フンボルト入試：10〜11月出願（要公式確認）"
+admissionDeadline: "新フンボルト入試：9月出願（文系はプレゼミナール9月下旬）"
 tuitionFeeApprox: "約535,800円/年（国立大学標準授業料・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "日本語。一部英語コースあり（TOEFL iBT 72+ / IELTS 5.5+推奨）"
