@@ -5,6 +5,7 @@ slug: "icu"
 country: "日本"
 city: "東京（三鷹市）"
 region: "japan"
+qsRank: 1201
 ibScoreRange: "28〜36+"
 ibScoreMin: 28
 ibScoreRecommended: 33

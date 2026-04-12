@@ -5,7 +5,7 @@ slug: "emory-university"
 country: "アメリカ"
 city: "アトランタ（ジョージア州）"
 region: "us"
-qsRank: 155
+qsRank: 196
 ibScoreRange: "35-42+"
 ibScoreMin: 35
 ibScoreRecommended: 38
@@ -24,7 +24,7 @@ draft: false
 
 ## 大学概要
 
-エモリー大学は1836年創立、ジョージア州アトランタに位置するアメリカの超名門私立研究大学です。QS世界大学ランキング155位（2025年）で、**公衆衛生学（Rollins School of Public Health）・ビジネス（Goizueta Business School）・神経科学・政治学**において世界トップクラスの研究水準を誇ります。
+エモリー大学は1836年創立、ジョージア州アトランタに位置するアメリカの超名門私立研究大学です。QS世界大学ランキング196位（2025年）で、**公衆衛生学（Rollins School of Public Health）・ビジネス（Goizueta Business School）・神経科学・政治学**において世界トップクラスの研究水準を誇ります。
 
 エモリー大学の最大の特色は**「公衆衛生学の世界的拠点」**です。キャンパスに隣接するCDC（米国疾病予防管理センター）との緊密な連携は、公衆衛生・疫学・グローバルヘルスを学びたいIB生にとって世界で最も特別な環境です。IBのBiology・Chemistryで「感染症・パンデミック・グローバルヘルス」に関心を持つIB生に、エモリーは唯一無二の学術環境を提供します。
 

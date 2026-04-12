@@ -5,7 +5,7 @@ slug: "toyo-university"
 country: "日本"
 city: "文京区（東京都）"
 region: "japan"
-qsRank: 1001
+qsRank: 661
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 27

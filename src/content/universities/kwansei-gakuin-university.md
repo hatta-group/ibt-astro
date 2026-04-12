@@ -5,7 +5,7 @@ slug: "kwansei-gakuin-university"
 country: "日本"
 city: "西宮（兵庫県）"
 region: "japan"
-qsRank: 1001
+qsRank: 1401
 ibScoreRange: "24-36+"
 ibScoreMin: 24
 ibScoreRecommended: 28

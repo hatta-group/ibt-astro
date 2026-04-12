@@ -5,7 +5,7 @@ slug: "nara-womens-university"
 country: "日本"
 city: "奈良（奈良県）"
 region: "japan"
-qsRank: 1001
+qsRank: 851
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 28

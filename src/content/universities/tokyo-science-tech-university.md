@@ -4,6 +4,7 @@ titleEn: "Tokyo Medical and Dental University (Institute of Science Tokyo)"
 slug: "tokyo-science-tech-university"
 country: "日本"
 region: "japan"
+qsRank: 84
 ibScoreRange: "36+"
 website: "https://www.isct.ac.jp/"
 featured: false

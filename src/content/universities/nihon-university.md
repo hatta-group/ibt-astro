@@ -5,7 +5,7 @@ slug: "nihon-university"
 country: "日本"
 city: "千代田区（東京都）"
 region: "japan"
-qsRank: 1001
+qsRank: 701
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 27

@@ -5,7 +5,7 @@ slug: "tokyo-university-of-science"
 country: "日本"
 city: "新宿区（東京都）"
 region: "japan"
-qsRank: 1001
+qsRank: 751
 ibScoreRange: "24-38+"
 ibScoreMin: 24
 ibScoreRecommended: 28

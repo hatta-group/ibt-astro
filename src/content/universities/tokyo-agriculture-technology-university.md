@@ -5,7 +5,7 @@ slug: "tokyo-agriculture-technology-university"
 country: "日本"
 city: "小金井市・府中市（東京都）"
 region: "japan"
-qsRank: 1001
+qsRank: 851
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 28
