@@ -6,8 +6,8 @@ country: "オーストラリア"
 city: "キャンベラ（オーストラリア首都特別地域）"
 region: "australia"
 qsRank: 30
-ibScoreRange: "28-38+"
-ibScoreMin: 28
+ibScoreRange: "30-45"
+ibScoreMin: 30
 ibScoreRecommended: 33
 ibAdmissionType: "UAC出願（成績審査）またはANU直接出願"
 requiredHL: ["志望学部による（法・政治：History/Global Politics HL推奨、理系：Math/理科 HL推奨）"]

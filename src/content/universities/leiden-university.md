@@ -13,7 +13,7 @@ ibAdmissionType: "Studielink出願（成績審査 + プログラム選考）"
 requiredHL: ["志望プログラムによる（法学・国際関係：History/Global Politics HL推奨）"]
 applicationSystem: "Studielink（オランダ大学共通出願）"
 admissionDeadline: "5月1日（オランダ国外学生・通常）/ 1月15日（競争選抜プログラム）"
-tuitionFeeApprox: "約€12,900〜20,000/年（国際学生・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約€14,300〜18,700/年（非EEA・学部による、医学€30,200・LUC€17,570・2026-27年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 90〜100+ / IELTS 6.5〜7.0+（プログラムによる）"
 website: "https://www.universiteitleiden.nl/"

@@ -9,10 +9,10 @@ qsRank: 1001
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 27
-ibAdmissionType: "政治経済学部グローバル型特別入試・国際日本学部自己推薦特別入試"
-requiredHL: ["国際日本学部：Language A/B・History/Global Politics HL推奨。情報コミュニケーション：社会科学系 HL推奨。理工・農：Math/理科 HL推奨"]
-applicationSystem: "明治大学独自出願システム（グローバル型特別入試）"
-admissionDeadline: "グローバル型特別入試：9月上旬出願（2026年度）"
+ibAdmissionType: "政治経済学部グローバル型特別入試・国際日本学部自己推薦特別入試（国際バカロレア活用可）"
+requiredHL: ["国際日本学部：English A/B・History/Global Politics HL推奨（IB Full DiplomaまたはPredicted Grades可）。政治経済学部：Economics/Global Politics HL推奨。理工・農：Math/理科 HL推奨"]
+applicationSystem: "明治大学独自出願システム（特別入試）"
+admissionDeadline: "国際日本学部 自己推薦特別入試：第一次選考出願 2025年9月15日〜9月19日、第二次選考 2025年11月10日〜11月14日、試験 2025年11月29日（2026年度）"
 tuitionFeeApprox: "約1,384,000〜1,566,000円/年（初年度・2026年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "日本語中心。TOEFL iBT 72+ / IELTS 5.5+ / 英検準1級以上（出願要件）"

@@ -5,7 +5,7 @@ slug: "sciences-po"
 country: "フランス"
 city: "パリ（フランス）"
 region: "europe"
-qsRank: 267
+qsRank: 350
 ibScoreRange: "37-42+"
 ibScoreMin: 37
 ibScoreRecommended: 40
@@ -13,7 +13,7 @@ ibAdmissionType: "Sciences Po独自出願（International Baccalaureate Procedur
 requiredHL: ["人文・社会科学志望：History/Economics/Global Politics HL推奨、言語：外国語HL"]
 applicationSystem: "Sciences Po独自オンライン出願"
 admissionDeadline: "約1月（要毎年確認）"
-tuitionFeeApprox: "約€0〜14,000/年（年収スライド制・外国籍学生も適用）※要公式確認"
+tuitionFeeApprox: "約€0〜14,210/年（年収スライド制・非EU居住者は最大€14,210・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "英語プログラム：TOEFL iBT 100+ / IELTS 7.0+。フランス語プログラム：DALF C1+"
 website: "https://www.sciencespo.fr/"

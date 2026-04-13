@@ -13,7 +13,7 @@ ibAdmissionType: "McGill独自出願（Minerva）"
 requiredHL: ["志望学部による（理系はMath・理科HL推奨）"]
 applicationSystem: "McGill独自出願システム（Minerva）"
 admissionDeadline: "1月15日（国際学生向け締切）"
-tuitionFeeApprox: "約CAD 21,000〜40,000/年（国際学生・学部による）※要公式確認"
+tuitionFeeApprox: "約CAD$27,000〜67,500/年（国際学生・学部・Commerceは最高額・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 90+ / IELTS 6.5+"
 website: "https://www.mcgill.ca/"

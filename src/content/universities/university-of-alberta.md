@@ -13,7 +13,7 @@ ibAdmissionType: "Alberta Universities Application 出願"
 requiredHL: ["志望学部による（工学：Math AA/AI HL推奨、医学：Biology/Chemistry HL必須）"]
 applicationSystem: "Apply Alberta（Alberta Universities Application）"
 admissionDeadline: "3月1日（要毎年確認）"
-tuitionFeeApprox: "約CAD$29,000〜44,000/年（国際学生・授業料・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約CAD$27,000〜47,756/年（国際学生・学部・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 90+ / IELTS 6.5+（推奨）"
 website: "https://www.ualberta.ca/"

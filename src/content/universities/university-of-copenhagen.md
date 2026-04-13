@@ -12,8 +12,8 @@ ibScoreRecommended: 34
 ibAdmissionType: "KOT（デンマーク大学共通出願）経由出願（成績審査）"
 requiredHL: ["志望プログラムによる（自然科学：Math/理科 HL推奨、社会科学：History/Economics HL推奨）"]
 applicationSystem: "KOT（Koordinerede Tilmelding）デンマーク大学共通出願"
-admissionDeadline: "3月15日（EU/EEA学生）/ 3月1日（非EU学生）※要公式確認"
-tuitionFeeApprox: "約DKK 100,000〜130,000/年（非EU学生・約€13,400〜17,400・2025-26年度）※要公式確認"
+admissionDeadline: "3月15日（全学生・12:00 CET）"
+tuitionFeeApprox: "約DKK 75,000/年（学士・非EU/EEA学生・約€10,000・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "英語プログラム：TOEFL iBT 83〜100+ / IELTS 6.5〜7.0+（プログラムによる）"
 website: "https://www.ku.dk/"

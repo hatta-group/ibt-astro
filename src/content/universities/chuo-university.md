@@ -9,10 +9,10 @@ qsRank: 1001
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 27
-ibAdmissionType: "特別入試（国際バカロレア活用）・帰国生入試"
-requiredHL: ["法学部：History/Global Politics/社会科学 HL推奨。国際経営：Economics/Math HL推奨。理工：Math/理科 HL推奨"]
-applicationSystem: "中央大学独自出願システム（特別入試）"
-admissionDeadline: "特別入試：10〜11月出願（要公式確認）"
+ibAdmissionType: "国際経営学部 自己推薦入学試験（国際バカロレア等を出願資格として活用）・各学部特別入試"
+requiredHL: ["国際経営学部：TOEFL iBT 72以上必須、Economics/Math HL推奨。法学部：History/Global Politics/社会科学 HL推奨。理工：Math/理科 HL推奨"]
+applicationSystem: "中央大学独自出願システム（UCARO）"
+admissionDeadline: "国際経営学部 自己推薦入学試験：2025年9月1日〜9月5日（消印有効）、1次選考合格発表 10月15日、2次試験（小論文・英語面接）10月25日（多摩キャンパス）、合格発表 11月5日（2026年度）"
 tuitionFeeApprox: "約1,100,000〜1,400,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "国際経営学部：一部英語中心。他学部：日本語中心"

@@ -13,7 +13,7 @@ ibAdmissionType: "OUAC出願（成績審査）"
 requiredHL: ["志望学部による（医学・理工学：理科・Math HL推奨、ビジネス：Math HL推奨）"]
 applicationSystem: "OUAC（Ontario Universities' Application Centre）"
 admissionDeadline: "2月1日（要毎年確認）"
-tuitionFeeApprox: "約CAD$33,000〜56,000/年（国際学生・授業料・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約CAD$48,000〜64,400/年（国際学生・学部・諸経費込み・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 83+ / IELTS 6.5+（推奨）"
 website: "https://www.uwo.ca/"

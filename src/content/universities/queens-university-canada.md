@@ -13,7 +13,7 @@ ibAdmissionType: "OUAC出願 + 補足書類"
 requiredHL: ["志望学部による（工学：Math AA/AI HL推奨、ビジネス：Math HL推奨）"]
 applicationSystem: "OUAC（Ontario Universities' Application Centre）"
 admissionDeadline: "2月1日（要毎年確認）"
-tuitionFeeApprox: "約CAD$44,000〜63,000/年（国際学生・授業料・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約CAD$55,800〜63,200/年（国際学生・学部・諸経費含む・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 88+ / IELTS 6.5+（推奨）"
 website: "https://www.queensu.ca/"

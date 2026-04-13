@@ -5,14 +5,13 @@ slug: "tokyo-international-university"
 country: "日本"
 city: "川越市（埼玉県）"
 region: "japan"
-qsRank: 1001
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 26
 ibAdmissionType: "E-Track入試（国際バカロレア活用）"
 requiredHL: ["E-Track：Language A/B English HL推奨。Business：Economics/Math HL推奨。International Relations：Global Politics HL推奨"]
 applicationSystem: "東京国際大学独自出願システム（E-Track入試）"
-admissionDeadline: "E-Track入試：複数回出願期間あり（要公式確認）"
+admissionDeadline: "AO入試：9月・10月・11月の複数回実施。9月期 2025年9月2日〜9月9日、10月期 2025年10月1日〜10月8日、11月期 2025年11月1日〜11月7日。E-Track入試は別途ローリング出願（2026年度、E-Trackは公式サイト要確認）"
 tuitionFeeApprox: "約1,100,000〜1,400,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "E-Track：全英語プログラム"

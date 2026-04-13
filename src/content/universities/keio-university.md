@@ -9,10 +9,10 @@ ibScoreRange: "36〜38+"
 ibScoreMin: 36
 ibScoreRecommended: 36
 qsRank: 188
-ibAdmissionType: "IB入試（法学部）・帰国生入試・AO入試・PEARL（経済学部英語学位）"
-requiredHL: ["学部・入試区分により異なる"]
+ibAdmissionType: "国際バカロレア（IB）入学試験（法学部・法律学科/政治学科、帰国生対象入学試験と併せて募集）・FIT入試・AO入試・PEARL（経済学部英語学位）"
+requiredHL: ["IB入試は法学部のみ。日本国内の高等学校または日本国内のインターナショナルスクールでIB Full Diplomaを取得した者のみ出願可（Predicted Gradesでは出願不可）。各学科10名、計20名募集（4月入学・9月入学共通）"]
 applicationSystem: "慶應義塾大学独自出願"
-admissionDeadline: "学部・入試区分により異なる（7〜11月頃が多い）"
+admissionDeadline: "法学部IB入試：Webエントリー 2025年7月上旬〜7月中旬、出願書類郵送 2025年7月中旬（2025年9月入学・2026年4月入学対象、最新は公式募集要項で確認）"
 tuitionFeeApprox: "文系: 約126万円/年、理工: 約176万円/年、医: 約367万円/年（授業料＋施設費等）"
 scholarshipAvailable: true
 languageRequirement: "学部・入試区分により異なる（英語試験免除制度あり）"

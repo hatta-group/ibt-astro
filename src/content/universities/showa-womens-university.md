@@ -12,7 +12,7 @@ ibScoreRecommended: 27
 ibAdmissionType: "総合型選抜（国際バカロレア活用）"
 requiredHL: ["国際学部：Language A/B・Global Politics HL推奨。グローバルビジネス：Economics/Math HL推奨。環境デザイン：Math/Visual Arts HL推奨"]
 applicationSystem: "昭和女子大学独自出願システム（総合型選抜）"
-admissionDeadline: "総合型選抜：10〜11月出願（要公式確認）"
+admissionDeadline: "国際学部総合型選抜：2025年9月24日〜10月3日、1次選考（書類）合格発表 10月21日（2026年度）"
 tuitionFeeApprox: "約1,100,000〜1,350,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "国際学部：英語中心（TOEFL iBT 72+ / IELTS 5.5+推奨）。他学部：日本語"

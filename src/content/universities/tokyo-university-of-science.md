@@ -9,10 +9,10 @@ qsRank: 751
 ibScoreRange: "24-38+"
 ibScoreMin: 24
 ibScoreRecommended: 28
-ibAdmissionType: "IB入試・総合型選抜（国際バカロレア活用）"
-requiredHL: ["経営学部国際デザイン経営学科：Math/Economics HL推奨。理学部・工学部：Math AA HL・Physics/Chemistry HL推奨"]
-applicationSystem: "東京理科大学独自出願システム（IB入試・総合型選抜）"
-admissionDeadline: "IB入試・総合型選抜：10〜11月出願（要公式確認）"
+ibAdmissionType: "経営学部国際デザイン経営学科 国際バカロレア入学者選抜（Ⅰ期・Ⅱ期）・総合型選抜"
+requiredHL: ["経営学部国際デザイン経営学科：IB Diploma保持（または取得見込）、日本語母語or日本語A/B HLor日本語能力試験N1、数学HL履修が必須。理学部・工学部：Math AA HL・Physics/Chemistry HL推奨"]
+applicationSystem: "東京理科大学独自出願システム（IB入学者選抜）"
+admissionDeadline: "国際デザイン経営学科IB入試 Ⅰ期：出願締切 2025年9月初旬、試験日 10月上旬。Ⅱ期：出願締切 2026年1月中旬、試験日 1月下旬（2026年度・最新は公式募集要項で確認）"
 tuitionFeeApprox: "約1,400,000〜1,800,000円/年（私立理系大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "経営学部国際デザイン経営学科：英語プログラムあり。他学部：日本語中心"

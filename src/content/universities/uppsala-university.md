@@ -12,8 +12,8 @@ ibScoreRecommended: 34
 ibAdmissionType: "スウェーデン大学共通出願（University Admissions Sweden）"
 requiredHL: ["志望プログラムによる（自然科学・医学：Biology/Chemistry/Math HL推奨、社会科学：History/Economics HL推奨）"]
 applicationSystem: "University Admissions Sweden（universityadmissions.se）"
-admissionDeadline: "1月15日（秋入学・9月）/ 8月15日（春入学・1月）※要公式確認"
-tuitionFeeApprox: "約SEK 145,000〜200,000/年（非EU/EEA学生・約€13,000〜18,000・2025-26年度）※要公式確認"
+admissionDeadline: "1月15日（秋入学・universityadmissions.se経由）/ 8月15日（春入学）"
+tuitionFeeApprox: "約SEK 99,000〜180,000/年（非EU/EEA学生・プログラムによる・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "英語プログラム：TOEFL iBT 90〜100+ / IELTS 6.5〜7.0+（プログラムによる）"
 website: "https://www.uu.se/"

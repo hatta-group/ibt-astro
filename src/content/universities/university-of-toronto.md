@@ -13,7 +13,7 @@ ibAdmissionType: "OUAC（Ontario Universities' Application Centre）経由出願
 requiredHL: ["志望学部による（理系はMath・理科HL推奨）"]
 applicationSystem: "OUAC（オンタリオ大学共通出願）"
 admissionDeadline: "1月中旬（国際学生向け締切）"
-tuitionFeeApprox: "約CAD 45,000〜65,000/年（国際学生・学部による）※要公式確認"
+tuitionFeeApprox: "約CAD$39,560〜70,060/年（国際学生・学部による・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 100+ / IELTS 6.5+ （MELAB 85+も可）"
 website: "https://www.utoronto.ca/"

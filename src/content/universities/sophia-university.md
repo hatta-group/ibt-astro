@@ -8,10 +8,10 @@ region: "japan"
 ibScoreRange: "28〜36+"
 ibScoreMin: 28
 ibScoreRecommended: 33
-ibAdmissionType: "IB入学試験（第1期・第2期）・海外就学経験者入試・公募推薦入試"
-requiredHL: ["学部・入試区分により異なる"]
+ibAdmissionType: "国際バカロレア（IB）入学試験 第1期募集・第2期募集・海外就学経験者入試・公募推薦入試"
+requiredHL: ["国際教養学部を除く全学部・学科で募集（各学科若干名）。各学科の指定するIB科目（HL）を履修し成績基準を満たす必要あり。詳細は学科別に入学試験要項で確認"]
 applicationSystem: "上智大学独自出願"
-admissionDeadline: "学部・入試区分により異なる（9〜11月頃）"
+admissionDeadline: "IB入試 第1期：Web出願 2025年7月15日〜7月31日（書類提出8月1日消印有効）。第2期：Web出願 2025年12月5日〜2026年1月6日（書類提出1月7日消印有効）（2026年度）"
 tuitionFeeApprox: "約100〜140万円/年（学部による）"
 scholarshipAvailable: true
 languageRequirement: "学部・入試区分により異なる（英語試験免除制度あり）"

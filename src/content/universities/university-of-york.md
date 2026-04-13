@@ -5,7 +5,7 @@ slug: "university-of-york"
 country: "イギリス"
 city: "ヨーク"
 region: "uk"
-qsRank: 167
+qsRank: 184
 ibScoreRange: "35-36+"
 ibScoreMin: 35
 ibScoreRecommended: 36

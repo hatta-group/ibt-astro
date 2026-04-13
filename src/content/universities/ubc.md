@@ -13,7 +13,7 @@ ibAdmissionType: "UBC独自出願（Undergraduate Admissions）"
 requiredHL: ["志望学部による（理系・CS系はMath HL推奨）"]
 applicationSystem: "UBC独自出願システム"
 admissionDeadline: "1月15日（国際学生向け締切）"
-tuitionFeeApprox: "約CAD 42,000〜57,000/年（国際学生・学部による）※要公式確認"
+tuitionFeeApprox: "約CAD$51,000〜66,000/年（国際学生・Arts〜Commerce・30単位・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 90+ / IELTS 6.5+ （全セクション6.0以上）"
 website: "https://www.ubc.ca/"

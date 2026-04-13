@@ -13,7 +13,7 @@ ibAdmissionType: "UAC出願（成績審査）"
 requiredHL: ["志望学部による（医学・歯学：Chemistry/Biology HL必須、理工学：Math/理科 HL）"]
 applicationSystem: "UAC（Universities Admissions Centre）"
 admissionDeadline: "9月下旬〜10月（Early Round）/ 12月以降（Main Round）"
-tuitionFeeApprox: "約AUD$39,000〜62,000/年（国際学生・授業料・2025年度）※要公式確認"
+tuitionFeeApprox: "約AUD$49,200〜60,600/年（国際学生・学部・2026年度公式発表）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 85+ / IELTS 6.5+（学部による）"
 website: "https://www.sydney.edu.au/"

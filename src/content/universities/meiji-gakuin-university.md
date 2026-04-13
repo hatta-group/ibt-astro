@@ -9,10 +9,10 @@ qsRank: 1001
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 27
-ibAdmissionType: "自己推薦AO入試（国際バカロレア活用）"
-requiredHL: ["国際学部：Language A/B・Global Politics HL推奨。文学部：Language A/B・人文系 HL推奨。社会学部：社会科学 HL推奨"]
-applicationSystem: "明治学院大学独自出願システム（自己推薦AO入試）"
-admissionDeadline: "自己推薦AO入試：10〜11月出願（要公式確認）"
+ibAdmissionType: "総合型選抜 自己推薦AO入学試験（国際バカロレア活用可）"
+requiredHL: ["国際キャリア学科：English A: Literature または English A: Language and Literature履修かつIB Full Diploma必須（Predicted Grades出願可）。国際学部：Language A/B・Global Politics HL推奨。文学部・社会学部・経済学部・法学部・心理学部：専攻に応じたHL推奨"]
+applicationSystem: "明治学院大学独自出願システム（UCARO）"
+admissionDeadline: "自己推薦AO入学試験：Web登録 2025年9月18日〜9月26日、書類郵送 2025年9月19日〜9月26日消印有効、試験日 2025年11月16日（2026年度）"
 tuitionFeeApprox: "約1,100,000〜1,300,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "日本語中心（国際学部に英語科目多数）"

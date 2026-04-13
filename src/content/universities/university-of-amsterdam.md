@@ -13,7 +13,7 @@ ibAdmissionType: "Studielink出願（成績審査 + プログラム選考）"
 requiredHL: ["志望プログラムによる（経済・ビジネス：Math HL推奨、社会科学：History/Global Politics HL推奨）"]
 applicationSystem: "Studielink（オランダ大学共通出願）"
 admissionDeadline: "5月1日（通常）/ 1月15日（競争選抜プログラム）"
-tuitionFeeApprox: "約€14,900〜20,000/年（国際学生・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約€12,075〜21,700/年（非EEA・学部による、医・歯は€34,800・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 92〜100+ / IELTS 6.5〜7.0+（プログラムによる）"
 website: "https://www.uva.nl/"

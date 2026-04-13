@@ -9,10 +9,10 @@ qsRank: 1001
 ibScoreRange: "24-36+"
 ibScoreMin: 24
 ibScoreRecommended: 28
-ibAdmissionType: "自由選抜入試・国際コース選抜入試（GLAP）"
-requiredHL: ["GLAP：Language A/B English HL必須。社会学部・観光学部：Global Politics/History/Social Science HL推奨。理学部：Math/理科 HL推奨"]
-applicationSystem: "立教大学独自出願システム（自由選抜・GLAP入試）"
-admissionDeadline: "国際コース選抜・自由選抜入試：9月上旬〜（2026年度）"
+ibAdmissionType: "自由選抜入試・国際コース選抜入試（GLAP・国際ビジネス法学科・異文化コミュニケーション学部）"
+requiredHL: ["GLAP：Language A (English) HL必須。社会学部・観光学部：Global Politics/History/Social Science HL推奨。理学部：Math/理科 HL推奨"]
+applicationSystem: "立教大学独自出願システム（Web出願）"
+admissionDeadline: "国際コース選抜入試（GLAP）：Web出願 2025年9月11日〜9月17日、書類送付締切 9月18日、第1次合格発表 2025年10月29日、第2次選考 2025年11月16日（2026年度）"
 tuitionFeeApprox: "約1,200,000〜2,103,500円/年（GLAPは初年度約210万円・2026年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "GLAP（国際コース選抜入試）：TOEFL iBT 72+ / IELTS 5.5+。日本語プログラム：日本語能力"

@@ -13,7 +13,7 @@ ibAdmissionType: "Studielink出願（成績審査 + プログラム選考）"
 requiredHL: ["志望プログラムによる（経済・ビジネス：Math HL推奨、理工系：Math/理科 HL推奨）"]
 applicationSystem: "Studielink（オランダ大学共通出願）"
 admissionDeadline: "5月1日（通常）/ 1月15日（競争選抜プログラム）"
-tuitionFeeApprox: "約€10,000〜18,000/年（国際学生・プログラムによる・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約€13,500〜19,800/年（非EU/EEA・学部による、医学€32,000・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 90〜100+ / IELTS 6.5〜7.0+（プログラムによる）"
 website: "https://www.rug.nl/"

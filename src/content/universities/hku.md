@@ -13,7 +13,7 @@ ibAdmissionType: "HKU独自出願（Non-JUPAS・IBスコア審査 + Personal Sta
 requiredHL: ["志望学部による（医学：Biology/Chemistry HL必須、法学・文系：英語/人文系 HL推奨、工学：Math/理科 HL推奨）"]
 applicationSystem: "HKU独自オンライン出願（Non-JUPAS Scheme）"
 admissionDeadline: "11月〜12月（要公式確認）"
-tuitionFeeApprox: "約HKD 145,000/年（国際学生・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約HKD 224,000〜249,000/年（国際学生・非STEM/STEM・2026-27年度公式発表）"
 scholarshipAvailable: true
 languageRequirement: "英語での授業。TOEFL iBT 100+ / IELTS 7.0+（IB English A/B HL成績でも可）"
 website: "https://www.hku.hk/"

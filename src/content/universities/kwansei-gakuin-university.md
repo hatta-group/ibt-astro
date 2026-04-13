@@ -9,10 +9,10 @@ qsRank: 1401
 ibScoreRange: "24-36+"
 ibScoreMin: 24
 ibScoreRecommended: 28
-ibAdmissionType: "グローバル入学試験（IB入学試験）"
-requiredHL: ["国際学部：Language A/B・Global Politics HL推奨。社会・法・経済：Economics/社会科学 HL推奨。理工：Math/理科 HL推奨"]
-applicationSystem: "関西学院大学独自出願システム（グローバル入学試験）"
-admissionDeadline: "グローバル入学試験：10〜11月出願（要公式確認）"
+ibAdmissionType: "グローバル入学試験Ⅱ インターナショナル・バカロレア入学試験（IB Predicted Score 24ポイント以上）"
+requiredHL: ["神・文・社会・法・経済・商・人間福祉・国際・教育・総合政策・理・工・生命環境・建築学部が対象。国際学部：Language A/B・Global Politics HL推奨。社会・法・経済：Economics/社会科学 HL推奨。理・工・生命環境・建築学部：Math/理科 HL必須"]
+applicationSystem: "関西学院大学独自出願システム（UCARO）"
+admissionDeadline: "グローバル入学試験（IB入学試験）：2025年9月1日〜9月8日、第1次審査筆記 9月27日、第2次審査 10月25日、最終合格発表 2025年11月14日（2026年度）"
 tuitionFeeApprox: "約1,200,000〜1,450,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "日本語。一部英語コースあり（TOEFL iBT 72+ / IELTS 5.5+推奨）"

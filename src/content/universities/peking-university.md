@@ -12,7 +12,7 @@ ibScoreRecommended: 39
 ibAdmissionType: "北京大学独自出願（International Student Admission・IBスコア審査）"
 requiredHL: ["志望学部による（医学・理学：Biology/Chemistry/Math HL推奨、人文社会：English/History HL推奨）"]
 applicationSystem: "北京大学独自オンライン出願システム"
-admissionDeadline: "3月〜5月（要公式確認）"
+admissionDeadline: "第1ラウンド：12月（前年）/ 第2ラウンド：3月末（※年度により変動・要公式確認）"
 tuitionFeeApprox: "約CNY 26,000〜50,000/年（国際学生・授業料・2025-26年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "中国語プログラム：HSK 5〜6級。英語プログラム：TOEFL iBT 100+ / IELTS 7.0+"

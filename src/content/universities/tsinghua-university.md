@@ -12,8 +12,8 @@ ibScoreRecommended: 40
 ibAdmissionType: "清華大学独自出願（International Student Admission・IBスコア審査）"
 requiredHL: ["理工系：Math AA/AI HL必須 + Physics/Chemistry/CS HL推奨。管理・経済系：Math HL必須"]
 applicationSystem: "清華大学独自オンライン出願システム"
-admissionDeadline: "3月〜5月（要公式確認）"
-tuitionFeeApprox: "約CNY 26,000〜50,000/年（国際学生・授業料・2025-26年度）※要公式確認"
+admissionDeadline: "9月下旬〜2月末（秋入学・通年オンライン出願・要公式確認）"
+tuitionFeeApprox: "約CNY 26,000〜40,000/年（国際学生・授業料・2025-26年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "主要プログラムは中国語（HSK 5〜6級）。英語プログラム：TOEFL iBT 100+ / IELTS 7.0+"
 website: "https://www.tsinghua.edu.cn/"

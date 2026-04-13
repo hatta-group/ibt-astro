@@ -12,7 +12,7 @@ ibScoreRecommended: 39
 ibAdmissionType: "NTU独自出願（IBスコア審査 + Personal Statement + 課外活動）"
 requiredHL: ["工学・CS：Math AA/AI HL必須、Physics/CS HL推奨。ビジネス：Math HL推奨。医学：Biology/Chemistry HL必須"]
 applicationSystem: "NTU独自オンライン出願システム"
-admissionDeadline: "3月〜4月（要公式確認）"
+admissionDeadline: "10月〜3月（8月入学・要公式確認）"
 tuitionFeeApprox: "約SGD 29,050〜38,700/年（国際学生・2025-26年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 100+ / IELTS 7.0+（英語での授業・IB English A/B HL可）"

@@ -5,14 +5,13 @@ slug: "temple-university-japan"
 country: "日本"
 city: "世田谷区（東京都）"
 region: "japan"
-qsRank: 1001
 ibScoreRange: "24-38+"
 ibScoreMin: 24
 ibScoreRecommended: 28
 ibAdmissionType: "IBスコアによる出願（アメリカ式・ローリング入試）"
 requiredHL: ["HL科目5点以上で単位認定の可能性あり。専攻に応じたHL推奨"]
 applicationSystem: "TUJ独自出願システム（アメリカ式出願・ローリング）"
-admissionDeadline: "ローリング入試（通年出願可能・早めの出願推奨）"
+admissionDeadline: "ローリング入試（通年出願可能）。Fall 2026入学：Early Action 2025年11月15日、ビザ申請あり 2026年4月1日、ビザ不要 2026年7月1日。Spring 2027入学：ビザ申請あり 2026年10月1日、ビザ不要 2026年11月1日"
 tuitionFeeApprox: "約1,800,000〜2,200,000円/年（2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "全授業英語（TOEFL iBT 79+ / IELTS 6.0+推奨）"

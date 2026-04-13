@@ -13,7 +13,7 @@ ibAdmissionType: "OUAC出願 + AIF（独自フォーム）"
 requiredHL: ["CS・工学：Math AA HL必須（7推奨）、Physics HL推奨"]
 applicationSystem: "OUAC（Ontario Universities' Application Centre）"
 admissionDeadline: "3月1日（要毎年確認）"
-tuitionFeeApprox: "約CAD$36,000〜62,000/年（国際学生・授業料・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約CAD$49,000〜69,000/年（国際学生・学部・Math/CS/Eng高め・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 90+ / IELTS 6.5+（推奨）"
 website: "https://uwaterloo.ca/"

@@ -12,8 +12,8 @@ ibScoreRecommended: 37
 ibAdmissionType: "TUM独自出願（学部別審査・aptitude assessment）"
 requiredHL: ["工学・理学：Math AA/AI HL必須、Physics/Chemistry/Computer Science HL推奨"]
 applicationSystem: "TUM独自オンライン出願（TUMonline）"
-admissionDeadline: "5月31日（冬学期）/ 11月30日（夏学期）※要公式確認"
-tuitionFeeApprox: "約€145/学期（学期登録料のみ・2025-26年度）※要公式確認"
+admissionDeadline: "非EU：1月15日（冬学期・uni-assist経由）。プログラムにより変動"
+tuitionFeeApprox: "約€2,000〜3,000/学期（非EU学生・学部・2024/25冬学期以降）+ 学期費€85前後"
 scholarshipAvailable: true
 languageRequirement: "英語プログラム：TOEFL iBT 88〜95+ / IELTS 6.5+。ドイツ語プログラム：TestDaF・DSH等（C1相当）"
 website: "https://www.tum.de/"

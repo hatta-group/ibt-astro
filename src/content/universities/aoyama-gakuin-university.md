@@ -9,10 +9,10 @@ qsRank: 1001
 ibScoreRange: "24-36+"
 ibScoreMin: 24
 ibScoreRecommended: 28
-ibAdmissionType: "自己推薦入試・海外就学経験者入学者選抜（国際バカロレア活用）"
-requiredHL: ["地球社会共生学部：Language A/B・Global Politics HL推奨。国際政治経済学部：Economics/Global Politics HL推奨。総合文化政策・文：人文系 HL推奨"]
-applicationSystem: "青山学院大学独自出願システム（自己推薦・帰国生入試）"
-admissionDeadline: "自己推薦入試：10〜11月出願（要公式確認）"
+ibAdmissionType: "自己推薦入学者選抜（対象: 文学部英米文学科・史学科・比較芸術学科、地球社会共生学部、コミュニティ人間科学部）・海外就学経験者入学者選抜（IB活用）"
+requiredHL: ["地球社会共生学部：Language A/B・Global Politics HL推奨。国際政治経済学部（帰国生入試）：Economics/Global Politics HL推奨。文学部：人文系 HL推奨"]
+applicationSystem: "青山学院大学独自出願システム"
+admissionDeadline: "自己推薦入学者選抜：2025年9月8日〜9月11日（郵送必着）、第1次審査合格発表 2025年10月17日、第2次審査 2025年10月25日、最終合格発表 2025年11月17日（2026年度）"
 tuitionFeeApprox: "約1,200,000〜1,500,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "地球社会共生：英語中心（TOEFL iBT 72+ / IELTS 5.5+推奨）。国際政治経済：日英両対応"

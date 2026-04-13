@@ -13,7 +13,7 @@ ibAdmissionType: "BCIT/OUAC出願（成績審査）"
 requiredHL: ["志望学部による（CS・理工学：Math HL推奨、ビジネス：Math HL推奨）"]
 applicationSystem: "Apply BC（BC大学共通出願）"
 admissionDeadline: "4月30日（要毎年確認）"
-tuitionFeeApprox: "約CAD$26,000〜36,000/年（国際学生・授業料・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約CAD$37,442/年（国際学生・学部標準・10コース・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 83+ / IELTS 6.5+（推奨）"
 website: "https://www.sfu.ca/"

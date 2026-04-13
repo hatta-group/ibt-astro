@@ -12,7 +12,7 @@ ibScoreRecommended: 27
 ibAdmissionType: "知のかけはし入試・総合型選抜（国際バカロレア活用）"
 requiredHL: ["国際英語学科：Language A/B English HL推奨。社会学科：Global Politics/History/Economics HL推奨。心理学科：Biology/社会科学 HL推奨"]
 applicationSystem: "東京女子大学独自出願システム（知のかけはし入試）"
-admissionDeadline: "知のかけはし入試：10〜11月出願（要公式確認）"
+admissionDeadline: "知のかけはし入試（総合型選抜）：2025年9月1日〜9月5日、試験日 2025年10月19日、合格発表 2025年11月3日（2026年度）"
 tuitionFeeApprox: "約1,050,000〜1,300,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "国際英語学科：英語中心（TOEFL iBT 72+ / IELTS 5.5+推奨）。他学科：日本語"

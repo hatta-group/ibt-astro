@@ -5,7 +5,6 @@ slug: "bocconi-university"
 country: "イタリア"
 city: "ミラノ（イタリア）"
 region: "europe"
-qsRank: 10
 ibScoreRange: "35-42+"
 ibScoreMin: 35
 ibScoreRecommended: 39
@@ -13,7 +12,7 @@ ibAdmissionType: "Bocconi独自出願（TOLC-E/SAT等 + GPA審査）"
 requiredHL: ["ビジネス・経済：Math AA/AI HL推奨、Economics HL推奨"]
 applicationSystem: "Bocconi独自オンライン出願"
 admissionDeadline: "12月〜2月（Roundにより異なる）"
-tuitionFeeApprox: "約€8,000〜14,300/年（所得審査あり・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約€17,000/年（標準・Bocconi Awardで減免あり・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 100+ / IELTS 7.0+（英語プログラムの場合）"
 website: "https://www.unibocconi.eu/"

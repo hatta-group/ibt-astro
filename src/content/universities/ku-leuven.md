@@ -12,8 +12,8 @@ ibScoreRecommended: 35
 ibAdmissionType: "KU Leuven独自出願（成績審査）"
 requiredHL: ["志望プログラムによる（工学・理学：Math/理科 HL推奨、医学：Biology/Chemistry HL推奨）"]
 applicationSystem: "KU Leuven独自オンライン出願"
-admissionDeadline: "3月1日〜4月1日（プログラム・学年度による）※要公式確認"
-tuitionFeeApprox: "約€6,000〜12,000/年（非EU国際学生・プログラムによる・2025-26年度）※要公式確認"
+admissionDeadline: "非EEA：3月1日（一般・蘭語プログラムは2月1日。プログラムにより変動）"
+tuitionFeeApprox: "約€5,000〜9,500/年（非EU学生・学部により異なる・2025-26年度。最新は公式fee toolで確認）"
 scholarshipAvailable: true
 languageRequirement: "英語プログラム：TOEFL iBT 90+ / IELTS 6.5+（プログラムによる）"
 website: "https://www.kuleuven.be/"

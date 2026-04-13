@@ -5,7 +5,6 @@ slug: "akita-international-university"
 country: "日本"
 city: "秋田（秋田県）"
 region: "japan"
-qsRank: 1001
 ibScoreRange: "24-40+"
 ibScoreMin: 24
 ibScoreRecommended: 30

@@ -12,8 +12,8 @@ ibScoreRecommended: 37
 ibAdmissionType: "UZH独自出願（学部別審査・ドイツ語または英語）"
 requiredHL: ["志望学部による（医学・自然科学：Biology/Chemistry/Math HL推奨、経済：Math HL推奨）"]
 applicationSystem: "University of Zurich独自出願システム"
-admissionDeadline: "4月30日前後（入学時期による）※要公式確認"
-tuitionFeeApprox: "約CHF 1,580/年（学期登録料のみ・2025-26年度）※生活費別途・要公式確認"
+admissionDeadline: "4月30日（秋学期入学・要ビザ申請者は早めの提出推奨）"
+tuitionFeeApprox: "約CHF 1,220/学期（学士・国際学生料含む・2025-26年度、生活費別途）"
 scholarshipAvailable: true
 languageRequirement: "主要プログラムはドイツ語C1必須。英語プログラム：TOEFL iBT 100+ / IELTS 7.0+（プログラムによる）"
 website: "https://www.uzh.ch/"

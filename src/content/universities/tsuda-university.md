@@ -12,7 +12,7 @@ ibScoreRecommended: 28
 ibAdmissionType: "総合型選抜（国際バカロレア活用）・学校推薦型選抜"
 requiredHL: ["学芸学部：Language A/B HL・社会科学 HL推奨。総合政策学部：Economics/Global Politics HL推奨。数理・情報：Math HL推奨"]
 applicationSystem: "津田塾大学独自出願システム"
-admissionDeadline: "総合型選抜：10〜11月出願（要公式確認）"
+admissionDeadline: "総合型選抜：2025年9月1日〜9月17日（締切日必着）（2026年度）"
 tuitionFeeApprox: "約1,300,000〜1,450,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "日本語。英語教育に伝統を持つ大学（Language A/B HL高得点者優遇）"

@@ -5,15 +5,15 @@ slug: "university-of-helsinki"
 country: "フィンランド"
 city: "ヘルシンキ（フィンランド）"
 region: "europe"
-qsRank: 117
+qsRank: 116
 ibScoreRange: "30-38+"
 ibScoreMin: 30
 ibScoreRecommended: 34
 ibAdmissionType: "UH独自出願（プログラム別審査・学力試験または成績審査）"
 requiredHL: ["志望プログラムによる（自然科学：Math/理科 HL推奨、教育学：教育関連科目 HL推奨）"]
 applicationSystem: "フィンランド大学共通出願（opintopolku.fi）"
-admissionDeadline: "1月〜4月（プログラム・年度による）※要公式確認"
-tuitionFeeApprox: "約€13,000〜18,000/年（非EU/EEA学生・プログラムによる・2025-26年度）※要公式確認"
+admissionDeadline: "1月上旬〜中旬（Group 1・国際学生）または3月（Group 2）"
+tuitionFeeApprox: "€13,000/年（英語学士プログラム・非EU/EEA学生・2025-26年度）"
 scholarshipAvailable: true
 languageRequirement: "英語プログラム：TOEFL iBT 92〜100+ / IELTS 6.5〜7.0+（プログラムによる）"
 website: "https://www.helsinki.fi/"

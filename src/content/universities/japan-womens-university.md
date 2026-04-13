@@ -9,10 +9,10 @@ qsRank: 1001
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 27
-ibAdmissionType: "総合型選抜（国際バカロレア活用）"
+ibAdmissionType: "総合型選抜（国際バカロレア活用可）"
 requiredHL: ["建築デザイン学部：Math/Visual Arts/Design HL推奨。理学部：Math/Biology/Chemistry HL推奨。文学部：Language A/B・人文系 HL推奨"]
-applicationSystem: "日本女子大学独自出願システム（総合型選抜）"
-admissionDeadline: "総合型選抜：10〜11月出願（要公式確認）"
+applicationSystem: "日本女子大学独自出願システム（UCARO）"
+admissionDeadline: "総合型選抜：2025年9月8日〜9月12日、試験日 2025年10月26日、合格発表 2025年11月1日（2026年度）"
 tuitionFeeApprox: "約1,100,000〜1,350,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "日本語。一部英語コースあり（TOEFL iBT 72+ / IELTS 5.5+推奨）"

@@ -9,10 +9,10 @@ qsRank: 661
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 27
-ibAdmissionType: "総合型選抜（国際バカロレア活用）"
-requiredHL: ["国際学部：Language A/B・Global Politics HL推奨。国際観光学部：Economics/社会科学 HL推奨。情報連携学部：Math/Computer Science HL推奨"]
-applicationSystem: "東洋大学独自出願システム（総合型選抜）"
-admissionDeadline: "総合型選抜：10〜11月出願（要公式確認）"
+ibAdmissionType: "国際バカロレアAO入学試験（海外帰国生入試等・その他の特別入試区分）"
+requiredHL: ["2024年4月〜2026年3月にIB Full Diploma取得または取得見込みの者が対象。国際学部：Language A/B・Global Politics HL推奨。国際観光学部：Economics/社会科学 HL推奨。情報連携学部：Math/Computer Science HL推奨"]
+applicationSystem: "東洋大学独自出願システム（インターネット登録）"
+admissionDeadline: "国際バカロレアAO入学試験：2025年10月3日〜10月6日、試験日 2025年11月23日、合格発表 2025年12月1日（2026年度）"
 tuitionFeeApprox: "約1,100,000〜1,350,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "国際学部・国際観光学部：英語プログラムあり。他学部：日本語中心"

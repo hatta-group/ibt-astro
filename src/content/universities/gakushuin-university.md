@@ -9,10 +9,10 @@ qsRank: 1001
 ibScoreRange: "24-34+"
 ibScoreMin: 24
 ibScoreRecommended: 27
-ibAdmissionType: "総合型選抜（国際バカロレア活用）"
-requiredHL: ["国際社会科学部：Economics/Global Politics/History HL推奨。文学部：Language A/B・人文系 HL推奨。理学部：Math/理科 HL推奨"]
-applicationSystem: "学習院大学独自出願システム（総合型選抜）"
-admissionDeadline: "総合型選抜：10〜11月出願（要公式確認）"
+ibAdmissionType: "国際社会科学部 総合型選抜（AO）— 国際バカロレア資格保持者対象"
+requiredHL: ["国際社会科学部：Economics/Global Politics/History HL推奨。文学部・法・経済・理学部は総合型選抜（AO）で別途実施"]
+applicationSystem: "学習院大学独自出願システム（Web出願）"
+admissionDeadline: "国際社会科学部 総合型選抜（AO）：2025年10月17日〜10月22日（Web出願）、最終選考 2025年12月6日（2026年度）"
 tuitionFeeApprox: "約1,100,000〜1,350,000円/年（私立大学・2025年度）※要公式確認"
 scholarshipAvailable: true
 languageRequirement: "国際社会科学部：一部英語コースあり。他学部：日本語中心"

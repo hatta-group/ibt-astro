@@ -13,7 +13,7 @@ ibAdmissionType: "CUHK独自出願（Non-JUPAS・IBスコア審査 + Personal St
 requiredHL: ["志望学部による（医学：Biology/Chemistry HL必須、ビジネス：Math HL推奨、工学：Math/理科 HL推奨）"]
 applicationSystem: "CUHK独自オンライン出願（Non-JUPAS）"
 admissionDeadline: "12月〜1月（要公式確認）"
-tuitionFeeApprox: "約HKD 145,000/年（国際学生・2025-26年度）※要公式確認"
+tuitionFeeApprox: "約HKD 178,000/年（国際学生・2025-26年度）/ HKD 214,000/年（2026-27年度公式発表）"
 scholarshipAvailable: true
 languageRequirement: "英語プログラム：TOEFL iBT 100+ / IELTS 7.0+（IB English A/B HL可）"
 website: "https://www.cuhk.edu.hk/"
