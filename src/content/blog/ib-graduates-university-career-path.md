@@ -1,6 +1,6 @@
 ---
 title: "IB卒業後の進路：卒業生が語る「IBが大学で役に立った瞬間」"
-slug: "ibib-graduates"
+slug: "ib-graduates-university-career-path"
 date: "2026-04-15"
 description: "「IBって本当に大学で役に立つの？」「苦労して取ったディプロマ、意味あるの？」"
 category: "dp-tips"
