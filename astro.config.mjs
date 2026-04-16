@@ -14,6 +14,9 @@ export default defineConfig({
   },
 
   redirects: {
+    // サイトマップ正規化
+    '/sitemap.xml': '/sitemap-index.xml',
+
     // 旧URL → 新URL (WordPress時代のリダイレクト移植)
     '/courses/': '/lessons-pricing/',
     '/price/': '/lessons-pricing/',
