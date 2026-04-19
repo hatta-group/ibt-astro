@@ -13,7 +13,7 @@ ibAdmissionType: "ホリスティック審査（Common Application）"
 requiredHL: ["指定なし（探究的学びを重視）"]
 applicationSystem: "Common Application"
 admissionDeadline: "11月1日（早期決定）/ 1月1日（一般）"
-tuitionFeeApprox: "約$68,000/年（2024-25年度・授業料）※要公式確認"
+tuitionFeeApprox: "$71,700/年（2025-26年度・授業料）／総費用 約$92,000/年"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 100+ / IELTS 7.0+（推奨）"
 website: "https://www.brown.edu/"
@@ -63,15 +63,16 @@ draft: false
 
 ## 学費と奨学金
 
-| 項目 | 金額目安（2024-25年度・参考） |
+| 項目 | 金額（2025-26年度） |
 |------|----------------------|
-| 授業料 | 約$68,000/年 |
+| 授業料 | $71,700/年 |
 | 寮・食費 | 約$18,000〜20,000/年 |
-| 総費用概算 | 約$88,000〜92,000/年 |
+| 総費用概算 | 約$92,000/年 |
 
 **財政支援：**
 - **Brown Financial Aid** — Need-Based奨学金。家庭収入に応じた支援
-- **国際学生向け支援** — 国際学生にも財政支援の申請が可能（枠は限定的、要確認）
+- **🟢 国際学生向け Need-Blind 完全導入（Class of 2029〜）** — 2025年秋入学のClass of 2029より、ブラウンは国際学生に対しても完全Need-Blindになりました。出願時の経済状況は合否に影響しません。
+- **手厚い支援** — 年収$60,000以下の家庭は全額無料、年収$125,000以下は授業料無料。100%ニーズ充足を約束
 - **外部奨学金との組み合わせ** — JASSO等との併用可能
 
 ## キャンパス・学生生活

@@ -5,7 +5,7 @@ slug: "doshisha-university"
 country: "日本"
 city: "京都（京都府）"
 region: "japan"
-qsRank: 1001
+qsRank: 1201
 ibScoreRange: "24-36+"
 ibScoreMin: 24
 ibScoreRecommended: 28

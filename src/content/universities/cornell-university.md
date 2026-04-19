@@ -13,7 +13,7 @@ ibAdmissionType: "ホリスティック審査（Common Application）"
 requiredHL: ["志望カレッジ・学部による（理系はMath・理科HL推奨）"]
 applicationSystem: "Common Application"
 admissionDeadline: "11月1日（早期決定）/ 1月2日（一般）"
-tuitionFeeApprox: "約$68,380/年（2024-25年度・授業料）※要公式確認"
+tuitionFeeApprox: "約$68,380/年（2024-25年度・授業料）／2025-26年度の最新確定値は公式参照"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 100+ / IELTS 7.0+（推奨）"
 website: "https://www.cornell.edu/"
@@ -77,8 +77,8 @@ draft: false
 | 総費用概算 | 約$90,000〜95,000/年 |
 
 **財政支援：**
-- **Cornell Financial Aid** — Need-Based奨学金。家庭収入に応じた支援
-- **国際学生向け支援** — 国際学生にも財政支援の申請が可能（枠は限定的、要確認）
+- **Cornell Financial Aid** — Need-Based奨学金。年収$125,000以下で授業料無料、年収$75,000以下で授業料+室食無料（米国家庭向け基準）
+- **国際学生向け支援** — Need-Blindではない可能性が高く、国際学生向け奨学金枠は限定的（公式の最新ポジション要確認）
 - **カレッジ独自の奨学金** — 各カレッジが独自の奨学金プログラムを提供
 
 ## キャンパス・学生生活

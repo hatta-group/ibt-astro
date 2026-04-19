@@ -13,7 +13,7 @@ ibAdmissionType: "ホリスティック審査（UC Application）"
 requiredHL: ["志望学部による（CS・工学はMath AA HL推奨）"]
 applicationSystem: "UC Application（カリフォルニア大学共通出願）"
 admissionDeadline: "11月30日（UC Application締切）"
-tuitionFeeApprox: "約$44,000〜57,000/年（国際学生・授業料・2024-25年度）※要公式確認"
+tuitionFeeApprox: "$47,265/年（2025年・国際学生授業料）／総費用 約$69,000〜70,000/年"
 scholarshipAvailable: true
 languageRequirement: "TOEFL iBT 80+ / IELTS 6.5+（推奨）"
 website: "https://www.berkeley.edu/"
@@ -46,7 +46,7 @@ UCバークレーは**ホリスティック審査**（UC Application方式）で
 | Haas School of Business | 約7〜10% | Math HL・Economics HL |
 | Letters & Science | 約14〜20% | 全科目バランス |
 
-**合格率：** 全体約12〜14%だが、CS・EECSはその数分の1。
+**合格率：** 全体**約11.4%（2025年実績）**。**国際学生はさらに厳しく約7.33%**。CS・EECSは全学平均の数分の1（約4〜6%）。
 
 **SAT/ACT：** UCシステムはSAT/ACTを考慮しないTest-Free方針を継続（2025年以降も継続の可能性あり、要確認）。IBスコア・GPA・Personal Insight Questions（PIQ）が主要評価軸。
 
@@ -67,18 +67,18 @@ UCバークレーは**ホリスティック審査**（UC Application方式）で
 
 ## 学費と奨学金
 
-| 項目 | 金額目安（国際学生・2024-25年度・参考） |
+| 項目 | 金額（国際学生・2025年実績） |
 |------|--------------------------------|
-| 授業料（国際学生） | 約$44,000〜57,000/年 |
-| 寮・食費（バークレー） | 約$18,000〜22,000/年 |
-| 総費用概算 | 約$65,000〜80,000/年 |
+| 授業料（国際学生） | **$47,265/年**（2026年は約$48,962/年に値上げ予定） |
+| 寮・食費（バークレー） | 約$20,000〜22,000/年 |
+| 総費用概算 | 約$69,000〜70,000/年 |
 
 **重要：** 州内生と国際学生で学費が大きく異なります。国際学生は大幅に高い学費を想定してください。
 
 **財政支援：**
-- **UC Berkeley Scholarships** — Need-Based・Merit両方の奨学金あり
-- **国際学生向け財政支援** — 枠は非常に限定的（要確認）
-- **外部奨学金との組み合わせ** — JASSO等との併用可能
+- **UC Berkeley Scholarships** — Need-Based・Merit両方の奨学金あり（米国市民・永住者中心）
+- **🔴 国際学生は Need-Aware** — UCシステムは国際学生に対して経済状況を入学審査に考慮し、奨学金・財政支援は非常に限定的です
+- **外部奨学金との組み合わせ** — JASSO等との併用が現実的な選択肢
 
 ## キャンパス・学生生活
 

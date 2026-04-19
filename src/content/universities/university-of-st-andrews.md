@@ -12,8 +12,8 @@ ibScoreRecommended: 38
 ibAdmissionType: "UCAS出願（ホリスティック審査）"
 requiredHL: ["志望学部による（理工学：Math/理科 HL推奨、医学：Chemistry/Biology HL）"]
 applicationSystem: "UCAS"
-admissionDeadline: "10月15日（医学等）/ 1月29日（一般）"
-tuitionFeeApprox: "約£26,420〜34,000/年（国際学生・授業料・2025-26年度）※要公式確認"
+admissionDeadline: "10月15日（医学等）/ 1月14日（一般・UCAS Equal Consideration Deadline）"
+tuitionFeeApprox: "£33,250/年（Arts/Sciences）・£39,620/年（Medicine）（国際学生・2026-27年度）"
 scholarshipAvailable: true
 languageRequirement: "IELTS 6.5〜7.0（学部による）/ TOEFL iBT 90〜100+"
 website: "https://www.st-andrews.ac.uk/"
@@ -53,7 +53,9 @@ draft: false
 
 **締切：**
 - 医学系：**10月15日**
-- 一般学部：**1月29日**
+- 一般学部：**1月14日**（UCAS Equal Consideration Deadline・英国時間18:00）
+
+※ UCASは2026年入学から従来の1月29日締切を1月14日に前倒ししました。
 
 **主な提出書類：**
 - UCASフォーム
@@ -66,12 +68,12 @@ draft: false
 
 ## 学費と奨学金
 
-| 項目 | 金額目安（国際学生・2025-26年度・参考） |
+| 項目 | 金額（国際学生・2026-27年度） |
 |------|--------------------------------|
-| 授業料（Arts/Humanities） | 約£26,420/年 |
-| 授業料（Sciences/Engineering） | 約£29,850〜34,000/年 |
+| 授業料（Arts/Humanities/Sciences） | **£33,250/年** |
+| 授業料（Medicine） | **£39,620/年** |
 | 生活費（セント・アンドリューズ） | 約£10,000〜12,000/年 |
-| 総費用概算 | 約£36,000〜46,000/年 |
+| 総費用概算 | 約£43,000〜52,000/年 |
 
 **財政支援：**
 - **St Andrews International Scholarships** — 国際学生向けメリット型

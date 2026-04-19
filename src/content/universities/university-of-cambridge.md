@@ -7,7 +7,7 @@ city: "ケンブリッジ"
 region: "uk"
 qsRank: 5
 ibScoreRange: "41-42+"
-ibScoreMin: 40
+ibScoreMin: 41
 ibScoreRecommended: 42
 ibAdmissionType: "UCAS出願 + 入試テスト + 面接"
 applicationSystem: "UCAS + My Cambridge Application"

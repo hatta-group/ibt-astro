@@ -12,7 +12,7 @@ ibScoreRecommended: 40
 ibAdmissionType: "UCAS出願（学部により入試テスト・面接あり）"
 requiredHL: ["理系科目HL（学部に応じてMath AA・Physics・Chemistry・Biology等）"]
 applicationSystem: "UCAS"
-admissionDeadline: "1月中旬（UCAS Equal Consideration Deadline）/ 医学部は10月15日"
+admissionDeadline: "1月14日（UCAS Equal Consideration Deadline・英国時間18:00）/ 医学部は10月15日"
 tuitionFeeApprox: "£37,900〜£40,940/年（海外学生・2025-26年度。医学部は別途）"
 scholarshipAvailable: true
 languageRequirement: "IELTS 6.5〜7.0（学部により異なる）/ TOEFL iBT 92〜100"
