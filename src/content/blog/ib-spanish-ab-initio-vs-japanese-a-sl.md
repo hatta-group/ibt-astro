@@ -14,15 +14,15 @@ draft: false
 
 目次
 
-- [IB Group 2の3階層：A／B／ab initio](/ib-spanish-ab-initio-vs-japanese-a-sl/#IB_Group_2%E3%81%AE3%E9%9A%8E%E5%B1%A4%EF%BC%9AA%EF%BC%8FB%EF%BC%8Fab_initio)
-- [Japanese A SLとは何か：非母語話者が取る場合の現実](/ib-spanish-ab-initio-vs-japanese-a-sl/#Japanese_A_SL%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B%EF%BC%9A%E9%9D%9E%E6%AF%8D%E8%AA%9E%E8%A9%B1%E8%80%85%E3%81%8C%E5%8F%96%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E7%8F%BE%E5%AE%9F)
-- [Spanish ab initioとは何か：到達レベルと構造](/ib-spanish-ab-initio-vs-japanese-a-sl/#Spanish_ab_initio%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B%EF%BC%9A%E5%88%B0%E9%81%94%E3%83%AC%E3%83%99%E3%83%AB%E3%81%A8%E6%A7%8B%E9%80%A0)
-- [3つの判断軸：現在の日本語力・ワークロード・進路](/ib-spanish-ab-initio-vs-japanese-a-sl/#3%E3%81%A4%E3%81%AE%E5%88%A4%E6%96%AD%E8%BB%B8%EF%BC%9A%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%8A%9B%E3%83%BB%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%89%E3%83%BB%E9%80%B2%E8%B7%AF)
-- [HL3科目＋English A SL の生徒へのおすすめ](/ib-spanish-ab-initio-vs-japanese-a-sl/#HL3%E7%A7%91%E7%9B%AE%EF%BC%8BEnglish_A_SL_%E3%81%AE%E7%94%9F%E5%BE%92%E3%81%B8%E3%81%AE%E3%81%8A%E3%81%99%E3%81%99%E3%82%81)
-- [Japanese A SLを選ぶ場合の対策戦略](/ib-spanish-ab-initio-vs-japanese-a-sl/#Japanese_A_SL%E3%82%92%E9%81%B8%E3%81%B6%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E7%AD%96%E6%88%A6%E7%95%A5)
-- [Spanish ab initioを選ぶ場合の対策戦略](/ib-spanish-ab-initio-vs-japanese-a-sl/#Spanish_ab_initio%E3%82%92%E9%81%B8%E3%81%B6%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E7%AD%96%E6%88%A6%E7%95%A5)
-- [Bilingual Diplomaを狙うかどうか](/ib-spanish-ab-initio-vs-japanese-a-sl/#Bilingual_Diploma%E3%82%92%E7%8B%99%E3%81%86%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B)
-- [IBの勉強でお悩みですか？](/ib-spanish-ab-initio-vs-japanese-a-sl/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
+- [IB Group 2の3階層：A／B／ab initio](#ib-group-2の3階層abab-initio)
+- [Japanese A SLとは何か：非母語話者が取る場合の現実](#japanese-a-slとは何か非母語話者が取る場合の現実)
+- [Spanish ab initioとは何か：到達レベルと構造](#spanish-ab-initioとは何か到達レベルと構造)
+- [3つの判断軸：現在の日本語力・ワークロード・進路](#3つの判断軸現在の日本語力ワークロード進路)
+- [HL3科目＋English A SL の生徒へのおすすめ](#hl3科目english-a-sl-の生徒へのおすすめ)
+- [Japanese A SLを選ぶ場合の対策戦略](#japanese-a-slを選ぶ場合の対策戦略)
+- [Spanish ab initioを選ぶ場合の対策戦略](#spanish-ab-initioを選ぶ場合の対策戦略)
+- [Bilingual Diplomaを狙うかどうか](#bilingual-diplomaを狙うかどうか)
+- [IBの勉強でお悩みですか？](#ibの勉強でお悩みですか)
 
 ## IB Group 2の3階層：A／B／ab initio
 

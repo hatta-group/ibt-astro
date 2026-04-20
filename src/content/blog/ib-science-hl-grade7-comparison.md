@@ -14,14 +14,14 @@ draft: false
 
 目次
 
-- [IB公式Statistical Bulletinとは](/ib-science-hl-grade7-comparison/#IB%E5%85%AC%E5%BC%8FStatistical_Bulletin%E3%81%A8%E3%81%AF)
-- [May 2024 HLの7取得率比較](/ib-science-hl-grade7-comparison/#May_2024_HL%E3%81%AE7%E5%8F%96%E5%BE%97%E7%8E%87%E6%AF%94%E8%BC%83)
-- [November 2024 HLの7取得率比較](/ib-science-hl-grade7-comparison/#November_2024_HL%E3%81%AE7%E5%8F%96%E5%BE%97%E7%8E%87%E6%AF%94%E8%BC%83)
-- [5月セッションと11月セッションで違いが出る理由](/ib-science-hl-grade7-comparison/#5%E6%9C%88%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A811%E6%9C%88%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A7%E9%81%95%E3%81%84%E3%81%8C%E5%87%BA%E3%82%8B%E7%90%86%E7%94%B1)
-- [科目別の特徴と7取得に必要な要素](/ib-science-hl-grade7-comparison/#%E7%A7%91%E7%9B%AE%E5%88%A5%E3%81%AE%E7%89%B9%E5%BE%B4%E3%81%A87%E5%8F%96%E5%BE%97%E3%81%AB%E5%BF%85%E8%A6%81%E3%81%AA%E8%A6%81%E7%B4%A0)
-- [選択判断の実務的な3つのチェックリスト](/ib-science-hl-grade7-comparison/#%E9%81%B8%E6%8A%9E%E5%88%A4%E6%96%AD%E3%81%AE%E5%AE%9F%E5%8B%99%E7%9A%84%E3%81%AA3%E3%81%A4%E3%81%AE%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88)
-- [2026年5月からの新Sciencesシラバスへの影響](/ib-science-hl-grade7-comparison/#2026%E5%B9%B45%E6%9C%88%E3%81%8B%E3%82%89%E3%81%AE%E6%96%B0Sciences%E3%82%B7%E3%83%A9%E3%83%90%E3%82%B9%E3%81%B8%E3%81%AE%E5%BD%B1%E9%9F%BF)
-- [IBの勉強でお悩みですか？](/ib-science-hl-grade7-comparison/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
+- [IB公式Statistical Bulletinとは](#ib公式statistical-bulletinとは)
+- [May 2024 HLの7取得率比較](#may-2024-hlの7取得率比較)
+- [November 2024 HLの7取得率比較](#november-2024-hlの7取得率比較)
+- [5月セッションと11月セッションで違いが出る理由](#5月セッションと11月セッションで違いが出る理由)
+- [科目別の特徴と7取得に必要な要素](#科目別の特徴と7取得に必要な要素)
+- [選択判断の実務的な3つのチェックリスト](#選択判断の実務的な3つのチェックリスト)
+- [2026年5月からの新Sciencesシラバスへの影響](#2026年5月からの新sciencesシラバスへの影響)
+- [IBの勉強でお悩みですか？](#ibの勉強でお悩みですか)
 
 ## IB公式Statistical Bulletinとは
 

@@ -18,15 +18,15 @@ IB Visual Arts履修者から、こうした声をよく聞きます。結論か
 
 目次
 
-- [Visual Arts HLの3コンポーネント構造](/ib-visual-arts-hl-6-7-strategy/#Visual_Arts_HL%E3%81%AE3%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E6%A7%8B%E9%80%A0)
-- [なぜVisual Artsは7が取りにくいと言われるか](/ib-visual-arts-hl-6-7-strategy/#%E3%81%AA%E3%81%9CVisual_Arts%E3%81%AF7%E3%81%8C%E5%8F%96%E3%82%8A%E3%81%AB%E3%81%8F%E3%81%84%E3%81%A8%E8%A8%80%E3%82%8F%E3%82%8C%E3%82%8B%E3%81%8B)
-- [Comparative Study（20%）で6・7を狙う書き方](/ib-visual-arts-hl-6-7-strategy/#Comparative_Study%EF%BC%8820%25%EF%BC%89%E3%81%A76%E3%83%BB7%E3%82%92%E7%8B%99%E3%81%86%E6%9B%B8%E3%81%8D%E6%96%B9)
-- [Process Portfolio（40%）で差がつくポイント](/ib-visual-arts-hl-6-7-strategy/#Process_Portfolio%EF%BC%8840%25%EF%BC%89%E3%81%A7%E5%B7%AE%E3%81%8C%E3%81%A4%E3%81%8F%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88)
-- [Exhibition（40%）で失点しないための4つのCriterion対応](/ib-visual-arts-hl-6-7-strategy/#Exhibition%EF%BC%8840%25%EF%BC%89%E3%81%A7%E5%A4%B1%E7%82%B9%E3%81%97%E3%81%AA%E3%81%84%E3%81%9F%E3%82%81%E3%81%AE4%E3%81%A4%E3%81%AEcriterion%E5%AF%BE%E5%BF%9C)
-- [Curatorial Rationale（700字）の書き方](/ib-visual-arts-hl-6-7-strategy/#Curatorial_Rationale%EF%BC%88700%E5%AD%97%EF%BC%89%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9)
-- [技法選択と主題の結びつきを言語化する](/ib-visual-arts-hl-6-7-strategy/#%E6%8A%80%E6%B3%95%E9%81%B8%E6%8A%9E%E3%81%A8%E4%B8%BB%E9%A1%8C%E3%81%AE%E7%B5%90%E3%81%B3%E3%81%A4%E3%81%8D%E3%82%92%E8%A8%80%E8%AA%9E%E5%8C%96%E3%81%99%E3%82%8B)
-- [2027年新シラバスへの移行について](/ib-visual-arts-hl-6-7-strategy/#2027%E5%B9%B4%E6%96%B0%E3%82%B7%E3%83%A9%E3%83%90%E3%82%B9%E3%81%B8%E3%81%AE%E7%A7%BB%E8%A1%8C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
-- [IBの勉強でお悩みですか？](/ib-visual-arts-hl-6-7-strategy/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
+- [Visual Arts HLの3コンポーネント構造](#visual-arts-hlの3コンポーネント構造)
+- [なぜVisual Artsは7が取りにくいと言われるか](#なぜvisual-artsは7が取りにくいと言われるか)
+- [Comparative Study（20%）で6・7を狙う書き方](#comparative-study20で67を狙う書き方)
+- [Process Portfolio（40%）で差がつくポイント](#process-portfolio40で差がつくポイント)
+- [Exhibition（40%）で失点しないための4つのCriterion対応](#exhibition40で失点しないための4つのcriterion対応)
+- [Curatorial Rationale（700字）の書き方](#curatorial-rationale700字の書き方)
+- [技法選択と主題の結びつきを言語化する](#技法選択と主題の結びつきを言語化する)
+- [2027年新シラバスへの移行について](#2027年新シラバスへの移行について)
+- [IBの勉強でお悩みですか？](#ibの勉強でお悩みですか)
 
 ## Visual Arts HLの3コンポーネント構造
 

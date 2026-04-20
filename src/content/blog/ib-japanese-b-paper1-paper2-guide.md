@@ -16,15 +16,15 @@ draft: false
 
 目次
 
-- [日本語Bの試験構造（SL/HL共通の全体像）](/ib-japanese-b-paper1-paper2-guide/#%E6%97%A5%E6%9C%AC%E8%AA%9EB%E3%81%AE%E8%A9%A6%E9%A8%93%E6%A7%8B%E9%80%A0%EF%BC%88SL/HL%E5%85%B1%E9%80%9A%E3%81%AE%E5%85%A8%E4%BD%93%E5%83%8F%EF%BC%89)
-- [Paper 1（Writing）の基本仕様](/ib-japanese-b-paper1-paper2-guide/#Paper_1%EF%BC%88Writing%EF%BC%89%E3%81%AE%E5%9F%BA%E6%9C%AC%E4%BB%95%E6%A7%98)
-- [Paper 1で最初にやるべきこと：CAP分析](/ib-japanese-b-paper1-paper2-guide/#Paper_1%E3%81%A7%E6%9C%80%E5%88%9D%E3%81%AB%E3%82%84%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8%EF%BC%9ACAP%E5%88%86%E6%9E%90)
-- [Paper 1評価基準とテクストタイプ別の書き方](/ib-japanese-b-paper1-paper2-guide/#Paper_1%E8%A9%95%E4%BE%A1%E5%9F%BA%E6%BA%96%E3%81%A8%E3%83%86%E3%82%AF%E3%82%B9%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E5%88%A5%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9)
-- [Paper 2（Listening+Reading）の基本仕様](/ib-japanese-b-paper1-paper2-guide/#Paper_2%EF%BC%88Listening+Reading%EF%BC%89%E3%81%AE%E5%9F%BA%E6%9C%AC%E4%BB%95%E6%A7%98)
-- [Listeningセクションの攻略法](/ib-japanese-b-paper1-paper2-guide/#Listening%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E6%94%BB%E7%95%A5%E6%B3%95)
-- [Readingセクションの攻略法](/ib-japanese-b-paper1-paper2-guide/#Reading%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E6%94%BB%E7%95%A5%E6%B3%95)
-- [「選択は解けるが記述で落ちる」症候群の対処法](/ib-japanese-b-paper1-paper2-guide/#%E3%80%8C%E9%81%B8%E6%8A%9E%E3%81%AF%E8%A7%A3%E3%81%91%E3%82%8B%E3%81%8C%E8%A8%98%E8%BF%B0%E3%81%A7%E8%90%BD%E3%81%A1%E3%82%8B%E3%80%8D%E7%97%87%E5%80%99%E7%BE%A4%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95)
-- [IBの勉強でお悩みですか？](/ib-japanese-b-paper1-paper2-guide/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
+- [日本語Bの試験構造（SL/HL共通の全体像）](#日本語bの試験構造slhl共通の全体像)
+- [Paper 1（Writing）の基本仕様](#paper-1writingの基本仕様)
+- [Paper 1で最初にやるべきこと：CAP分析](#paper-1で最初にやるべきことcap分析)
+- [Paper 1評価基準とテクストタイプ別の書き方](#paper-1評価基準とテクストタイプ別の書き方)
+- [Paper 2（Listening+Reading）の基本仕様](#paper-2listeningreadingの基本仕様)
+- [Listeningセクションの攻略法](#listeningセクションの攻略法)
+- [Readingセクションの攻略法](#readingセクションの攻略法)
+- [「選択は解けるが記述で落ちる」症候群の対処法](#選択は解けるが記述で落ちる症候群の対処法)
+- [IBの勉強でお悩みですか？](#ibの勉強でお悩みですか)
 
 ## 日本語Bの試験構造（SL/HL共通の全体像）
 

@@ -16,14 +16,14 @@ draft: false
 
 目次
 
-- [日本の医学部IB入試の科目要件（公式情報）](/ib-medical-school-biology-vs-physics-hl/#%E6%97%A5%E6%9C%AC%E3%81%AE%E5%8C%BB%E5%AD%A6%E9%83%A8IB%E5%85%A5%E8%A9%A6%E3%81%AE%E7%A7%91%E7%9B%AE%E8%A6%81%E4%BB%B6%EF%BC%88%E5%85%AC%E5%BC%8F%E6%83%85%E5%A0%B1%EF%BC%89)
-- [英国医学部の科目要件（UCL・Cambridge等）](/ib-medical-school-biology-vs-physics-hl/#%E8%8B%B1%E5%9B%BD%E5%8C%BB%E5%AD%A6%E9%83%A8%E3%81%AE%E7%A7%91%E7%9B%AE%E8%A6%81%E4%BB%B6%EF%BC%88UCL%E3%83%BBCambridge%E7%AD%89%EF%BC%89)
-- [Biology HL を選ぶメリットとデメリット](/ib-medical-school-biology-vs-physics-hl/#Biology_HL_%E3%82%92%E9%81%B8%E3%81%B6%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88%E3%81%A8%E3%83%87%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88)
-- [Physics HL を選ぶメリットとデメリット](/ib-medical-school-biology-vs-physics-hl/#Physics_HL_%E3%82%92%E9%81%B8%E3%81%B6%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88%E3%81%A8%E3%83%87%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88)
-- [判断の軸：短期の得点 vs 長期の学び](/ib-medical-school-biology-vs-physics-hl/#%E5%88%A4%E6%96%AD%E3%81%AE%E8%BB%B8%EF%BC%9A%E7%9F%AD%E6%9C%9F%E3%81%AE%E5%BE%97%E7%82%B9_vs_%E9%95%B7%E6%9C%9F%E3%81%AE%E5%AD%A6%E3%81%B3)
-- [MathがAAかAIかによる影響](/ib-medical-school-biology-vs-physics-hl/#Math%E3%81%8CAA%E3%81%8BAI%E3%81%8B%E3%81%AB%E3%82%88%E3%82%8B%E5%BD%B1%E9%9F%BF)
-- [選び直す判断材料：DP1終了時点でのスコア](/ib-medical-school-biology-vs-physics-hl/#%E9%81%B8%E3%81%B3%E7%9B%B4%E3%81%99%E5%88%A4%E6%96%AD%E6%9D%90%E6%96%99%EF%BC%9ADP1%E7%B5%82%E4%BA%86%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E3%82%B9%E3%82%B3%E3%82%A2)
-- [IBの勉強でお悩みですか？](/ib-medical-school-biology-vs-physics-hl/#IB%E3%81%AE%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8A%E6%82%A9%E3%81%BF%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F)
+- [日本の医学部IB入試の科目要件（公式情報）](#日本の医学部ib入試の科目要件公式情報)
+- [英国医学部の科目要件（UCL・Cambridge等）](#英国医学部の科目要件uclcambridge等)
+- [Biology HL を選ぶメリットとデメリット](#biology-hl-を選ぶメリットとデメリット)
+- [Physics HL を選ぶメリットとデメリット](#physics-hl-を選ぶメリットとデメリット)
+- [判断の軸：短期の得点 vs 長期の学び](#判断の軸短期の得点-vs-長期の学び)
+- [MathがAAかAIかによる影響](#mathがaaかaiかによる影響)
+- [選び直す判断材料：DP1終了時点でのスコア](#選び直す判断材料dp1終了時点でのスコア)
+- [IBの勉強でお悩みですか？](#ibの勉強でお悩みですか)
 
 ## 日本の医学部IB入試の科目要件（公式情報）
 
