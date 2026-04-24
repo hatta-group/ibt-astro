@@ -826,6 +826,16 @@ import { iberTypes } from '../../data/iber-types';
         }
         // Update URL with result parameter
         history.replaceState(null, '', '/iber-type-shindan/' + winnerId + '/');
+
+        // GA4: 診断完了イベント（直接リンクアクセス時は発火しない）
+        if (typeof window.trackEvent === 'function') {
+          window.trackEvent('shindan_complete', {
+            event_category: 'engagement',
+            event_label: 'iber_type_shindan',
+            location: 'iber_type_shindan',
+            result_type: winnerId,
+          });
+        }
       }
 
       const winner = types.find((t) => t.id === winnerId);
@@ -1109,6 +1119,14 @@ import { iberTypes } from '../../data/iber-types';
     });
 
     startBtn.addEventListener('click', () => {
+      // GA4: 診断開始イベント
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent('shindan_start', {
+          event_category: 'engagement',
+          event_label: 'iber_type_shindan',
+          location: 'iber_type_shindan',
+        });
+      }
       startScreen.classList.add('hidden');
       quizContainer.classList.remove('hidden');
       renderQuestion();
@@ -1118,6 +1136,14 @@ import { iberTypes } from '../../data/iber-types';
     const directStartBtn = document.getElementById('direct-start-btn');
     if (directStartBtn) {
       directStartBtn.addEventListener('click', () => {
+        // GA4: 診断開始（直接リンク経由）
+        if (typeof window.trackEvent === 'function') {
+          window.trackEvent('shindan_start', {
+            event_category: 'engagement',
+            event_label: 'iber_type_shindan',
+            location: 'iber_type_shindan_direct',
+          });
+        }
         resetQuiz();
         startScreen.classList.add('hidden');
         quizContainer.classList.remove('hidden');

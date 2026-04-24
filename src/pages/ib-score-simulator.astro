@@ -557,12 +557,59 @@ const subjectGroups = [
       }
     }
 
+    // GA4: シミュレーター操作計測
+    let simulatorStartFired = false;
+    let simulatorCompleteFired = false;
+    function fireSimulatorStart() {
+      if (simulatorStartFired) return;
+      simulatorStartFired = true;
+      if (typeof (window as any).trackEvent === 'function') {
+        (window as any).trackEvent('simulator_start', {
+          event_category: 'engagement',
+          event_label: 'score_simulator',
+          location: 'ib_score_simulator',
+        });
+      }
+    }
+    function checkSimulatorComplete() {
+      if (simulatorCompleteFired) return;
+      const subjects = document.querySelectorAll<HTMLSelectElement>('.subject-score');
+      const filled = Array.from(subjects).filter((s) => parseInt(s.value) > 0).length;
+      const tokVal = (document.getElementById('tok-grade') as HTMLSelectElement).value;
+      const eeVal = (document.getElementById('ee-grade') as HTMLSelectElement).value;
+      // 6科目全選択 かつ TOK/EE両方選択 = シミュレーション完了
+      if (filled === 6 && tokVal && eeVal) {
+        simulatorCompleteFired = true;
+        const total = parseInt((document.getElementById('total-score') as HTMLElement).textContent || '0');
+        if (typeof (window as any).trackEvent === 'function') {
+          (window as any).trackEvent('simulator_complete', {
+            event_category: 'engagement',
+            event_label: 'score_simulator',
+            location: 'ib_score_simulator',
+            value: total,
+          });
+        }
+      }
+    }
+
     // Attach event listeners
     document.querySelectorAll<HTMLSelectElement>('.subject-score').forEach(sel => {
-      sel.addEventListener('change', calculate);
+      sel.addEventListener('change', () => {
+        fireSimulatorStart();
+        calculate();
+        checkSimulatorComplete();
+      });
     });
-    document.getElementById('tok-grade')!.addEventListener('change', calculate);
-    document.getElementById('ee-grade')!.addEventListener('change', calculate);
+    document.getElementById('tok-grade')!.addEventListener('change', () => {
+      fireSimulatorStart();
+      calculate();
+      checkSimulatorComplete();
+    });
+    document.getElementById('ee-grade')!.addEventListener('change', () => {
+      fireSimulatorStart();
+      calculate();
+      checkSimulatorComplete();
+    });
 
     // Initial state
     calculate();
