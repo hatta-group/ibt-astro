@@ -1,5 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { tutors } from '../data/tutors';
+
+const featuredTutorNames = ['MASATO', 'CYNTHIA', 'SUZU'];
+const featuredTutors = featuredTutorNames
+  .map((n) => tutors.find((t) => t.name === n))
+  .filter((t): t is NonNullable<typeof t> => Boolean(t));
 ---
 
 <BaseLayout
@@ -192,6 +198,63 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- IBT講師の一部を紹介 -->
+  <section class="py-16 md:py-24 bg-white border-t border-ibt-border">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-4">OUR TUTORS</p>
+        <h2 class="text-2xl md:text-4xl font-bold">講師の一部を紹介</h2>
+        <p class="mt-4 text-ibt-text-light max-w-2xl mx-auto">
+          IBT講師は全員、IB卒業生かつ現役の大学生。経験者だからこそ伝えられる学習戦略があります。
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {featuredTutors.map((tutor) => (
+          <div class="bg-white rounded-2xl shadow-sm border border-ibt-border p-6 hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-4">
+              {tutor.image ? (
+                <img
+                  src={tutor.image}
+                  alt={`${tutor.name}講師`}
+                  class="w-16 h-16 rounded-full object-cover shrink-0"
+                  loading="lazy"
+                  width="64"
+                  height="64"
+                />
+              ) : (
+                <div class="w-16 h-16 bg-gradient-to-br from-ibt-gradient-start to-ibt-gradient-end rounded-full flex items-center justify-center shrink-0">
+                  <span class="text-white font-bold text-lg">{tutor.name.slice(0, 2)}</span>
+                </div>
+              )}
+              <div class="min-w-0">
+                <h3 class="text-lg font-bold">{tutor.name}</h3>
+                <p class="text-ibt-text-light text-xs mt-1">{tutor.school}</p>
+                <p class="text-ibt-text-light text-xs">{tutor.university}</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              {tutor.subjects.slice(0, 4).map((subject) => (
+                <span class="bg-ibt-red-50 text-ibt-red text-xs font-medium px-2.5 py-1 rounded-full">
+                  {subject}
+                </span>
+              ))}
+            </div>
+            {tutor.bio && (
+              <p class="mt-4 text-sm text-ibt-text-light italic leading-relaxed border-t border-ibt-border pt-4">
+                "{tutor.bio}"
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/tutors/" class="inline-block text-ibt-red font-bold hover:underline">
+          全講師を見る &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- IBTの料金 -->
   <section class="py-16 md:py-24 bg-ibt-bg">
     <div class="max-w-7xl mx-auto px-4">
@@ -242,7 +305,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="text-xs text-ibt-text-light mt-1">チケット制・長期契約なし</p>
         </div>
       </div>
-      <div class="text-center mt-8">
+      <div class="text-center mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="/contact/"
+          class="inline-block bg-ibt-red text-white font-bold py-3 px-8 rounded-full hover:bg-ibt-red-dark transition-colors"
+        >
+          まずは60分無料体験から
+        </a>
         <a href="/lessons-pricing/" class="text-ibt-red font-bold hover:underline">
           料金の詳細を見る &rarr;
         </a>
@@ -372,7 +441,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="text-lg md:text-xl font-bold">
             IBTなら、<span class="text-ibt-red">全てIB卒業生の講師</span>が解決します。
           </p>
-          <p class="text-ibt-text-light mt-2">同じ道を歩んだ先輩だからこそ、寄り添った指導ができます。</p>
+          <p class="text-ibt-text-light mt-2 mb-5">同じ道を歩んだ先輩だからこそ、寄り添った指導ができます。</p>
+          <a
+            href="/contact/"
+            class="inline-block bg-ibt-red text-white font-bold py-3 px-8 rounded-full hover:bg-ibt-red-dark transition-colors"
+          >
+            悩みを相談してみる（60分無料体験）
+          </a>
         </div>
       </div>
     </div>
@@ -402,7 +477,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="text-center">
           <div class="w-16 h-16 bg-ibt-red rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl shadow-lg">3</div>
           <h3 class="font-bold text-lg mb-2">60分無料体験授業</h3>
-          <p class="text-ibt-text-light text-sm leading-relaxed">実際の授業と同じ形式で60分の体験授業を受けられます。講師との相性も確認できます。</p>
+          <p class="text-ibt-text-light text-sm leading-relaxed">実際の授業と同じ形式で受講。学習状況のヒアリング・現状の課題整理・進め方の提案までその場で行います。</p>
         </div>
         <!-- Step 4 -->
         <div class="text-center">
@@ -411,6 +486,58 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="text-ibt-text-light text-sm leading-relaxed">チケットを購入して受講開始。自分のペースで必要な分だけ受講できます。</p>
         </div>
       </div>
+      <!-- 無料体験で得られる4つのこと -->
+      <div class="mt-16 max-w-4xl mx-auto bg-white rounded-2xl border border-ibt-border p-8 md:p-10">
+        <p class="text-ibt-red font-bold text-sm tracking-widest mb-2 text-center">FREE TRIAL</p>
+        <h3 class="text-xl md:text-2xl font-bold text-center mb-8">60分の無料体験で得られること</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full bg-ibt-red-50 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sm md:text-base">現状の課題を整理</p>
+              <p class="text-ibt-text-light text-sm mt-1">どの科目・単元でつまずいているかを講師が一緒に特定します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full bg-ibt-red-50 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sm md:text-base">IB卒業生講師の指導を実体験</p>
+              <p class="text-ibt-text-light text-sm mt-1">実際の授業と同じ形式で進行。経験者ならではの解説の質を確認できます。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full bg-ibt-red-50 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sm md:text-base">学習プランの提案</p>
+              <p class="text-ibt-text-light text-sm mt-1">試験日・残り期間・到達目標から、必要な頻度・科目の優先順位を提案します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full bg-ibt-red-50 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-ibt-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sm md:text-base">講師との相性確認</p>
+              <p class="text-ibt-text-light text-sm mt-1">体験後、継続するかどうかは自由。無理な勧誘は一切ありません。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
         <a
           href="/contact/"
