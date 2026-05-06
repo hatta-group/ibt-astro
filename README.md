@@ -44,43 +44,41 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## 決済リンク運用ルール
 
-Squareチケット決済リンクを新規作成・再生成する際は、必ず **quick_pay（reusable）モード** で生成すること。
-single-use モードのリンクを埋め込むと、1人目の決済完了後に2人目以降が過去の決済完了画面にリダイレクトされ、
-新規購入者がカード入力画面に到達できない決済バグが発生する（2026-04-12事例あり）。
+Square の Payment Links（`POST /v2/online-checkout/payment-links` で生成されるリンク）は、Square 公式 Checkout API Guidelines により **single-use** 仕様である。`quick_pay` モード・`order` モードのいずれも 1 人の購入で消費される。
 
-### 生成方法
+> 出典: <https://developer.squareup.com/docs/checkout-api/guidelines-and-limitations>
+>
+> "A payment link can only be used to accept payment from a single buyer. This means payment links are not reusable across multiple transactions or customers."
 
-- Square Dashboard（GUI）: 「Payment Links」作成時に「複数回使用可能」を選択
-- Payment Links API: `POST /v2/online-checkout/payment-links` に **`quick_pay`** ブロックを指定
-  - `order` ブロックを使うと single-use になるため **使用しない**
+過去に「`quick_pay` は reusable」と誤認した運用が行われ、2026-04-12 / 2026-05-03 / 2026-05-05 / 2026-05-06 と 4 度再発した。本リポジトリでは **API 経由で生成した `quick_pay` / `order` 形式の Payment Link を `lesson-tickets.astro` に埋め込まない**。
 
-### 埋込先
+### 短期運用ルール（現行）
 
-`src/pages/lesson-tickets.astro` 内の `tickets` オブジェクト（program/format別にURL配列）
+- `src/pages/lesson-tickets.astro` の `tickets` オブジェクトに埋め込む URL は、**Square Dashboard で「Standard Payment Link」を Reusable 設定で新規作成**したもののみとする
+- API 経由（`POST /v2/online-checkout/payment-links` の `quick_pay` / `order` モード）で生成したリンクは公式仕様で single-use のため埋め込み禁止
+- Dashboard で生成済みの Reusable Payment Link を **GUI で「編集」または「コピーで作成」しない**（single-use 化する事象を観測）。修正必要時は新規 Reusable Payment Link を作成して URL を置換する
 
-### 再生成時の手順
+### 中長期方針（移行先）
 
-1. NOBU の Mac の通常ターミナルで:
-   ```bash
-   cd ~/projects/ibt-astro
-   echo "SQUARE_ACCESS_TOKEN=<新Token>" > .env.local
-   node scripts/regenerate-square-links.mjs
-   ```
-2. `git diff src/pages/lesson-tickets.astro` で URL 差し替え確認
-3. シークレットウィンドウで任意1リンクの動作確認（カード入力画面が表示されればOK）
-4. PR作成→NOBU承認→マージ→Cloudflare Pages自動デプロイ
-5. 本番で任意のチケット1件の遷移を目視確認
+公開チケット販売ページからの static URL 埋め込みを廃止し、Cloudflare Worker で購入ボタン押下のたびに `CreatePaymentLink` (`quick_pay`) を都度発行して redirect する方式へ移行する。
+
+- フロントの購入ボタン → Worker の `POST /api/create-checkout` 呼び出し
+- Worker が Square `CreatePaymentLink` を都度発行し、redirect URL を返す
+- Square Production Access Token は Worker のシークレットでのみ保持（フロントに出さない）
+- クライアントから価格は受け取らず、SKU をキーにサーバー側固定マスタから金額を引く
+- `idempotency_key` は 1 購入試行ごとに一意。同一リトライではキーを引き継ぐ
+- 429 / 一時失敗は exponential backoff + jitter
+- `redirect_url` は完了表示用に限定し、決済確定の判定は Square Webhook / Payments API / Orders API で行う
+
+中長期移行の設計・実装は別 PR・別チケットで進める。
 
 ### Square API アクセス権限ポリシー（2026-05-05 確立）
 
-**Square Production Access Token の利用権限は NOBU のみ**。Lumi / Claude Code / その他エージェントには Token を渡さない。理由:
+**Square Production Access Token の利用権限は NOBU のみ**。Lumi / Claude Code / その他エージェントには Token を渡さない。Token を要する作業は NOBU の Mac で NOBU が手動実行する形のみ許容する。
 
-- 2026-04-12: 早織さん事例で single-use 由来の決済バグ発生 → 2026-04-20 PR `a956a2a` で全32リンク再生成
-- 2026-05-03: `fix/payments-reusable-checkout-2026-05-03` ブランチで再発が認識されたが「スコープ外」として保留・NOBU 未エスカレーション
-- 2026-05-05: NOBU が再発を発見・Lumi の Square API アクセス遮断を決定 → 既存 Production Access Token を Replace（旧 Token 無効化）
+過去経緯:
 
-このため、本リポジトリの `scripts/regenerate-square-links.mjs` 実行は **NOBU の Mac で NOBU が手動実行** する形のみ許容する。Lumi / Claude Code が Token を取得・利用してはならない。
-
-### Square Dashboard の GUI 操作禁止事項
-
-quick_pay（reusable）で API 生成したリンクが **Square Dashboard の GUI で「編集」「コピーで作成」を実行すると single-use 化** する事象を観測。Dashboard では生成済みリンクの **編集・コピー操作を行わない**。修正が必要な場合は本スクリプトで全32リンク再生成する。
+- 2026-04-12: single-use 由来の決済バグ初発 → 2026-04-20 全32リンク再生成（`quick_pay` 誤認のまま）
+- 2026-05-03: 同症状再認識・`fix/payments-reusable-checkout-2026-05-03` (PR #6) 起票も保留、NOBU 未エスカレーション
+- 2026-05-05: NOBU が顧客視点で再発を確認 → Production Access Token を Replace（旧 Token 無効化）→ PR #7 で `quick_pay` 再生成（**誤った対応のまま本番反映**）
+- 2026-05-06: 公式 Checkout API Guidelines を一次確認し、`quick_pay` 含む全 Payment Links が single-use と確定。再生成スクリプトを削除し、本ルールに改訂
