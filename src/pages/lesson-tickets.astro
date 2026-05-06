@@ -202,53 +202,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <script>
     const CORRECT_PASSWORD = 'hirakegoma';
 
-    // Ticket data
-    const tickets: Record<string, { count: number; price: number; url: string }[]> = {
+    // Ticket data — URL は静的に持たず、購入ボタン押下時に /api/create-checkout
+    // (Cloudflare Pages Function) が Square CreatePaymentLink を都度発行する。
+    // 価格はサーバー側 SKU マスタで再検証されるため、ここは表示専用。
+    const tickets: Record<string, { count: number; price: number; skuId: string }[]> = {
       'pyp-online': [
-        { count: 1, price: 4840, url: 'https://square.link/u/eyo0EJRp' },
-        { count: 4, price: 19250, url: 'https://square.link/u/AlgtT3Jz' },
-        { count: 8, price: 38500, url: 'https://square.link/u/6OFWaQho' },
-        { count: 12, price: 57750, url: 'https://square.link/u/479uHUDM' },
-        { count: 16, price: 77000, url: 'https://square.link/u/HVYMFSCm' },
+        { count: 1, price: 4840, skuId: 'pyp-online-1' },
+        { count: 4, price: 19250, skuId: 'pyp-online-4' },
+        { count: 8, price: 38500, skuId: 'pyp-online-8' },
+        { count: 12, price: 57750, skuId: 'pyp-online-12' },
+        { count: 16, price: 77000, skuId: 'pyp-online-16' },
       ],
       'pyp-inperson': [
-        { count: 1, price: 5258, url: 'https://square.link/u/XAacmQxf' },
-        { count: 4, price: 20900, url: 'https://square.link/u/Gi4ulpBR' },
-        { count: 8, price: 41800, url: 'https://square.link/u/bVwl7DAo' },
-        { count: 12, price: 62700, url: 'https://square.link/u/llxqC7tk' },
-        { count: 16, price: 83600, url: 'https://square.link/u/Ccrqdz6R' },
+        { count: 1, price: 5258, skuId: 'pyp-inperson-1' },
+        { count: 4, price: 20900, skuId: 'pyp-inperson-4' },
+        { count: 8, price: 41800, skuId: 'pyp-inperson-8' },
+        { count: 12, price: 62700, skuId: 'pyp-inperson-12' },
+        { count: 16, price: 83600, skuId: 'pyp-inperson-16' },
       ],
       'myp-online': [
-        { count: 1, price: 6050, url: 'https://square.link/u/fT5IjoZc' },
-        { count: 4, price: 24090, url: 'https://square.link/u/5ITrgWpA' },
-        { count: 8, price: 48180, url: 'https://square.link/u/Q3vYKv8D' },
-        { count: 12, price: 72270, url: 'https://square.link/u/62NRgaRM' },
-        { count: 16, price: 93630, url: 'https://square.link/u/R3AuBzX1' },
+        { count: 1, price: 6050, skuId: 'myp-online-1' },
+        { count: 4, price: 24090, skuId: 'myp-online-4' },
+        { count: 8, price: 48180, skuId: 'myp-online-8' },
+        { count: 12, price: 72270, skuId: 'myp-online-12' },
+        { count: 16, price: 93630, skuId: 'myp-online-16' },
       ],
       'myp-inperson': [
-        { count: 1, price: 6468, url: 'https://square.link/u/TzICh6BP' },
-        { count: 4, price: 25740, url: 'https://square.link/u/4zzEx5vy' },
-        { count: 8, price: 51480, url: 'https://square.link/u/z7ZfKrtq' },
-        { count: 12, price: 77220, url: 'https://square.link/u/yU3BV3r1' },
-        { count: 16, price: 102960, url: 'https://square.link/u/o1oGaKgN' },
+        { count: 1, price: 6468, skuId: 'myp-inperson-1' },
+        { count: 4, price: 25740, skuId: 'myp-inperson-4' },
+        { count: 8, price: 51480, skuId: 'myp-inperson-8' },
+        { count: 12, price: 77220, skuId: 'myp-inperson-12' },
+        { count: 16, price: 102960, skuId: 'myp-inperson-16' },
       ],
       'dp-online': [
-        { count: 1, price: 7260, url: 'https://square.link/u/IIPSrfK5' },
-        { count: 4, price: 28930, url: 'https://square.link/u/3cm2JBTg' },
-        { count: 8, price: 57860, url: 'https://square.link/u/2FU6THW1' },
-        { count: 12, price: 86790, url: 'https://square.link/u/iQDuChkU' },
-        { count: 16, price: 115720, url: 'https://square.link/u/srC3dFl3' },
+        { count: 1, price: 7260, skuId: 'dp-online-1' },
+        { count: 4, price: 28930, skuId: 'dp-online-4' },
+        { count: 8, price: 57860, skuId: 'dp-online-8' },
+        { count: 12, price: 86790, skuId: 'dp-online-12' },
+        { count: 16, price: 115720, skuId: 'dp-online-16' },
       ],
       'dp-inperson': [
-        { count: 1, price: 7678, url: 'https://square.link/u/z2axAcLA' },
-        { count: 4, price: 30580, url: 'https://square.link/u/K2ECKWLz' },
-        { count: 8, price: 61160, url: 'https://square.link/u/49wfTgPI' },
-        { count: 12, price: 91740, url: 'https://square.link/u/b3s0ZpO0' },
-        { count: 16, price: 122320, url: 'https://square.link/u/Q6dxshQD' },
+        { count: 1, price: 7678, skuId: 'dp-inperson-1' },
+        { count: 4, price: 30580, skuId: 'dp-inperson-4' },
+        { count: 8, price: 61160, skuId: 'dp-inperson-8' },
+        { count: 12, price: 91740, skuId: 'dp-inperson-12' },
+        { count: 16, price: 122320, skuId: 'dp-inperson-16' },
       ],
       'individual-online': [
-        { count: 1, price: 3300, url: 'https://square.link/u/nXfFiICY' },
-        { count: 4, price: 12870, url: 'https://square.link/u/CRn6vsnn' },
+        { count: 1, price: 3300, skuId: 'individual-online-1' },
+        { count: 4, price: 12870, skuId: 'individual-online-4' },
       ],
     };
 
@@ -307,14 +309,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <p class="text-sm text-ibt-text-light mt-1">1回あたり &yen;${formatPrice(perLesson)}</p>
               ${savings > 0 ? `<p class="text-xs text-green-600 font-medium mt-1">${savings}% OFF</p>` : ''}
             </div>
-            <a
-              href="${t.url}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-auto block text-center bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold py-3 rounded-full hover:shadow-lg transition-shadow"
+            <button
+              type="button"
+              data-sku="${t.skuId}"
+              class="ticket-buy-btn mt-auto block w-full text-center bg-gradient-to-r from-ibt-gradient-start to-ibt-gradient-end text-white font-bold py-3 rounded-full hover:shadow-lg transition-shadow disabled:opacity-60 disabled:cursor-wait"
             >
               購入する
-            </a>
+            </button>
           </div>
         `;
       }).join('');
@@ -380,6 +381,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         renderCards();
       });
     });
+
+    // Buy button handler — innerHTML 再生成後も動くようコンテナでイベント委譲
+    document.getElementById('ticket-cards')?.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const btn = target.closest('.ticket-buy-btn') as HTMLButtonElement | null;
+      if (!btn || btn.disabled) return;
+      handleBuyClick(btn);
+    });
+
+    async function handleBuyClick(btn: HTMLButtonElement) {
+      const skuId = btn.dataset.sku;
+      if (!skuId) return;
+
+      const originalText = btn.textContent ?? '購入する';
+      btn.disabled = true;
+      btn.textContent = '処理中…';
+
+      try {
+        const idempotencyKey = generateIdempotencyKey();
+        const res = await fetch('/api/create-checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ skuId, idempotencyKey }),
+        });
+        if (!res.ok) {
+          throw new Error('server_error_' + res.status);
+        }
+        const data = (await res.json()) as { url?: string };
+        if (!data || typeof data.url !== 'string' || !/^https:\/\//.test(data.url)) {
+          throw new Error('invalid_response');
+        }
+        window.location.href = data.url;
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        alert('決済リンクの作成に失敗しました。時間をおいてもう一度お試しください。');
+        console.error('create-checkout failed:', err);
+      }
+    }
+
+    // 32文字の hex（サーバー側 IDEMPOTENCY_KEY_RE: 16-128文字 を満たす）
+    function generateIdempotencyKey(): string {
+      if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+        return crypto.randomUUID().replace(/-/g, '');
+      }
+      const arr = new Uint8Array(16);
+      crypto.getRandomValues(arr);
+      return Array.from(arr).map((b) => b.toString(16).padStart(2, '0')).join('');
+    }
   </script>
 
   <style>
