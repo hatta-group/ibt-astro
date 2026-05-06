@@ -88,6 +88,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <button data-format="inperson" class="format-tab px-5 py-2.5 min-h-[44px] rounded-full font-medium text-sm transition-all">対面</button>
         </div>
 
+        <!-- 購入前のお知らせ -->
+        <div class="max-w-3xl mx-auto mb-10 bg-red-50 border-2 border-red-300 rounded-2xl p-5 md:p-6">
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.732 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.008v.008H12v-.008Z" />
+            </svg>
+            <div>
+              <p class="text-red-900 font-bold text-base mb-2">ご購入前に必ずご確認ください</p>
+              <ul class="text-red-900 text-sm space-y-1 list-disc pl-5">
+                <li>チケット購入後の返金は基本的にお受けしておりません</li>
+                <li>チケットの有効期限は購入から6ヶ月間です（期限を過ぎると自動消化されます）</li>
+                <li>キャンセルポリシーは下記FAQをご確認ください</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <!-- Ticket Cards Container -->
         <div id="ticket-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <!-- Cards injected by JS -->
@@ -130,6 +147,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <li><strong>対面授業の場合：</strong>チューターが既に授業場所に到着している場合は、交通費も別途ご請求となります。</li>
               </ul>
               <p class="mt-3">急な体調不良などやむを得ない場合は、お早めにご連絡ください。</p>
+            </div>
+          </details>
+
+          <details class="group bg-ibt-bg rounded-2xl shadow-sm border border-ibt-border">
+            <summary class="flex items-center justify-between cursor-pointer py-5 px-6 font-medium text-ibt-text list-none [&::-webkit-details-marker]:hidden">
+              <span class="pr-4">返金は可能ですか？</span>
+              <span class="shrink-0 w-6 h-6 flex items-center justify-center text-ibt-red transition-transform group-open:rotate-45">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-5 text-ibt-text-light leading-relaxed">
+              <p>チケット購入後の返金は基本的にお受けしておりません。チケットは6ヶ月の有効期限内に計画的にご利用ください。</p>
+              <p class="mt-3">なお、24時間前までのキャンセル・振替は無料です（上記キャンセルポリシー参照）。授業未消化のチケットは有効期限内であれば別の日程で振替が可能です。</p>
+              <p class="mt-3">ただし、IBT側のやむを得ない事情（講師の長期離脱など）で授業を提供できなくなった場合は、個別にご相談ください。</p>
             </div>
           </details>
 
@@ -315,6 +346,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             >
               購入する
             </a>
+            <p class="text-xs text-ibt-text-light text-center mt-3 leading-relaxed">
+              ※ 返金不可・有効期限6ヶ月
+            </p>
           </div>
         `;
       }).join('');
